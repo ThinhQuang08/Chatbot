@@ -1,0 +1,67 @@
+# version: "3.1"
+
+# stories:
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+version: "3.1"
+
+stories:
+
+- story: Khách hàng hỏi thông tin cơ bản rồi tạm biệt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_tour_info
+  - action: action_search_tour_info
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Khách hàng hỏi thông tin và cung cấp thêm chi tiết (inform)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_tour_info
+  - action: action_search_tour_info
+  - intent: inform
+  - action: action_search_tour_info
+
+- story: Khách hàng chủ động đặt tour và chốt số lượng
+  steps:
+  - intent: book_tour
+  - action: action_search_tour_info
+  - intent: inform
+  - action: action_search_tour_info
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Khách hàng vào thẳng vấn đề hỏi đặc sản/vùng miền
+  steps:
+  - intent: ask_location_feature
+  - action: action_ai_consultant
+  - intent: ask_weather_timing
+  - action: action_ai_consultant

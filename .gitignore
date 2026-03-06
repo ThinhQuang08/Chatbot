@@ -1,0 +1,7 @@
+models/
+.rasa/
+__pycache__/
+actions/__pycache__/
+*.db
+*.sqlite
+.env

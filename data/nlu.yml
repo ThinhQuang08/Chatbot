@@ -1,0 +1,153 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - chào bạn
+    - xin chào
+    - hi
+    - hello
+    - lô bạn
+    - cho mình hỏi chút
+    - ad ơi
+
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - bye
+    - cút
+    - cảm ơn nhé, bye
+    - hẹn gặp lại
+    - thôi mình đi đây
+
+- intent: bot_challenge
+  examples: |
+    - bạn là ai
+    - bạn là người hay máy
+    - mình đang nói chuyện với robot à
+    - bot à
+
+# Bắt các câu ngoài luồng để MLOps giám sát Data Drift
+- intent: out_of_scope
+  examples: |
+    - giá vàng hôm nay bao nhiêu
+    - bạn ăn cơm chưa
+    - thời tiết hà nội hôm nay có mưa không
+    - ai là tổng thống mỹ
+    - cách nấu món phở bò
+
+# 1. Intent: Hỏi đáp về thời điểm/thời tiết (Để RAG xử lý)
+- intent: ask_weather_timing
+  examples: |
+    - [tháng 12](time) đi [Vũng Tàu](destination) có đẹp không?
+    - [mùa hè](time) nên đi du lịch ở đâu?
+    - thời tiết [Đà Lạt](destination) [tháng 5](time) thế nào?
+    - mình định đi [Sapa](destination) vào [Tết](time) này
+    - thời điểm nào đẹp nhất để đi [Phú Quốc](destination)?
+
+# 2. Intent: Đề xuất/Tư vấn Tour (Để truy vấn Database Tour)
+- intent: ask_tour_info
+  examples: |
+    - gợi ý cho mình vài tour đi [biển](activity)
+    - tìm [bãi biển]{"entity": "category", "value": "beach"} ở [vũng tàu](destination)
+    - có tour nào giá dưới [5 triệu](budget) không?
+    - tư vấn tour [du lịch gia đình](activity) hot nhất
+    - mình muốn tìm tour đi [Đà Lạt](destination) [3 ngày 2 đêm](duration)
+    - tìm giúp tui tour [nghỉ dưỡng](activity) tại [Cần Thơ](destination)
+    - Tour [Vũng Tàu](destination) giá bao nhiêu?
+    - Giá tour đi [Đà Lạt](destination)
+    - Cho mình hỏi giá vé tham quan [Phú Quốc](destination)
+    - Chi phí đi [Sapa](destination) khoảng bao nhiêu
+    - tìm khách sạn{"entity": "category", "value": "hotel"} ở [Vũng Tàu](destination)
+    - mình muốn tìm tour [4 ngày 3 đêm](duration)
+    - cho mình xem thông tin [tour Hạ Long](tour_name)
+    - chỗ nào [ăn uống]{"entity": "category", "value": "restaurant"} ngon ở [Cần Thơ](destination)
+    - muốn đi [chùa]{"entity": "category", "value": "pagoda"} tại [Đà Lạt](destination)
+    - có [nhà hàng]{"entity": "category", "value": "restaurant"} nào ở [Vũng Tàu](destination) không
+    - [nhà nghỉ](category) bình dân tại [Phú Quốc](destination)
+    - cho mình danh sách [resort]{"entity": "category", "value": "resort"} tại [Đà Lạt](destination)
+
+# 3. Intent: Hỏi về đặc điểm/địa điểm (Để RAG search (TripAdvisor Review)?)
+- intent: ask_location_feature
+  examples: |
+    - [Vũng Tàu](destination) có đặc sản gì ngon?
+    - chỗ nào [ăn uống](activity) ngon tại [Đà Lạt](destination)
+    - [Phú Quốc](destination) có hoạt động [lặn san hô](activity) không?
+    - tìm [nhà hàng](activity) uy tín ở [Cần Thơ](destination)
+    - [Đà Lạt](destination) buổi tối chơi gì vui?
+
+- intent: book_tour
+  examples: |
+    - mình muốn đặt tour đi từ [Hà Nội](departure) đến [Đà Lạt](destination)
+    - book cho mình [tour Sapa](tour_name) cho [2 người lớn](party_size)
+    - tui muốn chốt tour [Nha Trang](destination) khởi hành ngày [mai](time)
+    - đặt phòng khách sạn tại [Vũng Tàu](destination) cho [4 người](party_size)
+
+- intent: inform
+  examples: |
+    - mình xuất phát từ [TPHCM](departure)
+    - đi [Đà Lạt](destination) nhé
+    - mình đi [3 người](party_size)
+    - ngân sách tầm [5 triệu](budget)
+    - đi vào [tuần sau](time)
+
+- synonym: Vũng Tàu
+  examples: |
+    - vũng tàu
+    - vung tau
+    - vt
+
+- synonym: Đà Lạt
+  examples: |
+    - đà lạt
+    - da lat
+    - dl
+
+- synonym: hotel
+  examples: |
+    - khách sạn
+    - resort
+    - nhà nghỉ
+    - homestay
+
+- synonym: beach
+  examples: |
+    - bãi biển
+    - biển
+    - tắm biển
+
+- synonym: restaurant
+  examples: |
+    - nhà hàng
+    - quán ăn
+    - ăn uống
+
+- synonym: pagoda
+  examples: |
+    - chùa
+    - đền
+
+- lookup: category
+  examples: |
+    - khách sạn
+    - bãi biển
+    - resort
+    - nhà nghỉ
+    - homestay
+    - nhà hàng
+    - quán ăn
+    - chùa
+    - đền
+
+- lookup: destination
+  examples: |
+    - Vũng Tàu
+    - Đà Lạt
+    - Hà Nội
+    - Phú Quốc
+    - Nha Trang
+    - Đà Nẵng
+    - Sapa
+    - Cần Thơ
+    - Hạ Long
+    - Hội An

@@ -1,0 +1,82 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - ask_weather_timing      # Hỏi thời tiết/thời điểm
+  - ask_tour_info           # Yêu cầu tìm tour/khách sạn
+  - ask_location_feature    # Hỏi đặc điểm/đặc sản vùng
+  - book_tour               # Yêu cầu đặt chỗ/mua tour
+  - inform                  # Cung cấp thông tin (điểm đến, số người...)
+  - out_of_scope            # Các câu hỏi ngoài luồng (nhiễu)
+
+entities:
+  - departure     # Điểm khởi hành
+  - destination   # Điểm đến (Thay cho location cũ)
+  - time          # Thời gian
+  - activity      # Hoạt động
+  - budget        # Ngân sách
+  - duration      # Thời lượng
+  - party_size    # Số lượng người
+  - tour_name     # Tên tour cụ thể
+  - category      # Phân biệt ks, biển, nhà hàng
+
+slots:
+  destination:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: destination
+  category:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: category
+  departure:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: departure
+  time:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: time
+  party_size:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: party_size
+  tour_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: tour_name
+
+responses:
+  utter_greet:
+  - text: "Chào bạn! Mình là trợ lý du lịch AI. Mình có thể giúp bạn tìm tour, khách sạn hoặc tư vấn điểm đến. Bạn dự định đi đâu nhỉ?"
+
+  utter_goodbye:
+  - text: "Tạm biệt bạn! Chúc bạn một ngày vui vẻ."
+
+  utter_iamabot:
+  - text: "Mình là Chatbot tư vấn du lịch thông minh, được vận hành bởi Rasa và lớp RAG."
+
+  utter_out_of_scope:
+  - text: "Xin lỗi, mình chỉ có thể hỗ trợ các thông tin liên quan đến du lịch, đặt tour và khách sạn. Mình có thể giúp gì cho chuyến đi sắp tới của bạn không?"
+
+actions:
+  - action_ai_consultant
+  - action_search_tour_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

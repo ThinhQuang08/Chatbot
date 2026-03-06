@@ -1,0 +1,43 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Xử lý Out of Scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Tư vấn đặc điểm vùng miền # RAG
+  steps:
+  - intent: ask_location_feature
+  - action: action_ai_consultant
+
+- rule: Tư vấn thời tiết và tour # RAG
+  steps:
+  - intent: ask_weather_timing
+  - action: action_ai_consultant
+
+- rule: Hỏi tour chi tiết # SQL
+  steps:
+  - intent: ask_tour_info
+  - action: action_search_tour_info
+
+- rule: Đặt tour # Có thể gọi form hoặc action báo giá
+  steps:
+  - intent: book_tour
+  - action: action_search_tour_info
+
+- rule: Chào hỏi
+  steps:
+  - intent: greet
+  - action: utter_greet
