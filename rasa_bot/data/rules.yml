@@ -1,0 +1,38 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: out of scope fallback
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+  
+  - rule: Trả lời về tính năng, dịch vụ của địa điểm
+    steps:
+      - intent: ask_location_feature
+      - action: action_search_tour_info
+
+  - rule: 1. Kích hoạt Form khi khách muốn tìm tour
+    steps:
+      - intent: search_travel
+      - action: travel_form
+      - active_loop: travel_form
+
+  - rule: 2. Xử lý sau khi Form thu thập đủ thông tin
+    condition:
+      - active_loop: travel_form
+    steps:
+      - action: travel_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_search_travel

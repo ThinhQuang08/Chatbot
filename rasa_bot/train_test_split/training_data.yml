@@ -1,0 +1,218 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you a bot?
+    - đang chat với bot à
+    - ai đang chat vậy
+    - bạn là người hay máy
+    - mày là AI hả
+    - shop dùng auto reply à
+- intent: out_of_scope
+  examples: |
+    - huỳnh như đá ở đội nào
+    - cách chữa đau dạ dày
+    - ronaldo hay messi đá hay hơn
+    - ai là tổng thống mỹ
+    - thời tiết hà nội hôm nay thế nào
+    - mở nhạc cho tôi nghe
+    - cách trồng cây bonsai
+    - kể cho tôi một câu chuyện cười
+    - nay đề về bao nhiêu
+    - 1 cộng 1 bằng mấy
+    - giá vàng hôm nay bao nhiêu
+    - viết bài văn tả con mèo
+- intent: goodbye
+  examples: |
+    - see you around
+    - goodbye
+    - good night
+    - cu
+    - out nha
+    - good by
+    - have a nice day
+    - cám ơn bot nhé bye
+    - bai bai
+    - bye shop
+    - đi ngủ đây
+    - bye
+    - lúc khác nhắn tiếp
+    - bye bye
+    - off đây
+    - see you later
+- intent: deny
+  examples: |
+    - không thích
+    - không vui
+    - mệt mỏi
+    - không ok lắm
+    - chán đời
+    - k
+    - nope
+    - tệ quá
+    - buồn quá
+    - không phải
+    - đắt quá thôi
+    - thôi
+    - dạo này đang stress
+    - đổi cái khác đi
+    - ko
+    - chán ghê
+- intent: inform
+  examples: |
+    - đi [máy bay](category) nhé
+    - mình xuất phát từ [Đà Nẵng](departure)
+    - khởi hành từ [Sài Gòn](departure)
+    - [Đà Lạt](destination)
+    - [cuối tuần](time_window)
+    - từ [tháng 1](month_from) đến [tháng 3](month_to)
+    - [Hà Nội](departure) nha
+    - nhóm mình [6 người](party_size)
+    - từ [tháng 10](month_from) đến [tháng 12](month_to)
+    - [4 người](party_size)
+    - [xe khách](category)
+    - [mùa thu](season)
+    - tầm [5 triệu](budget)
+    - từ [tháng 5](month_from) đến [tháng 7](month_to)
+    - [tháng 11](month)
+    - khoảng [3 ngày](duration)
+    - [10tr](budget)
+    - [tháng 8](month)
+- intent: affirm
+  examples: |
+    - correct
+    - xịn xò
+    - okela
+    - đúng rồi
+    - dạ đúng
+    - ưng ý lắm
+    - of course
+    - thế cũng được
+    - đỉnh quá
+    - yes
+    - tuyệt vời
+    - y
+    - đồng ý
+    - yup
+    - that sounds good
+    - chốt luôn
+    - chính xác
+    - đúng ý mình
+    - indeed
+- intent: greet
+  examples: |
+    - hey there
+    - alo
+    - chào ad
+    - hello ad
+    - good morning
+    - good afternoon
+    - moin
+    - có ai ở đó không
+    - hello there
+    - hi shop
+    - tư vấn mình với
+    - hey
+    - ê bot
+    - súp bro
+    - let's go
+    - hello
+    - chào ngày mới
+    - buổi sáng tốt lành
+    - hey dude
+    - xin chào
+- intent: search_travel
+  examples: |
+    - tui mún đi [Đà Nẵng](destination) [4n3đ](duration) ngân sách cỡ [5 củ](budget)
+    - tour [Đà Lạt](destination) [tháng 12](month) còn trống chỗ không
+    - gợi ý nơi đi cáp treo
+    - du lịch [500 nghìn](budget) có lựa chọn nào không
+    - có tour nào dưới [2 triệu](budget) không
+    - gợi ý điểm du lịch
+    - nơi nào có thể cắm trại
+    - tôi muốn đi du lịch [mùa hè](season)
+    - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
+    - mình làm văn phòng chỉ rảnh [cuối tuần](time_window), nên đi đâu gần [Sài Gòn](departure)
+    - tài chính [10 củ](budget) quay đầu
+    - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
+    - cho xin review đi [Sapa](destination) [tháng 10](month)
+    - t muốn đi [Đà Lạt](destination)
+    - du lịch tiết kiệm
+    - chi phí đi du lịch khoảng [5 triệu](budget)
+    - tôi muốn leo núi
+    - tour [Sapa](destination) [2 ngày 1 đêm](duration) đi từ [Hà Nội](departure) giá bao nhiêu
+    - đi trekking vào [tháng 10](month) thì nên đi đâu
+    - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
+    - leo núi [tháng 10](month)
+    - dịp lễ [30/4](time_window) nên đi tỉnh nào
+    - đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp
+    - gợi ý nơi giá rẻ
+    - tôi muốn đi đâu đó
+    - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
+    - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
+    - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu ko bot
+    - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
+    - tìm khu [nghỉ dưỡng](category) có spa
+    - tôi muốn đi du lịch [mùa hè](season), ngân sách [1tr](budget)
+    - gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to)
+    - muốn đi lặn san hô
+    - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
+    - báo giá tour [Thái Lan](destination) khởi hành từ [HCM](departure) [tháng sau](time_window)
+- synonym: mùa xuân
+  examples: |
+    - mua xuan
+    - mùa hoa nở
+    - ra tết
+- synonym: mùa hè
+  examples: |
+    - mua he
+    - hè
+    - mùa nóng
+    - nghỉ hè
+- synonym: mùa thu
+  examples: |
+    - mua thu
+    - thu
+- synonym: mùa đông
+  examples: |
+    - mua dong
+    - mùa lạnh
+    - đông
+- synonym: Sài Gòn
+  examples: |
+    - HCM
+    - TP HCM
+    - TPHCM
+    - SG
+    - Hồ Chí Minh
+- synonym: sắp tới
+  examples: |
+    - sap toi
+    - upcoming
+    - dạo này
+    - thời gian tới
+- regex: budget
+  examples: |
+    - (?i)\b\d+(?:[\.,]\d+)?\s*(?:tr|triệu|trieu|k|nghìn|ngàn|vnd|đ|dong|củ)\b
+    - (?i)\b\d{6,9}\b
+- regex: duration
+  examples: |
+    - (?i)\d+\s*(?:ngày|ngay)
+    - (?i)\d+\s*(?:ngày|ngay)\s*\d+\s*(?:đêm|dem)
+    - (?i)\d+n\d+đ
+- regex: month
+  examples: |
+    - (?i)thg\s*(?:0?[1-9]|1[0-2])
+    - (?i)tháng\s*(?:0?[1-9]|1[0-2])
+- lookup: season
+  examples: |
+    - mùa xuân
+    - mùa hè
+    - mùa thu
+    - mùa đông
+- lookup: time_window
+  examples: |
+    - sắp tới
+    - sap toi

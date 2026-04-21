@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Flow tìm chỗ ở nhưng bị thiếu địa điểm lúc đầu
+  steps:
+    # Bước 1: Khách hỏi tìm chỗ ở chung chung
+    - intent: ask_location_feature
+    - action: action_search_tour_info
+      
+    # Bước 2: Khách bổ sung tên địa điểm (như "Đà Lạt", "Vũng Tàu")
+    - intent: inform
+    # Bước 3: Bot tự động vòng lại gọi lệnh tìm kiếm
+    - action: action_search_tour_info
+
+- story: Flow tìm tour quay xe
+  steps:
+      # Giả sử hành động trước đó là Bot đã trả kết quả Tour
+    - action: action_search_travel
+      # Khách quay xe đổi ý
+    - intent: inform
+      # Bot phải gọi lại hàm tìm Tour
+    - action: action_search_travel

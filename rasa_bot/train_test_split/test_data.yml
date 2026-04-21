@@ -1,0 +1,110 @@
+version: "3.1"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - gọi nhân viên thật ra đây
+    - are you a human?
+- intent: out_of_scope
+  examples: |
+    - cách sửa lỗi code python
+    - hướng dẫn nấu phở bò
+    - bitcoin đang giá bao nhiêu
+    - bạn ăn cơm chưa
+- intent: goodbye
+  examples: |
+    - cee you later
+    - hẹn gặp lại
+    - tạm biệt
+    - pp
+- intent: deny
+  examples: |
+    - tụt mood
+    - bỏ đi
+    - sai rồi
+    - nhầm rồi bot ơi
+- intent: inform
+  examples: |
+    - [2 người lớn 1 trẻ em](party_size)
+    - [Sapa](destination)
+    - [2 củ](budget)
+    - [Phú Quốc](destination)
+- intent: affirm
+  examples: |
+    - quá tuyệt
+    - 10 điểm cho shop
+    - chuẩn
+    - oke
+    - duyệt
+- intent: greet
+  examples: |
+    - good evening
+    - chào bạn
+    - hi
+    - goodevening
+    - goodmorning
+- intent: search_travel
+  examples: |
+    - dới [3tr](budget) nha, đi [cuối tuần](time_window)
+    - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) ko?
+    - [sắp tới](time_window) có chỗ nào đi được với [1.5tr](budget) không
+    - chi phí cho chuyến đi [Phú Quốc](destination) [4 ngày](duration) rơi vào khoảng bao nhiêu
+    - [sắp tới](time_window) tôi nên đi đâu
+    - đi đâu [mùa đông](season) thì hợp
+    - có tour nào đi xe đạp quanh bản làng không
+    - mình có tầm [4 triệu](budget)
+- synonym: mùa xuân
+  examples: |
+    - mua xuan
+    - mùa hoa nở
+    - ra tết
+- synonym: mùa hè
+  examples: |
+    - mua he
+    - hè
+    - mùa nóng
+    - nghỉ hè
+- synonym: mùa thu
+  examples: |
+    - mua thu
+    - thu
+- synonym: mùa đông
+  examples: |
+    - mua dong
+    - mùa lạnh
+    - đông
+- synonym: Sài Gòn
+  examples: |
+    - HCM
+    - TP HCM
+    - TPHCM
+    - SG
+    - Hồ Chí Minh
+- synonym: sắp tới
+  examples: |
+    - sap toi
+    - upcoming
+    - dạo này
+    - thời gian tới
+- regex: budget
+  examples: |
+    - (?i)\b\d+(?:[\.,]\d+)?\s*(?:tr|triệu|trieu|k|nghìn|ngàn|vnd|đ|dong|củ)\b
+    - (?i)\b\d{6,9}\b
+- regex: duration
+  examples: |
+    - (?i)\d+\s*(?:ngày|ngay)
+    - (?i)\d+\s*(?:ngày|ngay)\s*\d+\s*(?:đêm|dem)
+    - (?i)\d+n\d+đ
+- regex: month
+  examples: |
+    - (?i)thg\s*(?:0?[1-9]|1[0-2])
+    - (?i)tháng\s*(?:0?[1-9]|1[0-2])
+- lookup: season
+  examples: |
+    - mùa xuân
+    - mùa hè
+    - mùa thu
+    - mùa đông
+- lookup: time_window
+  examples: |
+    - sắp tới
+    - sap toi

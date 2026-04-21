@@ -1,0 +1,45 @@
+# The config recipe.
+recipe: default.v1
+
+assistant_id: 20260307-161607-chamfered-proof
+
+language: vi
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 5        # TĂNG LÊN 5: Giúp nhận diện cụm từ tiếng Việt dài tốt hơn
+  
+  - name: DIETClassifier
+    epochs: 100
+    learning_rate: 0.001
+    hidden_layers_sizes:
+      text: [256, 128]  # MỞ KHÓA BỘ NÃO: Tăng số lượng nơ-ron xử lý ngữ nghĩa
+    batch_strategy: balanced # ĐẶC TRỊ THIÊN VỊ: Cứu điểm các Intent nhỏ đang bị 0 điểm
+    constrain_similarities: true
+  
+  - name: RegexEntityExtractor
+    use_lookup_tables: true
+    use_regexes: true
+    use_word_boundaries: false
+  
+  - name: EntitySynonymMapper
+  - name: FallbackClassifier
+    threshold: 0.35
+    ambiguity_threshold: 0.1
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 150         # Tăng chút sức mạnh cho bộ điều hướng hội thoại
+    constrain_similarities: true

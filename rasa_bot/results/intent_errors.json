@@ -1,0 +1,10 @@
+[
+  {
+    "text": "ưng ý lắm",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7410449981689453
+    }
+  }
+]
