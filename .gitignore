@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments & Secrets
+.venv/
+.env
+
+# Rasa
+rasa_bot/.rasa/
+rasa_bot/models/*.tar.gz
+
+# Logs & Runtime
+logs/
+*.log
+.runtime/
+
+# Editor & OS
+.vscode/
+.DS_Store
+.idea/

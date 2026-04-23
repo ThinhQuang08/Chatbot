@@ -50,17 +50,27 @@ docker rm chatbot-postgres
 docker volume rm chatbot_pg_data
 ```
 
-## 2) Cách chạy nhanh nhất (one-command)
+## 2) Cách chạy dự án (One-command)
 
-Sau khi unzip project:
+### 2.1) Dành cho người mới cài lần đầu (Vừa git clone)
+
+Khi vừa tải dự án về, chạy duy nhất script khởi tạo tự động toàn bộ môi trường (PostgreSQL, Qdrant, Dependencies, Nạp dữ liệu, Train Rasa Model):
+
+```bash
+cd Chatbot
+bash scripts/start_first_time.sh
+```
+
+### 2.2) Chạy hàng ngày (Daily Run)
+
+Khi đã setup dữ liệu và mô hình ở lần đầu thành công, các lần khởi động sau bạn chỉ cần:
 
 ```bash
 cd Chatbot
 bash scripts/start_all.sh
 ```
 
-Lưu ý: `start_all.sh` hiện tự dựng Qdrant, nhưng **không tự dựng PostgreSQL**.
-Vì vậy hãy đảm bảo PostgreSQL đã chạy trước (theo mục trên) rồi mới chạy script này.
+Lưu ý: lệnh chạy hàng ngày giúp thay đổi (code, webhook) có hiệu lực rất nhanh vì bỏ qua cài PIP và tái nạp Database, tuy nhiên nó sẽ không phục hồi PostgreSQL nếu container đã bị tắt. Đảm bảo `chatbot-postgres` vẫn đang chạy.
 
 Để dừng sạch toàn bộ stack (actions + rasa process còn sót + Qdrant container):
 
