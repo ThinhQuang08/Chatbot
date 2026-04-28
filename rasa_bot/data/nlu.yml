@@ -324,6 +324,11 @@ nlu:
       - tìm khu [nghỉ dưỡng](category) có spa
       - gợi ý vài cái [homestay](category) ở [Đà Lạt](destination)
       - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
+      - [nhà nghỉ](category) thì sao
+      - thế còn [khách sạn](category) thì sao
+      - [resort](category) thì sao hả bot
+      - cho tui xem [homestay](category) thì sao
+      - đổi sang [nhà nghỉ](category) nhé
 
 
   - intent: search_travel
@@ -379,6 +384,10 @@ nlu:
       - muốn đi đâu đó từ tháng 1 tới tháng 3
       - tui muốn đi chơi
 
+  - intent: test_s3
+    examples: |
+      - mật mã s3 là gì
+
   - intent: inform
     examples: |
       - [Đà Lạt](destination)
@@ -425,6 +434,9 @@ nlu:
       - đổi sang [Phú Quốc](destination) nhé
       - ở [vũng tàu](destination) thì sao
       - tìm ở [Nha Trang](destination) xem
+      - đi [Đà Lạt](destination) thì sao
+      - [5 triệu](budget) thì sao
+      - đi [tháng 10](month) thì sao
 
   - synonym: mùa xuân
     examples: |

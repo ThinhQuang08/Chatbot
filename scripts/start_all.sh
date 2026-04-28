@@ -159,7 +159,8 @@ start_shell() {
   if [[ ! -f "$model_path" ]]; then
     echo "[ERROR] Model not found: $model_path"
     echo "[INFO] Train a model first, e.g."
-    echo "       $RASA_BIN train --fixed-model-name level45-level5-v2"
+    # echo "       $RASA_BIN train --fixed-model-name level45-level5-v2"
+    echo "       $RASA_BIN train"
     exit 1
   fi
 

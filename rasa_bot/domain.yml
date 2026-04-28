@@ -6,6 +6,7 @@ intents:
   - deny
   #- mood_great
   #- mood_unhappy
+  - test_s3
 
   - bot_challenge
   - search_travel
@@ -160,6 +161,9 @@ responses:
 
   utter_happy:
     - text: "Tuyệt vời! Bạn muốn mình lọc tiếp theo tháng, ngân sách hay hoạt động?"
+
+  utter_test_s3:
+  - text: "Báo cáo sếp Thịnh, em đang chạy bằng não tải từ S3 về đây ạ!"
 
   utter_goodbye:
     - text: "Cảm ơn bạn đã sử dụng trợ lý du lịch. Hẹn gặp lại bạn nhé!"

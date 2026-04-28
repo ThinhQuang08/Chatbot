@@ -7,6 +7,10 @@
 #  url: http://my-server.com/models/default_core@latest
 #  wait_time_between_pulls:  10   # [optional](default: 100)
 
+models:
+  url: "http://localhost:9000/chatbot-models/latest_model.tar.gz"
+  wait_time_between_pulls: 10 # Cứ 10 giây Rasa sẽ ngó lên S3 một lần xem có model mới không
+
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
 
@@ -49,3 +53,11 @@ tracker_store:
 #  username: username
 #  password: password
 #  queue: queue
+
+event_broker:
+  type: "pika"
+  url: "localhost"
+  username: "guest"
+  password: "guest"
+  queues:
+    - "rasa_analytics_queue"

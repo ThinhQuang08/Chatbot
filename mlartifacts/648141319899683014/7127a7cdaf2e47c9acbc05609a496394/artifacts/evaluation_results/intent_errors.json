@@ -1,0 +1,498 @@
+[
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4437265694141388
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7186530828475952
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6173955202102661
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8340889811515808
+    }
+  },
+  {
+    "text": "I am going to save the world",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3109874725341797
+    }
+  },
+  {
+    "text": "so good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.7135767340660095
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9607928991317749
+    }
+  },
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7112652063369751
+    }
+  },
+  {
+    "text": "unhappy",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6496118903160095
+    }
+  },
+  {
+    "text": "bạn ăn cơm chưa",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.900276780128479
+    }
+  },
+  {
+    "text": "mở nhạc cho tôi nghe",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.4664389193058014
+    }
+  },
+  {
+    "text": "mình làm văn phòng chỉ rảnh cuối tuần, nên đi đâu gần Sài Gòn",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.4766738712787628
+    }
+  },
+  {
+    "text": "t muốn đi Đà Lạt",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9789137840270996
+    }
+  },
+  {
+    "text": "cho xin review đi Sapa tháng 10",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.8441046476364136
+    }
+  },
+  {
+    "text": "tôi muốn săn mây",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.998700737953186
+    }
+  },
+  {
+    "text": "chỗ nào có bãi biển đẹp",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.988523006439209
+    }
+  },
+  {
+    "text": "đi tháng 11 đến tháng 1 với 4tr",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9904166460037231
+    }
+  },
+  {
+    "text": "mình có tầm 4 triệu",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9946317672729492
+    }
+  },
+  {
+    "text": "mình có 8tr, gợi ý giúp mình",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.8347348570823669
+    }
+  },
+  {
+    "text": "có gói combo nhà hàng khách sạn nào ở Kim Liên rẻ rẻ ko",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9973767995834351
+    }
+  },
+  {
+    "text": "Hà Nội nha",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9929097294807434
+    }
+  },
+  {
+    "text": "tháng 11",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9181554317474365
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.803650438785553
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8694859147071838
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8905666470527649
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6457861661911011
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6320141553878784
+    }
+  },
+  {
+    "text": "feeling like a king",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.6910140514373779
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5841382741928101
+    }
+  },
+  {
+    "text": "I am feeling very good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9734117984771729
+    }
+  },
+  {
+    "text": "super stoked",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.998359739780426
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6109935641288757
+    }
+  },
+  {
+    "text": "ai là tổng thống mỹ",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9799578785896301
+    }
+  },
+  {
+    "text": "có nơi nào đẹp để đi chơi không",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9529008269309998
+    }
+  },
+  {
+    "text": "gợi ý điểm đi chơi tháng 4 đến tháng 6",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9936389327049255
+    }
+  },
+  {
+    "text": "sắp tới tôi nên đi đâu",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9687373638153076
+    }
+  },
+  {
+    "text": "tháng 9 có chỗ nào đẹp để săn ảnh",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9983788728713989
+    }
+  },
+  {
+    "text": "tôi muốn đi nơi khí hậu mát mẻ",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.7437910437583923
+    }
+  },
+  {
+    "text": "gợi ý nơi giá rẻ",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.8754039406776428
+    }
+  },
+  {
+    "text": "tôi muốn đi du lịch giá rẻ",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9987302422523499
+    }
+  },
+  {
+    "text": "giá rẻ thôi tầm 1000k đổ lại",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.3306591212749481
+    }
+  },
+  {
+    "text": "tui mún đi Đà Nẵng 4n3đ ngân sách cỡ 5 củ",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.999942421913147
+    }
+  },
+  {
+    "text": "đi khoảng 3 ngày",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9844369888305664
+    }
+  },
+  {
+    "text": "nhóm mình 6 người",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.6435885429382324
+    }
+  },
+  {
+    "text": "mình xuất phát từ Đà Nẵng",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.5350549221038818
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2736144959926605
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9491865634918213
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9862455129623413
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.85916668176651
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9982823133468628
+    }
+  },
+  {
+    "text": "giá vàng hôm nay bao nhiêu",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9977337121963501
+    }
+  },
+  {
+    "text": "hướng dẫn nấu phở bò",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3769508898258209
+    }
+  },
+  {
+    "text": "mình định đi vào Tết",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9883648157119751
+    }
+  },
+  {
+    "text": "dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.8920021653175354
+    }
+  },
+  {
+    "text": "muốn đi lặn san hô",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.91212397813797
+    }
+  },
+  {
+    "text": "gợi ý nơi đi cáp treo",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9971182346343994
+    }
+  },
+  {
+    "text": "nơi nào đi chơi tiết kiệm",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9762667417526245
+    }
+  },
+  {
+    "text": "kinh phí eo hẹp cỡ 2 củ thì đi đc đâu ko bot",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.45217934250831604
+    }
+  },
+  {
+    "text": "dới 3tr nha, đi cuối tuần",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9950973391532898
+    }
+  },
+  {
+    "text": "đi Đà Lạt",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9999676942825317
+    }
+  },
+  {
+    "text": "tầm 5 triệu",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.999790370464325
+    }
+  },
+  {
+    "text": "đi máy bay nhé",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.5509582161903381
+    }
+  }
+]

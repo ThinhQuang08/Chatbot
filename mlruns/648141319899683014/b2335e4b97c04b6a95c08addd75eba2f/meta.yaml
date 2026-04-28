@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/648141319899683014/b2335e4b97c04b6a95c08addd75eba2f/artifacts
+deleted_time: 1775099957791
+end_time: 1774950647134
+entry_point_name: ''
+experiment_id: '648141319899683014'
+lifecycle_stage: deleted
+run_id: b2335e4b97c04b6a95c08addd75eba2f
+run_name: Train_1774950598
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774950598809
+status: 3
+tags: []
+user_id: thinh

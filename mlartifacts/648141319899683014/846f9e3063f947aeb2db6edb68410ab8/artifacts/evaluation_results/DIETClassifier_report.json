@@ -1,0 +1,112 @@
+{
+  "party_size": {
+    "precision": 0.75,
+    "recall": 0.5,
+    "f1-score": 0.6,
+    "support": 12,
+    "confused_with": {
+      "month": 2
+    }
+  },
+  "departure": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 12,
+    "confused_with": {
+      "destination": 10
+    }
+  },
+  "month": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 14,
+    "confused_with": {}
+  },
+  "season": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 8,
+    "confused_with": {}
+  },
+  "month_to": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 4,
+    "confused_with": {
+      "month": 4
+    }
+  },
+  "time_window": {
+    "precision": 1.0,
+    "recall": 0.5555555555555556,
+    "f1-score": 0.7142857142857143,
+    "support": 18,
+    "confused_with": {
+      "destination": 2
+    }
+  },
+  "destination": {
+    "precision": 0.6571428571428571,
+    "recall": 0.7666666666666667,
+    "f1-score": 0.7076923076923077,
+    "support": 30,
+    "confused_with": {
+      "departure": 2
+    }
+  },
+  "month_from": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 4,
+    "confused_with": {
+      "month": 4
+    }
+  },
+  "category": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "budget": {
+    "precision": 0.8636363636363636,
+    "recall": 0.8636363636363636,
+    "f1-score": 0.8636363636363636,
+    "support": 22,
+    "confused_with": {}
+  },
+  "duration": {
+    "precision": 0.9090909090909091,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.7692307692307692,
+    "support": 15,
+    "confused_with": {
+      "month": 2
+    }
+  },
+  "micro avg": {
+    "precision": 0.6935483870967742,
+    "recall": 0.5620915032679739,
+    "f1-score": 0.6209386281588448,
+    "support": 153
+  },
+  "macro avg": {
+    "precision": 0.5163518299881936,
+    "recall": 0.4411386593204776,
+    "f1-score": 0.45347077165258975,
+    "support": 153
+  },
+  "weighted avg": {
+    "precision": 0.616670910788558,
+    "recall": 0.5620915032679739,
+    "f1-score": 0.5653139888434006,
+    "support": 153
+  },
+  "accuracy": 0.9109263657957245
+}

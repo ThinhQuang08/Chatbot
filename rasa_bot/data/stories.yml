@@ -29,6 +29,11 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: Test S3
+  steps:
+  - intent: test_s3
+  - action: utter_test_s3
+
 - story: Flow tìm chỗ ở nhưng bị thiếu địa điểm lúc đầu
   steps:
     # Bước 1: Khách hỏi tìm chỗ ở chung chung
