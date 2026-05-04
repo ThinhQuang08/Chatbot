@@ -1,3 +1,6 @@
+# data/auto_label_snorkel.py
+# B. Gán nhãn tự động
+
 import pandas as pd
 import numpy as np
 from snorkel.labeling import labeling_function, PandasLFApplier
@@ -16,44 +19,57 @@ BOOK_HOTEL = 2
 OUT_OF_SCOPE = 3
 
 # ==========================================
-# 2. LABELING FUNCTIONS (ĐÃ NÂNG CẤP LOGIC LOẠI TRỪ)
+# 2. LABELING FUNCTIONS (CHIẾN THUẬT OVERLAPPING)
 # ==========================================
 
 @labeling_function()
 def lf_price(x):
-    """Ưu tiên 1: Chỉ cần có từ khóa hỏi giá, tự tin dán nhãn ASK_PRICE"""
     keywords = ["giá", "nhiêu", "tiền", "chi_phí", "bao_nhiêu", "củ", "tr", "rẻ"]
     return ASK_PRICE if any(word in str(x.cleaned_text).lower() for word in keywords) else ABSTAIN
 
 @labeling_function()
 def lf_booking(x):
-    """Ưu tiên 2: Nếu có từ khóa đặt chỗ, dán nhãn BOOK_HOTEL"""
     keywords = ["đặt", "book", "phòng", "khách_sạn", "resort", "thuê", "vé"]
     return BOOK_HOTEL if any(word in str(x.cleaned_text).lower() for word in keywords) else ABSTAIN
 
+# --- TÁCH SEARCH_TRAVEL THÀNH 3 CHUYÊN GIA KHÁC NHAU ---
+
 @labeling_function()
-def lf_search_travel_strict(x):
-    """
-    Ưu tiên 3 (Strict Mode): Chỉ dán nhãn SEARCH_TRAVEL nếu có địa danh 
-    NHƯNG KHÔNG CÓ từ khóa hỏi giá hay đặt phòng. Tránh cãi nhau!
-    """
+def lf_travel_destination(x):
+    """Chuyên gia 1: Nhìn vào địa danh"""
     text = str(x.cleaned_text).lower()
     destinations = ["đà_lạt", "nha_trang", "phú_quốc", "sapa", "sa_pa", "đà_nẵng", "hà_nội", "sài_gòn"]
-    price_keywords = ["giá", "nhiêu", "tiền", "chi_phí", "củ", "rẻ"]
-    book_keywords = ["đặt", "book", "phòng", "thuê", "vé"]
-    
     has_dest = any(loc in text for loc in destinations)
-    has_price = any(p in text for p in price_keywords)
-    has_book = any(b in text for b in book_keywords)
     
-    # Logic loại trừ xung đột
-    if has_dest and not has_price and not has_book:
+    # Tránh xung đột với Giá / Đặt phòng
+    if has_dest and lf_price(x) == ABSTAIN and lf_booking(x) == ABSTAIN:
+        return SEARCH_TRAVEL
+    return ABSTAIN
+
+@labeling_function()
+def lf_travel_action(x):
+    """Chuyên gia 2: Nhìn vào động từ (đi, chơi, tour)"""
+    text = str(x.cleaned_text).lower()
+    actions = ["tour", "đi", "ik", "chơi", "du_lịch", "tham_quan"]
+    has_action = any(act in text for act in actions)
+    
+    if has_action and lf_price(x) == ABSTAIN and lf_booking(x) == ABSTAIN:
+        return SEARCH_TRAVEL
+    return ABSTAIN
+
+@labeling_function()
+def lf_travel_intent_keywords(x):
+    """Chuyên gia 3: Nhìn vào từ khóa chỉ mục đích tìm kiếm"""
+    text = str(x.cleaned_text).lower()
+    intents = ["tìm", "xem", "review", "kinh_nghiệm", "tư_vấn", "gợi_ý"]
+    has_intent = any(i in text for i in intents)
+    
+    if has_intent and lf_price(x) == ABSTAIN and lf_booking(x) == ABSTAIN:
         return SEARCH_TRAVEL
     return ABSTAIN
 
 @labeling_function()
 def lf_out_of_scope(x):
-    """Bắt các câu tào lao, chửi thề"""
     keywords = ["thời_tiết", "giải_toán", "nấu", "chửi", "ngu", "bài_tập", "tên_gì", "ăn_gì", "buồn_ngủ"]
     return OUT_OF_SCOPE if any(word in str(x.cleaned_text).lower() for word in keywords) else ABSTAIN
 
@@ -71,7 +87,8 @@ def run_auto_labeling():
     df = df.dropna(subset=['cleaned_text'])
 
     print("🧠 Các chuyên gia (LFs) đang đọc và bỏ phiếu...")
-    lfs = [lf_price, lf_booking, lf_search_travel_strict, lf_out_of_scope]
+    # Cập nhật danh sách LFs ở đây:
+    lfs = [lf_price, lf_booking, lf_travel_destination, lf_travel_action, lf_travel_intent_keywords, lf_out_of_scope]
     applier = PandasLFApplier(lfs=lfs)
     L_train = applier.apply(df=df)
 

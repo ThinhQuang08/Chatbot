@@ -1,0 +1,265 @@
+id,session_id,raw_text,predicted_intent,text_hash,cleaned_text,snorkel_intent,snorkel_confidence
+3,sim_user_2,ik đà nẵng,unlabeled,554a89eda7def65872f00cd9037063c3,đi đà_nẵng,search_travel,0.9907313718961592
+4,sim_user_3,bot ngu,unlabeled,25908a437a52e7425f940fba73997d0e,bot ngu,out_of_scope,0.9776099591987578
+6,sim_user_5,tìm chỗ ở ở đà lạt wá,unlabeled,7eec1a8ec7714aab2acbe793e1986c26,tìm chỗ ở ở Đà_Lạt quá,search_travel,0.9899936683498408
+7,sim_user_6,review du lịch đà lạt,unlabeled,c3f786eaef85f1348dc87256aef9a00f,review du_lịch Đà_Lạt,search_travel,0.9987537189639808
+8,sim_user_7,review du lịch pù cúp,unlabeled,57675b5a2950fb3932a81f6b4af3a1a6,review du_lịch Phú_Quốc,search_travel,0.9987537189639808
+10,sim_user_9,muốn đi sapa,unlabeled,0f1b08956ad3e458b643701a0601559f,muốn đi Sa_Pa,search_travel,0.9907313718961592
+12,sim_user_11,ik đlạt,unlabeled,409a21def3ec205d82e88a982e2155dd,đi Đà_Lạt,search_travel,0.9907313718961592
+14,sim_user_13,muốn tìm chỗ ở tại đlạt,unlabeled,0b08b2b9d964bee9389115e63cd89ccc,muốn tìm chỗ ở tại Đà_Lạt,search_travel,0.9899936683498408
+15,sim_user_14,chửi thề,unlabeled,f215b442c9c49faca5f1e95ce0dd3298,chửi thề,out_of_scope,0.9776099591987578
+17,sim_user_16,đặt ks ở đà lạt,unlabeled,705988b40500a2225f257d55d998a30f,đặt khách_sạn ở Đà_Lạt,book_hotel,0.7803165169351036
+19,sim_user_18,giải bài tập,unlabeled,79702473e0aeb4dbabc6df8d675e2a75,giải bài_tập,out_of_scope,0.9776099591987578
+20,sim_user_19,ik đà nẵng z,unlabeled,79689c20dcdaf90211f7540a46a06b71,đi đà_nẵng vậy,search_travel,0.9907313718961592
+23,sim_user_22,muốn thuê ks tại pù cúp,unlabeled,1e217a380f1872a0cf99a39a7ddf2a1f,muốn thuê khách_sạn tại Phú_Quốc,book_hotel,0.7803165169351036
+24,sim_user_23,tìm tour đà nẵng,unlabeled,18d4a7189b299b1eb13151413c2de0a2,tìm tour đà_nẵng,search_travel,0.9987537189639808
+25,sim_user_24,tìm chỗ ở ở sg,unlabeled,8cfa10c579ac4ebf6b605ea08ec14c14,tìm chỗ ở ở Sài_Gòn,search_travel,0.9899936683498408
+31,sim_user_30,muốn đi đà nẵng ko bot,unlabeled,147c9bda32c24b411d1bde6245cc1b7d,muốn đi đà_nẵng không bot,search_travel,0.9907313718961592
+32,sim_user_31,đặt ks ở sg,unlabeled,43074caef20bd00e4035c1add8321f59,đặt khách_sạn ở Sài_Gòn,book_hotel,0.7803165169351036
+38,sim_user_37,thời tiết nay sao,unlabeled,bee3d753e7cd3dc951f19c0b9ba11d0b,thời_tiết nay sao,out_of_scope,0.9776099591987578
+40,sim_user_39,có tour nào đi phú quốc,unlabeled,4022ff4d12f0092c462a0930ebf675cc,có tour nào đi phú_quốc,search_travel,0.9907313718961592
+41,sim_user_40,review du lịch hà nội,unlabeled,c82337c9994bd49b046dae5833b95acb,review du_lịch hà_nội,search_travel,0.9987537189639808
+42,sim_user_41,muốn đi sg,unlabeled,a145c1ffc876d8617327750ea5acc7b2,muốn đi Sài_Gòn,search_travel,0.9907313718961592
+43,sim_user_42,muốn đặt vé tại sapa,unlabeled,b4e7d42d6d8bdac98a3849542f221f8d,muốn đặt vé tại Sa_Pa,book_hotel,0.7803165169351036
+46,sim_user_45,tìm chỗ ở ở sapa,unlabeled,2eff011cc6d49f2fd570c332e3859fc6,tìm chỗ ở ở Sa_Pa,search_travel,0.9899936683498408
+48,sim_user_47,ik pù cúp,unlabeled,c6289ac85e8ed9c51e8a392c6bdad3ec,đi Phú_Quốc,search_travel,0.9907313718961592
+50,sim_user_49,muốn đặt vé tại đà nẵng ko bot,unlabeled,66a79de9e3a0eb80b3991477bebdaa50,muốn đặt vé tại đà_nẵng không bot,book_hotel,0.7803165169351036
+52,sim_user_51,muốn đi pù cúp,unlabeled,fa96ce19ff9fe40598e06dac35004b81,muốn đi Phú_Quốc,search_travel,0.9907313718961592
+55,sim_user_54,muốn đặt ks tại đà nẵng,unlabeled,83696282822c8e886baa907cc8b7bb4f,muốn đặt khách_sạn tại đà_nẵng,book_hotel,0.7803165169351036
+56,sim_user_55,có tour nào đi sapa,unlabeled,cbfe1b1da8a8ea53eec3294dac427d7d,có tour nào đi Sa_Pa,search_travel,0.9907313718961592
+58,sim_user_57,muốn book tour tại đà nẵng,unlabeled,e3e35de2325726510beee54f97dd1a9f,muốn book tour tại đà_nẵng,book_hotel,0.7803165169351036
+59,sim_user_58,ik sapa,unlabeled,abf08ffa6a8a6b883fafe6430bd0b243,đi Sa_Pa,search_travel,0.9907313718961592
+60,sim_user_59,muốn đặt phòng tại sapa,unlabeled,0bc5b924a1e3736916900b0d8c65b0c7,muốn đặt phòng tại Sa_Pa,book_hotel,0.7803165169351036
+62,sim_user_61,tìm tour pù cúp,unlabeled,a7f3507720b879356bddd30b91f11c3d,tìm tour Phú_Quốc,search_travel,0.9987537189639808
+65,sim_user_64,review du lịch đà nẵng,unlabeled,6ea0b5860b504ba2c4555f165d13afa1,review du_lịch đà_nẵng,search_travel,0.9987537189639808
+66,sim_user_65,tìm tour đlạt,unlabeled,af50738f1cc5fe817a3343c348899183,tìm tour Đà_Lạt,search_travel,0.9987537189639808
+67,sim_user_66,ik đlạt wá,unlabeled,00eade2cfbf85244326839f3b73d2095,đi Đà_Lạt quá,search_travel,0.9907313718961592
+69,sim_user_68,có tour nào đi pù cúp,unlabeled,26190e76fb8539d000f85876697c3cc9,có tour nào đi Phú_Quốc,search_travel,0.9907313718961592
+70,sim_user_69,có tour nào đi đà nẵng,unlabeled,75f013fa26e9dd1370dd103e672ae330,có tour nào đi đà_nẵng,search_travel,0.9907313718961592
+73,sim_user_72,tìm chỗ ở ở đà lạt,unlabeled,11d66c634cac723b0cc9cfda0f6feb39,tìm chỗ ở ở Đà_Lạt,search_travel,0.9899936683498408
+76,sim_user_75,muốn đi đlạt,unlabeled,84d59055125fbc2baa0235a90e84b4bc,muốn đi Đà_Lạt,search_travel,0.9907313718961592
+83,sim_user_82,muốn đặt phòng tại pù cúp,unlabeled,41f6246cefa146c4bd2dbd9de3d244a7,muốn đặt phòng tại Phú_Quốc,book_hotel,0.7803165169351036
+85,sim_user_84,muốn đi đà lạt,unlabeled,a369ce24c88ad81714b616e8ab7f7546,muốn đi Đà_Lạt,search_travel,0.9907313718961592
+86,sim_user_85,thuê ks ở pù cúp,unlabeled,685f230088aa6d8c1d59e7a5db3c1ea5,thuê khách_sạn ở Phú_Quốc,book_hotel,0.7803165169351036
+88,sim_user_87,muốn đi sapa nha,unlabeled,d304422e977f6dd59204e37f266c8468,muốn đi Sa_Pa nha,search_travel,0.9907313718961592
+98,sim_user_97,muốn đi đà nẵng wá,unlabeled,7180c898222eff91e4a20ad13538640d,muốn đi đà_nẵng quá,search_travel,0.9907313718961592
+100,sim_user_99,tìm tour sg,unlabeled,f30b870bfbd4e9ddd130c4c2b23124f9,tìm tour Sài_Gòn,search_travel,0.9987537189639808
+102,sim_user_101,tìm chỗ ở ở phú quốc,unlabeled,c146c14647238404c34ecdf8b041dd90,tìm chỗ ở ở phú_quốc,search_travel,0.9899936683498408
+105,sim_user_104,nấu ăn,unlabeled,452920c631fa0d49229ecdbdfd5eb070,nấu_ăn,out_of_scope,0.9776099591987578
+107,sim_user_106,muốn đặt phòng tại đà nẵng,unlabeled,09f0e863311954018008e1bcf9b67c2f,muốn đặt phòng tại đà_nẵng,book_hotel,0.7803165169351036
+109,sim_user_108,thuê ks ở hà nội,unlabeled,3a2a1631e1f83767a316030cff039561,thuê khách_sạn ở hà_nội,book_hotel,0.7803165169351036
+110,sim_user_109,review du lịch sapa,unlabeled,80c155e5a3e050ec3fd8f43f486d3af7,review du_lịch Sa_Pa,search_travel,0.9987537189639808
+111,sim_user_110,có tour nào đi đà lạt nha,unlabeled,76202e38ec2de216306fdea859493d7f,có tour nào đi Đà_Lạt nha,search_travel,0.9907313718961592
+112,sim_user_111,muốn book vé tại đà nẵng,unlabeled,e5b503215e7969acfc2e0b7a58ac4485,muốn book vé tại đà_nẵng,book_hotel,0.7803165169351036
+113,sim_user_112,muốn đặt phòng tại đà lạt,unlabeled,d214c00500c637d5a92b7b4eede52a25,muốn đặt phòng tại Đà_Lạt,book_hotel,0.7803165169351036
+114,sim_user_113,book tour ở phú quốc,unlabeled,cf700bd495d561899785d63565d03307,book tour ở phú_quốc,book_hotel,0.7803165169351036
+116,sim_user_115,có tour nào đi sapa wá,unlabeled,1ed8a6a3df39b55385fdb4277aaf00bd,có tour nào đi Sa_Pa quá,search_travel,0.9907313718961592
+119,sim_user_118,đặt phòng ở đlạt,unlabeled,293515fc1709f1f890d38d69fe1d5c0c,đặt phòng ở Đà_Lạt,book_hotel,0.7803165169351036
+122,sim_user_121,ik pù cúp wá,unlabeled,a25851b167a6b345ed7fa44ddf05378c,đi Phú_Quốc quá,search_travel,0.9907313718961592
+123,sim_user_122,muốn book tour tại đà lạt,unlabeled,d536622b3e3cfa6fff9c319da7d6d98a,muốn book tour tại Đà_Lạt,book_hotel,0.7803165169351036
+127,sim_user_126,muốn đi đà nẵng,unlabeled,086ff9a4d3aa10e4bb1512e17722e944,muốn đi đà_nẵng,search_travel,0.9907313718961592
+129,sim_user_128,có tour nào đi sg,unlabeled,4ffe337781445428ef8f4dda8271dcf9,có tour nào đi Sài_Gòn,search_travel,0.9907313718961592
+130,sim_user_129,có tour nào đi hà nội,unlabeled,3179c3bbd2e8e699b3a0f8b8f79e3e55,có tour nào đi hà_nội,search_travel,0.9907313718961592
+133,sim_user_132,đặt vé ở phú quốc,unlabeled,63a31de8a220f85599f38cd41875a1f6,đặt vé ở phú_quốc,book_hotel,0.7803165169351036
+135,sim_user_134,muốn tìm chỗ ở tại đà lạt nha,unlabeled,0a6260a69eef097595b870702c8d46bd,muốn tìm chỗ ở tại Đà_Lạt nha,search_travel,0.9899936683498408
+137,sim_user_136,muốn đi phú quốc wá,unlabeled,f67847bd120a0db9519ad552a56f0fb6,muốn đi phú_quốc quá,search_travel,0.9907313718961592
+145,sim_user_144,muốn đặt vé tại hà nội,unlabeled,3b5b858a6dd22ad000b4f950e3fc39cf,muốn đặt vé tại hà_nội,book_hotel,0.7803165169351036
+148,sim_user_147,đặt vé ở sapa z,unlabeled,e3f34725b973f4d6d3b5bcda8b8c4cfc,đặt vé ở Sa_Pa vậy,book_hotel,0.7803165169351036
+155,sim_user_154,có tour nào đi đlạt,unlabeled,5f9f0fe10793293694a4528be75f1988,có tour nào đi Đà_Lạt,search_travel,0.9907313718961592
+157,sim_user_156,review du lịch đlạt,unlabeled,d6aa183d5eb64bbbdaecb78a3669bf27,review du_lịch Đà_Lạt,search_travel,0.9987537189639808
+158,sim_user_157,ik sg,unlabeled,584c22905bb472348df9209e67d1ba69,đi Sài_Gòn,search_travel,0.9907313718961592
+160,sim_user_159,tìm tour phú quốc,unlabeled,3f926ea6e21ad5188db5c45a79ea4063,tìm tour_phú_quốc,search_travel,0.9987537189639808
+161,sim_user_160,muốn book vé tại phú quốc,unlabeled,074ca0ccb45f5c2e1e2290b9a2284320,muốn book vé tại phú_quốc,book_hotel,0.7803165169351036
+165,sim_user_164,muốn book vé tại pù cúp,unlabeled,4a7dbcef051340b0a52c6b47b45b0420,muốn book vé tại Phú_Quốc,book_hotel,0.7803165169351036
+173,sim_user_172,muốn đặt ks tại hà nội,unlabeled,93d1a62b2d0ccb0147fc156700b7f38b,muốn đặt khách_sạn tại hà_nội,book_hotel,0.7803165169351036
+184,sim_user_183,muốn tìm chỗ ở tại sg,unlabeled,f7badc9f1baef325de3fef2c2cb37992,muốn tìm chỗ ở tại Sài_Gòn,search_travel,0.9899936683498408
+186,sim_user_185,muốn thuê ks tại đà nẵng,unlabeled,3ddb4e7962ceea24007401d97ed766a5,muốn thuê khách_sạn tại đà_nẵng,book_hotel,0.7803165169351036
+189,sim_user_188,tìm tour đlạt ko bot,unlabeled,f13546c2839fb29b70d2611f8bc20836,tìm tour Đà_Lạt không bot,search_travel,0.9987537189639808
+190,sim_user_189,review du lịch phú quốc,unlabeled,f1f9a6e36462fa14e3ca25ab26321c97,review du_lịch phú_quốc,search_travel,0.9987537189639808
+193,sim_user_192,book vé ở hà nội,unlabeled,9b2ba3fbd6ff0e6d9ec98b1b63ecce48,book vé ở hà_nội,book_hotel,0.7803165169351036
+195,sim_user_194,tìm tour sapa,unlabeled,dab0dc711eb62a451529eca7e2abbf3b,tìm tour_Sa_Pa,search_travel,0.9987537189639808
+196,sim_user_195,muốn đặt ks tại phú quốc,unlabeled,da73046e6a26234558772d86e5dbf24c,muốn đặt khách_sạn tại phú_quốc,book_hotel,0.7803165169351036
+199,sim_user_198,tìm tour đà lạt,unlabeled,bc3499cfde289fa7ffcf489b2e50b011,tìm tour Đà_Lạt,search_travel,0.9987537189639808
+204,sim_user_203,đặt vé ở sapa,unlabeled,4fcb46f03408f5b31c4e3e73bba663ef,đặt vé ở Sa_Pa,book_hotel,0.7803165169351036
+205,sim_user_204,đặt phòng ở sg,unlabeled,4e1312655e9c81efe275bdfd5ec265da,đặt phòng ở Sài_Gòn,book_hotel,0.7803165169351036
+208,sim_user_207,thời tiết nay sao z,unlabeled,8e708bb4b3888c9078f65967389bb51d,thời_tiết nay sao vậy,out_of_scope,0.9776099591987578
+209,sim_user_208,thuê ks ở phú quốc nha,unlabeled,a93607d2063a803e049316668c5f00d2,thuê khách_sạn ở phú_quốc nha,book_hotel,0.7803165169351036
+218,sim_user_217,muốn book tour tại sapa,unlabeled,0190a675bfdb9ea1bac0bcd6727a7014,muốn book tour tại Sa_Pa,book_hotel,0.7803165169351036
+222,sim_user_221,muốn book vé tại đà lạt,unlabeled,a4f982bc9da57386ca663f6b1b1ad232,muốn book vé tại Đà_Lạt,book_hotel,0.7803165169351036
+227,sim_user_226,muốn đi phú quốc ko bot,unlabeled,e5950686fd61a8753a614fe1f815c2f5,muốn đi phú_quốc không bot,search_travel,0.9907313718961592
+228,sim_user_227,bot ngu nha,unlabeled,39fb5fa2457048afabd10a14791d9cda,bot ngu_nha,out_of_scope,0.9776099591987578
+237,sim_user_236,review du lịch hà nội ko bot,unlabeled,1bcd60612b2e0b00cd5b557012345ffe,review du_lịch hà_nội không bot,search_travel,0.9987537189639808
+240,sim_user_239,tìm tour hà nội,unlabeled,5f2a1f12670b718a9581ac411af38d40,tìm tour hà_nội,search_travel,0.9987537189639808
+241,sim_user_240,book tour ở đlạt wá,unlabeled,787fe954b2e51c8e73f187567779f614,book tour ở Đà_Lạt quá,book_hotel,0.7803165169351036
+242,sim_user_241,ik hà nội,unlabeled,405993f0ba1198b08d25a908c8a1b821,đi hà_nội,search_travel,0.9907313718961592
+250,sim_user_249,ik phú quốc ko bot,unlabeled,b2669d75204f624609ab1d33bdb2876b,đi phú_quốc không bot,search_travel,0.9907313718961592
+251,sim_user_250,muốn tìm chỗ ở tại phú quốc,unlabeled,7276fd30e2ae6e3697db8524c8cb63c0,muốn tìm chỗ ở tại phú_quốc,search_travel,0.9899936683498408
+261,sim_user_260,muốn đi đlạt ko bot,unlabeled,8f46843f736ec36abfc9e02521f67039,muốn đi Đà_Lạt không bot,search_travel,0.9907313718961592
+262,sim_user_261,ik phú quốc nha,unlabeled,d080f155ce7d5a942a97de4bd0daf034,đi phú_quốc nha,search_travel,0.9907313718961592
+264,sim_user_263,muốn đặt phòng tại đlạt,unlabeled,f0fcbce8c503986a4819f06ebe4f1d88,muốn đặt phòng tại Đà_Lạt,book_hotel,0.7803165169351036
+272,sim_user_271,ik đà lạt ko bot,unlabeled,c479e93d13fac1fdd807a4764be06a3c,đi Đà_Lạt không bot,search_travel,0.9907313718961592
+276,sim_user_275,đặt ks ở đà nẵng,unlabeled,06a33cef8150034f67a48a1f7f44c1ed,đặt khách_sạn ở đà_nẵng,book_hotel,0.7803165169351036
+277,sim_user_276,muốn book vé tại đlạt,unlabeled,0223ca3ac7228a069d1a282f0eab7435,muốn book vé tại Đà_Lạt,book_hotel,0.7803165169351036
+280,sim_user_279,muốn thuê ks tại phú quốc,unlabeled,820d0169f0849fe0d57239649c8a6ec1,muốn thuê khách_sạn tại phú_quốc,book_hotel,0.7803165169351036
+281,sim_user_280,tìm tour phú quốc z,unlabeled,f948af04db4a704180a551de6b303017,tìm tour_phú_quốc vậy,search_travel,0.9987537189639808
+283,sim_user_282,muốn đi phú quốc,unlabeled,84d78f152d5751464ee97fa720ac8a5c,muốn đi phú_quốc,search_travel,0.9907313718961592
+290,sim_user_289,thuê ks ở đà lạt,unlabeled,f6085cb244747402a4f14db492ed6f98,thuê khách_sạn ở Đà_Lạt,book_hotel,0.7803165169351036
+292,sim_user_291,tìm tour đlạt nha,unlabeled,1355b496cace363ea172464357dd5646,tìm tour Đà_Lạt nha,search_travel,0.9987537189639808
+294,sim_user_293,muốn tìm chỗ ở tại sapa nha,unlabeled,3afd144c91945d3bdbc4a14f4591338f,muốn tìm chỗ ở tại Sa_Pa nha,search_travel,0.9899936683498408
+297,sim_user_296,đặt ks ở sapa,unlabeled,7f3e18e3d4fe415290d2dd333ad6d82e,đặt khách_sạn ở Sa_Pa,book_hotel,0.7803165169351036
+307,sim_user_306,muốn đặt ks tại đà lạt,unlabeled,5dc85e528e80bb8215211b99157c827d,muốn đặt khách_sạn tại Đà_Lạt,book_hotel,0.7803165169351036
+311,sim_user_310,giải bài tập nha,unlabeled,aa7f4fe2c2bef343966ee8e4f2f4f2f2,giải bài_tập nha,out_of_scope,0.9776099591987578
+312,sim_user_311,ik hà nội ko bot,unlabeled,76bbf84f13bb51bb453df7f94496223c,đi hà_nội không bot,search_travel,0.9907313718961592
+314,sim_user_313,book tour ở sg,unlabeled,f3989780ee8f2132c22e76608d24d4bb,book tour ở Sài_Gòn,book_hotel,0.7803165169351036
+315,sim_user_314,book tour ở sg wá,unlabeled,94643560f67a2ea419084dcf455a5e24,book tour ở Sài_Gòn quá,book_hotel,0.7803165169351036
+323,sim_user_322,review du lịch đlạt z,unlabeled,e3c4f669481061a3fa05b8a3d9a9d42c,review du_lịch Đà_Lạt vậy,search_travel,0.9987537189639808
+327,sim_user_326,review du lịch sg,unlabeled,8ad91d0c483a38b0f637cb596b59d4d0,review du_lịch Sài_Gòn,search_travel,0.9987537189639808
+330,sim_user_329,ik phú quốc,unlabeled,69382c2bb4e42ab6c2ce61ec23026d54,đi phú_quốc,search_travel,0.9907313718961592
+338,sim_user_337,thuê ks ở sapa,unlabeled,2713e93d571051cd902b42f4b0b5d92a,thuê khách_sạn ở Sa_Pa,book_hotel,0.7803165169351036
+339,sim_user_338,tìm chỗ ở ở đlạt,unlabeled,50ec050d4b5c7bf7ac4a640e151701b9,tìm chỗ ở ở Đà_Lạt,search_travel,0.9899936683498408
+349,sim_user_348,review du lịch hà nội nha,unlabeled,7cc1648069dab2514043844359bd8bff,review du_lịch hà_nội nha,search_travel,0.9987537189639808
+350,sim_user_349,muốn đặt phòng tại sg nha,unlabeled,5eb6e25309744966ffb1027f8070be10,muốn đặt phòng tại Sài_Gòn nha,book_hotel,0.7803165169351036
+351,sim_user_350,muốn tìm chỗ ở tại pù cúp,unlabeled,ecb3908f6af039b2ea2dcfee70472095,muốn tìm chỗ ở tại Phú_Quốc,search_travel,0.9899936683498408
+352,sim_user_351,muốn đi hà nội,unlabeled,e30582b6a678e8dd9c168ec0d9666702,muốn đi hà_nội,search_travel,0.9907313718961592
+354,sim_user_353,review du lịch đà nẵng z,unlabeled,5daac26339a57092efdcda11a832741b,review du_lịch đà_nẵng vậy,search_travel,0.9987537189639808
+358,sim_user_357,nấu ăn z,unlabeled,72a4dba1df3acfdea2919df8b6eaec5c,nấu_ăn vậy,out_of_scope,0.9776099591987578
+371,sim_user_370,ik đà lạt z,unlabeled,36724e2e34277c24fcf7381816498271,đi Đà_Lạt vậy,search_travel,0.9907313718961592
+372,sim_user_371,review du lịch đlạt wá,unlabeled,7145cb3e7f14f94f1a86ba5372ba7a07,review du_lịch Đà_Lạt quá,search_travel,0.9987537189639808
+388,sim_user_387,chửi thề nha,unlabeled,c37f90e54dd9b5a246714c74e6d1acf2,chửi thề nha,out_of_scope,0.9776099591987578
+393,sim_user_392,tìm chỗ ở ở pù cúp ko bot,unlabeled,b86a12e6076778ed396e648b6536fe1b,tìm chỗ ở ở Phú_Quốc không bot,search_travel,0.9899936683498408
+397,sim_user_396,muốn book vé tại phú quốc ko bot,unlabeled,34b123dc09897719ec2ad3cb1591052d,muốn book vé tại phú_quốc không bot,book_hotel,0.7803165169351036
+400,sim_user_399,muốn book tour tại pù cúp,unlabeled,81ff61f0c9d5f75e49f8769aebf58c2d,muốn book tour tại Phú_Quốc,book_hotel,0.7803165169351036
+404,sim_user_403,review du lịch phú quốc ko bot,unlabeled,c95e9f7580e3549d1c23b3dee8a9e3aa,review du_lịch phú_quốc không bot,search_travel,0.9987537189639808
+410,sim_user_409,có tour nào đi sapa ko bot,unlabeled,d89ce33bd9d9ea050f129f54dcfa4a57,có tour nào đi Sa_Pa không bot,search_travel,0.9907313718961592
+417,sim_user_416,tìm tour đlạt wá,unlabeled,70c6e5c3207b7cd1da33fc8d13be9283,tìm tour Đà_Lạt quá,search_travel,0.9987537189639808
+422,sim_user_421,muốn tìm chỗ ở tại hà nội,unlabeled,fe0bf76a2f07baac9be5ad31dab3c1cc,muốn tìm chỗ ở tại hà_nội,search_travel,0.9899936683498408
+435,sim_user_434,book vé ở sapa,unlabeled,c228e431692c7fd7b32070b7be517259,book vé ở Sa_Pa,book_hotel,0.7803165169351036
+441,sim_user_440,muốn tìm chỗ ở tại đà lạt,unlabeled,fa657ff711f9de2bd68376ef17626d3e,muốn tìm chỗ ở tại Đà_Lạt,search_travel,0.9899936683498408
+447,sim_user_446,ik hà nội wá,unlabeled,651b39b40a2e375524640b19a6355083,đi hà_nội quá,search_travel,0.9907313718961592
+448,sim_user_447,đặt vé ở pù cúp wá,unlabeled,b78e91189e115c6a4cae0e29e73f7491,đặt vé ở Phú_Quốc quá,book_hotel,0.7803165169351036
+449,sim_user_448,ik đà lạt,unlabeled,d94fd1de83aa685bc16dd6f7292f62e5,đi Đà_Lạt,search_travel,0.9907313718961592
+451,sim_user_450,review du lịch pù cúp wá,unlabeled,62d15e93fd7626f27015b9eb7a490819,review du_lịch Phú_Quốc quá,search_travel,0.9987537189639808
+456,sim_user_455,book tour ở đà nẵng,unlabeled,86cf354c1d9fe3c552ffae5fa523972a,book tour ở đà_nẵng,book_hotel,0.7803165169351036
+462,sim_user_461,muốn đi sg nha,unlabeled,c210379e9c3d14226c8aa8d16d09f75b,muốn đi Sài_Gòn nha,search_travel,0.9907313718961592
+467,sim_user_466,review du lịch phú quốc wá,unlabeled,5ad6403df60e2b366a481e17f1fe3c5c,review du_lịch phú_quốc quá,search_travel,0.9987537189639808
+469,sim_user_468,có tour nào đi đà lạt,unlabeled,493deec95fc6e9a3c6fde94fa5037623,có tour nào đi Đà_Lạt,search_travel,0.9907313718961592
+474,sim_user_473,giải bài tập ko bot,unlabeled,5315442fd3f769904f7995a224f4dac1,giải bài_tập không bot,out_of_scope,0.9776099591987578
+475,sim_user_474,có tour nào đi đà lạt z,unlabeled,8264f1480792ea503f27a9b60c12e693,có tour nào đi Đà_Lạt vậy,search_travel,0.9907313718961592
+476,sim_user_475,muốn book tour tại hà nội,unlabeled,aed8c75c24bae701b49e38dcd044b80a,muốn book tour tại hà_nội,book_hotel,0.7803165169351036
+477,sim_user_476,muốn đi hà nội z,unlabeled,19f4db6c03920a67a02682f5818f6f5a,muốn đi hà_nội vậy,search_travel,0.9907313718961592
+479,sim_user_478,review du lịch đà lạt ko bot,unlabeled,104842f341a5ac1cc2ce726516055186,review du_lịch Đà_Lạt không bot,search_travel,0.9987537189639808
+494,sim_user_493,đặt vé ở hà nội,unlabeled,4c4552e6dd9cfcb2c154bf64a2f4e090,đặt vé ở hà_nội,book_hotel,0.7803165169351036
+507,sim_user_506,ik sg wá,unlabeled,ce74902743caf3ed44ae412ced5e4f6c,đi Sài_Gòn quá,search_travel,0.9907313718961592
+513,sim_user_512,đặt vé ở pù cúp,unlabeled,b1a6ee75774176cb266ede9e8b858071,đặt vé ở Phú_Quốc,book_hotel,0.7803165169351036
+523,sim_user_522,book vé ở phú quốc ko bot,unlabeled,29e42af992814c66a33031a4c5840dad,book vé ở phú_quốc không bot,book_hotel,0.7803165169351036
+533,sim_user_532,muốn book tour tại đlạt,unlabeled,61d6c744c54fbef406d684ec3c736646,muốn book tour tại Đà_Lạt,book_hotel,0.7803165169351036
+536,sim_user_535,có tour nào đi sg nha,unlabeled,955a1945ead82aae3896ed8c3d5ce08f,có tour nào đi Sài_Gòn nha,search_travel,0.9907313718961592
+544,sim_user_543,muốn book vé tại sapa,unlabeled,993a6043968fe5c4423c7e9ba448a252,muốn book vé tại Sa_Pa,book_hotel,0.7803165169351036
+548,sim_user_547,muốn đặt phòng tại phú quốc,unlabeled,d35730859c8836db2165556191f823db,muốn đặt phòng tại phú_quốc,book_hotel,0.7803165169351036
+550,sim_user_549,tìm tour pù cúp nha,unlabeled,e7fa635e1a050745558379dca27b3db9,tìm tour Phú_Quốc nha,search_travel,0.9987537189639808
+551,sim_user_550,muốn tìm chỗ ở tại đà nẵng,unlabeled,a451c1d2721c4bb2093485ccbd80411c,muốn tìm chỗ ở tại đà_nẵng,search_travel,0.9899936683498408
+555,sim_user_554,có tour nào đi đlạt nha,unlabeled,d9618755e5441fe0c7d54de3cbe58910,có tour nào đi Đà_Lạt nha,search_travel,0.9907313718961592
+556,sim_user_555,ik sapa wá,unlabeled,3d7b686922b9d2b0a8e139881acf8960,đi Sa_Pa quá,search_travel,0.9907313718961592
+557,sim_user_556,đặt phòng ở đà lạt,unlabeled,19037a8c43c7a2eb283a9f31724c5390,đặt phòng ở Đà_Lạt,book_hotel,0.7803165169351036
+558,sim_user_557,muốn thuê ks tại đà lạt,unlabeled,4dbef9bd6a3eabaf21bffb0192e99aa2,muốn thuê khách_sạn tại Đà_Lạt,book_hotel,0.7803165169351036
+562,sim_user_561,book vé ở sg,unlabeled,960d0913321b1df18c5925a24c2ef6d9,book vé ở Sài_Gòn,book_hotel,0.7803165169351036
+564,sim_user_563,ik pù cúp ko bot,unlabeled,02fe8c3a4c051b51a24bdaa6e68d37df,đi Phú_Quốc không bot,search_travel,0.9907313718961592
+580,sim_user_579,muốn book vé tại đlạt nha,unlabeled,91b39c7e0209b407113d9142261f3c1f,muốn book vé tại Đà_Lạt nha,book_hotel,0.7803165169351036
+584,sim_user_583,muốn đặt ks tại đlạt,unlabeled,590c3c5dabcf5a827b7104fa69386602,muốn đặt khách_sạn tại Đà_Lạt,book_hotel,0.7803165169351036
+585,sim_user_584,review du lịch sapa wá,unlabeled,40b6fef085daaef409d3a44cc3a27db0,review du_lịch Sa_Pa quá,search_travel,0.9987537189639808
+589,sim_user_588,đặt phòng ở hà nội ko bot,unlabeled,83d8fe191016c98e5d5d959dd59579ca,đặt phòng ở hà_nội không bot,book_hotel,0.7803165169351036
+599,sim_user_598,muốn book vé tại hà nội,unlabeled,7f6229152106267ee14e9130016c05e7,muốn book vé tại hà_nội,book_hotel,0.7803165169351036
+605,sim_user_604,đặt ks ở đà nẵng nha,unlabeled,ec8db56c0ca94ae1265564b60831b725,đặt khách_sạn ở đà_nẵng nha,book_hotel,0.7803165169351036
+608,sim_user_607,tìm tour pù cúp wá,unlabeled,b7e53b7fc6420b8fc92555cf6952f600,tìm tour Phú_Quốc quá,search_travel,0.9987537189639808
+621,sim_user_620,book tour ở pù cúp,unlabeled,d75bdf818919765396c9e97ae054e27c,book tour ở Phú_Quốc,book_hotel,0.7803165169351036
+625,sim_user_624,muốn đi đlạt z,unlabeled,3d798683f7d3ee45b11503406ffaf997,muốn đi Đà_Lạt vậy,search_travel,0.9907313718961592
+626,sim_user_625,muốn đặt ks tại đà nẵng wá,unlabeled,bfe1b7f7d26c446513493fd6a6df438e,muốn đặt khách_sạn tại đà_nẵng quá,book_hotel,0.7803165169351036
+650,sim_user_649,đặt vé ở đà nẵng,unlabeled,302e6943aab448c3806544c1da3c8da1,đặt vé ở đà_nẵng,book_hotel,0.7803165169351036
+653,sim_user_652,giải bài tập z,unlabeled,0f2940de1cc70231acf624477976a114,giải bài_tập vậy,out_of_scope,0.9776099591987578
+662,sim_user_661,ik pù cúp nha,unlabeled,1e8f0cc41235cfa2076acce66a405274,đi Phú_Quốc nha,search_travel,0.9907313718961592
+667,sim_user_666,đặt phòng ở sapa,unlabeled,675ab0589928c3adf934a37984028c67,đặt phòng ở Sa_Pa,book_hotel,0.7803165169351036
+677,sim_user_676,muốn đi sapa ko bot,unlabeled,bee79c3bf6d03373e45733d0521b5387,muốn đi Sa_Pa không bot,search_travel,0.9907313718961592
+679,sim_user_678,muốn book tour tại phú quốc,unlabeled,5c0c8e9d7a975e6807bacbd29eb0348e,muốn book_tour tại phú_quốc,book_hotel,0.7803165169351036
+693,sim_user_692,tìm tour đà lạt wá,unlabeled,66417903952f9451f6eb2ba3a799f7fa,tìm tour Đà_Lạt quá,search_travel,0.9987537189639808
+710,sim_user_709,đặt vé ở đlạt,unlabeled,5105932aa981158b3926c44edf1cd400,đặt vé ở Đà_Lạt,book_hotel,0.7803165169351036
+711,sim_user_710,book vé ở sg nha,unlabeled,ab5030216eeb4b1a02fbf1d1ee540332,book vé ở Sài_Gòn nha,book_hotel,0.7803165169351036
+716,sim_user_715,muốn book tour tại pù cúp z,unlabeled,d084d991905144fd9e84bb9d11b01ca8,muốn book tour tại Phú_Quốc vậy,book_hotel,0.7803165169351036
+724,sim_user_723,tìm tour phú quốc nha,unlabeled,d67de42358f2d9c8e50df211ec2cf2f5,tìm tour_phú_quốc nha,search_travel,0.9987537189639808
+728,sim_user_727,tìm tour đà lạt ko bot,unlabeled,c611a5620f2914620f4d493abea6c098,tìm tour Đà_Lạt không bot,search_travel,0.9987537189639808
+735,sim_user_734,book tour ở sapa,unlabeled,729e09b34062c84dc57962ea37316e13,book tour ở Sa_Pa,book_hotel,0.7803165169351036
+751,sim_user_750,muốn đặt vé tại sapa wá,unlabeled,968333a29b03248bb7198e5dd298bb26,muốn đặt vé tại Sa_Pa quá,book_hotel,0.7803165169351036
+770,sim_user_769,đặt ks ở pù cúp,unlabeled,34af596d75d9cd7695098c43ceeaee2c,đặt khách_sạn ở Phú_Quốc,book_hotel,0.7803165169351036
+775,sim_user_774,muốn đặt phòng tại hà nội,unlabeled,8146ab22a857503108b91a9ad7ae9a32,muốn đặt phòng tại hà_nội,book_hotel,0.7803165169351036
+780,sim_user_779,muốn đi hà nội nha,unlabeled,1f7265f8f5bf1444f4e3a36643c504a2,muốn đi hà_nội nha,search_travel,0.9907313718961592
+786,sim_user_785,review du lịch sapa z,unlabeled,dd4df400b7a5ea31be135798679c1401,review du_lịch Sa_Pa vậy,search_travel,0.9987537189639808
+788,sim_user_787,đặt vé ở đlạt ko bot,unlabeled,a8411549967a7eb2693e3722c8aaff80,đặt vé ở Đà_Lạt không bot,book_hotel,0.7803165169351036
+789,sim_user_788,muốn đi đà nẵng nha,unlabeled,252be9377f01b0318d47dec0b3d9ac9f,muốn đi đà_nẵng nha,search_travel,0.9907313718961592
+807,sim_user_806,muốn tìm chỗ ở tại đà nẵng z,unlabeled,3a14aaa2a52d8ba7fef0344eaa529e62,muốn tìm chỗ ở tại đà_nẵng vậy,search_travel,0.9899936683498408
+820,sim_user_819,muốn book tour tại đlạt nha,unlabeled,e64fb6032230ac37794b90f1033e253d,muốn book tour tại Đà_Lạt nha,book_hotel,0.7803165169351036
+826,sim_user_825,muốn tìm chỗ ở tại sapa,unlabeled,c5bc87299df87447cf139d02fd55ec7e,muốn tìm chỗ ở tại Sa_Pa,search_travel,0.9899936683498408
+837,sim_user_836,ik phú quốc z,unlabeled,77869d58b1e902867478e2cfe3ff91cf,đi phú_quốc vậy,search_travel,0.9907313718961592
+851,sim_user_850,bot ngu wá,unlabeled,cf0b2b7169387c8776848729f9385b78,bot ngu quá,out_of_scope,0.9776099591987578
+860,sim_user_859,có tour nào đi pù cúp nha,unlabeled,73ed65dc6681b6c9a81af78a3a5b7a9b,có tour nào đi Phú_Quốc nha,search_travel,0.9907313718961592
+862,sim_user_861,có tour nào đi pù cúp ko bot,unlabeled,7a5b658b0a4969e423eb8137205c145a,có tour nào đi Phú_Quốc không bot,search_travel,0.9907313718961592
+867,sim_user_866,muốn tìm chỗ ở tại pù cúp z,unlabeled,752df1281a3b2132ea5d95807980373d,muốn tìm chỗ ở tại Phú_Quốc vậy,search_travel,0.9899936683498408
+875,sim_user_874,book tour ở đà lạt,unlabeled,dc6fd49865b3b14f156f875a492f2567,book tour ở Đà_Lạt,book_hotel,0.7803165169351036
+879,sim_user_878,tìm tour đà nẵng nha,unlabeled,6b7ec78d862a21dec6408360bcb66c07,tìm tour đà_nẵng nha,search_travel,0.9987537189639808
+880,sim_user_879,tìm chỗ ở ở đà nẵng,unlabeled,d22ece269e02e9b7ea3fe50d2ecbeddf,tìm chỗ ở ở đà_nẵng,search_travel,0.9899936683498408
+883,sim_user_882,muốn đặt vé tại đlạt,unlabeled,0e0e72f5d9686426effa9e058afb05db,muốn đặt vé tại Đà_Lạt,book_hotel,0.7803165169351036
+886,sim_user_885,muốn đặt phòng tại sg ko bot,unlabeled,6e848c04c6711c11f21261a03b48b586,muốn đặt phòng tại Sài_Gòn không bot,book_hotel,0.7803165169351036
+893,sim_user_892,review du lịch pù cúp nha,unlabeled,81ec23a0a0e6158be9797a61f45eecab,review du_lịch Phú_Quốc nha,search_travel,0.9987537189639808
+894,sim_user_893,muốn đặt vé tại sg,unlabeled,ea3b86ac33c7dfbaf496204b3a0cb000,muốn đặt vé tại Sài_Gòn,book_hotel,0.7803165169351036
+896,sim_user_895,book vé ở phú quốc,unlabeled,da000a021e4b4755a34cdafa6b861779,book vé ở phú_quốc,book_hotel,0.7803165169351036
+897,sim_user_896,thuê ks ở sg,unlabeled,3385c4627912554e4f9fdb88be32a11b,thuê khách_sạn ở Sài_Gòn,book_hotel,0.7803165169351036
+904,sim_user_903,thuê ks ở phú quốc,unlabeled,92820922b96b4b220747039f1d5f5a31,thuê khách_sạn ở phú_quốc,book_hotel,0.7803165169351036
+922,sim_user_921,bot ngu ko bot,unlabeled,5cb4d77f1178d9131bb04acc8042fc64,bot ngu không bot,out_of_scope,0.9776099591987578
+947,sim_user_946,muốn đặt ks tại pù cúp,unlabeled,12129cd3fa4b640848b340ecd75175d9,muốn đặt khách_sạn tại Phú_Quốc,book_hotel,0.7803165169351036
+978,sim_user_977,tìm tour pù cúp z,unlabeled,63f5d385d0202c3fe1494d48d669f455,tìm tour Phú_Quốc vậy,search_travel,0.9987537189639808
+986,sim_user_985,có tour nào đi sg z,unlabeled,54fec7871541b14a2571dd687724da4e,có tour nào đi Sài_Gòn vậy,search_travel,0.9907313718961592
+1013,sim_user_1012,tìm tour phú quốc wá,unlabeled,ecccf4b76395506976612b5ea896dcce,tìm tour_phú_quốc quá,search_travel,0.9987537189639808
+1014,sim_user_1013,review du lịch đà nẵng wá,unlabeled,abd50d3fe8405a34ce84cbe0aee63768,review du_lịch đà_nẵng quá,search_travel,0.9987537189639808
+1045,sim_user_1044,muốn book vé tại sg,unlabeled,2e3fbb8633e461d5bf0a090cb67c0f04,muốn book vé tại Sài_Gòn,book_hotel,0.7803165169351036
+1047,sim_user_1046,muốn đặt vé tại đà nẵng,unlabeled,99ced636f7d2f0485633f97f83a65884,muốn đặt vé tại đà_nẵng,book_hotel,0.7803165169351036
+1058,sim_user_1057,book tour ở hà nội wá,unlabeled,7451c8c963c3b96a4931a750e0d164c4,book tour ở hà_nội quá,book_hotel,0.7803165169351036
+1060,sim_user_1059,muốn đặt ks tại sg,unlabeled,f688690a429f82f5404c1ba37790fd4b,muốn đặt khách_sạn tại Sài_Gòn,book_hotel,0.7803165169351036
+1086,sim_user_1085,nấu ăn nha,unlabeled,6ab26bb99c44e39deaba0e61d79a634e,nấu_ăn nha,out_of_scope,0.9776099591987578
+1088,sim_user_1087,muốn đặt phòng tại sg z,unlabeled,46698bcb412691d2d6ded251583edb64,muốn đặt phòng tại Sài_Gòn vậy,book_hotel,0.7803165169351036
+1097,sim_user_1096,book vé ở đà lạt,unlabeled,4378e063b368ce403b9f785c6d123328,book vé ở Đà_Lạt,book_hotel,0.7803165169351036
+1103,sim_user_1102,ik đà nẵng wá,unlabeled,b2cc54cd98968117098a7137db90d5a9,đi đà_nẵng quá,search_travel,0.9907313718961592
+1106,sim_user_1105,muốn đặt vé tại phú quốc,unlabeled,88e2d994dcaf1fa4b8702287a354e54b,muốn đặt vé tại phú_quốc,book_hotel,0.7803165169351036
+1114,sim_user_1113,tìm tour hà nội nha,unlabeled,e4c5616fba388ab35d43dfabc6804583,tìm tour hà_nội nha,search_travel,0.9987537189639808
+1151,sim_user_1150,review du lịch pù cúp z,unlabeled,10f67b790e6ff72ed6b44871d5a2513f,review du_lịch Phú_Quốc vậy,search_travel,0.9987537189639808
+1156,sim_user_1155,muốn thuê ks tại đà nẵng nha,unlabeled,fc75ac8113c6ddec561d585c84bd3a73,muốn thuê khách_sạn tại đà_nẵng nha,book_hotel,0.7803165169351036
+1174,sim_user_1173,book tour ở sapa ko bot,unlabeled,34de847b50cad9e7c66c7ae6cd9b8b77,book tour ở Sa_Pa không bot,book_hotel,0.7803165169351036
+1183,sim_user_1182,muốn đi pù cúp ko bot,unlabeled,1be1c1505966d528a919a88762327f33,muốn đi Phú_Quốc không bot,search_travel,0.9907313718961592
+1207,sim_user_1206,tìm chỗ ở ở hà nội,unlabeled,73cdb7fd6c4b57a5237885cd84fd7045,tìm chỗ ở ở hà_nội,search_travel,0.9899936683498408
+1208,sim_user_1207,tìm tour sg nha,unlabeled,b9a4ca7d2e6fa3f4f9747d1350d3e635,tìm tour Sài_Gòn nha,search_travel,0.9987537189639808
+1216,sim_user_1215,muốn đi sg ko bot,unlabeled,7c32fe739caef7a6478171cb1fc95ebe,muốn đi Sài_Gòn không bot,search_travel,0.9907313718961592
+1219,sim_user_1218,đặt ks ở hà nội ko bot,unlabeled,17b9cec8eb5a22f11d5660de17621d4b,đặt khách_sạn ở hà_nội không bot,book_hotel,0.7803165169351036
+1233,sim_user_1232,có tour nào đi đlạt wá,unlabeled,4e81334c0db5ca2f1e9cf530eddf8a4a,có tour nào đi Đà_Lạt quá,search_travel,0.9907313718961592
+1238,sim_user_1237,muốn đặt vé tại phú quốc wá,unlabeled,ce71398872354d313f05f66266d27bc9,muốn đặt vé tại phú_quốc quá,book_hotel,0.7803165169351036
+1242,sim_user_1241,muốn đi đà lạt wá,unlabeled,7a07656db9d500ed374902dc7a1b277a,muốn đi Đà_Lạt quá,search_travel,0.9907313718961592
+1247,sim_user_1246,review du lịch đà nẵng ko bot,unlabeled,4fe6327ce0cf747ad7d7bb474ac74cfd,review du_lịch đà_nẵng không bot,search_travel,0.9987537189639808
+1273,sim_user_1272,tìm tour đà lạt nha,unlabeled,3d27f5b4eb73fe083ad45229b8d83d82,tìm tour Đà_Lạt nha,search_travel,0.9987537189639808
+1288,sim_user_1287,muốn đặt phòng tại sg,unlabeled,ce2a9cb8307c5eaefb35e2bbd0af4133,muốn đặt phòng tại Sài_Gòn,book_hotel,0.7803165169351036
+1294,sim_user_1293,muốn đặt vé tại đlạt wá,unlabeled,52cabcb7569ca9c9aa1500aa7bde4915,muốn đặt vé tại Đà_Lạt quá,book_hotel,0.7803165169351036
+1303,sim_user_1302,muốn đi sapa wá,unlabeled,8c966ed7ff52869b8c2d7f09c64a6269,muốn đi Sa_Pa quá,search_travel,0.9907313718961592
+1309,sim_user_1308,muốn đi sg z,unlabeled,f5e0f215ce90345c7c4eef27bcd6c34b,muốn đi Sài_Gòn vậy,search_travel,0.9907313718961592
+1311,sim_user_1310,muốn book tour tại đà nẵng z,unlabeled,4540aaf1c70d18c617582ed8934265bf,muốn book tour tại đà_nẵng vậy,book_hotel,0.7803165169351036
+1321,sim_user_1320,giải bài tập wá,unlabeled,804e46d43fb90afbc3adf849699ff23c,giải bài_tập quá,out_of_scope,0.9776099591987578
+1327,sim_user_1326,tìm tour đà nẵng wá,unlabeled,644f5c111194ce70eccedafca7e2cb36,tìm tour đà_nẵng quá,search_travel,0.9987537189639808
+1331,sim_user_1330,tìm tour pù cúp ko bot,unlabeled,5a1499455e7e4f424a633666a8b1aab6,tìm tour Phú_Quốc không bot,search_travel,0.9987537189639808
+1344,sim_user_1343,muốn đặt phòng tại phú quốc wá,unlabeled,4d3303b7fb17e67e52fd41909ef386d4,muốn đặt phòng tại phú_quốc quá,book_hotel,0.7803165169351036
+1365,sim_user_1364,muốn thuê ks tại đlạt ko bot,unlabeled,19d7712319a154fc210f9a91cb8dae04,muốn thuê khách_sạn tại Đà_Lạt không bot,book_hotel,0.7803165169351036
+1372,sim_user_1371,muốn đặt ks tại sg wá,unlabeled,330091f5af490e16a436756e600e3d45,muốn đặt khách_sạn tại Sài_Gòn quá,book_hotel,0.7803165169351036
+1385,sim_user_1384,muốn đặt phòng tại đlạt wá,unlabeled,5833945f8b01bdd3ba0b644567c15599,muốn đặt phòng tại Đà_Lạt quá,book_hotel,0.7803165169351036
+1389,sim_user_1388,muốn đặt vé tại đà lạt,unlabeled,a0a97f5d45fc644cd16098531e937827,muốn đặt vé tại Đà_Lạt,book_hotel,0.7803165169351036
+1391,sim_user_1390,chửi thề z,unlabeled,440faec2841aca3ba47fc845bdfda907,chửi thề vậy,out_of_scope,0.9776099591987578
+1393,sim_user_1392,muốn đặt vé tại pù cúp,unlabeled,3bb8035ecb4f3879ae3d347dacda2624,muốn đặt vé tại Phú_Quốc,book_hotel,0.7803165169351036
+1394,sim_user_1393,đặt phòng ở hà nội,unlabeled,0a587edab48b024b250c7d2624fa1bf2,đặt phòng ở hà_nội,book_hotel,0.7803165169351036
+1409,sim_user_1408,tìm chỗ ở ở sapa wá,unlabeled,d32112bebce53da16d25a95d2c334c5b,tìm chỗ ở ở Sa_Pa quá,search_travel,0.9899936683498408
+1425,sim_user_1424,muốn thuê ks tại hà nội,unlabeled,59e8f8d0c822bd943598885dc8f506f1,muốn thuê khách_sạn tại hà_nội,book_hotel,0.7803165169351036
+1426,sim_user_1425,review du lịch sapa nha,unlabeled,481a8000f33c81e045a5f51ac5e99984,review du_lịch Sa_Pa nha,search_travel,0.9987537189639808
+1442,sim_user_1441,book vé ở đà nẵng,unlabeled,cd5712d55662d285f64edee1f99e1f5b,book vé ở đà_nẵng,book_hotel,0.7803165169351036
+1451,sim_user_1450,tìm chỗ ở ở pù cúp,unlabeled,bd67633ff3a43c753e6c5749dea33e76,tìm chỗ ở ở Phú_Quốc,search_travel,0.9899936683498408
+1497,sim_user_1496,tìm tour sapa z,unlabeled,2a12378971791f9cad9a36cb28a6dcef,tìm tour_Sa_Pa vậy,search_travel,0.9987537189639808

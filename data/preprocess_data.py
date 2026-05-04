@@ -1,5 +1,5 @@
 # data/preprocess_data.py
-# A. Làm sạch và chuẩn hoá
+# A. Làm sạch và chuẩn hoá, tách từ
 
 import pandas as pd
 import psycopg2
