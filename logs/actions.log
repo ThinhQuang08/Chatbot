@@ -66,3 +66,31 @@ TRÍ NHỚ (SLOTS) ĐANG CÓ:
 
 [FORM VALIDATION LOG] ==============================
 2026-04-23 18:58:01 WARNING  rasa_sdk.forms  - Skipping validation for `destination`: there is no validation method specified.
+USER NÓI: 'tôi muốn đi chơi đà lạt tháng 5'
+INTENT CHÍNH: search_travel
+ENTITIES VỪA BẮT ĐƯỢC:
+   -> destination: 'Đà Lạt' (DIETClassifier)
+   -> month_to: 'tháng 5' (DIETClassifier)
+   -> month: 'tháng 5' (RegexEntityExtractor)
+TRÍ NHỚ (SLOTS) ĐANG GIỮ:
+   -> month: 'tháng 5'
+   -> month_to: 'tháng 5'
+   -> budget: '2tr'
+   -> destination: 'Đà Lạt'
+====================================================
+
+
+[ACTION SEARCH TRAVEL LOG] =========================
+USER NÓI: 'tôi muốn đi chơi đà lạt tháng 5'
+INTENT NHẬN DIỆN: search_travel
+ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:
+   -> destination: 'Đà Lạt' (DIETClassifier)
+   -> month_to: 'tháng 5' (DIETClassifier)
+   -> month: 'tháng 5' (RegexEntityExtractor)
+TRÍ NHỚ (SLOTS) ĐANG CÓ:
+   -> month: 'tháng 5'
+   -> month_to: 'tháng 5'
+   -> budget: '2tr'
+   -> destination: 'Đà Lạt'
+====================================================
+
