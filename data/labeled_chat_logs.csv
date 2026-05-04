@@ -1,0 +1,556 @@
+id,session_id,raw_text,predicted_intent,text_hash,cleaned_text,snorkel_intent,snorkel_confidence
+1,sim_user_0,muốn đặt vé tại nt ko bot,unlabeled,99c690d261554afabfccbc86a086547f,muốn đặt vé tại Nha_Trang không bot,book_hotel,0.6730245011928586
+2,sim_user_1,tour hà nội bao nhiêu,unlabeled,e9e6ec4f564eb1b4607f0b0f5787e941,tour hà_nội bao_nhiêu,ask_price,0.5324266168088972
+3,sim_user_2,ik đà nẵng,unlabeled,554a89eda7def65872f00cd9037063c3,đi đà_nẵng,search_travel,0.6496360220851362
+4,sim_user_3,bot ngu,unlabeled,25908a437a52e7425f940fba73997d0e,bot ngu,out_of_scope,0.9776165285739606
+5,sim_user_4,buồn ngủ quá ko bot,unlabeled,577b69f0d7242630d64578fff3f1b06e,buồn ngủ quá không bot,UNLABELED,0.25
+6,sim_user_5,tìm chỗ ở ở đà lạt wá,unlabeled,7eec1a8ec7714aab2acbe793e1986c26,tìm chỗ ở ở Đà_Lạt quá,search_travel,0.6496360220851362
+7,sim_user_6,review du lịch đà lạt,unlabeled,c3f786eaef85f1348dc87256aef9a00f,review du_lịch Đà_Lạt,search_travel,0.6496360220851362
+8,sim_user_7,review du lịch pù cúp,unlabeled,57675b5a2950fb3932a81f6b4af3a1a6,review du_lịch Phú_Quốc,search_travel,0.6496360220851362
+9,sim_user_8,ik nt,unlabeled,cd18ae9e87b928ece5d3aa4f9dc97a0b,đi Nha_Trang,search_travel,0.498667987853197
+10,sim_user_9,muốn đi sapa,unlabeled,0f1b08956ad3e458b643701a0601559f,muốn đi Sa_Pa,search_travel,0.6496360220851362
+11,sim_user_10,tìm tour nt,unlabeled,e541d3774717d537d5a00f76cc34c446,tìm tour Nha_Trang,search_travel,0.498667987853197
+12,sim_user_11,ik đlạt,unlabeled,409a21def3ec205d82e88a982e2155dd,đi Đà_Lạt,search_travel,0.6496360220851362
+13,sim_user_12,mấy tiền cho tour nha trang,unlabeled,527013acd39ec0bc3f24a5473105b57d,mấy tiền cho tour Nha_Trang,ask_price,0.5324266168088972
+14,sim_user_13,muốn tìm chỗ ở tại đlạt,unlabeled,0b08b2b9d964bee9389115e63cd89ccc,muốn tìm chỗ ở tại Đà_Lạt,search_travel,0.6496360220851362
+15,sim_user_14,chửi thề,unlabeled,f215b442c9c49faca5f1e95ce0dd3298,chửi thề,out_of_scope,0.9776165285739606
+16,sim_user_15,review du lịch nha trang,unlabeled,5db2d18772ee7f128fc2f376c9590ecf,review du_lịch Nha_Trang,search_travel,0.498667987853197
+17,sim_user_16,đặt ks ở đà lạt,unlabeled,705988b40500a2225f257d55d998a30f,đặt ks ở Đà_Lạt,book_hotel,0.7648320693648683
+18,sim_user_17,mấy tiền cho tour hà nội,unlabeled,5429d40e515001045d7daa8f4306ddad,mấy tiền cho tour hà_nội,ask_price,0.5324266168088972
+19,sim_user_18,giải bài tập,unlabeled,79702473e0aeb4dbabc6df8d675e2a75,giải bài_tập,out_of_scope,0.9776165285739606
+20,sim_user_19,ik đà nẵng z,unlabeled,79689c20dcdaf90211f7540a46a06b71,đi đà_nẵng vậy,search_travel,0.6496360220851362
+21,sim_user_20,tour sg khoảng mấy tr,unlabeled,e503d39122613dffe41a576d43f76345,tour Sài_Gòn khoảng mấy triệu,search_travel,0.498667987853197
+22,sim_user_21,tour đà lạt mấy củ z,unlabeled,025c17050ed0d40b3ddc4dc204cd2fd6,tour Đà_Lạt mấy triệu vậy,search_travel,0.498667987853197
+23,sim_user_22,muốn thuê ks tại pù cúp,unlabeled,1e217a380f1872a0cf99a39a7ddf2a1f,muốn thuê ks tại Phú_Quốc,book_hotel,0.7648320693648683
+24,sim_user_23,tìm tour đà nẵng,unlabeled,18d4a7189b299b1eb13151413c2de0a2,tìm tour đà_nẵng,search_travel,0.6496360220851362
+25,sim_user_24,tìm chỗ ở ở sg,unlabeled,8cfa10c579ac4ebf6b605ea08ec14c14,tìm chỗ ở ở Sài_Gòn,search_travel,0.6496360220851362
+26,sim_user_25,tour pù cúp mấy tiền,unlabeled,47f30e008fada36b77b4d8db13c438a8,tour Phú_Quốc mấy tiền,ask_price,0.5324266168088972
+27,sim_user_26,chi phí cho tour sapa,unlabeled,610b03aa6ce818242e99ea8094916aa8,chi_phí cho tour_Sa_Pa,ask_price,0.5324266168088972
+28,sim_user_27,hôm nay ăn gì ko bot,unlabeled,e1f25e460e31adafd33b1c20ada6cfe6,hôm_nay ăn gì không bot,UNLABELED,0.25
+29,sim_user_28,mấy củ cho tour nt,unlabeled,ed7bbad44ebd081ba4d137e7a8af4f14,mấy triệu cho tour Nha_Trang,search_travel,0.498667987853197
+30,sim_user_29,muốn đặt ks tại nt ko bot,unlabeled,02f60b75947e281f92b42f001b95c6f3,muốn đặt ks tại Nha_Trang không bot,book_hotel,0.6730245011928586
+31,sim_user_30,muốn đi đà nẵng ko bot,unlabeled,147c9bda32c24b411d1bde6245cc1b7d,muốn đi đà_nẵng không bot,search_travel,0.6496360220851362
+32,sim_user_31,đặt ks ở sg,unlabeled,43074caef20bd00e4035c1add8321f59,đặt ks ở Sài_Gòn,book_hotel,0.7648320693648683
+33,sim_user_32,mấy củ cho tour nha trang wá,unlabeled,be5a76756bb4f31b4db4f763812113f7,mấy triệu cho tour Nha_Trang quá,search_travel,0.498667987853197
+34,sim_user_33,mấy tiền cho tour sg,unlabeled,c861af35be2da03dad2c74c5ce30b8ef,mấy tiền cho tour Sài_Gòn,ask_price,0.5324266168088972
+35,sim_user_34,muốn tìm chỗ ở tại nt,unlabeled,f19efd6bf6c00ca65dcca8f561dc1545,muốn tìm chỗ ở tại Nha_Trang,search_travel,0.498667987853197
+36,sim_user_35,tìm tour nha trang,unlabeled,c3f4fe81d7ade9834b5c2c0a15e98618,tìm tour Nha_Trang,search_travel,0.498667987853197
+38,sim_user_37,thời tiết nay sao,unlabeled,bee3d753e7cd3dc951f19c0b9ba11d0b,thời_tiết nay sao,out_of_scope,0.9776165285739606
+39,sim_user_38,tour đà nẵng mấy củ,unlabeled,ddb23486c6ccd86084340663af3a0c47,tour đà_nẵng mấy triệu,search_travel,0.498667987853197
+40,sim_user_39,có tour nào đi phú quốc,unlabeled,4022ff4d12f0092c462a0930ebf675cc,có tour nào đi phú_quốc,search_travel,0.6496360220851362
+41,sim_user_40,review du lịch hà nội,unlabeled,c82337c9994bd49b046dae5833b95acb,review du_lịch hà_nội,search_travel,0.6496360220851362
+42,sim_user_41,muốn đi sg,unlabeled,a145c1ffc876d8617327750ea5acc7b2,muốn đi Sài_Gòn,search_travel,0.6496360220851362
+43,sim_user_42,muốn đặt vé tại sapa,unlabeled,b4e7d42d6d8bdac98a3849542f221f8d,muốn đặt vé tại Sa_Pa,book_hotel,0.7648320693648683
+44,sim_user_43,tour sg chi phí,unlabeled,a2e5850a5ca12e795bab0b6520fdfd15,tour Sài_Gòn chi_phí,ask_price,0.5324266168088972
+45,sim_user_44,tour hà nội giá nhiêu,unlabeled,4bd05c84a338f408fa53087a1f386150,tour hà_nội giá nhiêu,ask_price,0.5324266168088972
+46,sim_user_45,tìm chỗ ở ở sapa,unlabeled,2eff011cc6d49f2fd570c332e3859fc6,tìm chỗ ở ở Sa_Pa,search_travel,0.6496360220851362
+48,sim_user_47,ik pù cúp,unlabeled,c6289ac85e8ed9c51e8a392c6bdad3ec,đi Phú_Quốc,search_travel,0.6496360220851362
+49,sim_user_48,giá sao cho tour đlạt,unlabeled,0fbc18dd9027d4e8790f12ab5f283e85,giá sao cho tour Đà_Lạt,ask_price,0.5324266168088972
+50,sim_user_49,muốn đặt vé tại đà nẵng ko bot,unlabeled,66a79de9e3a0eb80b3991477bebdaa50,muốn đặt vé tại đà_nẵng không bot,book_hotel,0.7648320693648683
+51,sim_user_50,bạn tên gì,unlabeled,4e0e5f16305423ff3808eae9610f68cc,bạn tên gì,UNLABELED,0.25
+52,sim_user_51,muốn đi pù cúp,unlabeled,fa96ce19ff9fe40598e06dac35004b81,muốn đi Phú_Quốc,search_travel,0.6496360220851362
+53,sim_user_52,buồn ngủ quá,unlabeled,0b9536428238e2ab1b999411919f6472,buồn ngủ quá,UNLABELED,0.25
+54,sim_user_53,có tour nào đi nt,unlabeled,8d778ba510fa3d1d6201392174a0b982,có tour nào đi Nha_Trang,search_travel,0.498667987853197
+55,sim_user_54,muốn đặt ks tại đà nẵng,unlabeled,83696282822c8e886baa907cc8b7bb4f,muốn đặt ks tại đà_nẵng,book_hotel,0.7648320693648683
+56,sim_user_55,có tour nào đi sapa,unlabeled,cbfe1b1da8a8ea53eec3294dac427d7d,có tour nào đi Sa_Pa,search_travel,0.6496360220851362
+58,sim_user_57,muốn book tour tại đà nẵng,unlabeled,e3e35de2325726510beee54f97dd1a9f,muốn book tour tại đà_nẵng,book_hotel,0.7648320693648683
+59,sim_user_58,ik sapa,unlabeled,abf08ffa6a8a6b883fafe6430bd0b243,đi Sa_Pa,search_travel,0.6496360220851362
+60,sim_user_59,muốn đặt phòng tại sapa,unlabeled,0bc5b924a1e3736916900b0d8c65b0c7,muốn đặt phòng tại Sa_Pa,book_hotel,0.7648320693648683
+61,sim_user_60,tour nt bao nhiêu,unlabeled,dd5293799d7454679a030772465a3d73,tour Nha_Trang bao_nhiêu,ask_price,0.5324266168088972
+62,sim_user_61,tìm tour pù cúp,unlabeled,a7f3507720b879356bddd30b91f11c3d,tìm tour Phú_Quốc,search_travel,0.6496360220851362
+63,sim_user_62,có tour nào đi nha trang,unlabeled,4ce6694ac6e7330c28a3ac5b496a07ae,có tour nào đi Nha_Trang,search_travel,0.498667987853197
+64,sim_user_63,tour nha trang khoảng mấy tr,unlabeled,1be513ef08fc74306ff3a68cf24f31dd,tour Nha_Trang khoảng mấy triệu,search_travel,0.498667987853197
+65,sim_user_64,review du lịch đà nẵng,unlabeled,6ea0b5860b504ba2c4555f165d13afa1,review du_lịch đà_nẵng,search_travel,0.6496360220851362
+66,sim_user_65,tìm tour đlạt,unlabeled,af50738f1cc5fe817a3343c348899183,tìm tour Đà_Lạt,search_travel,0.6496360220851362
+67,sim_user_66,ik đlạt wá,unlabeled,00eade2cfbf85244326839f3b73d2095,đi Đà_Lạt quá,search_travel,0.6496360220851362
+69,sim_user_68,có tour nào đi pù cúp,unlabeled,26190e76fb8539d000f85876697c3cc9,có tour nào đi Phú_Quốc,search_travel,0.6496360220851362
+70,sim_user_69,có tour nào đi đà nẵng,unlabeled,75f013fa26e9dd1370dd103e672ae330,có tour nào đi đà_nẵng,search_travel,0.6496360220851362
+72,sim_user_71,tour đlạt chi phí,unlabeled,6b3658685a2e0e77358dbf209f3fa894,tour Đà_Lạt chi_phí,ask_price,0.5324266168088972
+73,sim_user_72,tìm chỗ ở ở đà lạt,unlabeled,11d66c634cac723b0cc9cfda0f6feb39,tìm chỗ ở ở Đà_Lạt,search_travel,0.6496360220851362
+74,sim_user_73,tour nt chi phí,unlabeled,403c946cbdc3e53ee41cbe709162c6fa,tour Nha_Trang chi_phí,ask_price,0.5324266168088972
+76,sim_user_75,muốn đi đlạt,unlabeled,84d59055125fbc2baa0235a90e84b4bc,muốn đi Đà_Lạt,search_travel,0.6496360220851362
+77,sim_user_76,giá sao cho tour đà lạt nha,unlabeled,6ead6b82bec5853851d10a4231b0756c,giá sao cho tour Đà_Lạt nha,ask_price,0.5324266168088972
+78,sim_user_77,khoảng mấy tr cho tour đà nẵng,unlabeled,0485559c6bdf72c7f813cf06f56af421,khoảng mấy triệu cho tour đà_nẵng,search_travel,0.498667987853197
+79,sim_user_78,tour hà nội giá sao,unlabeled,1a7d5b1dbaba149d53d5803396f17b9c,tour hà_nội giá sao,ask_price,0.5324266168088972
+80,sim_user_79,mấy tiền cho tour pù cúp,unlabeled,89fee45ebd1bd66f57205efdf35d35c1,mấy tiền cho tour Phú_Quốc,ask_price,0.5324266168088972
+83,sim_user_82,muốn đặt phòng tại pù cúp,unlabeled,41f6246cefa146c4bd2dbd9de3d244a7,muốn đặt phòng tại Phú_Quốc,book_hotel,0.7648320693648683
+85,sim_user_84,muốn đi đà lạt,unlabeled,a369ce24c88ad81714b616e8ab7f7546,muốn đi Đà_Lạt,search_travel,0.6496360220851362
+86,sim_user_85,thuê ks ở pù cúp,unlabeled,685f230088aa6d8c1d59e7a5db3c1ea5,thuê ks ở Phú_Quốc,book_hotel,0.7648320693648683
+87,sim_user_86,giá rẻ cho tour sapa,unlabeled,45493debfcba7ec97c918c5b240f09b3,giá rẻ cho tour_Sa_Pa,ask_price,0.5324266168088972
+88,sim_user_87,muốn đi sapa nha,unlabeled,d304422e977f6dd59204e37f266c8468,muốn đi Sa_Pa nha,search_travel,0.6496360220851362
+90,sim_user_89,ik nha trang,unlabeled,ccb59e6d6bd84ba8921d662683b6a25f,đi Nha_Trang,search_travel,0.498667987853197
+91,sim_user_90,tour đà nẵng mấy tiền,unlabeled,89778bebb4f463298b116ee642a178ac,tour đà_nẵng mấy tiền,ask_price,0.5324266168088972
+92,sim_user_91,tour phú quốc mấy củ,unlabeled,dc9a75754c415cf8293a86ed7a2a0d80,tour phú_quốc mấy triệu,search_travel,0.498667987853197
+93,sim_user_92,tour đlạt khoảng mấy tr,unlabeled,74a46a09055e1691c413c2f6a88ddcef,tour Đà_Lạt khoảng mấy triệu,search_travel,0.498667987853197
+94,sim_user_93,tour nha trang giá sao wá,unlabeled,ea9ea4af0d5d9a4991ed91ff16de910d,tour Nha_Trang giá sao quá,ask_price,0.5324266168088972
+95,sim_user_94,tour nha trang mấy củ,unlabeled,bf89af29690749cae1171430f359bf46,tour Nha_Trang mấy triệu,search_travel,0.498667987853197
+96,sim_user_95,giá nhiêu cho tour đà lạt,unlabeled,1245d5ab744a3c65299b39ad7e49cdd6,giá nhiêu cho tour Đà_Lạt,ask_price,0.5324266168088972
+97,sim_user_96,tour sapa giá sao z,unlabeled,2946a026081b6e2d87a7c82c28027a8e,tour Sa_Pa giá sao vậy,ask_price,0.5324266168088972
+98,sim_user_97,muốn đi đà nẵng wá,unlabeled,7180c898222eff91e4a20ad13538640d,muốn đi đà_nẵng quá,search_travel,0.6496360220851362
+100,sim_user_99,tìm tour sg,unlabeled,f30b870bfbd4e9ddd130c4c2b23124f9,tìm tour Sài_Gòn,search_travel,0.6496360220851362
+101,sim_user_100,muốn đặt ks tại nt,unlabeled,adb5e741f1dfca5a5646550e7f5ae9ba,muốn đặt ks tại Nha_Trang,book_hotel,0.6730245011928586
+102,sim_user_101,tìm chỗ ở ở phú quốc,unlabeled,c146c14647238404c34ecdf8b041dd90,tìm chỗ ở ở phú_quốc,search_travel,0.6496360220851362
+103,sim_user_102,review du lịch nt,unlabeled,cd0570f37b49cd3a735ec490b237f7dd,review du_lịch Nha_Trang,search_travel,0.498667987853197
+105,sim_user_104,nấu ăn,unlabeled,452920c631fa0d49229ecdbdfd5eb070,nấu_ăn,out_of_scope,0.9776165285739606
+107,sim_user_106,muốn đặt phòng tại đà nẵng,unlabeled,09f0e863311954018008e1bcf9b67c2f,muốn đặt phòng tại đà_nẵng,book_hotel,0.7648320693648683
+108,sim_user_107,buồn ngủ quá z,unlabeled,91a56dd8dee662091b0beb0b9d39407d,buồn ngủ quá vậy,UNLABELED,0.25
+109,sim_user_108,thuê ks ở hà nội,unlabeled,3a2a1631e1f83767a316030cff039561,thuê ks ở hà_nội,book_hotel,0.7648320693648683
+110,sim_user_109,review du lịch sapa,unlabeled,80c155e5a3e050ec3fd8f43f486d3af7,review du_lịch Sa_Pa,search_travel,0.6496360220851362
+111,sim_user_110,có tour nào đi đà lạt nha,unlabeled,76202e38ec2de216306fdea859493d7f,có tour nào đi Đà_Lạt nha,search_travel,0.6496360220851362
+112,sim_user_111,muốn book vé tại đà nẵng,unlabeled,e5b503215e7969acfc2e0b7a58ac4485,muốn book vé tại đà_nẵng,book_hotel,0.7648320693648683
+113,sim_user_112,muốn đặt phòng tại đà lạt,unlabeled,d214c00500c637d5a92b7b4eede52a25,muốn đặt phòng tại Đà_Lạt,book_hotel,0.7648320693648683
+114,sim_user_113,book tour ở phú quốc,unlabeled,cf700bd495d561899785d63565d03307,book tour ở phú_quốc,book_hotel,0.7648320693648683
+116,sim_user_115,có tour nào đi sapa wá,unlabeled,1ed8a6a3df39b55385fdb4277aaf00bd,có tour nào đi Sa_Pa quá,search_travel,0.6496360220851362
+119,sim_user_118,đặt phòng ở đlạt,unlabeled,293515fc1709f1f890d38d69fe1d5c0c,đặt phòng ở Đà_Lạt,book_hotel,0.7648320693648683
+120,sim_user_119,chi phí cho tour hà nội,unlabeled,ce09b526b9a6d781c8f660f96d93b931,chi_phí cho tour hà_nội,ask_price,0.5324266168088972
+121,sim_user_120,tour nha trang bao nhiêu,unlabeled,534185a29a45bf3c299f2839fc2a5488,tour Nha_Trang bao_nhiêu,ask_price,0.5324266168088972
+122,sim_user_121,ik pù cúp wá,unlabeled,a25851b167a6b345ed7fa44ddf05378c,đi Phú_Quốc quá,search_travel,0.6496360220851362
+123,sim_user_122,muốn book tour tại đà lạt,unlabeled,d536622b3e3cfa6fff9c319da7d6d98a,muốn book tour tại Đà_Lạt,book_hotel,0.7648320693648683
+124,sim_user_123,muốn đi nha trang,unlabeled,949e67204e539380494988c4ed16b363,muốn đi Nha_Trang,search_travel,0.498667987853197
+125,sim_user_124,chi phí cho tour phú quốc,unlabeled,9e36c8e47902335b1df71f1eec03c548,chi_phí cho tour_phú_quốc,ask_price,0.5324266168088972
+127,sim_user_126,muốn đi đà nẵng,unlabeled,086ff9a4d3aa10e4bb1512e17722e944,muốn đi đà_nẵng,search_travel,0.6496360220851362
+129,sim_user_128,có tour nào đi sg,unlabeled,4ffe337781445428ef8f4dda8271dcf9,có tour nào đi Sài_Gòn,search_travel,0.6496360220851362
+130,sim_user_129,có tour nào đi hà nội,unlabeled,3179c3bbd2e8e699b3a0f8b8f79e3e55,có tour nào đi hà_nội,search_travel,0.6496360220851362
+133,sim_user_132,đặt vé ở phú quốc,unlabeled,63a31de8a220f85599f38cd41875a1f6,đặt vé ở phú_quốc,book_hotel,0.7648320693648683
+135,sim_user_134,muốn tìm chỗ ở tại đà lạt nha,unlabeled,0a6260a69eef097595b870702c8d46bd,muốn tìm chỗ ở tại Đà_Lạt nha,search_travel,0.6496360220851362
+137,sim_user_136,muốn đi phú quốc wá,unlabeled,f67847bd120a0db9519ad552a56f0fb6,muốn đi phú_quốc quá,search_travel,0.6496360220851362
+139,sim_user_138,tour sapa bao nhiêu,unlabeled,5c328e935b66ed08615dacabe1eea4f4,tour Sa_Pa bao_nhiêu,ask_price,0.5324266168088972
+143,sim_user_142,khoảng mấy tr cho tour đà lạt,unlabeled,c361d9a41b240fa8610ad7d22fff3b5d,khoảng mấy triệu cho tour Đà_Lạt,search_travel,0.498667987853197
+145,sim_user_144,muốn đặt vé tại hà nội,unlabeled,3b5b858a6dd22ad000b4f950e3fc39cf,muốn đặt vé tại hà_nội,book_hotel,0.7648320693648683
+146,sim_user_145,giá rẻ cho tour phú quốc,unlabeled,cad0d842e3bc0cb48d413efa8a5a5ad7,giá rẻ cho tour_phú_quốc,ask_price,0.5324266168088972
+148,sim_user_147,đặt vé ở sapa z,unlabeled,e3f34725b973f4d6d3b5bcda8b8c4cfc,đặt vé ở Sa_Pa vậy,book_hotel,0.7648320693648683
+150,sim_user_149,chi phí cho tour đlạt ko bot,unlabeled,dc68faab04896db21009abc0f31fd286,chi_phí cho tour Đà_Lạt không bot,ask_price,0.5324266168088972
+151,sim_user_150,bao nhiêu cho tour phú quốc z,unlabeled,4fb835598c4b01aae12fec3a34e25396,bao_nhiêu cho tour_phú_quốc vậy,ask_price,0.5324266168088972
+152,sim_user_151,đặt ks ở nt wá,unlabeled,a0e3519aca64dc523365bb12a4d8cedd,đặt ks ở Nha_Trang quá,book_hotel,0.6730245011928586
+154,sim_user_153,tour nha trang mấy tiền z,unlabeled,54372d9063ac1b30e56bff5dcb381377,tour Nha_Trang mấy tiền vậy,ask_price,0.5324266168088972
+155,sim_user_154,có tour nào đi đlạt,unlabeled,5f9f0fe10793293694a4528be75f1988,có tour nào đi Đà_Lạt,search_travel,0.6496360220851362
+157,sim_user_156,review du lịch đlạt,unlabeled,d6aa183d5eb64bbbdaecb78a3669bf27,review du_lịch Đà_Lạt,search_travel,0.6496360220851362
+158,sim_user_157,ik sg,unlabeled,584c22905bb472348df9209e67d1ba69,đi Sài_Gòn,search_travel,0.6496360220851362
+160,sim_user_159,tìm tour phú quốc,unlabeled,3f926ea6e21ad5188db5c45a79ea4063,tìm tour_phú_quốc,search_travel,0.6496360220851362
+161,sim_user_160,muốn book vé tại phú quốc,unlabeled,074ca0ccb45f5c2e1e2290b9a2284320,muốn book vé tại phú_quốc,book_hotel,0.7648320693648683
+165,sim_user_164,muốn book vé tại pù cúp,unlabeled,4a7dbcef051340b0a52c6b47b45b0420,muốn book vé tại Phú_Quốc,book_hotel,0.7648320693648683
+169,sim_user_168,chi phí cho tour nha trang nha,unlabeled,05eaa04b2df164ec200140138a2994bc,chi_phí cho tour Nha_Trang nha,ask_price,0.5324266168088972
+172,sim_user_171,bao nhiêu cho tour đà nẵng z,unlabeled,5c6ca6d0150e9cfbc2cecab5ad0fec6a,bao_nhiêu cho tour đà_nẵng vậy,ask_price,0.5324266168088972
+173,sim_user_172,muốn đặt ks tại hà nội,unlabeled,93d1a62b2d0ccb0147fc156700b7f38b,muốn đặt ks tại hà_nội,book_hotel,0.7648320693648683
+176,sim_user_175,tour sapa khoảng mấy tr z,unlabeled,2642ae0734e405564ac255a586505fab,tour Sa_Pa khoảng mấy triệu vậy,search_travel,0.498667987853197
+183,sim_user_182,chi phí cho tour pù cúp,unlabeled,02a13f0cc935a246697931410862a7b4,chi_phí cho tour Phú_Quốc,ask_price,0.5324266168088972
+184,sim_user_183,muốn tìm chỗ ở tại sg,unlabeled,f7badc9f1baef325de3fef2c2cb37992,muốn tìm chỗ ở tại Sài_Gòn,search_travel,0.6496360220851362
+185,sim_user_184,giá sao cho tour nt ko bot,unlabeled,e6e30e407cdf60715d4f37d597edade0,giá sao cho tour Nha_Trang không bot,ask_price,0.5324266168088972
+186,sim_user_185,muốn thuê ks tại đà nẵng,unlabeled,3ddb4e7962ceea24007401d97ed766a5,muốn thuê ks tại đà_nẵng,book_hotel,0.7648320693648683
+189,sim_user_188,tìm tour đlạt ko bot,unlabeled,f13546c2839fb29b70d2611f8bc20836,tìm tour Đà_Lạt không bot,search_travel,0.6496360220851362
+190,sim_user_189,review du lịch phú quốc,unlabeled,f1f9a6e36462fa14e3ca25ab26321c97,review du_lịch phú_quốc,search_travel,0.6496360220851362
+193,sim_user_192,book vé ở hà nội,unlabeled,9b2ba3fbd6ff0e6d9ec98b1b63ecce48,book vé ở hà_nội,book_hotel,0.7648320693648683
+194,sim_user_193,bao nhiêu cho tour nha trang z,unlabeled,5f5d01e1f0f512dc52606e60427efb39,bao_nhiêu cho tour Nha_Trang vậy,ask_price,0.5324266168088972
+195,sim_user_194,tìm tour sapa,unlabeled,dab0dc711eb62a451529eca7e2abbf3b,tìm tour_Sa_Pa,search_travel,0.6496360220851362
+196,sim_user_195,muốn đặt ks tại phú quốc,unlabeled,da73046e6a26234558772d86e5dbf24c,muốn đặt ks tại phú_quốc,book_hotel,0.7648320693648683
+197,sim_user_196,giá sao cho tour hà nội,unlabeled,43f28937fd47598dee85964d82599f4c,giá sao cho tour hà_nội,ask_price,0.5324266168088972
+198,sim_user_197,muốn book tour tại nt,unlabeled,356c69ba70598ad081782abcffcd7f51,muốn book tour tại Nha_Trang,book_hotel,0.6730245011928586
+199,sim_user_198,tìm tour đà lạt,unlabeled,bc3499cfde289fa7ffcf489b2e50b011,tìm tour Đà_Lạt,search_travel,0.6496360220851362
+204,sim_user_203,đặt vé ở sapa,unlabeled,4fcb46f03408f5b31c4e3e73bba663ef,đặt vé ở Sa_Pa,book_hotel,0.7648320693648683
+205,sim_user_204,đặt phòng ở sg,unlabeled,4e1312655e9c81efe275bdfd5ec265da,đặt phòng ở Sài_Gòn,book_hotel,0.7648320693648683
+206,sim_user_205,bao nhiêu cho tour đà lạt,unlabeled,d4786574ca61973cd0085c3a7f757146,bao_nhiêu cho tour Đà_Lạt,ask_price,0.5324266168088972
+207,sim_user_206,mấy tiền cho tour đà nẵng,unlabeled,866bd133dff37e5f5ba73e66e51ba101,mấy tiền cho tour đà_nẵng,ask_price,0.5324266168088972
+208,sim_user_207,thời tiết nay sao z,unlabeled,8e708bb4b3888c9078f65967389bb51d,thời_tiết nay sao vậy,out_of_scope,0.9776165285739606
+209,sim_user_208,thuê ks ở phú quốc nha,unlabeled,a93607d2063a803e049316668c5f00d2,thuê ks ở phú_quốc nha,book_hotel,0.7648320693648683
+212,sim_user_211,giá nhiêu cho tour sapa,unlabeled,1d3ca01aa38b97c739125e5b10bece6d,giá nhiêu cho tour_Sa_Pa,ask_price,0.5324266168088972
+213,sim_user_212,đặt ks ở nha trang,unlabeled,39bcb5f137d0f88a01eda689348effdf,đặt ks ở Nha_Trang,book_hotel,0.6730245011928586
+215,sim_user_214,tour nt mấy tiền,unlabeled,d494f8a0754fd810d46cb490b52bd922,tour Nha_Trang mấy tiền,ask_price,0.5324266168088972
+218,sim_user_217,muốn book tour tại sapa,unlabeled,0190a675bfdb9ea1bac0bcd6727a7014,muốn book tour tại Sa_Pa,book_hotel,0.7648320693648683
+219,sim_user_218,khoảng mấy tr cho tour đà lạt z,unlabeled,1a26a4c8942ef6eb32c6741c7675e07b,khoảng mấy triệu cho tour Đà_Lạt vậy,search_travel,0.498667987853197
+222,sim_user_221,muốn book vé tại đà lạt,unlabeled,a4f982bc9da57386ca663f6b1b1ad232,muốn book vé tại Đà_Lạt,book_hotel,0.7648320693648683
+224,sim_user_223,chi phí cho tour sg,unlabeled,1d9fe512480a2211f7ff690b80c9ea9e,chi_phí cho tour Sài_Gòn,ask_price,0.5324266168088972
+226,sim_user_225,hôm nay ăn gì,unlabeled,801059c292383b5dcbbfcb8c22be3cce,hôm_nay ăn gì,UNLABELED,0.25
+227,sim_user_226,muốn đi phú quốc ko bot,unlabeled,e5950686fd61a8753a614fe1f815c2f5,muốn đi phú_quốc không bot,search_travel,0.6496360220851362
+228,sim_user_227,bot ngu nha,unlabeled,39fb5fa2457048afabd10a14791d9cda,bot ngu_nha,out_of_scope,0.9776165285739606
+230,sim_user_229,giá rẻ cho tour sapa nha,unlabeled,b9f7dbc95dd436419b10713baae5098c,giá rẻ cho tour_Sa_Pa nha,ask_price,0.5324266168088972
+231,sim_user_230,tour hà nội khoảng mấy tr,unlabeled,ac29c7b1da41398374f11ad351971470,tour hà_nội khoảng mấy triệu,search_travel,0.498667987853197
+234,sim_user_233,tour nha trang giá rẻ,unlabeled,1000f74aeb2a5e158dd78e4dcbf216cb,tour Nha_Trang giá rẻ,ask_price,0.5324266168088972
+237,sim_user_236,review du lịch hà nội ko bot,unlabeled,1bcd60612b2e0b00cd5b557012345ffe,review du_lịch hà_nội không bot,search_travel,0.6496360220851362
+238,sim_user_237,giá nhiêu cho tour đà nẵng,unlabeled,9faa3262c7c381d0c39522263edfe44b,giá nhiêu cho tour đà_nẵng,ask_price,0.5324266168088972
+240,sim_user_239,tìm tour hà nội,unlabeled,5f2a1f12670b718a9581ac411af38d40,tìm tour hà_nội,search_travel,0.6496360220851362
+241,sim_user_240,book tour ở đlạt wá,unlabeled,787fe954b2e51c8e73f187567779f614,book tour ở Đà_Lạt quá,book_hotel,0.7648320693648683
+242,sim_user_241,ik hà nội,unlabeled,405993f0ba1198b08d25a908c8a1b821,đi hà_nội,search_travel,0.6496360220851362
+243,sim_user_242,bao nhiêu cho tour hà nội,unlabeled,cd85aff1a66c90635d9eba3abeca1e5d,bao_nhiêu cho tour hà_nội,ask_price,0.5324266168088972
+246,sim_user_245,chi phí cho tour nha trang,unlabeled,27515e4e73f90a6f5a71d2b7c101fc3a,chi_phí cho tour Nha_Trang,ask_price,0.5324266168088972
+250,sim_user_249,ik phú quốc ko bot,unlabeled,b2669d75204f624609ab1d33bdb2876b,đi phú_quốc không bot,search_travel,0.6496360220851362
+251,sim_user_250,muốn tìm chỗ ở tại phú quốc,unlabeled,7276fd30e2ae6e3697db8524c8cb63c0,muốn tìm chỗ ở tại phú_quốc,search_travel,0.6496360220851362
+253,sim_user_252,giá nhiêu cho tour nt,unlabeled,d55d7513d1fa98b532feab4ff79ce58d,giá nhiêu cho tour Nha_Trang,ask_price,0.5324266168088972
+256,sim_user_255,chi phí cho tour đlạt wá,unlabeled,2e4f9f7b3ac2e13a2b600a93d09d6bb4,chi_phí cho tour Đà_Lạt quá,ask_price,0.5324266168088972
+257,sim_user_256,tour đà lạt mấy tiền,unlabeled,726e41bf66755d6c9a909d687d790ef0,tour Đà_Lạt mấy tiền,ask_price,0.5324266168088972
+261,sim_user_260,muốn đi đlạt ko bot,unlabeled,8f46843f736ec36abfc9e02521f67039,muốn đi Đà_Lạt không bot,search_travel,0.6496360220851362
+262,sim_user_261,ik phú quốc nha,unlabeled,d080f155ce7d5a942a97de4bd0daf034,đi phú_quốc nha,search_travel,0.6496360220851362
+264,sim_user_263,muốn đặt phòng tại đlạt,unlabeled,f0fcbce8c503986a4819f06ebe4f1d88,muốn đặt phòng tại Đà_Lạt,book_hotel,0.7648320693648683
+265,sim_user_264,muốn thuê ks tại nha trang,unlabeled,eb785eb995e079e66d25a755dd4531f5,muốn thuê ks tại Nha_Trang,book_hotel,0.6730245011928586
+268,sim_user_267,book tour ở nt,unlabeled,305c780d6a78275b404592b96c355d7e,book tour ở Nha_Trang,book_hotel,0.6730245011928586
+269,sim_user_268,mấy củ cho tour đà nẵng,unlabeled,2cd5617184c20051b4c9e6f6eb55aab2,mấy triệu cho tour đà_nẵng,search_travel,0.498667987853197
+270,sim_user_269,mấy tiền cho tour đlạt,unlabeled,52184248cf55491f922e5c951b5bb703,mấy tiền cho tour Đà_Lạt,ask_price,0.5324266168088972
+271,sim_user_270,giá sao cho tour hà nội nha,unlabeled,85f519ec48024d5f6bf1de6e481217e4,giá sao cho tour hà_nội nha,ask_price,0.5324266168088972
+272,sim_user_271,ik đà lạt ko bot,unlabeled,c479e93d13fac1fdd807a4764be06a3c,đi Đà_Lạt không bot,search_travel,0.6496360220851362
+273,sim_user_272,tour sg mấy củ nha,unlabeled,d68be5af079f6fd9da0e147200e6004e,tour Sài_Gòn mấy triệu nha,search_travel,0.498667987853197
+276,sim_user_275,đặt ks ở đà nẵng,unlabeled,06a33cef8150034f67a48a1f7f44c1ed,đặt ks ở đà_nẵng,book_hotel,0.7648320693648683
+277,sim_user_276,muốn book vé tại đlạt,unlabeled,0223ca3ac7228a069d1a282f0eab7435,muốn book vé tại Đà_Lạt,book_hotel,0.7648320693648683
+279,sim_user_278,tour phú quốc chi phí,unlabeled,054060c8564e2629730c2727a0402e4d,tour phú_quốc chi_phí,ask_price,0.5324266168088972
+280,sim_user_279,muốn thuê ks tại phú quốc,unlabeled,820d0169f0849fe0d57239649c8a6ec1,muốn thuê ks tại phú_quốc,book_hotel,0.7648320693648683
+281,sim_user_280,tìm tour phú quốc z,unlabeled,f948af04db4a704180a551de6b303017,tìm tour_phú_quốc vậy,search_travel,0.6496360220851362
+283,sim_user_282,muốn đi phú quốc,unlabeled,84d78f152d5751464ee97fa720ac8a5c,muốn đi phú_quốc,search_travel,0.6496360220851362
+286,sim_user_285,tour pù cúp giá sao,unlabeled,7434ecf4e60a866f09adb4fcec8a16d6,tour Phú_Quốc giá sao,ask_price,0.5324266168088972
+289,sim_user_288,chi phí cho tour đlạt nha,unlabeled,985986828c147d6e6d17049ac8340934,chi_phí cho tour Đà_Lạt nha,ask_price,0.5324266168088972
+290,sim_user_289,thuê ks ở đà lạt,unlabeled,f6085cb244747402a4f14db492ed6f98,thuê ks ở Đà_Lạt,book_hotel,0.7648320693648683
+291,sim_user_290,tour đlạt giá rẻ,unlabeled,03cfbe54dc2f788931e19897174ae369,tour Đà_Lạt giá rẻ,ask_price,0.5324266168088972
+292,sim_user_291,tìm tour đlạt nha,unlabeled,1355b496cace363ea172464357dd5646,tìm tour Đà_Lạt nha,search_travel,0.6496360220851362
+294,sim_user_293,muốn tìm chỗ ở tại sapa nha,unlabeled,3afd144c91945d3bdbc4a14f4591338f,muốn tìm chỗ ở tại Sa_Pa nha,search_travel,0.6496360220851362
+297,sim_user_296,đặt ks ở sapa,unlabeled,7f3e18e3d4fe415290d2dd333ad6d82e,đặt ks ở Sa_Pa,book_hotel,0.7648320693648683
+304,sim_user_303,book vé ở nt,unlabeled,3b6c2b60dd7b14b857994d95d99ab065,book vé ở Nha_Trang,book_hotel,0.6730245011928586
+307,sim_user_306,muốn đặt ks tại đà lạt,unlabeled,5dc85e528e80bb8215211b99157c827d,muốn đặt ks tại Đà_Lạt,book_hotel,0.7648320693648683
+310,sim_user_309,tour đà nẵng chi phí,unlabeled,8c20edfb1b4891c1a23497186748c0d3,tour đà_nẵng chi_phí,ask_price,0.5324266168088972
+311,sim_user_310,giải bài tập nha,unlabeled,aa7f4fe2c2bef343966ee8e4f2f4f2f2,giải bài_tập nha,out_of_scope,0.9776165285739606
+312,sim_user_311,ik hà nội ko bot,unlabeled,76bbf84f13bb51bb453df7f94496223c,đi hà_nội không bot,search_travel,0.6496360220851362
+314,sim_user_313,book tour ở sg,unlabeled,f3989780ee8f2132c22e76608d24d4bb,book tour ở Sài_Gòn,book_hotel,0.7648320693648683
+315,sim_user_314,book tour ở sg wá,unlabeled,94643560f67a2ea419084dcf455a5e24,book tour ở Sài_Gòn quá,book_hotel,0.7648320693648683
+318,sim_user_317,bao nhiêu cho tour sapa,unlabeled,97f3002077dc9569c0d30533b1eabd6e,bao_nhiêu cho tour_Sa_Pa,ask_price,0.5324266168088972
+321,sim_user_320,tour đà lạt giá nhiêu,unlabeled,5f165b2620a9998f5359ae06593ec397,tour Đà_Lạt giá nhiêu,ask_price,0.5324266168088972
+323,sim_user_322,review du lịch đlạt z,unlabeled,e3c4f669481061a3fa05b8a3d9a9d42c,review du_lịch Đà_Lạt vậy,search_travel,0.6496360220851362
+324,sim_user_323,bao nhiêu cho tour sg wá,unlabeled,7b9eb44b3d1ab8d12844778fd721d7be,bao_nhiêu cho tour Sài_Gòn quá,ask_price,0.5324266168088972
+326,sim_user_325,tour đlạt bao nhiêu ko bot,unlabeled,babad08bdf447b816bb020af3b6390a9,tour Đà_Lạt bao_nhiêu không bot,ask_price,0.5324266168088972
+327,sim_user_326,review du lịch sg,unlabeled,8ad91d0c483a38b0f637cb596b59d4d0,review du_lịch Sài_Gòn,search_travel,0.6496360220851362
+330,sim_user_329,ik phú quốc,unlabeled,69382c2bb4e42ab6c2ce61ec23026d54,đi phú_quốc,search_travel,0.6496360220851362
+334,sim_user_333,tour pù cúp giá rẻ,unlabeled,cc0562fcbc4910555a4464479d2293d9,tour Phú_Quốc giá rẻ,ask_price,0.5324266168088972
+338,sim_user_337,thuê ks ở sapa,unlabeled,2713e93d571051cd902b42f4b0b5d92a,thuê ks ở Sa_Pa,book_hotel,0.7648320693648683
+339,sim_user_338,tìm chỗ ở ở đlạt,unlabeled,50ec050d4b5c7bf7ac4a640e151701b9,tìm chỗ ở ở Đà_Lạt,search_travel,0.6496360220851362
+342,sim_user_341,tour đà lạt giá sao,unlabeled,8d626b2badfc4af7e875044413618c26,tour Đà_Lạt giá sao,ask_price,0.5324266168088972
+346,sim_user_345,tour sg giá rẻ,unlabeled,3133aae53469b3b41c78df6acd4e20ec,tour Sài_Gòn giá rẻ,ask_price,0.5324266168088972
+348,sim_user_347,mấy củ cho tour đlạt nha,unlabeled,9930e1eb6b38239c386944112d58c3d4,mấy triệu cho tour Đà_Lạt nha,search_travel,0.498667987853197
+349,sim_user_348,review du lịch hà nội nha,unlabeled,7cc1648069dab2514043844359bd8bff,review du_lịch hà_nội nha,search_travel,0.6496360220851362
+350,sim_user_349,muốn đặt phòng tại sg nha,unlabeled,5eb6e25309744966ffb1027f8070be10,muốn đặt phòng tại Sài_Gòn nha,book_hotel,0.7648320693648683
+351,sim_user_350,muốn tìm chỗ ở tại pù cúp,unlabeled,ecb3908f6af039b2ea2dcfee70472095,muốn tìm chỗ ở tại Phú_Quốc,search_travel,0.6496360220851362
+352,sim_user_351,muốn đi hà nội,unlabeled,e30582b6a678e8dd9c168ec0d9666702,muốn đi hà_nội,search_travel,0.6496360220851362
+354,sim_user_353,review du lịch đà nẵng z,unlabeled,5daac26339a57092efdcda11a832741b,review du_lịch đà_nẵng vậy,search_travel,0.6496360220851362
+358,sim_user_357,nấu ăn z,unlabeled,72a4dba1df3acfdea2919df8b6eaec5c,nấu_ăn vậy,out_of_scope,0.9776165285739606
+359,sim_user_358,tour phú quốc khoảng mấy tr,unlabeled,1bb1dd21adb5235ed72b48bf565335d8,tour phú_quốc khoảng mấy triệu,search_travel,0.498667987853197
+362,sim_user_361,mấy củ cho tour nha trang,unlabeled,52134fc1cb699c977c8367ef7a635e91,mấy triệu cho tour Nha_Trang,search_travel,0.498667987853197
+365,sim_user_364,giá sao cho tour hà nội wá,unlabeled,082a8a69e5ab01dc2809bfcb8e7cb605,giá sao cho tour hà_nội quá,ask_price,0.5324266168088972
+367,sim_user_366,tour nha trang giá sao,unlabeled,89d2c5248069b9b91b37375356e7382b,tour Nha_Trang giá sao,ask_price,0.5324266168088972
+368,sim_user_367,giá nhiêu cho tour nha trang,unlabeled,0036b9f402d9096c3702bc4987fd1d17,giá nhiêu cho tour Nha_Trang,ask_price,0.5324266168088972
+370,sim_user_369,thuê ks ở nha trang,unlabeled,cfa24f1b0fa8405a7bd588d0900ed3b8,thuê ks ở Nha_Trang,book_hotel,0.6730245011928586
+371,sim_user_370,ik đà lạt z,unlabeled,36724e2e34277c24fcf7381816498271,đi Đà_Lạt vậy,search_travel,0.6496360220851362
+372,sim_user_371,review du lịch đlạt wá,unlabeled,7145cb3e7f14f94f1a86ba5372ba7a07,review du_lịch Đà_Lạt quá,search_travel,0.6496360220851362
+374,sim_user_373,tour sapa mấy củ,unlabeled,dbe0a773e25ccb531a251ca3d741aa47,tour Sa_Pa mấy triệu,search_travel,0.498667987853197
+375,sim_user_374,bao nhiêu cho tour đlạt,unlabeled,962c8686fa01997211860c5380d2cdf9,bao_nhiêu cho tour Đà_Lạt,ask_price,0.5324266168088972
+376,sim_user_375,khoảng mấy tr cho tour sg,unlabeled,ce8ddf4269ce0847ad2de4cb34e34736,khoảng mấy triệu cho tour Sài_Gòn,search_travel,0.498667987853197
+377,sim_user_376,chi phí cho tour đà lạt,unlabeled,e326e6ef5cb564ce7153b732ca19c348,chi_phí cho tour Đà_Lạt,ask_price,0.5324266168088972
+383,sim_user_382,tour nt giá rẻ,unlabeled,357fb952b6925b6bcc7392028b3aca16,tour Nha_Trang giá rẻ,ask_price,0.5324266168088972
+384,sim_user_383,tour nha trang giá nhiêu nha,unlabeled,703769b0030f82a8a47a2120ca1efd7f,tour Nha_Trang giá nhiêu nha,ask_price,0.5324266168088972
+387,sim_user_386,tour nha trang mấy tiền,unlabeled,8303c338511cf165796febe86f9de76e,tour Nha_Trang mấy tiền,ask_price,0.5324266168088972
+388,sim_user_387,chửi thề nha,unlabeled,c37f90e54dd9b5a246714c74e6d1acf2,chửi thề nha,out_of_scope,0.9776165285739606
+390,sim_user_389,tour phú quốc giá rẻ,unlabeled,3afa1bb8525891a1adf35688feb210ed,tour phú_quốc giá rẻ,ask_price,0.5324266168088972
+393,sim_user_392,tìm chỗ ở ở pù cúp ko bot,unlabeled,b86a12e6076778ed396e648b6536fe1b,tìm chỗ ở ở Phú_Quốc không bot,search_travel,0.6496360220851362
+397,sim_user_396,muốn book vé tại phú quốc ko bot,unlabeled,34b123dc09897719ec2ad3cb1591052d,muốn book vé tại phú_quốc không bot,book_hotel,0.7648320693648683
+399,sim_user_398,tour đà lạt khoảng mấy tr,unlabeled,700a3eb095a827705a7dab2c0a96afcb,tour Đà_Lạt khoảng mấy triệu,search_travel,0.498667987853197
+400,sim_user_399,muốn book tour tại pù cúp,unlabeled,81ff61f0c9d5f75e49f8769aebf58c2d,muốn book tour tại Phú_Quốc,book_hotel,0.7648320693648683
+404,sim_user_403,review du lịch phú quốc ko bot,unlabeled,c95e9f7580e3549d1c23b3dee8a9e3aa,review du_lịch phú_quốc không bot,search_travel,0.6496360220851362
+405,sim_user_404,tour đà nẵng bao nhiêu,unlabeled,47263e9d0e5322812c95a0bab7196e2a,tour đà_nẵng bao_nhiêu,ask_price,0.5324266168088972
+407,sim_user_406,book tour ở nha trang ko bot,unlabeled,bc70a628cf21877cb88080e10f2cf54f,book tour ở Nha_Trang không bot,book_hotel,0.6730245011928586
+410,sim_user_409,có tour nào đi sapa ko bot,unlabeled,d89ce33bd9d9ea050f129f54dcfa4a57,có tour nào đi Sa_Pa không bot,search_travel,0.6496360220851362
+412,sim_user_411,giá sao cho tour đà lạt,unlabeled,ba2aa49a4a5f6cac9953b5656c47470e,giá sao cho tour Đà_Lạt,ask_price,0.5324266168088972
+417,sim_user_416,tìm tour đlạt wá,unlabeled,70c6e5c3207b7cd1da33fc8d13be9283,tìm tour Đà_Lạt quá,search_travel,0.6496360220851362
+420,sim_user_419,tour sapa giá nhiêu,unlabeled,dc799e994be47d16bcc6bc80fc5cfac6,tour Sa_Pa giá nhiêu,ask_price,0.5324266168088972
+422,sim_user_421,muốn tìm chỗ ở tại hà nội,unlabeled,fe0bf76a2f07baac9be5ad31dab3c1cc,muốn tìm chỗ ở tại hà_nội,search_travel,0.6496360220851362
+424,sim_user_423,tour đà lạt giá rẻ,unlabeled,8bddfe7371edbac6299049e009e40e57,tour Đà_Lạt giá rẻ,ask_price,0.5324266168088972
+427,sim_user_426,bạn tên gì nha,unlabeled,1c779f5b5c10c6430bfc59c2d4b5b794,bạn tên gì nha,UNLABELED,0.25
+428,sim_user_427,chi phí cho tour đlạt,unlabeled,89da1ebc6d0c789e1b3c1e2e73e5a88d,chi_phí cho tour Đà_Lạt,ask_price,0.5324266168088972
+429,sim_user_428,giá rẻ cho tour pù cúp,unlabeled,77e9a76974edd742315309c20f2a5d61,giá rẻ cho tour Phú_Quốc,ask_price,0.5324266168088972
+430,sim_user_429,giá rẻ cho tour đà nẵng,unlabeled,5f12c2b3225b3456399ee6ec823d526c,giá rẻ cho tour đà_nẵng,ask_price,0.5324266168088972
+435,sim_user_434,book vé ở sapa,unlabeled,c228e431692c7fd7b32070b7be517259,book vé ở Sa_Pa,book_hotel,0.7648320693648683
+440,sim_user_439,giá nhiêu cho tour pù cúp,unlabeled,5e3725e515ae4d9f8637c291ba37c990,giá nhiêu cho tour Phú_Quốc,ask_price,0.5324266168088972
+441,sim_user_440,muốn tìm chỗ ở tại đà lạt,unlabeled,fa657ff711f9de2bd68376ef17626d3e,muốn tìm chỗ ở tại Đà_Lạt,search_travel,0.6496360220851362
+445,sim_user_444,chi phí cho tour đà nẵng,unlabeled,f0834993d7083631f1e131cca7372409,chi_phí cho tour đà_nẵng,ask_price,0.5324266168088972
+447,sim_user_446,ik hà nội wá,unlabeled,651b39b40a2e375524640b19a6355083,đi hà_nội quá,search_travel,0.6496360220851362
+448,sim_user_447,đặt vé ở pù cúp wá,unlabeled,b78e91189e115c6a4cae0e29e73f7491,đặt vé ở Phú_Quốc quá,book_hotel,0.7648320693648683
+449,sim_user_448,ik đà lạt,unlabeled,d94fd1de83aa685bc16dd6f7292f62e5,đi Đà_Lạt,search_travel,0.6496360220851362
+451,sim_user_450,review du lịch pù cúp wá,unlabeled,62d15e93fd7626f27015b9eb7a490819,review du_lịch Phú_Quốc quá,search_travel,0.6496360220851362
+452,sim_user_451,giá sao cho tour nha trang wá,unlabeled,b893856b47232b208582aed2d30e5e87,giá sao cho tour Nha_Trang quá,ask_price,0.5324266168088972
+456,sim_user_455,book tour ở đà nẵng,unlabeled,86cf354c1d9fe3c552ffae5fa523972a,book tour ở đà_nẵng,book_hotel,0.7648320693648683
+457,sim_user_456,book tour ở nha trang,unlabeled,ae55f8741cf1b5a98c6258816e4676a4,book tour ở Nha_Trang,book_hotel,0.6730245011928586
+458,sim_user_457,khoảng mấy tr cho tour nt wá,unlabeled,f321ee252010ca396f70396804c1ce73,khoảng mấy triệu cho tour Nha_Trang quá,search_travel,0.498667987853197
+462,sim_user_461,muốn đi sg nha,unlabeled,c210379e9c3d14226c8aa8d16d09f75b,muốn đi Sài_Gòn nha,search_travel,0.6496360220851362
+464,sim_user_463,tour nha trang giá sao nha,unlabeled,14dd7190b30e7017370080180e833b70,tour Nha_Trang giá sao nha,ask_price,0.5324266168088972
+467,sim_user_466,review du lịch phú quốc wá,unlabeled,5ad6403df60e2b366a481e17f1fe3c5c,review du_lịch phú_quốc quá,search_travel,0.6496360220851362
+468,sim_user_467,tour phú quốc giá sao,unlabeled,3bd729261ff12d85c61ec02673100c1f,tour phú_quốc giá sao,ask_price,0.5324266168088972
+469,sim_user_468,có tour nào đi đà lạt,unlabeled,493deec95fc6e9a3c6fde94fa5037623,có tour nào đi Đà_Lạt,search_travel,0.6496360220851362
+470,sim_user_469,tour sapa giá sao,unlabeled,62eedf3b0036899560f2f5d1cf4c8f7f,tour Sa_Pa giá sao,ask_price,0.5324266168088972
+472,sim_user_471,muốn đặt phòng tại nt,unlabeled,65fa201e1cae55faf9b9570e9d263090,muốn đặt phòng tại Nha_Trang,book_hotel,0.6730245011928586
+473,sim_user_472,muốn đi nt,unlabeled,d54f7dd3567b80763724afd966ac2395,muốn đi Nha_Trang,search_travel,0.498667987853197
+474,sim_user_473,giải bài tập ko bot,unlabeled,5315442fd3f769904f7995a224f4dac1,giải bài_tập không bot,out_of_scope,0.9776165285739606
+475,sim_user_474,có tour nào đi đà lạt z,unlabeled,8264f1480792ea503f27a9b60c12e693,có tour nào đi Đà_Lạt vậy,search_travel,0.6496360220851362
+476,sim_user_475,muốn book tour tại hà nội,unlabeled,aed8c75c24bae701b49e38dcd044b80a,muốn book tour tại hà_nội,book_hotel,0.7648320693648683
+477,sim_user_476,muốn đi hà nội z,unlabeled,19f4db6c03920a67a02682f5818f6f5a,muốn đi hà_nội vậy,search_travel,0.6496360220851362
+479,sim_user_478,review du lịch đà lạt ko bot,unlabeled,104842f341a5ac1cc2ce726516055186,review du_lịch Đà_Lạt không bot,search_travel,0.6496360220851362
+480,sim_user_479,tour nt giá sao,unlabeled,63d3e16f78363f1a10d5c44c48a5fd83,tour Nha_Trang giá sao,ask_price,0.5324266168088972
+481,sim_user_480,tìm chỗ ở ở nha trang,unlabeled,4c52284b8559200b163109dc190ee725,tìm chỗ ở ở Nha_Trang,search_travel,0.498667987853197
+483,sim_user_482,có tour nào đi nt wá,unlabeled,3711da59ec8a70a3ba3c894bd58dc7e0,có tour nào đi Nha_Trang quá,search_travel,0.498667987853197
+487,sim_user_486,đặt vé ở nt,unlabeled,c92b44f16f6fe54a01acf7d6d420c254,đặt vé ở Nha_Trang,book_hotel,0.6730245011928586
+492,sim_user_491,tìm tour nha trang wá,unlabeled,4ccbebfb984674bc159b99aacf3fafab,tìm tour Nha_Trang quá,search_travel,0.498667987853197
+494,sim_user_493,đặt vé ở hà nội,unlabeled,4c4552e6dd9cfcb2c154bf64a2f4e090,đặt vé ở hà_nội,book_hotel,0.7648320693648683
+496,sim_user_495,mấy củ cho tour đà lạt,unlabeled,99569f1d4c897582cb574b1a1baabf6f,mấy triệu cho tour Đà_Lạt,search_travel,0.498667987853197
+497,sim_user_496,giá rẻ cho tour đlạt,unlabeled,12b2911ca8299462810944f7cd8c7e91,giá rẻ cho tour Đà_Lạt,ask_price,0.5324266168088972
+499,sim_user_498,giá nhiêu cho tour đà nẵng nha,unlabeled,40fae6e7482f77ea0f6dba6f91f6d22b,giá nhiêu cho tour đà_nẵng nha,ask_price,0.5324266168088972
+500,sim_user_499,muốn tìm chỗ ở tại nha trang nha,unlabeled,5ea7522746ab13b5a5755f84f989bebe,muốn tìm chỗ ở tại Nha_Trang nha,search_travel,0.498667987853197
+504,sim_user_503,tìm chỗ ở ở nt z,unlabeled,68ca3938006fb0de3d5ebf7d3f66d791,tìm chỗ ở ở Nha_Trang vậy,search_travel,0.498667987853197
+505,sim_user_504,muốn thuê ks tại nt,unlabeled,3475fba0ed5c02f1b83a9eb8f6a7bd8c,muốn thuê ks tại Nha_Trang,book_hotel,0.6730245011928586
+507,sim_user_506,ik sg wá,unlabeled,ce74902743caf3ed44ae412ced5e4f6c,đi Sài_Gòn quá,search_travel,0.6496360220851362
+513,sim_user_512,đặt vé ở pù cúp,unlabeled,b1a6ee75774176cb266ede9e8b858071,đặt vé ở Phú_Quốc,book_hotel,0.7648320693648683
+517,sim_user_516,giá sao cho tour phú quốc,unlabeled,55315923096f3423c9545075f32e68b8,giá sao cho tour_phú_quốc,ask_price,0.5324266168088972
+522,sim_user_521,tour sg mấy củ,unlabeled,90280510116c60c3bea429c408d7084c,tour Sài_Gòn mấy triệu,search_travel,0.498667987853197
+523,sim_user_522,book vé ở phú quốc ko bot,unlabeled,29e42af992814c66a33031a4c5840dad,book vé ở phú_quốc không bot,book_hotel,0.7648320693648683
+527,sim_user_526,tour sapa chi phí ko bot,unlabeled,975806a9ef498af46527a0ff6533211b,tour Sa_Pa chi_phí không bot,ask_price,0.5324266168088972
+531,sim_user_530,bạn tên gì ko bot,unlabeled,19d6886f61ec74ed81f3cbebeb6f0f65,bạn tên gì không bot,UNLABELED,0.25
+532,sim_user_531,bao nhiêu cho tour hà nội wá,unlabeled,2ad2e47f22e6dd3e3d2f1afe2b38d349,bao_nhiêu cho tour hà_nội quá,ask_price,0.5324266168088972
+533,sim_user_532,muốn book tour tại đlạt,unlabeled,61d6c744c54fbef406d684ec3c736646,muốn book tour tại Đà_Lạt,book_hotel,0.7648320693648683
+536,sim_user_535,có tour nào đi sg nha,unlabeled,955a1945ead82aae3896ed8c3d5ce08f,có tour nào đi Sài_Gòn nha,search_travel,0.6496360220851362
+537,sim_user_536,tour đà nẵng khoảng mấy tr,unlabeled,6f820ce0d0318f335f421f12a538c761,tour đà_nẵng khoảng mấy triệu,search_travel,0.498667987853197
+540,sim_user_539,tour phú quốc bao nhiêu,unlabeled,8bc6cc5a97362984ae9d6f154559b852,tour phú_quốc bao_nhiêu,ask_price,0.5324266168088972
+544,sim_user_543,muốn book vé tại sapa,unlabeled,993a6043968fe5c4423c7e9ba448a252,muốn book vé tại Sa_Pa,book_hotel,0.7648320693648683
+545,sim_user_544,giá rẻ cho tour đà lạt nha,unlabeled,ee4c072b77ad5484efadaef4c6c18cae,giá rẻ cho tour Đà_Lạt nha,ask_price,0.5324266168088972
+547,sim_user_546,mấy củ cho tour hà nội,unlabeled,a5800537e6fbebd30565a399172469a2,mấy triệu cho tour hà_nội,search_travel,0.498667987853197
+548,sim_user_547,muốn đặt phòng tại phú quốc,unlabeled,d35730859c8836db2165556191f823db,muốn đặt phòng tại phú_quốc,book_hotel,0.7648320693648683
+550,sim_user_549,tìm tour pù cúp nha,unlabeled,e7fa635e1a050745558379dca27b3db9,tìm tour Phú_Quốc nha,search_travel,0.6496360220851362
+551,sim_user_550,muốn tìm chỗ ở tại đà nẵng,unlabeled,a451c1d2721c4bb2093485ccbd80411c,muốn tìm chỗ ở tại đà_nẵng,search_travel,0.6496360220851362
+555,sim_user_554,có tour nào đi đlạt nha,unlabeled,d9618755e5441fe0c7d54de3cbe58910,có tour nào đi Đà_Lạt nha,search_travel,0.6496360220851362
+556,sim_user_555,ik sapa wá,unlabeled,3d7b686922b9d2b0a8e139881acf8960,đi Sa_Pa quá,search_travel,0.6496360220851362
+557,sim_user_556,đặt phòng ở đà lạt,unlabeled,19037a8c43c7a2eb283a9f31724c5390,đặt phòng ở Đà_Lạt,book_hotel,0.7648320693648683
+558,sim_user_557,muốn thuê ks tại đà lạt,unlabeled,4dbef9bd6a3eabaf21bffb0192e99aa2,muốn thuê ks tại Đà_Lạt,book_hotel,0.7648320693648683
+560,sim_user_559,muốn đặt phòng tại nt wá,unlabeled,2a0601c70b81d74e86b58570307030ed,muốn đặt phòng tại Nha_Trang quá,book_hotel,0.6730245011928586
+562,sim_user_561,book vé ở sg,unlabeled,960d0913321b1df18c5925a24c2ef6d9,book vé ở Sài_Gòn,book_hotel,0.7648320693648683
+563,sim_user_562,mấy củ cho tour pù cúp,unlabeled,d064d4d2741599bfb6845a3a6abecb34,mấy triệu cho tour Phú_Quốc,search_travel,0.498667987853197
+564,sim_user_563,ik pù cúp ko bot,unlabeled,02fe8c3a4c051b51a24bdaa6e68d37df,đi Phú_Quốc không bot,search_travel,0.6496360220851362
+565,sim_user_564,giá sao cho tour đà nẵng,unlabeled,a0e9074de33765c0c38c679964601ca8,giá sao cho tour đà_nẵng,ask_price,0.5324266168088972
+567,sim_user_566,khoảng mấy tr cho tour pù cúp,unlabeled,57df0097e2bfbd94a01f39a08d3448f6,khoảng mấy triệu cho tour Phú_Quốc,search_travel,0.498667987853197
+568,sim_user_567,mấy củ cho tour sg,unlabeled,d091e2dc78d4bb9f781f04c39e6f663c,mấy triệu cho tour Sài_Gòn,search_travel,0.498667987853197
+576,sim_user_575,giá rẻ cho tour đà lạt,unlabeled,592c146f32c13ea742c0b614c0c54cdb,giá rẻ cho tour Đà_Lạt,ask_price,0.5324266168088972
+580,sim_user_579,muốn book vé tại đlạt nha,unlabeled,91b39c7e0209b407113d9142261f3c1f,muốn book vé tại Đà_Lạt nha,book_hotel,0.7648320693648683
+584,sim_user_583,muốn đặt ks tại đlạt,unlabeled,590c3c5dabcf5a827b7104fa69386602,muốn đặt ks tại Đà_Lạt,book_hotel,0.7648320693648683
+585,sim_user_584,review du lịch sapa wá,unlabeled,40b6fef085daaef409d3a44cc3a27db0,review du_lịch Sa_Pa quá,search_travel,0.6496360220851362
+586,sim_user_585,đặt vé ở nha trang nha,unlabeled,029f8e6587ff8ec419801aac2c911618,đặt vé ở Nha_Trang nha,book_hotel,0.6730245011928586
+589,sim_user_588,đặt phòng ở hà nội ko bot,unlabeled,83d8fe191016c98e5d5d959dd59579ca,đặt phòng ở hà_nội không bot,book_hotel,0.7648320693648683
+599,sim_user_598,muốn book vé tại hà nội,unlabeled,7f6229152106267ee14e9130016c05e7,muốn book vé tại hà_nội,book_hotel,0.7648320693648683
+600,sim_user_599,muốn book tour tại nha trang z,unlabeled,0e2dab8314218029c6e2ca832afe9d8b,muốn book tour tại Nha_Trang vậy,book_hotel,0.6730245011928586
+601,sim_user_600,chi phí cho tour nt wá,unlabeled,365da99f779d19cbf9f55c6e6639da67,chi_phí cho tour Nha_Trang quá,ask_price,0.5324266168088972
+603,sim_user_602,tour đà lạt chi phí,unlabeled,4a72de66dba4bd6690e005c59d388b4b,tour Đà_Lạt chi_phí,ask_price,0.5324266168088972
+605,sim_user_604,đặt ks ở đà nẵng nha,unlabeled,ec8db56c0ca94ae1265564b60831b725,đặt ks ở đà_nẵng nha,book_hotel,0.7648320693648683
+608,sim_user_607,tìm tour pù cúp wá,unlabeled,b7e53b7fc6420b8fc92555cf6952f600,tìm tour Phú_Quốc quá,search_travel,0.6496360220851362
+613,sim_user_612,bạn tên gì z,unlabeled,840e6e838e581d2d576262244ddd9ae6,bạn tên gì vậy,UNLABELED,0.25
+616,sim_user_615,tour hà nội chi phí,unlabeled,917c498622bdce0767547cf83d6cc86f,tour hà_nội chi_phí,ask_price,0.5324266168088972
+620,sim_user_619,giá rẻ cho tour hà nội,unlabeled,8d70b024fff70177f7987abced2ef4de,giá rẻ cho tour hà_nội,ask_price,0.5324266168088972
+621,sim_user_620,book tour ở pù cúp,unlabeled,d75bdf818919765396c9e97ae054e27c,book tour ở Phú_Quốc,book_hotel,0.7648320693648683
+625,sim_user_624,muốn đi đlạt z,unlabeled,3d798683f7d3ee45b11503406ffaf997,muốn đi Đà_Lạt vậy,search_travel,0.6496360220851362
+626,sim_user_625,muốn đặt ks tại đà nẵng wá,unlabeled,bfe1b7f7d26c446513493fd6a6df438e,muốn đặt ks tại đà_nẵng quá,book_hotel,0.7648320693648683
+630,sim_user_629,khoảng mấy tr cho tour phú quốc,unlabeled,5540b5f1e879b6db0bd2ace9f15be9b7,khoảng mấy triệu cho tour_phú_quốc,search_travel,0.498667987853197
+639,sim_user_638,đặt phòng ở nt,unlabeled,072fd776f483f07382effb9cf2c5d5bd,đặt phòng ở Nha_Trang,book_hotel,0.6730245011928586
+640,sim_user_639,ik nha trang ko bot,unlabeled,6325a6219d5a11f05f948eea18644a12,đi Nha_Trang không bot,search_travel,0.498667987853197
+643,sim_user_642,tìm tour nt wá,unlabeled,307335d6de6115d5306e8d318c9c8287,tìm tour Nha_Trang quá,search_travel,0.498667987853197
+645,sim_user_644,tour nha trang mấy củ ko bot,unlabeled,870ec5a25123dfc835b195279a4a1b37,tour Nha_Trang mấy triệu không bot,search_travel,0.498667987853197
+650,sim_user_649,đặt vé ở đà nẵng,unlabeled,302e6943aab448c3806544c1da3c8da1,đặt vé ở đà_nẵng,book_hotel,0.7648320693648683
+652,sim_user_651,tìm chỗ ở ở nt,unlabeled,ca596411d556b5c52afb23108aa33fa9,tìm chỗ ở ở Nha_Trang,search_travel,0.498667987853197
+653,sim_user_652,giải bài tập z,unlabeled,0f2940de1cc70231acf624477976a114,giải bài_tập vậy,out_of_scope,0.9776165285739606
+655,sim_user_654,giá sao cho tour pù cúp,unlabeled,b75434fd6866063f058509cb7140e03f,giá sao cho tour Phú_Quốc,ask_price,0.5324266168088972
+656,sim_user_655,chi phí cho tour hà nội z,unlabeled,66216d378c08a0d2c938f86708d3493b,chi_phí cho tour hà_nội vậy,ask_price,0.5324266168088972
+660,sim_user_659,chi phí cho tour đà lạt wá,unlabeled,d3ab175344a835be2cdc7b4f146b945b,chi_phí cho tour Đà_Lạt quá,ask_price,0.5324266168088972
+662,sim_user_661,ik pù cúp nha,unlabeled,1e8f0cc41235cfa2076acce66a405274,đi Phú_Quốc nha,search_travel,0.6496360220851362
+667,sim_user_666,đặt phòng ở sapa,unlabeled,675ab0589928c3adf934a37984028c67,đặt phòng ở Sa_Pa,book_hotel,0.7648320693648683
+669,sim_user_668,giá sao cho tour sg nha,unlabeled,0cc3418eaa6f769c9ff78d868d82109f,giá sao cho tour Sài_Gòn nha,ask_price,0.5324266168088972
+671,sim_user_670,ik nha trang wá,unlabeled,f9d5f262995e66ce236114c859407c49,đi Nha_Trang quá,search_travel,0.498667987853197
+673,sim_user_672,mấy củ cho tour sapa,unlabeled,f32af7d4a42b6b3fc4136f8c9e159399,mấy triệu cho tour_Sa_Pa,search_travel,0.498667987853197
+674,sim_user_673,tour hà nội giá rẻ wá,unlabeled,dc6d726ad48fc43ba5d10dfa3170d7b1,tour hà_nội giá rẻ quá,ask_price,0.5324266168088972
+677,sim_user_676,muốn đi sapa ko bot,unlabeled,bee79c3bf6d03373e45733d0521b5387,muốn đi Sa_Pa không bot,search_travel,0.6496360220851362
+679,sim_user_678,muốn book tour tại phú quốc,unlabeled,5c0c8e9d7a975e6807bacbd29eb0348e,muốn book_tour tại phú_quốc,book_hotel,0.7648320693648683
+680,sim_user_679,muốn đi nha trang nha,unlabeled,ed2964691caf0e3d1a3db8517df9a9b3,muốn đi Nha_Trang nha,search_travel,0.498667987853197
+682,sim_user_681,tour đlạt khoảng mấy tr nha,unlabeled,63594d23bbb62cd1a326b4bd1298ed1b,tour Đà_Lạt khoảng mấy triệu nha,search_travel,0.498667987853197
+689,sim_user_688,tour nt khoảng mấy tr,unlabeled,68f6e61a0df37238feb56ee9e68afffc,tour Nha_Trang khoảng mấy triệu,search_travel,0.498667987853197
+690,sim_user_689,giá sao cho tour nt,unlabeled,544e77d3cb3e7b2851fff8ac98ea3cbf,giá sao cho tour Nha_Trang,ask_price,0.5324266168088972
+691,sim_user_690,muốn đặt vé tại nha trang,unlabeled,83a848397d4addeae59bedb8d247eebd,muốn đặt vé tại Nha_Trang,book_hotel,0.6730245011928586
+693,sim_user_692,tìm tour đà lạt wá,unlabeled,66417903952f9451f6eb2ba3a799f7fa,tìm tour Đà_Lạt quá,search_travel,0.6496360220851362
+706,sim_user_705,tour đlạt giá rẻ z,unlabeled,9706cefbf9b6ef11c63c0aaa4fd75f7c,tour Đà_Lạt giá rẻ vậy,ask_price,0.5324266168088972
+708,sim_user_707,khoảng mấy tr cho tour sapa ko bot,unlabeled,fddaa5bf20ee17414554902db9a13f6f,khoảng mấy triệu cho tour_Sa_Pa không bot,search_travel,0.498667987853197
+710,sim_user_709,đặt vé ở đlạt,unlabeled,5105932aa981158b3926c44edf1cd400,đặt vé ở Đà_Lạt,book_hotel,0.7648320693648683
+711,sim_user_710,book vé ở sg nha,unlabeled,ab5030216eeb4b1a02fbf1d1ee540332,book vé ở Sài_Gòn nha,book_hotel,0.7648320693648683
+712,sim_user_711,bao nhiêu cho tour đà nẵng,unlabeled,22570d3738480651e6262a0767328e36,bao_nhiêu cho tour đà_nẵng,ask_price,0.5324266168088972
+713,sim_user_712,tour phú quốc chi phí z,unlabeled,5b067d37c92e5894f1e1165707f88082,tour phú_quốc chi_phí vậy,ask_price,0.5324266168088972
+716,sim_user_715,muốn book tour tại pù cúp z,unlabeled,d084d991905144fd9e84bb9d11b01ca8,muốn book tour tại Phú_Quốc vậy,book_hotel,0.7648320693648683
+719,sim_user_718,tour phú quốc mấy tiền,unlabeled,e8d82b3acaa8b426cd93116f27f86ebb,tour phú_quốc mấy tiền,ask_price,0.5324266168088972
+721,sim_user_720,giá rẻ cho tour phú quốc ko bot,unlabeled,55a3eba07d7cde762380ef2b52c012de,giá rẻ cho tour_phú_quốc không bot,ask_price,0.5324266168088972
+723,sim_user_722,tour nha trang chi phí,unlabeled,f0b64dbec66bd15bc2a49f9f3d12768a,tour Nha_Trang chi_phí,ask_price,0.5324266168088972
+724,sim_user_723,tìm tour phú quốc nha,unlabeled,d67de42358f2d9c8e50df211ec2cf2f5,tìm tour_phú_quốc nha,search_travel,0.6496360220851362
+726,sim_user_725,giá rẻ cho tour đà nẵng ko bot,unlabeled,07c8f2cd7d8b3f384dd0c4b91a84cc72,giá rẻ cho tour đà_nẵng không bot,ask_price,0.5324266168088972
+728,sim_user_727,tìm tour đà lạt ko bot,unlabeled,c611a5620f2914620f4d493abea6c098,tìm tour Đà_Lạt không bot,search_travel,0.6496360220851362
+730,sim_user_729,tour sapa chi phí,unlabeled,e3537d1f8513703b69ee9b8c293dd26c,tour Sa_Pa chi_phí,ask_price,0.5324266168088972
+732,sim_user_731,tour đà nẵng giá rẻ,unlabeled,1d82efe7bea3e6e58cd145cecace7ca4,tour đà_nẵng giá rẻ,ask_price,0.5324266168088972
+734,sim_user_733,tour nt mấy củ,unlabeled,591eebe0017bbfbeabc69b9064038001,tour Nha_Trang mấy triệu,search_travel,0.498667987853197
+735,sim_user_734,book tour ở sapa,unlabeled,729e09b34062c84dc57962ea37316e13,book tour ở Sa_Pa,book_hotel,0.7648320693648683
+744,sim_user_743,mấy tiền cho tour sapa,unlabeled,38c760a4e6b47024c8404989de002a04,mấy tiền cho tour_Sa_Pa,ask_price,0.5324266168088972
+749,sim_user_748,khoảng mấy tr cho tour nt,unlabeled,5569ba243861b262ecea917dc2cc1b9e,khoảng mấy triệu cho tour Nha_Trang,search_travel,0.498667987853197
+750,sim_user_749,muốn đi nha trang wá,unlabeled,786f21e8c30aade83200dbb1a0bc6acc,muốn đi Nha_Trang quá,search_travel,0.498667987853197
+751,sim_user_750,muốn đặt vé tại sapa wá,unlabeled,968333a29b03248bb7198e5dd298bb26,muốn đặt vé tại Sa_Pa quá,book_hotel,0.7648320693648683
+753,sim_user_752,tour sg giá nhiêu nha,unlabeled,b16d8f32811fdbf37fd6921c662213d9,tour Sài_Gòn giá nhiêu nha,ask_price,0.5324266168088972
+754,sim_user_753,tour sg mấy củ wá,unlabeled,cc4e3ed3f74f8ade4b8091f4fb1cfcc7,tour Sài_Gòn mấy triệu quá,search_travel,0.498667987853197
+760,sim_user_759,tour pù cúp khoảng mấy tr,unlabeled,dd16c0a3ffd68a43251bd515c39422b7,tour Phú_Quốc khoảng mấy triệu,search_travel,0.498667987853197
+761,sim_user_760,bao nhiêu cho tour pù cúp,unlabeled,beaafdd41baaf5acccb60a9aaa8d6170,bao_nhiêu cho tour Phú_Quốc,ask_price,0.5324266168088972
+770,sim_user_769,đặt ks ở pù cúp,unlabeled,34af596d75d9cd7695098c43ceeaee2c,đặt ks ở Phú_Quốc,book_hotel,0.7648320693648683
+771,sim_user_770,khoảng mấy tr cho tour đlạt z,unlabeled,1d79add3eef6e81e8c1948267cebebca,khoảng mấy triệu cho tour Đà_Lạt vậy,search_travel,0.498667987853197
+773,sim_user_772,khoảng mấy tr cho tour sapa,unlabeled,a8f81d1b9c98ee36c2cc010543c40a4b,khoảng mấy triệu cho tour_Sa_Pa,search_travel,0.498667987853197
+775,sim_user_774,muốn đặt phòng tại hà nội,unlabeled,8146ab22a857503108b91a9ad7ae9a32,muốn đặt phòng tại hà_nội,book_hotel,0.7648320693648683
+778,sim_user_777,muốn đặt phòng tại nha trang,unlabeled,6f1101b4669abe9ee1feb742b8e018f2,muốn đặt phòng tại Nha_Trang,book_hotel,0.6730245011928586
+780,sim_user_779,muốn đi hà nội nha,unlabeled,1f7265f8f5bf1444f4e3a36643c504a2,muốn đi hà_nội nha,search_travel,0.6496360220851362
+786,sim_user_785,review du lịch sapa z,unlabeled,dd4df400b7a5ea31be135798679c1401,review du_lịch Sa_Pa vậy,search_travel,0.6496360220851362
+788,sim_user_787,đặt vé ở đlạt ko bot,unlabeled,a8411549967a7eb2693e3722c8aaff80,đặt vé ở Đà_Lạt không bot,book_hotel,0.7648320693648683
+789,sim_user_788,muốn đi đà nẵng nha,unlabeled,252be9377f01b0318d47dec0b3d9ac9f,muốn đi đà_nẵng nha,search_travel,0.6496360220851362
+796,sim_user_795,tour pù cúp mấy củ,unlabeled,ae5ef0eb8be90ab6be91451f3adcc434,tour Phú_Quốc mấy triệu,search_travel,0.498667987853197
+800,sim_user_799,tour nt bao nhiêu wá,unlabeled,0938a22f1fb09ddeeffd18b2546f5cd0,tour Nha_Trang bao_nhiêu quá,ask_price,0.5324266168088972
+807,sim_user_806,muốn tìm chỗ ở tại đà nẵng z,unlabeled,3a14aaa2a52d8ba7fef0344eaa529e62,muốn tìm chỗ ở tại đà_nẵng vậy,search_travel,0.6496360220851362
+814,sim_user_813,tour sapa chi phí wá,unlabeled,ad46b1907114daedba4d9310941f8823,tour Sa_Pa chi_phí quá,ask_price,0.5324266168088972
+818,sim_user_817,ik nha trang z,unlabeled,e83401e5ad3ec40a569e97179108ec90,đi Nha_Trang vậy,search_travel,0.498667987853197
+819,sim_user_818,giá sao cho tour sg,unlabeled,a101c89d80d4ca9fb57f7411ade03cb6,giá sao cho tour Sài_Gòn,ask_price,0.5324266168088972
+820,sim_user_819,muốn book tour tại đlạt nha,unlabeled,e64fb6032230ac37794b90f1033e253d,muốn book tour tại Đà_Lạt nha,book_hotel,0.7648320693648683
+826,sim_user_825,muốn tìm chỗ ở tại sapa,unlabeled,c5bc87299df87447cf139d02fd55ec7e,muốn tìm chỗ ở tại Sa_Pa,search_travel,0.6496360220851362
+831,sim_user_830,tour nt giá nhiêu,unlabeled,d69d3d41efaa2f702f31693ffdaa7d0b,tour Nha_Trang giá nhiêu,ask_price,0.5324266168088972
+832,sim_user_831,tour sg bao nhiêu nha,unlabeled,120341430c747e2746c836eadd9e78be,tour Sài_Gòn bao_nhiêu nha,ask_price,0.5324266168088972
+837,sim_user_836,ik phú quốc z,unlabeled,77869d58b1e902867478e2cfe3ff91cf,đi phú_quốc vậy,search_travel,0.6496360220851362
+838,sim_user_837,chi phí cho tour pù cúp nha,unlabeled,3ee374a18cfd187e492c40ca5aa1c545,chi_phí cho tour Phú_Quốc nha,ask_price,0.5324266168088972
+842,sim_user_841,mấy tiền cho tour đà lạt,unlabeled,f09a76ed671688fd97934cb81755bb33,mấy tiền cho tour Đà_Lạt,ask_price,0.5324266168088972
+847,sim_user_846,tour đlạt giá nhiêu,unlabeled,0bbcac08ef53866ecb5c6a9f4213d61d,tour Đà_Lạt giá nhiêu,ask_price,0.5324266168088972
+851,sim_user_850,bot ngu wá,unlabeled,cf0b2b7169387c8776848729f9385b78,bot ngu quá,out_of_scope,0.9776165285739606
+857,sim_user_856,tìm chỗ ở ở nt nha,unlabeled,fa1252edcfab4dd3486a26422f07acc9,tìm chỗ ở ở Nha_Trang nha,search_travel,0.498667987853197
+860,sim_user_859,có tour nào đi pù cúp nha,unlabeled,73ed65dc6681b6c9a81af78a3a5b7a9b,có tour nào đi Phú_Quốc nha,search_travel,0.6496360220851362
+862,sim_user_861,có tour nào đi pù cúp ko bot,unlabeled,7a5b658b0a4969e423eb8137205c145a,có tour nào đi Phú_Quốc không bot,search_travel,0.6496360220851362
+864,sim_user_863,khoảng mấy tr cho tour nha trang,unlabeled,9d5a2478613126054426fd17276ac025,khoảng mấy triệu cho tour Nha_Trang,search_travel,0.498667987853197
+867,sim_user_866,muốn tìm chỗ ở tại pù cúp z,unlabeled,752df1281a3b2132ea5d95807980373d,muốn tìm chỗ ở tại Phú_Quốc vậy,search_travel,0.6496360220851362
+868,sim_user_867,khoảng mấy tr cho tour hà nội,unlabeled,79736588b1549fdca1defec9a637a9a1,khoảng mấy triệu cho tour hà_nội,search_travel,0.498667987853197
+873,sim_user_872,giá nhiêu cho tour sg,unlabeled,fceb666f406e9800c4dfe62ca8a7ff55,giá nhiêu cho tour Sài_Gòn,ask_price,0.5324266168088972
+875,sim_user_874,book tour ở đà lạt,unlabeled,dc6fd49865b3b14f156f875a492f2567,book tour ở Đà_Lạt,book_hotel,0.7648320693648683
+876,sim_user_875,đặt ks ở nha trang ko bot,unlabeled,5fb36e0125cafaa515f6cacb7e768858,đặt ks ở Nha_Trang không bot,book_hotel,0.6730245011928586
+879,sim_user_878,tìm tour đà nẵng nha,unlabeled,6b7ec78d862a21dec6408360bcb66c07,tìm tour đà_nẵng nha,search_travel,0.6496360220851362
+880,sim_user_879,tìm chỗ ở ở đà nẵng,unlabeled,d22ece269e02e9b7ea3fe50d2ecbeddf,tìm chỗ ở ở đà_nẵng,search_travel,0.6496360220851362
+883,sim_user_882,muốn đặt vé tại đlạt,unlabeled,0e0e72f5d9686426effa9e058afb05db,muốn đặt vé tại Đà_Lạt,book_hotel,0.7648320693648683
+886,sim_user_885,muốn đặt phòng tại sg ko bot,unlabeled,6e848c04c6711c11f21261a03b48b586,muốn đặt phòng tại Sài_Gòn không bot,book_hotel,0.7648320693648683
+887,sim_user_886,tour hà nội giá nhiêu z,unlabeled,0388d81be7f2cbf1cc580a40e45e4ba3,tour hà_nội giá nhiêu vậy,ask_price,0.5324266168088972
+888,sim_user_887,tour đà lạt bao nhiêu,unlabeled,b6a6eaa4ea4af9547fe7602ca9ec5a29,tour Đà_Lạt bao_nhiêu,ask_price,0.5324266168088972
+893,sim_user_892,review du lịch pù cúp nha,unlabeled,81ec23a0a0e6158be9797a61f45eecab,review du_lịch Phú_Quốc nha,search_travel,0.6496360220851362
+894,sim_user_893,muốn đặt vé tại sg,unlabeled,ea3b86ac33c7dfbaf496204b3a0cb000,muốn đặt vé tại Sài_Gòn,book_hotel,0.7648320693648683
+896,sim_user_895,book vé ở phú quốc,unlabeled,da000a021e4b4755a34cdafa6b861779,book vé ở phú_quốc,book_hotel,0.7648320693648683
+897,sim_user_896,thuê ks ở sg,unlabeled,3385c4627912554e4f9fdb88be32a11b,thuê ks ở Sài_Gòn,book_hotel,0.7648320693648683
+904,sim_user_903,thuê ks ở phú quốc,unlabeled,92820922b96b4b220747039f1d5f5a31,thuê ks ở phú_quốc,book_hotel,0.7648320693648683
+909,sim_user_908,muốn book vé tại nt,unlabeled,2556c51e92386ddc4a3b75c04ccdbf00,muốn book vé tại Nha_Trang,book_hotel,0.6730245011928586
+913,sim_user_912,mấy củ cho tour phú quốc nha,unlabeled,03d14331e1165d529ce610aae4f0e997,mấy triệu cho tour_phú_quốc nha,search_travel,0.498667987853197
+920,sim_user_919,giá nhiêu cho tour hà nội,unlabeled,4270198ccf81b3522ff42db951377861,giá nhiêu cho tour hà_nội,ask_price,0.5324266168088972
+922,sim_user_921,bot ngu ko bot,unlabeled,5cb4d77f1178d9131bb04acc8042fc64,bot ngu không bot,out_of_scope,0.9776165285739606
+925,sim_user_924,ik nt wá,unlabeled,9417d474bdac6181844c8976355007d2,đi Nha_Trang quá,search_travel,0.498667987853197
+929,sim_user_928,đặt vé ở nha trang,unlabeled,1bfe9b5f6a7471fc2054c65c2df97ab1,đặt vé ở Nha_Trang,book_hotel,0.6730245011928586
+931,sim_user_930,giá rẻ cho tour nt nha,unlabeled,83e47c6c6d3553ccb3068d720f1175cb,giá rẻ cho tour Nha_Trang nha,ask_price,0.5324266168088972
+933,sim_user_932,giá nhiêu cho tour sg z,unlabeled,c9ecf833a76e4a7adab283e0d208cb5a,giá nhiêu cho tour Sài_Gòn vậy,ask_price,0.5324266168088972
+937,sim_user_936,tour đà nẵng giá nhiêu wá,unlabeled,f1c001a0079e3b34bcaaaa0a3f9e58a9,tour đà_nẵng giá nhiêu quá,ask_price,0.5324266168088972
+947,sim_user_946,muốn đặt ks tại pù cúp,unlabeled,12129cd3fa4b640848b340ecd75175d9,muốn đặt ks tại Phú_Quốc,book_hotel,0.7648320693648683
+964,sim_user_963,tìm tour nha trang z,unlabeled,3235e52dd0c0c5a4ee2461fa43017bbd,tìm tour Nha_Trang vậy,search_travel,0.498667987853197
+972,sim_user_971,tour sg mấy tiền,unlabeled,5b13edc138a26068a354e9a2da42fc6e,tour Sài_Gòn mấy tiền,ask_price,0.5324266168088972
+978,sim_user_977,tìm tour pù cúp z,unlabeled,63f5d385d0202c3fe1494d48d669f455,tìm tour Phú_Quốc vậy,search_travel,0.6496360220851362
+986,sim_user_985,có tour nào đi sg z,unlabeled,54fec7871541b14a2571dd687724da4e,có tour nào đi Sài_Gòn vậy,search_travel,0.6496360220851362
+989,sim_user_988,book tour ở nt z,unlabeled,7dba67959eb318868db42d641734c77f,book tour ở Nha_Trang vậy,book_hotel,0.6730245011928586
+993,sim_user_992,tour pù cúp bao nhiêu,unlabeled,3b2c3b27b24304f007f836f0b00cc245,tour Phú_Quốc bao_nhiêu,ask_price,0.5324266168088972
+998,sim_user_997,tour đlạt giá sao,unlabeled,47da2e1b53e345a3f347b757993f3f76,tour Đà_Lạt giá sao,ask_price,0.5324266168088972
+1000,sim_user_999,muốn đặt ks tại nha trang,unlabeled,3dbba2280caac8910832f803b15de095,muốn đặt ks tại Nha_Trang,book_hotel,0.6730245011928586
+1013,sim_user_1012,tìm tour phú quốc wá,unlabeled,ecccf4b76395506976612b5ea896dcce,tìm tour_phú_quốc quá,search_travel,0.6496360220851362
+1014,sim_user_1013,review du lịch đà nẵng wá,unlabeled,abd50d3fe8405a34ce84cbe0aee63768,review du_lịch đà_nẵng quá,search_travel,0.6496360220851362
+1027,sim_user_1026,mấy củ cho tour phú quốc ko bot,unlabeled,2be4f22ece2be3cde716dead13b7c4f1,mấy triệu cho tour_phú_quốc không bot,search_travel,0.498667987853197
+1028,sim_user_1027,tour đà nẵng giá rẻ wá,unlabeled,ffc1268dbcc202f1d500ebaf076abef8,tour đà_nẵng giá rẻ quá,ask_price,0.5324266168088972
+1045,sim_user_1044,muốn book vé tại sg,unlabeled,2e3fbb8633e461d5bf0a090cb67c0f04,muốn book vé tại Sài_Gòn,book_hotel,0.7648320693648683
+1046,sim_user_1045,đặt phòng ở nha trang,unlabeled,488a0621f92cfba4f70c38c719f953c3,đặt phòng ở Nha_Trang,book_hotel,0.6730245011928586
+1047,sim_user_1046,muốn đặt vé tại đà nẵng,unlabeled,99ced636f7d2f0485633f97f83a65884,muốn đặt vé tại đà_nẵng,book_hotel,0.7648320693648683
+1058,sim_user_1057,book tour ở hà nội wá,unlabeled,7451c8c963c3b96a4931a750e0d164c4,book tour ở hà_nội quá,book_hotel,0.7648320693648683
+1060,sim_user_1059,muốn đặt ks tại sg,unlabeled,f688690a429f82f5404c1ba37790fd4b,muốn đặt ks tại Sài_Gòn,book_hotel,0.7648320693648683
+1061,sim_user_1060,giá rẻ cho tour nha trang,unlabeled,338f2d1c2c6af07c637d06e1280548ef,giá rẻ cho tour Nha_Trang,ask_price,0.5324266168088972
+1073,sim_user_1072,ik nt z,unlabeled,e3f4f3e718bef6900d6acaf29ae0a556,đi Nha_Trang vậy,search_travel,0.498667987853197
+1075,sim_user_1074,có tour nào đi nha trang z,unlabeled,f294effff6981c17690bdacb22084e48,có tour nào đi Nha_Trang vậy,search_travel,0.498667987853197
+1086,sim_user_1085,nấu ăn nha,unlabeled,6ab26bb99c44e39deaba0e61d79a634e,nấu_ăn nha,out_of_scope,0.9776165285739606
+1088,sim_user_1087,muốn đặt phòng tại sg z,unlabeled,46698bcb412691d2d6ded251583edb64,muốn đặt phòng tại Sài_Gòn vậy,book_hotel,0.7648320693648683
+1093,sim_user_1092,tour sapa khoảng mấy tr,unlabeled,c5ecddcd43c07f4f2669717bd7e0a09a,tour Sa_Pa khoảng mấy triệu,search_travel,0.498667987853197
+1096,sim_user_1095,bao nhiêu cho tour nha trang,unlabeled,fb74d23e6ab23adad7975af2aa931980,bao_nhiêu cho tour Nha_Trang,ask_price,0.5324266168088972
+1097,sim_user_1096,book vé ở đà lạt,unlabeled,4378e063b368ce403b9f785c6d123328,book vé ở Đà_Lạt,book_hotel,0.7648320693648683
+1103,sim_user_1102,ik đà nẵng wá,unlabeled,b2cc54cd98968117098a7137db90d5a9,đi đà_nẵng quá,search_travel,0.6496360220851362
+1106,sim_user_1105,muốn đặt vé tại phú quốc,unlabeled,88e2d994dcaf1fa4b8702287a354e54b,muốn đặt vé tại phú_quốc,book_hotel,0.7648320693648683
+1112,sim_user_1111,mấy củ cho tour đlạt,unlabeled,7d869b15f968e5739b245d656e7c7faa,mấy triệu cho tour Đà_Lạt,search_travel,0.498667987853197
+1114,sim_user_1113,tìm tour hà nội nha,unlabeled,e4c5616fba388ab35d43dfabc6804583,tìm tour hà_nội nha,search_travel,0.6496360220851362
+1125,sim_user_1124,khoảng mấy tr cho tour đlạt,unlabeled,b83145cfebfc67d65d037145c2ae1e69,khoảng mấy triệu cho tour Đà_Lạt,search_travel,0.498667987853197
+1135,sim_user_1134,tour nha trang giá nhiêu,unlabeled,17318b122fb34124f94121fb00e92ad8,tour Nha_Trang giá nhiêu,ask_price,0.5324266168088972
+1136,sim_user_1135,muốn tìm chỗ ở tại nha trang,unlabeled,bba2e21408cafa7f3b557a82b3feebff,muốn tìm chỗ ở tại Nha_Trang,search_travel,0.498667987853197
+1140,sim_user_1139,đặt ks ở nt,unlabeled,e196aab68854de5b2ae307a6ecc80fea,đặt ks ở Nha_Trang,book_hotel,0.6730245011928586
+1151,sim_user_1150,review du lịch pù cúp z,unlabeled,10f67b790e6ff72ed6b44871d5a2513f,review du_lịch Phú_Quốc vậy,search_travel,0.6496360220851362
+1152,sim_user_1151,tour hà nội chi phí z,unlabeled,93983d70844c82892447e9e8a8807ca8,tour hà_nội chi_phí vậy,ask_price,0.5324266168088972
+1156,sim_user_1155,muốn thuê ks tại đà nẵng nha,unlabeled,fc75ac8113c6ddec561d585c84bd3a73,muốn thuê ks tại đà_nẵng nha,book_hotel,0.7648320693648683
+1161,sim_user_1160,tour đlạt bao nhiêu,unlabeled,f40b73c487180e8492df78423885d1ef,tour Đà_Lạt bao_nhiêu,ask_price,0.5324266168088972
+1174,sim_user_1173,book tour ở sapa ko bot,unlabeled,34de847b50cad9e7c66c7ae6cd9b8b77,book tour ở Sa_Pa không bot,book_hotel,0.7648320693648683
+1181,sim_user_1180,bạn tên gì wá,unlabeled,5adcc6f56830dbbe44743959f69bb30f,bạn tên gì quá,UNLABELED,0.25
+1183,sim_user_1182,muốn đi pù cúp ko bot,unlabeled,1be1c1505966d528a919a88762327f33,muốn đi Phú_Quốc không bot,search_travel,0.6496360220851362
+1207,sim_user_1206,tìm chỗ ở ở hà nội,unlabeled,73cdb7fd6c4b57a5237885cd84fd7045,tìm chỗ ở ở hà_nội,search_travel,0.6496360220851362
+1208,sim_user_1207,tìm tour sg nha,unlabeled,b9a4ca7d2e6fa3f4f9747d1350d3e635,tìm tour Sài_Gòn nha,search_travel,0.6496360220851362
+1212,sim_user_1211,đặt phòng ở nt nha,unlabeled,d177e09f1d0c8f80426e4232c23f2f65,đặt phòng ở Nha_Trang nha,book_hotel,0.6730245011928586
+1215,sim_user_1214,tour hà nội mấy tiền,unlabeled,4b36a7807bed2f0f902d108eafda636e,tour hà_nội mấy tiền,ask_price,0.5324266168088972
+1216,sim_user_1215,muốn đi sg ko bot,unlabeled,7c32fe739caef7a6478171cb1fc95ebe,muốn đi Sài_Gòn không bot,search_travel,0.6496360220851362
+1217,sim_user_1216,giá rẻ cho tour nt,unlabeled,611a2eaf172e299ffbfb1075f6428aa1,giá rẻ cho tour Nha_Trang,ask_price,0.5324266168088972
+1219,sim_user_1218,đặt ks ở hà nội ko bot,unlabeled,17b9cec8eb5a22f11d5660de17621d4b,đặt ks ở hà_nội không bot,book_hotel,0.7648320693648683
+1220,sim_user_1219,có tour nào đi nha trang nha,unlabeled,757b785b8474d53f0c7f74352a752dd9,có tour nào đi Nha_Trang nha,search_travel,0.498667987853197
+1228,sim_user_1227,tour sapa bao nhiêu nha,unlabeled,dcf21c2edd83c6c58bd85115e9af08c2,tour Sa_Pa bao_nhiêu nha,ask_price,0.5324266168088972
+1229,sim_user_1228,tour nt bao nhiêu nha,unlabeled,f7c307883c0eacf379f874d9a5d8f1cb,tour Nha_Trang bao_nhiêu nha,ask_price,0.5324266168088972
+1233,sim_user_1232,có tour nào đi đlạt wá,unlabeled,4e81334c0db5ca2f1e9cf530eddf8a4a,có tour nào đi Đà_Lạt quá,search_travel,0.6496360220851362
+1235,sim_user_1234,tìm chỗ ở ở nha trang ko bot,unlabeled,e581280698486d026856fcca8aa6d212,tìm chỗ ở ở Nha_Trang không bot,search_travel,0.498667987853197
+1238,sim_user_1237,muốn đặt vé tại phú quốc wá,unlabeled,ce71398872354d313f05f66266d27bc9,muốn đặt vé tại phú_quốc quá,book_hotel,0.7648320693648683
+1242,sim_user_1241,muốn đi đà lạt wá,unlabeled,7a07656db9d500ed374902dc7a1b277a,muốn đi Đà_Lạt quá,search_travel,0.6496360220851362
+1247,sim_user_1246,review du lịch đà nẵng ko bot,unlabeled,4fe6327ce0cf747ad7d7bb474ac74cfd,review du_lịch đà_nẵng không bot,search_travel,0.6496360220851362
+1251,sim_user_1250,mấy tiền cho tour phú quốc,unlabeled,f438c2b75a2df09058ff56b035c5fc8b,mấy tiền cho tour_phú_quốc,ask_price,0.5324266168088972
+1255,sim_user_1254,tour sg khoảng mấy tr nha,unlabeled,83d1282b96feeb0aab92a1d795c6650f,tour Sài_Gòn khoảng mấy triệu nha,search_travel,0.498667987853197
+1262,sim_user_1261,tour đlạt mấy tiền,unlabeled,5f080832238d90490b64be8fac6dab28,tour Đà_Lạt mấy tiền,ask_price,0.5324266168088972
+1269,sim_user_1268,tour đà nẵng khoảng mấy tr ko bot,unlabeled,77c452162393858e3ed4dbc2533fff62,tour đà_nẵng khoảng mấy triệu không bot,search_travel,0.498667987853197
+1273,sim_user_1272,tìm tour đà lạt nha,unlabeled,3d27f5b4eb73fe083ad45229b8d83d82,tìm tour Đà_Lạt nha,search_travel,0.6496360220851362
+1275,sim_user_1274,tour sapa khoảng mấy tr wá,unlabeled,9e338cbc9c8175035ad58bdfced526fc,tour Sa_Pa khoảng mấy triệu quá,search_travel,0.498667987853197
+1280,sim_user_1279,giá rẻ cho tour sg,unlabeled,95add2aacbd8a0c2565057802a3403cc,giá rẻ cho tour Sài_Gòn,ask_price,0.5324266168088972
+1288,sim_user_1287,muốn đặt phòng tại sg,unlabeled,ce2a9cb8307c5eaefb35e2bbd0af4133,muốn đặt phòng tại Sài_Gòn,book_hotel,0.7648320693648683
+1289,sim_user_1288,tour nha trang bao nhiêu wá,unlabeled,3d3c7052abaa403b19621cf3198761ce,tour Nha_Trang bao_nhiêu quá,ask_price,0.5324266168088972
+1294,sim_user_1293,muốn đặt vé tại đlạt wá,unlabeled,52cabcb7569ca9c9aa1500aa7bde4915,muốn đặt vé tại Đà_Lạt quá,book_hotel,0.7648320693648683
+1303,sim_user_1302,muốn đi sapa wá,unlabeled,8c966ed7ff52869b8c2d7f09c64a6269,muốn đi Sa_Pa quá,search_travel,0.6496360220851362
+1309,sim_user_1308,muốn đi sg z,unlabeled,f5e0f215ce90345c7c4eef27bcd6c34b,muốn đi Sài_Gòn vậy,search_travel,0.6496360220851362
+1311,sim_user_1310,muốn book tour tại đà nẵng z,unlabeled,4540aaf1c70d18c617582ed8934265bf,muốn book tour tại đà_nẵng vậy,book_hotel,0.7648320693648683
+1318,sim_user_1317,tour đlạt giá rẻ nha,unlabeled,66cbe9820e901003ca2b7e145a5bbc9a,tour Đà_Lạt giá rẻ nha,ask_price,0.5324266168088972
+1321,sim_user_1320,giải bài tập wá,unlabeled,804e46d43fb90afbc3adf849699ff23c,giải bài_tập quá,out_of_scope,0.9776165285739606
+1327,sim_user_1326,tìm tour đà nẵng wá,unlabeled,644f5c111194ce70eccedafca7e2cb36,tìm tour đà_nẵng quá,search_travel,0.6496360220851362
+1331,sim_user_1330,tìm tour pù cúp ko bot,unlabeled,5a1499455e7e4f424a633666a8b1aab6,tìm tour Phú_Quốc không bot,search_travel,0.6496360220851362
+1339,sim_user_1338,tour sg giá rẻ ko bot,unlabeled,bc3952ee2dab23201529fcc6700d92fb,tour Sài_Gòn giá rẻ không bot,ask_price,0.5324266168088972
+1341,sim_user_1340,giá nhiêu cho tour sapa wá,unlabeled,a6cf2eba6e3fa89a0770f2066c3a0932,giá nhiêu cho tour_Sa_Pa quá,ask_price,0.5324266168088972
+1344,sim_user_1343,muốn đặt phòng tại phú quốc wá,unlabeled,4d3303b7fb17e67e52fd41909ef386d4,muốn đặt phòng tại phú_quốc quá,book_hotel,0.7648320693648683
+1361,sim_user_1360,giá nhiêu cho tour phú quốc ko bot,unlabeled,2c0e48bda2167cd180d5cb37869f7d37,giá nhiêu cho tour_phú_quốc không bot,ask_price,0.5324266168088972
+1364,sim_user_1363,tour nha trang mấy tiền ko bot,unlabeled,d6f8f5eac8d39fae13d08afdc456b34f,tour Nha_Trang mấy tiền không bot,ask_price,0.5324266168088972
+1365,sim_user_1364,muốn thuê ks tại đlạt ko bot,unlabeled,19d7712319a154fc210f9a91cb8dae04,muốn thuê ks tại Đà_Lạt không bot,book_hotel,0.7648320693648683
+1366,sim_user_1365,giá sao cho tour sapa ko bot,unlabeled,b6a0b3fe22fd20ee7cfec4ec145e5d70,giá sao cho tour_Sa_Pa không bot,ask_price,0.5324266168088972
+1368,sim_user_1367,tour sg khoảng mấy tr z,unlabeled,152fe0bc63d8663f7e05abe3b4c7af09,tour Sài_Gòn khoảng mấy triệu vậy,search_travel,0.498667987853197
+1371,sim_user_1370,bao nhiêu cho tour đà lạt wá,unlabeled,ebac68cec02b9cf266c3ecd61a1995b4,bao_nhiêu cho tour Đà_Lạt quá,ask_price,0.5324266168088972
+1372,sim_user_1371,muốn đặt ks tại sg wá,unlabeled,330091f5af490e16a436756e600e3d45,muốn đặt ks tại Sài_Gòn quá,book_hotel,0.7648320693648683
+1379,sim_user_1378,tour sg mấy củ z,unlabeled,3b4602466d192f309da517048839e552,tour Sài_Gòn mấy triệu vậy,search_travel,0.498667987853197
+1385,sim_user_1384,muốn đặt phòng tại đlạt wá,unlabeled,5833945f8b01bdd3ba0b644567c15599,muốn đặt phòng tại Đà_Lạt quá,book_hotel,0.7648320693648683
+1387,sim_user_1386,review du lịch nt wá,unlabeled,1e347cf4eaa960c4dd4091cb8405e498,review du_lịch Nha_Trang quá,search_travel,0.498667987853197
+1388,sim_user_1387,tour pù cúp chi phí,unlabeled,e333a6612ae9f57a0d52785c914890a7,tour Phú_Quốc chi_phí,ask_price,0.5324266168088972
+1389,sim_user_1388,muốn đặt vé tại đà lạt,unlabeled,a0a97f5d45fc644cd16098531e937827,muốn đặt vé tại Đà_Lạt,book_hotel,0.7648320693648683
+1391,sim_user_1390,chửi thề z,unlabeled,440faec2841aca3ba47fc845bdfda907,chửi thề vậy,out_of_scope,0.9776165285739606
+1393,sim_user_1392,muốn đặt vé tại pù cúp,unlabeled,3bb8035ecb4f3879ae3d347dacda2624,muốn đặt vé tại Phú_Quốc,book_hotel,0.7648320693648683
+1394,sim_user_1393,đặt phòng ở hà nội,unlabeled,0a587edab48b024b250c7d2624fa1bf2,đặt phòng ở hà_nội,book_hotel,0.7648320693648683
+1395,sim_user_1394,tour hà nội giá rẻ,unlabeled,bfe65b5b8df5533fa502748f84b4b9c6,tour hà_nội giá rẻ,ask_price,0.5324266168088972
+1400,sim_user_1399,chi phí cho tour pù cúp wá,unlabeled,c9b8e6ab3d4c83a28217fd689d72af99,chi_phí cho tour Phú_Quốc quá,ask_price,0.5324266168088972
+1401,sim_user_1400,tour sg bao nhiêu,unlabeled,251506568ac5a1918df2801cf61b9e9e,tour Sài_Gòn bao_nhiêu,ask_price,0.5324266168088972
+1407,sim_user_1406,tour đà lạt giá nhiêu ko bot,unlabeled,b9b0de80e88b5e94181d670bc34c89e1,tour Đà_Lạt giá nhiêu không bot,ask_price,0.5324266168088972
+1409,sim_user_1408,tìm chỗ ở ở sapa wá,unlabeled,d32112bebce53da16d25a95d2c334c5b,tìm chỗ ở ở Sa_Pa quá,search_travel,0.6496360220851362
+1425,sim_user_1424,muốn thuê ks tại hà nội,unlabeled,59e8f8d0c822bd943598885dc8f506f1,muốn thuê ks tại hà_nội,book_hotel,0.7648320693648683
+1426,sim_user_1425,review du lịch sapa nha,unlabeled,481a8000f33c81e045a5f51ac5e99984,review du_lịch Sa_Pa nha,search_travel,0.6496360220851362
+1428,sim_user_1427,giá rẻ cho tour phú quốc nha,unlabeled,a70169d3499df3343745a2cc5ef3311b,giá rẻ cho tour_phú_quốc nha,ask_price,0.5324266168088972
+1442,sim_user_1441,book vé ở đà nẵng,unlabeled,cd5712d55662d285f64edee1f99e1f5b,book vé ở đà_nẵng,book_hotel,0.7648320693648683
+1447,sim_user_1446,mấy củ cho tour phú quốc,unlabeled,c58d96a0cba2a59061fbad5d800a6821,mấy triệu cho tour_phú_quốc,search_travel,0.498667987853197
+1451,sim_user_1450,tìm chỗ ở ở pù cúp,unlabeled,bd67633ff3a43c753e6c5749dea33e76,tìm chỗ ở ở Phú_Quốc,search_travel,0.6496360220851362
+1457,sim_user_1456,giá nhiêu cho tour sapa z,unlabeled,5f0a851eed9c1e73ed6d08f9b2778120,giá nhiêu cho tour_Sa_Pa vậy,ask_price,0.5324266168088972
+1464,sim_user_1463,bao nhiêu cho tour phú quốc,unlabeled,58e1da0b7cb458672c18613ee1ace712,bao_nhiêu cho tour_phú_quốc,ask_price,0.5324266168088972
+1466,sim_user_1465,tour nha trang giá rẻ ko bot,unlabeled,78b71a9e4a853be903a72d572d8816d1,tour Nha_Trang giá rẻ không bot,ask_price,0.5324266168088972
+1470,sim_user_1469,mấy củ cho tour hà nội wá,unlabeled,a269bcc03e10afba12bad6c04d883bfa,mấy triệu cho tour hà_nội quá,search_travel,0.498667987853197
+1497,sim_user_1496,tìm tour sapa z,unlabeled,2a12378971791f9cad9a36cb28a6dcef,tìm tour_Sa_Pa vậy,search_travel,0.6496360220851362
