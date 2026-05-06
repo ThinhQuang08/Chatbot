@@ -3,7 +3,7 @@
 
 import pandas as pd
 
-def split_by_confidence(threshold=0.75):
+def split_by_confidence(threshold=0.7):
     print("[INFO] Đang phân luồng dữ liệu theo độ tự tin...")
     
     # 1. Đọc file đã được Snorkel gán nhãn

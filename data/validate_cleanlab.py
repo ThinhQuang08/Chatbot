@@ -33,19 +33,21 @@ def run_cleanlab_validation():
 
     # 3. Huấn luyện mô hình và lấy ma trận xác suất (Cross-validation)
     print("🤖 Đang chạy Cross-validation để ước lượng xác suất...")
-    model = LogisticRegression(max_iter=1000)
+    # FIX 1: Thêm class_weight='balanced' để mô hình không bị thiên vị nhãn đông dân
+    model = LogisticRegression(max_iter=1000, class_weight='balanced', random_state=42)
     
-    # Sinh ra ma trận dự đoán xác suất (N_samples x N_classes)
     pred_probs = cross_val_predict(
         estimator=model, X=X, y=labels, cv=5, method="predict_proba"
     )
 
-    # 4. TRIỆU HỒI CLEANLAB để tìm lỗi
-    print("🔍 Cleanlab đang rà soát các nhãn đáng ngờ...")
+    # 4. TRIỆU HỒI CLEANLAB (CHẾ ĐỘ NGHIÊM NGẶT)
+    print("🔍 Cleanlab đang rà soát các nhãn đáng ngờ (Strict Mode)...")
     ordered_label_issues = find_label_issues(
         labels=labels,
         pred_probs=pred_probs,
-        return_indices_ranked_by='self_confidence' # Xếp hạng câu nào lỗi nặng nhất lên đầu
+        # FIX 2: Ép Cleanlab bắt lỗi nếu dự đoán top 1 của Model khác với Nhãn của Snorkel
+        filter_by='predicted_neq_given', 
+        return_indices_ranked_by='self_confidence'
     )
 
     # 5. Báo cáo kết quả
@@ -65,7 +67,7 @@ def run_cleanlab_validation():
             
         # Xuất danh sách lỗi ra file để review tay
         df_issues = df.iloc[ordered_label_issues]
-        df_issues.to_excel('data/cleanlab_detected_issues.csv', index=False)
+        df_issues.to_csv('data/cleanlab_detected_issues.csv', index=False)
         print("💾 Đã xuất toàn bộ danh sách lỗi ra file: data/cleanlab_detected_issues.csv")
     else:
         print("🎉 Dữ liệu quá sạch! Cleanlab không tìm thấy lỗi nào đáng kể.")

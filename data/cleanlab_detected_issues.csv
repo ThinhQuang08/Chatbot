@@ -1,0 +1,11 @@
+id,session_id,raw_text,predicted_intent,text_hash,cleaned_text,snorkel_intent,snorkel_confidence
+2000,sim_v2_4,lịch trình đi phú quốc 3 ngày,unlabeled,xxx3,lịch_trình đi Phú_Quốc 3 ngày,search_travel,0.71
+2001,sim_v2_5,review đà lạt có gì chơi,unlabeled,xxx4,review Đà_Lạt có gì chơi,ask_tour_info,0.73
+260,sim_v2_259,buồn ngủ wá z,unlabeled,c48829f3577ff8aa9313c270662b5991,buồn ngủ quá vậy,out_of_scope,0.7646650326777873
+156,sim_v2_155,buồn ngủ quá,unlabeled,0b9536428238e2ab1b999411919f6472,buồn ngủ quá,out_of_scope,0.7646650326777873
+177,sim_v2_176,bot ngu vãi,unlabeled,a8ca674e894f053640ea53cdc446862b,bot ngu vãi,out_of_scope,0.7646650326777873
+677,sim_v2_676,bot ngu vãi dợ,unlabeled,41654aa69add5fd09543ac46ca394bda,bot ngu_vãi dợ,out_of_scope,0.7646650326777873
+143,sim_v2_142,muốn ik trekking phú quốc bot,unlabeled,bb431fa079f14130d6ad33ff8e08a65d,muốn đi trekking_phú_quốc bot,search_activity,0.7172096466701441
+43,sim_v2_42,muốn đi trekking phú quốc,unlabeled,3889683d2ccc60f1075db13faffe5509,muốn đi trekking_phú_quốc,search_activity,0.7172096466701441
+1118,sim_v2_1117,muốn ik trekking sapa bot,unlabeled,f07621cef98d09918f04953a82aa0dbc,muốn đi trekking_Sa_Pa bot,search_activity,0.7172096466701441
+353,sim_v2_352,muốn đi trekking sapa,unlabeled,f46ca47a323146d6571448ae9566c27d,muốn đi trekking_Sa_Pa,search_activity,0.7172096466701441
