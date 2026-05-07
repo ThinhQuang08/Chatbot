@@ -10,6 +10,7 @@ __pycache__/
 # Rasa
 rasa_bot/.rasa/
 rasa_bot/models/*.tar.gz
+rasa_bot/results/
 
 # Logs & Runtime
 logs/
