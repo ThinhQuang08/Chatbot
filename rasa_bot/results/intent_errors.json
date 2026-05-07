@@ -1,10 +1,738 @@
 [
   {
-    "text": "ưng ý lắm",
-    "intent": "mood_great",
+    "text": "moin",
+    "intent": "greet",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.7410449981689453
+      "confidence": 0.8198532462120056
+    }
+  },
+  {
+    "text": "ê bot",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7010908722877502
+    }
+  },
+  {
+    "text": "có ai ở đó không",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7668129801750183
+    }
+  },
+  {
+    "text": "súp bro",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5415008068084717
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6817426085472107
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7706398963928223
+    }
+  },
+  {
+    "text": "pp",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.621422290802002
+    }
+  },
+  {
+    "text": "out nha",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.660763680934906
+    }
+  },
+  {
+    "text": "hẹn gặp lại",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5978837013244629
+    }
+  },
+  {
+    "text": "lúc khác nhắn tiếp",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7045720815658569
+    }
+  },
+  {
+    "text": "chốt luôn",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8814331293106079
+    }
+  },
+  {
+    "text": "thế cũng được",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9909151196479797
+    }
+  },
+  {
+    "text": "10 điểm cho shop",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "đổi cái khác đi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.9478838443756104
+    }
+  },
+  {
+    "text": "bỏ đi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.574977457523346
+    }
+  },
+  {
+    "text": "không ok lắm",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9287421703338623
+    }
+  },
+  {
+    "text": "tụt mood",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6064913272857666
+    }
+  },
+  {
+    "text": "tệ quá",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7037047743797302
+    }
+  },
+  {
+    "text": "bạn là người hay máy",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9363332986831665
+    }
+  },
+  {
+    "text": "ai là tổng thống mỹ",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9752899408340454
+    }
+  },
+  {
+    "text": "hướng dẫn nấu phở bò",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.999976634979248
+    }
+  },
+  {
+    "text": "Chơi gì ở Hội An vào buổi tối?",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "leo núi tháng 10",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9724136590957642
+    }
+  },
+  {
+    "text": "muốn đi lặn san hô",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "du lịch tiết kiệm",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9994623064994812
+    }
+  },
+  {
+    "text": "mình có tầm 4 triệu",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999953508377075
+    }
+  },
+  {
+    "text": "tôi muốn lên núi chơi",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9938348531723022
+    }
+  },
+  {
+    "text": "núi",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5567759871482849
+    }
+  },
+  {
+    "text": "khởi hành từ Sài Gòn",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "tui muốn đi từ tháng 2 đến tháng 5",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "đi từ tháng 1 tới tháng 3",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9974303841590881
+    }
+  },
+  {
+    "text": "good morning",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.535920262336731
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5218126773834229
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8755908608436584
+    }
+  },
+  {
+    "text": "buổi sáng tốt lành",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.4129598140716553
+    }
+  },
+  {
+    "text": "tư vấn mình với",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "bai bai",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8968040347099304
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5296919941902161
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9540688991546631
+    }
+  },
+  {
+    "text": "đỉnh quá",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7539594769477844
+    }
+  },
+  {
+    "text": "xịn xò",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2911953926086426
+    }
+  },
+  {
+    "text": "ưng ý lắm",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9877496361732483
+    }
+  },
+  {
+    "text": "mệt mỏi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3717290759086609
+    }
+  },
+  {
+    "text": "dạo này đang stress",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.660149097442627
+    }
+  },
+  {
+    "text": "gọi nhân viên thật ra đây",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9209536910057068
+    }
+  },
+  {
+    "text": "mở nhạc cho tôi nghe",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.32244619727134705
+    }
+  },
+  {
+    "text": "1 cộng 1 bằng mấy",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9898650050163269
+    }
+  },
+  {
+    "text": "viết bài văn tả con mèo",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.43479010462760925
+    }
+  },
+  {
+    "text": "ở đó có resort nào đẹp không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9983202815055847
+    }
+  },
+  {
+    "text": "có resort nào tại Sapa không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999934434890747
+    }
+  },
+  {
+    "text": "resort thì sao hả bot",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9978151321411133
+    }
+  },
+  {
+    "text": "cho xin review đi Sapa tháng 10",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.99955815076828
+    }
+  },
+  {
+    "text": "đi trekking vào tháng 10 thì nên đi đâu",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.9547133445739746
+    }
+  },
+  {
+    "text": "tài chính 10 củ quay đầu",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9564090371131897
+    }
+  },
+  {
+    "text": "đi máy bay nhé",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6764882206916809
+    }
+  },
+  {
+    "text": "muốn đi biển",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "ngân sách 5tr",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9993342757225037
+    }
+  },
+  {
+    "text": "xe khách",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.4177616238594055
+    }
+  },
+  {
+    "text": "hi shop",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7479851245880127
+    }
+  },
+  {
+    "text": "tạm biệt",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5587388873100281
+    }
+  },
+  {
+    "text": "cám ơn bot nhé bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7549953460693359
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5938518643379211
+    }
+  },
+  {
+    "text": "chuẩn",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.739264190196991
+    }
+  },
+  {
+    "text": "đồng ý",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5059465169906616
+    }
+  },
+  {
+    "text": "chính xác",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7212756872177124
+    }
+  },
+  {
+    "text": "ko",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6152526140213013
+    }
+  },
+  {
+    "text": "buồn quá",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9650084376335144
+    }
+  },
+  {
+    "text": "không vui",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9217559695243835
+    }
+  },
+  {
+    "text": "shop dùng auto reply à",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9096243977546692
+    }
+  },
+  {
+    "text": "mày là AI hả",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.960019052028656
+    }
+  },
+  {
+    "text": "bạn ăn cơm chưa",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9843202829360962
+    }
+  },
+  {
+    "text": "ronaldo hay messi đá hay hơn",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5371082425117493
+    }
+  },
+  {
+    "text": "bitcoin đang giá bao nhiêu",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9999959468841553
+    }
+  },
+  {
+    "text": "kể cho tôi một câu chuyện cười",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999120235443115
+    }
+  },
+  {
+    "text": "huỳnh như đá ở đội nào",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.48485085368156433
+    }
+  },
+  {
+    "text": "Vũng Tàu có đặc sản gì?",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9441126585006714
+    }
+  },
+  {
+    "text": "có chỗ nào cắm trại không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.5474327206611633
+    }
+  },
+  {
+    "text": "nhà nghỉ thì sao",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9640476703643799
+    }
+  },
+  {
+    "text": "đổi sang nhà nghỉ nhé",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9996134638786316
+    }
+  },
+  {
+    "text": "gợi ý điểm đi chơi tháng 4 đến tháng 6",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9997192025184631
+    }
+  },
+  {
+    "text": "đi từ tháng 9 sang tháng 11 thì có chỗ nào đẹp",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.999196469783783
+    }
+  },
+  {
+    "text": "chi phí cho chuyến đi Phú Quốc 4 ngày rơi vào khoảng bao nhiêu",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9999970197677612
+    }
+  },
+  {
+    "text": "báo giá tour Thái Lan khởi hành từ HCM tháng sau",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9993941783905029
+    }
+  },
+  {
+    "text": "cho xem lịch trình tour Hà Giang tuần tới",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9999891519546509
+    }
+  },
+  {
+    "text": "tour Sapa 2 ngày 1 đêm đi từ Hà Nội giá bao nhiêu",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9997356534004211
+    }
+  },
+  {
+    "text": "gợi ý điểm cắm trại",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.999811589717865
+    }
+  },
+  {
+    "text": "tui muốn đi từ tháng 2 đến tháng 5",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999072551727295
+    }
+  },
+  {
+    "text": "mình xuất phát từ Đà Nẵng",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_tour_info",
+      "confidence": 0.9927565455436707
+    }
+  },
+  {
+    "text": "còn Vũng Tàu thì sao",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.8596276044845581
+    }
+  },
+  {
+    "text": "thế còn Đà Lạt",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.7770353555679321
+    }
+  },
+  {
+    "text": "tìm ở Nha Trang xem",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9977630376815796
     }
   }
 ]

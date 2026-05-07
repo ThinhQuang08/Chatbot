@@ -68,23 +68,23 @@ def train_and_evaluate_mlflow():
         print("🧪 Đang làm bài kiểm tra Cross-Validation (Xác thực chéo 3 vòng)...")
         print("⏳ Quá trình này sẽ hơi lâu một chút để đảm bảo điểm số là điểm THẬT 100%.")
         
-        test_result = subprocess.run(
-            [
-                "rasa", "test", "nlu", 
-                "--nlu", "train_test_split/test_data.yml", 
-                "--model", latest_model
-            ], 
-            cwd=RASA_DIR, 
-            capture_output=True, 
-            text=True
-        )
-        # khi >75% Dùng cross-validation tự động phân chia data để chống "Lộ đề thi" (Data Leakage)
         # test_result = subprocess.run(
-        #     ["rasa", "test", "nlu", "--cross-validation", "--folds", "3"], 
+        #     [
+        #         "rasa", "test", "nlu", 
+        #         "--nlu", "train_test_split/test_data.yml", 
+        #         "--model", latest_model
+        #     ], 
         #     cwd=RASA_DIR, 
         #     capture_output=True, 
         #     text=True
         # )
+        # khi >75% Dùng cross-validation tự động phân chia data để chống "Lộ đề thi" (Data Leakage)
+        test_result = subprocess.run(
+            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3"], 
+            cwd=RASA_DIR, 
+            capture_output=True, 
+            text=True
+        )
 
 
 

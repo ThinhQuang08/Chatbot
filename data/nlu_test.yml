@@ -1,6 +1,6 @@
 
 
-# --- DỮ LIỆU ĐÃ AUTO-LABEL VÀ BỌC ENTITY (FINAL TUNE) ---
+# --- DỮ LIỆU ĐÃ AUTO-LABEL VÀ BỌC ENTITY ---
   - intent: search_price
     examples: |
       - chi phí đi [phú quốc](destination) mấy triệu
