@@ -1,0 +1,15 @@
+FROM jenkins/jenkins:lts
+
+# Chuyển sang quyền root để cài đặt phần mềm
+USER root
+
+# Cài đặt Python3, pip và venv
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip python3-venv && \
+    rm -rf /var/lib/apt/lists/*
+
+# Map lệnh 'python' trỏ tới 'python3' để script của sếp chạy mượt mà
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# Trả lại quyền cho user jenkins để bảo mật
+USER jenkins

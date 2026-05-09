@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  jenkins-mlops:
+    build: 
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: jenkins_bot_du_lich
+    restart: unless-stopped
+    user: root
+    ports:
+      - "8080:8080" # Cổng giao diện Web Jenkins
+      - "50000:50000" # Cổng kết nối Agent (Mặc định)
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      # Gắn toàn bộ code từ máy tính của sếp vào ổ /workspace trong Jenkins
+      - ./:/workspace 
+
+volumes:
+  jenkins_data:
