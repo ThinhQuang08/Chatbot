@@ -13,84 +13,65 @@ Implementing implicit namespace packages (as specified in PEP 420) is preferred 
   declare_namespace(pkg)
 /home/tieens/Github/Chatbot/.venv/lib/python3.10/site-packages/sanic_cors/extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
   SANIC_VERSION = LooseVersion(sanic_version)
-2026-04-23 18:56:50 INFO     rasa_sdk.endpoint  - Starting action endpoint server...
-2026-04-23 18:56:52 INFO     rasa_sdk.executor  - Registered function for 'action_search_tour_info'.
-2026-04-23 18:56:52 INFO     rasa_sdk.executor  - Registered function for 'action_search_travel'.
-2026-04-23 18:56:52 INFO     rasa_sdk.executor  - Registered function for 'validate_travel_form'.
-2026-04-23 18:56:52 INFO     rasa_sdk.endpoint  - Starting plugins...
-2026-04-23 18:56:52 INFO     rasa_sdk.endpoint  - Action endpoint is up and running on http://0.0.0.0:5055
+2026-05-13 04:18:48 INFO     rasa_sdk.endpoint  - Starting action endpoint server...
+2026-05-13 04:18:50 INFO     rasa_sdk.executor  - Registered function for 'action_search_tour_info'.
+2026-05-13 04:18:50 INFO     rasa_sdk.executor  - Registered function for 'action_search_travel'.
+2026-05-13 04:18:50 INFO     rasa_sdk.executor  - Registered function for 'action_ai_consultant'.
+2026-05-13 04:18:50 INFO     rasa_sdk.executor  - Registered function for 'validate_travel_form'.
+2026-05-13 04:18:50 INFO     rasa_sdk.endpoint  - Starting plugins...
+2026-05-13 04:18:50 INFO     rasa_sdk.endpoint  - Action endpoint is up and running on http://0.0.0.0:5055
 
-[FORM VALIDATION LOG] ==============================
-2026-04-23 18:57:46 WARNING  rasa_sdk.forms  - Skipping validation for `destination`: there is no validation method specified.
-USER NÓI: 'tôi muốn đi chơi đà lạt tháng 5'
-INTENT CHÍNH: search_travel
-ENTITIES VỪA BẮT ĐƯỢC:
-   -> destination: 'Đà Lạt' (DIETClassifier)
-   -> month_to: 'tháng 5' (DIETClassifier)
-   -> month: 'tháng 5' (RegexEntityExtractor)
-TRÍ NHỚ (SLOTS) ĐANG GIỮ:
-   -> month: 'tháng 5'
-   -> month_to: 'tháng 5'
-   -> destination: 'Đà Lạt'
-====================================================
-
-
-[FORM VALIDATION LOG] ==============================
-USER NÓI: '2tr'
-INTENT CHÍNH: inform
-ENTITIES VỪA BẮT ĐƯỢC:
-   -> budget: '2tr' (DIETClassifier)
-   -> budget: '2tr' (RegexEntityExtractor)
-TRÍ NHỚ (SLOTS) ĐANG GIỮ:
-   -> month: 'tháng 5'
-   -> month_to: 'tháng 5'
-   -> budget: '2tr'
-   -> destination: 'Đà Lạt'
-   -> requested_slot: 'budget'
+[ACTION SEARCH TRAVEL LOG] =========================
+USER NÓI: 'ê shop, tháng sau tao có tầm 5 củ rưỡi, đang suy quá muốn tìm chỗ nào có biển để chữa lành, né mấy chỗ ồn ào xô bồ đông đúc nha.'
+INTENT NHẬN DIỆN: search_destination
+ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:
+   -> month: 'tháng' (DIETClassifier)
+   -> destination: 'sau' (DIETClassifier)
+   -> month: '5 củ' (DIETClassifier)
+   -> season: 'đông' (DIETClassifier)
+TRÍ NHỚ (SLOTS) ĐANG CÓ:
+   -> season: 'đông'
+   -> month: '5 củ'
+   -> destination: 'sau'
 ====================================================
 
 
 [ACTION SEARCH TRAVEL LOG] =========================
-USER NÓI: '2tr'
+USER NÓI: '5 củ đi đâu'
 INTENT NHẬN DIỆN: inform
 ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:
-   -> budget: '2tr' (DIETClassifier)
-   -> budget: '2tr' (RegexEntityExtractor)
+   -> budget: '5 củ' (DIETClassifier)
 TRÍ NHỚ (SLOTS) ĐANG CÓ:
-   -> month: 'tháng 5'
-   -> month_to: 'tháng 5'
-   -> budget: '2tr'
-   -> destination: 'Đà Lạt'
+   -> season: 'đông'
+   -> month: '5 củ'
+   -> budget: '5 củ'
+   -> destination: 'sau'
 ====================================================
 
 
-[FORM VALIDATION LOG] ==============================
-2026-04-23 18:58:01 WARNING  rasa_sdk.forms  - Skipping validation for `destination`: there is no validation method specified.
-USER NÓI: 'tôi muốn đi chơi đà lạt tháng 5'
-INTENT CHÍNH: search_travel
-ENTITIES VỪA BẮT ĐƯỢC:
+[ACTION SEARCH TRAVEL LOG] =========================
+USER NÓI: 'đi đà lạt tháng 5'
+INTENT NHẬN DIỆN: inform
+ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:
    -> destination: 'Đà Lạt' (DIETClassifier)
-   -> month_to: 'tháng 5' (DIETClassifier)
-   -> month: 'tháng 5' (RegexEntityExtractor)
-TRÍ NHỚ (SLOTS) ĐANG GIỮ:
+   -> month: 'tháng 5' (DIETClassifier)
+TRÍ NHỚ (SLOTS) ĐANG CÓ:
+   -> season: 'đông'
    -> month: 'tháng 5'
-   -> month_to: 'tháng 5'
-   -> budget: '2tr'
+   -> budget: '5 củ'
    -> destination: 'Đà Lạt'
 ====================================================
 
 
 [ACTION SEARCH TRAVEL LOG] =========================
-USER NÓI: 'tôi muốn đi chơi đà lạt tháng 5'
-INTENT NHẬN DIỆN: search_travel
+USER NÓI: 'đà lạt'
+INTENT NHẬN DIỆN: inform
 ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:
    -> destination: 'Đà Lạt' (DIETClassifier)
-   -> month_to: 'tháng 5' (DIETClassifier)
-   -> month: 'tháng 5' (RegexEntityExtractor)
 TRÍ NHỚ (SLOTS) ĐANG CÓ:
+   -> season: 'đông'
    -> month: 'tháng 5'
-   -> month_to: 'tháng 5'
-   -> budget: '2tr'
+   -> budget: '5 củ'
    -> destination: 'Đà Lạt'
 ====================================================
 

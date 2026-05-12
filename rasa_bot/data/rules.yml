@@ -15,11 +15,74 @@ rules:
     steps:
       - intent: out_of_scope
       - action: utter_out_of_scope
-  
+
   - rule: Trả lời về tính năng, dịch vụ của địa điểm
     steps:
       - intent: ask_location_feature
       - action: action_search_tour_info
+
+  - rule: Tìm kiếm chỗ ở khách sạn
+    steps:
+      - intent: search_accommodation
+      - action: action_search_tour_info
+
+  - rule: Phản hồi khi khách hỏi ẩm thực
+    steps:
+      - intent: search_food_dining
+      - action: action_ai_consultant
+
+  - rule: Tư vấn phương tiện đi lại
+    steps:
+      - intent: ask_transportation
+      - action: action_ai_consultant
+
+  - rule: Giải đáp chính sách tour / booking
+    steps:
+      - intent: ask_policy_booking
+      - action: action_ai_consultant
+
+  - rule: Gợi ý lịch trình tự túc
+    steps:
+      - intent: ask_itinerary
+      - action: action_ai_consultant
+
+  - rule: Xử lý tìm kiếm hoạt động
+    steps:
+      - intent: search_activity
+      - action: action_ai_consultant
+
+  - rule: Xử lý tìm kiếm điểm đến
+    steps:
+      - intent: search_destination
+      - action: action_search_travel
+
+  - rule: Xử lý tìm kiếm giá tour / ngân sách
+    steps:
+      - intent: search_price
+      - action: action_search_travel
+
+  - rule: Tư vấn chi tiết một tour cụ thể
+    steps:
+      - intent: ask_tour_info
+      - action: action_search_tour_info
+
+  - rule: Hủy form khi khách đổi ý (Gen Z quay xe)
+    condition:
+      - active_loop: travel_form
+    steps:
+      - intent: deny
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_cancel_form
+
+  - rule: Hủy form mượt khi vẫy tay chào
+    condition:
+      - active_loop: travel_form
+    steps:
+      - intent: goodbye
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_cancel_form
 
   - rule: 1. Kích hoạt Form khi khách muốn tìm tour
     steps:

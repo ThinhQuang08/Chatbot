@@ -11,11 +11,11 @@ RUNTIME_DIR="$ROOT_DIR/.runtime"
 
 QDRANT_CONTAINER="${QDRANT_CONTAINER:-chatbot-qdrant}"
 QDRANT_IMAGE="${QDRANT_IMAGE:-qdrant/qdrant:latest}"
-QDRANT_PORT="${QDRANT_PORT:-6333}"
+Qdrant_PORT="${QDRANT_PORT:-6333}"
 QDRANT_GRPC_PORT="${QDRANT_GRPC_PORT:-6334}"
 QDRANT_VOLUME="${QDRANT_VOLUME:-chatbot_qdrant_data}"
 
-MODEL_FILE="${MODEL_FILE:-level45-level5-v2.tar.gz}"
+MODEL_FILE="level45-level5-v4.tar.gz"
 SYNC_RECREATE="${SYNC_RECREATE:-false}" # true = tạo mới dữ liệu
 
 ACTION_PID=""
@@ -70,6 +70,8 @@ ensure_env_file() {
     echo "[WARN] Please review .env values before production usage."
   fi
 }
+
+export PYTHONPATH="$ROOT_DIR"
 
 ensure_database_ready() {
   echo "[INFO] Checking PostgreSQL table: destinations"
@@ -127,6 +129,28 @@ ensure_qdrant() {
   write_runtime_state
 }
 
+ensure_rabbitmq() {
+  if docker ps --format '{{.Names}}' | grep -q "^chatbot-rabbitmq$"; then
+    echo "[INFO] RabbitMQ container is already running."
+    return
+  fi
+
+  if docker ps -a --format '{{.Names}}' | grep -q "^chatbot-rabbitmq$"; then
+    echo "[INFO] Starting existing RabbitMQ container..."
+    docker start chatbot-rabbitmq >/dev/null
+    return
+  fi
+
+  echo "[INFO] Creating and starting RabbitMQ container..."
+  docker run -d \
+    --name chatbot-rabbitmq \
+    -p 5672:5672 \
+    -p 15672:15672 \
+    rabbitmq:3-management >/dev/null
+  echo "[INFO] Wait 5s for RabbitMQ to be ready..."
+  sleep 5
+}
+
 sync_qdrant() {
   echo "[INFO] Qdrant healthcheck"
   "$PYTHON_BIN" -m scripts.check_qdrant || true
@@ -176,6 +200,7 @@ main() {
   ensure_venv
   ensure_env_file
   ensure_database_ready
+  ensure_rabbitmq
   ensure_qdrant
   sync_qdrant
   start_actions

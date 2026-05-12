@@ -4,24 +4,27 @@ version: "3.1"
 intents:
   - affirm
   - deny
-  #- mood_great
-  #- mood_unhappy
   - test_s3
 
   - bot_challenge
   - search_travel
-  #- search_destination
-  #- search_activity
-  #- search_price
-  #- ask_tour_info           # Yêu cầu tìm tour/khách sạn
+  - search_destination
+  - search_activity
+  - search_accommodation
+  - search_price
+  - search_food_dining
+  - ask_itinerary
+  - ask_transportation
+  - ask_policy_booking
+  - ask_tour_info
   - greet
   - goodbye
-  - ask_weather_timing      # Hỏi thời tiết/thời điểm
+  - ask_weather_timing
 
-  - ask_location_feature    # Hỏi đặc điểm/đặc sản vùng
-  - book_tour               # Yêu cầu đặt chỗ/mua tour
-  - inform                  # Cung cấp thông tin (điểm đến, số người...)
-  - out_of_scope            # Các câu hỏi ngoài luồng (nhiễu)
+  - ask_location_feature
+  - book_tour
+  - inform
+  - out_of_scope
 
 entities:
   - season
@@ -30,15 +33,15 @@ entities:
   - month_to
   - time_window
 
-  - departure     # Điểm khởi hành
-  - destination   # Điểm đến (Thay cho location cũ)
-  - time          # Thời gian
-  - activity      # Hoạt động
-  - budget        # Ngân sách
-  - duration      # Thời lượng
-  - party_size    # Số lượng người
-  - tour_name     # Tên tour cụ thể
-  - category      # Phân biệt ks, biển, nhà hàng
+  - departure # Điểm khởi hành
+  - destination # Điểm đến (Thay cho location cũ)
+  - time # Thời gian
+  - activity # Hoạt động
+  - budget # Ngân sách
+  - duration # Thời lượng
+  - party_size # Số lượng người
+  - tour_name # Tên tour cụ thể
+  - category # Phân biệt ks, biển, nhà hàng
 
 forms:
   travel_form:
@@ -126,7 +129,7 @@ slots:
     mappings:
       - type: from_entity
         entity: party_size
-        
+
   tour_name:
     type: text
     influence_conversation: false
@@ -150,6 +153,10 @@ actions:
   - action_search_tour_info
 
 responses:
+  utter_cancel_form:
+    - text: "Oki chốt! Khi nào cần vi vu hay set kèo cứ gọi bot nha, mãi iu! ✌️"
+    - text: "Đã hủy form tìm tour nè. Bạn cứ ngâm cứu thêm nhe! 😍"
+
   utter_greet:
     - text: "Chào bạn! Mình là trợ lý du lịch, có thể gợi ý điểm đến theo mùa, ngân sách và sở thích của bạn."
 
@@ -163,7 +170,7 @@ responses:
     - text: "Tuyệt vời! Bạn muốn mình lọc tiếp theo tháng, ngân sách hay hoạt động?"
 
   utter_test_s3:
-  - text: "Báo cáo sếp Thịnh, em đang chạy bằng não tải từ S3 về đây ạ!"
+    - text: "Báo cáo sếp Thịnh, em đang chạy bằng não tải từ S3 về đây ạ!"
 
   utter_goodbye:
     - text: "Cảm ơn bạn đã sử dụng trợ lý du lịch. Hẹn gặp lại bạn nhé!"

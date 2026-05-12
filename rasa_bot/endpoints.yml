@@ -7,9 +7,9 @@
 #  url: http://my-server.com/models/default_core@latest
 #  wait_time_between_pulls:  10   # [optional](default: 100)
 
-models:
-  url: "http://localhost:9000/chatbot-models/latest_model.tar.gz"
-  wait_time_between_pulls: 10 # Cứ 10 giây Rasa sẽ ngó lên S3 một lần xem có model mới không
+#models:
+#  url: "http://localhost:9000/chatbot-models/latest_model.tar.gz"
+#  wait_time_between_pulls: 10 # Cứ 10 giây Rasa sẽ ngó lên S3 một lần xem có model mới không
 
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
@@ -24,7 +24,7 @@ action_endpoint:
 tracker_store:
   type: SQL
   dialect: postgresql
-  url: 192.168.1.213
+  url: localhost
   db: chatbot
   port: 5432
   username: chatbot_user

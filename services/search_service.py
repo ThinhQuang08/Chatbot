@@ -205,9 +205,13 @@ def search_destinations(
         season_start, season_end, avg_cost_min, avg_cost_max = row[6:]
 
         if destination:
-            # Nếu khách đòi đi Đà Lạt, mà location (từ DB) không chứa chữ Đà Lạt thì bỏ qua luôn!
-            if destination.strip().lower() not in location.lower():
-                continue
+            # Khắc phục lỗi Rasa NLU bắt nhầm các từ chung chung thành destination
+            dest_lower = destination.strip().lower()
+            ignore_dests = ["biển", "chữa lành", "chỗ nào", "núi", "rừng", "thành phố", "đảo", "vùng", "nơi", "khu", "chỗ", "điểm"]
+            
+            if dest_lower not in ignore_dests:
+                if dest_lower not in location.lower():
+                    continue
 
         searchable_text = build_destination_semantic_text(
             location=location,

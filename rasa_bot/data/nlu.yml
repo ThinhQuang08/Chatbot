@@ -98,75 +98,6 @@ nlu:
       - không ok lắm
       - nhầm rồi bot ơi
       - nope
-      - không phải
-      - sai rồi
-      - k
-      - ko
-      - thôi
-      - đổi cái khác đi
-      - bỏ đi
-      - nhầm rồi bot ơi
-      - buồn quá
-      - chán ghê
-      - mệt mỏi
-      - dạo này đang stress
-      - chán đời
-      - không vui
-      - tụt mood
-      - tệ quá
-
-  # - intent: mood_great
-  #   examples: |
-  #     - perfect
-  #     - great
-  #     - amazing
-  #     - feeling like a king
-  #     - wonderful
-  #     - I am feeling very good
-  #     - I am great
-  #     - I am amazing
-  #     - super stoked
-  #     - extremely good
-  #     - so so perfect
-  #     - so good
-  #     - so perfect
-  #     - tuyệt vời
-  #     - đỉnh quá
-  #     - 10 điểm
-  #     - đang rất vui
-  #     - háo hức quá
-  #     - xịn xò
-  #     - quá đã
-  #     - ưng ý lắm
-  #     - quá tuyệt
-  #     - perfect nha
-
-  # - intent: mood_unhappy
-  #   examples: |
-  #     - my day was horrible
-  #     - I am sad
-  #     - I don't feel very well
-  #     - I am disappointed
-  #     - super sad
-  #     - I'm so sad
-  #     - sad
-  #     - very sad
-  #     - unhappy
-  #     - not good
-  #     - not very good
-  #     - extremly sad
-  #     - so saad
-  #     - so sad
-  #     - buồn quá
-  #     - chán ghê
-  #     - mệt mỏi
-  #     - dạo này đang stress
-  #     - trầm cảm
-  #     - áp lực công việc quá
-  #     - chán đời
-  #     - không vui
-  #     - đang sầu
-  #     - tụt mood
 
   - intent: bot_challenge
     examples: |
@@ -200,161 +131,157 @@ nlu:
       - cách trồng cây bonsai
       - cách chữa đau dạ dày
 
-  # - intent: search_destination
-  #   examples: |
-  #     - gợi ý điểm du lịch
-  #     - tôi muốn đi du lịch
-  #     - có nơi nào đẹp để đi chơi không
-  #     - gợi ý địa điểm du lịch
-  #     - tôi muốn đi đâu đó
-  #     - tôi muốn đi du lịch [mùa hè](season)
-  #     - gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to)
-  #     - tôi muốn đi trong [tháng 5](month)
-  #     - đi đâu [mùa đông](season) thì hợp
-  #     - [sắp tới](time_window) tôi nên đi đâu
-  #     - tôi muốn đi du lịch [tháng 10](month)
-  #     - thời điểm nào đẹp nhất để đi Đà Lạt
-  #     - [mùa hè](season) nên đi đâu tránh nóng
-  #     - [tháng 9](month) có chỗ nào đẹp để săn ảnh
-  #     - mình định đi vào [Tết](time_window)
-  #     - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
-  #     - mình làm văn phòng chỉ rảnh [cuối tuần](time_window), nên đi đâu gần [Sài Gòn](departure)
-  #     - t muốn đi [Đà Lạt](destination)
-  #     - cho xin review đi [Sapa](destination) [tháng 10](month)
-  #     - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
-  #     - muốn tìm nơi [chữa lành](category)
-  #     - có chỗ nào đi trốn nắng [mùa hè](season) không
-  #     - gợi ý vài nơi [miền Tây](category) [tết](time_window) này đi
-  #     - muốn đi ngắm tuyết ở [miền núi](category) thì đi tháng mấy
-  #     - [cuối năm](time_window) đi biển [Phú Quốc](destination) có hợp lý không
-
-
-  # - intent: search_activity
-  #   examples: |
-  #     - tôi muốn leo núi
-  #     - leo núi [tháng 10](month)
-  #     - mình muốn leo núi vào [tháng 10](month)
-  #     - chỗ nào leo núi đẹp vào [tháng 10](month)
-  #     - trekking [tháng 10](month)
-  #     - đi trekking vào [tháng 10](month) thì nên đi đâu
-  #     - chi phí đi leo núi [tháng 10](month) là bao nhiêu
-  #     - đi leo núi [tháng 10](month) hết bao nhiêu tiền
-  #     - nơi nào có thể cắm trại
-  #     - có chỗ nào đi thuyền không
-  #     - tôi muốn săn mây
-  #     - gợi ý chỗ leo núi
-  #     - trekking
-  #     - tôi muốn trekking
-  #     - chỗ nào trekking đẹp
-  #     - chỗ nào có bãi biển đẹp
-  #     - muốn đi lặn san hô
-  #     - gợi ý nơi đi cáp treo
-  #     - có điểm nào ăn uống ngon không
-  #     - tôi muốn đi nơi khí hậu mát mẻ
-  #     - có tour nào đi xe đạp quanh bản làng không
-  #     - muốn trải nghiệm văn hóa bản địa
-  #     - tìm khu [nghỉ dưỡng](category) có spa
-
-  # - intent: search_price
-  #   examples: |
-  #     - du lịch tiết kiệm
-  #     - gợi ý nơi giá rẻ
-  #     - nơi nào đi chơi tiết kiệm
-  #     - tôi muốn đi du lịch giá rẻ
-  #     - tôi muốn đi du lịch [mùa hè](season), ngân sách [1tr](budget)
-  #     - tôi có [2 triệu](budget) đi được đâu
-  #     - gợi ý nơi đi chơi dưới [1500k](budget)
-  #     - [tháng 6](month) tôi có [3 triệu](budget) nên đi đâu
-  #     - [sắp tới](time_window) có chỗ nào đi được với [1.5tr](budget) không
-  #     - tôi muốn đi [tháng 4](month), chi phí tối đa [2000000](budget)
-  #     - tôi muốn đi [mùa xuân](season) với ngân sách [2.5tr](budget)
-  #     - đi [tháng 11](month_from) đến [tháng 1](month_to) với [4tr](budget)
-  #     - chi phí đi du lịch khoảng [5 triệu](budget)
-  #     - ngân sách [3 triệu](budget) thì nên đi đâu
-  #     - có tour nào dưới [2 triệu](budget) không
-  #     - mình có tầm [4 triệu](budget)
-  #     - du lịch [500 nghìn](budget) có lựa chọn nào không
-  #     - tôi muốn đi chơi nhưng chỉ có [10tr](budget)
-  #     - tôi chỉ có [10tr](budget) thì đi đâu ổn
-  #     - ngân sách [10tr](budget) đi đâu đẹp
-  #     - mình có [8tr](budget), gợi ý giúp mình
-  #     - du lịch tiết kiệm
-  #     - gợi ý nơi giá rẻ
-  #     - tôi muốn đi du lịch [mùa hè](season), ngân sách [1tr](budget)
-  #     - [sắp tới](time_window) có chỗ nào đi được với [1.5tr](budget) không
-  #     - chi phí đi du lịch khoảng [5 triệu](budget)
-  #     - có tour nào dưới [2 triệu](budget) không
-  #     - du lịch [500 nghìn](budget) có lựa chọn nào không
-  #     - mình có tầm [4 triệu](budget)
-  #     - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu ko bot
-  #     - dới [3tr](budget) nha, đi [cuối tuần](time_window)
-  #     - giá rẻ thôi tầm [1000k](budget) đổ lại
-  #     - muốn đi resort [5 sao](category) giá không thành vấn đề
-  #     - chi phí cho chuyến đi [Phú Quốc](destination) [4 ngày](duration) rơi vào khoảng bao nhiêu
-  #     - tài chính [10 củ](budget) quay đầu
-  #     - đi trăng mật ngân sách [20 triệu](budget) 2 vợ chồng
-
-
-  # - intent: ask_tour_info
-  #   examples: |
-  #     - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
-  #     - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) ko?
-  #     - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
-  #     - báo giá tour [Thái Lan](destination) khởi hành từ [HCM](departure) [tháng sau](time_window)
-  #     - tui mún đi [Đà Nẵng](destination) [4n3đ](duration) ngân sách cỡ [5 củ](budget)
-  #     - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
-  #     - tour [Sapa](destination) [2 ngày 1 đêm](duration) đi từ [Hà Nội](departure) giá bao nhiêu
-  #     - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
-  #     - giá tour đã bao gồm vé [máy bay](category) chưa shop
-  #     - có tour ghép đoàn nào đi [Hà Giang](destination) khởi hành [thứ 6](time_window) không
-  #     - mình muốn đặt tour đi [vịnh Hạ Long](destination) [2 người lớn 1 trẻ em](party_size)
-  #     - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
-  #     - tour [Đà Lạt](destination) [tháng 12](month)
-
-  - intent: ask_location_feature
+  - intent: search_destination
     examples: |
-      - Vũng Tàu có đặc sản gì?
-      - Chơi gì ở Hội An vào buổi tối?
+      - gợi ý điểm du lịch
+      - tôi muốn đi du lịch
+      - có nơi nào đẹp để đi chơi không
+      - gợi ý địa điểm du lịch
+      - tôi muốn đi đâu đó
+      - tôi muốn đi du lịch [mùa hè](season)
+      - gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to)
+      - tôi muốn đi trong [tháng 5](month)
+      - đi đâu [mùa đông](season) thì hợp
+      - [sắp tới](time_window) tôi nên đi đâu
+      - đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp
+      - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
+      - t muốn đi [Đà Lạt](destination)
+      - cho xin review đi [Sapa](destination) [tháng 10](month)
+      - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
+      - muốn tìm nơi [chữa lành](category)
+      - dịp lễ [30/4](time_window) nên đi tỉnh nào
+      - có chỗ nào đi trốn nắng [mùa hè](season) không
+      - tui muốn đi từ tháng 2 đến tháng 5
+      - muốn đi đâu đó từ tháng 1 tới tháng 3
+      - gợi ý chỗ nào đi chữa lành healing với bot
+      - đợt này muốn đi trốn deadline quá
+      - chỗ nào chụp hình sống ảo cháy máy ta
+      - có nơi nào chill chill không bot
+      - mình đang bị suy đi đâu hợp lý
+
+  - intent: search_activity
+    examples: |
+      - tôi muốn leo núi
+      - leo núi [tháng 10](month)
+      - mình muốn leo núi vào [tháng 10](month)
+      - chỗ nào leo núi đẹp vào [tháng 10](month)
+      - trekking [tháng 10](month)
+      - đi trekking vào [tháng 10](month) thì nên đi đâu
+      - nơi nào có thể cắm trại
+      - có chỗ nào đi thuyền không
+      - tôi muốn săn mây
+      - gợi ý chỗ leo núi
+      - trekking
+      - tôi muốn trekking
+      - chỗ nào trekking đẹp
+      - chỗ nào có bãi biển đẹp
+      - muốn đi lặn san hô
+      - gợi ý nơi đi cáp treo
+      - có tour nào đi xe đạp quanh bản làng không
+      - muốn trải nghiệm văn hóa bản địa
+      - tìm chỗ [tắm biển](category)
+      - tôi muốn lên [núi](category) chơi
+      - phú quốc có lặn ngắm san hô không
+      - đà lạt đợt này có lễ hội gì không
+
+  - intent: search_accommodation
+    examples: |
       - các [khách sạn](category) ở đó thì sao
       - tìm [homestay](category)
-      - có chỗ nào [cắm trại](category) không
       - ở đó có [resort](category) nào đẹp không
       - tìm [khách sạn](category) ở [Vũng Tàu](destination)
       - có [resort](category) nào tại [Sapa](destination) không
       - tìm khu [nghỉ dưỡng](category) có spa
       - gợi ý vài cái [homestay](category) ở [Đà Lạt](destination)
-      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
       - [nhà nghỉ](category) thì sao
       - thế còn [khách sạn](category) thì sao
       - [resort](category) thì sao hả bot
       - cho tui xem [homestay](category) thì sao
       - đổi sang [nhà nghỉ](category) nhé
+      - mình muốn tìm chỗ ăn ngủ
+      - có homestay nào giá rẻ không
+      - gợi ý mình vài resort view biển
 
+  - intent: search_price
+    examples: |
+      - du lịch tiết kiệm
+      - gợi ý nơi giá rẻ
+      - nơi nào đi chơi tiết kiệm
+      - tôi muốn đi du lịch giá rẻ
+      - giá tour này tầm bao nhiêu
+      - đi sapa chi phí bao nhiêu
+      - tour đà lạt 3 ngày 2 đêm này giá chính xác bao nhiêu
+      - trọn gói vậy có phát sinh phụ phí gì không
+      - cho mình hỏi giá vé cáp treo vinpearl
+      - giá vé Safari
+      - chi phí đi leo núi [tháng 10](month) là bao nhiêu
+      - đi leo núi [tháng 10](month) hết bao nhiêu tiền
+      - đi zậy thiệt hại cỡ nhiêu
+      - rổ giá như nào
+      - tổn thất khoảng bao nhiêu
+      - ví đang mỏng có đi được không
+      - giá có hạt dẻ không
+      - điểm nào dành cho hệ hssv
+
+  - intent: search_food_dining
+    examples: |
+      - có điểm nào ăn uống ngon không
+      - đến huế thì ăn món gì ngon
+      - cho mình xin địa chỉ vài quán hải sản hạt dẻ ở nha trang
+      - đà lạt có đặc sản gì
+      - Vũng Tàu có đặc sản gì?
+      - ăn gì ở hội an
+      - món nào ăn nhức nách ở đà lạt
+      - món nào ngon cực dính
+      - có quán nào ngon chân ái không
+      - recommend vài quán nhậu ngon nha
+
+  - intent: ask_itinerary
+    examples: |
+      - lên giúp mình lịch trình tự túc đà nẵng
+      - thiết kế cho mình lịch trình đi phú quốc 4 ngày 3 đêm
+      - tư vấn lịch trình
+      - tạo lịch trình 2 ngày 1 đêm sapa
+      - mình cần lên lịch trình đi sapa
+
+  - intent: ask_transportation
+    examples: |
+      - vé máy bay khứ hồi hà nội phú quốc
+      - từ sân bay về khách sạn có xe đưa đón không
+      - đi từ hồ chí minh ra nha trang thì đi xe gì
+      - tư vấn phương tiện di chuyển
+
+  - intent: ask_policy_booking
+    examples: |
+      - bên mình hủy tour trước 3 ngày có được hoàn 100% tiền không
+      - bé 4 tuổi thì phụ thu thế nào
+      - đi nước ngoài cần chuẩn bị visa không
+      - chính sách đổi trả ra sao
+      - trẻ em có miễn phí không
+
+  - intent: ask_tour_info
+    examples: |
+      - lịch trình ngày 2 của tour sapa này đi những đâu
+      - tour này có hdv theo suốt tuyến không
+      - trong tour có bao ăn uống không
+      - tour khởi hành lúc mấy giờ
+      - tour đà lạt đi bằng xe giường nằm hay xe ngồi
+      - thông tin chi tiết tour đà nẵng
 
   - intent: search_travel
     examples: |
-      - gợi ý điểm du lịch
-      - tôi muốn đi đâu đó
-      - tôi muốn đi du lịch [mùa hè](season)
-      - gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to)
-      - đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp
-      - đi đâu [mùa đông](season) thì hợp
-      - [sắp tới](time_window) tôi nên đi đâu
-      - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
-      - mình làm văn phòng chỉ rảnh [cuối tuần](time_window), nên đi đâu gần [Sài Gòn](departure)
-      - t muốn đi [Đà Lạt](destination)
-      - cho xin review đi [Sapa](destination) [tháng 10](month)
-      - dịp lễ [30/4](time_window) nên đi tỉnh nào
-      - tôi muốn leo núi
-      - leo núi [tháng 10](month)
-      - đi trekking vào [tháng 10](month) thì nên đi đâu
-      - nơi nào có thể cắm trại
-      - muốn đi lặn san hô
-      - gợi ý nơi đi cáp treo
-      - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
-      - có tour nào đi xe đạp quanh bản làng không
-      - du lịch tiết kiệm
-      - gợi ý nơi giá rẻ
+      - tìm cho mình tour đi Đà Lạt
+      - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
+      - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) ko?
+      - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
+      - báo giá tour [Thái Lan](destination) khởi hành từ [HCM](departure) [tháng sau](time_window)
+      - tui mún đi [Đà Nẵng](destination) [4n3đ](duration) ngân sách cỡ [5 củ](budget)
+      - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
+      - có tour ghép đoàn nào đi [Hà Giang](destination) khởi hành [thứ 6](time_window) không
+      - mình muốn đặt tour đi [vịnh Hạ Long](destination) [2 người lớn 1 trẻ em](party_size)
+      - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
+      - tour [Đà Lạt](destination) [tháng 12](month) còn trống chỗ không
       - tôi muốn đi du lịch [mùa hè](season), ngân sách [1tr](budget)
       - [sắp tới](time_window) có chỗ nào đi được với [1.5tr](budget) không
       - chi phí đi du lịch khoảng [5 triệu](budget)
@@ -365,24 +292,15 @@ nlu:
       - dới [3tr](budget) nha, đi [cuối tuần](time_window)
       - tài chính [10 củ](budget) quay đầu
       - chi phí cho chuyến đi [Phú Quốc](destination) [4 ngày](duration) rơi vào khoảng bao nhiêu
-      - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
-      - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) ko?
-      - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
-      - báo giá tour [Thái Lan](destination) khởi hành từ [HCM](departure) [tháng sau](time_window)
-      - tui mún đi [Đà Nẵng](destination) [4n3đ](duration) ngân sách cỡ [5 củ](budget)
-      - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
-      - tour [Sapa](destination) [2 ngày 1 đêm](duration) đi từ [Hà Nội](departure) giá bao nhiêu
-      - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
-      - tour [Đà Lạt](destination) [tháng 12](month) còn trống chỗ không
-      - đi [biển](category) với ngân sách [5tr](budget)
-      - dạo này nóng quá mình muốn đi [biển](category)
-      - gợi ý tour [tắm biển](category) giá rẻ
-      - tìm chỗ [tắm biển](category)
-      - tôi muốn lên [núi](category) chơi
-      - gợi ý điểm [cắm trại](category)
-      - tui muốn đi từ tháng 2 đến tháng 5
-      - muốn đi đâu đó từ tháng 1 tới tháng 3
-      - tui muốn đi chơi
+      - đang muốn set kèo đi [Vũng Tàu](destination)
+      - chốt kèo đi biển nha
+      - muốn vi vu vài ngày
+      - đi phượt [Sapa](destination) thôii
+
+  - intent: ask_location_feature
+    examples: |
+      - ở đó có mát không
+      - khí hậu ở đó thế nào
 
   - intent: test_s3
     examples: |
@@ -420,6 +338,28 @@ nlu:
       - [10tr](budget)
       - khởi hành từ [Sài Gòn](departure)
       - [xe khách](category)
+
+synonym:
+  - value: "Hồ Chí Minh"
+    examples: |
+      - tphcm
+      - hcm
+      - sài gòn
+      - sg
+      - xì gòn
+      - thành phố mang tên bác
+
+  - value: "Đà Lạt"
+    examples: |
+      - đl
+      - phố núi
+      - thành phố ngàn hoa
+
+  - value: "homestay"
+    examples: |
+      - hõm
+      - chòi
+      - phòng
       - từ [tháng 5](month_from) đến [tháng 7](month_to)
       - từ [tháng 10](month_from) đến [tháng 12](month_to)
       - từ [tháng 1](month_from) đến [tháng 3](month_to)
