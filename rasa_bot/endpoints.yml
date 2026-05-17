@@ -7,9 +7,9 @@
 #  url: http://my-server.com/models/default_core@latest
 #  wait_time_between_pulls:  10   # [optional](default: 100)
 
-# models:
-#   url: "http://localhost:9000/chatbot-models/latest_model.tar.gz"
-#   wait_time_between_pulls: 10 # Cứ 10 giây Rasa sẽ ngó lên S3 một lần xem có model mới không
+models:
+  url: "http://localhost:9000/chatbot-models/latest_model.tar.gz"
+  wait_time_between_pulls: 10 # Cứ 10 giây Rasa sẽ ngó lên S3 một lần xem có model mới không
 
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
@@ -21,14 +21,14 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
 
-# tracker_store:
-#   type: SQL
-#   dialect: postgresql
-#   url: 192.168.1.213
-#   db: chatbot
-#   port: 5432
-#   username: chatbot_user
-#   password: supersecret
+tracker_store:
+  type: SQL
+  dialect: postgresql
+  url: 192.168.1.213
+  db: chatbot
+  port: 5432
+  username: chatbot_user
+  password: supersecret
 
 #tracker_store:
 #    type: redis
@@ -54,10 +54,10 @@ action_endpoint:
 #  password: password
 #  queue: queue
 
-# event_broker:
-#   type: "pika"
-#   url: "localhost"
-#   username: "guest"
-#   password: "guest"
-#   queues:
-#     - "rasa_analytics_queue"
+event_broker:
+  type: "pika"
+  url: "localhost"
+  username: "guest"
+  password: "guest"
+  queues:
+    - "rasa_analytics_queue"

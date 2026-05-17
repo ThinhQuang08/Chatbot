@@ -88,9 +88,10 @@ class DataPreprocessor:
         return " ".join(normalized_words)
 
     def segment_words(self, text):
-        """VŨ KHÍ MỚI: Cắt từ tiếng Việt bằng Underthesea"""
-        # Tham số format="text" sẽ tự động nối các từ ghép bằng dấu gạch dưới (_)
-        return word_tokenize(text, format="text")
+        """Cắt từ tiếng Việt bằng Underthesea (Đã bỏ format text để không sinh ra dấu _)"""
+        # Trả về một list các từ, sau đó nối lại bằng khoảng trắng bình thường
+        tokens = word_tokenize(text)
+        return " ".join(tokens)
 
     def run_pipeline(self, raw_text):
         if not isinstance(raw_text, str) or not raw_text.strip():
@@ -98,7 +99,7 @@ class DataPreprocessor:
             
         text = self.normalize_unicode(raw_text)
         text = self.clean_text(text)
-        text = self.phrase_normalize(text) # <--- Thêm bước này
+        text = self.phrase_normalize(text)
         text = self.lexical_normalize(text)
         text = self.segment_words(text)
         return text
