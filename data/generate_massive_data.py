@@ -2,73 +2,65 @@ import psycopg2
 import random
 
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "192.168.1.213",
     "database": "chatbot",
     "user": "chatbot_user",
     "password": "supersecret"
 }
 
-def generate_fine_grained_data(num_samples=2000):
-    destinations = ["đà lạt", "sapa", "nha trang", "phú quốc", "đà nẵng", "hà nội", "sài gòn", "đlạt", "nt", "pq"]
+def generate_tourism_drift(num_samples=1500):
+    # 1. Tập trung vào các ĐỊA ĐIỂM MỚI NỔI (Không hề có trong nlu.yml)
+    new_destinations = ["Măng Đen", "Tà Xùa", "Phú Quý", "Hà Giang", "Trị An", "Tà Năng"]
     
-    # Các mẫu câu đặc thù cho từng Intent
-    patterns = {
-        "search_destination": [
-            "review {dest} mùa này", "xin kinh nghiệm đi {dest}", "thời tiết {dest} sao", 
-            "{dest} có chỗ nào check in đẹp", "đặc sản {dest} là gì", "mùa nào đi {dest} hợp lý"
-        ],
-        "search_activity": [
-            "ở {dest} có tour lặn không", "muốn đi trekking {dest}", "có cắm trại ở {dest} k",
-            "chơi dù lượn ở {dest}", "các hoạt động vui chơi tại {dest}", "thuê xe đạp dạo {dest}"
-        ],
-        "search_price": [
-            "giá tour {dest} nhiêu tiền", "chi phí đi {dest} mấy củ", "tour {dest} rẻ nhất là bao nhiêu",
-            "có khuyến mãi tour {dest} không", "xin bảng giá đi {dest}"
-        ],
-        "ask_tour_info": [
-            "xin lịch trình đi {dest}", "tour {dest} bao gồm ăn uống chưa", "di chuyển bằng phương tiện gì",
-            "tour {dest} mấy ngày mấy đêm", "có hướng dẫn viên không", "gửi mình chi tiết tour {dest}"
-        ],
-        "search_accommodation": [
-            "đặt phòng khách sạn {dest}", "thuê resort {dest}", "tìm homestay view đẹp ở {dest}",
-            "book phòng {dest}", "tìm chỗ ở giá rẻ tại {dest}"
-        ],
-        "search_travel": [
-            "tìm tour đi {dest}", "muốn đi {dest}", "có tour {dest} không bot", 
-            "tư vấn tour {dest}", "ik {dest} chơi"
-        ],
-        "out_of_scope": [
-            "cách nấu bún bò", "bot ngu vãi", "thời tiết hôm nay", "bạn tên gì", 
-            "buồn ngủ quá", "giải dùm bài toán", "chửi thề dmm"
-        ]
-    }
+    # 2. Tập trung vào XU HƯỚNG MỚI (Glamping, Chữa lành, Trekking)
+    trend_patterns = [
+        "cho mình xin báo giá glamping ở {dest} cho {people} người",
+        "có tour chữa lành nào đi {dest} khoảng {days} ngày không",
+        "mình muốn tìm bãi cắm trại staycation gần {dest} đi {days} ngày",
+        "review đi săn mây ở {dest} {days} ngày {days_minus} đêm",
+        "chi phí đi trekking băng rừng ở {dest} cho nhóm {people} người",
+        "tư vấn lịch trình đi {dest} tự túc {days} ngày",
+        "ở {dest} có khu glamping nào view đẹp không",
+        "mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại {dest}"
+    ]
+
+    # 3. Một số câu hỏi chuyên sâu về nghiệp vụ mà bot chưa rành
+    deep_tour_patterns = [
+        "tour {dest} có bao gồm vé xe giường nằm cabin đôi không",
+        "resort ở {dest} có cho mang theo chó mèo thú cưng không",
+        "nhóm mình {people} người lớn {kids} trẻ em đi {dest} thì phụ thu sao",
+        "người lớn tuổi ngồi xe lăn có đi tour {dest} {days} ngày được không"
+    ]
 
     raw_data = []
     
-    print(f"[INFO] Đang trộn từ vựng để sinh ra {num_samples} câu chat đa dạng...")
+    print(f"[INFO] Đang giả lập làn sóng {num_samples} khách hàng đu trend du lịch mới...")
+    
     for i in range(num_samples):
-        # Chọn ngẫu nhiên một Intent category (tỷ lệ random)
-        rand = random.random()
-        if rand < 0.15: category = "search_destination"
-        elif rand < 0.30: category = "search_activity"
-        elif rand < 0.50: category = "search_price"
-        elif rand < 0.65: category = "ask_tour_info"
-        elif rand < 0.80: category = "search_accommodation"
-        elif rand < 0.95: category = "search_travel"
-        else: category = "out_of_scope"
-
-        # Lấy template và nhét tên địa danh vào
-        template = random.choice(patterns[category])
-        dest = random.choice(destinations)
-        text = template.replace("{dest}", dest)
+        people = random.randint(2, 15)
+        kids = random.randint(1, 4)
+        days = random.randint(2, 5)
+        
+        # Chọn ngẫu nhiên giữa xu hướng mới và câu hỏi nghiệp vụ khó
+        if random.random() < 0.7:
+            template = random.choice(trend_patterns)
+        else:
+            template = random.choice(deep_tour_patterns)
             
-        # Thêm gia vị Teencode / Sai chính tả (20% xác suất)
-        if random.random() > 0.8:
-            text = text.replace("đi", "ik").replace("không", "ko").replace("quá", "wá")
-            text += random.choice([" nha", " z", " dợ", " bot"])
+        dest = random.choice(new_destinations)
+        
+        # Điền thông số để tạo câu unique (qua mặt MD5)
+        text = template.format(dest=dest, people=people, days=days, days_minus=days-1, kids=kids)
+
+        # --- MÔ PHỎNG SỰ BỐI RỐI CỦA MÔ HÌNH ---
+        # Bot thấy từ khóa lạ (glamping, chữa lành, Tà Xùa) nên tự tin giảm mạnh
+        predicted_intent = random.choice(["search_activity", "search_travel", "search_price", "ask_tour_info"])
+        
+        # Độ tự tin rất "nửa vời" (0.45 - 0.75) vì câu hỏi có cấu trúc du lịch nhưng từ vựng lạ
+        confidence = round(random.uniform(0.45, 0.75), 2) 
 
         # Cấu trúc: (session_id, raw_text, predicted_intent, confidence, destination, budget, feedback)
-        raw_data.append((f"sim_v2_{i}", text, "unlabeled", 0.0, None, None, 0))
+        raw_data.append((f"trend_user_{i}", text, predicted_intent, confidence, None, None, 0))
 
     return raw_data
 
@@ -80,7 +72,7 @@ def seed_db():
         cur.execute("TRUNCATE TABLE ai_chat_analytics RESTART IDENTITY;")
         print("🧹 Đã dọn sạch bảng cũ.")
 
-        data = generate_fine_grained_data(2000) # Tăng lên 2000 câu cho mô hình học sướng
+        data = generate_tourism_drift(1500) 
         
         sql = """
             INSERT INTO ai_chat_analytics 
@@ -90,7 +82,7 @@ def seed_db():
         cur.executemany(sql, data)
         conn.commit()
         
-        print(f"✅ Bơm thành công {len(data)} dòng dữ liệu siêu đa dạng vào PostgreSQL!")
+        print(f"✅ Bơm thành công {len(data)} câu hỏi xu hướng chuyên môn vào DB!")
 
     except Exception as e:
         print(f"❌ Lỗi DB: {e}")
