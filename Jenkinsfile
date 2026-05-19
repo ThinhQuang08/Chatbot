@@ -8,16 +8,15 @@ pipeline {
     }
 
     environment {
-        // Dùng Python 3.10.14 đã cài bằng pyenv trên agent rasa
-        PYTHON_CMD = '/home/jenkins/.pyenv/versions/3.10.14/bin/python'
-
-        // Workspace thật do Jenkins cấp
         PROJECT_DIR = "${WORKSPACE}"
 
-        // Thư mục model của Rasa
+        IMAGE_NAME = "chatbot-mlops-runner"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        IMAGE_FULL = "chatbot-mlops-runner:${BUILD_NUMBER}"
+        IMAGE_LATEST = "chatbot-mlops-runner:latest"
+
         MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
 
-        // On-prem model registry tạm thời
         MODEL_REGISTRY_DIR = "/opt/chatbot/model-registry"
         ACTIVE_MODEL_POINTER = "/opt/chatbot/model-registry/active_model.txt"
     }
@@ -26,7 +25,7 @@ pipeline {
 
         stage('1. Check Agent Environment') {
             steps {
-                echo "🔍 Kiểm tra môi trường trên Jenkins agent..."
+                echo "🔍 Kiểm tra môi trường Jenkins agent và Docker..."
 
                 sh """
                     set -e
@@ -40,17 +39,14 @@ pipeline {
                     echo "Current workspace:"
                     pwd
 
-                    echo "System python3 version:"
-                    python3 --version || true
-
-                    echo "Jenkins pipeline Python command:"
-                    ${PYTHON_CMD} --version
-
-                    echo "Python pip:"
-                    ${PYTHON_CMD} -m pip --version
-
                     echo "Git version:"
                     git --version
+
+                    echo "Docker version:"
+                    docker --version
+
+                    echo "Docker info:"
+                    docker info | head -40
 
                     echo "Disk usage:"
                     df -h
@@ -64,131 +60,154 @@ pipeline {
             }
         }
 
-        stage('2. Setup Python Environment') {
+        stage('2. Build Docker Runner Image') {
             steps {
-                echo "🐍 Đang chuẩn bị Python virtual environment..."
+                echo "🐳 Đang build Docker image cho chatbot MLOps runner..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
 
-                    echo "Using Python:"
-                    ${PYTHON_CMD} --version
+                    echo "Build image: ${IMAGE_FULL}"
+                    docker build -t "${IMAGE_FULL}" -t "${IMAGE_LATEST}" .
 
-                    echo "Using pip:"
-                    ${PYTHON_CMD} -m pip --version
+                    echo "Test Python inside container:"
+                    docker run --rm "${IMAGE_FULL}" python --version
 
-                    echo "Remove old virtual environment if exists..."
-                    rm -rf .venv
-
-                    echo "Create virtual environment with Python 3.10..."
-                    ${PYTHON_CMD} -m venv .venv
-
-                    echo "Check venv Python version:"
-                    .venv/bin/python --version
-
-                    echo "Upgrade pip, setuptools, wheel..."
-                    .venv/bin/python -m pip install --upgrade pip setuptools wheel
-
-                    if [ -f requirements.txt ]; then
-                        echo "Install requirements.txt..."
-                        .venv/bin/pip install -r requirements.txt
-                    else
-                        echo "❌ Không tìm thấy requirements.txt"
-                        exit 1
-                    fi
+                    echo "Test important packages:"
+                    docker run --rm "${IMAGE_FULL}" python - <<'PY'
+import sys
+print("Python:", sys.version)
+import rasa
+print("Rasa:", rasa.__version__)
+PY
                 """
             }
         }
 
         stage('3. Generate Massive Data') {
             steps {
-                echo "📦 Đang tạo / thu thập dữ liệu chat..."
+                echo "📦 Đang tạo / thu thập dữ liệu chat trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/generate_massive_data.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/generate_massive_data.py
                 """
             }
         }
 
         stage('4. Preprocess Data') {
             steps {
-                echo "🧹 Đang làm sạch và chuẩn hóa dữ liệu..."
+                echo "🧹 Đang làm sạch và chuẩn hóa dữ liệu trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/preprocess_data.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/preprocess_data.py
                 """
             }
         }
 
         stage('5. Auto Label with Snorkel') {
             steps {
-                echo "🏷️ Đang gán nhãn tự động bằng Snorkel..."
+                echo "🏷️ Đang gán nhãn tự động bằng Snorkel trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/auto_label_snorkel.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/auto_label_snorkel.py
                 """
             }
         }
 
         stage('6. Split Confidence') {
             steps {
-                echo "📊 Đang tách dữ liệu theo độ tự tin..."
+                echo "📊 Đang tách dữ liệu theo độ tự tin trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/split_confidence.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/split_confidence.py
                 """
             }
         }
 
         stage('7. Validate with Cleanlab') {
             steps {
-                echo "✅ Đang validate nhãn bằng Cleanlab..."
+                echo "✅ Đang validate nhãn bằng Cleanlab trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/validate_cleanlab.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/validate_cleanlab.py
                 """
             }
         }
 
         stage('8. Convert CSV to Rasa') {
             steps {
-                echo "🔄 Đang chuyển dữ liệu sang định dạng Rasa..."
+                echo "🔄 Đang chuyển dữ liệu sang định dạng Rasa trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python data/csv_to_rasa.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python data/csv_to_rasa.py
                 """
             }
         }
 
         stage('9. Train Model') {
             steps {
-                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
+                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python scripts/train_mlflow.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python scripts/train_mlflow.py
                 """
             }
         }
@@ -201,6 +220,9 @@ pipeline {
                     set -e
 
                     cd "${PROJECT_DIR}"
+
+                    echo "Listing model directory:"
+                    ls -lah "${MODEL_DIR}" || true
 
                     LATEST_MODEL=\$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
@@ -263,11 +285,9 @@ pipeline {
                     MODEL_NAME=\$(basename "\$LATEST_MODEL")
                     VERSION_DIR="${MODEL_REGISTRY_DIR}/${BUILD_NUMBER}"
 
-                    mkdir -p "\$VERSION_DIR"
-
-                    cp "\$LATEST_MODEL" "\$VERSION_DIR/\$MODEL_NAME"
-
-                    echo "\$VERSION_DIR/\$MODEL_NAME" > "${ACTIVE_MODEL_POINTER}"
+                    sudo mkdir -p "\$VERSION_DIR"
+                    sudo cp "\$LATEST_MODEL" "\$VERSION_DIR/\$MODEL_NAME"
+                    echo "\$VERSION_DIR/\$MODEL_NAME" | sudo tee "${ACTIVE_MODEL_POINTER}"
 
                     echo "✅ Active model hiện tại:"
                     cat "${ACTIVE_MODEL_POINTER}"
@@ -277,13 +297,19 @@ pipeline {
 
         stage('13. Update Rasa Endpoint') {
             steps {
-                echo "☁️ Đang cập nhật Rasa sang model mới..."
+                echo "☁️ Đang cập nhật Rasa sang model mới trong Docker..."
 
                 sh """
                     set -e
 
                     cd "${PROJECT_DIR}"
-                    .venv/bin/python scripts/deploy_model.py
+
+                    docker run --rm \
+                        -v "${PROJECT_DIR}:/app" \
+                        -v "${MODEL_REGISTRY_DIR}:${MODEL_REGISTRY_DIR}" \
+                        -w /app \
+                        "${IMAGE_FULL}" \
+                        python scripts/deploy_model.py
                 """
             }
         }
@@ -307,6 +333,11 @@ pipeline {
             echo "📌 Lưu artifact cần thiết nếu có..."
 
             archiveArtifacts artifacts: 'latest_model_path.txt', allowEmptyArchive: true
+
+            echo "🧹 Dọn container rác nếu có..."
+            sh """
+                docker container prune -f || true
+            """
 
             echo "🏁 Kết thúc pipeline."
         }
