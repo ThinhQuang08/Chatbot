@@ -8,12 +8,13 @@ pipeline {
     }
 
     environment {
-        // Dùng python3 cho chắc, hoặc đổi thành python nếu agent của bạn alias sẵn
-        PYTHON_CMD = 'python3'
+        // Dùng Python 3.10.14 đã cài bằng pyenv trên agent rasa
+        PYTHON_CMD = '/home/jenkins/.pyenv/versions/3.10.14/bin/python'
 
         // Workspace thật do Jenkins cấp
         PROJECT_DIR = "${WORKSPACE}"
 
+        // Thư mục model của Rasa
         MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
 
         // On-prem model registry tạm thời
@@ -23,13 +24,13 @@ pipeline {
 
     stages {
 
-
-
         stage('1. Check Agent Environment') {
             steps {
                 echo "🔍 Kiểm tra môi trường trên Jenkins agent..."
 
                 sh """
+                    set -e
+
                     echo "Current user:"
                     whoami
 
@@ -39,11 +40,23 @@ pipeline {
                     echo "Current workspace:"
                     pwd
 
-                    echo "Python version:"
+                    echo "System python3 version:"
+                    python3 --version || true
+
+                    echo "Jenkins pipeline Python command:"
                     ${PYTHON_CMD} --version
+
+                    echo "Python pip:"
+                    ${PYTHON_CMD} -m pip --version
 
                     echo "Git version:"
                     git --version
+
+                    echo "Disk usage:"
+                    df -h
+
+                    echo "Memory usage:"
+                    free -h
 
                     echo "Workspace content:"
                     ls -la
@@ -56,16 +69,34 @@ pipeline {
                 echo "🐍 Đang chuẩn bị Python virtual environment..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
 
+                    echo "Using Python:"
+                    ${PYTHON_CMD} --version
+
+                    echo "Using pip:"
+                    ${PYTHON_CMD} -m pip --version
+
+                    echo "Remove old virtual environment if exists..."
+                    rm -rf .venv
+
+                    echo "Create virtual environment with Python 3.10..."
                     ${PYTHON_CMD} -m venv .venv
 
-                    .venv/bin/python -m pip install --upgrade pip
+                    echo "Check venv Python version:"
+                    .venv/bin/python --version
+
+                    echo "Upgrade pip, setuptools, wheel..."
+                    .venv/bin/python -m pip install --upgrade pip setuptools wheel
 
                     if [ -f requirements.txt ]; then
+                        echo "Install requirements.txt..."
                         .venv/bin/pip install -r requirements.txt
                     else
-                        echo "⚠️ Không tìm thấy requirements.txt"
+                        echo "❌ Không tìm thấy requirements.txt"
+                        exit 1
                     fi
                 """
             }
@@ -76,6 +107,8 @@ pipeline {
                 echo "📦 Đang tạo / thu thập dữ liệu chat..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/generate_massive_data.py
                 """
@@ -87,6 +120,8 @@ pipeline {
                 echo "🧹 Đang làm sạch và chuẩn hóa dữ liệu..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/preprocess_data.py
                 """
@@ -98,6 +133,8 @@ pipeline {
                 echo "🏷️ Đang gán nhãn tự động bằng Snorkel..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/auto_label_snorkel.py
                 """
@@ -109,6 +146,8 @@ pipeline {
                 echo "📊 Đang tách dữ liệu theo độ tự tin..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/split_confidence.py
                 """
@@ -120,6 +159,8 @@ pipeline {
                 echo "✅ Đang validate nhãn bằng Cleanlab..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/validate_cleanlab.py
                 """
@@ -131,6 +172,8 @@ pipeline {
                 echo "🔄 Đang chuyển dữ liệu sang định dạng Rasa..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python data/csv_to_rasa.py
                 """
@@ -142,6 +185,8 @@ pipeline {
                 echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python scripts/train_mlflow.py
                 """
@@ -153,6 +198,8 @@ pipeline {
                 echo "🔎 Đang kiểm tra model artifact..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
 
                     LATEST_MODEL=\$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
@@ -171,7 +218,6 @@ pipeline {
         stage('11. Human Approval Before Deploy') {
             steps {
                 script {
-
                     def latestModel = sh(
                         script: 'cat latest_model_path.txt',
                         returnStdout: true
@@ -209,6 +255,8 @@ pipeline {
                 echo "📦 Đang lưu model vào model registry on-prem..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
 
                     LATEST_MODEL=\$(cat latest_model_path.txt)
@@ -232,6 +280,8 @@ pipeline {
                 echo "☁️ Đang cập nhật Rasa sang model mới..."
 
                 sh """
+                    set -e
+
                     cd "${PROJECT_DIR}"
                     .venv/bin/python scripts/deploy_model.py
                 """
