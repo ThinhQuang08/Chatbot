@@ -23,11 +23,7 @@ pipeline {
 
     stages {
 
-        stage('0. Checkout Source') {
-            steps {
-                checkout scm
-            }
-        }
+
 
         stage('1. Check Agent Environment') {
             steps {
