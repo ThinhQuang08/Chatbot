@@ -1,6 +1,6 @@
 rasa==3.6.21
 rasa-sdk==3.6.2
-psycopg2-binary==2.9.11
+psycopg2-binary==2.9.10
 python-dotenv==1.2.2
 sentence-transformers==5.2.3
 qdrant-client==1.10.1
