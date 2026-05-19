@@ -1,16 +1,21 @@
-# Bỏ qua môi trường ảo (Thủ phạm chính)
-.venv/
-venv/
-env/
-
-# Bỏ qua các model nặng
+# Model artifacts
 rasa_bot/models/
-rasa_bot/results/
-mlruns/
-mlartifacts/
-models/
+rasa_bot/.rasa/
 
-# Bỏ qua các file rác của Python
+# Python cache
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
+.venv/
+*.egg-info/
+
+# Git
+.git/
+
+# Data lớn (nếu có)
+*.tar.gz
+*.zip
+
+# Misc
+.env
+*.log
+node_modules/
