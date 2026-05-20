@@ -2,242 +2,104 @@ pipeline {
 
     agent { label 'chatbot-mlops' }
 
+    environment {
+        WORKSPACE_DIR = "${WORKSPACE}"
+        VENV_DIR      = "${WORKSPACE}/.venv"
+        PYTHON        = "${WORKSPACE}/.venv/bin/python"
+        MODEL_DIR     = "${WORKSPACE}/rasa_bot/models"
+    }
+
     options {
         timestamps()
         disableConcurrentBuilds()
-    }
-
-    environment {
-        PROJECT_DIR = "${WORKSPACE}"
-
-        IMAGE_NAME = "chatbot-mlops-runner"
-        IMAGE_TAG = "${BUILD_NUMBER}"
-        IMAGE_FULL = "chatbot-mlops-runner:${BUILD_NUMBER}"
-        IMAGE_LATEST = "chatbot-mlops-runner:latest"
-
-        MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
-
-        MODEL_REGISTRY_DIR = "/opt/chatbot/model-registry"
-        ACTIVE_MODEL_POINTER = "/opt/chatbot/model-registry/active_model.txt"
+        timeout(time: 60, unit: 'MINUTES')
     }
 
     stages {
 
-        stage('1. Check Agent Environment') {
+        stage('1. Setup Environment') {
             steps {
-                echo "🔍 Kiểm tra môi trường Jenkins agent và Docker..."
-
+                echo "🔧 Chuẩn bị môi trường Python..."
                 sh """
                     set -e
+                    cd "${WORKSPACE_DIR}"
 
-                    echo "Current user:"
-                    whoami
+                    # Dùng Python 3.10 từ pyenv đã cài
+                    export PATH="/home/jenkins/.pyenv/versions/3.10.14/bin:\$PATH"
 
-                    echo "Hostname:"
-                    hostname
+                    # Tạo .venv nếu chưa có
+                    if [ ! -f "${VENV_DIR}/bin/python" ]; then
+                        echo "Tạo .venv mới..."
+                        python -m venv "${VENV_DIR}"
+                    else
+                        echo ".venv đã tồn tại, bỏ qua tạo mới."
+                    fi
 
-                    echo "Current workspace:"
-                    pwd
+                    # Cài/update dependencies
+                    "${VENV_DIR}/bin/pip" install --upgrade pip --quiet
+                    "${VENV_DIR}/bin/pip" install --no-cache-dir -r requirements.txt --quiet
 
-                    echo "Git version:"
-                    git --version
+                    echo "Python version:"
+                    "${PYTHON}" --version
 
-                    echo "Docker version:"
-                    docker --version
-
-                    echo "Docker info:"
-                    docker info | head -40
-
-                    echo "Disk usage:"
-                    df -h
-
-                    echo "Memory usage:"
-                    free -h
-
-                    echo "Workspace content:"
-                    ls -la
+                    echo "Rasa version:"
+                    "${PYTHON}" -c "import rasa; print(rasa.__version__)"
                 """
             }
         }
 
-        stage('2. Build Docker Runner Image') {
+        stage('2. Data Pipeline') {
             steps {
-                echo "🐳 Đang build Docker image cho chatbot MLOps runner..."
-
+                echo "🧹 Generate → Preprocess → Snorkel → Cleanlab → Convert CSV..."
                 sh """
                     set -e
+                    cd "${WORKSPACE_DIR}"
 
-                    cd "${PROJECT_DIR}"
-
-                    echo "Build image: ${IMAGE_FULL}"
-                    docker build -t "${IMAGE_FULL}" -t "${IMAGE_LATEST}" .
-
-                    echo "Test Python inside container:"
-                    docker run --rm "${IMAGE_FULL}" python --version
-
-                    echo "Test important packages:"
-                    docker run --rm "${IMAGE_FULL}" python - <<'PY'
-import sys
-print("Python:", sys.version)
-import rasa
-print("Rasa:", rasa.__version__)
-PY
+                    "${PYTHON}" data/generate_massive_data.py
+                    "${PYTHON}" data/preprocess_data.py
+                    "${PYTHON}" data/auto_label_snorkel.py
+                    "${PYTHON}" data/split_confidence.py
+                    "${PYTHON}" data/validate_cleanlab.py
+                    "${PYTHON}" data/csv_to_rasa.py
                 """
             }
         }
 
-        stage('3. Generate Massive Data') {
+        stage('3. Train Model') {
             steps {
-                echo "📦 Đang tạo / thu thập dữ liệu chat trong Docker..."
-
+                echo "🚀 Train Rasa + log metrics lên MLflow..."
                 sh """
                     set -e
+                    cd "${WORKSPACE_DIR}"
 
-                    cd "${PROJECT_DIR}"
+                    "${PYTHON}" scripts/train_mlflow.py
 
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/generate_massive_data.py
-                """
-            }
-        }
-
-        stage('4. Preprocess Data') {
-            steps {
-                echo "🧹 Đang làm sạch và chuẩn hóa dữ liệu trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/preprocess_data.py
-                """
-            }
-        }
-
-        stage('5. Auto Label with Snorkel') {
-            steps {
-                echo "🏷️ Đang gán nhãn tự động bằng Snorkel trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/auto_label_snorkel.py
-                """
-            }
-        }
-
-        stage('6. Split Confidence') {
-            steps {
-                echo "📊 Đang tách dữ liệu theo độ tự tin trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/split_confidence.py
-                """
-            }
-        }
-
-        stage('7. Validate with Cleanlab') {
-            steps {
-                echo "✅ Đang validate nhãn bằng Cleanlab trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/validate_cleanlab.py
-                """
-            }
-        }
-
-        stage('8. Convert CSV to Rasa') {
-            steps {
-                echo "🔄 Đang chuyển dữ liệu sang định dạng Rasa trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python data/csv_to_rasa.py
-                """
-            }
-        }
-
-        stage('9. Train Model') {
-            steps {
-                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python scripts/train_mlflow.py
-                """
-            }
-        }
-
-        stage('10. Check Generated Model') {
-            steps {
-                echo "🔎 Đang kiểm tra model artifact..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    echo "Listing model directory:"
+                    echo "Model directory sau train:"
                     ls -lah "${MODEL_DIR}" || true
+                """
+            }
+        }
+
+        stage('4. Check Model Artifact') {
+            steps {
+                echo "🔎 Kiểm tra model artifact..."
+                sh """
+                    set -e
 
                     LATEST_MODEL=\$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
                     if [ -z "\$LATEST_MODEL" ]; then
-                        echo "❌ Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
+                        echo "❌ Không tìm thấy model .tar.gz"
                         exit 1
                     fi
 
-                    echo "✅ Latest model: \$LATEST_MODEL"
+                    echo "✅ Model: \$LATEST_MODEL"
                     echo "\$LATEST_MODEL" > latest_model_path.txt
                 """
             }
         }
 
-        stage('11. Human Approval Before Deploy') {
+        stage('5. Human Approval') {
             steps {
                 script {
                     def latestModel = sh(
@@ -245,26 +107,25 @@ PY
                         returnStdout: true
                     ).trim()
 
-                    echo "🔔 Model đã train xong."
-                    echo "📦 Model artifact: ${latestModel}"
-                    echo "📊 Vui lòng kiểm tra metrics/report trên MLflow trước khi deploy."
+                    echo "🔔 Model đã train xong: ${latestModel}"
+                    echo "📊 Vào MLflow kiểm tra metrics trước khi duyệt."
 
-                    def userInput = input(
+                    def decision = input(
                         id: 'DeployGate',
-                        message: "Model mới đã sẵn sàng: ${latestModel}. Có deploy model này không?",
+                        message: "Model: ${latestModel}\nKiểm tra MLflow xong. Deploy không?",
                         ok: 'Submit',
                         parameters: [
                             choice(
                                 name: 'DECISION',
                                 choices: ['deploy', 'reject'],
-                                description: 'deploy = triển khai model mới, reject = dừng pipeline'
+                                description: 'deploy = triển khai, reject = dừng pipeline'
                             )
                         ]
                     )
 
-                    if (userInput == 'reject') {
+                    if (decision == 'reject') {
                         currentBuild.result = 'ABORTED'
-                        error("🛑 Model bị reject. Pipeline dừng, không deploy.")
+                        error("🛑 Model bị reject. Pipeline dừng.")
                     }
 
                     echo "✅ Model được duyệt. Tiếp tục deploy."
@@ -272,74 +133,33 @@ PY
             }
         }
 
-        stage('12. Deploy Model On-Prem') {
+        stage('6. Deploy Model') {
             steps {
-                echo "📦 Đang lưu model vào model registry on-prem..."
-
+                echo "☁️ Deploy model..."
                 sh """
                     set -e
+                    cd "${WORKSPACE_DIR}"
 
-                    cd "${PROJECT_DIR}"
-
-                    LATEST_MODEL=\$(cat latest_model_path.txt)
-                    MODEL_NAME=\$(basename "\$LATEST_MODEL")
-                    VERSION_DIR="${MODEL_REGISTRY_DIR}/${BUILD_NUMBER}"
-
-                    sudo mkdir -p "\$VERSION_DIR"
-                    sudo cp "\$LATEST_MODEL" "\$VERSION_DIR/\$MODEL_NAME"
-                    echo "\$VERSION_DIR/\$MODEL_NAME" | sudo tee "${ACTIVE_MODEL_POINTER}"
-
-                    echo "✅ Active model hiện tại:"
-                    cat "${ACTIVE_MODEL_POINTER}"
-                """
-            }
-        }
-
-        stage('13. Update Rasa Endpoint') {
-            steps {
-                echo "☁️ Đang cập nhật Rasa sang model mới trong Docker..."
-
-                sh """
-                    set -e
-
-                    cd "${PROJECT_DIR}"
-
-                    docker run --rm \
-                        -v "${PROJECT_DIR}:/app" \
-                        -v "${MODEL_REGISTRY_DIR}:${MODEL_REGISTRY_DIR}" \
-                        -w /app \
-                        "${IMAGE_FULL}" \
-                        python scripts/deploy_model.py
+                    "${PYTHON}" scripts/deploy_model.py
                 """
             }
         }
     }
 
     post {
-
         success {
             echo "🎉 PIPELINE HOÀN TẤT!"
+            archiveArtifacts artifacts: 'latest_model_path.txt', allowEmptyArchive: true
         }
-
         aborted {
-            echo "⚠️ Pipeline bị hủy hoặc model bị reject. Không deploy."
+            echo "⚠️ Pipeline bị hủy hoặc model bị reject."
         }
-
         failure {
             echo "🔥 Pipeline thất bại. Kiểm tra console log."
         }
-
         always {
-            echo "📌 Lưu artifact cần thiết nếu có..."
-
-            archiveArtifacts artifacts: 'latest_model_path.txt', allowEmptyArchive: true
-
-            echo "🧹 Dọn container rác nếu có..."
-            sh """
-                docker container prune -f || true
-            """
-
-            echo "🏁 Kết thúc pipeline."
+            echo "🧹 Cleanup..."
+            sh "docker container prune -f || true"
         }
     }
 }
