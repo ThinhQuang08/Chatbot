@@ -84,22 +84,6 @@ bỏ đi,deny,1.0
 không ok lắm,deny,1.0
 nhầm rồi bot ơi,deny,1.0
 nope,deny,1.0
-không phải,deny,1.0
-sai rồi,deny,1.0
-k,deny,1.0
-ko,deny,1.0
-thôi,deny,1.0
-đổi cái khác đi,deny,1.0
-bỏ đi,deny,1.0
-nhầm rồi bot ơi,deny,1.0
-buồn quá,deny,1.0
-chán ghê,deny,1.0
-mệt mỏi,deny,1.0
-dạo này đang stress,deny,1.0
-chán đời,deny,1.0
-không vui,deny,1.0
-tụt mood,deny,1.0
-tệ quá,deny,1.0
 are you a bot?,bot_challenge,1.0
 are you a human?,bot_challenge,1.0
 am I talking to a bot?,bot_challenge,1.0
@@ -126,44 +110,128 @@ huỳnh như đá ở đội nào,out_of_scope,1.0
 viết bài văn tả con mèo,out_of_scope,1.0
 cách trồng cây bonsai,out_of_scope,1.0
 cách chữa đau dạ dày,out_of_scope,1.0
-Vũng Tàu có đặc sản gì?,ask_location_feature,1.0
-Chơi gì ở Hội An vào buổi tối?,ask_location_feature,1.0
-các khách sạn ở đó thì sao,ask_location_feature,1.0
-tìm homestay,ask_location_feature,1.0
-có chỗ nào cắm trại không,ask_location_feature,1.0
-ở đó có resort nào đẹp không,ask_location_feature,1.0
-tìm khách sạn ở Vũng Tàu,ask_location_feature,1.0
-có resort nào tại Sapa không,ask_location_feature,1.0
-tìm khu nghỉ dưỡng có spa,ask_location_feature,1.0
-gợi ý vài cái homestay ở Đà Lạt,ask_location_feature,1.0
-có gói combo nhà hàng khách sạn nào ở Kim Liên rẻ rẻ ko,ask_location_feature,1.0
-nhà nghỉ thì sao,ask_location_feature,1.0
-thế còn khách sạn thì sao,ask_location_feature,1.0
-resort thì sao hả bot,ask_location_feature,1.0
-cho tui xem homestay thì sao,ask_location_feature,1.0
-đổi sang nhà nghỉ nhé,ask_location_feature,1.0
-gợi ý điểm du lịch,search_travel,1.0
-tôi muốn đi đâu đó,search_travel,1.0
-tôi muốn đi du lịch mùa hè,search_travel,1.0
-gợi ý điểm đi chơi tháng 4 đến tháng 6,search_travel,1.0
-đi từ tháng 9 sang tháng 11 thì có chỗ nào đẹp,search_travel,1.0
-đi đâu mùa đông thì hợp,search_travel,1.0
-sắp tới tôi nên đi đâu,search_travel,1.0
-tháng 12 đi đâu ở miền bắc đẹp,search_travel,1.0
-"mình làm văn phòng chỉ rảnh cuối tuần, nên đi đâu gần Sài Gòn",search_travel,1.0
-t muốn đi Đà Lạt,search_travel,1.0
-cho xin review đi Sapa tháng 10,search_travel,1.0
-dịp lễ 30/4 nên đi tỉnh nào,search_travel,1.0
-tôi muốn leo núi,search_travel,1.0
-leo núi tháng 10,search_travel,1.0
-đi trekking vào tháng 10 thì nên đi đâu,search_travel,1.0
-nơi nào có thể cắm trại,search_travel,1.0
-muốn đi lặn san hô,search_travel,1.0
-gợi ý nơi đi cáp treo,search_travel,1.0
-dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko,search_travel,1.0
-có tour nào đi xe đạp quanh bản làng không,search_travel,1.0
-du lịch tiết kiệm,search_travel,1.0
-gợi ý nơi giá rẻ,search_travel,1.0
+gợi ý điểm du lịch,search_destination,1.0
+tôi muốn đi du lịch,search_destination,1.0
+có nơi nào đẹp để đi chơi không,search_destination,1.0
+gợi ý địa điểm du lịch,search_destination,1.0
+tôi muốn đi đâu đó,search_destination,1.0
+tôi muốn đi du lịch mùa hè,search_destination,1.0
+gợi ý điểm đi chơi tháng 4 đến tháng 6,search_destination,1.0
+tôi muốn đi trong tháng 5,search_destination,1.0
+đi đâu mùa đông thì hợp,search_destination,1.0
+sắp tới tôi nên đi đâu,search_destination,1.0
+đi từ tháng 9 sang tháng 11 thì có chỗ nào đẹp,search_destination,1.0
+tháng 12 đi đâu ở miền bắc đẹp,search_destination,1.0
+t muốn đi Đà Lạt,search_destination,1.0
+cho xin review đi Sapa tháng 10,search_destination,1.0
+dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko,search_destination,1.0
+muốn tìm nơi chữa lành,search_destination,1.0
+dịp lễ 30/4 nên đi tỉnh nào,search_destination,1.0
+có chỗ nào đi trốn nắng mùa hè không,search_destination,1.0
+tui muốn đi từ tháng 2 đến tháng 5,search_destination,1.0
+muốn đi đâu đó từ tháng 1 tới tháng 3,search_destination,1.0
+gợi ý chỗ nào đi chữa lành healing với bot,search_destination,1.0
+đợt này muốn đi trốn deadline quá,search_destination,1.0
+chỗ nào chụp hình sống ảo cháy máy ta,search_destination,1.0
+có nơi nào chill chill không bot,search_destination,1.0
+mình đang bị suy đi đâu hợp lý,search_destination,1.0
+tôi muốn leo núi,search_activity,1.0
+leo núi tháng 10,search_activity,1.0
+mình muốn leo núi vào tháng 10,search_activity,1.0
+chỗ nào leo núi đẹp vào tháng 10,search_activity,1.0
+trekking tháng 10,search_activity,1.0
+đi trekking vào tháng 10 thì nên đi đâu,search_activity,1.0
+nơi nào có thể cắm trại,search_activity,1.0
+có chỗ nào đi thuyền không,search_activity,1.0
+tôi muốn săn mây,search_activity,1.0
+gợi ý chỗ leo núi,search_activity,1.0
+trekking,search_activity,1.0
+tôi muốn trekking,search_activity,1.0
+chỗ nào trekking đẹp,search_activity,1.0
+chỗ nào có bãi biển đẹp,search_activity,1.0
+muốn đi lặn san hô,search_activity,1.0
+gợi ý nơi đi cáp treo,search_activity,1.0
+có tour nào đi xe đạp quanh bản làng không,search_activity,1.0
+muốn trải nghiệm văn hóa bản địa,search_activity,1.0
+tìm chỗ tắm biển,search_activity,1.0
+tôi muốn lên núi chơi,search_activity,1.0
+phú quốc có lặn ngắm san hô không,search_activity,1.0
+đà lạt đợt này có lễ hội gì không,search_activity,1.0
+các khách sạn ở đó thì sao,search_accommodation,1.0
+tìm homestay,search_accommodation,1.0
+ở đó có resort nào đẹp không,search_accommodation,1.0
+tìm khách sạn ở Vũng Tàu,search_accommodation,1.0
+có resort nào tại Sapa không,search_accommodation,1.0
+tìm khu nghỉ dưỡng có spa,search_accommodation,1.0
+gợi ý vài cái homestay ở Đà Lạt,search_accommodation,1.0
+nhà nghỉ thì sao,search_accommodation,1.0
+thế còn khách sạn thì sao,search_accommodation,1.0
+resort thì sao hả bot,search_accommodation,1.0
+cho tui xem homestay thì sao,search_accommodation,1.0
+đổi sang nhà nghỉ nhé,search_accommodation,1.0
+mình muốn tìm chỗ ăn ngủ,search_accommodation,1.0
+có homestay nào giá rẻ không,search_accommodation,1.0
+gợi ý mình vài resort view biển,search_accommodation,1.0
+du lịch tiết kiệm,search_price,1.0
+gợi ý nơi giá rẻ,search_price,1.0
+nơi nào đi chơi tiết kiệm,search_price,1.0
+tôi muốn đi du lịch giá rẻ,search_price,1.0
+giá tour này tầm bao nhiêu,search_price,1.0
+đi sapa chi phí bao nhiêu,search_price,1.0
+tour đà lạt 3 ngày 2 đêm này giá chính xác bao nhiêu,search_price,1.0
+trọn gói vậy có phát sinh phụ phí gì không,search_price,1.0
+cho mình hỏi giá vé cáp treo vinpearl,search_price,1.0
+giá vé Safari,search_price,1.0
+chi phí đi leo núi tháng 10 là bao nhiêu,search_price,1.0
+đi leo núi tháng 10 hết bao nhiêu tiền,search_price,1.0
+đi zậy thiệt hại cỡ nhiêu,search_price,1.0
+rổ giá như nào,search_price,1.0
+tổn thất khoảng bao nhiêu,search_price,1.0
+ví đang mỏng có đi được không,search_price,1.0
+giá có hạt dẻ không,search_price,1.0
+điểm nào dành cho hệ hssv,search_price,1.0
+có điểm nào ăn uống ngon không,search_food_dining,1.0
+đến huế thì ăn món gì ngon,search_food_dining,1.0
+cho mình xin địa chỉ vài quán hải sản hạt dẻ ở nha trang,search_food_dining,1.0
+đà lạt có đặc sản gì,search_food_dining,1.0
+Vũng Tàu có đặc sản gì?,search_food_dining,1.0
+ăn gì ở hội an,search_food_dining,1.0
+món nào ăn nhức nách ở đà lạt,search_food_dining,1.0
+món nào ngon cực dính,search_food_dining,1.0
+có quán nào ngon chân ái không,search_food_dining,1.0
+recommend vài quán nhậu ngon nha,search_food_dining,1.0
+lên giúp mình lịch trình tự túc đà nẵng,ask_itinerary,1.0
+thiết kế cho mình lịch trình đi phú quốc 4 ngày 3 đêm,ask_itinerary,1.0
+tư vấn lịch trình,ask_itinerary,1.0
+tạo lịch trình 2 ngày 1 đêm sapa,ask_itinerary,1.0
+mình cần lên lịch trình đi sapa,ask_itinerary,1.0
+vé máy bay khứ hồi hà nội phú quốc,ask_transportation,1.0
+từ sân bay về khách sạn có xe đưa đón không,ask_transportation,1.0
+đi từ hồ chí minh ra nha trang thì đi xe gì,ask_transportation,1.0
+tư vấn phương tiện di chuyển,ask_transportation,1.0
+bên mình hủy tour trước 3 ngày có được hoàn 100% tiền không,ask_policy_booking,1.0
+bé 4 tuổi thì phụ thu thế nào,ask_policy_booking,1.0
+đi nước ngoài cần chuẩn bị visa không,ask_policy_booking,1.0
+chính sách đổi trả ra sao,ask_policy_booking,1.0
+trẻ em có miễn phí không,ask_policy_booking,1.0
+lịch trình ngày 2 của tour sapa này đi những đâu,ask_tour_info,1.0
+tour này có hdv theo suốt tuyến không,ask_tour_info,1.0
+trong tour có bao ăn uống không,ask_tour_info,1.0
+tour khởi hành lúc mấy giờ,ask_tour_info,1.0
+tour đà lạt đi bằng xe giường nằm hay xe ngồi,ask_tour_info,1.0
+thông tin chi tiết tour đà nẵng,ask_tour_info,1.0
+tìm cho mình tour đi Đà Lạt,search_travel,1.0
+tìm tour đi Phú Quốc 3 ngày 2 đêm,search_travel,1.0
+có tour nào từ Vinh đi Đồi Chè Thanh Chương ko?,search_travel,1.0
+mình cần tìm tour đi Hà Nội cho 4 người,search_travel,1.0
+báo giá tour Thái Lan khởi hành từ HCM tháng sau,search_travel,1.0
+tui mún đi Đà Nẵng 4n3đ ngân sách cỡ 5 củ,search_travel,1.0
+cho xem lịch trình tour Hà Giang tuần tới,search_travel,1.0
+có gói combo nhà hàng khách sạn nào ở Kim Liên rẻ rẻ ko,search_travel,1.0
+có tour ghép đoàn nào đi Hà Giang khởi hành thứ 6 không,search_travel,1.0
+mình muốn đặt tour đi vịnh Hạ Long 2 người lớn 1 trẻ em,search_travel,1.0
+xin lịch trình và báo giá tour Sapa đi cuối tuần này,search_travel,1.0
+tour Đà Lạt tháng 12 còn trống chỗ không,search_travel,1.0
 "tôi muốn đi du lịch mùa hè, ngân sách 1tr",search_travel,1.0
 sắp tới có chỗ nào đi được với 1.5tr không,search_travel,1.0
 chi phí đi du lịch khoảng 5 triệu,search_travel,1.0
@@ -174,25 +242,12 @@ kinh phí eo hẹp cỡ 2 củ thì đi đc đâu ko bot,search_travel,1.0
 "dới 3tr nha, đi cuối tuần",search_travel,1.0
 tài chính 10 củ quay đầu,search_travel,1.0
 chi phí cho chuyến đi Phú Quốc 4 ngày rơi vào khoảng bao nhiêu,search_travel,1.0
-tìm tour đi Phú Quốc 3 ngày 2 đêm,search_travel,1.0
-có tour nào từ Vinh đi Đồi Chè Thanh Chương ko?,search_travel,1.0
-mình cần tìm tour đi Hà Nội cho 4 người,search_travel,1.0
-báo giá tour Thái Lan khởi hành từ HCM tháng sau,search_travel,1.0
-tui mún đi Đà Nẵng 4n3đ ngân sách cỡ 5 củ,search_travel,1.0
-cho xem lịch trình tour Hà Giang tuần tới,search_travel,1.0
-tour Sapa 2 ngày 1 đêm đi từ Hà Nội giá bao nhiêu,search_travel,1.0
-xin lịch trình và báo giá tour Sapa đi cuối tuần này,search_travel,1.0
-tour Đà Lạt tháng 12 còn trống chỗ không,search_travel,1.0
-đi biển với ngân sách 5tr,search_travel,1.0
-dạo này nóng quá mình muốn đi biển,search_travel,1.0
-gợi ý tour tắm biển giá rẻ,search_travel,1.0
-tìm chỗ tắm biển,search_travel,1.0
-tôi muốn lên núi chơi,search_travel,1.0
-gợi ý điểm cắm trại,search_travel,1.0
-tui muốn đi từ tháng 2 đến tháng 5,search_travel,1.0
-muốn đi đâu đó từ tháng 1 tới tháng 3,search_travel,1.0
-tui muốn đi chơi,search_travel,1.0
-mật mã s3 là gì,test_s3,1.0
+đang muốn set kèo đi Vũng Tàu,search_travel,1.0
+chốt kèo đi biển nha,search_travel,1.0
+muốn vi vu vài ngày,search_travel,1.0
+đi phượt Sapa thôii,search_travel,1.0
+ở đó có mát không,ask_location_feature,1.0
+khí hậu ở đó thế nào,ask_location_feature,1.0
 Đà Lạt,inform,1.0
 Hà Nội nha,inform,1.0
 khoảng 3 ngày,inform,1.0
@@ -223,408 +278,3 @@ khoảng 6 củ,inform,1.0
 10tr,inform,1.0
 khởi hành từ Sài Gòn,inform,1.0
 xe khách,inform,1.0
-từ tháng 5 đến tháng 7,inform,1.0
-từ tháng 10 đến tháng 12,inform,1.0
-từ tháng 1 đến tháng 3,inform,1.0
-tui muốn đi từ tháng 2 đến tháng 5,inform,1.0
-đi từ tháng 1 tới tháng 3,inform,1.0
-dời lịch sang từ tháng 6 đến tháng 8,inform,1.0
-chuyến đi bắt đầu từ tháng 9 kết thúc vào tháng 12,inform,1.0
-còn Vũng Tàu thì sao,inform,1.0
-thế còn Đà Lạt,inform,1.0
-Sapa thì sao,inform,1.0
-sang Hà Nội đi,inform,1.0
-đổi sang Phú Quốc nhé,inform,1.0
-ở vũng tàu thì sao,inform,1.0
-tìm ở Nha Trang xem,inform,1.0
-đi Đà Lạt thì sao,inform,1.0
-5 triệu thì sao,inform,1.0
-đi tháng 10 thì sao,inform,1.0
-chi phí đi phú quốc mấy triệu,search_price,1.0
-chi phí đi Phú Quốc mấy triệu nha,search_price,1.0
-đi Đà Nẵng chơi bao nhiêu tiền,search_price,1.0
-giá tour hà nội nhiêu tiền,search_price,1.0
-có khuyến mãi tour sài gòn không dợ,search_price,1.0
-xin bảng giá đi phú quốc,search_price,1.0
-tour đà nẵng rẻ nhất là bao nhiêu,search_price,1.0
-tour Sa Pa rẻ nhất là bao nhiêu bot,search_price,1.0
-có khuyến mãi tour hà nội không,search_price,1.0
-giá tour Nha Trang nhiêu tiền,search_price,1.0
-tour sài gòn rẻ nhất là bao nhiêu,search_price,1.0
-chi phí đi Nha Trang mấy triệu,search_price,1.0
-giá tour sài gòn nhiêu tiền dợ,search_price,1.0
-chi phí đi Nha Trang mấy triệu vậy,search_price,1.0
-có khuyến mãi tour Phú Quốc không,search_price,1.0
-xin bảng giá đi đà nẵng,search_price,1.0
-giá tour đà nẵng nhiêu tiền,search_price,1.0
-tour Phú Quốc rẻ nhất là bao nhiêu dợ,search_price,1.0
-tour Sa Pa rẻ nhất là bao nhiêu dợ,search_price,1.0
-có khuyến mãi tour Đà Lạt không,search_price,1.0
-xin bảng giá đi Phú Quốc nha,search_price,1.0
-tour Nha Trang rẻ nhất là bao nhiêu,search_price,1.0
-giá tour Sa Pa nhiêu tiền,search_price,1.0
-chi phí đi hà nội mấy triệu,search_price,1.0
-chi phí đi đà nẵng mấy triệu,search_price,1.0
-chi phí đi Phú Quốc mấy triệu bot,search_price,1.0
-xin bảng giá đi đà nẵng dợ,search_price,1.0
-có khuyến mãi tour Nha Trang không vậy,search_price,1.0
-xin bảng giá đi Nha Trang,search_price,1.0
-có khuyến mãi tour Sa Pa không,search_price,1.0
-có khuyến mãi tour hà nội không nha,search_price,1.0
-tour Sa Pa rẻ nhất là bao nhiêu nha,search_price,1.0
-giá tour Đà Lạt nhiêu tiền,search_price,1.0
-giá tour đà nẵng nhiêu tiền dợ,search_price,1.0
-chi phí đi phú quốc mấy triệu nha,search_price,1.0
-chi phí đi Sa Pa mấy triệu,search_price,1.0
-giá tour hà nội nhiêu tiền bot,search_price,1.0
-có khuyến mãi tour Đà Lạt không nha,search_price,1.0
-xin bảng giá đi sài gòn nha,search_price,1.0
-tour phú quốc rẻ nhất là bao nhiêu,search_price,1.0
-chi phí đi đà nẵng mấy triệu vậy,search_price,1.0
-tour hà nội rẻ nhất là bao nhiêu dợ,search_price,1.0
-chi phí đi Phú Quốc mấy triệu,search_price,1.0
-có khuyến mãi tour phú quốc không,search_price,1.0
-chi phí đi sài gòn mấy triệu,search_price,1.0
-giá tour Nha Trang nhiêu tiền dợ,search_price,1.0
-giá tour sài gòn nhiêu tiền,search_price,1.0
-có khuyến mãi tour Nha Trang không bot,search_price,1.0
-có khuyến mãi tour Nha Trang không nha,search_price,1.0
-chi phí đi hà nội mấy triệu bot,search_price,1.0
-xin bảng giá đi Đà Lạt,search_price,1.0
-xin bảng giá đi Sa Pa,search_price,1.0
-tour sài gòn rẻ nhất là bao nhiêu bot,search_price,1.0
-có khuyến mãi tour sài gòn không vậy,search_price,1.0
-xin bảng giá đi sài gòn,search_price,1.0
-xin bảng giá đi Đà Lạt dợ,search_price,1.0
-có khuyến mãi tour sài gòn không,search_price,1.0
-giá tour Nha Trang nhiêu tiền vậy,search_price,1.0
-xin bảng giá đi đà nẵng nha,search_price,1.0
-xin bảng giá đi phú quốc nha,search_price,1.0
-có khuyến mãi tour Nha Trang không,search_price,1.0
-chi phí đi hà nội mấy triệu dợ,search_price,1.0
-tour Nha Trang rẻ nhất là bao nhiêu nha,search_price,1.0
-tour hà nội rẻ nhất là bao nhiêu nha,search_price,1.0
-xin bảng giá đi Sa Pa bot,search_price,1.0
-tour Đà Lạt rẻ nhất là bao nhiêu,search_price,1.0
-có khuyến mãi tour Phú Quốc không bot,search_price,1.0
-xin bảng giá đi Phú Quốc bot,search_price,1.0
-tour Đà Lạt rẻ nhất là bao nhiêu nha,search_price,1.0
-xin bảng giá đi đà nẵng vậy,search_price,1.0
-xin bảng giá đi hà nội,search_price,1.0
-tour Sa Pa rẻ nhất là bao nhiêu,search_price,1.0
-xin bảng giá đi Đà Lạt nha,search_price,1.0
-tour Phú Quốc rẻ nhất là bao nhiêu,search_price,1.0
-tour Đà Lạt rẻ nhất là bao nhiêu bot,search_price,1.0
-tour Nha Trang rẻ nhất là bao nhiêu bot,search_price,1.0
-có khuyến mãi tour đà nẵng không vậy,search_price,1.0
-xin bảng giá đi Phú Quốc dợ,search_price,1.0
-xin bảng giá đi Phú Quốc,search_price,1.0
-xin bảng giá đi Đà Lạt vậy,search_price,1.0
-có khuyến mãi tour đà nẵng không bot,search_price,1.0
-xin bảng giá đi Sa Pa vậy,search_price,1.0
-có khuyến mãi tour Nha Trang không dợ,search_price,1.0
-chi phí đi Nha Trang mấy triệu bot,search_price,1.0
-có khuyến mãi tour hà nội không dợ,search_price,1.0
-giá tour phú quốc nhiêu tiền,search_price,1.0
-tour hà nội rẻ nhất là bao nhiêu,search_price,1.0
-có khuyến mãi tour Phú Quốc không vậy,search_price,1.0
-có khuyến mãi tour sài gòn không nha,search_price,1.0
-giá tour Phú Quốc nhiêu tiền,search_price,1.0
-có khuyến mãi tour đà nẵng không,search_price,1.0
-chi phí đi Đà Lạt mấy triệu,search_price,1.0
-giá tour Nha Trang nhiêu tiền bot,search_price,1.0
-chi phí đi Phú Quốc mấy triệu vậy,search_price,1.0
-tour hà nội rẻ nhất là bao nhiêu bot,search_price,1.0
-đi Nha Trang chơi dợ,search_activity,1.0
-chơi dù lượn ở phú quốc bot,search_activity,1.0
-chơi dù lượn ở đà nẵng nha,search_activity,1.0
-đi Đà Lạt chơi,search_activity,1.0
-đi sài gòn chơi,search_activity,1.0
-đi Phú Quốc chơi,search_activity,1.0
-muốn đi trekking Đà Lạt,search_activity,1.0
-ở Sa Pa có tour lặn không,search_activity,1.0
-các hoạt động vui chơi tại Đà Lạt,search_activity,1.0
-các hoạt động vui chơi tại Nha Trang,search_activity,1.0
-ở Nha Trang có tour lặn không bot,search_activity,1.0
-chơi dù lượn ở phú quốc,search_activity,1.0
-ở Nha Trang có tour lặn không,search_activity,1.0
-thuê xe đạp dạo Sa Pa,search_activity,1.0
-ở Nha Trang có tour lặn không nha,search_activity,1.0
-đi sài gòn chơi bot,search_activity,1.0
-muốn đi trekking Phú Quốc,search_activity,1.0
-các hoạt động vui chơi tại Sa Pa,search_activity,1.0
-các hoạt động vui chơi tại phú quốc vậy,search_activity,1.0
-đi Đà Lạt chơi dợ,search_activity,1.0
-thuê xe đạp dạo sài gòn bot,search_activity,1.0
-chơi dù lượn ở Phú Quốc dợ,search_activity,1.0
-thuê xe đạp dạo Nha Trang,search_activity,1.0
-ở sài gòn có tour lặn không,search_activity,1.0
-đi phú quốc chơi bot,search_activity,1.0
-thuê xe đạp dạo Phú Quốc,search_activity,1.0
-có cắm trại ở Đà Lạt không,search_activity,1.0
-có cắm trại ở hà nội không,search_activity,1.0
-các hoạt động vui chơi tại Nha Trang dợ,search_activity,1.0
-ở đà nẵng có tour lặn không,search_activity,1.0
-muốn đi trekking đà nẵng bot,search_activity,1.0
-chơi dù lượn ở sài gòn,search_activity,1.0
-ở Phú Quốc có tour lặn không,search_activity,1.0
-thuê xe đạp dạo Nha Trang vậy,search_activity,1.0
-chơi dù lượn ở Phú Quốc,search_activity,1.0
-các hoạt động vui chơi tại Đà Lạt vậy,search_activity,1.0
-có cắm trại ở Nha Trang không nha,search_activity,1.0
-có cắm trại ở đà nẵng không,search_activity,1.0
-review Đà Lạt có gì chơi,search_activity,1.0
-đi Sa Pa chơi nha,search_activity,1.0
-chơi dù lượn ở Đà Lạt vậy,search_activity,1.0
-có cắm trại ở sài gòn không bot,search_activity,1.0
-chơi dù lượn ở hà nội dợ,search_activity,1.0
-các hoạt động vui chơi tại phú quốc nha,search_activity,1.0
-các hoạt động vui chơi tại sài gòn vậy,search_activity,1.0
-chơi dù lượn ở đà nẵng,search_activity,1.0
-chơi dù lượn ở Phú Quốc nha,search_activity,1.0
-đi hà nội chơi,search_activity,1.0
-thuê xe đạp dạo phú quốc nha,search_activity,1.0
-thuê xe đạp dạo Đà Lạt vậy,search_activity,1.0
-chơi dù lượn ở Đà Lạt,search_activity,1.0
-có cắm trại ở sài gòn không nha,search_activity,1.0
-muốn đi trekking Phú Quốc vậy,search_activity,1.0
-thuê xe đạp dạo hà nội bot,search_activity,1.0
-các hoạt động vui chơi tại hà nội bot,search_activity,1.0
-đi Sa Pa chơi,search_activity,1.0
-chơi dù lượn ở Nha Trang bot,search_activity,1.0
-chơi dù lượn ở Sa Pa,search_activity,1.0
-muốn đi trekking hà nội bot,search_activity,1.0
-các hoạt động vui chơi tại sài gòn,search_activity,1.0
-thuê xe đạp dạo hà nội dợ,search_activity,1.0
-đi Đà Lạt chơi nha,search_activity,1.0
-các hoạt động vui chơi tại Nha Trang vậy,search_activity,1.0
-thuê xe đạp dạo đà nẵng dợ,search_activity,1.0
-ở hà nội có tour lặn không,search_activity,1.0
-có cắm trại ở Sa Pa không,search_activity,1.0
-ở đà nẵng có tour lặn không bot,search_activity,1.0
-ở phú quốc có tour lặn không bot,search_activity,1.0
-ở Sa Pa có tour lặn không vậy,search_activity,1.0
-thuê xe đạp dạo Đà Lạt,search_activity,1.0
-ở sài gòn có tour lặn không vậy,search_activity,1.0
-có cắm trại ở Phú Quốc không bot,search_activity,1.0
-thuê xe đạp dạo Đà Lạt bot,search_activity,1.0
-muốn đi trekking Sa Pa,search_activity,1.0
-các hoạt động vui chơi tại Nha Trang bot,search_activity,1.0
-muốn đi trekking hà nội,search_activity,1.0
-thuê xe đạp dạo hà nội,search_activity,1.0
-đi Nha Trang chơi,search_activity,1.0
-thuê xe đạp dạo hà nội vậy,search_activity,1.0
-có cắm trại ở sài gòn không,search_activity,1.0
-muốn đi trekking phú quốc bot,search_activity,1.0
-muốn đi trekking Nha Trang,search_activity,1.0
-chơi dù lượn ở sài gòn dợ,search_activity,1.0
-đi phú quốc chơi,search_activity,1.0
-ở Nha Trang có tour lặn không dợ,search_activity,1.0
-các hoạt động vui chơi tại phú quốc,search_activity,1.0
-muốn đi trekking Nha Trang nha,search_activity,1.0
-ở phú quốc có tour lặn không,search_activity,1.0
-thuê xe đạp dạo sài gòn,search_activity,1.0
-các hoạt động vui chơi tại Phú Quốc,search_activity,1.0
-các hoạt động vui chơi tại đà nẵng,search_activity,1.0
-muốn đi trekking sài gòn,search_activity,1.0
-thuê xe đạp dạo Phú Quốc dợ,search_activity,1.0
-có cắm trại ở Nha Trang không,search_activity,1.0
-chơi dù lượn ở Nha Trang,search_activity,1.0
-có cắm trại ở Đà Lạt không dợ,search_activity,1.0
-đi đà nẵng chơi,search_activity,1.0
-các hoạt động vui chơi tại hà nội,search_activity,1.0
-đi hà nội chơi dợ,search_activity,1.0
-muốn đi trekking đà nẵng,search_activity,1.0
-ở phú quốc có tour lặn không vậy,search_activity,1.0
-thuê xe đạp dạo đà nẵng bot,search_activity,1.0
-đi sài gòn chơi nha,search_activity,1.0
-có cắm trại ở Nha Trang không dợ,search_activity,1.0
-đi Nha Trang chơi bot,search_activity,1.0
-thuê xe đạp dạo đà nẵng,search_activity,1.0
-đi Đà Lạt chơi vậy,search_activity,1.0
-chơi dù lượn ở hà nội,search_activity,1.0
-có cắm trại ở đà nẵng không dợ,search_activity,1.0
-muốn đi trekking Sa Pa bot,search_activity,1.0
-các hoạt động vui chơi tại Phú Quốc vậy,search_activity,1.0
-chơi dù lượn ở Đà Lạt dợ,search_activity,1.0
-ở Đà Lạt có tour lặn không,search_activity,1.0
-muốn đi trekking Đà Lạt nha,search_activity,1.0
-muốn đi trekking Đà Lạt dợ,search_activity,1.0
-thuê xe đạp dạo Nha Trang nha,search_activity,1.0
-muốn đi trekking phú quốc,search_activity,1.0
-thuê xe đạp dạo sài gòn vậy,search_activity,1.0
-có cắm trại ở Phú Quốc không,search_activity,1.0
-thuê xe đạp dạo phú quốc,search_activity,1.0
-bạn tên gì dợ,out_of_scope,1.0
-chửi thề dmm dợ,out_of_scope,1.0
-chửi thề dmm nha,out_of_scope,1.0
-chửi thề dmm,out_of_scope,1.0
-buồn ngủ quá vậy,out_of_scope,1.0
-cách nấu bún bò nha,out_of_scope,1.0
-cách nấu bún bò vậy,out_of_scope,1.0
-bạn tên gì,out_of_scope,1.0
-cách nấu bún bò,out_of_scope,1.0
-bot ngu vãi dợ,out_of_scope,1.0
-bạn tên gì nha,out_of_scope,1.0
-thời tiết hôm nay vậy,out_of_scope,1.0
-chửi thề dmm bot,out_of_scope,1.0
-thời tiết hôm nay,out_of_scope,1.0
-thời tiết hôm nay nha,out_of_scope,1.0
-thời tiết hôm nay bot,out_of_scope,1.0
-buồn ngủ quá,out_of_scope,1.0
-thời tiết hôm nay dợ,out_of_scope,1.0
-bot ngu vãi,out_of_scope,1.0
-tour phú quốc bao gồm ăn uống chưa bot,ask_tour_info,1.0
-gửi mình chi tiết tour Đà Lạt,ask_tour_info,1.0
-tour sài gòn bao gồm ăn uống chưa nha,ask_tour_info,1.0
-xin lịch trình đi Phú Quốc,ask_tour_info,1.0
-đi chuyển bằng phương tiện gì,ask_tour_info,1.0
-tour đà nẵng bao gồm ăn uống chưa,ask_tour_info,1.0
-tour Nha Trang mấy ngày mấy đêm vậy,ask_tour_info,1.0
-gửi mình chi tiết tour Sa Pa,ask_tour_info,1.0
-gửi mình chi tiết tour Sa Pa vậy,ask_tour_info,1.0
-đi chuyển bằng phương tiện gì bot,ask_tour_info,1.0
-gửi mình chi tiết tour Đà Lạt vậy,ask_tour_info,1.0
-tour Đà Lạt bao gồm ăn uống chưa dợ,ask_tour_info,1.0
-xin lịch trình đi Sa Pa,ask_tour_info,1.0
-xin lịch trình đi Đà Lạt,ask_tour_info,1.0
-tour đà nẵng mấy ngày mấy đêm,ask_tour_info,1.0
-gửi mình chi tiết tour phú quốc bot,ask_tour_info,1.0
-gửi mình chi tiết tour Nha Trang,ask_tour_info,1.0
-có hướng dẫn viên không dợ,ask_tour_info,1.0
-tour đà nẵng mấy ngày mấy đêm nha,ask_tour_info,1.0
-tour phú quốc bao gồm ăn uống chưa,ask_tour_info,1.0
-gửi mình chi tiết tour đà nẵng vậy,ask_tour_info,1.0
-tour Đà Lạt bao gồm ăn uống chưa,ask_tour_info,1.0
-tour Sa Pa bao gồm ăn uống chưa vậy,ask_tour_info,1.0
-gửi mình chi tiết tour sài gòn vậy,ask_tour_info,1.0
-đi chuyển bằng phương tiện gì vậy,ask_tour_info,1.0
-đi chuyển bằng phương tiện gì dợ,ask_tour_info,1.0
-lịch trình đi Phú Quốc 3 ngày,ask_tour_info,1.0
-tour phú quốc bao gồm ăn uống chưa dợ,ask_tour_info,1.0
-gửi mình chi tiết tour Nha Trang dợ,ask_tour_info,1.0
-gửi mình chi tiết tour hà nội bot,ask_tour_info,1.0
-gửi mình chi tiết tour phú quốc,ask_tour_info,1.0
-tour hà nội mấy ngày mấy đêm,ask_tour_info,1.0
-tour Sa Pa bao gồm ăn uống chưa nha,ask_tour_info,1.0
-gửi mình chi tiết tour Đà Lạt nha,ask_tour_info,1.0
-tour Sa Pa bao gồm ăn uống chưa dợ,ask_tour_info,1.0
-tour sài gòn mấy ngày mấy đêm,ask_tour_info,1.0
-tour Sa Pa bao gồm ăn uống chưa,ask_tour_info,1.0
-tour hà nội bao gồm ăn uống chưa,ask_tour_info,1.0
-tour hà nội mấy ngày mấy đêm dợ,ask_tour_info,1.0
-gửi mình chi tiết tour đà nẵng,ask_tour_info,1.0
-gửi mình chi tiết tour Phú Quốc,ask_tour_info,1.0
-xin lịch trình đi hà nội,ask_tour_info,1.0
-tour Phú Quốc mấy ngày mấy đêm dợ,ask_tour_info,1.0
-tour Đà Lạt mấy ngày mấy đêm dợ,ask_tour_info,1.0
-tour Nha Trang mấy ngày mấy đêm bot,ask_tour_info,1.0
-tour Phú Quốc mấy ngày mấy đêm,ask_tour_info,1.0
-tour Đà Lạt bao gồm ăn uống chưa nha,ask_tour_info,1.0
-tour đà nẵng bao gồm ăn uống chưa nha,ask_tour_info,1.0
-tour phú quốc mấy ngày mấy đêm,ask_tour_info,1.0
-tour Đà Lạt mấy ngày mấy đêm bot,ask_tour_info,1.0
-xin lịch trình đi Nha Trang,ask_tour_info,1.0
-xin lịch trình đi phú quốc,ask_tour_info,1.0
-tour Nha Trang mấy ngày mấy đêm,ask_tour_info,1.0
-có hướng dẫn viên không nha,ask_tour_info,1.0
-tour hà nội mấy ngày mấy đêm bot,ask_tour_info,1.0
-gửi mình chi tiết tour Nha Trang nha,ask_tour_info,1.0
-có hướng dẫn viên không vậy,ask_tour_info,1.0
-tour Sa Pa mấy ngày mấy đêm,ask_tour_info,1.0
-có hướng dẫn viên không bot,ask_tour_info,1.0
-tour Nha Trang bao gồm ăn uống chưa,ask_tour_info,1.0
-gửi mình chi tiết tour sài gòn dợ,ask_tour_info,1.0
-tour đà nẵng mấy ngày mấy đêm dợ,ask_tour_info,1.0
-xin lịch trình đi phú quốc dợ,ask_tour_info,1.0
-gửi mình chi tiết tour sài gòn,ask_tour_info,1.0
-gửi mình chi tiết tour hà nội nha,ask_tour_info,1.0
-tour Đà Lạt mấy ngày mấy đêm,ask_tour_info,1.0
-tour Đà Lạt bao gồm ăn uống chưa bot,ask_tour_info,1.0
-tour sài gòn bao gồm ăn uống chưa,ask_tour_info,1.0
-có hướng dẫn viên không,ask_tour_info,1.0
-xin lịch trình đi Phú Quốc vậy,ask_tour_info,1.0
-gửi mình chi tiết tour hà nội,ask_tour_info,1.0
-gửi mình chi tiết tour Đà Lạt bot,ask_tour_info,1.0
-gửi mình chi tiết tour phú quốc vậy,ask_tour_info,1.0
-xin lịch trình đi đà nẵng,ask_tour_info,1.0
-tour Phú Quốc bao gồm ăn uống chưa,ask_tour_info,1.0
-xin lịch trình đi Nha Trang nha,ask_tour_info,1.0
-xin lịch trình đi sài gòn,ask_tour_info,1.0
-muốn đi Phú Quốc,search_travel,1.0
-có tour Đà Lạt không bot dợ,search_travel,1.0
-tư vấn tour sài gòn vậy,search_travel,1.0
-tư vấn tour Đà Lạt vậy,search_travel,1.0
-muốn đi Sa Pa vậy,search_travel,1.0
-có tour hà nội không bot,search_travel,1.0
-muốn đi phú quốc,search_travel,1.0
-muốn đi đà nẵng,search_travel,1.0
-tìm tour đi phú quốc nha,search_travel,1.0
-tư vấn tour Sa Pa,search_travel,1.0
-tư vấn tour hà nội,search_travel,1.0
-tư vấn tour Đà Lạt,search_travel,1.0
-muốn đi Đà Lạt,search_travel,1.0
-muốn đi Nha Trang vậy,search_travel,1.0
-tư vấn tour sài gòn bot,search_travel,1.0
-tìm tour đi hà nội bot,search_travel,1.0
-muốn đi Nha Trang dợ,search_travel,1.0
-tư vấn tour Nha Trang dợ,search_travel,1.0
-tư vấn tour Nha Trang,search_travel,1.0
-có tour Sa Pa không bot vậy,search_travel,1.0
-muốn đi hà nội,search_travel,1.0
-tìm tour đi Phú Quốc,search_travel,1.0
-tư vấn tour phú quốc bot,search_travel,1.0
-muốn đi Phú Quốc bot,search_travel,1.0
-tư vấn tour phú quốc,search_travel,1.0
-tư vấn tour đà nẵng vậy,search_travel,1.0
-tư vấn tour Sa Pa vậy,search_travel,1.0
-muốn đi Nha Trang bot,search_travel,1.0
-tìm tour đi hà nội,search_travel,1.0
-tìm tour đi Nha Trang,search_travel,1.0
-muốn đi phú quốc nha,search_travel,1.0
-tư vấn tour Sa Pa nha,search_travel,1.0
-tìm tour đi phú quốc,search_travel,1.0
-có tour sài gòn không bot,search_travel,1.0
-muốn đi Đà Lạt nha,search_travel,1.0
-có tour Nha Trang không bot dợ,search_travel,1.0
-tư vấn tour Sa Pa bot,search_travel,1.0
-muốn đi Sa Pa,search_travel,1.0
-tìm tour đi Đà Lạt,search_travel,1.0
-có tour Đà Lạt không bot bot,search_travel,1.0
-tư vấn tour Phú Quốc,search_travel,1.0
-tư vấn tour Đà Lạt nha,search_travel,1.0
-muốn đi Nha Trang nha,search_travel,1.0
-muốn đi Sa Pa dợ,search_travel,1.0
-tìm tour đi đà nẵng,search_travel,1.0
-có tour Phú Quốc không bot,search_travel,1.0
-có tour phú quốc không bot,search_travel,1.0
-có tour Phú Quốc không bot dợ,search_travel,1.0
-muốn đi hà nội bot,search_travel,1.0
-có tour Đà Lạt không bot vậy,search_travel,1.0
-có tour đà nẵng không bot vậy,search_travel,1.0
-có tour Nha Trang không bot,search_travel,1.0
-tư vấn tour Đà Lạt dợ,search_travel,1.0
-có tour hà nội không bot nha,search_travel,1.0
-tìm tour đi sài gòn,search_travel,1.0
-tư vấn tour sài gòn nha,search_travel,1.0
-có tour Đà Lạt không bot,search_travel,1.0
-tư vấn tour đà nẵng,search_travel,1.0
-muốn đi Phú Quốc dợ,search_travel,1.0
-tìm tour đi Đà Lạt vậy,search_travel,1.0
-có tour Nha Trang không bot nha,search_travel,1.0
-tìm tour đi Nha Trang vậy,search_travel,1.0
-có tour Sa Pa không bot,search_travel,1.0
-tư vấn tour Nha Trang vậy,search_travel,1.0
-muốn đi Nha Trang,search_travel,1.0
-tìm tour đi Sa Pa,search_travel,1.0
-có tour Phú Quốc không bot vậy,search_travel,1.0
-tư vấn tour sài gòn,search_travel,1.0
-tư vấn tour phú quốc vậy,search_travel,1.0
-muốn đi hà nội vậy,search_travel,1.0
-có tour đà nẵng không bot,search_travel,1.0
-tư vấn tour sài gòn dợ,search_travel,1.0
-muốn đi sài gòn,search_travel,1.0
-muốn đi phú quốc vậy,search_travel,1.0
-có tour đà nẵng không bot nha,search_travel,1.0
-tư vấn tour phú quốc dợ,search_travel,1.0
-khách sạn Nha Trang giá rẻ không,search_accommodation,1.0

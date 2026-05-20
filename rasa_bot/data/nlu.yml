@@ -179,10 +179,10 @@ nlu:
       - gợi ý nơi đi cáp treo
       - có tour nào đi xe đạp quanh bản làng không
       - muốn trải nghiệm văn hóa bản địa
-      - tìm chỗ [tắm biển](category)
-      - tôi muốn lên [núi](category) chơi
-      - phú quốc có lặn ngắm san hô không
-      - đà lạt đợt này có lễ hội gì không
+      - tìm chỗ [tắm biển](activity)
+      - tôi muốn [lên núi](activity) chơi
+      - phú quốc có [lặn ngắm san hô](activity) không
+
 
   - intent: search_accommodation
     examples: |
@@ -201,6 +201,7 @@ nlu:
       - mình muốn tìm chỗ ăn ngủ
       - có homestay nào giá rẻ không
       - gợi ý mình vài resort view biển
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
 
   - intent: search_price
     examples: |
@@ -208,7 +209,6 @@ nlu:
       - gợi ý nơi giá rẻ
       - nơi nào đi chơi tiết kiệm
       - tôi muốn đi du lịch giá rẻ
-      - giá tour này tầm bao nhiêu
       - đi sapa chi phí bao nhiêu
       - tour đà lạt 3 ngày 2 đêm này giá chính xác bao nhiêu
       - trọn gói vậy có phát sinh phụ phí gì không
@@ -221,7 +221,21 @@ nlu:
       - tổn thất khoảng bao nhiêu
       - ví đang mỏng có đi được không
       - giá có hạt dẻ không
-      - điểm nào dành cho hệ hssv
+      - điểm nào dành cho hệ học sinh sinh viên
+      - tour này mắc không
+      - đi [Đà Nẵng](destination) tầm bao nhiêu tiền
+      - chi phí ăn ở đi lại tốn bao nhiêu
+      - mức giá vé như nào
+      - vé vào cửa đắt không
+      - xin bảng giá chi tiết
+      - cho hỏi giá phòng 1 đêm
+      - tour này mắc không
+      - đi [Đà Nẵng](destination) tầm bao nhiêu tiền
+      - chi phí ăn ở đi lại tốn bao nhiêu
+      - mức giá vé như nào
+      - vé vào cửa đắt không
+      - xin bảng giá chi tiết
+      - cho hỏi giá phòng 1 đêm
 
   - intent: search_food_dining
     examples: |
@@ -235,6 +249,17 @@ nlu:
       - món nào ngon cực dính
       - có quán nào ngon chân ái không
       - recommend vài quán nhậu ngon nha
+      - [Sapa](destination) có món gì ngon
+      - quán nhậu ở [Nha Trang](destination)
+      - ăn sáng ở đâu
+      - địa chỉ ăn hải sản ngon bổ rẻ
+      - đến [Phú Quốc](destination) phải ăn gì
+      - có nhà hàng nào lãng mạn không
+      - xin list đồ ăn vặt
+      - gợi ý quán ăn trưa
+      - ăn tối ở [Đà Lạt](destination) nên đi đâu
+      - chỗ nào bán đặc sản làm quà
+      
 
   - intent: ask_itinerary
     examples: |
@@ -243,6 +268,19 @@ nlu:
       - tư vấn lịch trình
       - tạo lịch trình 2 ngày 1 đêm sapa
       - mình cần lên lịch trình đi sapa
+      - gợi ý lịch trình đi [Sapa](destination) [3 ngày 2 đêm](duration)
+      - lên plan đi [Đà Lạt](destination) giúp mình
+      - mình cần kế hoạch du lịch [Phú Quốc](destination)
+      - cho xin lịch trình tham quan
+      - sắp xếp lịch trình đi chơi [Nha Trang](destination)
+      - tư vấn tour [4 ngày 3 đêm](duration)
+      - đi [Hà Nội](destination) [1 ngày](duration) thì đi đâu
+      - cách sắp xếp thời gian đi [Hà Giang](destination)
+      - nên đi những đâu trong [3 ngày](duration)
+      - lịch trình ăn chơi [Đà Nẵng](destination)
+      - gợi ý plan đi chơi [cuối tuần](time_window)
+      - tạo giúp mình lịch trình tự túc
+      - nên phân bổ thời gian đi chơi thế nào
 
   - intent: ask_transportation
     examples: |
@@ -250,6 +288,19 @@ nlu:
       - từ sân bay về khách sạn có xe đưa đón không
       - đi từ hồ chí minh ra nha trang thì đi xe gì
       - tư vấn phương tiện di chuyển
+      - vé máy bay đi [Hà Nội](destination)
+      - đặt xe [limousine](transportation) đi [Sapa](destination)
+      - giá vé [xe khách](transportation) bao nhiêu
+      - đi [tàu hỏa](transportation) ra [Đà Nẵng](destination) mất bao lâu
+      - từ sân bay có xe bus không
+      - đến đó bằng phương tiện gì
+      - thuê [xe máy](transportation) ở đâu
+      - cách di chuyển từ sân bay về khách sạn
+      - đi bằng [ô tô](transportation) cá nhân được không
+      - bên bạn có hỗ trợ đặt vé [máy bay](transportation) không
+      - tới [Hạ Long](destination) đi xe gì hợp lý
+      - mình muốn mua vé [xe giường nằm](transportation)
+      - ở [Phú Quốc](destination) có [taxi](transportation) không
 
   - intent: ask_policy_booking
     examples: |
@@ -258,6 +309,19 @@ nlu:
       - đi nước ngoài cần chuẩn bị visa không
       - chính sách đổi trả ra sao
       - trẻ em có miễn phí không
+      - mình muốn hủy phòng
+      - điều kiện hoàn tiền là gì
+      - đặt cọc trước bao nhiêu phần trăm
+      - thanh toán như thế nào
+      - có xuất hóa đơn VAT không
+      - thủ tục đặt tour ra sao
+      - trẻ dưới 2 tuổi tính vé sao
+      - nếu có việc bận dời ngày được không
+      - chính sách cho người cao tuổi
+      - hủy vé có mất phí không
+      - thanh toán qua chuyển khoản được không
+      - bị ốm đột xuất hủy tour thế nào
+      - bao lâu thì nhận được tiền hoàn
 
   - intent: ask_tour_info
     examples: |
@@ -267,44 +331,62 @@ nlu:
       - tour khởi hành lúc mấy giờ
       - tour đà lạt đi bằng xe giường nằm hay xe ngồi
       - thông tin chi tiết tour đà nẵng
-
-  - intent: search_travel
-    examples: |
       - tìm cho mình tour đi Đà Lạt
       - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
-      - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) ko?
+      - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) không?
       - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
       - báo giá tour [Thái Lan](destination) khởi hành từ [HCM](departure) [tháng sau](time_window)
-      - tui mún đi [Đà Nẵng](destination) [4n3đ](duration) ngân sách cỡ [5 củ](budget)
       - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
-      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
       - có tour ghép đoàn nào đi [Hà Giang](destination) khởi hành [thứ 6](time_window) không
       - mình muốn đặt tour đi [vịnh Hạ Long](destination) [2 người lớn 1 trẻ em](party_size)
       - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
       - tour [Đà Lạt](destination) [tháng 12](month) còn trống chỗ không
-      - tôi muốn đi du lịch [mùa hè](season), ngân sách [1tr](budget)
-      - [sắp tới](time_window) có chỗ nào đi được với [1.5tr](budget) không
-      - chi phí đi du lịch khoảng [5 triệu](budget)
       - có tour nào dưới [2 triệu](budget) không
+
+  - intent: search_travel
+    examples: |
+      - tui mún đi [Đà Nẵng](destination) [4 ngày 3 đêm](duration) ngân sách cỡ [5 củ](budget)
+      - tôi muốn đi du lịch [mùa hè](season), ngân sách [1 triệu](budget)
+      - [sắp tới](time_window) có chỗ nào đi được với [1.5 triệu](budget) không
+      - chi phí đi du lịch khoảng [5 triệu](budget)
       - du lịch [500 nghìn](budget) có lựa chọn nào không
       - mình có tầm [4 triệu](budget)
       - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu ko bot
-      - dới [3tr](budget) nha, đi [cuối tuần](time_window)
+      - với [3 triệu](budget) nha, đi [cuối tuần](time_window)
       - tài chính [10 củ](budget) quay đầu
       - chi phí cho chuyến đi [Phú Quốc](destination) [4 ngày](duration) rơi vào khoảng bao nhiêu
       - đang muốn set kèo đi [Vũng Tàu](destination)
       - chốt kèo đi biển nha
       - muốn vi vu vài ngày
-      - đi phượt [Sapa](destination) thôii
+      - đi phượt [Sapa](destination) thôi
+      - gợi ý chuyến đi [Nha Trang](destination) [3 ngày](duration) tầm [5 triệu](budget)
+      - cầm [10 củ](budget) đi [Đà Lạt](destination) đủ không
+      - tầm [2 triệu](budget) đi [Vũng Tàu](destination) [2 ngày 1 đêm](duration)
+      - du lịch quanh [Hà Nội](destination) ngân sách [1 triệu](budget)
+      - muốn đi [Đà Nẵng](destination) [tháng 5](month) với ngân sách [6 củ](budget)
 
   - intent: ask_location_feature
     examples: |
       - ở đó có mát không
       - khí hậu ở đó thế nào
+      - đà lạt đợt này có lễ hội gì không
+      - thời tiết ở [Sapa](destination) [tháng 11](month) thế nào
+      - trên đó có lạnh không
+      - mùa này đi biển có bão không
+      - đường đi có dốc không
+      - ở đó mạng di động có khỏe không
+      - chỗ đó có ồn ào không
+      - view ở đó có đẹp không bot
+      - an ninh khu vực đó thế nào
+      - tối ở đó có nhộn nhịp không
+      - phong cảnh [Hà Giang](destination) mùa này sao
+      - [Đà Lạt](destination) mưa nhiều không
+      - khu đấy có gần biển không
+      - vị trí có thuận tiện đi lại không
 
-  - intent: test_s3
-    examples: |
-      - mật mã s3 là gì
+  # - intent: test_s3
+  #   examples: |
+  #     - mật mã s3 là gì
 
   - intent: inform
     examples: |
@@ -317,7 +399,7 @@ nlu:
       - tầm [10 củ](budget)
       - [tháng 11](month)
       - nhóm mình [6 người](party_size)
-      - đi [máy bay](category) nhé
+      - đi [máy bay](transportation) nhé
       - mình xuất phát từ [Đà Nẵng](departure)
       - [Sapa](destination)
       - [Phú Quốc](destination)
@@ -337,7 +419,7 @@ nlu:
       - [2 củ](budget)
       - [10tr](budget)
       - khởi hành từ [Sài Gòn](departure)
-      - [xe khách](category)
+      - [xe khách](transportation)
 
 synonym:
   - value: "Hồ Chí Minh"
@@ -355,28 +437,28 @@ synonym:
       - phố núi
       - thành phố ngàn hoa
 
-  - value: "homestay"
-    examples: |
-      - hõm
-      - chòi
-      - phòng
-      - từ [tháng 5](month_from) đến [tháng 7](month_to)
-      - từ [tháng 10](month_from) đến [tháng 12](month_to)
-      - từ [tháng 1](month_from) đến [tháng 3](month_to)
-      - tui muốn đi từ [tháng 2](month_from) đến [tháng 5](month_to)
-      - đi từ [tháng 1](month_from) tới [tháng 3](month_to)
-      - dời lịch sang từ [tháng 6](month_from) đến [tháng 8](month_to)
-      - chuyến đi bắt đầu từ [tháng 9](month_from) kết thúc vào [tháng 12](month_to)
-      - còn [Vũng Tàu](destination) thì sao
-      - thế còn [Đà Lạt](destination)
-      - [Sapa](destination) thì sao
-      - sang [Hà Nội](destination) đi
-      - đổi sang [Phú Quốc](destination) nhé
-      - ở [vũng tàu](destination) thì sao
-      - tìm ở [Nha Trang](destination) xem
-      - đi [Đà Lạt](destination) thì sao
-      - [5 triệu](budget) thì sao
-      - đi [tháng 10](month) thì sao
+  # - value: "homestay"
+  #   examples: |
+  #     - hõm
+  #     - chòi
+  #     - phòng
+  #     - từ [tháng 5](month_from) đến [tháng 7](month_to)
+  #     - từ [tháng 10](month_from) đến [tháng 12](month_to)
+  #     - từ [tháng 1](month_from) đến [tháng 3](month_to)
+  #     - tui muốn đi từ [tháng 2](month_from) đến [tháng 5](month_to)
+  #     - đi từ [tháng 1](month_from) tới [tháng 3](month_to)
+  #     - dời lịch sang từ [tháng 6](month_from) đến [tháng 8](month_to)
+  #     - chuyến đi bắt đầu từ [tháng 9](month_from) kết thúc vào [tháng 12](month_to)
+  #     - còn [Vũng Tàu](destination) thì sao
+  #     - thế còn [Đà Lạt](destination)
+  #     - [Sapa](destination) thì sao
+  #     - sang [Hà Nội](destination) đi
+  #     - đổi sang [Phú Quốc](destination) nhé
+  #     - ở [vũng tàu](destination) thì sao
+  #     - tìm chỗ ở [Nha Trang](destination) xem
+  #     - đi [Đà Lạt](destination) thì sao
+  #     - [5 triệu](budget) thì sao
+  #     - đi [tháng 10](month) thì sao
 
   - synonym: mùa xuân
     examples: |

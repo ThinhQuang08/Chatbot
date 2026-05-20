@@ -4,7 +4,7 @@ version: "3.1"
 intents:
   - affirm
   - deny
-  - test_s3
+  # - test_s3
 
   - bot_challenge
   - search_travel
@@ -42,6 +42,7 @@ entities:
   - party_size # Số lượng người
   - tour_name # Tên tour cụ thể
   - category # Phân biệt ks, biển, nhà hàng
+  - transportation # Phương tiện di chuyển
 
 forms:
   travel_form:
@@ -169,8 +170,8 @@ responses:
   utter_happy:
     - text: "Tuyệt vời! Bạn muốn mình lọc tiếp theo tháng, ngân sách hay hoạt động?"
 
-  utter_test_s3:
-    - text: "Báo cáo sếp Thịnh, em đang chạy bằng não tải từ S3 về đây ạ!"
+  # utter_test_s3:
+  #   - text: "Báo cáo sếp Thịnh, em đang chạy bằng não tải từ S3 về đây ạ!"
 
   utter_goodbye:
     - text: "Cảm ơn bạn đã sử dụng trợ lý du lịch. Hẹn gặp lại bạn nhé!"
