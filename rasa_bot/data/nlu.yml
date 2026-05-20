@@ -147,7 +147,7 @@ nlu:
       - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
       - t muốn đi [Đà Lạt](destination)
       - cho xin review đi [Sapa](destination) [tháng 10](month)
-      - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
+      - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) không
       - muốn tìm nơi [chữa lành](category)
       - dịp lễ [30/4](time_window) nên đi tỉnh nào
       - có chỗ nào đi trốn nắng [mùa hè](season) không
@@ -161,28 +161,30 @@ nlu:
 
   - intent: search_activity
     examples: |
-      - tôi muốn leo núi
+      - tôi muốn [leo núi](activity)
       - leo núi [tháng 10](month)
       - mình muốn leo núi vào [tháng 10](month)
       - chỗ nào leo núi đẹp vào [tháng 10](month)
-      - trekking [tháng 10](month)
-      - đi trekking vào [tháng 10](month) thì nên đi đâu
-      - nơi nào có thể cắm trại
+      - [trekking](activity) [tháng 10](month)
+      - đi [trekking](activity) vào [tháng 10](month) thì nên đi đâu
+      - nơi nào có thể [cắm trại](activity)
       - có chỗ nào đi thuyền không
       - tôi muốn săn mây
-      - gợi ý chỗ leo núi
-      - trekking
-      - tôi muốn trekking
-      - chỗ nào trekking đẹp
+      - gợi ý chỗ [leo núi](activity)
+      - [đi trekking](activity)
+      - tôi muốn [trekking](activity)
+      - chỗ nào [trekking](activity) đẹp
       - chỗ nào có bãi biển đẹp
+      - [lặn san hô](activity) phú quốc
       - muốn đi lặn san hô
-      - gợi ý nơi đi cáp treo
-      - có tour nào đi xe đạp quanh bản làng không
+      - gợi ý nơi [đi cáp treo](activity)
+      - có tour nào [đi xe đạp](activity) quanh bản làng không
       - muốn trải nghiệm văn hóa bản địa
       - tìm chỗ [tắm biển](activity)
       - tôi muốn [lên núi](activity) chơi
       - phú quốc có [lặn ngắm san hô](activity) không
-
+      - chi phí đi leo núi [tháng 10](month) là bao nhiêu
+      - đi leo núi [tháng 10](month) hết bao nhiêu tiền
 
   - intent: search_accommodation
     examples: |
@@ -200,8 +202,16 @@ nlu:
       - đổi sang [nhà nghỉ](category) nhé
       - mình muốn tìm chỗ ăn ngủ
       - có homestay nào giá rẻ không
-      - gợi ý mình vài resort view biển
-      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
+      - gợi ý mình vài [resort](category) view biển
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ không
+      - cho mình xem vài [khu nghỉ dưỡng](category)
+      - tìm [chỗ ở](category) quanh [Đà Lạt](destination)
+      - [khách sạn](category) nào gần trung tâm không
+      - muốn thuê [villa](category) nguyên căn
+      - có [homestay](category) nào view đồi núi không
+      - mình cần book [phòng](category)
+      - [chỗ nghỉ](category) nào sạch sẽ giá tốt
+      - tìm [khách sạn 5 sao](category) ở [Nha Trang](destination)
 
   - intent: search_price
     examples: |
@@ -210,13 +220,12 @@ nlu:
       - nơi nào đi chơi tiết kiệm
       - tôi muốn đi du lịch giá rẻ
       - đi sapa chi phí bao nhiêu
-      - tour đà lạt 3 ngày 2 đêm này giá chính xác bao nhiêu
+
       - trọn gói vậy có phát sinh phụ phí gì không
       - cho mình hỏi giá vé cáp treo vinpearl
       - giá vé Safari
-      - chi phí đi leo núi [tháng 10](month) là bao nhiêu
-      - đi leo núi [tháng 10](month) hết bao nhiêu tiền
-      - đi zậy thiệt hại cỡ nhiêu
+
+      - đi vậy thiệt hại cỡ nhiêu
       - rổ giá như nào
       - tổn thất khoảng bao nhiêu
       - ví đang mỏng có đi được không
@@ -260,7 +269,6 @@ nlu:
       - ăn tối ở [Đà Lạt](destination) nên đi đâu
       - chỗ nào bán đặc sản làm quà
       
-
   - intent: ask_itinerary
     examples: |
       - lên giúp mình lịch trình tự túc đà nẵng
@@ -330,8 +338,8 @@ nlu:
       - trong tour có bao ăn uống không
       - tour khởi hành lúc mấy giờ
       - tour đà lạt đi bằng xe giường nằm hay xe ngồi
-      - thông tin chi tiết tour đà nẵng
-      - tìm cho mình tour đi Đà Lạt
+      - thông tin chi tiết tour đà nẵng(destination)
+      - tìm cho mình tour đi Đà Lạt(destination)
       - tìm tour đi [Phú Quốc](destination) [3 ngày 2 đêm](duration)
       - có tour nào từ [Vinh](departure) đi [Đồi Chè Thanh Chương](destination) không?
       - mình cần tìm tour đi [Hà Nội](destination) cho [4 người](party_size)
@@ -342,7 +350,7 @@ nlu:
       - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
       - tour [Đà Lạt](destination) [tháng 12](month) còn trống chỗ không
       - có tour nào dưới [2 triệu](budget) không
-
+      - tour đà lạt 3 ngày 2 đêm này giá chính xác bao nhiêu
   - intent: search_travel
     examples: |
       - tui mún đi [Đà Nẵng](destination) [4 ngày 3 đêm](duration) ngân sách cỡ [5 củ](budget)
@@ -351,7 +359,7 @@ nlu:
       - chi phí đi du lịch khoảng [5 triệu](budget)
       - du lịch [500 nghìn](budget) có lựa chọn nào không
       - mình có tầm [4 triệu](budget)
-      - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu ko bot
+      - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu không bot
       - với [3 triệu](budget) nha, đi [cuối tuần](time_window)
       - tài chính [10 củ](budget) quay đầu
       - chi phí cho chuyến đi [Phú Quốc](destination) [4 ngày](duration) rơi vào khoảng bao nhiêu
@@ -373,7 +381,7 @@ nlu:
       - thời tiết ở [Sapa](destination) [tháng 11](month) thế nào
       - trên đó có lạnh không
       - mùa này đi biển có bão không
-      - đường đi có dốc không
+      - đường đi chỗ đó có dốc không
       - ở đó mạng di động có khỏe không
       - chỗ đó có ồn ào không
       - view ở đó có đẹp không bot
