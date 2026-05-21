@@ -31,10 +31,10 @@ pipeline {
 
         stage('2. Data Pipeline') {
             steps {
-                echo "🧹 Chạy data pipeline..."
                 sh """
                     set -e
                     cd "${WORKSPACE_DIR}"
+                    export LD_LIBRARY_PATH=/home/thinh/miniconda3/envs/rasa/lib:\$LD_LIBRARY_PATH
                     ${PYTHON} data/generate_massive_data.py
                     ${PYTHON} data/preprocess_data.py
                     ${PYTHON} data/auto_label_snorkel.py
