@@ -24,26 +24,20 @@ pipeline {
                     set -e
                     cd "${WORKSPACE_DIR}"
 
-                    # Dùng Python 3.10 từ pyenv đã cài
                     export PATH="/home/jenkins/.pyenv/versions/3.10.14/bin:\$PATH"
 
-                    # Tạo .venv nếu chưa có
                     if [ ! -f "${VENV_DIR}/bin/python" ]; then
                         echo "Tạo .venv mới..."
                         python -m venv "${VENV_DIR}"
                     else
-                        echo ".venv đã tồn tại, bỏ qua tạo mới."
+                        echo ".venv đã tồn tại."
                     fi
 
-                    # Cài/update dependencies
                     "${VENV_DIR}/bin/pip" install --upgrade pip --quiet
                     "${VENV_DIR}/bin/pip" install --no-cache-dir -r requirements.txt --quiet
 
-                    echo "Python version:"
-                    "${PYTHON}" --version
-
-                    echo "Rasa version:"
-                    "${PYTHON}" -c "import rasa; print(rasa.__version__)"
+                    echo "Python: \$("${PYTHON}" --version)"
+                    echo "Rasa: \$("${PYTHON}" -c 'import rasa; print(rasa.__version__)')"
                 """
             }
         }
