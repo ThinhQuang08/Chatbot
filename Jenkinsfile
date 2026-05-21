@@ -1,105 +1,139 @@
 pipeline {
 
-    agent any
+    agent { label 'chatbot-mlops' }
 
     environment {
-        PYTHON_CMD = 'python'
+        PYTHON        = "/home/thinh/Chatbot_tien/.venv/bin/python"
+        WORKSPACE_DIR = "${WORKSPACE}"
+        MODEL_DIR     = "${WORKSPACE}/rasa_bot/models"
+    }
 
-        // workspace thật của Jenkins
-        PROJECT_DIR = "${WORKSPACE}"
-
-        MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        timeout(time: 60, unit: 'MINUTES')
     }
 
     stages {
 
-        stage('1. Data Pipeline') {
+        stage('1. Verify Environment') {
             steps {
-                echo "🧹 Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
-
+                echo "✅ Kiểm tra môi trường có sẵn..."
                 sh """
-                    cd /workspace
-                    ${PYTHON_CMD} data/csv_to_rasa.py
+                    set -e
+                    ${PYTHON} --version
+                    ${PYTHON} -c "import rasa; print('Rasa:', rasa.__version__)"
+                    ${PYTHON} -c "import mlflow; print('MLflow:', mlflow.__version__)"
+                    ${PYTHON} -c "import sentence_transformers; print('SentenceTransformers:', sentence_transformers.__version__)"
                 """
             }
         }
 
-        stage('2. Train Model') {
+        stage('2. Data Pipeline') {
             steps {
-                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
-
+                echo "🧹 Chạy data pipeline..."
                 sh """
-                    cd /workspace
-                    ${PYTHON_CMD} scripts/train_mlflow.py
+                    set -e
+                    cd "${WORKSPACE_DIR}"
+                    ${PYTHON} data/generate_massive_data.py
+                    ${PYTHON} data/preprocess_data.py
+                    ${PYTHON} data/auto_label_snorkel.py
+                    ${PYTHON} data/split_confidence.py
+                    ${PYTHON} data/validate_cleanlab.py
+                    ${PYTHON} data/csv_to_rasa.py
                 """
             }
         }
 
-        stage('3. Human Approval (Gửi TN)') {
+        stage('3. Train Model') {
+            steps {
+                echo "🚀 Train Rasa + log MLflow..."
+                sh """
+                    set -e
+                    cd "${WORKSPACE_DIR}"
+                    ${PYTHON} scripts/train_mlflow.py
+                """
+            }
+        }
+
+        stage('4. Check Model Artifact') {
+            steps {
+                echo "🔎 Kiểm tra model artifact..."
+                sh """
+                    set -e
+
+                    echo "Model directory:"
+                    ls -lah "${MODEL_DIR}" || true
+
+                    LATEST_MODEL=\$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
+
+                    if [ -z "\$LATEST_MODEL" ]; then
+                        echo "❌ Không tìm thấy model .tar.gz"
+                        exit 1
+                    fi
+
+                    echo "✅ Model: \$LATEST_MODEL"
+                    echo "\$LATEST_MODEL" > latest_model_path.txt
+                """
+            }
+        }
+
+        stage('5. Human Approval') {
             steps {
                 script {
+                    def latestModel = sh(
+                        script: 'cat latest_model_path.txt',
+                        returnStdout: true
+                    ).trim()
 
-                    echo "🔔 Đang chờ sếp kiểm tra thông số trên MLflow..."
+                    echo "🔔 Model đã train xong: ${latestModel}"
+                    echo "📊 Vào MLflow kiểm tra metrics trước khi quyết định."
 
-                    def userInput = input(
+                    def decision = input(
                         id: 'DeployGate',
-                        message: 'Thông số mô hình đã có trên MLflow. Sếp quyết định sao?',
-                        ok: 'Deploy',
+                        message: "Deploy model: ${latestModel}?",
+                        ok: 'Submit',
                         parameters: [
                             choice(
                                 name: 'DECISION',
-                                choices: ['oke_deploy', 'nhu_cc_xoa'],
-                                description: 'Chọn hành động'
+                                choices: ['deploy', 'reject'],
+                                description: 'deploy = triển khai, reject = dừng pipeline'
                             )
                         ]
                     )
 
-                    if (userInput == 'nhu_cc_xoa') {
-                        error("🛑 Mô hình bị reject")
+                    if (decision == 'reject') {
+                        currentBuild.result = 'ABORTED'
+                        error("🛑 Model bị reject. Pipeline dừng.")
                     }
 
-                    echo "✅ Model được duyệt"
+                    echo "✅ Model được duyệt. Tiếp tục deploy."
                 }
             }
         }
 
-        stage('4. Deploy to MinIO & Rasa') {
+        stage('6. Deploy Model') {
             steps {
-
-                echo "☁️ Đang deploy model..."
-
+                echo "☁️ Deploy model..."
                 sh """
-                    cd /workspace
-                    ${PYTHON_CMD} scripts/deploy_model.py
+                    set -e
+                    cd "${WORKSPACE_DIR}"
+                    ${PYTHON} scripts/deploy_model.py
                 """
             }
         }
     }
 
     post {
-
         success {
             echo "🎉 PIPELINE HOÀN TẤT!"
+            archiveArtifacts artifacts: 'latest_model_path.txt', allowEmptyArchive: true
         }
-
         aborted {
-
-            echo "⚠️ Pipeline bị hủy"
-
-            sh """
-                rm -f /workspace/rasa_bot/models/*.tar.gz || true
-            """
+            echo "⚠️ Model bị reject. Không deploy."
         }
-
         failure {
-
-            echo "🔥 Pipeline thất bại"
-
-            sh """
-                rm -f /workspace/rasa_bot/models/*.tar.gz || true
-            """
-
-            echo "🗑️ Đã cleanup"
+            echo "🔥 Pipeline thất bại. Kiểm tra console log."
         }
     }
 }
