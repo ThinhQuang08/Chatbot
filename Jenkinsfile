@@ -1,6 +1,6 @@
 pipeline {
 
-    agent { label 'chatbot-mlops' }
+    agent { label 'chatbot-mlops-214' }
 
     environment {
         PYTHON      = "/home/thinh/Chatbot_tien/.venv/bin/python"
