@@ -137,18 +137,6 @@ stories:
   - intent: search_destination
   - action: action_search_travel
 
-- story: Xác nhận tìm tour đồng ý
-  steps:
-  - action: action_search_travel
-  - intent: affirm
-  - action: action_search_travel
-
-- story: Xác nhận tìm tour từ chối
-  steps:
-  - action: action_search_travel
-  - intent: deny
-  - action: utter_cancel_search
-
 - story: Tìm tour quay xe đổi ý
   steps:
   - action: action_search_travel

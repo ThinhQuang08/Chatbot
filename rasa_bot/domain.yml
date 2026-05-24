@@ -147,12 +147,6 @@ slots:
       - type: from_entity
         entity: duration
 
-  confirmation:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: custom
-
 actions:
   #- action_search_destination
   - action_log_start
@@ -194,14 +188,6 @@ responses:
     - text: "Bạn còn muốn tìm hiểu thêm thông tin gì khác không? Mình có thể tư vấn thêm về ẩm thực, chỗ ở hay phương tiện di chuyển nha!"
     - text: "Ngoài ra bạn có muốn mình gợi ý thêm chỗ ở hoặc món ngon ở đó không?"
     - text: "Bạn cần mình hỗ trợ thêm gì nữa không (ví dụ: tìm khách sạn, hỏi về ẩm thực,...)?"
-
-  utter_confirm_search:
-    - text: "Ok để mình check lại nhé: bạn muốn tìm tour đi **{destination}** với ngân sách **{budget}** phải không?"
-    - text: "Mình xác nhận lại nha: bạn muốn đi **{destination}**, budget **{budget}**, đúng không nào?"
-
-  utter_cancel_search:
-    - text: "Ok không sao! Bạn muốn đổi thông tin gì? Mình hỏi lại từ đầu nha!"
-    - text: "Rảnh rang mà, bạn chỉnh lại thông tin rồi mình tìm lại cho nha! 😊"
 
   utter_goodbye:
     - text: "Cảm ơn bạn đã sử dụng trợ lý du lịch. Hẹn gặp lại bạn nhé!"

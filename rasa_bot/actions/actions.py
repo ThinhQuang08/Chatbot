@@ -53,7 +53,7 @@ from database.db_connection import get_connection
 ALL_SLOTS = [
     "season", "month", "month_from", "month_to", "budget",
     "time_window", "destination", "category", "departure",
-    "time", "party_size", "tour_name", "duration", "confirmation",
+    "time", "party_size", "tour_name", "duration",
 ]
 
 
@@ -291,13 +291,6 @@ class ValidateTravelForm(FormValidationAction):
             )
             return [SlotSet("destination", None), SlotSet("budget", None),
                     SlotSet("requested_slot", None)]
-
-        # Proactive: nếu form active và destination chưa có, thử extract từ text ngay
-        if not tracker.get_slot("destination"):
-            matched_dest = _match_destination_from_text(user_message)
-            if matched_dest:
-                print(f"[FORM] Proactive fill destination from text: '{matched_dest}'")
-                return [SlotSet("destination", matched_dest)]
 
         return await super().run(dispatcher, tracker, domain)
 
@@ -589,15 +582,6 @@ class ActionSearchTravel(Action):
             SlotSet("departure", departure_value),
             SlotSet("duration", duration_value),
         ]
-
-        confirmation = tracker.get_slot("confirmation")
-        if destination_value and budget_value and confirmation != "done":
-            if confirmation != "pending":
-                dispatcher.utter_message(response="utter_confirm_search")
-                reset_events.append(SlotSet("confirmation", "pending"))
-                return reset_events
-            else:
-                reset_events.append(SlotSet("confirmation", "done"))
 
         try:
             # Truyền câu query đã được bơm thêm thông tin vào hàm search

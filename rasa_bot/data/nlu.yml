@@ -381,6 +381,20 @@ nlu:
       - thôi đi [Vũng Tàu](destination)
       - mà thôi đi [Phú Quốc](destination)
       - thôi cho mình đi [Đà Nẵng](destination)
+      - tôi muốn đi [Nha Trang](destination)
+      - tôi muốn đi [Đà Lạt](destination)
+      - tôi muốn đi [Sapa](destination)
+      - tôi muốn đi [Phú Quốc](destination)
+      - tôi muốn đi [Đà Nẵng](destination)
+      - tôi muốn đi [Vũng Tàu](destination)
+      - tôi muốn đi [Hà Nội](destination)
+      - tôi muốn đi [Hội An](destination)
+      - mình muốn đi [Nha Trang](destination)
+      - mình muốn đi [Đà Lạt](destination)
+      - mình muốn đi [Phú Quốc](destination)
+      - tôi đi [Nha Trang](destination) nha
+      - cho tôi đi [Đà Lạt](destination)
+      - cho mình đi [Phú Quốc](destination)
 
   - intent: ask_location_feature
     examples: |
@@ -445,6 +459,12 @@ nlu:
       - còn [Phú Quốc](destination) thì sao
       - thế còn [Sapa](destination)
       - ở [Vũng Tàu](destination) thì sao
+      - [Nha Trang](destination)
+      - [Hội An](destination)
+      - [Vũng Tàu](destination)
+      - [Hà Nội](destination)
+      - [Đà Nẵng](destination)
+      - [Huế](destination)
 
 synonym:
   - value: "Hồ Chí Minh"
