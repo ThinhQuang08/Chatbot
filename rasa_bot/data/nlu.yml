@@ -499,6 +499,12 @@ synonym:
       - TPHCM
       - SG
       - Hồ Chí Minh
+  
+  - synonym: Phú Quốc
+    examples: |
+      - phú quốc
+      - phu quoc
+      - Phu Quoc
 
   - synonym: sắp tới
     examples: |

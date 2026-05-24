@@ -18,17 +18,8 @@ def load_destination_documents() -> List[Dict[str, object]]:
     cur.execute(
         """
         SELECT
-            id,
-            location,
-            season,
-            description,
-            activities,
-            avg_cost,
-            price_level,
-            season_start,
-            season_end,
-            avg_cost_min,
-            avg_cost_max
+            id, location, season, description, activities, avg_cost,
+            price_level, season_start, season_end, avg_cost_min, avg_cost_max
         FROM destinations
         """
     )
@@ -42,6 +33,12 @@ def load_destination_documents() -> List[Dict[str, object]]:
         dest_id = row[0]
         location, season, description, activities, avg_cost, price_level = row[1:7]
         season_start, season_end, avg_cost_min, avg_cost_max = row[7:]
+
+        # --- THÊM ĐIỀU KIỆN LỌC TẠI ĐÂY ---
+        # Kiểm tra nếu description chứa cụm từ "danh sách Khách sạn" thì bỏ qua không thêm vào Qdrant
+        # if description and "Dữ liệu tự động sinh từ danh sách Khách sạn." in description:
+        #     continue
+        # ----------------------------------
 
         candidate_id = build_destination_candidate_id(
             location=location,
