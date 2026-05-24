@@ -1,4 +1,5 @@
 # services/search_service.py
+import json
 import re
 from typing import List, Optional
 
@@ -6,6 +7,8 @@ from database.db_connection import get_connection
 from services.semantic_service import (
     build_destination_candidate_id,
     build_destination_semantic_text,
+    build_tour_candidate_id,
+    build_tour_semantic_text,
     semantic_scores,
 )
 
@@ -299,6 +302,116 @@ def search_destinations(
         key=lambda item: (-item[0], -item[1], -item[2], -item[3], -item[4], item[5])
     )
     results = [item[6] for item in scored_results]
+
+    cur.close()
+    conn.close()
+
+    return results
+
+
+def search_tours(
+    query: str = "",
+    max_budget: Optional[int] = None,
+    destination: Optional[str] = None,
+    departure: Optional[str] = None,
+):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            t.tour_id,
+            t.tour_name,
+            t.departure,
+            COALESCE(json_agg(d.location) FILTER (WHERE d.location IS NOT NULL), '[]'::json) AS destinations,
+            t.price,
+            t.currency,
+            t.days,
+            t.nights,
+            t.duration_text,
+            t.transportation,
+            t.rag_knowledge_base,
+            t.season_tag
+        FROM tours t
+        LEFT JOIN tour_destinations td ON t.tour_id = td.tour_id
+        LEFT JOIN destinations d ON td.destination_id = d.id
+        GROUP BY t.tour_id
+    """)
+
+    rows = cur.fetchall()
+    query_terms = _extract_query_terms(query)
+    staged_results = []
+
+    for row in rows:
+        (tour_id, tour_name, dep, dest_json, price, currency,
+         days, nights, duration_text, transportation, rag_kb_json, season_tag) = row
+
+        destinations = dest_json if isinstance(dest_json, list) else json.loads(dest_json)
+        rag_kb = rag_kb_json if isinstance(rag_kb_json, dict) else json.loads(rag_kb_json)
+
+        if destination:
+            dest_lower = destination.strip().lower()
+            if not any(dest_lower in d.lower() for d in destinations):
+                continue
+
+        if departure:
+            if departure.strip().lower() not in (dep or "").lower():
+                continue
+
+        if max_budget is not None:
+            if price is None or price > max_budget:
+                continue
+
+        itinerary = rag_kb.get("itinerary", [])
+        overview_desc = itinerary[0].get("description", "") if itinerary else ""
+
+        searchable_text = build_tour_semantic_text(tour_name, destinations, overview_desc)
+
+        if not _text_match(query_terms, searchable_text):
+            continue
+
+        term_score = _count_term_matches(query_terms, searchable_text)
+
+        candidate_id = build_tour_candidate_id(tour_id=tour_id)
+
+        staged_results.append({
+            "candidate_id": candidate_id,
+            "semantic_text": searchable_text,
+            "term_score": term_score,
+            "result": {
+                "tour_id": tour_id,
+                "tour_name": tour_name,
+                "departure": dep,
+                "destinations": destinations,
+                "price": price,
+                "currency": currency,
+                "days": days,
+                "nights": nights,
+                "duration_text": duration_text,
+                "transportation": transportation,
+                "rag_knowledge_base": rag_kb,
+                "season_tag": season_tag,
+            }
+        })
+
+    semantic_map = semantic_scores(
+        query,
+        {item["candidate_id"]: item["semantic_text"] for item in staged_results},
+        collection_name="travel_tours",
+    )
+
+    scored_results = []
+    for item in staged_results:
+        scored_results.append(
+            (
+                item["term_score"],
+                semantic_map.get(item["candidate_id"], 0.0),
+                item["result"],
+            )
+        )
+
+    scored_results.sort(key=lambda item: (-item[0], -item[1]))
+    results = [item[2] for item in scored_results]
 
     cur.close()
     conn.close()

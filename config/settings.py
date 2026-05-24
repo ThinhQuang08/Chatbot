@@ -19,3 +19,4 @@ SEMANTIC_MODEL_NAME = os.getenv(
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "travel_destinations")
+QDRANT_TOUR_COLLECTION = os.getenv("QDRANT_TOUR_COLLECTION", "travel_tours")
