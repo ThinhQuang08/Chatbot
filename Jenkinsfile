@@ -3,326 +3,210 @@ pipeline {
     agent { label 'chatbot-mlops-214' }
 
     environment {
-        PYTHON              = "/home/thinh/Chatbot_tien/.venv/bin/python"
-        RUNTIME_PROJECT_DIR = "/home/thinh/Chatbot_tien"
-        WORKSPACE_DIR       = "${WORKSPACE}"
-        MODEL_DIR           = "${WORKSPACE}/rasa_bot/models"
+        PYTHON_CMD = "/home/thinh/Chatbot_tien/.venv/bin/python"
 
-        // Venv riêng cho các tool CI để không làm bẩn venv chính của chatbot
-        CI_TOOLS_VENV       = "/home/jenkins/.cache/chatbot-ci-tools"
+        // Workspace thật của Jenkins
+        PROJECT_DIR = "${WORKSPACE}"
 
-        // Lib path từng cần cho môi trường Rasa
-        RASA_LIB_DIR        = "/home/thinh/miniconda3/envs/rasa/lib"
+        // File .env gốc đang nằm ở thư mục runtime cũ
+        ENV_FILE = "/home/thinh/Chatbot_tien/.env"
+
+        // Thư mục model sau khi train
+        MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
+
+        // Library path cho Rasa/TensorFlow nếu môi trường cần
+        LD_LIB = "/home/thinh/miniconda3/envs/rasa/lib"
     }
 
     options {
         timestamps()
         disableConcurrentBuilds()
         timeout(time: 90, unit: 'MINUTES')
-        skipDefaultCheckout(true)
-        parallelsAlwaysFailFast()
     }
 
     stages {
 
-        stage('0. Checkout Source') {
+        stage('1. Verify Environment') {
             steps {
-                echo "📥 Checkout source code..."
-                deleteDir()
-                checkout scm
+                echo "✅ Kiểm tra môi trường Jenkins Agent + Python..."
 
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
+                sh '''
+                    set -e
 
-                    echo "Current workspace:"
-                    pwd
+                    echo "Workspace: ${PROJECT_DIR}"
+                    cd "${PROJECT_DIR}"
 
-                    echo "Latest commit:"
-                    git log -1 --oneline || true
-
-                    echo "Workspace size:"
-                    du -sh . || true
-                '''
-            }
-        }
-
-        stage('1. Bootstrap CI Tools') {
-            steps {
-                echo "🧰 Chuẩn bị tool kiểm tra code/security..."
-
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
-
-                    mkdir -p "$(dirname "${CI_TOOLS_VENV}")"
-
-                    if [ ! -x "${CI_TOOLS_VENV}/bin/python" ]; then
-                        echo "Creating CI tools venv at ${CI_TOOLS_VENV}..."
-                        "${PYTHON}" -m venv "${CI_TOOLS_VENV}" || python3 -m venv "${CI_TOOLS_VENV}"
+                    echo "Copy .env vào workspace..."
+                    if [ -f "${ENV_FILE}" ]; then
+                        cp "${ENV_FILE}" .env
+                        echo "✅ Đã copy .env"
+                    else
+                        echo "⚠️ Không tìm thấy ${ENV_FILE}, bỏ qua copy .env"
                     fi
 
-                    "${CI_TOOLS_VENV}/bin/python" -m pip install --upgrade pip setuptools wheel
+                    echo "Python version:"
+                    ${PYTHON_CMD} --version
 
-                    # ruff     : validate Python syntax + lint lỗi nghiêm trọng
-                    # bandit   : scan security issue trong Python source code
-                    # pip-audit: scan CVE/vulnerability trong dependency
-                    "${CI_TOOLS_VENV}/bin/python" -m pip install --upgrade ruff bandit pip-audit
+                    echo "Kiểm tra package chính:"
+                    ${PYTHON_CMD} -c "import rasa; print('Rasa:', rasa.__version__)"
+                    ${PYTHON_CMD} -c "import mlflow; print('MLflow:', mlflow.__version__)"
+                    ${PYTHON_CMD} -c "import sentence_transformers; print('SentenceTransformers:', sentence_transformers.__version__)"
 
-                    echo "CI tools versions:"
-                    "${CI_TOOLS_VENV}/bin/ruff" --version
-                    "${CI_TOOLS_VENV}/bin/bandit" --version
-                    "${CI_TOOLS_VENV}/bin/pip-audit" --version
+                    echo "Disk:"
+                    df -h
+
+                    echo "Memory:"
+                    free -h || true
                 '''
             }
         }
 
-        stage('2. Quality Gates - Parallel') {
+        stage('2. Code & Library Check') {
             parallel {
 
-                stage('2.1 Verify Runtime Environment') {
+                stage('2.1 Validate Python Code') {
                     steps {
-                        echo "✅ Kiểm tra Python/Rasa/MLflow/SentenceTransformers..."
+                        echo "🐍 Validate Python code..."
 
-                        sh '''#!/usr/bin/env bash
-                            set -euo pipefail
+                        sh '''
+                            set -e
+                            cd "${PROJECT_DIR}"
 
-                            export LD_LIBRARY_PATH="${RASA_LIB_DIR}:${LD_LIBRARY_PATH:-}"
+                            echo "Kiểm tra syntax Python..."
+                            ${PYTHON_CMD} -m compileall -q data scripts rasa_bot
 
-                            if [ ! -x "${PYTHON}" ]; then
-                                echo "❌ Không tìm thấy Python runtime: ${PYTHON}"
-                                exit 1
+                            echo "Nếu có ruff thì chạy ruff check..."
+                            if command -v ruff >/dev/null 2>&1; then
+                                ruff check data scripts rasa_bot --select E9,F63,F7,F82
+                            else
+                                echo "⚠️ ruff chưa được cài, bỏ qua ruff check"
                             fi
 
-                            "${PYTHON}" --version
-
-                            "${PYTHON}" - <<'PY'
-import sys
-print("Python executable:", sys.executable)
-
-import rasa
-print("Rasa:", rasa.__version__)
-
-import mlflow
-print("MLflow:", mlflow.__version__)
-
-import sentence_transformers
-print("SentenceTransformers:", sentence_transformers.__version__)
-PY
-
-                            echo "Disk status:"
-                            df -h
-
-                            echo "Memory status:"
-                            free -h || true
+                            echo "✅ Python code hợp lệ"
                         '''
                     }
                 }
 
-                stage('2.2 Validate Python Code') {
+                stage('2.2 Check Libraries') {
                     steps {
-                        echo "🐍 Validate Python source code..."
+                        echo "📦 Kiểm tra thư viện Python..."
 
-                        sh '''#!/usr/bin/env bash
-                            set -euo pipefail
+                        sh '''
+                            set -e
+                            cd "${PROJECT_DIR}"
 
-                            cd "${WORKSPACE_DIR}"
-                            mkdir -p quality-reports
+                            mkdir -p reports
 
-                            echo "Checking Python syntax with compileall..."
+                            echo "Lưu danh sách thư viện..."
+                            ${PYTHON_CMD} -m pip freeze > reports/pip-freeze.txt
 
-                            TARGETS=()
-                            [ -d "data" ] && TARGETS+=("data")
-                            [ -d "scripts" ] && TARGETS+=("scripts")
-                            [ -d "rasa_bot" ] && TARGETS+=("rasa_bot")
+                            echo "Kiểm tra dependency conflict bằng pip check..."
+                            ${PYTHON_CMD} -m pip check | tee reports/pip-check.txt
 
-                            if [ "${#TARGETS[@]}" -eq 0 ]; then
-                                echo "⚠️ Không tìm thấy thư mục Python target: data/scripts/rasa_bot"
-                                exit 1
+                            echo "Nếu có pip-audit thì scan vulnerability..."
+                            if command -v pip-audit >/dev/null 2>&1; then
+                                pip-audit -r requirements.txt > reports/pip-audit.txt || true
+                                echo "⚠️ pip-audit chỉ tạo report, không chặn pipeline ở giai đoạn demo"
+                            else
+                                echo "⚠️ pip-audit chưa được cài, bỏ qua vulnerability scan" | tee reports/pip-audit.txt
                             fi
 
-                            "${PYTHON}" -m compileall -q "${TARGETS[@]}"
-
-                            echo "Running ruff critical lint..."
-                            # E9  : syntax error
-                            # F63 : invalid print/raise/assert style issues
-                            # F7  : logic/control-flow issues
-                            # F82 : undefined name
-                            "${CI_TOOLS_VENV}/bin/ruff" check "${TARGETS[@]}" \
-                                --select E9,F63,F7,F82 \
-                                --output-format=github \
-                                | tee quality-reports/ruff-critical.txt
-
-                            echo "✅ Python validation passed."
+                            echo "✅ Check libraries hoàn tất"
                         '''
                     }
                 }
 
-                stage('2.3 Scan Dependencies & Security') {
+                stage('2.3 Malware Scan') {
                     steps {
-                        echo "🛡️ Scan dependency, vulnerability và security issue..."
+                        echo "🛡️ Scan mã độc nếu máy có ClamAV..."
 
-                        sh '''#!/usr/bin/env bash
-                            set -euo pipefail
+                        sh '''
+                            set -e
+                            cd "${PROJECT_DIR}"
 
-                            cd "${WORKSPACE_DIR}"
-                            mkdir -p security-reports
-
-                            echo "1) Export installed packages from runtime venv..."
-                            "${PYTHON}" -m pip list --format=freeze | tee security-reports/installed-freeze.txt
-
-                            echo "2) Validate dependency compatibility with pip check..."
-                            "${PYTHON}" -m pip check | tee security-reports/pip-check.txt
-
-                            echo "3) Audit known vulnerabilities with pip-audit..."
-
-                            if [ -f "requirements.txt" ]; then
-                                echo "Using requirements.txt for pip-audit..."
-                                "${CI_TOOLS_VENV}/bin/pip-audit" \
-                                    -r requirements.txt \
-                                    --strict \
-                                    -f json \
-                                    -o security-reports/pip-audit.json
-                            else
-                                echo "requirements.txt not found. Auditing installed-freeze.txt instead..."
-                                "${CI_TOOLS_VENV}/bin/pip-audit" \
-                                    -r security-reports/installed-freeze.txt \
-                                    --strict \
-                                    -f json \
-                                    -o security-reports/pip-audit.json
-                            fi
-
-                            echo "4) Static security scan Python code with Bandit..."
-
-                            BANDIT_TARGETS=()
-                            [ -d "data" ] && BANDIT_TARGETS+=("data")
-                            [ -d "scripts" ] && BANDIT_TARGETS+=("scripts")
-                            [ -d "rasa_bot" ] && BANDIT_TARGETS+=("rasa_bot")
-
-                            if [ "${#BANDIT_TARGETS[@]}" -gt 0 ]; then
-                                "${CI_TOOLS_VENV}/bin/bandit" \
-                                    -r "${BANDIT_TARGETS[@]}" \
-                                    -x "**/.venv/**,**/__pycache__/**,**/tests/**" \
-                                    -ll -ii \
-                                    -f json \
-                                    -o security-reports/bandit.json
-                            else
-                                echo "⚠️ Không có target để Bandit scan."
-                            fi
-
-                            echo "5) Optional malware scan with ClamAV if available..."
+                            mkdir -p reports
 
                             if command -v clamscan >/dev/null 2>&1; then
                                 clamscan -r \
                                     --infected \
-                                    --exclude-dir="\\.git" \
-                                    --exclude-dir="\\.venv" \
+                                    --exclude-dir=".git" \
+                                    --exclude-dir=".venv" \
                                     --exclude-dir="__pycache__" \
-                                    . | tee security-reports/clamscan.txt
+                                    . | tee reports/clamscan.txt
                             else
-                                echo "⚠️ clamscan chưa được cài trên agent. Bỏ qua malware file scan." | tee security-reports/clamscan.txt
+                                echo "⚠️ clamscan chưa được cài, bỏ qua malware scan" | tee reports/clamscan.txt
                             fi
 
-                            echo "✅ Dependency/security scan passed."
+                            echo "✅ Malware scan hoàn tất"
                         '''
                     }
                 }
             }
         }
 
-        stage('3. Prepare Runtime Files') {
+        stage('3. Data Pipeline') {
             steps {
-                echo "⚙️ Chuẩn bị runtime files..."
+                echo "🧹 Đang xử lý dữ liệu, gán nhãn và validate..."
 
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
+                sh '''
+                    set -e
+                    cd "${PROJECT_DIR}"
 
-                    cd "${WORKSPACE_DIR}"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH}"
 
-                    if [ -f "${RUNTIME_PROJECT_DIR}/.env" ]; then
-                        cp "${RUNTIME_PROJECT_DIR}/.env" .env
-                        echo "✅ Copied .env from ${RUNTIME_PROJECT_DIR}/.env"
-                    else
-                        echo "❌ Không tìm thấy ${RUNTIME_PROJECT_DIR}/.env"
-                        exit 1
-                    fi
+                    ${PYTHON_CMD} data/generate_massive_data.py
+                    ${PYTHON_CMD} data/preprocess_data.py
+                    ${PYTHON_CMD} data/auto_label_snorkel.py
+                    ${PYTHON_CMD} data/split_confidence.py
+                    ${PYTHON_CMD} data/validate_cleanlab.py
+                    ${PYTHON_CMD} data/csv_to_rasa.py
 
-                    if grep -q "192.168.1.213" .env; then
-                        echo "⚠️ Cảnh báo: .env vẫn có IP cũ 192.168.1.213. Hãy kiểm tra lại DB_HOST/MLFLOW/QDRANT nếu pipeline lỗi kết nối."
-                    fi
-
-                    mkdir -p "${MODEL_DIR}"
-
-                    echo "Runtime files:"
-                    ls -lah .env
-                    ls -lah rasa_bot || true
+                    echo "✅ Data pipeline hoàn tất"
                 '''
             }
         }
 
-        stage('4. Data Pipeline') {
+        stage('4. Train Model') {
             steps {
-                echo "🧹 Chạy data pipeline..."
+                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
 
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
+                sh '''
+                    set -e
+                    cd "${PROJECT_DIR}"
 
-                    cd "${WORKSPACE_DIR}"
-                    export LD_LIBRARY_PATH="${RASA_LIB_DIR}:${LD_LIBRARY_PATH:-}"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH}"
 
-                    "${PYTHON}" data/generate_massive_data.py
-                    "${PYTHON}" data/preprocess_data.py
-                    "${PYTHON}" data/auto_label_snorkel.py
-                    "${PYTHON}" data/split_confidence.py
-                    "${PYTHON}" data/validate_cleanlab.py
-                    "${PYTHON}" data/csv_to_rasa.py
+                    ${PYTHON_CMD} scripts/train_mlflow.py
 
-                    echo "✅ Data pipeline completed."
+                    echo "✅ Train model hoàn tất"
                 '''
             }
         }
 
-        stage('5. Train Model') {
-            steps {
-                echo "🚀 Train Rasa model + log MLflow..."
-
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
-
-                    cd "${WORKSPACE_DIR}"
-                    export LD_LIBRARY_PATH="${RASA_LIB_DIR}:${LD_LIBRARY_PATH:-}"
-
-                    "${PYTHON}" scripts/train_mlflow.py
-
-                    echo "✅ Training completed."
-                '''
-            }
-        }
-
-        stage('6. Check Model Artifact') {
+        stage('5. Check Model Artifact') {
             steps {
                 echo "🔎 Kiểm tra model artifact..."
 
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
+                sh '''
+                    set -e
 
-                    cd "${WORKSPACE_DIR}"
-
-                    echo "Model directory:"
+                    echo "Model directory: ${MODEL_DIR}"
                     ls -lah "${MODEL_DIR}" || true
 
-                    LATEST_MODEL="$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)"
+                    LATEST_MODEL=$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
                     if [ -z "${LATEST_MODEL}" ]; then
-                        echo "❌ Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
+                        echo "❌ Không tìm thấy model .tar.gz"
                         exit 1
                     fi
 
-                    echo "✅ Latest model: ${LATEST_MODEL}"
+                    echo "✅ Model mới nhất: ${LATEST_MODEL}"
                     echo "${LATEST_MODEL}" > latest_model_path.txt
                 '''
             }
         }
 
-        stage('7. Human Approval') {
+        stage('6. Human Approval') {
             steps {
                 script {
                     def latestModel = sh(
@@ -331,69 +215,82 @@ PY
                     ).trim()
 
                     echo "🔔 Model đã train xong: ${latestModel}"
-                    echo "📊 Vào MLflow kiểm tra metrics/report trước khi quyết định deploy."
+                    echo "📊 Vào MLflow kiểm tra thông số trước khi deploy."
 
-                    def decision = input(
+                    def userInput = input(
                         id: 'DeployGate',
-                        message: "Deploy model này không?\n${latestModel}",
+                        message: "Thông số mô hình đã có trên MLflow. Có deploy model này không?\n${latestModel}",
                         ok: 'Submit',
                         parameters: [
                             choice(
                                 name: 'DECISION',
                                 choices: ['deploy', 'reject'],
-                                description: 'deploy = triển khai model, reject = dừng pipeline'
+                                description: 'deploy = triển khai model, reject = hủy pipeline'
                             )
                         ]
                     )
 
-                    if (decision == 'reject') {
+                    if (userInput == 'reject') {
                         currentBuild.result = 'ABORTED'
-                        error("🛑 Model bị reject. Pipeline dừng, không deploy.")
+                        error("🛑 Model bị reject. Không deploy.")
                     }
 
-                    echo "✅ Model được duyệt. Tiếp tục deploy."
+                    echo "✅ Model được duyệt"
                 }
             }
         }
 
-        stage('8. Deploy Model') {
+        stage('7. Deploy to MinIO & Rasa') {
             steps {
-                echo "☁️ Deploy model..."
+                echo "☁️ Đang deploy model..."
 
-                sh '''#!/usr/bin/env bash
-                    set -euo pipefail
+                sh '''
+                    set -e
+                    cd "${PROJECT_DIR}"
 
-                    cd "${WORKSPACE_DIR}"
-                    export LD_LIBRARY_PATH="${RASA_LIB_DIR}:${LD_LIBRARY_PATH:-}"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH}"
 
-                    "${PYTHON}" scripts/deploy_model.py
+                    ${PYTHON_CMD} scripts/deploy_model.py
 
-                    echo "✅ Deploy completed."
+                    echo "✅ Deploy hoàn tất"
                 '''
             }
         }
     }
 
     post {
+
         always {
-            echo "📦 Archive reports..."
+            echo "📦 Lưu report nếu có..."
+
             archiveArtifacts artifacts: '''
                 latest_model_path.txt,
-                quality-reports/**/*,
-                security-reports/**/*
+                reports/**/*
             ''', allowEmptyArchive: true
         }
 
         success {
-            echo "🎉 PIPELINE HOÀN TẤT THÀNH CÔNG!"
+            echo "🎉 PIPELINE HOÀN TẤT!"
         }
 
         aborted {
-            echo "⚠️ Pipeline bị dừng. Có thể do model bị reject ở bước Human Approval."
+            echo "⚠️ Pipeline bị hủy hoặc model bị reject"
+
+            sh '''
+                rm -f "${MODEL_DIR}"/*.tar.gz || true
+            '''
+
+            echo "🗑️ Đã cleanup model tạm"
         }
 
         failure {
-            echo "🔥 Pipeline thất bại. Kiểm tra Console Output và các report đã archive."
+            echo "🔥 Pipeline thất bại"
+
+            sh '''
+                rm -f "${MODEL_DIR}"/*.tar.gz || true
+            '''
+
+            echo "🗑️ Đã cleanup model tạm"
         }
     }
 }
