@@ -937,13 +937,3 @@ synonym:
   - intent: search_accommodation
     examples: |
       - [khách sạn](category) [Nha Trang](destination) giá rẻ không
-
-
-# --- HUMAN REVIEWED DATA (2026-05-24 17:01:15) ---
-  - intent: search_accommodation
-    examples: |
-      - tim cho o gia re
-  - intent: search_destination
-    examples: |
-      - mua nao di [nha trang](destination)
-      - sai gon [check in](activity)

@@ -1,132 +1,230 @@
 {
-  "greet": {
-    "precision": 0.6521739130434783,
+  "reset_slots": {
+    "precision": 1.0,
     "recall": 0.6,
-    "f1-score": 0.6250000000000001,
-    "support": 25,
+    "f1-score": 0.7499999999999999,
+    "support": 5,
     "confused_with": {
-      "affirm": 5,
-      "goodbye": 2
-    }
-  },
-  "bot_challenge": {
-    "precision": 0.6,
-    "recall": 0.6,
-    "f1-score": 0.6,
-    "support": 10,
-    "confused_with": {
-      "inform": 1,
-      "greet": 1
-    }
-  },
-  "search_travel": {
-    "precision": 0.9008264462809917,
-    "recall": 0.8650793650793651,
-    "f1-score": 0.8825910931174089,
-    "support": 126,
-    "confused_with": {
-      "inform": 9,
-      "search_activity": 4
-    }
-  },
-  "inform": {
-    "precision": 0.6730769230769231,
-    "recall": 0.7446808510638298,
-    "f1-score": 0.7070707070707072,
-    "support": 47,
-    "confused_with": {
-      "search_travel": 5,
-      "ask_location_feature": 3
-    }
-  },
-  "search_activity": {
-    "precision": 0.9448818897637795,
-    "recall": 1.0,
-    "f1-score": 0.97165991902834,
-    "support": 120,
-    "confused_with": {}
-  },
-  "ask_tour_info": {
-    "precision": 0.9166666666666666,
-    "recall": 1.0,
-    "f1-score": 0.9565217391304348,
-    "support": 77,
-    "confused_with": {}
-  },
-  "ask_location_feature": {
-    "precision": 0.5714285714285714,
-    "recall": 0.5,
-    "f1-score": 0.5333333333333333,
-    "support": 16,
-    "confused_with": {
-      "search_travel": 4,
-      "inform": 3
-    }
-  },
-  "out_of_scope": {
-    "precision": 0.8620689655172413,
-    "recall": 0.7142857142857143,
-    "f1-score": 0.7812500000000001,
-    "support": 35,
-    "confused_with": {
-      "bot_challenge": 3,
-      "ask_tour_info": 3
+      "greet": 1,
+      "inform": 1
     }
   },
   "search_price": {
-    "precision": 0.979381443298969,
-    "recall": 1.0,
-    "f1-score": 0.9895833333333333,
-    "support": 95,
-    "confused_with": {}
+    "precision": 0.3902439024390244,
+    "recall": 0.42105263157894735,
+    "f1-score": 0.4050632911392405,
+    "support": 38,
+    "confused_with": {
+      "search_travel": 10,
+      "search_destination": 3
+    }
+  },
+  "thanks": {
+    "precision": 0.7058823529411765,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.8000000000000002,
+    "support": 13,
+    "confused_with": {
+      "goodbye": 1
+    }
+  },
+  "inform": {
+    "precision": 0.5932203389830508,
+    "recall": 0.625,
+    "f1-score": 0.6086956521739131,
+    "support": 56,
+    "confused_with": {
+      "search_price": 5,
+      "ask_location_feature": 3
+    }
+  },
+  "search_accommodation": {
+    "precision": 0.47619047619047616,
+    "recall": 0.5,
+    "f1-score": 0.4878048780487805,
+    "support": 40,
+    "confused_with": {
+      "ask_location_feature": 14,
+      "search_destination": 2
+    }
+  },
+  "ask_weather_timing": {
+    "precision": 0.5384615384615384,
+    "recall": 0.7,
+    "f1-score": 0.608695652173913,
+    "support": 10,
+    "confused_with": {
+      "search_destination": 2,
+      "ask_location_feature": 1
+    }
   },
   "deny": {
+    "precision": 0.46153846153846156,
+    "recall": 0.3,
+    "f1-score": 0.3636363636363637,
+    "support": 20,
+    "confused_with": {
+      "inform": 7,
+      "affirm": 2
+    }
+  },
+  "ask_location_feature": {
+    "precision": 0.22727272727272727,
+    "recall": 0.2857142857142857,
+    "f1-score": 0.2531645569620253,
+    "support": 35,
+    "confused_with": {
+      "search_accommodation": 11,
+      "search_activity": 3
+    }
+  },
+  "ask_itinerary": {
+    "precision": 0.8666666666666667,
+    "recall": 0.7222222222222222,
+    "f1-score": 0.7878787878787877,
+    "support": 18,
+    "confused_with": {
+      "search_destination": 2,
+      "ask_tour_info": 2
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.75,
+    "recall": 0.6,
+    "f1-score": 0.6666666666666665,
+    "support": 10,
+    "confused_with": {
+      "greet": 1,
+      "ask_transportation": 1
+    }
+  },
+  "greet": {
+    "precision": 0.7894736842105263,
+    "recall": 0.6,
+    "f1-score": 0.6818181818181819,
+    "support": 25,
+    "confused_with": {
+      "goodbye": 3,
+      "ask_location_feature": 2
+    }
+  },
+  "out_of_scope": {
+    "precision": 0.3333333333333333,
+    "recall": 0.125,
+    "f1-score": 0.18181818181818182,
+    "support": 16,
+    "confused_with": {
+      "search_price": 4,
+      "ask_location_feature": 3
+    }
+  },
+  "ask_policy_booking": {
+    "precision": 0.46153846153846156,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.3870967741935484,
+    "support": 18,
+    "confused_with": {
+      "ask_location_feature": 3,
+      "search_accommodation": 3
+    }
+  },
+  "search_food_dining": {
+    "precision": 0.7894736842105263,
+    "recall": 0.75,
+    "f1-score": 0.7692307692307692,
+    "support": 20,
+    "confused_with": {
+      "ask_location_feature": 3,
+      "thanks": 1
+    }
+  },
+  "search_destination": {
+    "precision": 0.4,
+    "recall": 0.5,
+    "f1-score": 0.4444444444444445,
+    "support": 32,
+    "confused_with": {
+      "search_travel": 7,
+      "ask_weather_timing": 2
+    }
+  },
+  "ask_transportation": {
+    "precision": 0.625,
+    "recall": 0.5882352941176471,
+    "f1-score": 0.6060606060606061,
+    "support": 17,
+    "confused_with": {
+      "search_price": 1,
+      "search_destination": 1
+    }
+  },
+  "affirm": {
+    "precision": 0.5555555555555556,
+    "recall": 0.4166666666666667,
+    "f1-score": 0.4761904761904762,
+    "support": 24,
+    "confused_with": {
+      "inform": 6,
+      "deny": 2
+    }
+  },
+  "search_activity": {
+    "precision": 0.7575757575757576,
+    "recall": 0.6944444444444444,
+    "f1-score": 0.7246376811594203,
+    "support": 36,
+    "confused_with": {
+      "search_price": 2,
+      "search_food_dining": 2
+    }
+  },
+  "goodbye": {
     "precision": 0.5882352941176471,
     "recall": 0.5,
     "f1-score": 0.5405405405405405,
     "support": 20,
     "confused_with": {
       "affirm": 4,
-      "greet": 2
+      "inform": 2
     }
   },
-  "goodbye": {
-    "precision": 0.6875,
-    "recall": 0.55,
-    "f1-score": 0.6111111111111112,
-    "support": 20,
-    "confused_with": {
-      "deny": 4,
-      "out_of_scope": 3
-    }
-  },
-  "affirm": {
-    "precision": 0.48,
-    "recall": 0.5,
-    "f1-score": 0.4897959183673469,
+  "ask_tour_info": {
+    "precision": 0.6060606060606061,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.7017543859649124,
     "support": 24,
     "confused_with": {
-      "greet": 3,
-      "goodbye": 3
+      "search_travel": 2,
+      "ask_location_feature": 1
     }
   },
-  "accuracy": 0.8504065040650407,
+  "search_travel": {
+    "precision": 0.32558139534883723,
+    "recall": 0.4,
+    "f1-score": 0.35897435897435903,
+    "support": 35,
+    "confused_with": {
+      "search_destination": 7,
+      "search_price": 6
+    }
+  },
+  "accuracy": 0.529296875,
   "macro avg": {
-    "precision": 0.7380200094328556,
-    "recall": 0.7145038275357424,
-    "f1-score": 0.7240381412527132,
-    "support": 615
+    "precision": 0.5829192493544939,
+    "recall": 0.5437180540232288,
+    "f1-score": 0.5525796309083395,
+    "support": 512
   },
   "weighted avg": {
-    "precision": 0.846834909721642,
-    "recall": 0.8504065040650407,
-    "f1-score": 0.847139512577903,
-    "support": 615
+    "precision": 0.5426709732091698,
+    "recall": 0.529296875,
+    "f1-score": 0.5288577865857084,
+    "support": 512
   },
   "micro avg": {
-    "precision": 0.8504065040650407,
-    "recall": 0.8504065040650407,
-    "f1-score": 0.8504065040650407,
-    "support": 615
+    "precision": 0.529296875,
+    "recall": 0.529296875,
+    "f1-score": 0.529296875,
+    "support": 512
   }
 }
