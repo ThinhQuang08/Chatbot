@@ -153,8 +153,7 @@ pipeline {
                     cd "${PROJECT_DIR}"
 
                     export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH}"
-
-                    ${PYTHON_CMD} data/generate_massive_data.py
+                    
                     ${PYTHON_CMD} data/preprocess_data.py
                     ${PYTHON_CMD} data/auto_label_snorkel.py
                     ${PYTHON_CMD} data/split_confidence.py
