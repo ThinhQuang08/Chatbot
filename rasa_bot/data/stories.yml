@@ -91,7 +91,7 @@ stories:
 
 - story: Hỏi chỗ ở thiếu địa điểm lúc đầu
   steps:
-  - intent: ask_location_feature
+  - intent: search_accommodation
   - action: action_search_tour_info
   - intent: inform
   - action: action_search_tour_info
@@ -102,12 +102,26 @@ stories:
   - intent: inform
   - action: action_search_tour_info
 
-- story: Hỏi hoạt động rồi bổ sung địa điểm
+- story: Hỏi về địa điểm rồi bổ sung thông tin
   steps:
-  - intent: search_activity
+  - intent: ask_location_feature
   - action: action_ai_consultant
   - intent: inform
   - action: action_ai_consultant
+
+- story: Hỏi thời tiết rồi hỏi thêm
+  steps:
+  - intent: ask_weather_timing
+  - action: action_ai_consultant
+  - intent: inform
+  - action: action_ai_consultant
+
+- story: Hỏi hoạt động rồi bổ sung địa điểm
+  steps:
+  - intent: search_activity
+  - action: action_search_activity
+  - intent: inform
+  - action: action_search_activity
 
 - story: Hỏi ẩm thực rồi bổ sung địa điểm
   steps:

@@ -80,6 +80,41 @@ def _first_valid_category(entities):
     return None
 
 
+CATEGORY_KEYWORDS = {
+    "resort": "resort", "nghỉ dưỡng": "resort", "khu nghỉ dưỡng": "resort",
+    "homestay": "homestay",
+    "khách sạn": "hotel", "hotel": "hotel",
+    "nhà nghỉ": "motel", "motel": "motel",
+    "villa": "villa", "biệt thự": "villa",
+    "chỗ ở": "hotel", "chỗ nghỉ": "hotel", "phòng": "hotel",
+}
+
+
+def _match_category_from_text(text: str) -> Optional[str]:
+    text_lower = text.lower()
+    for keyword, value in CATEGORY_KEYWORDS.items():
+        if keyword in text_lower:
+            return value
+    return None
+
+
+def _match_destination_from_text(text: str) -> Optional[str]:
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT location FROM destinations")
+        known_locations = [row[0].lower() for row in cur.fetchall()]
+        cur.close()
+        conn.close()
+        text_lower = text.lower()
+        for loc in sorted(known_locations, key=len, reverse=True):
+            if loc in text_lower:
+                return loc
+    except Exception as e:
+        print(f"[MATCH DESTINATION] DB error: {e}")
+    return None
+
+
 def _log_action(
     name: str,
     user_message: str,
@@ -231,7 +266,6 @@ def parse_month_range(
 
 class ValidateTravelForm(FormValidationAction):
     def name(self) -> Text:
-        # Tên này bắt buộc phải có tiền tố validate_ + tên form của bạn
         return "validate_travel_form"
 
     async def run(
@@ -248,7 +282,6 @@ class ValidateTravelForm(FormValidationAction):
 
         _log_action("FORM VALIDATION", user_message, intent, entities, tracker.slots)
 
-        # 2. Kiểm tra nếu khách hỏi câu không liên quan → thoát form
         skip_intents = {"out_of_scope", "bot_challenge", "goodbye", "search_food_dining",
                         "ask_transportation", "ask_policy_booking", "ask_itinerary",
                         "search_activity", "search_accommodation", "ask_location_feature"}
@@ -258,6 +291,13 @@ class ValidateTravelForm(FormValidationAction):
             )
             return [SlotSet("destination", None), SlotSet("budget", None),
                     SlotSet("requested_slot", None)]
+
+        # Proactive: nếu form active và destination chưa có, thử extract từ text ngay
+        if not tracker.get_slot("destination"):
+            matched_dest = _match_destination_from_text(user_message)
+            if matched_dest:
+                print(f"[FORM] Proactive fill destination from text: '{matched_dest}'")
+                return [SlotSet("destination", matched_dest)]
 
         return await super().run(dispatcher, tracker, domain)
 
@@ -356,11 +396,16 @@ class ActionSearchTourInfo(Action):
 
         # ƯU TIÊN 1: Dùng từ khóa mới (nếu có). ƯU TIÊN 2: Dùng trí nhớ cũ (Slot)
         destination = new_dest or tracker.get_slot("destination")
+        # Fallback: text-match destination từ user message
+        if not destination:
+            destination = _match_destination_from_text(user_message)
         # Nếu slot cũ chứa từ noise thì bỏ qua, dùng fallback
         old_cat = tracker.get_slot("category")
         if old_cat and str(old_cat).strip().lower() in SKIP_CATEGORY_WORDS:
             old_cat = None
-        category = new_cat or old_cat or "khách sạn"
+        # Thêm text-matching fallback cho category (nếu NLU không extract được)
+        text_cat = _match_category_from_text(user_message) if not (new_cat or old_cat) else None
+        category = new_cat or old_cat or text_cat or "khách sạn"
 
         print(f"→ Tìm: {category} tại {destination}")
         print("=" * 52 + "\n")
@@ -476,6 +521,18 @@ class ActionSearchTravel(Action):
 
         _log_action("ACTION SEARCH TRAVEL", user_message, predicted_intent, latest_entities, tracker.slots)
 
+        # GUARD: Intent out_of_scope → form bị hủy, không search
+        if predicted_intent in {"out_of_scope", "bot_challenge"}:
+            print(f"⚠️ Bỏ qua action_search_travel vì intent='{predicted_intent}' (form bị hủy)")
+            return []
+
+        # GUARD: "hỏi thêm" không có destination → không search
+        if predicted_intent == "inform" and "hỏi thêm" in user_message:
+            dispatcher.utter_message(
+                text="Bạn muốn hỏi thêm gì về điểm đến hay tour nào không? Mình sẵn sàng tư vấn! 😊"
+            )
+            return []
+
         # 1. TÓM GỌN TẤT CẢ CÁC ENTITY MÀ RASA BẮT ĐƯỢC
 
         # Dùng Dictionary Comprehension để gom toàn bộ các entity vừa bắt được thành 1 cục dễ nhìn
@@ -574,7 +631,10 @@ class ActionSearchTravel(Action):
                 msg += f" Bạn thử {' hoặc '.join(suggestions)} nhé!"
             dispatcher.utter_message(text=msg)
             return reset_events
-        if results:
+
+        # Chỉ set destination từ top result khi có search intent thực sự (tránh slot bleed)
+        SEARCH_INTENTS = {"search_travel", "search_destination", "search_price"}
+        if predicted_intent in SEARCH_INTENTS and results:
             top_location = results[0].get("location")
             if top_location:
                 reset_events.append(SlotSet("destination", top_location))
@@ -650,13 +710,25 @@ class ActionSearchTour(Action):
         new_entities = {e.get("entity"): e.get("value") for e in latest_entities}
 
         destination = new_entities.get("destination") or tracker.get_slot("destination")
+        # Fallback: text-match destination từ user message
+        if not destination:
+            destination = _match_destination_from_text(user_message)
         budget_value = new_entities.get("budget") or tracker.get_slot("budget")
         departure_value = new_entities.get("departure") or tracker.get_slot("departure")
         category_value = new_entities.get("category") or tracker.get_slot("category")
+        duration_value = new_entities.get("duration") or tracker.get_slot("duration")
 
         max_budget = parse_budget_vnd(budget_value)
+
+        # Parse duration → số ngày
+        duration_days = None
+        if duration_value:
+            match = re.search(r"(\d+)\s*(?:ngày|ngay)", str(duration_value))
+            if match:
+                duration_days = int(match.group(1))
+
         print(f"→ PARSED BUDGET: {max_budget} VND")
-        print(f"→ DESTINATION: {destination} | DEPARTURE: {departure_value} | CATEGORY: {category_value}")
+        print(f"→ DESTINATION: {destination} | DEPARTURE: {departure_value} | CATEGORY: {category_value} | DURATION: {duration_days} ngày")
         print("=" * 52 + "\n")
 
         reset_events = [
@@ -664,6 +736,7 @@ class ActionSearchTour(Action):
             SlotSet("budget", budget_value),
             SlotSet("departure", departure_value),
             SlotSet("category", category_value),
+            SlotSet("duration", duration_value),
         ]
 
         try:
@@ -673,6 +746,7 @@ class ActionSearchTour(Action):
                 max_budget=max_budget,
                 destination=destination,
                 departure=departure_value,
+                duration_days=duration_days,
             )
             print(f"[QUERY DB] {len(results)} tour(s) found.")
         except Exception as e:
@@ -735,6 +809,78 @@ class ActionSearchTour(Action):
         return reset_events
 
 
+class ActionSearchActivity(Action):
+    def name(self) -> str:
+        return "action_search_activity"
+
+    def run(self, dispatcher, tracker, domain):
+        user_message = tracker.latest_message.get("text", "")
+        intent_name = tracker.latest_message.get("intent", {}).get("name", "unknown")
+        latest_entities = tracker.latest_message.get("entities", [])
+
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset
+
+        _log_action("ACTION SEARCH ACTIVITY", user_message, intent_name, latest_entities, tracker.slots)
+
+        destination = next(
+            (e.get("value") for e in latest_entities if e.get("entity") == "destination"),
+            None,
+        ) or tracker.get_slot("destination")
+        if not destination:
+            destination = _match_destination_from_text(user_message)
+
+        results = []
+        try:
+            results = search_destinations(query=user_message, destination=destination)
+        except Exception as e:
+            print(f"[DB LOG] Lỗi truy xuất DB: {e}")
+
+        if results:
+            query_words = set(re.findall(r"[\wÀ-ỹ]{2,}", user_message.lower()))
+            query_words -= {"đi", "ở", "đâu", "nào", "có", "không", "và", "là", "cho",
+                            "tôi", "mình", "bạn", "bot", "nha", "nhé", "với", "hay",
+                            "thì", "mà", "cứ", "được", "ra", "lắm", "quá"}
+            activity_results = []
+            for r in results:
+                activities = (r.get("activities", "") or "").lower()
+                if query_words and any(w in activities for w in query_words):
+                    activity_results.append(r)
+                elif not query_words and destination:
+                    activity_results.append(r)
+
+            if activity_results:
+                response = "🎯 **Mình tìm thấy các địa điểm có hoạt động này:**\n\n"
+                for r in activity_results[:3]:
+                    response += f"📍 **{r.get('location')}**\n"
+                    acts = r.get("activities", "")
+                    if acts:
+                        response += f"  🎯 {acts[:200]}\n"
+                    desc = r.get("description", "")
+                    if desc:
+                        response += f"  {desc[:200]}\n"
+                    response += "\n"
+                dispatcher.utter_message(text=response.strip())
+                dispatcher.utter_message(response="utter_suggest_more")
+                print(f"→ Tìm thấy {len(activity_results)} địa điểm có hoạt động phù hợp")
+                return []
+
+        print("→ Không tìm thấy kết quả DB, fallback Gemini...")
+        try:
+            response = generate_genz_ai_consultant(user_message, "search_activity", [])
+            dispatcher.utter_message(text=response)
+            dispatcher.utter_message(response="utter_suggest_more")
+        except Exception as e:
+            print(f"[ERROR] AI Consultant failed: {e}")
+            dispatcher.utter_message(
+                text="Xin lỗi, mình chưa tìm thấy hoạt động phù hợp trong hệ thống."
+            )
+
+        print("====================================================\n")
+        return [SlotSet("destination", destination)]
+
+
 class ActionAIConsultant(Action):
     def name(self) -> Text:
         return "action_ai_consultant"
@@ -761,6 +907,9 @@ class ActionAIConsultant(Action):
             None,
         )
         destination = new_dest or tracker.get_slot("destination")
+        # Fallback: text-match destination từ user message nếu NLU không extract được
+        if not destination:
+            destination = _match_destination_from_text(user_message)
 
         db_context = []
         if destination:

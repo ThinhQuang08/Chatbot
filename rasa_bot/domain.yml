@@ -159,6 +159,7 @@ actions:
   - validate_travel_form
   - action_search_travel
   - action_search_tour
+  - action_search_activity
   - action_ai_consultant
   - action_search_tour_info
   - action_reset_slots

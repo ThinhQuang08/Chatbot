@@ -74,8 +74,6 @@ nlu:
       - okela
       - đúng ý mình
       - thế cũng được
-      - chuẩn
-      - chốt luôn
       - tuyệt vời
       - đỉnh quá
       - xịn xò
@@ -168,7 +166,7 @@ nlu:
       - đi [trekking](activity) vào [tháng 10](month) thì nên đi đâu
       - nơi nào có thể [cắm trại](activity)
       - có chỗ nào đi thuyền không
-      - tôi muốn săn mây
+      - tôi muốn [săn mây](activity)
       - gợi ý chỗ [leo núi](activity)
       - [đi trekking](activity)
       - tôi muốn [trekking](activity)
@@ -184,6 +182,12 @@ nlu:
       - phú quốc có [lặn ngắm san hô](activity) không
       - chi phí đi leo núi [tháng 10](month) là bao nhiêu
       - đi leo núi [tháng 10](month) hết bao nhiêu tiền
+      - đi [săn mây](activity) ở đâu
+      - đi [lặn san hô](activity) ở đâu
+      - đi [tắm biển](activity) ở đâu
+      - đi [cắm trại](activity) ở đâu
+      - đi [trekking](activity) ở đâu
+      - đi [leo núi](activity) ở đâu
 
   - intent: search_accommodation
     examples: |
@@ -371,6 +375,12 @@ nlu:
       - tầm [2 triệu](budget) đi [Vũng Tàu](destination) [2 ngày 1 đêm](duration)
       - du lịch quanh [Hà Nội](destination) ngân sách [1 triệu](budget)
       - muốn đi [Đà Nẵng](destination) [tháng 5](month) với ngân sách [6 củ](budget)
+      - mà thôi cho tôi đi [Đà Lạt](destination)
+      - thôi cho tôi đi [Nha Trang](destination)
+      - thôi thì cho mình đi [Sapa](destination) vậy
+      - thôi đi [Vũng Tàu](destination)
+      - mà thôi đi [Phú Quốc](destination)
+      - thôi cho mình đi [Đà Nẵng](destination)
 
   - intent: ask_location_feature
     examples: |
@@ -427,6 +437,14 @@ nlu:
       - [10tr](budget)
       - khởi hành từ [Sài Gòn](departure)
       - [xe khách](transportation)
+      - cho tôi hỏi thêm
+      - mà cho tôi hỏi thêm
+      - hỏi thêm xíu
+      - cho hỏi thêm xíu nha
+      - ở [Đà Lạt](destination) thì sao
+      - còn [Phú Quốc](destination) thì sao
+      - thế còn [Sapa](destination)
+      - ở [Vũng Tàu](destination) thì sao
 
 synonym:
   - value: "Hồ Chí Minh"
@@ -943,3 +961,21 @@ synonym:
   - intent: search_accommodation
     examples: |
       - [khách sạn](category) [Nha Trang](destination) giá rẻ không
+      - khách sạn
+      - hỏi khách sạn
+      - cho hỏi khách sạn
+      - tìm khách sạn
+      - homestay
+      - hỏi homestay
+      - resort
+      - hỏi resort
+      - nhà nghỉ
+      - tìm homestay
+      - cho xem khách sạn
+      - khách sạn ở đó
+      - khách sạn tại [Đà Lạt](destination)
+      - homestay [Sapa](destination)
+      - resort [Nha Trang](destination)
+      - [khách sạn](category) ở [Vũng Tàu](destination)
+      - [homestay](category) [Đà Lạt](destination)
+      - [resort](category) [Phú Quốc](destination)

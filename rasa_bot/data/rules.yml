@@ -19,7 +19,7 @@ rules:
   - rule: Trả lời về tính năng, dịch vụ của địa điểm
     steps:
       - intent: ask_location_feature
-      - action: action_search_tour_info
+      - action: action_ai_consultant
 
   - rule: Tìm kiếm chỗ ở khách sạn
     steps:
@@ -49,7 +49,7 @@ rules:
   - rule: Xử lý tìm kiếm hoạt động
     steps:
       - intent: search_activity
-      - action: action_ai_consultant
+      - action: action_search_activity
 
   - rule: Xử lý tìm kiếm điểm đến
     steps:
@@ -84,6 +84,7 @@ rules:
       - action: action_deactivate_loop
       - active_loop: null
       - action: utter_cancel_form
+      - action: action_reset_slots
 
   - rule: Hủy form mượt khi vẫy tay chào
     condition:
@@ -93,6 +94,7 @@ rules:
       - action: action_deactivate_loop
       - active_loop: null
       - action: utter_cancel_form
+      - action: action_reset_slots
 
   - rule: 1. Kích hoạt Form khi khách muốn tìm tour
     steps:
