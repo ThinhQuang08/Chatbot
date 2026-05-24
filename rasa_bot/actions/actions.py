@@ -38,16 +38,75 @@ from rasa_sdk.forms import FormValidationAction
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from services.search_service import search_destinations
+from services.search_service import search_destinations, search_tours
 from services.ai_response_service import (
     generate_grounded_ai_response,
     generate_genz_ai_consultant,
+    generate_tour_ai_response,
 )
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 from database.db_connection import get_connection
+
+ALL_SLOTS = [
+    "season", "month", "month_from", "month_to", "budget",
+    "time_window", "destination", "category", "departure",
+    "time", "party_size", "tour_name", "duration", "confirmation",
+]
+
+
+def _reset_on_command(dispatcher, tracker):
+    """Nếu user gõ 'reset slot' thì xoá toàn bộ slots và return events."""
+    user_message = (tracker.latest_message.get("text") or "").strip().lower()
+    if user_message == "reset slot":
+        dispatcher.utter_message(
+            text="🔄 Đã reset toàn bộ dữ liệu phiên làm việc! Bạn có thể hỏi lại nhé."
+        )
+        return [SlotSet(slot, None) for slot in ALL_SLOTS]
+    return None
+
+
+SKIP_CATEGORY_WORDS = {"sao", "thêm", "đi", "nhé", "nha", "ní", "dợ", "bot", "vậy", "thì"}
+
+
+def _first_valid_category(entities):
+    for e in entities:
+        if e.get("entity") == "category":
+            val = str(e.get("value", "")).strip().lower()
+            if val not in SKIP_CATEGORY_WORDS:
+                return val
+    return None
+
+
+def _log_action(
+    name: str,
+    user_message: str,
+    intent: str,
+    entities: list,
+    slots: dict,
+):
+    print(f"\n[{name} LOG] " + "=" * 30, flush=True)
+    print(f"USER NÓI : '{user_message}'")
+    print(f"INTENT   : {intent}")
+    print()
+    print("ENTITIES BẮT ĐƯỢC:")
+    if not entities:
+        print("   -> [Trống]")
+    else:
+        for e in entities:
+            print(f"   -> {e.get('entity')}: '{e.get('value')}'  [{e.get('extractor')}]")
+    active = {k: v for k, v in slots.items() if v is not None}
+    print()
+    print("SLOTS ĐANG GIỮ:")
+    if not active:
+        print("   -> [Trống]")
+    else:
+        for k, v in active.items():
+            print(f"   -> {k}: '{v}'")
+    print("=" * 52 + "\n")
+
 
 SEASON_TO_MONTHS = {
     "mùa xuân": (1, 3),
@@ -179,38 +238,56 @@ class ValidateTravelForm(FormValidationAction):
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict
     ) -> List[Dict[Text, Any]]:
 
-        # 1. LẤY DỮ LIỆU ĐỂ IN RA MÀN HÌNH TERMINAL
         user_message = tracker.latest_message.get("text", "")
         intent = tracker.latest_message.get("intent", {}).get("name")
         entities = tracker.latest_message.get("entities", [])
 
-        print("\n[FORM VALIDATION LOG] " + "=" * 30, flush=True)
-        print(f"USER NÓI: '{user_message}'")
-        print(f"INTENT CHÍNH: {intent}")
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset + [SlotSet("requested_slot", None)]
 
-        print("ENTITIES VỪA BẮT ĐƯỢC:")
-        if not entities:
-            print("   -> [Trống]")
-        else:
-            for e in entities:
-                print(
-                    f"   -> {e.get('entity')}: '{e.get('value')}' ({e.get('extractor')})"
-                )
+        _log_action("FORM VALIDATION", user_message, intent, entities, tracker.slots)
 
-        print("TRÍ NHỚ (SLOTS) ĐANG GIỮ:")
-        active_slots = {k: v for k, v in tracker.slots.items() if v is not None}
-        if not active_slots:
-            print("   -> [Trống]")
-        else:
-            for k, v in active_slots.items():
-                print(f"   -> {k}: '{v}'")
-        print("=" * 52 + "\n")
-
-        # 2. Xử lý các câu hỏi đặc biệt, đẩy qua cho LLM thay vì chạy Form nếu câu thiếu context Tour
-        # Vì đây là Form Validation, ta có thể inject thêm logic check từ chối điền form
-        # (Chưa implement, tạm thời để Rasa Form loop)
+        # 2. Kiểm tra nếu khách hỏi câu không liên quan → thoát form
+        skip_intents = {"out_of_scope", "bot_challenge", "goodbye", "search_food_dining",
+                        "ask_transportation", "ask_policy_booking", "ask_itinerary",
+                        "search_activity", "search_accommodation", "ask_location_feature"}
+        if intent in skip_intents:
+            dispatcher.utter_message(
+                text="Có vẻ bạn muốn hỏi chuyện khác trước. Khi nào cần tìm tour, cứ gọi mình nha! 😊"
+            )
+            return [SlotSet("destination", None), SlotSet("budget", None),
+                    SlotSet("requested_slot", None)]
 
         return await super().run(dispatcher, tracker, domain)
+
+    def validate_destination(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if slot_value:
+            return {"destination": slot_value}
+
+        user_text = tracker.latest_message.get("text", "")
+        try:
+            conn = get_connection()
+            cur = conn.cursor()
+            cur.execute("SELECT location FROM destinations")
+            known_locations = [row[0].lower() for row in cur.fetchall()]
+            cur.close()
+            conn.close()
+
+            user_lower = user_text.lower()
+            for loc in sorted(known_locations, key=len, reverse=True):
+                if loc in user_lower:
+                    return {"destination": loc}
+        except Exception as e:
+            print(f"[VALIDATE DESTINATION] DB error: {e}")
+
+        return {"destination": None}
 
     def validate_budget(
         self,
@@ -258,9 +335,15 @@ class ActionSearchTourInfo(Action):
         return "action_search_tour_info"
 
     def run(self, dispatcher, tracker, domain):
+        user_message = (tracker.latest_message.get("text") or "").lower()
         latest_entities = tracker.latest_message.get("entities", [])
 
-        # Lục tìm xem trong câu khách VỪA NÓI có địa điểm hay loại hình mới không?
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset
+
+        _log_action("ACTION SEARCH TOUR INFO", user_message, tracker.latest_message.get("intent", {}).get("name"), latest_entities, tracker.slots)
+
         new_dest = next(
             (
                 e.get("value")
@@ -269,17 +352,18 @@ class ActionSearchTourInfo(Action):
             ),
             None,
         )
-        new_cat = next(
-            (e.get("value") for e in latest_entities if e.get("entity") == "category"),
-            None,
-        )
+        new_cat = _first_valid_category(latest_entities)
 
         # ƯU TIÊN 1: Dùng từ khóa mới (nếu có). ƯU TIÊN 2: Dùng trí nhớ cũ (Slot)
         destination = new_dest or tracker.get_slot("destination")
-        category = new_cat or tracker.get_slot("category") or "khách sạn"
+        # Nếu slot cũ chứa từ noise thì bỏ qua, dùng fallback
+        old_cat = tracker.get_slot("category")
+        if old_cat and str(old_cat).strip().lower() in SKIP_CATEGORY_WORDS:
+            old_cat = None
+        category = new_cat or old_cat or "khách sạn"
 
-        print(f"\n[ACTION ACCOMMODATION LOG] ====================")
-        print(f"Khách đang tìm: {category} tại {destination}")
+        print(f"→ Tìm: {category} tại {destination}")
+        print("=" * 52 + "\n")
 
         if not destination:
             dispatcher.utter_message(
@@ -361,6 +445,7 @@ class ActionSearchTourInfo(Action):
                 response_text += "\n"
 
             dispatcher.utter_message(text=response_text.strip())
+            dispatcher.utter_message(response="utter_suggest_more")
 
         except Exception as e:
             print(f"[ERROR] Database query failed: {e}")
@@ -385,27 +470,11 @@ class ActionSearchTravel(Action):
         latest_entities = tracker.latest_message.get("entities", [])
         predicted_intent = tracker.latest_message.get("intent", {}).get("name")
 
-        print("\n[ACTION SEARCH TRAVEL LOG] " + "=" * 25)
-        print(f"USER NÓI: '{user_message}'")
-        print(f"INTENT NHẬN DIỆN: {predicted_intent}")
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset
 
-        print("ENTITIES BẮT ĐƯỢC TỪ CÂU NÀY:")
-        if not latest_entities:
-            print("   -> [Trống]")
-        else:
-            for e in latest_entities:
-                print(
-                    f"   -> {e.get('entity')}: '{e.get('value')}' ({e.get('extractor')})"
-                )
-
-        print("TRÍ NHỚ (SLOTS) ĐANG CÓ:")
-        active_slots = {k: v for k, v in tracker.slots.items() if v is not None}
-        if not active_slots:
-            print("   -> [Trống]")
-        else:
-            for k, v in active_slots.items():
-                print(f"   -> {k}: '{v}'")
-        print("=" * 52 + "\n")
+        _log_action("ACTION SEARCH TRAVEL", user_message, predicted_intent, latest_entities, tracker.slots)
 
         # 1. TÓM GỌN TẤT CẢ CÁC ENTITY MÀ RASA BẮT ĐƯỢC
 
@@ -428,7 +497,10 @@ class ActionSearchTravel(Action):
             "time_window"
         )
         departure_value = new_entities.get("departure") or tracker.get_slot("departure")
-        category_value = new_entities.get("category") or tracker.get_slot("category")
+        category_value = (
+            _first_valid_category(latest_entities)
+            or tracker.get_slot("category")
+        )
         duration_value = new_entities.get("duration") or tracker.get_slot("duration")
 
         # 2. CHUẨN HÓA DỮ LIỆU
@@ -461,6 +533,15 @@ class ActionSearchTravel(Action):
             SlotSet("duration", duration_value),
         ]
 
+        confirmation = tracker.get_slot("confirmation")
+        if destination_value and budget_value and confirmation != "done":
+            if confirmation != "pending":
+                dispatcher.utter_message(response="utter_confirm_search")
+                reset_events.append(SlotSet("confirmation", "pending"))
+                return reset_events
+            else:
+                reset_events.append(SlotSet("confirmation", "done"))
+
         try:
             # Truyền câu query đã được bơm thêm thông tin vào hàm search
             results = search_destinations(
@@ -478,9 +559,20 @@ class ActionSearchTravel(Action):
             return []
 
         if not results:
-            dispatcher.utter_message(
-                text="Xin lỗi, tôi chưa tìm thấy địa điểm/tour nào hoàn toàn khớp với yêu cầu của bạn."
-            )
+            suggestions = []
+            if destination_value:
+                suggestions.append("thử một địa điểm khác")
+            if max_budget is not None:
+                suggestions.append("tăng ngân sách lên một chút")
+            if month_start is not None or month_end is not None:
+                suggestions.append("đổi thời gian đi")
+            if not suggestions:
+                suggestions.append("cho mình thêm thông tin để gợi ý chuẩn hơn")
+
+            msg = "Mình đã lục tung database nhưng chưa tìm thấy địa điểm nào khớp với yêu cầu của bạn."
+            if suggestions:
+                msg += f" Bạn thử {' hoặc '.join(suggestions)} nhé!"
+            dispatcher.utter_message(text=msg)
             return reset_events
         if results:
             top_location = results[0].get("location")
@@ -512,6 +604,7 @@ class ActionSearchTravel(Action):
 
             if ai_response is not None and final_text and final_text != "None":
                 dispatcher.utter_message(text=final_text.strip())
+                dispatcher.utter_message(response="utter_suggest_more")
                 return reset_events
             else:
                 print("⚠️ Cảnh báo: AI trả về rỗng hoặc None, chuyển sang Fallback DB.")
@@ -520,14 +613,125 @@ class ActionSearchTravel(Action):
             print(f"Lỗi GenAI: {e}")
 
         # 5. FALLBACK: NẾU AI TẠCH, IN RA TEXT THUẦN (như bạn đang thấy)
-        response = "Đây là kết quả tìm kiếm trực tiếp từ hệ thống:\n"
+        response = "🔍 **Mình tìm thấy một số điểm đến phù hợp:**\n\n"
         for r in results[:3]:
             response += (
-                f"- {r.get('location', 'Không rõ')} | Giá: {r.get('cost', 'Liên hệ')}\n"
+                f"📍 **{r.get('location', 'Không rõ')}**\n"
             )
-            response += f"  {r.get('description', '')[:100]}...\n\n"
+            response += f"  💰 Giá: {r.get('cost', 'Liên hệ')}\n"
+            desc = r.get('description', '')[:200]
+            if desc:
+                response += f"  {desc}\n"
+            response += "\n"
 
         dispatcher.utter_message(text=response)
+        dispatcher.utter_message(response="utter_suggest_more")
+        return reset_events
+
+
+class ActionSearchTour(Action):
+
+    def name(self) -> str:
+        return "action_search_tour"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict
+    ) -> List[Dict[Text, Any]]:
+        user_message = (tracker.latest_message.get("text") or "").lower()
+        latest_entities = tracker.latest_message.get("entities", [])
+        predicted_intent = tracker.latest_message.get("intent", {}).get("name")
+
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset
+
+        _log_action("ACTION SEARCH TOUR", user_message, predicted_intent, latest_entities, tracker.slots)
+
+        new_entities = {e.get("entity"): e.get("value") for e in latest_entities}
+
+        destination = new_entities.get("destination") or tracker.get_slot("destination")
+        budget_value = new_entities.get("budget") or tracker.get_slot("budget")
+        departure_value = new_entities.get("departure") or tracker.get_slot("departure")
+        category_value = new_entities.get("category") or tracker.get_slot("category")
+
+        max_budget = parse_budget_vnd(budget_value)
+        print(f"→ PARSED BUDGET: {max_budget} VND")
+        print(f"→ DESTINATION: {destination} | DEPARTURE: {departure_value} | CATEGORY: {category_value}")
+        print("=" * 52 + "\n")
+
+        reset_events = [
+            SlotSet("destination", destination),
+            SlotSet("budget", budget_value),
+            SlotSet("departure", departure_value),
+            SlotSet("category", category_value),
+        ]
+
+        try:
+            print("[QUERY DB] Searching tours...")
+            results = search_tours(
+                query=user_message,
+                max_budget=max_budget,
+                destination=destination,
+                departure=departure_value,
+            )
+            print(f"[QUERY DB] {len(results)} tour(s) found.")
+        except Exception as e:
+            print(f"[QUERY DB] ERROR: {e}")
+            dispatcher.utter_message(
+                text="Hệ thống tìm tour đang bảo trì tí xíu, bạn thử lại sau nha! 🛠️"
+            )
+            return reset_events
+
+        if not results:
+            print("[RESULT] No tours match the query — sending fallback message.")
+            dispatcher.utter_message(
+                text="Mình đã tìm kỹ nhưng chưa thấy tour nào phù hợp. Bạn thử đổi địa điểm hoặc ngân sách khác xem sao nhé! 😊"
+            )
+            return reset_events
+
+        print("[GEN-AI] Calling generate_tour_ai_response...")
+        try:
+            ai_response = generate_tour_ai_response(
+                query=user_message,
+                results=results,
+            )
+
+            if ai_response:
+                print(f"[GEN-AI] OK — response has {len(ai_response.split(chr(10)))} line(s).")
+                dispatcher.utter_message(text=ai_response.strip())
+                dispatcher.utter_message(response="utter_suggest_more")
+                return reset_events
+            else:
+                print("[GEN-AI] Empty response — falling back to DB text.")
+
+        except Exception as e:
+            print(f"[GEN-AI] ERROR: {e}")
+
+        print("[FALLBACK] Building plain-text tour listing...")
+        response_parts = ["🎉 Mình tìm thấy một số tour phù hợp cho bạn:\n"]
+        for r in results[:5]:
+            tour_name = r.get("tour_name", "Tour")
+            price = r.get("price")
+            price_str = f"{price:,} VND" if price else "Liên hệ"
+            duration = r.get("duration_text") or f"{r.get('days', '?')} ngày {r.get('nights', '?')} đêm"
+            dests = ", ".join(r.get("destinations", [])) if r.get("destinations") else ""
+            dep = r.get("departure") or ""
+            transport = r.get("transportation") or ""
+
+            response_parts.append(f"🔹 **{tour_name}**")
+            response_parts.append(f"  💰 {price_str} | ⏱ {duration}")
+            if dests:
+                response_parts.append(f"  📍 {dests}")
+            if dep:
+                response_parts.append(f"  🏁 Khởi hành: {dep}")
+            if transport:
+                response_parts.append(f"  🚌 Di chuyển: {transport}")
+            response_parts.append("")
+
+        response_text = "\n".join(response_parts).strip()
+        print(f"[FALLBACK] Sent {len(results)} tour(s) as plain text.")
+        dispatcher.utter_message(text=response_text)
+        dispatcher.utter_message(response="utter_suggest_more")
         return reset_events
 
 
@@ -540,9 +744,14 @@ class ActionAIConsultant(Action):
     ) -> List[Dict[Text, Any]]:
         user_message = tracker.latest_message.get("text", "")
         intent_name = tracker.latest_message.get("intent", {}).get("name", "unknown")
-
-        # TRÍCH XUẤT DATABASE LÀM NGỮ CẢNH CHO LLM
         latest_entities = tracker.latest_message.get("entities", [])
+
+        reset = _reset_on_command(dispatcher, tracker)
+        if reset:
+            return reset
+
+        _log_action("ACTION AI CONSULTANT", user_message, intent_name, latest_entities, tracker.slots)
+
         new_dest = next(
             (
                 e.get("value")
@@ -557,24 +766,22 @@ class ActionAIConsultant(Action):
         if destination:
             try:
                 results = search_destinations(destination=destination)
-                for r in results[:2]:  # Chỉ lấy 2 context gần nhất
+                for r in results[:2]:
                     db_context.append(
                         f"Điểm đến: {r.get('location')} | Hoạt động giải trí: {r.get('activities')} | Chi tiết: {r.get('description')}"
                     )
             except Exception as e:
                 print(f"[DB LOG] Lỗi truy xuất DB: {e}")
 
-        print("\n[ACTION AI CONSULTANT LOG] ===========================")
-        print(f"USER HỎI: '{user_message}'")
-        print(f"INTENT CATEGORY: {intent_name}")
-        print(f"SỐ HIỆU DATABASE CONTEXT: {len(db_context)} bản ghi")
-        print("ĐANG GỌI GEMINI API...")
+        print(f"→ DB context: {len(db_context)} bản ghi | Gọi Gemini...")
+        print("=" * 52 + "\n")
 
         try:
             response = generate_genz_ai_consultant(
                 user_message, intent_name, db_context
             )
             dispatcher.utter_message(text=response)
+            dispatcher.utter_message(response="utter_suggest_more")
         except Exception as e:
             print(f"[ERROR] AI Consultant failed: {e}")
             dispatcher.utter_message(
@@ -583,3 +790,18 @@ class ActionAIConsultant(Action):
 
         print("====================================================\n")
         return [SlotSet("destination", destination)]
+
+
+class ActionResetSlots(Action):
+    def name(self) -> Text:
+        return "action_reset_slots"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: DomainDict
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(
+            text="🔄 Đã reset toàn bộ dữ liệu phiên làm việc! Bạn có thể hỏi lại nhé."
+        )
+        return [SlotSet(slot, None) for slot in ALL_SLOTS] + [
+            SlotSet("requested_slot", None)
+        ]

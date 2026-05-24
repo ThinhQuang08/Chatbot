@@ -60,6 +60,7 @@ def init_database():
                 id BIGINT PRIMARY KEY,
                 destination_id INTEGER,
                 name VARCHAR(255) NOT NULL,
+                type VARCHAR(50),
                 latitude FLOAT,
                 longitude FLOAT,
                 FOREIGN KEY (destination_id) REFERENCES destinations(id) ON DELETE CASCADE

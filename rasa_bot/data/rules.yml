@@ -64,7 +64,17 @@ rules:
   - rule: Tư vấn chi tiết một tour cụ thể
     steps:
       - intent: ask_tour_info
-      - action: action_search_tour_info
+      - action: action_search_tour
+
+  - rule: Tư vấn về thời tiết / mùa
+    steps:
+      - intent: ask_weather_timing
+      - action: action_ai_consultant
+
+  - rule: Reset toàn bộ slots để test
+    steps:
+      - intent: reset_slots
+      - action: action_reset_slots
 
   - rule: Hủy form khi khách đổi ý (Gen Z quay xe)
     condition:

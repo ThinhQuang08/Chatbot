@@ -11,6 +11,7 @@ from config.settings import (
     ENABLE_SEMANTIC_SEARCH,
     QDRANT_API_KEY,
     QDRANT_COLLECTION,
+    QDRANT_TOUR_COLLECTION,
     QDRANT_URL,
     SEMANTIC_BACKEND,
     SEMANTIC_MODEL_NAME,
@@ -425,12 +426,12 @@ def sync_qdrant_documents(
             "url": QDRANT_URL,
         }
 
-def semantic_scores(query: str, texts_by_id: Dict[str, str]) -> Dict[str, float]:
+def semantic_scores(query: str, texts_by_id: Dict[str, str], collection_name: str = QDRANT_COLLECTION) -> Dict[str, float]:
     if not _semantic_enabled() or not query.strip() or not texts_by_id:
         return {candidate_id: 0.0 for candidate_id in texts_by_id}
 
     if _backend() == "qdrant":
-        scores = _semantic_scores_qdrant(query, texts_by_id)
+        scores = _semantic_scores_qdrant(query, texts_by_id, collection_name)
         if scores is not None:
             return scores
 
@@ -455,6 +456,7 @@ def _semantic_scores_local(query: str, texts_by_id: Dict[str, str]) -> Dict[str,
 def _semantic_scores_qdrant(
     query: str,
     texts_by_id: Dict[str, str],
+    collection_name: str = QDRANT_COLLECTION,
 ) -> Optional[Dict[str, float]]:
     global _collection_missing_warned
 
@@ -467,11 +469,11 @@ def _semantic_scores_qdrant(
     try:
         query_vector = model.encode(query, show_progress_bar=False)
         query_list = [float(value) for value in query_vector]
-        if not _collection_exists_cached(client):
+        if not _collection_exists_cached(client, collection_name=collection_name):
             if not _collection_missing_warned:
                 logger.warning(
                     "Qdrant collection '%s' does not exist. Run sync script first.",
-                    QDRANT_COLLECTION,
+                    collection_name,
                 )
                 _collection_missing_warned = True
             return {candidate_id: 0.0 for candidate_id in texts_by_id}
@@ -482,7 +484,7 @@ def _semantic_scores_qdrant(
 
         try:
             hits = client.search(
-                collection_name=QDRANT_COLLECTION,
+                collection_name=collection_name,
                 query_vector=query_list,
                 query_filter=qdrant_models.Filter(
                     must=[
@@ -502,7 +504,7 @@ def _semantic_scores_qdrant(
                 
         except Exception:
             hits = client.search(
-                collection_name=QDRANT_COLLECTION,
+                collection_name=collection_name,
                 query_vector=query_list,
                 limit=max(len(candidate_ids) * 3, 50),
                 with_payload=True,

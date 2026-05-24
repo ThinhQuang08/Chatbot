@@ -29,27 +29,114 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-# - story: Test S3
-#   steps:
-#   - intent: test_s3
-#   - action: utter_test_s3
-
-- story: Flow tìm chỗ ở nhưng bị thiếu địa điểm lúc đầu
+- story: Chào hỏi xong tìm tour luôn
   steps:
-    # Bước 1: Khách hỏi tìm chỗ ở chung chung
-    - intent: ask_location_feature
-    - action: action_search_tour_info
-      
-    # Bước 2: Khách bổ sung tên địa điểm (như "Đà Lạt", "Vũng Tàu")
-    - intent: inform
-    # Bước 3: Bot tự động vòng lại gọi lệnh tìm kiếm
-    - action: action_search_tour_info
+  - intent: greet
+  - action: utter_greet
+  - intent: search_travel
+  - action: travel_form
+  - active_loop: travel_form
 
-- story: Flow tìm tour quay xe
+- story: Chào hỏi rồi hỏi về điểm đến
   steps:
-      # Giả sử hành động trước đó là Bot đã trả kết quả Tour
-    - action: action_search_travel
-      # Khách quay xe đổi ý
-    - intent: inform
-      # Bot phải gọi lại hàm tìm Tour
-    - action: action_search_travel
+  - intent: greet
+  - action: utter_greet
+  - intent: search_destination
+  - action: action_search_travel
+
+- story: Cảm ơn rồi tạm biệt
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Chỉ cảm ơn
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Search destination xong cảm ơn
+  steps:
+  - action: action_search_travel
+  - intent: thanks
+  - action: utter_suggest_more
+
+- story: Search tour info xong cảm ơn
+  steps:
+  - action: action_search_tour_info
+  - intent: thanks
+  - action: utter_suggest_more
+
+- story: Hỏi giá rồi bổ sung điểm đến
+  steps:
+  - intent: search_price
+  - action: action_search_travel
+  - intent: inform
+  - action: action_search_travel
+
+- story: Hỏi destination rồi bổ sung budget
+  steps:
+  - intent: search_destination
+  - action: action_search_travel
+  - intent: inform
+  - action: action_search_travel
+
+- story: Hỏi tour rồi bổ sung thông tin
+  steps:
+  - intent: ask_tour_info
+  - action: action_search_tour
+  - intent: inform
+  - action: action_search_tour
+
+- story: Hỏi chỗ ở thiếu địa điểm lúc đầu
+  steps:
+  - intent: ask_location_feature
+  - action: action_search_tour_info
+  - intent: inform
+  - action: action_search_tour_info
+
+- story: Tìm chỗ ở rồi đổi loại hình
+  steps:
+  - action: action_search_tour_info
+  - intent: inform
+  - action: action_search_tour_info
+
+- story: Hỏi hoạt động rồi bổ sung địa điểm
+  steps:
+  - intent: search_activity
+  - action: action_ai_consultant
+  - intent: inform
+  - action: action_ai_consultant
+
+- story: Hỏi ẩm thực rồi bổ sung địa điểm
+  steps:
+  - intent: search_food_dining
+  - action: action_ai_consultant
+  - intent: inform
+  - action: action_ai_consultant
+
+- story: Out of scope rồi hỏi lại đúng
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - intent: search_destination
+  - action: action_search_travel
+
+- story: Xác nhận tìm tour đồng ý
+  steps:
+  - action: action_search_travel
+  - intent: affirm
+  - action: action_search_travel
+
+- story: Xác nhận tìm tour từ chối
+  steps:
+  - action: action_search_travel
+  - intent: deny
+  - action: utter_cancel_search
+
+- story: Tìm tour quay xe đổi ý
+  steps:
+  - action: action_search_travel
+  - intent: inform
+  - action: action_search_travel

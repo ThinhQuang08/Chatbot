@@ -242,3 +242,183 @@ def generate_grounded_ai_response(
         return None
 
     return None
+
+
+def _match_tour_names(results: List[dict], tour_names: List[str]) -> List[dict]:
+    normalized_names = [_normalize(name) for name in tour_names if str(name).strip()]
+    if not normalized_names:
+        return []
+    matched = []
+    used_indexes = set()
+    for candidate_name in normalized_names:
+        for index, item in enumerate(results):
+            if index in used_indexes:
+                continue
+            item_name = _normalize(item.get("tour_name"))
+            if not item_name:
+                continue
+            if candidate_name in item_name or item_name in candidate_name:
+                matched.append(item)
+                used_indexes.add(index)
+                break
+    return matched
+
+
+def _format_tour_response(intro: str, selected_results: List[dict]) -> Optional[str]:
+    clean_intro = (intro or "").strip()
+    if not selected_results:
+        return clean_intro if clean_intro else None
+    lines = []
+    if clean_intro:
+        lines.append(clean_intro)
+    lines.append("")
+    for item in selected_results[:3]:
+        tour_name = item.get("tour_name", "Tour")
+        price = item.get("price")
+        price_str = f"{price:,} VND" if price else "Liên hệ"
+        duration = item.get("duration_text") or f"{item.get('days', '?')} ngày {item.get('nights', '?')} đêm"
+        dests = ", ".join(item.get("destinations", [])) if item.get("destinations") else ""
+        dep = item.get("departure") or ""
+        transport = item.get("transportation") or ""
+
+        lines.append(f"🔹 **{tour_name}**")
+        lines.append(f"  💰 {price_str} | ⏱ {duration}")
+        if dests:
+            lines.append(f"  📍 {dests}")
+        if dep:
+            lines.append(f"  🏁 {dep}")
+        if transport:
+            lines.append(f"  🚌 {transport}")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def generate_tour_ai_response(
+    query: str,
+    results: List[dict],
+) -> Optional[str]:
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        logger.warning("Gemini disabled: GEMINI_API_KEY is missing.")
+        return None
+
+    if not results:
+        return None
+
+    context_lines = []
+    for index, item in enumerate(results[:5], start=1):
+        tour_name = item.get("tour_name", "Không rõ")
+        price = item.get("price")
+        price_str = f"{price:,} VND" if price else "Liên hệ"
+        duration = item.get("duration_text") or f"{item.get('days', '?')} ngày {item.get('nights', '?')} đêm"
+        dests = ", ".join(item.get("destinations", [])) if item.get("destinations") else "Không rõ"
+        dep = item.get("departure") or "Không rõ"
+        transport = item.get("transportation") or "Không rõ"
+
+        rag_kb = item.get("rag_knowledge_base") or {}
+        itinerary = rag_kb.get("itinerary", []) if isinstance(rag_kb, dict) else []
+        itinerary_text = ""
+        for day in itinerary:
+            day_title = day.get("title", "")
+            day_desc = day.get("description", "")
+            itinerary_text += f"      - {day_title}: {day_desc[:200]}\n"
+
+        context_lines.append(
+            f"{index}. Tour: {tour_name}\n"
+            f"   Giá: {price_str}\n"
+            f"   Thời gian: {duration}\n"
+            f"   Điểm đến: {dests}\n"
+            f"   Khởi hành: {dep}\n"
+            f"   Phương tiện: {transport}\n"
+            f"   Lịch trình chi tiết:\n{itinerary_text}"
+        )
+
+    context_str = "\n".join(context_lines)
+
+    prompt = (
+        "Bạn là một 'Travel Blogger' du lịch phong cách Gen Z, rất sành điệu, "
+        "nói chuyện siêu cuốn, thân thiện nhưng không bị 'trẻ trâu', xưng hô 'mình' - 'bạn'. "
+        "Thỉnh thoảng dùng vài từ lóng nhẹ nhàng (như: cực dính, nhức nách, hạt dẻ, sống ảo cháy máy, healing...) "
+        "để lời tư vấn thêm mượt mà.\n\n"
+        "Hãy dựa vào danh sách tour dưới đây (BAO GỒM LỊCH TRÌNH CHI TIẾT) để trả lời câu hỏi của khách. "
+        "TUYỆT ĐỐI không bịa thêm thông tin không có trong dữ liệu được cung cấp. "
+        "Nếu câu hỏi của khách yêu cầu thông tin không có trong dữ liệu, hãy nói 'Mình không có thông tin này trong hệ thống'.\n\n"
+        f"Câu hỏi người dùng: {query}\n\n"
+        "Danh sách tour từ Database:\n"
+        f"{context_str}\n\n"
+        "Nhiệm vụ:\n"
+        "1) Chọn tối đa 3 tour phù hợp nhất từ danh sách trên.\n"
+        "2) Trả về kết quả dưới định dạng JSON.\n"
+        "3) Trường 'intro' hãy viết 1-2 câu tư vấn thật natural, trả lời đúng trọng tâm câu hỏi của khách, "
+        "dùng thông tin cụ thể từ dữ liệu tour (giá, lịch trình, điểm đến...) và đề xuất tour phù hợp.\n"
+        "4) Định dạng bắt buộc: "
+        '{"intro": "<Câu tư vấn ngắn gọn>", "tours": ["<tên tour 1>", "<tên tour 2>"]}'
+    )
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    headers = {"Content-Type": "application/json"}
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.3,
+            "responseMimeType": "application/json",
+        },
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+
+        text = (
+            data.get("candidates", [{}])[0]
+            .get("content", {})
+            .get("parts", [{}])[0]
+            .get("text", "")
+        )
+        print(f"\n[GEN-AI TOUR RESPONSE RAW]:\n{text}\n")
+
+        if text and text.strip():
+            json_payload = _extract_json_payload(text)
+            if not json_payload:
+                logger.warning("Gemini returned non-JSON content for tour.")
+                return None
+
+            intro = str(json_payload.get("intro", "")).strip()
+            tour_names = json_payload.get("tours", [])
+            if not isinstance(tour_names, list):
+                logger.warning("Gemini JSON payload has invalid 'tours' field.")
+                return None
+
+            matched_results = _match_tour_names(
+                results, [str(name) for name in tour_names]
+            )
+            if not matched_results:
+                if not intro:
+                    logger.warning("Gemini returned empty intro and no matching tours.")
+                    return None
+                # Gemini correctly identified no exact matches (e.g. wrong duration).
+                # Keep the intro but append alternative suggestions from full results.
+                response = intro.strip()
+                if results:
+                    alt_lines = ["\n\nTuy nhiên, mình có một số gợi ý khác cho bạn nè:"]
+                    for item in results[:3]:
+                        tour_name = item.get("tour_name", "Tour")
+                        price = item.get("price")
+                        price_str = f"{price:,} VND" if price else "Liên hệ"
+                        duration = item.get("duration_text") or f"{item.get('days', '?')} ngày {item.get('nights', '?')} đêm"
+                        dep = item.get("departure") or ""
+                        alt_lines.append(f"\n🔹 **{tour_name}**  💰 {price_str}  ⏱ {duration}" + (f"  🏁 {dep}" if dep else ""))
+                    response += "".join(alt_lines)
+                return response
+
+            structured_response = _format_tour_response(intro, matched_results)
+            if structured_response:
+                return structured_response
+
+        logger.warning("Gemini returned empty text response for tour.")
+    except Exception as exc:
+        logger.warning(f"Gemini tour REST API failed: {exc}")
+        return None
+
+    return None
