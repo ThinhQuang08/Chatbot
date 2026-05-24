@@ -127,7 +127,7 @@ docker run -d --name chatbot-postgres -e POSTGRES_USER=chatbot_user -e POSTGRES_
 # import dữ liệu điểm đến vào PostgreSQL
 .venv/bin/python -m database.import_data
 
-docker run -d --name chatbot-qdrant -p 6333:6333 -p 6334:6334 -v chatbot_qdrant_data:/qdrant/storage qdrant/qdrant
+docker run -d --name chatbot-qdrant --restart unless-stopped -p 6333:6333 -p 6334:6334 -v chatbot_qdrant_data:/qdrant/storage qdrant/qdrant
 
 .venv/bin/python -m scripts.sync_qdrant --recreate
 

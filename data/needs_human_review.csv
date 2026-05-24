@@ -1,7 +1,4 @@
 id,session_id,raw_text,predicted_intent,text_hash,cleaned_text,snorkel_intent,snorkel_confidence
-3,sim_v2_2,tìm chỗ ở giá rẻ tại pq,unlabeled,aec321a348402e4eddd6bc0723a21650,tìm chỗ ở giá rẻ tại Phú_Quốc,search_accommodation,0.670959628441436
-8,sim_v2_7,sài gòn có chỗ nào check in đẹp,unlabeled,82e5c22c30c2d29b9c1494c3ade6e865,sài gòn có chỗ nào check in đẹp,search_destination,0.6570826766974567
-9,sim_v2_8,mùa nào đi nha trang hợp lý,unlabeled,197dc6a5f765a1be632e032638c45757,mùa nào đi Nha_Trang hợp_lý,search_destination,0.6570826766974567
 10,sim_v2_9,đặc sản sapa là gì,unlabeled,55b44c9452b0394145fa37f09ad1db9b,đặc_sản Sa_Pa là gì,search_destination,0.6570826766974567
 12,sim_v2_11,thời tiết nha trang sao,unlabeled,9c3ab676b23e13563c344f1099a983f6,thời_tiết Nha_Trang sao,search_destination,0.6570826766974567
 13,sim_v2_12,review pq mùa này z,unlabeled,d156bb00971358923e3af7cb71005070,review Phú_Quốc mùa này vậy,search_destination,0.6570826766974567

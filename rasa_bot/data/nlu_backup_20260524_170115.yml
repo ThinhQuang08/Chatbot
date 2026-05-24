@@ -74,6 +74,8 @@ nlu:
       - okela
       - đúng ý mình
       - thế cũng được
+      - chuẩn
+      - chốt luôn
       - tuyệt vời
       - đỉnh quá
       - xịn xò
@@ -166,7 +168,7 @@ nlu:
       - đi [trekking](activity) vào [tháng 10](month) thì nên đi đâu
       - nơi nào có thể [cắm trại](activity)
       - có chỗ nào đi thuyền không
-      - tôi muốn [săn mây](activity)
+      - tôi muốn săn mây
       - gợi ý chỗ [leo núi](activity)
       - [đi trekking](activity)
       - tôi muốn [trekking](activity)
@@ -182,12 +184,6 @@ nlu:
       - phú quốc có [lặn ngắm san hô](activity) không
       - chi phí đi leo núi [tháng 10](month) là bao nhiêu
       - đi leo núi [tháng 10](month) hết bao nhiêu tiền
-      - đi [săn mây](activity) ở đâu
-      - đi [lặn san hô](activity) ở đâu
-      - đi [tắm biển](activity) ở đâu
-      - đi [cắm trại](activity) ở đâu
-      - đi [trekking](activity) ở đâu
-      - đi [leo núi](activity) ở đâu
 
   - intent: search_accommodation
     examples: |
@@ -375,26 +371,6 @@ nlu:
       - tầm [2 triệu](budget) đi [Vũng Tàu](destination) [2 ngày 1 đêm](duration)
       - du lịch quanh [Hà Nội](destination) ngân sách [1 triệu](budget)
       - muốn đi [Đà Nẵng](destination) [tháng 5](month) với ngân sách [6 củ](budget)
-      - mà thôi cho tôi đi [Đà Lạt](destination)
-      - thôi cho tôi đi [Nha Trang](destination)
-      - thôi thì cho mình đi [Sapa](destination) vậy
-      - thôi đi [Vũng Tàu](destination)
-      - mà thôi đi [Phú Quốc](destination)
-      - thôi cho mình đi [Đà Nẵng](destination)
-      - tôi muốn đi [Nha Trang](destination)
-      - tôi muốn đi [Đà Lạt](destination)
-      - tôi muốn đi [Sapa](destination)
-      - tôi muốn đi [Phú Quốc](destination)
-      - tôi muốn đi [Đà Nẵng](destination)
-      - tôi muốn đi [Vũng Tàu](destination)
-      - tôi muốn đi [Hà Nội](destination)
-      - tôi muốn đi [Hội An](destination)
-      - mình muốn đi [Nha Trang](destination)
-      - mình muốn đi [Đà Lạt](destination)
-      - mình muốn đi [Phú Quốc](destination)
-      - tôi đi [Nha Trang](destination) nha
-      - cho tôi đi [Đà Lạt](destination)
-      - cho mình đi [Phú Quốc](destination)
 
   - intent: ask_location_feature
     examples: |
@@ -451,20 +427,6 @@ nlu:
       - [10tr](budget)
       - khởi hành từ [Sài Gòn](departure)
       - [xe khách](transportation)
-      - cho tôi hỏi thêm
-      - mà cho tôi hỏi thêm
-      - hỏi thêm xíu
-      - cho hỏi thêm xíu nha
-      - ở [Đà Lạt](destination) thì sao
-      - còn [Phú Quốc](destination) thì sao
-      - thế còn [Sapa](destination)
-      - ở [Vũng Tàu](destination) thì sao
-      - [Nha Trang](destination)
-      - [Hội An](destination)
-      - [Vũng Tàu](destination)
-      - [Hà Nội](destination)
-      - [Đà Nẵng](destination)
-      - [Huế](destination)
 
 synonym:
   - value: "Hồ Chí Minh"
@@ -536,12 +498,6 @@ synonym:
       - TPHCM
       - SG
       - Hồ Chí Minh
-  
-  - synonym: Phú Quốc
-    examples: |
-      - phú quốc
-      - phu quoc
-      - Phu Quoc
 
   - synonym: sắp tới
     examples: |
@@ -981,32 +937,3 @@ synonym:
   - intent: search_accommodation
     examples: |
       - [khách sạn](category) [Nha Trang](destination) giá rẻ không
-
-
-# --- HUMAN REVIEWED DATA (2026-05-24 17:01:15) ---
-  - intent: search_accommodation
-    examples: |
-      - tim cho o gia re
-      - khách sạn
-      - hỏi khách sạn
-      - cho hỏi khách sạn
-      - tìm khách sạn
-      - homestay
-      - hỏi homestay
-      - resort
-      - hỏi resort
-      - nhà nghỉ
-      - tìm homestay
-      - cho xem khách sạn
-      - khách sạn ở đó
-      - khách sạn tại [Đà Lạt](destination)
-      - homestay [Sapa](destination)
-      - resort [Nha Trang](destination)
-      - [khách sạn](category) ở [Vũng Tàu](destination)
-      - [homestay](category) [Đà Lạt](destination)
-      - [resort](category) [Phú Quốc](destination)
-  - intent: search_destination
-    examples: |
-      - mua nao di [nha trang](destination)
-      - sai gon [check in](activity)
-      

@@ -314,6 +314,7 @@ def search_tours(
     max_budget: Optional[int] = None,
     destination: Optional[str] = None,
     departure: Optional[str] = None,
+    duration_days: Optional[int] = None,
 ):
     conn = get_connection()
     cur = conn.cursor()
@@ -360,6 +361,10 @@ def search_tours(
 
         if max_budget is not None:
             if price is None or price > max_budget:
+                continue
+
+        if duration_days is not None:
+            if days is None or days != duration_days:
                 continue
 
         itinerary = rag_kb.get("itinerary", [])
