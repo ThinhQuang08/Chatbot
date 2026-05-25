@@ -25,7 +25,7 @@ pipeline {
 
         stage('1. Verify Environment') {
             steps {
-                echo "✅ Kiểm tra môi trường Jenkins Agent, Python, Rasa, MLflow..."
+                echo "Kiểm tra môi trường Jenkins Agent, Python, Rasa, MLflow..."
 
                 sh '''
                     set -e
@@ -51,14 +51,14 @@ pipeline {
 
                     echo "Kiểm tra MLflow server..."
                     curl -fsS "${MLFLOW_URI}" >/dev/null
-                    echo "✅ MLflow server đang chạy tại ${MLFLOW_URI}"
+                    echo "MLflow server đang chạy tại ${MLFLOW_URI}"
                 '''
             }
         }
 
         stage('2. Data Pipeline') {
             steps {
-                echo "🔄 Convert CSV sang Rasa format..."
+                echo "Convert CSV sang Rasa format..."
 
                 sh '''
                     set -e
@@ -73,19 +73,19 @@ pipeline {
                     echo "Đồng bộ file NLU generated sang rasa_bot/data nếu có..."
                     if [ -f "data/nlu_test.yml" ]; then
                         cp data/nlu_test.yml rasa_bot/data/nlu_test.yml
-                        echo "✅ Đã copy data/nlu_test.yml -> rasa_bot/data/nlu_test.yml"
+                        echo "Đã copy data/nlu_test.yml -> rasa_bot/data/nlu_test.yml"
                     else
-                        echo "⚠️ Không tìm thấy data/nlu_test.yml, bỏ qua bước copy"
+                        echo "Không tìm thấy data/nlu_test.yml, bỏ qua bước copy"
                     fi
 
-                    echo "✅ Data pipeline hoàn tất"
+                    echo "Data pipeline hoàn tất"
                 '''
             }
         }
 
         stage('3. Train Model') {
             steps {
-                echo "🚀 Train Rasa + log MLflow..."
+                echo "Train Rasa + log MLflow..."
 
                 sh '''
                     set -e
@@ -102,14 +102,14 @@ pipeline {
 
                     "${PYTHON}" scripts/train_mlflow.py
 
-                    echo "✅ Train model hoàn tất"
+                    echo "Train model hoàn tất"
                 '''
             }
         }
 
         stage('4. Check Model Artifact') {
             steps {
-                echo "🔎 Kiểm tra model artifact..."
+                echo "Kiểm tra model artifact..."
 
                 sh '''
                     set -e
@@ -120,11 +120,11 @@ pipeline {
                     LATEST_MODEL=$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
                     if [ -z "$LATEST_MODEL" ]; then
-                        echo "❌ Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
+                        echo "Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
                         exit 1
                     fi
 
-                    echo "✅ Model mới nhất: $LATEST_MODEL"
+                    echo "Model mới nhất: $LATEST_MODEL"
                     echo "$LATEST_MODEL" > latest_model_path.txt
                 '''
             }
@@ -138,8 +138,8 @@ pipeline {
                         returnStdout: true
                     ).trim()
 
-                    echo "🔔 Model đã train xong: ${latestModel}"
-                    echo "📊 Vào MLflow kiểm tra metrics trước khi quyết định deploy."
+                    echo "Model đã train xong: ${latestModel}"
+                    echo "Vào MLflow kiểm tra metrics trước khi quyết định deploy."
 
                     def decision = input(
                         id: 'DeployGate',
@@ -156,17 +156,17 @@ pipeline {
 
                     if (decision == 'reject') {
                         currentBuild.result = 'ABORTED'
-                        error("🛑 Model bị reject. Pipeline dừng, không deploy.")
+                        error("Model bị reject. Pipeline dừng, không deploy.")
                     }
 
-                    echo "✅ Model được duyệt. Tiếp tục deploy."
+                    echo "Model được duyệt. Tiếp tục deploy."
                 }
             }
         }
 
         stage('6. Deploy Model') {
             steps {
-                echo "☁️ Deploy model..."
+                echo "Deploy model..."
 
                 sh '''
                     set -e
@@ -178,7 +178,7 @@ pipeline {
 
                     "${PYTHON}" scripts/deploy_model.py
 
-                    echo "✅ Deploy model hoàn tất"
+                    echo "Deploy model hoàn tất"
                 '''
             }
         }
@@ -187,21 +187,21 @@ pipeline {
     post {
 
         always {
-            echo "📦 Archive artifacts nếu có..."
+            echo "Archive artifacts nếu có..."
 
             archiveArtifacts artifacts: 'latest_model_path.txt,error_log.txt,rasa_bot/results/**/*,rasa_bot/models/*.tar.gz', allowEmptyArchive: true
         }
 
         success {
-            echo "🎉 PIPELINE HOÀN TẤT!"
+            echo "PIPELINE HOÀN TẤT!"
         }
 
         aborted {
-            echo "⚠️ Model bị reject hoặc pipeline bị hủy. Không deploy."
+            echo "Model bị reject hoặc pipeline bị hủy. Không deploy."
         }
 
         failure {
-            echo "🔥 Pipeline thất bại. Kiểm tra Console Output và artifact error_log.txt nếu có."
+            echo "Pipeline thất bại. Kiểm tra Console Output và artifact error_log.txt nếu có."
         }
     }
 }
