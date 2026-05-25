@@ -22,7 +22,7 @@ STATE_FILE = DATA_DIR / "review_state.json"
 HISTORY_FILE = RESULTS_DIR / "training_history.json"
 CSV_FILE = DATA_DIR / "needs_human_review.csv"
 DOMAIN_FILE = RASA_DIR / "domain.yml"
-NLU_FILE = RASA_DIR / "data" / "nlu.yml"
+NLU_FILE = RASA_DIR / "data" / "train" / "nlu.yml"
 
 app = Flask(__name__)
 
@@ -96,7 +96,7 @@ def export_to_nlu(approved_rows):
     backup_name = None
     if NLU_FILE.exists():
         backup_name = f"nlu_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.yml"
-        backup_path = NLU_FILE.parent / backup_name
+        backup_path = RASA_DIR / "data" / "backups" / backup_name
         shutil.copy(NLU_FILE, backup_path)
 
     intent_groups = {}
@@ -184,7 +184,7 @@ def run_training():
 
         log("🚀 Bắt đầu huấn luyện Rasa model...")
         train_proc = subprocess.run(
-            ["rasa", "train"],
+            ["rasa", "train", "--data", "data/train"],
             cwd=str(RASA_DIR),
             capture_output=True, text=True, timeout=1800
         )
@@ -205,7 +205,7 @@ def run_training():
 
         log("🧪 Đang đánh giá model với cross-validation (3 folds)...")
         eval_proc = subprocess.run(
-            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3"],
+            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3", "--data", "data/train"],
             cwd=str(RASA_DIR),
             capture_output=True, text=True, timeout=3600
         )

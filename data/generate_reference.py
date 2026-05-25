@@ -19,7 +19,7 @@ def clean_rasa_entity(text):
     cleaned = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
     return cleaned.strip()
 
-def create_reference_csv(yml_path="rasa_bot/data/nlu.yml", output_csv="data/reference_data.csv"):
+def create_reference_csv(yml_path="rasa_bot/data/train/nlu.yml", output_csv="data/reference_data.csv"):
     print(f"📖 Đang đọc dữ liệu từ {yml_path}...")
     
     with open(yml_path, 'r', encoding='utf-8') as f:

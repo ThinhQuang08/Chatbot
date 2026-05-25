@@ -292,7 +292,7 @@ nlu:
       - cho xem lịch trình tour [Hà Giang](destination) [tuần tới](time_window)
       - tour [Sapa](destination) [2 ngày 1 đêm](duration) đi từ [Hà Nội](departure) giá bao nhiêu
       - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên](destination) rẻ rẻ ko
-      - giá tour đã bao gồm vé [máy bay](category) chưa shop
+      - giá tour đã bao gồm vé [máy bay](transportation) chưa shop
       - có tour ghép đoàn nào đi [Hà Giang](destination) khởi hành [thứ 6](time_window) không
       - mình muốn đặt tour đi [vịnh Hạ Long](destination) [2 người lớn 1 trẻ em](party_size)
       - xin lịch trình và báo giá tour [Sapa](destination) đi [cuối tuần này](time_window)
@@ -396,7 +396,7 @@ nlu:
       - tầm [10 củ](budget)
       - [tháng 11](month)
       - nhóm mình [6 người](party_size)
-      - đi [máy bay](category) nhé
+      - đi [máy bay](transportation) nhé
       - mình xuất phát từ [Đà Nẵng](departure)
       - [Sapa](destination)
       - [Phú Quốc](destination)
@@ -416,7 +416,7 @@ nlu:
       - [2 củ](budget)
       - [10tr](budget)
       - khởi hành từ [Sài Gòn](departure)
-      - [xe khách](category)
+      - [xe khách](transportation)
       - từ [tháng 5](month_from) đến [tháng 7](month_to)
       - từ [tháng 10](month_from) đến [tháng 12](month_to)
       - từ [tháng 1](month_from) đến [tháng 3](month_to)

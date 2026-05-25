@@ -42,7 +42,7 @@ def train_and_evaluate_mlflow():
         # ==========================================
         print("🚀 Bắt đầu huấn luyện Rasa Model...")
         start_time = time.time()
-        train_result = subprocess.run(["rasa", "train"], cwd=RASA_DIR, capture_output=True, text=True)
+        train_result = subprocess.run(["rasa", "train", "--data", "data/train"], cwd=RASA_DIR, capture_output=True, text=True)
         training_time = time.time() - start_time
         mlflow.log_metric("training_duration_seconds", training_time)
 
@@ -67,22 +67,19 @@ def train_and_evaluate_mlflow():
         # ==========================================
         print("🧪 Đang làm bài kiểm tra Cross-Validation (Xác thực chéo 3 vòng)...")
         print("⏳ Quá trình này sẽ hơi lâu một chút để đảm bảo điểm số là điểm THẬT 100%.")
-        
-        # test_result = subprocess.run(
-        #     [
-        #         "rasa", "test", "nlu", 
-        #         "--nlu", "train_test_split/test_data.yml", 
-        #         "--model", latest_model
-        #     ], 
-        #     cwd=RASA_DIR, 
-        #     capture_output=True, 
-        #     text=True
-        # )
         # khi >75% Dùng cross-validation tự động phân chia data để chống "Lộ đề thi" (Data Leakage)
         test_result = subprocess.run(
-            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3"], 
+            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3", "--data", "data/train"], 
             cwd=RASA_DIR, 
             capture_output=True, 
+            text=True
+        )
+
+        print("🧪 Kiểm tra trên held-out test set...")
+        test_heldout = subprocess.run(
+            ["rasa", "test", "nlu", "--nlu", "data/test/nlu.yml", "--model", latest_model],
+            cwd=RASA_DIR,
+            capture_output=True,
             text=True
         )
 
