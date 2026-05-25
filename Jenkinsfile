@@ -13,52 +13,182 @@ pipeline {
 
         MLFLOW_URI  = "http://127.0.0.1:5000"
         ENV_FILE    = "/home/thinh/Chatbot_tien/.env"
+
+        QA_VENV     = "/home/jenkins/.cache/chatbot-qa-tools"
     }
 
     options {
         timestamps()
         disableConcurrentBuilds()
         timeout(time: 90, unit: 'MINUTES')
+        parallelsAlwaysFailFast()
     }
 
     stages {
 
         stage('1. Verify Environment') {
             steps {
-                echo "Kiểm tra môi trường Jenkins Agent, Python, Rasa, MLflow..."
+                echo "Verify Jenkins agent, Python, Rasa and MLflow"
 
                 sh '''
                     set -e
 
                     export PATH="${VENV_BIN}:$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
 
                     echo "Workspace: ${PROJECT_DIR}"
 
                     echo "Python version:"
                     "${PYTHON}" --version
 
-                    echo "Kiểm tra package chính:"
+                    echo "Check Python packages:"
                     "${PYTHON}" -c "import rasa; print('Rasa:', rasa.__version__)"
                     "${PYTHON}" -c "import mlflow; print('MLflow:', mlflow.__version__)"
 
-                    echo "Kiểm tra Rasa CLI:"
+                    echo "Check Rasa CLI:"
                     which rasa
                     rasa --version
 
-                    echo "Copy .env vào workspace..."
+                    echo "Copy .env to workspace"
                     cp "${ENV_FILE}" "${PROJECT_DIR}/.env" || true
 
-                    echo "Kiểm tra MLflow server..."
+                    echo "Check MLflow server"
                     curl -fsS "${MLFLOW_URI}" >/dev/null
-                    echo "MLflow server đang chạy tại ${MLFLOW_URI}"
+                    echo "MLflow server is running at ${MLFLOW_URI}"
                 '''
             }
         }
 
-        stage('2. Data Pipeline') {
+        stage('2. Prepare QA Tools') {
             steps {
-                echo "Convert CSV sang Rasa format..."
+                echo "Prepare Python QA tools"
+
+                sh '''
+                    set -e
+
+                    mkdir -p "$(dirname "${QA_VENV}")"
+
+                    if [ ! -x "${QA_VENV}/bin/python" ]; then
+                        echo "Create QA virtual environment"
+                        "${PYTHON}" -m venv "${QA_VENV}"
+                    fi
+
+                    if [ ! -x "${QA_VENV}/bin/ruff" ] || \
+                       [ ! -x "${QA_VENV}/bin/bandit" ] || \
+                       [ ! -x "${QA_VENV}/bin/pip-audit" ]; then
+
+                        echo "Install missing QA tools"
+                        "${QA_VENV}/bin/python" -m pip install --upgrade pip setuptools wheel
+                        "${QA_VENV}/bin/python" -m pip install --upgrade ruff bandit pip-audit
+                    else
+                        echo "QA tools already exist"
+                    fi
+
+                    "${QA_VENV}/bin/ruff" --version
+                    "${QA_VENV}/bin/bandit" --version
+                    "${QA_VENV}/bin/pip-audit" --version
+                '''
+            }
+        }
+
+        stage('3. Quality Checks') {
+            parallel {
+
+                stage('3.1 Validate Python Code') {
+                    steps {
+                        echo "Validate Python syntax and critical lint"
+
+                        sh '''
+                            set -e
+
+                            cd "${PROJECT_DIR}"
+                            mkdir -p reports
+
+                            echo "Compile Python files"
+                            "${PYTHON}" -m compileall -q data scripts rasa_bot
+
+                            echo "Run ruff critical checks"
+                            "${QA_VENV}/bin/ruff" check data scripts rasa_bot \
+                                --select E9,F63,F7,F82 \
+                                --output-format=github \
+                                | tee reports/ruff-critical.txt
+
+                            echo "Python validation completed"
+                        '''
+                    }
+                }
+
+                stage('3.2 Scan Libraries') {
+                    steps {
+                        echo "Check Python dependencies and known vulnerabilities"
+
+                        sh '''
+                            set -e
+
+                            cd "${PROJECT_DIR}"
+                            mkdir -p reports
+
+                            echo "Export installed packages"
+                            "${PYTHON}" -m pip freeze > reports/pip-freeze.txt
+
+                            echo "Check dependency conflicts"
+                            "${PYTHON}" -m pip check | tee reports/pip-check.txt
+
+                            echo "Run pip-audit vulnerability scan"
+                            if [ -f "requirements.txt" ]; then
+                                timeout 300 "${QA_VENV}/bin/pip-audit" \
+                                    -r requirements.txt \
+                                    > reports/pip-audit.txt 2>&1 || true
+                            else
+                                timeout 300 "${QA_VENV}/bin/pip-audit" \
+                                    > reports/pip-audit.txt 2>&1 || true
+                            fi
+
+                            echo "Library scan completed"
+                        '''
+                    }
+                }
+
+                stage('3.3 Scan Code Security and Malware') {
+                    steps {
+                        echo "Scan Python security issues and malware"
+
+                        sh '''
+                            set -e
+
+                            cd "${PROJECT_DIR}"
+                            mkdir -p reports
+
+                            echo "Run Bandit security scan"
+                            "${QA_VENV}/bin/bandit" \
+                                -r data scripts rasa_bot \
+                                -x "**/__pycache__/**,**/.venv/**,**/tests/**" \
+                                -ll -ii \
+                                -f json \
+                                -o reports/bandit.json || true
+
+                            echo "Run ClamAV malware scan if available"
+                            if command -v clamscan >/dev/null 2>&1; then
+                                clamscan -r \
+                                    --infected \
+                                    --exclude-dir=".git" \
+                                    --exclude-dir=".venv" \
+                                    --exclude-dir="__pycache__" \
+                                    . > reports/clamscan.txt
+                            else
+                                echo "clamscan is not installed. Malware scan skipped." > reports/clamscan.txt
+                            fi
+
+                            echo "Security and malware scan completed"
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('4. Data Pipeline') {
+            steps {
+                echo "Convert CSV data to Rasa format"
 
                 sh '''
                     set -e
@@ -66,26 +196,26 @@ pipeline {
                     cd "${PROJECT_DIR}"
 
                     export PATH="${VENV_BIN}:$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
 
                     "${PYTHON}" data/csv_to_rasa.py
 
-                    echo "Đồng bộ file NLU generated sang rasa_bot/data nếu có..."
+                    echo "Sync generated NLU file to rasa_bot/data"
                     if [ -f "data/nlu_test.yml" ]; then
                         cp data/nlu_test.yml rasa_bot/data/nlu_test.yml
-                        echo "Đã copy data/nlu_test.yml -> rasa_bot/data/nlu_test.yml"
+                        echo "Copied data/nlu_test.yml to rasa_bot/data/nlu_test.yml"
                     else
-                        echo "Không tìm thấy data/nlu_test.yml, bỏ qua bước copy"
+                        echo "data/nlu_test.yml not found. Skip copy."
                     fi
 
-                    echo "Data pipeline hoàn tất"
+                    echo "Data pipeline completed"
                 '''
             }
         }
 
-        stage('3. Train Model') {
+        stage('5. Train Model') {
             steps {
-                echo "Train Rasa + log MLflow..."
+                echo "Train Rasa model and log metrics to MLflow"
 
                 sh '''
                     set -e
@@ -93,23 +223,23 @@ pipeline {
                     cd "${PROJECT_DIR}"
 
                     export PATH="${VENV_BIN}:$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
                     export MLFLOW_TRACKING_URI="${MLFLOW_URI}"
 
-                    echo "Kiểm tra lại Rasa CLI trước khi train:"
+                    echo "Check Rasa CLI before training"
                     which rasa
                     rasa --version
 
                     "${PYTHON}" scripts/train_mlflow.py
 
-                    echo "Train model hoàn tất"
+                    echo "Model training completed"
                 '''
             }
         }
 
-        stage('4. Check Model Artifact') {
+        stage('6. Check Model Artifact') {
             steps {
-                echo "Kiểm tra model artifact..."
+                echo "Check generated model artifact"
 
                 sh '''
                     set -e
@@ -120,17 +250,17 @@ pipeline {
                     LATEST_MODEL=$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
                     if [ -z "$LATEST_MODEL" ]; then
-                        echo "Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
+                        echo "No model .tar.gz found in ${MODEL_DIR}"
                         exit 1
                     fi
 
-                    echo "Model mới nhất: $LATEST_MODEL"
+                    echo "Latest model: $LATEST_MODEL"
                     echo "$LATEST_MODEL" > latest_model_path.txt
                 '''
             }
         }
 
-        stage('5. Human Approval') {
+        stage('7. Human Approval') {
             steps {
                 script {
                     def latestModel = sh(
@@ -138,35 +268,35 @@ pipeline {
                         returnStdout: true
                     ).trim()
 
-                    echo "Model đã train xong: ${latestModel}"
-                    echo "Vào MLflow kiểm tra metrics trước khi quyết định deploy."
+                    echo "Model trained: ${latestModel}"
+                    echo "Check MLflow metrics before deployment."
 
                     def decision = input(
                         id: 'DeployGate',
-                        message: "Model: ${latestModel}\nKiểm tra MLflow xong. Deploy không?",
+                        message: "Model: ${latestModel}\nCheck MLflow metrics. Deploy?",
                         ok: 'Submit',
                         parameters: [
                             choice(
                                 name: 'DECISION',
                                 choices: ['deploy', 'reject'],
-                                description: 'deploy = triển khai, reject = dừng pipeline'
+                                description: 'deploy = deploy model, reject = stop pipeline'
                             )
                         ]
                     )
 
                     if (decision == 'reject') {
                         currentBuild.result = 'ABORTED'
-                        error("Model bị reject. Pipeline dừng, không deploy.")
+                        error("Model rejected. Pipeline stopped.")
                     }
 
-                    echo "Model được duyệt. Tiếp tục deploy."
+                    echo "Model approved. Continue deployment."
                 }
             }
         }
 
-        stage('6. Deploy Model') {
+        stage('8. Deploy Model') {
             steps {
-                echo "Deploy model..."
+                echo "Deploy model"
 
                 sh '''
                     set -e
@@ -174,11 +304,11 @@ pipeline {
                     cd "${PROJECT_DIR}"
 
                     export PATH="${VENV_BIN}:$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
 
                     "${PYTHON}" scripts/deploy_model.py
 
-                    echo "Deploy model hoàn tất"
+                    echo "Deployment completed"
                 '''
             }
         }
@@ -187,21 +317,21 @@ pipeline {
     post {
 
         always {
-            echo "Archive artifacts nếu có..."
+            echo "Archive reports and artifacts"
 
-            archiveArtifacts artifacts: 'latest_model_path.txt,error_log.txt,rasa_bot/results/**/*,rasa_bot/models/*.tar.gz', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'latest_model_path.txt,error_log.txt,reports/**/*,rasa_bot/results/**/*,rasa_bot/models/*.tar.gz', allowEmptyArchive: true
         }
 
         success {
-            echo "PIPELINE HOÀN TẤT!"
+            echo "Pipeline completed successfully"
         }
 
         aborted {
-            echo "Model bị reject hoặc pipeline bị hủy. Không deploy."
+            echo "Pipeline aborted or model rejected. Deployment skipped."
         }
 
         failure {
-            echo "Pipeline thất bại. Kiểm tra Console Output và artifact error_log.txt nếu có."
+            echo "Pipeline failed. Check Console Output and archived reports."
         }
     }
 }
