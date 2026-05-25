@@ -25,6 +25,10 @@ pipeline {
                     ${PYTHON} -c "import rasa; print('Rasa:', rasa.__version__)"
                     ${PYTHON} -c "import mlflow; print('MLflow:', mlflow.__version__)"
                     cp /home/thinh/Chatbot_tien/.env ${PROJECT_DIR}/.env || true
+
+                    echo "Kiểm tra MLflow server..."
+                    curl -fsS http://127.0.0.1:5000 >/dev/null
+                    echo "✅ MLflow server đang chạy"
                 """
             }
         }
