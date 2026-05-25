@@ -27,20 +27,20 @@ pipeline {
             steps {
                 echo "✅ Kiểm tra môi trường Jenkins Agent, Python, Rasa, MLflow..."
 
-                sh """
+                sh '''
                     set -e
 
-                    export PATH="${VENV_BIN}:\\$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:\\$LD_LIBRARY_PATH"
+                    export PATH="${VENV_BIN}:$PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
 
                     echo "Workspace: ${PROJECT_DIR}"
 
                     echo "Python version:"
-                    ${PYTHON} --version
+                    "${PYTHON}" --version
 
                     echo "Kiểm tra package chính:"
-                    ${PYTHON} -c "import rasa; print('Rasa:', rasa.__version__)"
-                    ${PYTHON} -c "import mlflow; print('MLflow:', mlflow.__version__)"
+                    "${PYTHON}" -c "import rasa; print('Rasa:', rasa.__version__)"
+                    "${PYTHON}" -c "import mlflow; print('MLflow:', mlflow.__version__)"
 
                     echo "Kiểm tra Rasa CLI:"
                     which rasa
@@ -52,7 +52,7 @@ pipeline {
                     echo "Kiểm tra MLflow server..."
                     curl -fsS "${MLFLOW_URI}" >/dev/null
                     echo "✅ MLflow server đang chạy tại ${MLFLOW_URI}"
-                """
+                '''
             }
         }
 
@@ -60,15 +60,15 @@ pipeline {
             steps {
                 echo "🔄 Convert CSV sang Rasa format..."
 
-                sh """
+                sh '''
                     set -e
 
                     cd "${PROJECT_DIR}"
 
-                    export PATH="${VENV_BIN}:\\$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:\\$LD_LIBRARY_PATH"
+                    export PATH="${VENV_BIN}:$PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
 
-                    ${PYTHON} data/csv_to_rasa.py
+                    "${PYTHON}" data/csv_to_rasa.py
 
                     echo "Đồng bộ file NLU generated sang rasa_bot/data nếu có..."
                     if [ -f "data/nlu_test.yml" ]; then
@@ -79,7 +79,7 @@ pipeline {
                     fi
 
                     echo "✅ Data pipeline hoàn tất"
-                """
+                '''
             }
         }
 
@@ -87,23 +87,23 @@ pipeline {
             steps {
                 echo "🚀 Train Rasa + log MLflow..."
 
-                sh """
+                sh '''
                     set -e
 
                     cd "${PROJECT_DIR}"
 
-                    export PATH="${VENV_BIN}:\\$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:\\$LD_LIBRARY_PATH"
+                    export PATH="${VENV_BIN}:$PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
                     export MLFLOW_TRACKING_URI="${MLFLOW_URI}"
 
                     echo "Kiểm tra lại Rasa CLI trước khi train:"
                     which rasa
                     rasa --version
 
-                    ${PYTHON} scripts/train_mlflow.py
+                    "${PYTHON}" scripts/train_mlflow.py
 
                     echo "✅ Train model hoàn tất"
-                """
+                '''
             }
         }
 
@@ -111,22 +111,22 @@ pipeline {
             steps {
                 echo "🔎 Kiểm tra model artifact..."
 
-                sh """
+                sh '''
                     set -e
 
                     echo "Model directory: ${MODEL_DIR}"
                     ls -lah "${MODEL_DIR}" || true
 
-                    LATEST_MODEL=\\$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
+                    LATEST_MODEL=$(ls -t "${MODEL_DIR}"/*.tar.gz 2>/dev/null | head -n 1 || true)
 
-                    if [ -z "\\$LATEST_MODEL" ]; then
+                    if [ -z "$LATEST_MODEL" ]; then
                         echo "❌ Không tìm thấy model .tar.gz trong ${MODEL_DIR}"
                         exit 1
                     fi
 
-                    echo "✅ Model mới nhất: \\$LATEST_MODEL"
-                    echo "\\$LATEST_MODEL" > latest_model_path.txt
-                """
+                    echo "✅ Model mới nhất: $LATEST_MODEL"
+                    echo "$LATEST_MODEL" > latest_model_path.txt
+                '''
             }
         }
 
@@ -168,18 +168,18 @@ pipeline {
             steps {
                 echo "☁️ Deploy model..."
 
-                sh """
+                sh '''
                     set -e
 
                     cd "${PROJECT_DIR}"
 
-                    export PATH="${VENV_BIN}:\\$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:\\$LD_LIBRARY_PATH"
+                    export PATH="${VENV_BIN}:$PATH"
+                    export LD_LIBRARY_PATH="${LD_LIB}:$LD_LIBRARY_PATH"
 
-                    ${PYTHON} scripts/deploy_model.py
+                    "${PYTHON}" scripts/deploy_model.py
 
                     echo "✅ Deploy model hoàn tất"
-                """
+                '''
             }
         }
     }
@@ -189,12 +189,7 @@ pipeline {
         always {
             echo "📦 Archive artifacts nếu có..."
 
-            archiveArtifacts artifacts: '''
-                latest_model_path.txt,
-                error_log.txt,
-                rasa_bot/results/**/*,
-                rasa_bot/models/*.tar.gz
-            ''', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'latest_model_path.txt,error_log.txt,rasa_bot/results/**/*,rasa_bot/models/*.tar.gz', allowEmptyArchive: true
         }
 
         success {
