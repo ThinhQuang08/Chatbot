@@ -27,37 +27,54 @@ pipeline {
     stages {
 
         stage('1. Verify Environment') {
-            steps {
-                echo "Verify Jenkins agent, Python, Rasa and MLflow"
+    steps {
+        echo "Verify Jenkins agent, Python, Rasa and MLflow"
 
-                sh '''
-                    set -e
+        sh '''
+            set -e
 
-                    export PATH="${VENV_BIN}:$PATH"
-                    export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
+            export PATH="${VENV_BIN}:$PATH"
+            export LD_LIBRARY_PATH="${LD_LIB}:${LD_LIBRARY_PATH:-}"
 
-                    echo "Workspace: ${PROJECT_DIR}"
+            echo "Workspace: ${PROJECT_DIR}"
 
-                    echo "Python version:"
-                    "${PYTHON}" --version
+            echo "Python version:"
+            "${PYTHON}" --version
 
-                    echo "Check Python packages:"
-                    "${PYTHON}" -c "import rasa; print('Rasa:', rasa.__version__)"
-                    "${PYTHON}" -c "import mlflow; print('MLflow:', mlflow.__version__)"
+            echo "Check Python packages:"
+            "${PYTHON}" -c "import rasa; print('Rasa:', rasa.__version__)"
+            "${PYTHON}" -c "import mlflow; print('MLflow:', mlflow.__version__)"
 
-                    echo "Check Rasa CLI:"
-                    which rasa
-                    rasa --version
+            echo "Check Rasa CLI:"
+            which rasa
+            rasa --version
 
-                    echo "Copy .env to workspace"
-                    cp "${ENV_FILE}" "${PROJECT_DIR}/.env" || true
+            echo "Copy .env to workspace"
+            cp "${ENV_FILE}" "${PROJECT_DIR}/.env" || true
 
-                    echo "Check MLflow server"
-                    curl -fsS "${MLFLOW_URI}" >/dev/null
-                    echo "MLflow server is running at ${MLFLOW_URI}"
-                '''
-            }
-        }
+            echo "Check MLflow server"
+            if curl -fsS "${MLFLOW_URI}" >/dev/null 2>&1; then
+                echo "MLflow server is running at ${MLFLOW_URI}"
+            else
+                echo "MLflow server is not running. Starting MLflow server."
+
+                mkdir -p /home/jenkins/mlflow/artifacts
+
+                nohup "${PYTHON}" -m mlflow server \
+                    --host 0.0.0.0 \
+                    --port 5000 \
+                    --backend-store-uri sqlite:////home/jenkins/mlflow/mlflow.db \
+                    --default-artifact-root /home/jenkins/mlflow/artifacts \
+                    > /home/jenkins/mlflow/mlflow-server.log 2>&1 &
+
+                sleep 10
+
+                curl -fsS "${MLFLOW_URI}" >/dev/null
+                echo "MLflow server started successfully"
+            fi
+        '''
+    }
+}
 
         stage('2. Prepare QA Tools') {
             steps {
