@@ -1,0 +1,187 @@
+{
+  "ask_weather_timing": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 10,
+    "confused_with": {
+      "search_travel": 4,
+      "ask_location_feature": 4,
+      "search_destination": 2
+    }
+  },
+  "search_travel": {
+    "precision": 0.12,
+    "recall": 0.1875,
+    "f1-score": 0.14634146341463414,
+    "support": 16,
+    "confused_with": {
+      "search_destination": 8,
+      "search_activity": 4
+    }
+  },
+  "inform": {
+    "precision": 0.8679245283018868,
+    "recall": 0.8518518518518519,
+    "f1-score": 0.8598130841121496,
+    "support": 54,
+    "confused_with": {
+      "search_destination": 6,
+      "search_travel": 1
+    }
+  },
+  "ask_location_feature": {
+    "precision": 0.14285714285714285,
+    "recall": 0.05263157894736842,
+    "f1-score": 0.07692307692307693,
+    "support": 19,
+    "confused_with": {
+      "search_accommodation": 13,
+      "search_food_dining": 4
+    }
+  },
+  "deny": {
+    "precision": 0.9230769230769231,
+    "recall": 0.6,
+    "f1-score": 0.7272727272727274,
+    "support": 20,
+    "confused_with": {
+      "inform": 3,
+      "greet": 2
+    }
+  },
+  "search_destination": {
+    "precision": 0.3333333333333333,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.47619047619047616,
+    "support": 12,
+    "confused_with": {
+      "search_travel": 2
+    }
+  },
+  "affirm": {
+    "precision": 0.7741935483870968,
+    "recall": 1.0,
+    "f1-score": 0.8727272727272727,
+    "support": 24,
+    "confused_with": {}
+  },
+  "thanks": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 13,
+    "confused_with": {
+      "goodbye": 7,
+      "affirm": 4,
+      "bot_challenge": 1
+    }
+  },
+  "out_of_scope": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "bot_challenge": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 10,
+    "confused_with": {}
+  },
+  "test_s3": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1,
+    "confused_with": {
+      "bot_challenge": 1
+    }
+  },
+  "search_activity": {
+    "precision": 0.76,
+    "recall": 0.8636363636363636,
+    "f1-score": 0.8085106382978724,
+    "support": 22,
+    "confused_with": {
+      "ask_location_feature": 1,
+      "search_food_dining": 1
+    }
+  },
+  "ask_tour_info": {
+    "precision": 1.0,
+    "recall": 0.7692307692307693,
+    "f1-score": 0.8695652173913044,
+    "support": 13,
+    "confused_with": {
+      "search_travel": 1,
+      "search_accommodation": 1
+    }
+  },
+  "search_accommodation": {
+    "precision": 0.37037037037037035,
+    "recall": 0.625,
+    "f1-score": 0.4651162790697674,
+    "support": 16,
+    "confused_with": {
+      "search_travel": 2,
+      "inform": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.7407407407407407,
+    "recall": 1.0,
+    "f1-score": 0.851063829787234,
+    "support": 20,
+    "confused_with": {}
+  },
+  "reset_slots": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "inform": 2,
+      "search_food_dining": 2,
+      "deny": 1
+    }
+  },
+  "search_price": {
+    "precision": 1.0,
+    "recall": 0.23809523809523808,
+    "f1-score": 0.3846153846153846,
+    "support": 21,
+    "confused_with": {
+      "search_travel": 12,
+      "search_destination": 2
+    }
+  },
+  "greet": {
+    "precision": 0.9259259259259259,
+    "recall": 1.0,
+    "f1-score": 0.9615384615384615,
+    "support": 25,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.685064935064935,
+    "recall": 0.6656151419558359,
+    "f1-score": 0.6752,
+    "support": 317
+  },
+  "macro avg": {
+    "precision": 0.5439864359070419,
+    "recall": 0.5567377297274958,
+    "f1-score": 0.5227093789128484,
+    "support": 317
+  },
+  "weighted avg": {
+    "precision": 0.6671502084783552,
+    "recall": 0.6656151419558359,
+    "f1-score": 0.6378521005022659,
+    "support": 317
+  },
+  "accuracy": 0.6656151419558359
+}

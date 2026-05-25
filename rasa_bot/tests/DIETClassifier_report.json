@@ -1,0 +1,121 @@
+{
+  "budget": {
+    "precision": 0.8918918918918919,
+    "recall": 0.8048780487804879,
+    "f1-score": 0.8461538461538461,
+    "support": 41,
+    "confused_with": {
+      "season": 2
+    }
+  },
+  "transportation": {
+    "precision": 0.8,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.7272727272727272,
+    "support": 6,
+    "confused_with": {}
+  },
+  "location.destination": {
+    "precision": 0.6311475409836066,
+    "recall": 0.9746835443037974,
+    "f1-score": 0.7661691542288557,
+    "support": 79,
+    "confused_with": {
+      "transportation": 1
+    }
+  },
+  "duration": {
+    "precision": 0.9230769230769231,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.9230769230769231,
+    "support": 13,
+    "confused_with": {}
+  },
+  "time_window": {
+    "precision": 0.9375,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.8823529411764706,
+    "support": 18,
+    "confused_with": {
+      "location.destination": 1
+    }
+  },
+  "month": {
+    "precision": 0.6046511627906976,
+    "recall": 0.9285714285714286,
+    "f1-score": 0.7323943661971831,
+    "support": 28,
+    "confused_with": {
+      "budget": 1
+    }
+  },
+  "season": {
+    "precision": 0.4117647058823529,
+    "recall": 0.875,
+    "f1-score": 0.56,
+    "support": 8,
+    "confused_with": {}
+  },
+  "party_size": {
+    "precision": 0.782608695652174,
+    "recall": 1.0,
+    "f1-score": 0.878048780487805,
+    "support": 18,
+    "confused_with": {}
+  },
+  "month_from": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 18,
+    "confused_with": {
+      "month": 13
+    }
+  },
+  "month_to": {
+    "precision": 0.6666666666666666,
+    "recall": 0.1111111111111111,
+    "f1-score": 0.1904761904761905,
+    "support": 18,
+    "confused_with": {
+      "month_from": 2
+    }
+  },
+  "category": {
+    "precision": 0.7941176470588235,
+    "recall": 0.782608695652174,
+    "f1-score": 0.7883211678832117,
+    "support": 69,
+    "confused_with": {
+      "activity": 9
+    }
+  },
+  "location.departure": {
+    "precision": 0.8571428571428571,
+    "recall": 0.6,
+    "f1-score": 0.7058823529411764,
+    "support": 10,
+    "confused_with": {
+      "location.destination": 4
+    }
+  },
+  "micro avg": {
+    "precision": 0.7134831460674157,
+    "recall": 0.7791411042944786,
+    "f1-score": 0.7448680351906158,
+    "support": 326
+  },
+  "macro avg": {
+    "precision": 0.6917140075954995,
+    "recall": 0.7083274792913268,
+    "f1-score": 0.6666790374911992,
+    "support": 326
+  },
+  "weighted avg": {
+    "precision": 0.7048468596647158,
+    "recall": 0.7791411042944786,
+    "f1-score": 0.715150724004376,
+    "support": 326
+  },
+  "accuracy": 0.8891089108910891
+}

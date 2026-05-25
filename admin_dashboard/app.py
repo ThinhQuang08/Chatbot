@@ -27,9 +27,66 @@ NLU_FILE = RASA_DIR / "data" / "train" / "nlu.yml"
 app = Flask(__name__)
 
 ENTITY_MAP = {
-    "destination": ["đà lạt", "nha trang", "phú quốc", "sapa", "sa pa", "đà nẵng", "hà nội", "sài gòn", "vũng tàu", "hội an"],
-    "category": ["khách sạn", "resort", "homestay", "nhà nghỉ", "nhà hàng", "nghỉ dưỡng", "villa", "tour", "chỗ ở"],
-    "activity": ["cắm trại", "trekking", "leo núi", "đạp xe", "xe đạp", "dù lượn", "lặn", "check in", "tour đảo", "hoạt động vui chơi"]
+    "location": [
+        "hà nội", "hồ chí minh", "sài gòn", "đà nẵng", "hải phòng", "cần thơ",
+        "đà lạt", "nha trang", "huế", "hội an", "vũng tàu", "phú quốc",
+        "sapa", "sa pa", "hạ long", "hà giang", "cao bằng", "lai châu",
+        "điện biên", "sơn la", "lào cai", "yên bái", "tuyên quang", "bắc kạn",
+        "thái nguyên", "lạng sơn", "bắc giang", "phú thọ", "vĩnh phúc", "bắc ninh",
+        "hải dương", "hưng yên", "thái bình", "nam định", "ninh bình", "hà nam",
+        "quảng ninh", "thanh hóa", "nghệ an", "hà tĩnh", "quảng bình", "quảng trị",
+        "thừa thiên huế", "quảng nam", "quảng ngãi", "bình định", "phú yên",
+        "khánh hòa", "ninh thuận", "bình thuận", "kon tum", "gia lai", "đắk lắk",
+        "đắk nông", "lâm đồng", "bình phước", "tây ninh", "bình dương", "đồng nai",
+        "bà rịa vũng tàu", "long an", "đồng tháp", "tiền giang", "an giang",
+        "bến tre", "vĩnh long", "trà vinh", "hậu giang", "kiên giang", "bạc liêu",
+        "cà mau", "sóc trăng", "phan thiết", "mũi né", "phan xi păng", "fansipan",
+        "côn đảo", "phú quý", "vịnh hạ long", "vịnh lan hạ", "bãi dài",
+        "bãi biển", "biển mỹ khê", "biển nha trang", "biển phú quốc", "biển mũi né",
+        "chùa bái đính", "tràng an", "tam cốc", "bích động", "cố đô huế",
+        "phố cổ hội an", "bản cát cát", "chợ bắc hà", "chợ nổi cái răng",
+        "chợ bến thành", "thung lũng tình yêu", "đồi chè cầu đất", "hồ xuân hương",
+        "hồ tuyền lâm", "núi bà đen", "núi tà cú", "suối tiên", "đại nam",
+        "địa đạo củ chi", "củ chi"
+    ],
+    "category": [
+        "khách sạn", "hotel", "homestay", "resort", "nhà nghỉ", "nhà trọ",
+        "hostel", "villa", "biệt thự", "khu nghỉ dưỡng", "nghỉ dưỡng",
+        "chỗ ở", "chỗ nghỉ", "phòng", "căn hộ", "apartment", "farmstay",
+        "glamping", "khu cắm trại", "cắm trại", "bungalow", "lodge",
+        "nhà hàng", "quán ăn", "quán nhậu", "quán bar", "quán cà phê",
+        "cafe", "tour", "vé", "combo", "gói du lịch",
+        "biển", "núi", "miền núi", "miền biển", "miền tây", "miền bắc",
+        "miền trung", "miền nam", "đồi núi", "rừng", "hồ", "sông", "suối",
+        "thác", "đảo", "hòn đảo", "thành phố", "vùng quê", "đồng bằng",
+        "cao nguyên", "yên tĩnh", "náo nhiệt", "sôi động", "chữa lành",
+        "sang trọng", "bình dân", "giá rẻ", "tiết kiệm",
+        "5 sao", "4 sao", "3 sao", "view biển", "view núi", "gần trung tâm"
+    ],
+    "activity": [
+        "leo núi", "trekking", "cắm trại", "săn mây", "lặn san hô",
+        "lặn biển", "dù lượn", "cáp treo", "đi cáp treo", "tắm biển",
+        "bơi", "ngắm hoa", "chèo thuyền", "kayak", "đạp xe", "xe đạp",
+        "đi bộ", "hiking", "picnic", "dã ngoại", "câu cá", "chụp ảnh",
+        "sống ảo", "check in", "check-in", "tham quan", "ngắm cảnh",
+        "ngắm hoàng hôn", "ngắm bình minh", "spa", "massage", "yoga",
+        "thiền", "chữa lành", "healing", "mua sắm", "shopping",
+        "ăn uống", "ẩm thực", "hải sản", "đặc sản", "nhậu",
+        "giải trí", "vui chơi", "karaoke", "trượt tuyết", "trượt nước",
+        "zipline", "đu dây", "chèo sup", "paddle", "đi tàu", "du thuyền",
+        "tour đảo", "làng chài", "bản làng", "hái trái cây", "làm nông",
+        "cưỡi ngựa", "chụp ảnh cưới", "tuần trăng mật", "dạo phố",
+        "đi phượt", "phượt", "road trip", "camping", "bar", "pub"
+    ],
+    "transportation": [
+        "máy bay", "vé máy bay", "xe khách", "xe đò", "tàu hỏa",
+        "tàu lửa", "xe lửa", "tàu thủy", "tàu", "phà", "cano",
+        "limousine", "xe limo", "xe máy", "xe gắn máy", "xe đạp điện",
+        "ô tô", "ôtô", "xe hơi", "taxi", "grab", "xe ôm", "xe bus",
+        "bus", "xe buýt", "xe giường nằm", "giường nằm", "xe ngồi",
+        "ghế ngồi", "tàu cao tốc", "tàu cánh ngầm", "ca nô", "thuyền",
+        "đi bộ"
+    ]
 }
 
 training_state = {
