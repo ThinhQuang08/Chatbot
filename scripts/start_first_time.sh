@@ -62,7 +62,7 @@ if [[ ! -f "$MODEL_PATH" ]]; then
     echo "[INFO] Tiến hành huấn luyện (train) mô hình mặc định..."
     (
         cd "$ROOT_DIR/rasa_bot"
-        "$VENV_DIR/bin/rasa" train --fixed-model-name "level45-level5-v2"
+        "$VENV_DIR/bin/rasa" train --data data/train --fixed-model-name "level45-level5-v2"
     )
 fi
 

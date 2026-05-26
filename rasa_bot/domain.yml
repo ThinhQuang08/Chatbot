@@ -35,8 +35,7 @@ entities:
   - month_to
   - time_window
 
-  - departure # Điểm khởi hành
-  - destination # Điểm đến (Thay cho location cũ)
+  - location # Điểm đến/đi (role: destination/departure)
   - time # Thời gian
   - activity # Hoạt động
   - budget # Ngân sách
@@ -101,8 +100,10 @@ slots:
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: destination
-        extractor: DIETClassifier
+        entity: location
+        role: destination
+      - type: from_entity
+        entity: location
 
   category:
     type: text
@@ -110,14 +111,14 @@ slots:
     mappings:
       - type: from_entity
         entity: category
-        extractor: DIETClassifier
 
   departure:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: departure
+        entity: location
+        role: departure
 
   time:
     type: text

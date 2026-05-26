@@ -69,6 +69,7 @@ def _reset_on_command(dispatcher, tracker):
 
 
 SKIP_CATEGORY_WORDS = {"sao", "thêm", "đi", "nhé", "nha", "ní", "dợ", "bot", "vậy", "thì"}
+LOCATION_NOISE_WORDS = {"bằng", "ra", "qua", "vào", "từ"}
 
 
 def _first_valid_category(entities):
@@ -77,6 +78,17 @@ def _first_valid_category(entities):
             val = str(e.get("value", "")).strip().lower()
             if val not in SKIP_CATEGORY_WORDS:
                 return val
+    return None
+
+
+def _first_valid_location(entities, role="destination"):
+    """Get first location entity by role, excluding noise words."""
+    valid_roles = ("destination", None) if role == "destination" else ("departure",)
+    for e in entities:
+        if e.get("entity") == "location" and e.get("role") in valid_roles:
+            val = str(e.get("value", "")).strip().lower()
+            if val not in LOCATION_NOISE_WORDS:
+                return e.get("value")
     return None
 
 
@@ -377,14 +389,7 @@ class ActionSearchTourInfo(Action):
 
         _log_action("ACTION SEARCH TOUR INFO", user_message, tracker.latest_message.get("intent", {}).get("name"), latest_entities, tracker.slots)
 
-        new_dest = next(
-            (
-                e.get("value")
-                for e in latest_entities
-                if e.get("entity") == "destination"
-            ),
-            None,
-        )
+        new_dest = _first_valid_location(latest_entities, role="destination")
         new_cat = _first_valid_category(latest_entities)
 
         # ƯU TIÊN 1: Dùng từ khóa mới (nếu có). ƯU TIÊN 2: Dùng trí nhớ cũ (Slot)
@@ -531,11 +536,16 @@ class ActionSearchTravel(Action):
         # Dùng Dictionary Comprehension để gom toàn bộ các entity vừa bắt được thành 1 cục dễ nhìn
         new_entities = {e.get("entity"): e.get("value") for e in latest_entities}
 
-        # NGUYÊN TẮC: Ưu tiên lấy từ khóa MỚI trong câu khách vừa nói.
-        # Nếu khách không nhắc đến (trả về None), thì tự động lôi Slot CŨ ra xài lại.
-        destination_value = new_entities.get("destination") or tracker.get_slot(
-            "destination"
+        # Role-aware location extraction
+        destination_value = (
+            _first_valid_location(latest_entities, role="destination")
+            or tracker.get_slot("destination")
         )
+        departure_value = (
+            _first_valid_location(latest_entities, role="departure")
+            or tracker.get_slot("departure")
+        )
+
         budget_value = new_entities.get("budget") or tracker.get_slot("budget")
         season_value = new_entities.get("season") or tracker.get_slot("season")
         month_value = new_entities.get("month") or tracker.get_slot("month")
@@ -546,7 +556,6 @@ class ActionSearchTravel(Action):
         time_window_value = new_entities.get("time_window") or tracker.get_slot(
             "time_window"
         )
-        departure_value = new_entities.get("departure") or tracker.get_slot("departure")
         category_value = (
             _first_valid_category(latest_entities)
             or tracker.get_slot("category")
@@ -693,12 +702,18 @@ class ActionSearchTour(Action):
 
         new_entities = {e.get("entity"): e.get("value") for e in latest_entities}
 
-        destination = new_entities.get("destination") or tracker.get_slot("destination")
+        destination = (
+            _first_valid_location(latest_entities, role="destination")
+            or tracker.get_slot("destination")
+        )
         # Fallback: text-match destination từ user message
         if not destination:
             destination = _match_destination_from_text(user_message)
+        departure_value = (
+            _first_valid_location(latest_entities, role="departure")
+            or tracker.get_slot("departure")
+        )
         budget_value = new_entities.get("budget") or tracker.get_slot("budget")
-        departure_value = new_entities.get("departure") or tracker.get_slot("departure")
         category_value = new_entities.get("category") or tracker.get_slot("category")
         duration_value = new_entities.get("duration") or tracker.get_slot("duration")
 
@@ -808,10 +823,10 @@ class ActionSearchActivity(Action):
 
         _log_action("ACTION SEARCH ACTIVITY", user_message, intent_name, latest_entities, tracker.slots)
 
-        destination = next(
-            (e.get("value") for e in latest_entities if e.get("entity") == "destination"),
-            None,
-        ) or tracker.get_slot("destination")
+        destination = (
+            _first_valid_location(latest_entities, role="destination")
+            or tracker.get_slot("destination")
+        )
         if not destination:
             destination = _match_destination_from_text(user_message)
 
@@ -882,14 +897,7 @@ class ActionAIConsultant(Action):
 
         _log_action("ACTION AI CONSULTANT", user_message, intent_name, latest_entities, tracker.slots)
 
-        new_dest = next(
-            (
-                e.get("value")
-                for e in latest_entities
-                if e.get("entity") == "destination"
-            ),
-            None,
-        )
+        new_dest = _first_valid_location(latest_entities, role="destination")
         destination = new_dest or tracker.get_slot("destination")
         # Fallback: text-match destination từ user message nếu NLU không extract được
         if not destination:

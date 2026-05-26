@@ -1,0 +1,3176 @@
+[
+  {
+    "text": "dạo này đang stress",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.27160391211509705,
+        "value": "sắp tới",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 8,
+        "end": 12,
+        "confidence_entity": 0.36500662565231323,
+        "value": "đang",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.2716856598854065,
+        "value": "stress",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time_window",
+        "start": 0,
+        "end": 7,
+        "value": "sắp tới",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thời điểm nào đẹp nhất để đi Đà Lạt",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 29,
+        "end": 35,
+        "confidence_entity": 0.9992032647132874,
+        "role": "destination",
+        "confidence_role": 0.9909437298774719,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 29,
+        "end": 35,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tháng 9 có chỗ nào đẹp để săn ảnh",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "tháng 9",
+        "entity": "month"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.7283757925033569,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "month",
+        "start": 0,
+        "end": 7,
+        "value": "tháng 9",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mình định đi vào Tết",
+    "entities": [
+      {
+        "start": 17,
+        "end": 20,
+        "value": "Tết",
+        "entity": "time_window"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 17,
+        "end": 20,
+        "confidence_entity": 0.5848674178123474,
+        "role": "destination",
+        "confidence_role": 0.44262734055519104,
+        "value": "Tết",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "gợi ý vài nơi miền Tây tết này đi",
+    "entities": [
+      {
+        "start": 14,
+        "end": 22,
+        "value": "miền Tây",
+        "entity": "category"
+      },
+      {
+        "start": 23,
+        "end": 26,
+        "value": "tết",
+        "entity": "time_window"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "duration",
+        "start": 6,
+        "end": 9,
+        "confidence_entity": 0.5533504486083984,
+        "value": "vài",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 14,
+        "end": 18,
+        "confidence_entity": 0.9572751522064209,
+        "value": "miền",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.66,
+        "role": "destination",
+        "confidence_role": 0.7318477034568787,
+        "value": "Tây",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 14,
+        "end": 22,
+        "value": "miền Tây",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "muốn đi ngắm tuyết ở miền núi thì đi tháng mấy",
+    "entities": [
+      {
+        "start": 21,
+        "end": 29,
+        "value": "miền núi",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 21,
+        "end": 25,
+        "confidence_entity": 0.9738337993621826,
+        "value": "miền",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "month_to",
+        "start": 37,
+        "end": 42,
+        "confidence_entity": 0.43180447816848755,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 21,
+        "end": 29,
+        "value": "miền núi",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "cuối năm đi biển Phú Quốc có hợp lý không",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "cuối năm",
+        "entity": "time_window"
+      },
+      {
+        "start": 17,
+        "end": 25,
+        "value": "Phú Quốc",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time_window",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9939305782318115,
+        "value": "cuối",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.5234915614128113,
+        "value": "biển",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 17,
+        "end": 25,
+        "confidence_entity": 0.9994370341300964,
+        "role": "destination",
+        "confidence_role": 0.9989805817604065,
+        "value": "Phú Quốc",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 12,
+        "end": 25,
+        "value": "biển Phú Quốc",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 12,
+        "end": 16,
+        "value": "biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn leo núi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 16,
+        "confidence_entity": 0.9912761449813843,
+        "value": "leo núi",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 16,
+        "value": "leo núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 13,
+        "end": 16,
+        "value": "núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "leo núi tháng 10",
+    "entities": [
+      {
+        "start": 8,
+        "end": 16,
+        "value": "tháng 10",
+        "entity": "month"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9847307205200195,
+        "value": "leo núi",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 8,
+        "end": 16,
+        "confidence_entity": 0.9911552667617798,
+        "value": "tháng 10",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 8,
+        "end": 15,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 7,
+        "value": "leo núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 4,
+        "end": 7,
+        "value": "núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "trekking tháng 10",
+    "entities": [
+      {
+        "start": 9,
+        "end": 17,
+        "value": "tháng 10",
+        "entity": "month"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.8596377968788147,
+        "value": "trekking",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 9,
+        "end": 17,
+        "confidence_entity": 0.9887171983718872,
+        "value": "tháng 10",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 9,
+        "end": 16,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 8,
+        "value": "trekking",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "đi trekking vào tháng 10 thì nên đi đâu",
+    "entities": [
+      {
+        "start": 16,
+        "end": 24,
+        "value": "tháng 10",
+        "entity": "month"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 3,
+        "end": 11,
+        "confidence_entity": 0.9775159358978271,
+        "value": "trekking",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 16,
+        "end": 24,
+        "confidence_entity": 0.9586080312728882,
+        "value": "tháng 10",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 16,
+        "end": 23,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "activity",
+        "start": 3,
+        "end": 11,
+        "value": "trekking",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "nơi nào có thể cắm trại",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 23,
+        "confidence_entity": 0.9938086867332458,
+        "value": "cắm trại",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 23,
+        "value": "cắm trại",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn săn mây",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 16,
+        "confidence_entity": 0.9960916638374329,
+        "value": "săn mây",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 16,
+        "value": "săn mây",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "gợi ý chỗ leo núi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 10,
+        "end": 17,
+        "confidence_entity": 0.9944862723350525,
+        "value": "leo núi",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 10,
+        "end": 17,
+        "value": "leo núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 14,
+        "end": 17,
+        "value": "núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "trekking",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.7295036911964417,
+        "value": "trekking",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 8,
+        "value": "trekking",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn trekking",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 17,
+        "confidence_entity": 0.9589331150054932,
+        "value": "trekking",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 17,
+        "value": "trekking",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "chỗ nào trekking đẹp",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 8,
+        "end": 16,
+        "confidence_entity": 0.9754616022109985,
+        "value": "trekking",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 8,
+        "end": 16,
+        "value": "trekking",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "gợi ý nơi đi cáp treo",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 10,
+        "end": 21,
+        "confidence_entity": 0.9891214966773987,
+        "value": "đi cáp treo",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 10,
+        "end": 21,
+        "value": "đi cáp treo",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "gợi ý nơi đi chơi dưới 1500k",
+    "entities": [
+      {
+        "start": 23,
+        "end": 28,
+        "value": "1500k",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "season",
+        "start": 23,
+        "end": 28,
+        "confidence_entity": 0.5744048357009888,
+        "value": "1500k",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 23,
+        "end": 28,
+        "value": "1500k",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 23,
+        "end": 28,
+        "value": "1500k",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tháng 6 tôi có 3 triệu nên đi đâu",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "tháng 6",
+        "entity": "month"
+      },
+      {
+        "start": 15,
+        "end": 22,
+        "value": "3 triệu",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.962976336479187,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 6,
+        "end": 7,
+        "confidence_entity": 0.8277738690376282,
+        "value": "6",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 15,
+        "end": 22,
+        "confidence_entity": 0.9147868156433105,
+        "value": "3 triệu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 15,
+        "end": 22,
+        "value": "3 triệu",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 0,
+        "end": 7,
+        "value": "tháng 6",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn đi mùa xuân với ngân sách 2.5tr",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "mùa xuân",
+        "entity": "season"
+      },
+      {
+        "start": 35,
+        "end": 40,
+        "value": "2.5tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "season",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.9695371389389038,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 35,
+        "end": 40,
+        "confidence_entity": 0.726840615272522,
+        "value": "2.5tr",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 35,
+        "end": 40,
+        "value": "2.5tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 35,
+        "end": 40,
+        "value": "2.5tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "season",
+        "start": 12,
+        "end": 20,
+        "value": "mùa xuân",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "đi tháng 11 đến tháng 1 với 4tr",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "tháng 11",
+        "entity": "month_from"
+      },
+      {
+        "start": 16,
+        "end": 23,
+        "value": "tháng 1",
+        "entity": "month_to"
+      },
+      {
+        "start": 28,
+        "end": 31,
+        "value": "4tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 11,
+        "confidence_entity": 0.781328022480011,
+        "value": "tháng 11",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 16,
+        "end": 23,
+        "confidence_entity": 0.3534577488899231,
+        "value": "tháng 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "budget",
+        "start": 28,
+        "end": 31,
+        "value": "4tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 28,
+        "end": 31,
+        "value": "4tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 16,
+        "end": 23,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn đi chơi nhưng chỉ có 10tr",
+    "entities": [
+      {
+        "start": 30,
+        "end": 34,
+        "value": "10tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "season",
+        "start": 30,
+        "end": 34,
+        "confidence_entity": 0.32057657837867737,
+        "value": "10tr",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 30,
+        "end": 34,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 30,
+        "end": 34,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi chỉ có 10tr thì đi đâu ổn",
+    "entities": [
+      {
+        "start": 11,
+        "end": 15,
+        "value": "10tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 11,
+        "end": 15,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 11,
+        "end": 15,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "ngân sách 10tr đi đâu đẹp",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "10tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 10,
+        "end": 14,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 10,
+        "end": 14,
+        "value": "10tr",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mình có 8tr, gợi ý giúp mình",
+    "entities": [
+      {
+        "start": 8,
+        "end": 11,
+        "value": "8tr",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 8,
+        "end": 11,
+        "value": "8tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 8,
+        "end": 11,
+        "value": "8tr",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "dới 3tr nha, đi cuối tuần",
+    "entities": [
+      {
+        "start": 4,
+        "end": 7,
+        "value": "3tr",
+        "entity": "budget"
+      },
+      {
+        "start": 16,
+        "end": 25,
+        "value": "cuối tuần",
+        "entity": "time_window"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time_window",
+        "start": 16,
+        "end": 25,
+        "confidence_entity": 0.8790640234947205,
+        "value": "cuối tuần",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 4,
+        "end": 7,
+        "value": "3tr",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 4,
+        "end": 7,
+        "value": "3tr",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "giá rẻ thôi tầm 1000k đổ lại",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "1000k",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 16,
+        "end": 21,
+        "value": "1000k",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "budget",
+        "start": 16,
+        "end": 21,
+        "value": "1000k",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 6,
+        "value": "giá rẻ",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "muốn đi resort 5 sao giá không thành vấn đề",
+    "entities": [
+      {
+        "start": 15,
+        "end": 20,
+        "value": "5 sao",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 8,
+        "end": 14,
+        "confidence_entity": 0.9942936301231384,
+        "value": "resort",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 8,
+        "end": 14,
+        "value": "resort",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 15,
+        "end": 20,
+        "value": "5 sao",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "đi trăng mật ngân sách 20 triệu 2 vợ chồng",
+    "entities": [
+      {
+        "start": 23,
+        "end": 31,
+        "value": "20 triệu",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "budget",
+        "start": 23,
+        "end": 31,
+        "confidence_entity": 0.8790760040283203,
+        "value": "20 triệu",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "party_size",
+        "start": 32,
+        "end": 42,
+        "confidence_entity": 0.78,
+        "value": "2 vợ chồng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 23,
+        "end": 31,
+        "value": "20 triệu",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 38,
+        "end": 40,
+        "value": "hồ",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tui mún đi Đà Nẵng 4n3đ ngân sách cỡ 5 củ",
+    "entities": [
+      {
+        "start": 11,
+        "end": 18,
+        "value": "Đà Nẵng",
+        "entity": "location",
+        "role": "destination"
+      },
+      {
+        "start": 19,
+        "end": 23,
+        "value": "4n3đ",
+        "entity": "duration"
+      },
+      {
+        "start": 37,
+        "end": 41,
+        "value": "5 củ",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 11,
+        "end": 18,
+        "confidence_entity": 0.9997671246528625,
+        "role": "destination",
+        "confidence_role": 0.941228449344635,
+        "value": "Đà Nẵng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 37,
+        "end": 41,
+        "confidence_entity": 0.9738812446594238,
+        "value": "5 củ",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "budget",
+        "start": 37,
+        "end": 41,
+        "value": "5 củ",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "duration",
+        "start": 19,
+        "end": 23,
+        "value": "4n3đ",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "location",
+        "start": 11,
+        "end": 18,
+        "value": "Đà Nẵng",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tour Sapa 2 ngày 1 đêm đi từ Hà Nội giá bao nhiêu",
+    "entities": [
+      {
+        "start": 5,
+        "end": 9,
+        "value": "Sapa",
+        "entity": "location",
+        "role": "destination"
+      },
+      {
+        "start": 10,
+        "end": 22,
+        "value": "2 ngày 1 đêm",
+        "entity": "duration"
+      },
+      {
+        "start": 29,
+        "end": 35,
+        "value": "Hà Nội",
+        "entity": "location",
+        "role": "departure"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 5,
+        "end": 9,
+        "confidence_entity": 0.9991100430488586,
+        "role": "destination",
+        "confidence_role": 0.9941660165786743,
+        "value": "Sapa",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "duration",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.6192784905433655,
+        "value": "2 ngày",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "duration",
+        "start": 17,
+        "end": 22,
+        "confidence_entity": 0.5881755352020264,
+        "value": "1 đêm",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 29,
+        "end": 35,
+        "confidence_entity": 0.9925082325935364,
+        "role": "destination",
+        "confidence_role": 0.949277400970459,
+        "value": "Hà Nội",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "duration",
+        "start": 10,
+        "end": 16,
+        "value": "2 ngày",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "duration",
+        "start": 10,
+        "end": 22,
+        "value": "2 ngày 1 đêm",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 5,
+        "end": 9,
+        "value": "Sapa",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 29,
+        "end": 35,
+        "value": "Hà Nội",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 4,
+        "value": "tour",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "giá tour đã bao gồm vé máy bay chưa shop",
+    "entities": [
+      {
+        "start": 23,
+        "end": 30,
+        "value": "máy bay",
+        "entity": "transportation"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 4,
+        "end": 8,
+        "value": "tour",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 20,
+        "end": 22,
+        "value": "vé",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "transportation",
+        "start": 20,
+        "end": 30,
+        "value": "vé máy bay",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "Chơi gì ở Hội An vào buổi tối?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.9706091284751892,
+        "role": "destination",
+        "confidence_role": 0.9737503528594971,
+        "value": "Hội An",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 16,
+        "value": "Hội An",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Ở Đà Lạt có gì chơi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 2,
+        "end": 8,
+        "confidence_entity": 0.9997316002845764,
+        "role": "destination",
+        "confidence_role": 0.9898433685302734,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 2,
+        "end": 8,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Đà Lạt có gì",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9994366765022278,
+        "role": "destination",
+        "confidence_role": 0.9829276204109192,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Đà Lạt có gì hay không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.8378883600234985,
+        "role": "destination",
+        "confidence_role": 0.9343143701553345,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "có chỗ nào cắm trại không",
+    "entities": [
+      {
+        "start": 11,
+        "end": 19,
+        "value": "cắm trại",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "confidence_entity": 0.993489146232605,
+        "value": "cắm trại",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "value": "cắm trại",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "resort nào có hồ bơi ở Nha Trang",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "resort",
+        "entity": "category"
+      },
+      {
+        "start": 23,
+        "end": 32,
+        "value": "Nha Trang",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9941118359565735,
+        "value": "resort",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 14,
+        "end": 16,
+        "confidence_entity": 0.991249680519104,
+        "role": "departure",
+        "confidence_role": 0.6987747550010681,
+        "value": "hồ",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 23,
+        "end": 32,
+        "confidence_entity": 0.998854398727417,
+        "role": "destination",
+        "confidence_role": 0.9949925541877747,
+        "value": "Nha Trang",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 23,
+        "end": 32,
+        "value": "Nha Trang",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 17,
+        "end": 20,
+        "value": "bơi",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 6,
+        "value": "resort",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 14,
+        "end": 16,
+        "value": "hồ",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "có chỗ ở nào view đẹp ở Sapa không",
+    "entities": [
+      {
+        "start": 3,
+        "end": 8,
+        "value": "chỗ ở",
+        "entity": "category"
+      },
+      {
+        "start": 24,
+        "end": 28,
+        "value": "Sapa",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.9951268434524536,
+        "role": "destination",
+        "confidence_role": 0.9877548813819885,
+        "value": "Sapa",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 24,
+        "end": 28,
+        "value": "Sapa",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 3,
+        "end": 8,
+        "value": "chỗ ở",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tìm chỗ nghỉ cho gia đình ở Vũng Tàu",
+    "entities": [
+      {
+        "start": 4,
+        "end": 12,
+        "value": "chỗ nghỉ",
+        "entity": "category"
+      },
+      {
+        "start": 28,
+        "end": 36,
+        "value": "Vũng Tàu",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 4,
+        "end": 12,
+        "confidence_entity": 0.5498744249343872,
+        "value": "chỗ nghỉ",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "party_size",
+        "start": 17,
+        "end": 25,
+        "confidence_entity": 0.7852284908294678,
+        "value": "gia đình",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 28,
+        "end": 36,
+        "confidence_entity": 0.9979718327522278,
+        "role": "destination",
+        "confidence_role": 0.9977867603302002,
+        "value": "Vũng Tàu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 28,
+        "end": 36,
+        "value": "Vũng Tàu",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 4,
+        "end": 12,
+        "value": "chỗ nghỉ",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "transportation",
+        "start": 33,
+        "end": 36,
+        "value": "Tàu",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "gợi ý thêm chỗ ở đi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 6,
+        "end": 10,
+        "confidence_entity": 0.6622969508171082,
+        "value": "thêm",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 11,
+        "end": 16,
+        "confidence_entity": 0.8444714546203613,
+        "value": "chỗ ở",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 11,
+        "end": 16,
+        "value": "chỗ ở",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "gợi ý chỗ ở",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 6,
+        "end": 11,
+        "confidence_entity": 0.6770399212837219,
+        "value": "chỗ ở",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 6,
+        "end": 11,
+        "value": "chỗ ở",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "chỗ ở",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.6716087460517883,
+        "value": "chỗ",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "value": "chỗ ở",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "khách sạn thì sao",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9151133298873901,
+        "value": "khách sạn",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 9,
+        "value": "khách sạn",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Đà Lạt mùa này đẹp không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.999508261680603,
+        "role": "destination",
+        "confidence_role": 0.974371075630188,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 7,
+        "end": 10,
+        "confidence_entity": 0.8978811502456665,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Đà Lạt mùa hè đẹp không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9993299245834351,
+        "role": "destination",
+        "confidence_role": 0.9403623938560486,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 7,
+        "end": 13,
+        "confidence_entity": 0.8370705842971802,
+        "value": "mùa hè",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 7,
+        "end": 13,
+        "value": "mùa hè",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 6,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mùa này đi Đà Lạt có đẹp không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "season",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.85283362865448,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 11,
+        "end": 17,
+        "confidence_entity": 0.9998005032539368,
+        "role": "destination",
+        "confidence_role": 0.9942666888237,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 11,
+        "end": 17,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thời tiết Đà Lạt mùa này thế nào",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.9998034834861755,
+        "role": "destination",
+        "confidence_role": 0.9930707812309265,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 17,
+        "end": 20,
+        "confidence_entity": 0.8259985446929932,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 16,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Sapa tháng mấy đẹp nhất",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9944368600845337,
+        "role": "destination",
+        "confidence_role": 0.9951562881469727,
+        "value": "Sapa",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 5,
+        "end": 10,
+        "confidence_entity": 0.6055009961128235,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 4,
+        "value": "Sapa",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Nha Trang mùa này đi được không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9995786547660828,
+        "role": "destination",
+        "confidence_role": 0.9897089600563049,
+        "value": "Nha Trang",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.8156595826148987,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 0,
+        "end": 9,
+        "value": "Nha Trang",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mùa mưa ở Phú Quốc là tháng mấy",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "season",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.7686446309089661,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 18,
+        "confidence_entity": 0.9997047781944275,
+        "role": "destination",
+        "confidence_role": 0.9988194108009338,
+        "value": "Phú Quốc",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 22,
+        "end": 27,
+        "confidence_entity": 0.9087002277374268,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 10,
+        "end": 18,
+        "value": "Phú Quốc",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "đi Đà Nẵng mùa nào đẹp",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 3,
+        "end": 10,
+        "confidence_entity": 0.9995614886283875,
+        "role": "destination",
+        "confidence_role": 0.8802461624145508,
+        "value": "Đà Nẵng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "season",
+        "start": 11,
+        "end": 14,
+        "confidence_entity": 0.5886967778205872,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 3,
+        "end": 10,
+        "value": "Đà Nẵng",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thời điểm nào thích hợp đi Vũng Tàu",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 27,
+        "end": 35,
+        "confidence_entity": 0.997788667678833,
+        "role": "destination",
+        "confidence_role": 0.9982492923736572,
+        "value": "Vũng Tàu",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 27,
+        "end": 35,
+        "value": "Vũng Tàu",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "transportation",
+        "start": 32,
+        "end": 35,
+        "value": "Tàu",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "cuối năm đi biển có đẹp không",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "time_window",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9945908784866333,
+        "value": "cuối",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.7584603428840637,
+        "value": "biển",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 12,
+        "end": 16,
+        "value": "biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mà thôi cho tôi đi Đà Lạt",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 19,
+        "end": 25,
+        "confidence_entity": 0.9994246959686279,
+        "role": "destination",
+        "confidence_role": 0.9933568835258484,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 19,
+        "end": 25,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thôi tôi muốn đi Nha Trang",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 17,
+        "end": 26,
+        "confidence_entity": 0.9996261596679688,
+        "role": "destination",
+        "confidence_role": 0.9953653812408447,
+        "value": "Nha Trang",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 17,
+        "end": 26,
+        "value": "Nha Trang",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thôi thì đi Phú Quốc vậy",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 12,
+        "end": 20,
+        "confidence_entity": 0.9996676445007324,
+        "role": "destination",
+        "confidence_role": 0.9978716373443604,
+        "value": "Phú Quốc",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 12,
+        "end": 20,
+        "value": "Phú Quốc",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "đi từ tháng 9 sang tháng 11 thì có chỗ nào đẹp",
+    "entities": [
+      {
+        "start": 6,
+        "end": 13,
+        "value": "tháng 9",
+        "entity": "month_from"
+      },
+      {
+        "start": 19,
+        "end": 27,
+        "value": "tháng 11",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 6,
+        "end": 13,
+        "confidence_entity": 0.5868817567825317,
+        "value": "tháng 9",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month_from",
+        "start": 19,
+        "end": 27,
+        "confidence_entity": 0.3191128671169281,
+        "value": "tháng 11",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 6,
+        "end": 13,
+        "value": "tháng 9",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 19,
+        "end": 26,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "gợi ý tour tắm biển giá rẻ",
+    "entities": [
+      {
+        "start": 11,
+        "end": 19,
+        "value": "tắm biển",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "confidence_entity": 0.6987109184265137,
+        "value": "tắm biển",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "value": "tắm biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 6,
+        "end": 10,
+        "value": "tour",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "category",
+        "start": 15,
+        "end": 19,
+        "value": "biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 20,
+        "end": 26,
+        "value": "giá rẻ",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tìm chỗ tắm biển",
+    "entities": [
+      {
+        "start": 8,
+        "end": 16,
+        "value": "tắm biển",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 8,
+        "end": 16,
+        "confidence_entity": 0.9862144589424133,
+        "value": "tắm biển",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 8,
+        "end": 16,
+        "value": "tắm biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 12,
+        "end": 16,
+        "value": "biển",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn lên núi chơi",
+    "entities": [
+      {
+        "start": 13,
+        "end": 16,
+        "value": "núi",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 16,
+        "confidence_entity": 0.9948253631591797,
+        "value": "lên núi",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "category",
+        "start": 13,
+        "end": 16,
+        "value": "núi",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "gợi ý điểm cắm trại",
+    "entities": [
+      {
+        "start": 11,
+        "end": 19,
+        "value": "cắm trại",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "confidence_entity": 0.9941520094871521,
+        "value": "cắm trại",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 19,
+        "value": "cắm trại",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "reset slot",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.8368701934814453,
+        "value": "reset",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "reset slots",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.8259050846099854,
+        "value": "reset",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "reset",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.9771044850349426,
+        "value": "reset",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "mình xuất phát từ Đà Nẵng",
+    "entities": [
+      {
+        "start": 18,
+        "end": 25,
+        "value": "Đà Nẵng",
+        "entity": "location",
+        "role": "departure"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 18,
+        "end": 25,
+        "confidence_entity": 0.9994857311248779,
+        "role": "destination",
+        "confidence_role": 0.6889605522155762,
+        "value": "Đà Nẵng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 18,
+        "end": 25,
+        "value": "Đà Nẵng",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "từ tháng 5 đến tháng 7",
+    "entities": [
+      {
+        "start": 3,
+        "end": 10,
+        "value": "tháng 5",
+        "entity": "month_from"
+      },
+      {
+        "start": 15,
+        "end": 22,
+        "value": "tháng 7",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "confidence_entity": 0.6292851567268372,
+        "value": "tháng 5",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "value": "tháng 5",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 15,
+        "end": 22,
+        "value": "tháng 7",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "từ tháng 10 đến tháng 12",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "tháng 10",
+        "entity": "month_from"
+      },
+      {
+        "start": 16,
+        "end": 24,
+        "value": "tháng 12",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 11,
+        "confidence_entity": 0.6292851567268372,
+        "value": "tháng 10",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 16,
+        "end": 23,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "từ tháng 1 đến tháng 3",
+    "entities": [
+      {
+        "start": 3,
+        "end": 10,
+        "value": "tháng 1",
+        "entity": "month_from"
+      },
+      {
+        "start": 15,
+        "end": 22,
+        "value": "tháng 3",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "confidence_entity": 0.6292851567268372,
+        "value": "tháng 1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "month",
+        "start": 3,
+        "end": 10,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 15,
+        "end": 22,
+        "value": "tháng 3",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tui muốn đi từ tháng 2 đến tháng 5",
+    "entities": [
+      {
+        "start": 15,
+        "end": 22,
+        "value": "tháng 2",
+        "entity": "month_from"
+      },
+      {
+        "start": 27,
+        "end": 34,
+        "value": "tháng 5",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 15,
+        "end": 22,
+        "value": "tháng 2",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 27,
+        "end": 34,
+        "value": "tháng 5",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "đi từ tháng 1 tới tháng 3",
+    "entities": [
+      {
+        "start": 6,
+        "end": 13,
+        "value": "tháng 1",
+        "entity": "month_from"
+      },
+      {
+        "start": 18,
+        "end": 25,
+        "value": "tháng 3",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 6,
+        "end": 11,
+        "confidence_entity": 0.5482534170150757,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "month",
+        "start": 6,
+        "end": 13,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "month",
+        "start": 18,
+        "end": 25,
+        "value": "tháng 3",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "dời lịch sang từ tháng 6 đến tháng 8",
+    "entities": [
+      {
+        "start": 17,
+        "end": 24,
+        "value": "tháng 6",
+        "entity": "month_from"
+      },
+      {
+        "start": 29,
+        "end": 36,
+        "value": "tháng 8",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 17,
+        "end": 24,
+        "value": "tháng 6",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 29,
+        "end": 36,
+        "value": "tháng 8",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "chuyến đi bắt đầu từ tháng 9 kết thúc vào tháng 12",
+    "entities": [
+      {
+        "start": 21,
+        "end": 28,
+        "value": "tháng 9",
+        "entity": "month_from"
+      },
+      {
+        "start": 42,
+        "end": 50,
+        "value": "tháng 12",
+        "entity": "month_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "month",
+        "start": 21,
+        "end": 28,
+        "confidence_entity": 0.4925261437892914,
+        "value": "tháng 9",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month_to",
+        "start": 42,
+        "end": 50,
+        "confidence_entity": 0.48711633682250977,
+        "value": "tháng 12",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 21,
+        "end": 28,
+        "value": "tháng 9",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "month",
+        "start": 42,
+        "end": 49,
+        "value": "tháng 1",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ở vũng tàu thì sao",
+    "entities": [
+      {
+        "start": 2,
+        "end": 10,
+        "value": "vũng tàu",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "transportation",
+        "start": 7,
+        "end": 10,
+        "confidence_entity": 0.8520877361297607,
+        "value": "tàu",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 2,
+        "end": 10,
+        "value": "Vũng Tàu",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "transportation",
+        "start": 7,
+        "end": 10,
+        "value": "tàu",
+        "extractor": "RegexEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tìm ở Nha Trang xem",
+    "entities": [
+      {
+        "start": 6,
+        "end": 15,
+        "value": "Nha Trang",
+        "entity": "location",
+        "role": "destination"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 6,
+        "end": 19,
+        "confidence_entity": 0.9871438145637512,
+        "role": "destination",
+        "confidence_role": 0.8138493299484253,
+        "value": "Nha Trang xem",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 6,
+        "end": 15,
+        "value": "Nha Trang",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "ở Đà Lạt thì sao",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 2,
+        "end": 8,
+        "confidence_entity": 0.9997703433036804,
+        "role": "destination",
+        "confidence_role": 0.9746412038803101,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 2,
+        "end": 8,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "còn Đà Lạt thì sao",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 4,
+        "end": 10,
+        "confidence_entity": 0.9997857213020325,
+        "role": "destination",
+        "confidence_role": 0.9744661450386047,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 4,
+        "end": 10,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "thế Đà Lạt thì sao",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 4,
+        "end": 10,
+        "confidence_entity": 0.9997699856758118,
+        "role": "destination",
+        "confidence_role": 0.9655625820159912,
+        "value": "Đà Lạt",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 4,
+        "end": 10,
+        "value": "Đà Lạt",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

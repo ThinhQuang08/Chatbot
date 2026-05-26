@@ -1,0 +1,850 @@
+[
+  {
+    "text": "buồn quá",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7136908173561096
+    }
+  },
+  {
+    "text": "chán ghê",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8598245978355408
+    }
+  },
+  {
+    "text": "mệt mỏi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.35074979066848755
+    }
+  },
+  {
+    "text": "dạo này đang stress",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9508123993873596
+    }
+  },
+  {
+    "text": "chán đời",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.950231671333313
+    }
+  },
+  {
+    "text": "không vui",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6445735096931458
+    }
+  },
+  {
+    "text": "tụt mood",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4790512025356293
+    }
+  },
+  {
+    "text": "tệ quá",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8341910243034363
+    }
+  },
+  {
+    "text": "cảm ơn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8058348894119263
+    }
+  },
+  {
+    "text": "cảm ơn bạn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6865053176879883
+    }
+  },
+  {
+    "text": "cảm ơn bot",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.584351658821106
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4698473811149597
+    }
+  },
+  {
+    "text": "thanks",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6763287782669067
+    }
+  },
+  {
+    "text": "thanks bot",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.44301703572273254
+    }
+  },
+  {
+    "text": "cám ơn nhiều",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.7912941575050354
+    }
+  },
+  {
+    "text": "cảm ơn nhiều nha",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3208513855934143
+    }
+  },
+  {
+    "text": "ok cảm ơn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5585746169090271
+    }
+  },
+  {
+    "text": "thank you so much",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5117719173431396
+    }
+  },
+  {
+    "text": "cám ơn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8650029301643372
+    }
+  },
+  {
+    "text": "cảm ơn nhé",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9747014045715332
+    }
+  },
+  {
+    "text": "tốt quá cảm ơn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3876900374889374
+    }
+  },
+  {
+    "text": "mình định đi vào Tết",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9608009457588196
+    }
+  },
+  {
+    "text": "cuối năm đi biển Phú Quốc có hợp lý không",
+    "intent": "search_destination",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9971701502799988
+    }
+  },
+  {
+    "text": "có điểm nào ăn uống ngon không",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.9921410083770752
+    }
+  },
+  {
+    "text": "tôi muốn đi nơi khí hậu mát mẻ",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.9111703634262085
+    }
+  },
+  {
+    "text": "tìm khu nghỉ dưỡng có spa",
+    "intent": "search_activity",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9974416494369507
+    }
+  },
+  {
+    "text": "tôi có 2 triệu đi được đâu",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9978440999984741
+    }
+  },
+  {
+    "text": "gợi ý nơi đi chơi dưới 1500k",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9392330646514893
+    }
+  },
+  {
+    "text": "tháng 6 tôi có 3 triệu nên đi đâu",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9776501655578613
+    }
+  },
+  {
+    "text": "tôi muốn đi tháng 4, chi phí tối đa 2000000",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9975236058235168
+    }
+  },
+  {
+    "text": "tôi muốn đi mùa xuân với ngân sách 2.5tr",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9998806715011597
+    }
+  },
+  {
+    "text": "đi tháng 11 đến tháng 1 với 4tr",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9146522879600525
+    }
+  },
+  {
+    "text": "ngân sách 3 triệu thì nên đi đâu",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9984306693077087
+    }
+  },
+  {
+    "text": "tôi muốn đi chơi nhưng chỉ có 10tr",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9872685074806213
+    }
+  },
+  {
+    "text": "tôi chỉ có 10tr thì đi đâu ổn",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.7591191530227661
+    }
+  },
+  {
+    "text": "ngân sách 10tr đi đâu đẹp",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.998375415802002
+    }
+  },
+  {
+    "text": "mình có 8tr, gợi ý giúp mình",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "ask_itinerary",
+      "confidence": 0.46832263469696045
+    }
+  },
+  {
+    "text": "kinh phí eo hẹp cỡ 2 củ thì đi đc đâu ko bot",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9998413324356079
+    }
+  },
+  {
+    "text": "dới 3tr nha, đi cuối tuần",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9919413328170776
+    }
+  },
+  {
+    "text": "muốn đi resort 5 sao giá không thành vấn đề",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9326791763305664
+    }
+  },
+  {
+    "text": "đi trăng mật ngân sách 20 triệu 2 vợ chồng",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9997928738594055
+    }
+  },
+  {
+    "text": "tài chính 10 củ quay đầu",
+    "intent": "search_price",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999202489852905
+    }
+  },
+  {
+    "text": "tui mún đi Đà Nẵng 4n3đ ngân sách cỡ 5 củ",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9999505281448364
+    }
+  },
+  {
+    "text": "có gói combo nhà hàng khách sạn nào ở Kim Liên rẻ rẻ ko",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9970724582672119
+    }
+  },
+  {
+    "text": "tour Đà Lạt tháng 12",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "book_tour",
+      "confidence": 0.913238525390625
+    }
+  },
+  {
+    "text": "Vũng Tàu có đặc sản gì?",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.9939841628074646
+    }
+  },
+  {
+    "text": "Chơi gì ở Hội An vào buổi tối?",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.7338026165962219
+    }
+  },
+  {
+    "text": "Ở Đà Lạt có gì chơi",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.42255592346191406
+    }
+  },
+  {
+    "text": "Đà Lạt có gì",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.6822107434272766
+    }
+  },
+  {
+    "text": "các khách sạn ở đó thì sao",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9967809915542603
+    }
+  },
+  {
+    "text": "tìm homestay",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.997139573097229
+    }
+  },
+  {
+    "text": "có chỗ nào cắm trại không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9988079071044922
+    }
+  },
+  {
+    "text": "ở đó có resort nào đẹp không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9946523904800415
+    }
+  },
+  {
+    "text": "tìm khách sạn ở Vũng Tàu",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9973201155662537
+    }
+  },
+  {
+    "text": "có resort nào tại Sapa không",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9990354776382446
+    }
+  },
+  {
+    "text": "tìm khu nghỉ dưỡng có spa",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9974416494369507
+    }
+  },
+  {
+    "text": "gợi ý vài cái homestay ở Đà Lạt",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9981630444526672
+    }
+  },
+  {
+    "text": "có gói combo nhà hàng khách sạn nào ở Kim Liên rẻ rẻ ko",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9970724582672119
+    }
+  },
+  {
+    "text": "nhà nghỉ thì sao",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9987038373947144
+    }
+  },
+  {
+    "text": "thế còn khách sạn thì sao",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9977300763130188
+    }
+  },
+  {
+    "text": "resort thì sao hả bot",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9985740184783936
+    }
+  },
+  {
+    "text": "cho tui xem homestay thì sao",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9975147247314453
+    }
+  },
+  {
+    "text": "đổi sang nhà nghỉ nhé",
+    "intent": "ask_location_feature",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9979859590530396
+    }
+  },
+  {
+    "text": "muốn đặt villa ở Vũng Tàu",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.7581407427787781
+    }
+  },
+  {
+    "text": "cho xin danh sách khách sạn Đà Nẵng",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.45576319098472595
+    }
+  },
+  {
+    "text": "có chỗ ở nào view đẹp ở Sapa không",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.6621747612953186
+    }
+  },
+  {
+    "text": "gợi ý thêm chỗ ở đi",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.5574641227722168
+    }
+  },
+  {
+    "text": "gợi ý chỗ ở",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.7902577519416809
+    }
+  },
+  {
+    "text": "chỗ ở",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8714215755462646
+    }
+  },
+  {
+    "text": "Đà Lạt mùa này đẹp không",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.5901240110397339
+    }
+  },
+  {
+    "text": "Đà Lạt mùa hè đẹp không",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.783521294593811
+    }
+  },
+  {
+    "text": "mùa này đi Đà Lạt có đẹp không",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.5140798091888428
+    }
+  },
+  {
+    "text": "thời tiết Đà Lạt mùa này thế nào",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.9913047552108765
+    }
+  },
+  {
+    "text": "Sapa tháng mấy đẹp nhất",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.7614429593086243
+    }
+  },
+  {
+    "text": "Nha Trang mùa này đi được không",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.5782829523086548
+    }
+  },
+  {
+    "text": "mùa mưa ở Phú Quốc là tháng mấy",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.6080586314201355
+    }
+  },
+  {
+    "text": "đi Đà Nẵng mùa nào đẹp",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.4745091497898102
+    }
+  },
+  {
+    "text": "thời điểm nào thích hợp đi Vũng Tàu",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9595056772232056
+    }
+  },
+  {
+    "text": "cuối năm đi biển có đẹp không",
+    "intent": "ask_weather_timing",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.9870517253875732
+    }
+  },
+  {
+    "text": "tui muốn đi chơi",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.22606952488422394
+    }
+  },
+  {
+    "text": "tôi muốn đi đâu đó",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9823984503746033
+    }
+  },
+  {
+    "text": "tôi muốn đi chơi",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.880439281463623
+    }
+  },
+  {
+    "text": "đi từ tháng 9 sang tháng 11 thì có chỗ nào đẹp",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9965001344680786
+    }
+  },
+  {
+    "text": "dịp lễ 30/4 nên đi tỉnh nào",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9970996379852295
+    }
+  },
+  {
+    "text": "dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9922486543655396
+    }
+  },
+  {
+    "text": "tui muốn đi từ tháng 2 đến tháng 5",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9621886610984802
+    }
+  },
+  {
+    "text": "muốn đi đâu đó từ tháng 1 tới tháng 3",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.990270733833313
+    }
+  },
+  {
+    "text": "dạo này nóng quá mình muốn đi biển",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9304316639900208
+    }
+  },
+  {
+    "text": "gợi ý tour tắm biển giá rẻ",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.5083553194999695
+    }
+  },
+  {
+    "text": "tìm chỗ tắm biển",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9991629123687744
+    }
+  },
+  {
+    "text": "tôi muốn lên núi chơi",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9979283809661865
+    }
+  },
+  {
+    "text": "gợi ý điểm cắm trại",
+    "intent": "search_travel",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9986879229545593
+    }
+  },
+  {
+    "text": "mật mã s3 là gì",
+    "intent": "test_s3",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4347734749317169
+    }
+  },
+  {
+    "text": "reset slot",
+    "intent": "reset_slots",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.23228858411312103
+    }
+  },
+  {
+    "text": "reset slots",
+    "intent": "reset_slots",
+    "intent_prediction": {
+      "name": "search_food_dining",
+      "confidence": 0.1973610669374466
+    }
+  },
+  {
+    "text": "clear session",
+    "intent": "reset_slots",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6717569231987
+    }
+  },
+  {
+    "text": "xoá dữ liệu",
+    "intent": "reset_slots",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5821355581283569
+    }
+  },
+  {
+    "text": "reset",
+    "intent": "reset_slots",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8476296067237854
+    }
+  },
+  {
+    "text": "từ tháng 5 đến tháng 7",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.8504489064216614
+    }
+  },
+  {
+    "text": "từ tháng 10 đến tháng 12",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.8504489064216614
+    }
+  },
+  {
+    "text": "từ tháng 1 đến tháng 3",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.8504489064216614
+    }
+  },
+  {
+    "text": "tui muốn đi từ tháng 2 đến tháng 5",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9621886610984802
+    }
+  },
+  {
+    "text": "đi từ tháng 1 tới tháng 3",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9594411849975586
+    }
+  },
+  {
+    "text": "dời lịch sang từ tháng 6 đến tháng 8",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.9742351770401001
+    }
+  },
+  {
+    "text": "chuyến đi bắt đầu từ tháng 9 kết thúc vào tháng 12",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_travel",
+      "confidence": 0.99647057056427
+    }
+  },
+  {
+    "text": "tìm ở Nha Trang xem",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "search_accommodation",
+      "confidence": 0.9715548753738403
+    }
+  }
+]
