@@ -1,3 +1,20 @@
-# Add patterns of files dvc should ignore, which could improve
-# the performance. Learn more at
-# https://dvc.org/doc/user-guide/dvcignore
+# Bỏ qua thư mục Git
+.git/
+.gitignore
+
+# Bỏ qua môi trường ảo Python
+monitor-env/
+venv/
+env/
+
+# Bỏ qua các file rác biên dịch của Python
+__pycache__/
+*.pyc
+*.pyo
+data/*.py # các scripts python xử lý data
+
+# Bỏ qua các báo cáo HTML sinh ra tự động
+results/evidently_reports/
+
+# Bỏ qua file cấu hình biến môi trường
+.env
