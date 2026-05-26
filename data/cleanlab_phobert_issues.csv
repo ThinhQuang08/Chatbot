@@ -1,4 +1,0 @@
-id,session_id,raw_text,predicted_intent,text_hash,cleaned_text,snorkel_intent,snorkel_confidence
-1999,sim_v2_3,khách sạn nha trang giá rẻ không,unlabeled,xxx2,khách_sạn Nha_Trang giá rẻ không,search_accommodation,0.74
-342,sim_v2_341,có hướng dẫn viên ko bot,unlabeled,29d3853a48dbf340216027d3fc2b638d,có hướng_dẫn_viên không bot,ask_tour_info,0.7519487721356817
-923,sim_v2_922,có hướng dẫn viên ko dợ,unlabeled,5b4fa36aaf783f5db723d3bd35743a69,có hướng_dẫn_viên không dợ,ask_tour_info,0.7519487721356817
