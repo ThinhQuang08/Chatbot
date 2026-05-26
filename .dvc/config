@@ -1,0 +1,6 @@
+[core]
+    remote = minio_remote
+['remote "minio_remote"']
+    url = s3://chatbot-models/dvc_store
+    endpointurl = http://192.168.1.213:9001
+    ssl_verify = false
