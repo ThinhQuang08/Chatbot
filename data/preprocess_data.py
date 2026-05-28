@@ -8,14 +8,16 @@ import re
 import hashlib
 import warnings
 from underthesea import word_tokenize
-warnings.filterwarnings('ignore')
+
+warnings.filterwarnings("ignore")
 
 DB_CONFIG = {
-    "host": "192.168.1.213",
+    "host": "localhost",
     "database": "chatbot",
     "user": "chatbot_user",
-    "password": "supersecret"
+    "password": "supersecret",
 }
+
 
 class DataPreprocessor:
     def __init__(self):
@@ -31,48 +33,73 @@ class DataPreprocessor:
             "phu quoc": "Phú Quốc",
             "phuu quoc": "Phú Quốc",
             "gia re": "giá rẻ",
-            "khach san": "khách sạn"
+            "khach san": "khách sạn",
         }
-        
+
         # 2. TỪ ĐIỂN TỪ ĐƠN (Word Mapping) - Chạy sau khi đã tách cụm
         self.word_dict = {
-            "củ": "triệu", "tr": "triệu", "k": "nghìn",
-            "đl": "Đà Lạt", "đlạt": "Đà Lạt", "nt": "Nha Trang", "pq": "Phú Quốc",
-            "hn": "Hà Nội", "sg": "Sài Gòn",
-            "ik": "đi", "dc": "được", "đc": "được", "ko": "không", "k": "không",
-            "vjp": "vip", "resot": "resort", "xĩu": "xỉu",
-            
+            "củ": "triệu",
+            "tr": "triệu",
+            "k": "nghìn",
+            "đl": "Đà Lạt",
+            "đlạt": "Đà Lạt",
+            "nt": "Nha Trang",
+            "pq": "Phú Quốc",
+            "hn": "Hà Nội",
+            "sg": "Sài Gòn",
+            "ik": "đi",
+            "dc": "được",
+            "đc": "được",
+            "ko": "không",
+            "k": "không",
+            "vjp": "vip",
+            "resot": "resort",
+            "xĩu": "xỉu",
             # --- CÁC TỪ MỚI BỔ SUNG ĐỂ QUÉT SẠCH 30 CÂU TEST ---
-            "mún": "muốn", "chjll": "chill", "way": "quay", "ks": "khách sạn",
-            "thág": "tháng", "z": "vậy", "nhiu": "nhiêu", "tien": "tiền",
-            "khach": "khách", "sann": "sạn", "dep": "đẹp", "wá": "quá",
-            "tim": "tìm", "di": "đi", "gia": "giá", "re": "rẻ"
+            "mún": "muốn",
+            "chjll": "chill",
+            "way": "quay",
+            "ks": "khách sạn",
+            "thág": "tháng",
+            "z": "vậy",
+            "nhiu": "nhiêu",
+            "tien": "tiền",
+            "khach": "khách",
+            "sann": "sạn",
+            "dep": "đẹp",
+            "wá": "quá",
+            "tim": "tìm",
+            "di": "đi",
+            "gia": "giá",
+            "re": "rẻ",
         }
 
     def generate_md5(self, text):
-        return hashlib.md5(text.encode('utf-8')).hexdigest()
+        return hashlib.md5(text.encode("utf-8")).hexdigest()
 
     def normalize_unicode(self, text):
-        return unicodedata.normalize('NFC', text)
+        return unicodedata.normalize("NFC", text)
 
     def clean_text(self, text):
         text = text.strip()
-        
+
         # Xử lý chữ "k" đi liền với số TRƯỚC (VD: 200k, 50k)
-        text = re.sub(r'(\d+)\s*k\b', r'\1 nghìn', text, flags=re.IGNORECASE)
-        
+        text = re.sub(r"(\d+)\s*k\b", r"\1 nghìn", text, flags=re.IGNORECASE)
+
         # Tách số và chữ cho các trường hợp còn lại (VD: "2tr" -> "2 tr")
-        text = re.sub(r'(\d+)([a-zA-Z]+)', r'\1 \2', text)
-        
+        text = re.sub(r"(\d+)([a-zA-Z]+)", r"\1 \2", text)
+
         # Xóa ký tự lặp (VD: đẹpppp -> đẹp)
-        text = re.sub(r'(.)\1{2,}', r'\1', text)
+        text = re.sub(r"(.)\1{2,}", r"\1", text)
         return text
 
     def phrase_normalize(self, text):
         """VŨ KHÍ 2: Quét và thay thế nguyên cụm từ trước khi cắt nhỏ"""
         # Quét qua các cụm từ trong từ điển (Dùng Regex thay thế để không bị lỗi chữ hoa/thường)
         for slang, norm in self.phrase_dict.items():
-            text = re.sub(r'\b' + re.escape(slang) + r'\b', norm, text, flags=re.IGNORECASE)
+            text = re.sub(
+                r"\b" + re.escape(slang) + r"\b", norm, text, flags=re.IGNORECASE
+            )
         return text
 
     def lexical_normalize(self, text):
@@ -96,7 +123,7 @@ class DataPreprocessor:
     def run_pipeline(self, raw_text):
         if not isinstance(raw_text, str) or not raw_text.strip():
             return None
-            
+
         text = self.normalize_unicode(raw_text)
         text = self.clean_text(text)
         text = self.phrase_normalize(text)
@@ -104,43 +131,47 @@ class DataPreprocessor:
         text = self.segment_words(text)
         return text
 
+
 def fetch_and_preprocess():
     print("[INFO] BẮT ĐẦU KÉO VÀ TIỀN XỬ LÝ DỮ LIỆU...")
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         # 1. Data Collection: Kéo log chat
-        query = "SELECT id, session_id, raw_text, predicted_intent FROM ai_chat_analytics;"
+        query = (
+            "SELECT id, session_id, raw_text, predicted_intent FROM ai_chat_analytics;"
+        )
         df = pd.read_sql_query(query, conn)
         print(f"📥 Đã kéo {len(df)} dòng dữ liệu thô từ Database.")
-        
+
         # 2. Deduplication & Filtering
         # Lọc bỏ câu quá ngắn (< 3 ký tự)
-        df = df[df['raw_text'].str.len() >= 3]
-        
+        df = df[df["raw_text"].str.len() >= 3]
+
         # Tạo cột Hash MD5 và xóa trùng lặp (Exact Duplicate Removal)
         preprocessor = DataPreprocessor()
-        df['text_hash'] = df['raw_text'].apply(preprocessor.generate_md5)
+        df["text_hash"] = df["raw_text"].apply(preprocessor.generate_md5)
         initial_count = len(df)
-        df = df.drop_duplicates(subset=['text_hash'])
+        df = df.drop_duplicates(subset=["text_hash"])
         print(f"✂️ Đã xóa {initial_count - len(df)} dòng trùng lặp hoàn toàn.")
 
         # 3. Unicode Normalization, Text Cleaning & Lexical Normalization
         print("[INFO] Đang chạy đường ống làm sạch (Phase A)...")
-        df['cleaned_text'] = df['raw_text'].apply(preprocessor.run_pipeline)
-        
+        df["cleaned_text"] = df["raw_text"].apply(preprocessor.run_pipeline)
+
         # In ra kết quả so sánh để đối chiếu
-        print("\n" + "="*50)
+        print("\n" + "=" * 50)
         print("🔍 KẾT QUẢ SO SÁNH (TRƯỚC -> SAU):")
-        print("="*50)
+        print("=" * 50)
         for _, row in df.head(20).iterrows():
             print(f"Gốc  : {row['raw_text']}")
             print(f"Sạch : {row['cleaned_text']}")
             print("-" * 30)
 
         import os
-        os.makedirs('data', exist_ok=True)
+
+        os.makedirs("data", exist_ok=True)
         # Bắt buộc phải cài thư viện openpyxl: pip install openpyxl
-        df.to_csv('data/cleaned_chat_logs.csv', index=False, encoding='utf-8-sig')
+        df.to_csv("data/cleaned_chat_logs.csv", index=False, encoding="utf-8-sig")
         print("Đã lưu phiên bản chuẩn hóa ra file: data/cleaned_chat_logs.csv")
 
         # Trả về DataFrame đã làm sạch để dùng cho Phase B
@@ -149,8 +180,9 @@ def fetch_and_preprocess():
     except Exception as e:
         print(f"[ERROR] {e}")
     finally:
-        if 'conn' in locals():
+        if "conn" in locals():
             conn.close()
+
 
 if __name__ == "__main__":
     clean_df = fetch_and_preprocess()

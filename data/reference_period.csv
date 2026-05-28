@@ -1,0 +1,801 @@
+﻿session_id,raw_text,predicted_intent,confidence_score,destination,parsed_budget,no_results_flag,timestamp,segment_label
+drift_33172_733,gợi ý lịch trình Hội An 4 ngày 4 đêm,ask_itinerary,0.989,Hội An,20000000.0,0,2026-04-28 16:27:49.457421,reference
+drift_55011_502,giá tour này bao nhiêu tư vấn với,search_price,0.96,,,0,2026-04-28 16:49:27.079449,reference
+drift_44999_751,có nhà nghỉ nào ở Đà Lạt không nhé,search_accommodation,0.976,Đà Lạt,,0,2026-04-28 17:11:04.701476,reference
+drift_36414_552,du lịch tiết kiệm,search_price,0.855,,,0,2026-04-28 17:32:42.323504,reference
+drift_24457_619,đi dù lượn ở đâu,search_activity,0.868,,,0,2026-04-28 17:54:19.945531,reference
+drift_59189_432,Huế mùa nào đẹp nhất,ask_location_feature,0.979,Huế,,0,2026-04-28 18:15:57.567559,reference
+drift_30423_593,tìm homestay giá rẻ Huế,search_accommodation,0.923,Huế,3000000.0,0,2026-04-28 18:37:35.189586,reference
+drift_21673_347,muốn trekking ở Hà Giang,search_activity,0.906,Hà Giang,,0,2026-04-28 18:59:12.811614,reference
+drift_28534_764,tìm chỗ chèo thuyền,search_activity,0.944,,,0,2026-04-28 19:20:50.433641,reference
+drift_99451_508,thời tiết hôm nay thế nào gấp ạ,out_of_scope,0.87,,,0,2026-04-28 19:42:28.055669,reference
+drift_80987_514,có quán nào ngon ở Đà Lạt,search_food_dining,0.882,Đà Lạt,,0,2026-04-28 20:04:05.677696,reference
+drift_48114_311,đồ ăn Phú Quốc thế nào,search_food_dining,0.925,Phú Quốc,,0,2026-04-28 20:25:43.299724,reference
+drift_34395_640,tìm tour Hội An 3 ngày 1 đêm bot ơi,search_travel,0.891,Hội An,20000000.0,0,2026-04-28 20:47:20.921751,reference
+drift_75503_860,tháng 3 đi đâu đẹp tư vấn với,search_destination,0.984,,,0,2026-04-28 21:08:58.543779,reference
+drift_31614_917,được,affirm,0.989,,,0,2026-04-28 21:30:36.165806,reference
+drift_17413_444,tháng 3,inform,0.884,,20000000.0,0,2026-04-28 21:52:13.787834,reference
+drift_14370_655,đi Hà Nội bằng gì gấp ạ,ask_transportation,0.953,Hà Nội,,0,2026-04-28 22:13:51.409862,reference
+drift_72388_849,đạp xe,inform,0.895,,,0,2026-04-28 22:35:29.031889,reference
+drift_73844_950,bye tư vấn với,goodbye,0.939,,,0,2026-04-28 22:57:06.653917,reference
+drift_43995_394,muốn lặn san hô ở Đà Lạt,search_activity,0.906,Đà Lạt,,0,2026-04-28 23:18:44.275944,reference
+drift_24473_768,chèo thuyền,inform,0.942,,5000000.0,0,2026-04-28 23:40:21.897972,reference
+drift_20065_467,có nhà nghỉ nào ở Huế không,search_accommodation,0.971,Huế,10000000.0,0,2026-04-29 00:01:59.519999,reference
+drift_85579_19,đi Huế chi phí thế nào,search_travel,0.879,Huế,10000000.0,0,2026-04-29 00:23:37.142027,reference
+drift_55076_720,Phú Quốc có gì đẹp,ask_location_feature,0.946,Phú Quốc,,0,2026-04-29 00:45:14.764054,reference
+drift_23069_727,du lịch tiết kiệm,search_price,0.905,,3000000.0,0,2026-04-29 01:06:52.386082,reference
+drift_72632_7,thông tin chi tiết tour Đà Lạt tư vấn với,ask_tour_info,0.937,Đà Lạt,10000000.0,0,2026-04-29 01:28:30.008109,reference
+drift_38117_896,đi Đà Nẵng mùa nào đẹp,search_travel,0.906,Đà Nẵng,3000000.0,0,2026-04-29 01:50:07.630137,reference
+drift_55032_470,ở Hội An có villa nào tốt,search_accommodation,0.867,Hội An,,0,2026-04-29 02:11:45.252164,reference
+drift_89406_266,cho mình hỏi tour Huế,search_travel,0.877,Huế,,0,2026-04-29 02:33:22.874192,reference
+drift_46693_268,khoảng 5 ngày 2 đêm,inform,0.972,,3000000.0,0,2026-04-29 02:55:00.496219,reference
+drift_12525_590,đi Hà Giang 2 ngày 2 đêm nên đi đâu,ask_itinerary,0.864,Hà Giang,10000000.0,0,2026-04-29 03:16:38.118247,reference
+drift_74248_526,tour này có hdv không,ask_tour_info,0.892,,5000000.0,0,2026-04-29 03:38:15.740275,reference
+drift_73792_962,hey gấp ạ,greet,0.862,,,0,2026-04-29 03:59:53.362302,reference
+drift_73681_372,cho thuê xe đạp xe,search_activity,0.965,,,0,2026-04-29 04:21:30.984330,reference
+drift_42864_597,bao gồm những gì,ask_tour_info,0.939,,20000000.0,0,2026-04-29 04:43:08.606357,reference
+drift_90952_506,Đà Lạt ạ,inform,0.925,Đà Lạt,15000000.0,0,2026-04-29 05:04:46.228385,reference
+drift_84622_684,đi leo núi ở đâu tư vấn với,search_activity,0.875,,,0,2026-04-29 05:26:23.850412,reference
+drift_56278_766,có quán nào ngon ở Hà Nội,search_food_dining,0.947,Hà Nội,,0,2026-04-29 05:48:01.472440,reference
+drift_80191_761,đi Phú Quốc mùa nào đẹp,search_travel,0.925,Phú Quốc,15000000.0,0,2026-04-29 06:09:39.094467,reference
+drift_15217_973,đi máy bay nhé,inform,0.984,,5000000.0,0,2026-04-29 06:31:16.716495,reference
+drift_17283_919,có,affirm,0.91,,,0,2026-04-29 06:52:54.338522,reference
+drift_72429_69,ừ ạ,affirm,0.967,,,0,2026-04-29 07:14:31.960550,reference
+drift_77576_294,ai lập trình ra bạn tư vấn với,bot_challenge,0.892,,,0,2026-04-29 07:36:09.582577,reference
+drift_14342_689,tour này có hdv không nha,ask_tour_info,0.925,,2000000.0,0,2026-04-29 07:57:47.204605,reference
+drift_98840_551,tour này có hdv không,ask_tour_info,0.878,,2000000.0,0,2026-04-29 08:19:24.826633,reference
+drift_32171_331,đi Hội An chi phí thế nào,search_travel,0.926,Hội An,20000000.0,0,2026-04-29 08:41:02.448660,reference
+drift_45861_283,muốn đạp xe ở Nha Trang,search_activity,0.896,Nha Trang,,0,2026-04-29 09:02:40.070688,reference
+drift_91991_930,du lịch tiết kiệm,search_price,0.937,,,0,2026-04-29 09:24:17.692715,reference
+drift_66402_603,Sapa có gì chơi,ask_location_feature,0.978,Sapa,,0,2026-04-29 09:45:55.314743,reference
+drift_45401_824,ok cảm ơn,goodbye,0.907,,,0,2026-04-29 10:07:32.936770,reference
+drift_30503_623,gợi ý lịch trình Hội An 4 ngày 1 đêm,ask_itinerary,0.877,Hội An,20000000.0,0,2026-04-29 10:29:10.558798,reference
+drift_89567_306,đi Phú Quốc chi phí thế nào gấp ạ,search_travel,0.899,Phú Quốc,,0,2026-04-29 10:50:48.180825,reference
+drift_50647_846,tour này có hdv không,ask_tour_info,0.852,,20000000.0,0,2026-04-29 11:12:25.802853,reference
+drift_86118_535,giá tour này bao nhiêu bot ơi,search_price,0.944,,,0,2026-04-29 11:34:03.424880,reference
+drift_94712_122,bao gồm những gì,ask_tour_info,0.984,,2000000.0,0,2026-04-29 11:55:41.046908,reference
+drift_71807_189,hi,greet,0.989,,,0,2026-04-29 12:17:18.668935,reference
+drift_12761_18,thông tin chi tiết tour Vũng Tàu,ask_tour_info,0.968,Vũng Tàu,,0,2026-04-29 12:38:56.290963,reference
+drift_63929_571,muốn dù lượn ở Vũng Tàu ạ,search_activity,0.903,Vũng Tàu,,0,2026-04-29 13:00:33.912990,reference
+drift_31153_608,phương tiện đi Đà Nẵng,ask_transportation,0.858,Đà Nẵng,,0,2026-04-29 13:22:11.535018,reference
+drift_99530_966,phương tiện đi Phú Quốc,ask_transportation,0.943,Phú Quốc,,0,2026-04-29 13:43:49.157046,reference
+drift_17886_70,muốn đi du lịch tháng 9,search_destination,0.971,,,0,2026-04-29 14:05:26.779073,reference
+drift_35653_379,có nha,affirm,0.891,,,0,2026-04-29 14:27:04.401101,reference
+drift_13687_82,thời tiết hôm nay thế nào,out_of_scope,0.856,,,0,2026-04-29 14:48:42.023128,reference
+drift_54378_114,gợi ý lịch trình Phú Quốc 4 ngày 4 đêm nha,ask_itinerary,0.973,Phú Quốc,,0,2026-04-29 15:10:19.645156,reference
+drift_94279_171,giá tour này bao nhiêu ạ,search_price,0.89,,8000000.0,0,2026-04-29 15:31:57.267183,reference
+drift_33811_564,cho mình hỏi tour Hà Nội,search_travel,0.876,Hà Nội,5000000.0,0,2026-04-29 15:53:34.889211,reference
+drift_10497_671,ai lập trình ra bạn,bot_challenge,0.851,,,0,2026-04-29 16:15:12.511238,reference
+drift_35123_964,hi,greet,0.919,,,0,2026-04-29 16:36:50.133266,reference
+drift_83274_70,tạm biệt tư vấn với,goodbye,0.975,,,0,2026-04-29 16:58:27.755293,reference
+drift_87635_218,thôi,deny,0.99,,,0,2026-04-29 17:20:05.377321,reference
+drift_77690_612,ăn gì ở Phú Quốc shop,search_food_dining,0.962,Phú Quốc,,0,2026-04-29 17:41:42.999348,reference
+drift_96962_548,có tour nào đi Hội An không,search_travel,0.901,Hội An,,0,2026-04-29 18:03:20.621376,reference
+drift_69383_450,được tư vấn với,affirm,0.879,,,0,2026-04-29 18:24:58.243403,reference
+drift_26757_64,có homestay nào ở Vũng Tàu không,search_accommodation,0.869,Vũng Tàu,,0,2026-04-29 18:46:35.865431,reference
+drift_40773_107,tháng 5,inform,0.95,,15000000.0,0,2026-04-29 19:08:13.487459,reference
+drift_20234_495,chi phí tour Phú Quốc,search_price,0.971,Phú Quốc,10000000.0,0,2026-04-29 19:29:51.109486,reference
+drift_24576_984,đăng ký tour Sapa,book_tour,0.956,Sapa,,0,2026-04-29 19:51:28.731514,reference
+drift_32776_4,Hà Giang có đặc sản gì,search_food_dining,0.984,Hà Giang,,0,2026-04-29 20:13:06.353541,reference
+drift_39736_393,đi Đà Lạt chi phí bao nhiêu,search_price,0.97,Đà Lạt,,0,2026-04-29 20:34:43.975569,reference
+drift_38279_27,ở Hội An có nhà nghỉ nào tốt gấp ạ,search_accommodation,0.941,Hội An,,0,2026-04-29 20:56:21.597596,reference
+drift_72520_827,có tour nào đi Nha Trang không,search_travel,0.926,Nha Trang,5000000.0,0,2026-04-29 21:17:59.219624,reference
+drift_37618_915,có tour nào đi Phú Quốc không,search_travel,0.882,Phú Quốc,5000000.0,0,2026-04-29 21:39:36.841651,reference
+drift_15722_201,bạn có biết nấu ăn không,out_of_scope,0.874,,,0,2026-04-29 22:01:14.463679,reference
+drift_20220_588,dù lượn tư vấn với,inform,0.985,,,0,2026-04-29 22:22:52.085706,reference
+drift_23567_97,mở cửa hàng lúc mấy giờ bot ơi,out_of_scope,0.988,,,0,2026-04-29 22:44:29.707734,reference
+drift_92510_715,đi leo núi ở đâu nha,search_activity,0.856,,,0,2026-04-29 23:06:07.329761,reference
+drift_14976_948,chèo thuyền nhé,inform,0.968,,2000000.0,0,2026-04-29 23:27:44.951789,reference
+drift_27499_90,xin chào,greet,0.963,,,0,2026-04-29 23:49:22.573816,reference
+drift_83613_332,lặn san hô,inform,0.891,,20000000.0,0,2026-04-30 00:11:00.195844,reference
+drift_47688_322,Đà Lạt có gì đẹp,ask_location_feature,0.99,Đà Lạt,,0,2026-04-30 00:32:37.817872,reference
+drift_62420_133,tháng 11 bot ơi,inform,0.895,,,0,2026-04-30 00:54:15.439899,reference
+drift_13091_933,cho em xin tour Nha Trang 2 triệu,search_travel,0.91,Nha Trang,15000000.0,0,2026-04-30 01:15:53.061927,reference
+drift_37627_265,tìm chỗ dù lượn,search_activity,0.93,,,0,2026-04-30 01:37:30.683954,reference
+drift_82275_532,ăn gì ở Hội An,search_food_dining,0.921,Hội An,,0,2026-04-30 01:59:08.305982,reference
+drift_79612_101,thông tin chi tiết tour Vũng Tàu bot ơi,ask_tour_info,0.853,Vũng Tàu,3000000.0,0,2026-04-30 02:20:45.928009,reference
+drift_94561_84,không phải,deny,0.984,,,0,2026-04-30 02:42:23.550037,reference
+drift_44010_637,khoảng 4 ngày 3 đêm,inform,0.95,,5000000.0,0,2026-04-30 03:04:01.172064,reference
+drift_78909_256,phương tiện đi Hà Nội,ask_transportation,0.938,Hà Nội,,0,2026-04-30 03:25:38.794092,reference
+drift_97840_637,khoảng 2 ngày 3 đêm,inform,0.864,,2000000.0,0,2026-04-30 03:47:16.416119,reference
+drift_94551_926,tháng 5,inform,0.874,,15000000.0,0,2026-04-30 04:08:54.038147,reference
+drift_14085_951,mình cần tìm tour Sapa giá rẻ,search_travel,0.982,Sapa,20000000.0,0,2026-04-30 04:30:31.660174,reference
+drift_33184_694,hey shop,greet,0.88,,,0,2026-04-30 04:52:09.282202,reference
+drift_22991_969,đi tàu hỏa nhé,inform,0.873,,,0,2026-04-30 05:13:46.904230,reference
+drift_85333_806,đi Hội An 3 ngày 2 đêm nên đi đâu,ask_itinerary,0.95,Hội An,,0,2026-04-30 05:35:24.526257,reference
+drift_23715_662,hoàn tiền thế nào nha,ask_policy_booking,0.875,,,0,2026-04-30 05:57:02.148285,reference
+drift_50174_146,tìm tour Sapa 4 ngày 1 đêm,search_travel,0.934,Sapa,3000000.0,0,2026-04-30 06:18:39.770312,reference
+drift_81353_998,muốn đi du lịch Hà Nội 2000k,search_travel,0.85,Hà Nội,5000000.0,0,2026-04-30 06:40:17.392340,reference
+drift_12936_125,cho mình hỏi tour Vũng Tàu,search_travel,0.91,Vũng Tàu,15000000.0,0,2026-04-30 07:01:55.014367,reference
+drift_17522_874,có được hoàn không,ask_policy_booking,0.921,,,0,2026-04-30 07:23:32.636395,reference
+drift_10968_974,xin chào,greet,0.931,,,0,2026-04-30 07:45:10.258422,reference
+drift_18631_273,cho thuê xe cắm trại,search_activity,0.897,,,0,2026-04-30 08:06:47.880450,reference
+drift_93102_596,đi Đà Lạt mùa nào đẹp,search_travel,0.916,Đà Lạt,15000000.0,0,2026-04-30 08:28:25.502477,reference
+drift_15337_442,từ Đà Nẵng đi Phú Quốc bằng xe gì,search_travel,0.929,Phú Quốc,,0,2026-04-30 08:50:03.124505,reference
+drift_72372_351,gợi ý điểm du lịch,search_destination,0.883,,,0,2026-04-30 09:11:40.746532,reference
+drift_46288_370,ở Hà Nội có homestay nào tốt,search_accommodation,0.919,Hà Nội,20000000.0,0,2026-04-30 09:33:18.368560,reference
+drift_17616_243,nên đi đâu chơi,search_destination,0.987,,,0,2026-04-30 09:54:55.990587,reference
+drift_57458_318,mở cửa hàng lúc mấy giờ,out_of_scope,0.987,,,0,2026-04-30 10:16:33.612615,reference
+drift_84561_635,Phú Quốc có gì chơi,ask_location_feature,0.958,Phú Quốc,,0,2026-04-30 10:38:11.234643,reference
+drift_92873_982,tháng 8 đi đâu đẹp,search_destination,0.854,,,0,2026-04-30 10:59:48.856670,reference
+drift_31264_757,cho mình xin khách sạn Hội An,search_accommodation,0.889,Hội An,10000000.0,0,2026-04-30 11:21:26.478698,reference
+drift_12309_944,đi Hội An bằng gì,ask_transportation,0.955,Hội An,,0,2026-04-30 11:43:04.100725,reference
+drift_71202_99,đi Vũng Tàu bằng gì,ask_transportation,0.878,Vũng Tàu,,0,2026-04-30 12:04:41.722753,reference
+drift_29252_604,không có,deny,0.881,,,0,2026-04-30 12:26:19.344780,reference
+drift_79372_771,tháng 11 đi đâu đẹp nha,search_destination,0.89,,,0,2026-04-30 12:47:56.966808,reference
+drift_70185_976,có quán nào ngon ở Đà Nẵng,search_food_dining,0.932,Đà Nẵng,,0,2026-04-30 13:09:34.588835,reference
+drift_53670_455,cho thuê xe trekking gấp ạ,search_activity,0.858,,,0,2026-04-30 13:31:12.210863,reference
+drift_20684_680,đi xe khách nhé,inform,0.956,,15000000.0,0,2026-04-30 13:52:49.832890,reference
+drift_97503_990,có chỗ nào trekking không,search_activity,0.931,,,0,2026-04-30 14:14:27.454918,reference
+drift_88742_419,tháng 3,inform,0.899,,2000000.0,0,2026-04-30 14:36:05.076945,reference
+drift_15291_596,không phải,deny,0.958,,,0,2026-04-30 14:57:42.698973,reference
+drift_22242_624,cảm ơn,goodbye,0.86,,,0,2026-04-30 15:19:20.321000,reference
+drift_67640_30,có villa nào ở Nha Trang không shop,search_accommodation,0.938,Nha Trang,2000000.0,0,2026-04-30 15:40:57.943028,reference
+drift_86871_951,alo shop,greet,0.946,,,0,2026-04-30 16:02:35.565056,reference
+drift_67070_596,ừ nhé,affirm,0.965,,,0,2026-04-30 16:24:13.187083,reference
+drift_87390_991,tháng 1 đi đâu đẹp,search_destination,0.874,,,0,2026-04-30 16:45:50.809111,reference
+drift_76053_863,tháng 12 đi đâu đẹp,search_destination,0.881,,,0,2026-04-30 17:07:28.431138,reference
+drift_39939_624,Vũng Tàu có đặc sản gì ạ,search_food_dining,0.969,Vũng Tàu,,0,2026-04-30 17:29:06.053166,reference
+drift_80748_943,cho em xin tour Hà Nội 8 triệu nha,search_travel,0.934,Hà Nội,10000000.0,0,2026-04-30 17:50:43.675193,reference
+drift_28943_786,tạm biệt,goodbye,0.904,,,0,2026-04-30 18:12:21.297221,reference
+drift_70317_526,đi dù lượn ở đâu tư vấn với,search_activity,0.904,,,0,2026-04-30 18:33:58.919248,reference
+drift_31218_347,đi trekking ở đâu bot ơi,search_activity,0.918,,,0,2026-04-30 18:55:36.541276,reference
+drift_73958_403,tour này có hdv không,ask_tour_info,0.879,,20000000.0,0,2026-04-30 19:17:14.163303,reference
+drift_10952_666,tìm nhà nghỉ giá rẻ Hà Nội,search_accommodation,0.896,Hà Nội,10000000.0,0,2026-04-30 19:38:51.785331,reference
+drift_59048_88,Vũng Tàu,inform,0.87,Vũng Tàu,15000000.0,0,2026-04-30 20:00:29.407358,reference
+drift_80999_586,đi Hà Giang mùa nào đẹp,search_travel,0.924,Hà Giang,,0,2026-04-30 20:22:07.029386,reference
+drift_80463_413,giải bài tập này giúp tôi,out_of_scope,0.902,,,0,2026-04-30 20:43:44.651413,reference
+drift_48771_239,cho em xin tour Phú Quốc 5 triệu,search_travel,0.86,Phú Quốc,,0,2026-04-30 21:05:22.273441,reference
+drift_76610_941,gợi ý lịch trình Hà Nội 2 ngày 3 đêm,ask_itinerary,0.946,Hà Nội,20000000.0,0,2026-04-30 21:26:59.895469,reference
+drift_26161_119,ăn gì ở Đà Nẵng,search_food_dining,0.868,Đà Nẵng,,0,2026-04-30 21:48:37.517496,reference
+drift_47518_640,đi xe máy nhé,inform,0.873,,,0,2026-04-30 22:10:15.139524,reference
+drift_34096_730,Sapa có gì đẹp,ask_location_feature,0.868,Sapa,,0,2026-04-30 22:31:52.761551,reference
+drift_27080_154,tìm tour Nha Trang 3 ngày 3 đêm nhé,search_travel,0.947,Nha Trang,3000000.0,0,2026-04-30 22:53:30.383579,reference
+drift_64729_485,không có,deny,0.895,,,0,2026-04-30 23:15:08.005606,reference
+drift_40285_843,có tour nào đi Vũng Tàu không,search_travel,0.927,Vũng Tàu,8000000.0,0,2026-04-30 23:36:45.627634,reference
+drift_32686_292,alo,greet,0.979,,,0,2026-04-30 23:58:23.249661,reference
+drift_63927_655,cho mình xin villa Vũng Tàu,search_accommodation,0.935,Vũng Tàu,,0,2026-05-01 00:20:00.871689,reference
+drift_76112_173,khoảng 3 ngày 2 đêm,inform,0.896,,8000000.0,0,2026-05-01 00:41:38.493716,reference
+drift_54617_78,muốn đi du lịch Vũng Tàu 2000k ạ,search_travel,0.985,Vũng Tàu,10000000.0,0,2026-05-01 01:03:16.115744,reference
+drift_72707_510,cảm ơn shop,goodbye,0.969,,,0,2026-05-01 01:24:53.737771,reference
+drift_15664_33,không phải,deny,0.982,,,0,2026-05-01 01:46:31.359799,reference
+drift_14507_352,bye ạ,goodbye,0.878,,,0,2026-05-01 02:08:08.981827,reference
+drift_61158_503,có,affirm,0.968,,,0,2026-05-01 02:29:46.603854,reference
+drift_60090_330,tìm tour Phú Quốc 5 ngày 3 đêm,search_travel,0.936,Phú Quốc,2000000.0,0,2026-05-01 02:51:24.225882,reference
+drift_23977_926,muốn cắm trại ở Đà Lạt,search_activity,0.932,Đà Lạt,,0,2026-05-01 03:13:01.847909,reference
+drift_65147_561,xin chào,greet,0.951,,,0,2026-05-01 03:34:39.469937,reference
+drift_74103_365,Phú Quốc có đặc sản gì,search_food_dining,0.98,Phú Quốc,,0,2026-05-01 03:56:17.091964,reference
+drift_59140_435,cho thuê xe trekking nha,search_activity,0.979,,,0,2026-05-01 04:17:54.713992,reference
+drift_65615_993,bye ạ,goodbye,0.927,,,0,2026-05-01 04:39:32.336019,reference
+drift_74090_577,cắm trại,inform,0.951,,8000000.0,0,2026-05-01 05:01:09.958047,reference
+drift_66369_799,tour này có hdv không,ask_tour_info,0.948,,10000000.0,0,2026-05-01 05:22:47.580074,reference
+drift_85752_831,ok cảm ơn,goodbye,0.955,,,0,2026-05-01 05:44:25.202102,reference
+drift_30391_277,muốn đi du lịch Nha Trang 10000k,search_travel,0.873,Nha Trang,,0,2026-05-01 06:06:02.824129,reference
+drift_15172_95,tìm chỗ trekking bot ơi,search_activity,0.864,,,0,2026-05-01 06:27:40.446157,reference
+drift_12933_237,tháng 10,inform,0.946,,3000000.0,0,2026-05-01 06:49:18.068184,reference
+drift_41651_702,đi xe khách nhé,inform,0.954,,8000000.0,0,2026-05-01 07:10:55.690212,reference
+drift_66953_795,không,deny,0.96,,,0,2026-05-01 07:32:33.312240,reference
+drift_47856_824,lịch trình tour Vũng Tàu,ask_tour_info,0.919,Vũng Tàu,5000000.0,0,2026-05-01 07:54:10.934267,reference
+drift_51123_319,ở Hội An có resort nào tốt,search_accommodation,0.957,Hội An,,0,2026-05-01 08:15:48.556295,reference
+drift_40689_434,ăn gì ở Đà Nẵng ạ,search_food_dining,0.864,Đà Nẵng,,0,2026-05-01 08:37:26.178322,reference
+drift_94528_402,tìm villa giá rẻ Hà Giang,search_accommodation,0.852,Hà Giang,2000000.0,0,2026-05-01 08:59:03.800350,reference
+drift_80372_375,thông tin chi tiết tour Vũng Tàu tư vấn với,ask_tour_info,0.893,Vũng Tàu,8000000.0,0,2026-05-01 09:20:41.422377,reference
+drift_22712_33,tìm homestay giá rẻ Hội An,search_accommodation,0.899,Hội An,,0,2026-05-01 09:42:19.044405,reference
+drift_76747_111,thông tin chi tiết tour Hà Nội,ask_tour_info,0.891,Hà Nội,3000000.0,0,2026-05-01 10:03:56.666432,reference
+drift_77924_406,gợi ý lịch trình Đà Lạt 3 ngày 1 đêm,ask_itinerary,0.913,Đà Lạt,,0,2026-05-01 10:25:34.288460,reference
+drift_34224_268,ok shop,affirm,0.936,,,0,2026-05-01 10:47:11.910487,reference
+drift_18755_992,chào bạn,greet,0.93,,,0,2026-05-01 11:08:49.532515,reference
+drift_78008_167,có quán nào ngon ở Hà Giang tư vấn với,search_food_dining,0.932,Hà Giang,,0,2026-05-01 11:30:27.154542,reference
+drift_26002_208,muốn cắm trại ở Hội An,search_activity,0.913,Hội An,,0,2026-05-01 11:52:04.776570,reference
+drift_94361_172,khoảng 2 ngày 3 đêm ạ,inform,0.883,,,0,2026-05-01 12:13:42.398597,reference
+drift_36261_757,Huế,inform,0.855,Huế,,0,2026-05-01 12:35:20.020625,reference
+drift_56307_335,tầm 15 triệu ạ,inform,0.968,,,0,2026-05-01 12:56:57.642653,reference
+drift_26943_710,dù lượn,inform,0.937,,,0,2026-05-01 13:18:35.264680,reference
+drift_19516_845,tìm chỗ trekking gấp ạ,search_activity,0.912,,,0,2026-05-01 13:40:12.886708,reference
+drift_74010_28,chi phí tour Phú Quốc,search_price,0.952,Phú Quốc,8000000.0,0,2026-05-01 14:01:50.508735,reference
+drift_69746_502,được,affirm,0.879,,,0,2026-05-01 14:23:28.130763,reference
+drift_34785_534,đi Sapa 5 ngày 3 đêm nên đi đâu nhé,ask_itinerary,0.889,Sapa,3000000.0,0,2026-05-01 14:45:05.752790,reference
+drift_19055_179,có được hoàn không gấp ạ,ask_policy_booking,0.905,,,0,2026-05-01 15:06:43.374818,reference
+drift_88596_1,nên đi đâu chơi,search_destination,0.88,,,0,2026-05-01 15:28:20.996845,reference
+drift_60228_622,hi,greet,0.933,,,0,2026-05-01 15:49:58.618873,reference
+drift_56445_981,có được hoàn không nhé,ask_policy_booking,0.859,,,0,2026-05-01 16:11:36.240900,reference
+drift_31291_330,hoàn tiền thế nào,ask_policy_booking,0.865,,,0,2026-05-01 16:33:13.862928,reference
+drift_41908_794,từ Vinh đi Nha Trang bằng xe gì,search_travel,0.903,Nha Trang,10000000.0,0,2026-05-01 16:54:51.484955,reference
+drift_55287_815,hoàn tiền thế nào,ask_policy_booking,0.943,,,0,2026-05-01 17:16:29.106983,reference
+drift_79869_728,có,affirm,0.89,,,0,2026-05-01 17:38:06.729010,reference
+drift_77092_669,bạn là người hay máy,bot_challenge,0.959,,,0,2026-05-01 17:59:44.351038,reference
+drift_25747_956,ok bạn nhé,affirm,0.918,,,0,2026-05-01 18:21:21.973066,reference
+drift_69519_118,tìm chỗ dù lượn ạ,search_activity,0.873,,,0,2026-05-01 18:42:59.595093,reference
+drift_82976_392,đi Hội An mùa nào đẹp bot ơi,search_travel,0.893,Hội An,5000000.0,0,2026-05-01 19:04:37.217121,reference
+drift_51611_1,cho mình xin villa Hà Nội gấp ạ,search_accommodation,0.875,Hà Nội,2000000.0,0,2026-05-01 19:26:14.839148,reference
+drift_62292_663,chính sách hủy tour gấp ạ,ask_policy_booking,0.872,,,0,2026-05-01 19:47:52.461176,reference
+drift_97586_355,chính sách hủy tour,ask_policy_booking,0.989,,,0,2026-05-01 20:09:30.083203,reference
+drift_38088_977,đi Hà Nội mùa nào đẹp,search_travel,0.968,Hà Nội,5000000.0,0,2026-05-01 20:31:07.705231,reference
+drift_53716_545,từ Sài Gòn đi Vũng Tàu bằng xe gì,search_travel,0.95,Vũng Tàu,20000000.0,0,2026-05-01 20:52:45.327258,reference
+drift_36906_44,muốn cắm trại ở Vũng Tàu,search_activity,0.918,Vũng Tàu,,0,2026-05-01 21:14:22.949286,reference
+drift_54982_298,Vũng Tàu có đặc sản gì gấp ạ,search_food_dining,0.869,Vũng Tàu,,0,2026-05-01 21:36:00.571313,reference
+drift_64923_597,đi Đà Lạt 4 ngày 2 đêm nên đi đâu shop,ask_itinerary,0.927,Đà Lạt,,0,2026-05-01 21:57:38.193341,reference
+drift_19103_606,tầm 2000k,inform,0.988,,,0,2026-05-01 22:19:15.815368,reference
+drift_97759_667,không phải,deny,0.921,,,0,2026-05-01 22:40:53.437396,reference
+drift_59030_737,đi chèo thuyền ở đâu,search_activity,0.975,,,0,2026-05-01 23:02:31.059424,reference
+drift_25051_764,đăng ký tour Đà Nẵng,book_tour,0.894,Đà Nẵng,,0,2026-05-01 23:24:08.681451,reference
+drift_91970_384,bạn có biết nấu ăn không,out_of_scope,0.974,,,0,2026-05-01 23:45:46.303479,reference
+drift_16362_593,có villa nào ở Hà Nội không ạ,search_accommodation,0.893,Hà Nội,,0,2026-05-02 00:07:23.925506,reference
+drift_55264_539,tour này có hdv không shop,ask_tour_info,0.956,,,0,2026-05-02 00:29:01.547534,reference
+drift_44720_4,ở Huế có nhà nghỉ nào tốt ạ,search_accommodation,0.917,Huế,10000000.0,0,2026-05-02 00:50:39.169561,reference
+drift_34386_347,muốn đạp xe ở Sapa,search_activity,0.938,Sapa,,0,2026-05-02 01:12:16.791589,reference
+drift_99060_363,đồ ăn Hà Nội thế nào,search_food_dining,0.899,Hà Nội,,0,2026-05-02 01:33:54.413616,reference
+drift_57649_544,ừ,affirm,0.892,,,0,2026-05-02 01:55:32.035644,reference
+drift_41547_643,gợi ý lịch trình Huế 3 ngày 3 đêm,ask_itinerary,0.879,Huế,2000000.0,0,2026-05-02 02:17:09.657671,reference
+drift_84872_81,gợi ý điểm du lịch,search_destination,0.977,,,0,2026-05-02 02:38:47.279699,reference
+drift_36656_159,có nơi nào đẹp để đi chơi không,search_destination,0.955,,,0,2026-05-02 03:00:24.901726,reference
+drift_71945_479,có chỗ nào trekking không nhé,search_activity,0.967,,,0,2026-05-02 03:22:02.523754,reference
+drift_37529_349,muốn đi du lịch Phú Quốc 8000k ạ,search_travel,0.93,Phú Quốc,20000000.0,0,2026-05-02 03:43:40.145781,reference
+drift_45573_723,mình cần tìm tour Nha Trang giá rẻ,search_travel,0.96,Nha Trang,,0,2026-05-02 04:05:17.767809,reference
+drift_28868_856,tháng 12,inform,0.944,,,0,2026-05-02 04:26:55.389837,reference
+drift_92547_962,ăn gì ở Phú Quốc,search_food_dining,0.882,Phú Quốc,,0,2026-05-02 04:48:33.011864,reference
+drift_91476_905,ừ,affirm,0.871,,,0,2026-05-02 05:10:10.633892,reference
+drift_65965_347,Hà Nội,inform,0.914,Hà Nội,,0,2026-05-02 05:31:48.255919,reference
+drift_95650_106,nên đi đâu chơi,search_destination,0.875,,,0,2026-05-02 05:53:25.877947,reference
+drift_53699_93,đi leo núi ở đâu,search_activity,0.885,,,0,2026-05-02 06:15:03.499974,reference
+drift_60079_228,muốn đi du lịch tháng 7,search_destination,0.91,,,0,2026-05-02 06:36:41.122002,reference
+drift_46536_949,không nha,deny,0.939,,,0,2026-05-02 06:58:18.744029,reference
+drift_39296_811,có,affirm,0.862,,,0,2026-05-02 07:19:56.366057,reference
+drift_10312_467,thông tin chi tiết tour Vũng Tàu,ask_tour_info,0.927,Vũng Tàu,10000000.0,0,2026-05-02 07:41:33.988084,reference
+drift_37171_3,có được hoàn không,ask_policy_booking,0.971,,,0,2026-05-02 08:03:11.610112,reference
+drift_96586_238,Hà Nội có gì chơi nha,ask_location_feature,0.923,Hà Nội,,0,2026-05-02 08:24:49.232139,reference
+drift_14537_654,Sapa có gì chơi,ask_location_feature,0.924,Sapa,,0,2026-05-02 08:46:26.854167,reference
+drift_19365_815,nên đi đâu chơi shop,search_destination,0.892,,,0,2026-05-02 09:08:04.476194,reference
+drift_50218_498,tầm 15000k ạ,inform,0.884,,,0,2026-05-02 09:29:42.098222,reference
+drift_85577_967,Vũng Tàu mùa nào đẹp nhất,ask_location_feature,0.968,Vũng Tàu,,0,2026-05-02 09:51:19.720250,reference
+drift_49352_112,tour này có hdv không,ask_tour_info,0.883,,20000000.0,0,2026-05-02 10:12:57.342277,reference
+drift_56276_826,muốn chèo thuyền ở Đà Nẵng,search_activity,0.933,Đà Nẵng,,0,2026-05-02 10:34:34.964305,reference
+drift_17360_540,Đà Lạt có đặc sản gì,search_food_dining,0.958,Đà Lạt,,0,2026-05-02 10:56:12.586332,reference
+drift_78630_321,bye shop,goodbye,0.871,,,0,2026-05-02 11:17:50.208360,reference
+drift_70702_99,bạn là ai shop,bot_challenge,0.922,,,0,2026-05-02 11:39:27.830387,reference
+drift_96247_112,có,affirm,0.976,,,0,2026-05-02 12:01:05.452415,reference
+drift_37746_622,có homestay nào ở Nha Trang không,search_accommodation,0.867,Nha Trang,20000000.0,0,2026-05-02 12:22:43.074442,reference
+drift_36019_612,du lịch tiết kiệm tư vấn với,search_price,0.969,,8000000.0,0,2026-05-02 12:44:20.696470,reference
+drift_39934_311,alo,greet,0.911,,,0,2026-05-02 13:05:58.318497,reference
+drift_33204_781,tìm chỗ đạp xe tư vấn với,search_activity,0.921,,,0,2026-05-02 13:27:35.940525,reference
+drift_31345_85,từ Vinh đi Hà Nội bằng xe gì nha,search_travel,0.981,Hà Nội,,0,2026-05-02 13:49:13.562552,reference
+drift_98014_404,giá tour này bao nhiêu,search_price,0.96,,,0,2026-05-02 14:10:51.184580,reference
+drift_91794_169,ok,affirm,0.987,,,0,2026-05-02 14:32:28.806607,reference
+drift_63276_504,tôi muốn đi Huế,search_travel,0.929,Huế,8000000.0,0,2026-05-02 14:54:06.428635,reference
+drift_35162_578,chi phí tour Hội An,search_price,0.951,Hội An,,0,2026-05-02 15:15:44.050663,reference
+drift_25502_971,chào bạn,greet,0.878,,,0,2026-05-02 15:37:21.672690,reference
+drift_66856_791,khoảng 5 ngày 2 đêm,inform,0.871,,,0,2026-05-02 15:58:59.294718,reference
+drift_84035_70,xin chào,greet,0.916,,,0,2026-05-02 16:20:36.916745,reference
+drift_13930_849,chính sách hủy tour,ask_policy_booking,0.919,,,0,2026-05-02 16:42:14.538773,reference
+drift_56528_721,ok bạn ạ,affirm,0.87,,,0,2026-05-02 17:03:52.160800,reference
+drift_34368_831,muốn đặt tour Đà Nẵng,book_tour,0.944,Đà Nẵng,,0,2026-05-02 17:25:29.782828,reference
+drift_61595_133,thông tin chi tiết tour Đà Lạt,ask_tour_info,0.918,Đà Lạt,3000000.0,0,2026-05-02 17:47:07.404855,reference
+drift_34383_238,trekking shop,inform,0.913,,,0,2026-05-02 18:08:45.026883,reference
+drift_18345_854,gợi ý lịch trình Hà Giang 4 ngày 3 đêm gấp ạ,ask_itinerary,0.883,Hà Giang,2000000.0,0,2026-05-02 18:30:22.648910,reference
+drift_87112_693,tháng 9 đi đâu đẹp shop,search_destination,0.888,,,0,2026-05-02 18:52:00.270938,reference
+drift_88225_617,có nơi nào đẹp để đi chơi không gấp ạ,search_destination,0.875,,,0,2026-05-02 19:13:37.892965,reference
+drift_19530_805,có xe khách đi Sapa không,ask_transportation,0.908,Sapa,,0,2026-05-02 19:35:15.514993,reference
+drift_59956_663,có tour nào đi Huế không,search_travel,0.86,Huế,2000000.0,0,2026-05-02 19:56:53.137020,reference
+drift_63192_16,có homestay nào ở Sapa không,search_accommodation,0.951,Sapa,2000000.0,0,2026-05-02 20:18:30.759048,reference
+drift_93171_934,bao gồm những gì,ask_tour_info,0.969,,15000000.0,0,2026-05-02 20:40:08.381076,reference
+drift_27057_806,được,affirm,0.872,,,0,2026-05-02 21:01:46.003103,reference
+drift_99738_981,tour này có hdv không,ask_tour_info,0.898,,3000000.0,0,2026-05-02 21:23:23.625131,reference
+drift_89418_440,cho mình xin resort Đà Lạt nha,search_accommodation,0.966,Đà Lạt,10000000.0,0,2026-05-02 21:45:01.247158,reference
+drift_23369_75,Phú Quốc có đặc sản gì,search_food_dining,0.879,Phú Quốc,,0,2026-05-02 22:06:38.869186,reference
+drift_62947_969,tìm chỗ leo núi nha,search_activity,0.958,,,0,2026-05-02 22:28:16.491213,reference
+drift_44222_404,đi xe máy nhé,inform,0.875,,,0,2026-05-02 22:49:54.113241,reference
+drift_68120_265,tháng 3 đi đâu đẹp,search_destination,0.954,,,0,2026-05-02 23:11:31.735268,reference
+drift_88958_558,bao gồm những gì,ask_tour_info,0.985,,,0,2026-05-02 23:33:09.357296,reference
+drift_56059_531,bạn tên gì,bot_challenge,0.862,,,0,2026-05-02 23:54:46.979323,reference
+drift_79170_749,ok cảm ơn,goodbye,0.942,,,0,2026-05-03 00:16:24.601351,reference
+drift_57177_779,tour giá rẻ,search_price,0.943,,3000000.0,0,2026-05-03 00:38:02.223378,reference
+drift_79941_582,tìm tour Hà Nội 4 ngày 2 đêm nhé,search_travel,0.927,Hà Nội,15000000.0,0,2026-05-03 00:59:39.845406,reference
+drift_34173_767,muốn đặt tour Hà Nội,book_tour,0.9,Hà Nội,,0,2026-05-03 01:21:17.467434,reference
+drift_59706_960,không có,deny,0.87,,,0,2026-05-03 01:42:55.089461,reference
+drift_95151_606,cho thuê xe dù lượn,search_activity,0.855,,,0,2026-05-03 02:04:32.711489,reference
+drift_16792_997,đồ ăn Hội An thế nào,search_food_dining,0.911,Hội An,,0,2026-05-03 02:26:10.333516,reference
+drift_22562_408,ok gấp ạ,affirm,0.945,,,0,2026-05-03 02:47:47.955544,reference
+drift_57308_677,có quán nào ngon ở Đà Nẵng,search_food_dining,0.955,Đà Nẵng,,0,2026-05-03 03:09:25.577571,reference
+drift_44674_492,hoàn tiền thế nào shop,ask_policy_booking,0.961,,,0,2026-05-03 03:31:03.199599,reference
+drift_46596_940,bạn tên gì,bot_challenge,0.981,,,0,2026-05-03 03:52:40.821626,reference
+drift_90602_265,muốn đi du lịch Hội An 5 triệu,search_travel,0.928,Hội An,10000000.0,0,2026-05-03 04:14:18.443654,reference
+drift_54798_281,Huế có gì chơi,ask_location_feature,0.887,Huế,,0,2026-05-03 04:35:56.065681,reference
+drift_47701_680,bye,goodbye,0.972,,,0,2026-05-03 04:57:33.687709,reference
+drift_70318_727,du lịch tiết kiệm,search_price,0.907,,3000000.0,0,2026-05-03 05:19:11.309736,reference
+drift_51942_783,bao gồm những gì tư vấn với,ask_tour_info,0.852,,2000000.0,0,2026-05-03 05:40:48.931764,reference
+drift_47378_289,có xe khách đi Đà Lạt không ạ,ask_transportation,0.885,Đà Lạt,,0,2026-05-03 06:02:26.553791,reference
+drift_88187_325,ok bạn,affirm,0.97,,,0,2026-05-03 06:24:04.175819,reference
+drift_54309_265,mở cửa hàng lúc mấy giờ,out_of_scope,0.882,,,0,2026-05-03 06:45:41.797847,reference
+drift_54646_824,xin chào,greet,0.989,,,0,2026-05-03 07:07:19.419874,reference
+drift_44378_758,Nha Trang,inform,0.885,Nha Trang,,0,2026-05-03 07:28:57.041902,reference
+drift_56627_456,có quán nào ngon ở Hội An,search_food_dining,0.928,Hội An,,0,2026-05-03 07:50:34.663929,reference
+drift_50055_897,tour này có hdv không,ask_tour_info,0.959,,,0,2026-05-03 08:12:12.285957,reference
+drift_53278_345,gợi ý điểm du lịch,search_destination,0.854,,,0,2026-05-03 08:33:49.907984,reference
+drift_97397_818,đi Sapa 2 ngày 2 đêm nên đi đâu,ask_itinerary,0.938,Sapa,2000000.0,0,2026-05-03 08:55:27.530012,reference
+drift_29467_379,tìm chỗ cắm trại,search_activity,0.923,,,0,2026-05-03 09:17:05.152039,reference
+drift_21544_748,đi Đà Nẵng mùa nào đẹp,search_travel,0.961,Đà Nẵng,2000000.0,0,2026-05-03 09:38:42.774067,reference
+drift_94084_246,ừ shop,affirm,0.91,,,0,2026-05-03 10:00:20.396094,reference
+drift_27412_628,muốn đi du lịch tháng 12,search_destination,0.919,,,0,2026-05-03 10:21:58.018122,reference
+drift_73347_488,gợi ý lịch trình Đà Lạt 2 ngày 2 đêm shop,ask_itinerary,0.88,Đà Lạt,,0,2026-05-03 10:43:35.640149,reference
+drift_80690_663,hey,greet,0.873,,,0,2026-05-03 11:05:13.262177,reference
+drift_14771_909,du lịch tiết kiệm gấp ạ,search_price,0.887,,,0,2026-05-03 11:26:50.884204,reference
+drift_30088_114,tháng 1 đi đâu đẹp,search_destination,0.973,,,0,2026-05-03 11:48:28.506232,reference
+drift_84339_275,ăn gì ở Huế gấp ạ,search_food_dining,0.96,Huế,,0,2026-05-03 12:10:06.128260,reference
+drift_39664_941,tìm tour Hà Giang 2 ngày 4 đêm tư vấn với,search_travel,0.913,Hà Giang,20000000.0,0,2026-05-03 12:31:43.750287,reference
+drift_11939_37,cảm ơn,goodbye,0.89,,,0,2026-05-03 12:53:21.372315,reference
+drift_52619_772,đồ ăn Đà Lạt thế nào ạ,search_food_dining,0.967,Đà Lạt,,0,2026-05-03 13:14:58.994342,reference
+drift_33545_248,đi Nha Trang 3 ngày 3 đêm nên đi đâu bot ơi,ask_itinerary,0.977,Nha Trang,2000000.0,0,2026-05-03 13:36:36.616370,reference
+drift_40155_140,đi Phú Quốc 4 ngày 2 đêm nên đi đâu shop,ask_itinerary,0.952,Phú Quốc,8000000.0,0,2026-05-03 13:58:14.238397,reference
+drift_91816_319,hi ạ,greet,0.93,,,0,2026-05-03 14:19:51.860425,reference
+drift_48753_882,phương tiện đi Nha Trang,ask_transportation,0.893,Nha Trang,,0,2026-05-03 14:41:29.482452,reference
+drift_98152_650,chi phí tour Đà Nẵng,search_price,0.916,Đà Nẵng,15000000.0,0,2026-05-03 15:03:07.104480,reference
+drift_95836_563,tìm villa giá rẻ Phú Quốc,search_accommodation,0.873,Phú Quốc,,0,2026-05-03 15:24:44.726507,reference
+drift_53879_622,gợi ý lịch trình Phú Quốc 2 ngày 2 đêm tư vấn với,ask_itinerary,0.934,Phú Quốc,8000000.0,0,2026-05-03 15:46:22.348535,reference
+drift_68216_382,đăng ký tour Vũng Tàu,book_tour,0.94,Vũng Tàu,,0,2026-05-03 16:07:59.970562,reference
+drift_96729_762,gợi ý điểm du lịch,search_destination,0.972,,,0,2026-05-03 16:29:37.592590,reference
+drift_90954_791,tôi muốn đi Hội An,search_travel,0.903,Hội An,10000000.0,0,2026-05-03 16:51:15.214617,reference
+drift_77781_491,đăng ký tour Đà Lạt bot ơi,book_tour,0.943,Đà Lạt,,0,2026-05-03 17:12:52.836645,reference
+drift_61579_377,có được hoàn không,ask_policy_booking,0.901,,,0,2026-05-03 17:34:30.458673,reference
+drift_80828_79,tháng 1 đi đâu đẹp shop,search_destination,0.894,,,0,2026-05-03 17:56:08.080700,reference
+drift_57191_501,tầm 3 triệu ạ,inform,0.92,,20000000.0,0,2026-05-03 18:17:45.702728,reference
+drift_77726_147,ok bạn nha,affirm,0.911,,,0,2026-05-03 18:39:23.324755,reference
+drift_68847_244,cho em xin tour Hà Nội 20 triệu,search_travel,0.872,Hà Nội,20000000.0,0,2026-05-03 19:01:00.946783,reference
+drift_65058_930,muốn trekking ở Nha Trang,search_activity,0.947,Nha Trang,,0,2026-05-03 19:22:38.568810,reference
+drift_80818_492,đi xe khách nhé tư vấn với,inform,0.867,,2000000.0,0,2026-05-03 19:44:16.190838,reference
+drift_63614_145,gợi ý lịch trình Hội An 2 ngày 4 đêm,ask_itinerary,0.978,Hội An,20000000.0,0,2026-05-03 20:05:53.812865,reference
+drift_44771_967,Đà Lạt có đặc sản gì,search_food_dining,0.942,Đà Lạt,,0,2026-05-03 20:27:31.434893,reference
+drift_65840_713,có nơi nào đẹp để đi chơi không nha,search_destination,0.867,,,0,2026-05-03 20:49:09.056920,reference
+drift_96922_380,đi dù lượn ở đâu gấp ạ,search_activity,0.921,,,0,2026-05-03 21:10:46.678948,reference
+drift_39446_874,chi phí tour Hà Nội,search_price,0.976,Hà Nội,5000000.0,0,2026-05-03 21:32:24.300975,reference
+drift_46150_311,tour giá rẻ,search_price,0.89,,3000000.0,0,2026-05-03 21:54:01.923003,reference
+drift_75946_765,đặt tour Nha Trang,book_tour,0.972,Nha Trang,,0,2026-05-03 22:15:39.545031,reference
+drift_19118_291,đi Hội An mùa nào đẹp,search_travel,0.973,Hội An,10000000.0,0,2026-05-03 22:37:17.167058,reference
+drift_82182_848,tìm khách sạn giá rẻ Đà Nẵng,search_accommodation,0.874,Đà Nẵng,,0,2026-05-03 22:58:54.789086,reference
+drift_42765_950,có tour nào đi Hội An không,search_travel,0.949,Hội An,20000000.0,0,2026-05-03 23:20:32.411113,reference
+drift_72173_795,ok tư vấn với,affirm,0.907,,,0,2026-05-03 23:42:10.033141,reference
+drift_99443_935,có quán nào ngon ở Hà Giang ạ,search_food_dining,0.954,Hà Giang,,0,2026-05-04 00:03:47.655168,reference
+drift_21508_159,đi Hà Giang 3 ngày 2 đêm nên đi đâu,ask_itinerary,0.859,Hà Giang,,0,2026-05-04 00:25:25.277196,reference
+drift_51444_935,tạm biệt,goodbye,0.947,,,0,2026-05-04 00:47:02.899223,reference
+drift_57573_71,muốn chèo thuyền ở Đà Nẵng,search_activity,0.988,Đà Nẵng,,0,2026-05-04 01:08:40.521251,reference
+drift_44068_102,tìm homestay giá rẻ Huế shop,search_accommodation,0.981,Huế,5000000.0,0,2026-05-04 01:30:18.143278,reference
+drift_98264_350,đặt tour Phú Quốc,book_tour,0.958,Phú Quốc,,0,2026-05-04 01:51:55.765306,reference
+drift_56477_657,cho em xin tour Phú Quốc 10 triệu shop,search_travel,0.883,Phú Quốc,20000000.0,0,2026-05-04 02:13:33.387333,reference
+drift_56455_858,gợi ý điểm du lịch,search_destination,0.897,,,0,2026-05-04 02:35:11.009361,reference
+drift_49543_230,xin chào tư vấn với,greet,0.933,,,0,2026-05-04 02:56:48.631388,reference
+drift_85349_754,đi Hà Giang mùa nào đẹp,search_travel,0.916,Hà Giang,20000000.0,0,2026-05-04 03:18:26.253416,reference
+drift_30781_829,tour giá rẻ gấp ạ,search_price,0.985,,10000000.0,0,2026-05-04 03:40:03.875444,reference
+drift_16444_927,hoàn tiền thế nào nha,ask_policy_booking,0.931,,,0,2026-05-04 04:01:41.497471,reference
+drift_52161_66,có nơi nào đẹp để đi chơi không nhé,search_destination,0.861,,,0,2026-05-04 04:23:19.119499,reference
+drift_28496_104,tìm tour Hà Nội 3 ngày 1 đêm nhé,search_travel,0.929,Hà Nội,2000000.0,0,2026-05-04 04:44:56.741526,reference
+drift_13625_919,phương tiện đi Đà Nẵng,ask_transportation,0.973,Đà Nẵng,,0,2026-05-04 05:06:34.363554,reference
+drift_96031_275,Nha Trang nha,inform,0.917,Nha Trang,,0,2026-05-04 05:28:11.985581,reference
+drift_52614_266,đi Hà Nội mùa nào đẹp,search_travel,0.967,Hà Nội,15000000.0,0,2026-05-04 05:49:49.607609,reference
+drift_84113_872,Hà Giang tư vấn với,inform,0.952,Hà Giang,3000000.0,0,2026-05-04 06:11:27.229636,reference
+drift_85369_327,tìm villa giá rẻ Vũng Tàu ạ,search_accommodation,0.963,Vũng Tàu,,0,2026-05-04 06:33:04.851664,reference
+drift_67154_568,tháng 5,inform,0.9,,3000000.0,0,2026-05-04 06:54:42.473691,reference
+drift_18822_993,du lịch tiết kiệm shop,search_price,0.853,,3000000.0,0,2026-05-04 07:16:20.095719,reference
+drift_74035_114,tạm biệt,goodbye,0.982,,,0,2026-05-04 07:37:57.717746,reference
+drift_60994_664,tìm chỗ lặn san hô,search_activity,0.976,,,0,2026-05-04 07:59:35.339774,reference
+drift_43848_984,thông tin chi tiết tour Sapa,ask_tour_info,0.953,Sapa,2000000.0,0,2026-05-04 08:21:12.961801,reference
+drift_76793_894,đồ ăn Sapa thế nào,search_food_dining,0.914,Sapa,,0,2026-05-04 08:42:50.583829,reference
+drift_66025_366,tour giá rẻ,search_price,0.913,,3000000.0,0,2026-05-04 09:04:28.205857,reference
+drift_90563_45,lịch trình tour Hà Giang,ask_tour_info,0.976,Hà Giang,,0,2026-05-04 09:26:05.827884,reference
+drift_84936_362,đồ ăn Đà Lạt thế nào,search_food_dining,0.877,Đà Lạt,,0,2026-05-04 09:47:43.449912,reference
+drift_75163_573,đi Huế mùa nào đẹp,search_travel,0.904,Huế,20000000.0,0,2026-05-04 10:09:21.071939,reference
+drift_39965_17,cảm ơn,goodbye,0.976,,,0,2026-05-04 10:30:58.693967,reference
+drift_76998_666,muốn chèo thuyền ở Sapa,search_activity,0.931,Sapa,,0,2026-05-04 10:52:36.315994,reference
+drift_69980_710,Huế có gì đẹp,ask_location_feature,0.948,Huế,,0,2026-05-04 11:14:13.938022,reference
+drift_94601_854,Hà Nội nha,inform,0.879,Hà Nội,,0,2026-05-04 11:35:51.560049,reference
+drift_54824_639,từ Hà Nội đi Sapa bằng xe gì,search_travel,0.896,Sapa,2000000.0,0,2026-05-04 11:57:29.182077,reference
+drift_97342_176,cắm trại bot ơi,inform,0.882,,20000000.0,0,2026-05-04 12:19:06.804104,reference
+drift_34158_738,muốn lặn san hô ở Hà Nội nhé,search_activity,0.894,Hà Nội,,0,2026-05-04 12:40:44.426132,reference
+drift_87723_166,đi Vũng Tàu chi phí thế nào,search_travel,0.94,Vũng Tàu,8000000.0,0,2026-05-04 13:02:22.048159,reference
+drift_41186_370,Hà Giang có đặc sản gì,search_food_dining,0.945,Hà Giang,,0,2026-05-04 13:23:59.670187,reference
+drift_95313_505,từ Sài Gòn đi Vũng Tàu bằng xe gì,search_travel,0.869,Vũng Tàu,2000000.0,0,2026-05-04 13:45:37.292214,reference
+drift_24605_621,thôi nha,deny,0.867,,,0,2026-05-04 14:07:14.914242,reference
+drift_79554_266,khoảng 4 ngày 3 đêm,inform,0.949,,,0,2026-05-04 14:28:52.536270,reference
+drift_78980_522,đi Huế mùa nào đẹp,search_travel,0.944,Huế,3000000.0,0,2026-05-04 14:50:30.158297,reference
+drift_92872_990,phương tiện đi Hà Nội,ask_transportation,0.854,Hà Nội,,0,2026-05-04 15:12:07.780325,reference
+drift_44577_447,cho mình xin villa Sapa,search_accommodation,0.949,Sapa,2000000.0,0,2026-05-04 15:33:45.402352,reference
+drift_29349_741,đăng ký tour Đà Nẵng,book_tour,0.941,Đà Nẵng,,0,2026-05-04 15:55:23.024380,reference
+drift_17972_813,đi xe máy nhé,inform,0.978,,15000000.0,0,2026-05-04 16:17:00.646407,reference
+drift_90806_706,hey,greet,0.879,,,0,2026-05-04 16:38:38.268435,reference
+drift_31316_340,tour này có hdv không,ask_tour_info,0.947,,5000000.0,0,2026-05-04 17:00:15.890462,reference
+drift_43746_361,gợi ý lịch trình Nha Trang 3 ngày 4 đêm,ask_itinerary,0.965,Nha Trang,5000000.0,0,2026-05-04 17:21:53.512490,reference
+drift_99961_122,cho em xin tour Huế 15000k,search_travel,0.979,Huế,8000000.0,0,2026-05-04 17:43:31.134517,reference
+drift_36890_654,xin chào ạ,greet,0.862,,,0,2026-05-04 18:05:08.756545,reference
+drift_23945_955,chính sách hủy tour,ask_policy_booking,0.885,,,0,2026-05-04 18:26:46.378572,reference
+drift_89860_105,muốn trekking ở Hà Giang nha,search_activity,0.858,Hà Giang,,0,2026-05-04 18:48:24.000600,reference
+drift_39622_275,alo bot ơi,greet,0.981,,,0,2026-05-04 19:10:01.622628,reference
+drift_10071_727,mình cần tìm tour Sapa giá rẻ,search_travel,0.891,Sapa,15000000.0,0,2026-05-04 19:31:39.244655,reference
+drift_95962_460,hi,greet,0.962,,,0,2026-05-04 19:53:16.866683,reference
+drift_11652_683,có tour nào đi Huế không ạ,search_travel,0.916,Huế,,0,2026-05-04 20:14:54.488710,reference
+drift_46422_303,Đà Nẵng mùa nào đẹp nhất,ask_location_feature,0.977,Đà Nẵng,,0,2026-05-04 20:36:32.110738,reference
+drift_22113_100,muốn lặn san hô ở Hà Giang,search_activity,0.974,Hà Giang,,0,2026-05-04 20:58:09.732765,reference
+drift_28687_354,ai lập trình ra bạn nhé,bot_challenge,0.875,,,0,2026-05-04 21:19:47.354793,reference
+drift_62495_234,tìm nhà nghỉ giá rẻ Đà Nẵng,search_accommodation,0.907,Đà Nẵng,2000000.0,0,2026-05-04 21:41:24.976820,reference
+drift_77959_310,ok bạn nha,affirm,0.946,,,0,2026-05-04 22:03:02.598848,reference
+drift_88685_465,cho thuê xe lặn san hô,search_activity,0.922,,,0,2026-05-04 22:24:40.220875,reference
+drift_39105_315,đi Vũng Tàu chi phí thế nào,search_travel,0.877,Vũng Tàu,2000000.0,0,2026-05-04 22:46:17.842903,reference
+drift_78842_614,được tư vấn với,affirm,0.873,,,0,2026-05-04 23:07:55.464930,reference
+drift_82997_823,lịch trình tour Sapa,ask_tour_info,0.984,Sapa,2000000.0,0,2026-05-04 23:29:33.086958,reference
+drift_22294_398,chèo thuyền nhé,inform,0.893,,,0,2026-05-04 23:51:10.708985,reference
+drift_88532_229,đi Đà Nẵng bằng gì,ask_transportation,0.961,Đà Nẵng,,0,2026-05-05 00:12:48.331013,reference
+drift_69060_491,Hà Nội có đặc sản gì,search_food_dining,0.942,Hà Nội,,0,2026-05-05 00:34:25.953041,reference
+drift_48656_386,ok cảm ơn ạ,goodbye,0.949,,,0,2026-05-05 00:56:03.575068,reference
+drift_54381_617,lịch trình tour Phú Quốc nhé,ask_tour_info,0.886,Phú Quốc,15000000.0,0,2026-05-05 01:17:41.197096,reference
+drift_17001_763,chào bạn nhé,greet,0.948,,,0,2026-05-05 01:39:18.819123,reference
+drift_53847_274,muốn chèo thuyền ở Phú Quốc,search_activity,0.872,Phú Quốc,,0,2026-05-05 02:00:56.441151,reference
+drift_87206_788,đồ ăn Sapa thế nào,search_food_dining,0.916,Sapa,,0,2026-05-05 02:22:34.063178,reference
+drift_69947_226,đi Hà Giang bằng gì,ask_transportation,0.967,Hà Giang,,0,2026-05-05 02:44:11.685206,reference
+drift_20444_306,có homestay nào ở Sapa không,search_accommodation,0.896,Sapa,,0,2026-05-05 03:05:49.307233,reference
+drift_98219_852,có chỗ nào chèo thuyền không,search_activity,0.948,,,0,2026-05-05 03:27:26.929261,reference
+drift_69262_666,phương tiện đi Đà Nẵng,ask_transportation,0.99,Đà Nẵng,,0,2026-05-05 03:49:04.551288,reference
+drift_16929_752,ok,affirm,0.906,,,0,2026-05-05 04:10:42.173316,reference
+drift_67368_27,giải bài tập này giúp tôi,out_of_scope,0.893,,,0,2026-05-05 04:32:19.795343,reference
+drift_27414_633,giải bài tập này giúp tôi shop,out_of_scope,0.863,,,0,2026-05-05 04:53:57.417371,reference
+drift_39096_794,chính sách hủy tour tư vấn với,ask_policy_booking,0.93,,,0,2026-05-05 05:15:35.039398,reference
+drift_75282_46,cho mình hỏi số điện thoại gấp ạ,out_of_scope,0.866,,,0,2026-05-05 05:37:12.661426,reference
+drift_24180_929,được,affirm,0.872,,,0,2026-05-05 05:58:50.283454,reference
+drift_46757_327,lặn san hô,inform,0.898,,20000000.0,0,2026-05-05 06:20:27.905481,reference
+drift_31081_754,muốn đi du lịch Vũng Tàu 10000k nhé,search_travel,0.942,Vũng Tàu,20000000.0,0,2026-05-05 06:42:05.527509,reference
+drift_86483_851,có shop,affirm,0.926,,,0,2026-05-05 07:03:43.149536,reference
+drift_35289_243,đi Đà Nẵng chi phí thế nào,search_travel,0.875,Đà Nẵng,15000000.0,0,2026-05-05 07:25:20.771564,reference
+drift_16717_224,Đà Nẵng mùa nào đẹp nhất,ask_location_feature,0.876,Đà Nẵng,,0,2026-05-05 07:46:58.393591,reference
+drift_55992_907,Đà Lạt có gì đẹp,ask_location_feature,0.85,Đà Lạt,,0,2026-05-05 08:08:36.015619,reference
+drift_47859_202,muốn cắm trại ở Vũng Tàu,search_activity,0.912,Vũng Tàu,,0,2026-05-05 08:30:13.637646,reference
+drift_75218_304,hey,greet,0.869,,,0,2026-05-05 08:51:51.259674,reference
+drift_44353_428,muốn đi du lịch Sapa 2 triệu nha,search_travel,0.864,Sapa,,0,2026-05-05 09:13:28.881701,reference
+drift_27047_747,hoàn tiền thế nào bot ơi,ask_policy_booking,0.926,,,0,2026-05-05 09:35:06.503729,reference
+drift_41362_664,muốn lặn san hô ở Hà Nội,search_activity,0.884,Hà Nội,,0,2026-05-05 09:56:44.125756,reference
+drift_15156_19,Đà Nẵng có gì chơi nha,ask_location_feature,0.897,Đà Nẵng,,0,2026-05-05 10:18:21.747784,reference
+drift_51636_100,du lịch tiết kiệm nhé,search_price,0.948,,,0,2026-05-05 10:39:59.369811,reference
+drift_69513_700,có chỗ nào đạp xe không,search_activity,0.988,,,0,2026-05-05 11:01:36.991839,reference
+drift_76024_737,tour giá rẻ ạ,search_price,0.858,,10000000.0,0,2026-05-05 11:23:14.613867,reference
+drift_73969_56,có được hoàn không,ask_policy_booking,0.967,,,0,2026-05-05 11:44:52.235894,reference
+drift_34779_191,khoảng 3 ngày 3 đêm ạ,inform,0.891,,5000000.0,0,2026-05-05 12:06:29.857922,reference
+drift_70109_780,không có nha,deny,0.978,,,0,2026-05-05 12:28:07.479949,reference
+drift_34447_380,Đà Nẵng có gì chơi,ask_location_feature,0.897,Đà Nẵng,,0,2026-05-05 12:49:45.101977,reference
+drift_19422_807,tháng 2 shop,inform,0.868,,20000000.0,0,2026-05-05 13:11:22.724004,reference
+drift_32089_508,muốn đi du lịch Huế 3 triệu,search_travel,0.903,Huế,,0,2026-05-05 13:33:00.346032,reference
+drift_89852_413,muốn đạp xe ở Hội An,search_activity,0.934,Hội An,,0,2026-05-05 13:54:37.968059,reference
+drift_99527_610,lịch trình tour Đà Nẵng nha,ask_tour_info,0.985,Đà Nẵng,2000000.0,0,2026-05-05 14:16:15.590087,reference
+drift_36718_956,chèo thuyền,inform,0.866,,10000000.0,0,2026-05-05 14:37:53.212114,reference
+drift_62957_163,phương tiện đi Nha Trang nhé,ask_transportation,0.863,Nha Trang,,0,2026-05-05 14:59:30.834142,reference
+drift_44051_230,có homestay nào ở Vũng Tàu không bot ơi,search_accommodation,0.938,Vũng Tàu,15000000.0,0,2026-05-05 15:21:08.456169,reference
+drift_35482_27,đi Nha Trang mùa nào đẹp,search_travel,0.94,Nha Trang,3000000.0,0,2026-05-05 15:42:46.078197,reference
+drift_38209_891,ừ nhé,affirm,0.914,,,0,2026-05-05 16:04:23.700225,reference
+drift_34051_255,cảm ơn,goodbye,0.927,,,0,2026-05-05 16:26:01.322252,reference
+drift_60329_293,có tour nào đi Huế không,search_travel,0.931,Huế,,0,2026-05-05 16:47:38.944280,reference
+drift_47571_270,có quán nào ngon ở Hội An bot ơi,search_food_dining,0.917,Hội An,,0,2026-05-05 17:09:16.566307,reference
+drift_40964_53,ok ạ,affirm,0.92,,,0,2026-05-05 17:30:54.188335,reference
+drift_71622_711,mở cửa hàng lúc mấy giờ,out_of_scope,0.933,,,0,2026-05-05 17:52:31.810362,reference
+drift_82723_837,có chỗ nào trekking không,search_activity,0.92,,,0,2026-05-05 18:14:09.432390,reference
+drift_65861_20,phương tiện đi Đà Nẵng,ask_transportation,0.909,Đà Nẵng,,0,2026-05-05 18:35:47.054417,reference
+drift_50066_352,tìm khách sạn giá rẻ Phú Quốc,search_accommodation,0.966,Phú Quốc,,0,2026-05-05 18:57:24.676445,reference
+drift_60025_953,đi xe máy nhé nhé,inform,0.974,,10000000.0,0,2026-05-05 19:19:02.298472,reference
+drift_98808_645,tạm biệt,goodbye,0.945,,,0,2026-05-05 19:40:39.920500,reference
+drift_49681_630,muốn đi du lịch tháng 10 tư vấn với,search_destination,0.885,,,0,2026-05-05 20:02:17.542527,reference
+drift_94020_666,cho mình hỏi tour Hà Nội,search_travel,0.981,Hà Nội,20000000.0,0,2026-05-05 20:23:55.164555,reference
+drift_33653_576,lịch trình tour Huế,ask_tour_info,0.97,Huế,2000000.0,0,2026-05-05 20:45:32.786582,reference
+drift_43153_162,tạm biệt,goodbye,0.851,,,0,2026-05-05 21:07:10.408610,reference
+drift_43204_372,cho thuê xe leo núi,search_activity,0.94,,,0,2026-05-05 21:28:48.030638,reference
+drift_76764_43,tháng 3 đi đâu đẹp,search_destination,0.945,,,0,2026-05-05 21:50:25.652665,reference
+drift_80366_592,bạn có biết nấu ăn không,out_of_scope,0.945,,,0,2026-05-05 22:12:03.274693,reference
+drift_41880_268,có,affirm,0.854,,,0,2026-05-05 22:33:40.896720,reference
+drift_75700_372,tìm khách sạn giá rẻ Hội An,search_accommodation,0.872,Hội An,,0,2026-05-05 22:55:18.518748,reference
+drift_32224_64,có tour nào đi Đà Lạt không shop,search_travel,0.972,Đà Lạt,5000000.0,0,2026-05-05 23:16:56.140775,reference
+drift_28131_152,ok,affirm,0.94,,,0,2026-05-05 23:38:33.762803,reference
+drift_94672_580,alo,greet,0.983,,,0,2026-05-06 00:00:11.384830,reference
+drift_19182_292,đi xe khách nhé,inform,0.875,,8000000.0,0,2026-05-06 00:21:49.006858,reference
+drift_76397_559,đi máy bay nhé,inform,0.897,,,0,2026-05-06 00:43:26.628885,reference
+drift_97473_413,chính sách hủy tour nhé,ask_policy_booking,0.933,,,0,2026-05-06 01:05:04.250913,reference
+drift_84820_284,cho em xin tour Đà Lạt 2000k,search_travel,0.863,Đà Lạt,8000000.0,0,2026-05-06 01:26:41.872940,reference
+drift_55636_157,chi phí tour Phú Quốc nhé,search_price,0.897,Phú Quốc,20000000.0,0,2026-05-06 01:48:19.494968,reference
+drift_97660_695,hey,greet,0.944,,,0,2026-05-06 02:09:57.116995,reference
+drift_59415_797,tháng 4,inform,0.891,,,0,2026-05-06 02:31:34.739023,reference
+drift_10091_102,muốn đi du lịch Phú Quốc 15 triệu,search_travel,0.876,Phú Quốc,2000000.0,0,2026-05-06 02:53:12.361051,reference
+drift_26590_528,Hà Nội có gì đẹp,ask_location_feature,0.903,Hà Nội,,0,2026-05-06 03:14:49.983078,reference
+drift_85450_393,lặn san hô ạ,inform,0.92,,,0,2026-05-06 03:36:27.605106,reference
+drift_77406_94,đi Đà Lạt mùa nào đẹp nha,search_travel,0.861,Đà Lạt,,0,2026-05-06 03:58:05.227133,reference
+drift_29734_556,ở Hội An có khách sạn nào tốt,search_accommodation,0.897,Hội An,3000000.0,0,2026-05-06 04:19:42.849161,reference
+drift_56509_385,muốn đi du lịch Hà Giang 3000k,search_travel,0.932,Hà Giang,,0,2026-05-06 04:41:20.471188,reference
+drift_24537_86,alo,greet,0.935,,,0,2026-05-06 05:02:58.093216,reference
+drift_75607_683,từ Đà Nẵng đi Đà Lạt bằng xe gì,search_travel,0.897,Đà Lạt,2000000.0,0,2026-05-06 05:24:35.715243,reference
+drift_84800_281,du lịch tiết kiệm,search_price,0.96,,,0,2026-05-06 05:46:13.337271,reference
+drift_53295_170,bạn là ai,bot_challenge,0.856,,,0,2026-05-06 06:07:50.959298,reference
+drift_16945_412,tạm biệt,goodbye,0.88,,,0,2026-05-06 06:29:28.581326,reference
+drift_78066_49,ok,affirm,0.989,,,0,2026-05-06 06:51:06.203353,reference
+drift_45218_304,muốn đi du lịch tháng 4,search_destination,0.964,,,0,2026-05-06 07:12:43.825381,reference
+drift_48972_258,cảm ơn,goodbye,0.965,,,0,2026-05-06 07:34:21.447408,reference
+drift_31728_706,có chỗ nào đạp xe không,search_activity,0.925,,,0,2026-05-06 07:55:59.069436,reference
+drift_90127_961,cho thuê xe lặn san hô tư vấn với,search_activity,0.949,,,0,2026-05-06 08:17:36.691464,reference
+drift_75850_879,muốn đi du lịch Hà Nội 2000k,search_travel,0.983,Hà Nội,,0,2026-05-06 08:39:14.313491,reference
+drift_80422_246,chính sách hủy tour nhé,ask_policy_booking,0.892,,,0,2026-05-06 09:00:51.935519,reference
+drift_65023_456,đi Sapa bằng gì ạ,ask_transportation,0.951,Sapa,,0,2026-05-06 09:22:29.557546,reference
+drift_83228_879,có,affirm,0.865,,,0,2026-05-06 09:44:07.179574,reference
+drift_38467_925,có,affirm,0.957,,,0,2026-05-06 10:05:44.801601,reference
+drift_52945_649,đi Hà Nội mùa nào đẹp,search_travel,0.868,Hà Nội,2000000.0,0,2026-05-06 10:27:22.423629,reference
+drift_41336_65,có resort nào ở Vũng Tàu không tư vấn với,search_accommodation,0.937,Vũng Tàu,8000000.0,0,2026-05-06 10:49:00.045656,reference
+drift_19573_0,Hội An có gì đẹp nhé,ask_location_feature,0.901,Hội An,,0,2026-05-06 11:10:37.667684,reference
+drift_30885_559,đồ ăn Hà Giang thế nào tư vấn với,search_food_dining,0.923,Hà Giang,,0,2026-05-06 11:32:15.289711,reference
+drift_63668_896,cảm ơn,goodbye,0.906,,,0,2026-05-06 11:53:52.911739,reference
+drift_76229_154,đi xe máy nhé,inform,0.886,,3000000.0,0,2026-05-06 12:15:30.533766,reference
+drift_58441_793,ok cảm ơn,goodbye,0.89,,,0,2026-05-06 12:37:08.155794,reference
+drift_63444_506,có chỗ nào chèo thuyền không,search_activity,0.989,,,0,2026-05-06 12:58:45.777822,reference
+drift_54560_812,hi,greet,0.938,,,0,2026-05-06 13:20:23.399849,reference
+drift_96008_900,có chỗ nào chèo thuyền không,search_activity,0.909,,,0,2026-05-06 13:42:01.021877,reference
+drift_80100_576,ừ,affirm,0.931,,,0,2026-05-06 14:03:38.643904,reference
+drift_77023_114,có chỗ nào lặn san hô không,search_activity,0.921,,,0,2026-05-06 14:25:16.265932,reference
+drift_10693_688,tìm chỗ trekking shop,search_activity,0.944,,,0,2026-05-06 14:46:53.887959,reference
+drift_35560_322,đi tàu hỏa nhé,inform,0.958,,3000000.0,0,2026-05-06 15:08:31.509987,reference
+drift_50942_944,tháng 2,inform,0.896,,15000000.0,0,2026-05-06 15:30:09.132014,reference
+drift_77258_754,đi Huế 4 ngày 1 đêm nên đi đâu,ask_itinerary,0.904,Huế,5000000.0,0,2026-05-06 15:51:46.754042,reference
+drift_12270_254,gợi ý lịch trình Đà Lạt 2 ngày 1 đêm ạ,ask_itinerary,0.972,Đà Lạt,3000000.0,0,2026-05-06 16:13:24.376069,reference
+drift_93350_707,du lịch tiết kiệm nha,search_price,0.99,,15000000.0,0,2026-05-06 16:35:01.998097,reference
+drift_68266_312,nên đi đâu chơi nha,search_destination,0.985,,,0,2026-05-06 16:56:39.620124,reference
+drift_23776_627,ok bạn shop,affirm,0.861,,,0,2026-05-06 17:18:17.242152,reference
+drift_46727_90,ok,affirm,0.936,,,0,2026-05-06 17:39:54.864179,reference
+drift_62242_614,hey,greet,0.952,,,0,2026-05-06 18:01:32.486207,reference
+drift_92360_695,tầm 20 triệu,inform,0.908,,10000000.0,0,2026-05-06 18:23:10.108235,reference
+drift_52143_758,cảm ơn nha,goodbye,0.928,,,0,2026-05-06 18:44:47.730262,reference
+drift_32548_531,hoàn tiền thế nào,ask_policy_booking,0.87,,,0,2026-05-06 19:06:25.352290,reference
+drift_58252_329,giá tour này bao nhiêu,search_price,0.968,,3000000.0,0,2026-05-06 19:28:02.974317,reference
+drift_90368_375,có chỗ nào đạp xe không,search_activity,0.93,,,0,2026-05-06 19:49:40.596345,reference
+drift_69436_386,thôi,deny,0.944,,,0,2026-05-06 20:11:18.218372,reference
+drift_48442_435,tour giá rẻ,search_price,0.968,,3000000.0,0,2026-05-06 20:32:55.840400,reference
+drift_49335_688,thông tin chi tiết tour Hà Giang,ask_tour_info,0.983,Hà Giang,8000000.0,0,2026-05-06 20:54:33.462427,reference
+drift_37941_611,lặn san hô,inform,0.865,,10000000.0,0,2026-05-06 21:16:11.084455,reference
+drift_87054_58,được,affirm,0.859,,,0,2026-05-06 21:37:48.706482,reference
+drift_96875_920,không phải,deny,0.982,,,0,2026-05-06 21:59:26.328510,reference
+drift_12601_788,tháng 4,inform,0.974,,,0,2026-05-06 22:21:03.950537,reference
+drift_76558_711,muốn cắm trại ở Hội An tư vấn với,search_activity,0.852,Hội An,,0,2026-05-06 22:42:41.572565,reference
+drift_25308_166,tháng 6 đi đâu đẹp ạ,search_destination,0.92,,,0,2026-05-06 23:04:19.194592,reference
+drift_87759_876,tìm homestay giá rẻ Hội An,search_accommodation,0.952,Hội An,,0,2026-05-06 23:25:56.816620,reference
+drift_40361_271,bye ạ,goodbye,0.863,,,0,2026-05-06 23:47:34.438648,reference
+drift_31550_284,gợi ý lịch trình Đà Nẵng 5 ngày 3 đêm,ask_itinerary,0.901,Đà Nẵng,,0,2026-05-07 00:09:12.060675,reference
+drift_62593_213,đồ ăn Đà Nẵng thế nào,search_food_dining,0.938,Đà Nẵng,,0,2026-05-07 00:30:49.682703,reference
+drift_77800_109,hoàn tiền thế nào bot ơi,ask_policy_booking,0.875,,,0,2026-05-07 00:52:27.304730,reference
+drift_16712_687,gợi ý điểm du lịch,search_destination,0.972,,,0,2026-05-07 01:14:04.926758,reference
+drift_63139_913,gợi ý lịch trình Hà Giang 3 ngày 2 đêm nha,ask_itinerary,0.903,Hà Giang,8000000.0,0,2026-05-07 01:35:42.548785,reference
+drift_88084_302,cho mình hỏi tour Hội An,search_travel,0.99,Hội An,8000000.0,0,2026-05-07 01:57:20.170813,reference
+drift_61034_992,tìm homestay giá rẻ Hà Giang,search_accommodation,0.988,Hà Giang,,0,2026-05-07 02:18:57.792840,reference
+drift_59388_65,mình cần tìm tour Hà Giang giá rẻ,search_travel,0.91,Hà Giang,8000000.0,0,2026-05-07 02:40:35.414868,reference
+drift_84117_638,có quán nào ngon ở Vũng Tàu tư vấn với,search_food_dining,0.871,Vũng Tàu,,0,2026-05-07 03:02:13.036895,reference
+drift_45258_194,có xe khách đi Vũng Tàu không nhé,ask_transportation,0.866,Vũng Tàu,,0,2026-05-07 03:23:50.658923,reference
+drift_62470_847,đi Huế mùa nào đẹp,search_travel,0.911,Huế,2000000.0,0,2026-05-07 03:45:28.280950,reference
+drift_72742_934,nên đi đâu chơi,search_destination,0.927,,,0,2026-05-07 04:07:05.902978,reference
+drift_44711_276,muốn đặt tour Nha Trang,book_tour,0.906,Nha Trang,,0,2026-05-07 04:28:43.525005,reference
+drift_66314_379,có xe khách đi Hà Nội không,ask_transportation,0.852,Hà Nội,,0,2026-05-07 04:50:21.147033,reference
+drift_15889_870,đi xe máy nhé shop,inform,0.876,,8000000.0,0,2026-05-07 05:11:58.769061,reference
+drift_56228_560,cho mình xin villa Huế,search_accommodation,0.986,Huế,20000000.0,0,2026-05-07 05:33:36.391088,reference
+drift_90167_286,ăn gì ở Hội An,search_food_dining,0.856,Hội An,,0,2026-05-07 05:55:14.013116,reference
+drift_68503_586,ok bạn,affirm,0.882,,,0,2026-05-07 06:16:51.635143,reference
+drift_99487_992,ok bạn,affirm,0.881,,,0,2026-05-07 06:38:29.257171,reference
+drift_41457_231,cho mình hỏi tour Vũng Tàu tư vấn với,search_travel,0.937,Vũng Tàu,15000000.0,0,2026-05-07 07:00:06.879198,reference
+drift_84778_105,tìm homestay giá rẻ Đà Lạt,search_accommodation,0.976,Đà Lạt,10000000.0,0,2026-05-07 07:21:44.501226,reference
+drift_83965_836,mình cần tìm tour Vũng Tàu giá rẻ tư vấn với,search_travel,0.931,Vũng Tàu,8000000.0,0,2026-05-07 07:43:22.123253,reference
+drift_26477_469,bạn là người hay máy,bot_challenge,0.962,,,0,2026-05-07 08:04:59.745281,reference
+drift_88886_130,hoàn tiền thế nào,ask_policy_booking,0.914,,,0,2026-05-07 08:26:37.367308,reference
+drift_48383_479,hoàn tiền thế nào,ask_policy_booking,0.939,,,0,2026-05-07 08:48:14.989336,reference
+drift_30255_102,cho thuê xe chèo thuyền,search_activity,0.96,,,0,2026-05-07 09:09:52.611363,reference
+drift_15339_967,nên đi đâu chơi,search_destination,0.881,,,0,2026-05-07 09:31:30.233391,reference
+drift_77998_647,có xe khách đi Hà Giang không ạ,ask_transportation,0.942,Hà Giang,,0,2026-05-07 09:53:07.855418,reference
+drift_42574_335,tour giá rẻ,search_price,0.866,,,0,2026-05-07 10:14:45.477446,reference
+drift_60939_252,bye,goodbye,0.884,,,0,2026-05-07 10:36:23.099474,reference
+drift_48436_370,xin chào,greet,0.986,,,0,2026-05-07 10:58:00.721501,reference
+drift_57484_907,xin chào,greet,0.981,,,0,2026-05-07 11:19:38.343529,reference
+drift_27985_462,cho mình hỏi số điện thoại,out_of_scope,0.918,,,0,2026-05-07 11:41:15.965556,reference
+drift_81970_500,alo,greet,0.953,,,0,2026-05-07 12:02:53.587584,reference
+drift_59868_517,có tour nào đi Phú Quốc không ạ,search_travel,0.874,Phú Quốc,,0,2026-05-07 12:24:31.209611,reference
+drift_55234_912,có tour nào đi Sapa không,search_travel,0.93,Sapa,2000000.0,0,2026-05-07 12:46:08.831639,reference
+drift_74607_229,có nơi nào đẹp để đi chơi không nha,search_destination,0.956,,,0,2026-05-07 13:07:46.453666,reference
+drift_57448_806,tìm tour Sapa 4 ngày 4 đêm,search_travel,0.86,Sapa,20000000.0,0,2026-05-07 13:29:24.075694,reference
+drift_41006_50,tour này có hdv không,ask_tour_info,0.948,,15000000.0,0,2026-05-07 13:51:01.697721,reference
+drift_66938_244,ở Huế có nhà nghỉ nào tốt,search_accommodation,0.947,Huế,8000000.0,0,2026-05-07 14:12:39.319749,reference
+drift_74856_693,đi Sapa 3 ngày 3 đêm nên đi đâu,ask_itinerary,0.989,Sapa,10000000.0,0,2026-05-07 14:34:16.941776,reference
+drift_51801_953,tìm chỗ trekking shop,search_activity,0.968,,,0,2026-05-07 14:55:54.563804,reference
+drift_24580_223,có villa nào ở Đà Nẵng không gấp ạ,search_accommodation,0.985,Đà Nẵng,,0,2026-05-07 15:17:32.185832,reference
+drift_49193_819,có,affirm,0.969,,,0,2026-05-07 15:39:09.807859,reference
+drift_15044_439,cho mình xin khách sạn Hội An,search_accommodation,0.863,Hội An,20000000.0,0,2026-05-07 16:00:47.429887,reference
+drift_72463_180,đồ ăn Hội An thế nào shop,search_food_dining,0.988,Hội An,,0,2026-05-07 16:22:25.051914,reference
+drift_86696_412,ừ,affirm,0.9,,,0,2026-05-07 16:44:02.673942,reference
+drift_92602_703,đi xe máy nhé,inform,0.867,,20000000.0,0,2026-05-07 17:05:40.295969,reference
+drift_90605_758,cho mình xin resort Đà Nẵng,search_accommodation,0.924,Đà Nẵng,,0,2026-05-07 17:27:17.917997,reference
+drift_81064_85,xin chào,greet,0.88,,,0,2026-05-07 17:48:55.540024,reference
+drift_42239_900,ok bạn,affirm,0.924,,,0,2026-05-07 18:10:33.162052,reference
+drift_93924_89,đặt tour Sapa,book_tour,0.854,Sapa,,0,2026-05-07 18:32:10.784079,reference
+drift_64262_540,đi Sapa 3 ngày 2 đêm nên đi đâu nhé,ask_itinerary,0.895,Sapa,2000000.0,0,2026-05-07 18:53:48.406107,reference
+drift_78563_628,cho mình hỏi số điện thoại,out_of_scope,0.88,,,0,2026-05-07 19:15:26.028134,reference
+drift_71362_230,có xe khách đi Phú Quốc không,ask_transportation,0.896,Phú Quốc,,0,2026-05-07 19:37:03.650162,reference
+drift_33160_422,tầm 20 triệu,inform,0.943,,2000000.0,0,2026-05-07 19:58:41.272189,reference
+drift_10958_726,có tour nào đi Phú Quốc không nha,search_travel,0.965,Phú Quốc,2000000.0,0,2026-05-07 20:20:18.894217,reference
+drift_53368_838,Nha Trang tư vấn với,inform,0.972,Nha Trang,5000000.0,0,2026-05-07 20:41:56.516245,reference
+drift_24813_175,có tour nào đi Đà Nẵng không,search_travel,0.88,Đà Nẵng,2000000.0,0,2026-05-07 21:03:34.138272,reference
+drift_74460_427,tạm biệt shop,goodbye,0.982,,,0,2026-05-07 21:25:11.760300,reference
+drift_16883_14,khoảng 3 ngày 2 đêm,inform,0.868,,,0,2026-05-07 21:46:49.382327,reference
+drift_33556_315,có tour nào đi Vũng Tàu không,search_travel,0.855,Vũng Tàu,,0,2026-05-07 22:08:27.004355,reference
+drift_37885_404,đi Vũng Tàu bằng gì,ask_transportation,0.902,Vũng Tàu,,0,2026-05-07 22:30:04.626382,reference
+drift_83813_49,muốn cắm trại ở Đà Lạt gấp ạ,search_activity,0.928,Đà Lạt,,0,2026-05-07 22:51:42.248410,reference
+drift_11856_991,muốn đi du lịch Hội An 5000k,search_travel,0.857,Hội An,20000000.0,0,2026-05-07 23:13:19.870437,reference
+drift_35578_661,muốn đi du lịch Đà Nẵng 10000k,search_travel,0.943,Đà Nẵng,5000000.0,0,2026-05-07 23:34:57.492465,reference
+drift_82992_891,thôi ạ,deny,0.866,,,0,2026-05-07 23:56:35.114492,reference
+drift_85647_728,Hà Nội có gì đẹp,ask_location_feature,0.96,Hà Nội,,0,2026-05-08 00:18:12.736520,reference
+drift_83892_203,tìm resort giá rẻ Phú Quốc,search_accommodation,0.921,Phú Quốc,,0,2026-05-08 00:39:50.358547,reference
+drift_37554_475,cảm ơn,goodbye,0.895,,,0,2026-05-08 01:01:27.980575,reference
+drift_82855_227,ừ,affirm,0.967,,,0,2026-05-08 01:23:05.602602,reference
+drift_41985_492,chào bạn,greet,0.912,,,0,2026-05-08 01:44:43.224630,reference
+drift_80946_88,ở Vũng Tàu có villa nào tốt,search_accommodation,0.869,Vũng Tàu,2000000.0,0,2026-05-08 02:06:20.846658,reference
+drift_51362_572,Vũng Tàu,inform,0.951,Vũng Tàu,5000000.0,0,2026-05-08 02:27:58.468685,reference
+drift_10031_128,có resort nào ở Hà Nội không,search_accommodation,0.872,Hà Nội,,0,2026-05-08 02:49:36.090713,reference
+drift_54303_77,muốn dù lượn ở Hà Nội,search_activity,0.892,Hà Nội,,0,2026-05-08 03:11:13.712740,reference
+drift_82887_879,gợi ý điểm du lịch bot ơi,search_destination,0.914,,,0,2026-05-08 03:32:51.334768,reference
+drift_95099_204,đi Vũng Tàu mùa nào đẹp,search_travel,0.97,Vũng Tàu,15000000.0,0,2026-05-08 03:54:28.956795,reference
+drift_75151_91,có được hoàn không,ask_policy_booking,0.964,,,0,2026-05-08 04:16:06.578823,reference
+drift_65883_480,có chỗ nào lặn san hô không gấp ạ,search_activity,0.976,,,0,2026-05-08 04:37:44.200850,reference
+drift_83503_227,có,affirm,0.967,,,0,2026-05-08 04:59:21.822878,reference
+drift_18346_170,không có,deny,0.859,,,0,2026-05-08 05:20:59.444905,reference
+drift_32794_308,Hà Giang có đặc sản gì,search_food_dining,0.926,Hà Giang,,0,2026-05-08 05:42:37.066933,reference
+drift_10384_120,khoảng 3 ngày 3 đêm,inform,0.913,,,0,2026-05-08 06:04:14.688960,reference
+drift_54498_947,hi,greet,0.912,,,0,2026-05-08 06:25:52.310988,reference
+drift_54344_546,có nơi nào đẹp để đi chơi không ạ,search_destination,0.855,,,0,2026-05-08 06:47:29.933015,reference
+drift_53482_144,đi Phú Quốc mùa nào đẹp,search_travel,0.969,Phú Quốc,,0,2026-05-08 07:09:07.555043,reference
+drift_25784_6,phương tiện đi Huế,ask_transportation,0.989,Huế,,0,2026-05-08 07:30:45.177071,reference
+drift_51440_491,đi Hà Nội chi phí thế nào,search_travel,0.944,Hà Nội,15000000.0,0,2026-05-08 07:52:22.799098,reference
+drift_41356_259,ok bạn,affirm,0.873,,,0,2026-05-08 08:14:00.421126,reference
+drift_27108_325,ok,affirm,0.89,,,0,2026-05-08 08:35:38.043153,reference
+drift_89591_510,tạm biệt,goodbye,0.978,,,0,2026-05-08 08:57:15.665181,reference
+drift_64320_586,đi Nha Trang chi phí thế nào,search_travel,0.896,Nha Trang,10000000.0,0,2026-05-08 09:18:53.287208,reference
+drift_10460_37,ok bạn,affirm,0.911,,,0,2026-05-08 09:40:30.909236,reference
+drift_48102_93,có chỗ nào cắm trại không,search_activity,0.903,,,0,2026-05-08 10:02:08.531263,reference
+drift_35107_771,muốn đặt tour Đà Nẵng nha,book_tour,0.959,Đà Nẵng,,0,2026-05-08 10:23:46.153291,reference
+drift_57636_169,cảm ơn,goodbye,0.941,,,0,2026-05-08 10:45:23.775318,reference
+drift_34393_442,ở Đà Lạt có khách sạn nào tốt,search_accommodation,0.943,Đà Lạt,3000000.0,0,2026-05-08 11:07:01.397346,reference
+drift_87375_825,đặt tour Vũng Tàu tư vấn với,book_tour,0.973,Vũng Tàu,,0,2026-05-08 11:28:39.019373,reference
+drift_63356_278,ở Đà Nẵng có villa nào tốt,search_accommodation,0.912,Đà Nẵng,10000000.0,0,2026-05-08 11:50:16.641401,reference
+drift_86533_430,chi phí tour Huế,search_price,0.945,Huế,,0,2026-05-08 12:11:54.263429,reference
+drift_14605_170,ok bạn tư vấn với,affirm,0.871,,,0,2026-05-08 12:33:31.885456,reference
+drift_75685_758,được nha,affirm,0.891,,,0,2026-05-08 12:55:09.507484,reference
+drift_96959_246,có xe khách đi Sapa không,ask_transportation,0.918,Sapa,,0,2026-05-08 13:16:47.129511,reference
+drift_85438_972,cho mình xin khách sạn Hà Nội,search_accommodation,0.893,Hà Nội,,0,2026-05-08 13:38:24.751539,reference
+drift_24783_604,muốn chèo thuyền ở Hà Giang tư vấn với,search_activity,0.891,Hà Giang,,0,2026-05-08 14:00:02.373566,reference
+drift_34674_340,đi Hà Nội 4 ngày 3 đêm nên đi đâu shop,ask_itinerary,0.902,Hà Nội,,0,2026-05-08 14:21:39.995594,reference
+drift_37914_45,từ Sài Gòn đi Hà Nội bằng xe gì,search_travel,0.979,Hà Nội,3000000.0,0,2026-05-08 14:43:17.617621,reference
+drift_20918_753,đăng ký tour Đà Nẵng gấp ạ,book_tour,0.862,Đà Nẵng,,0,2026-05-08 15:04:55.239649,reference
+drift_54312_256,ăn gì ở Vũng Tàu,search_food_dining,0.972,Vũng Tàu,,0,2026-05-08 15:26:32.861676,reference
+drift_65104_895,tháng 6 gấp ạ,inform,0.941,,10000000.0,0,2026-05-08 15:48:10.483704,reference
+drift_91814_327,lịch trình tour Hà Nội shop,ask_tour_info,0.949,Hà Nội,2000000.0,0,2026-05-08 16:09:48.105731,reference
+drift_72083_870,muốn đi du lịch tháng 3,search_destination,0.876,,,0,2026-05-08 16:31:25.727759,reference
+drift_96125_101,tầm 8000k,inform,0.963,,10000000.0,0,2026-05-08 16:53:03.349786,reference
+drift_52923_612,tìm tour Hà Nội 4 ngày 3 đêm,search_travel,0.938,Hà Nội,,0,2026-05-08 17:14:40.971814,reference
+drift_92101_602,đặt tour Vũng Tàu ạ,book_tour,0.885,Vũng Tàu,,0,2026-05-08 17:36:18.593842,reference
+drift_28398_513,cảm ơn,goodbye,0.882,,,0,2026-05-08 17:57:56.215869,reference
+drift_17874_617,từ Hà Nội đi Hà Nội bằng xe gì,search_travel,0.943,Hà Nội,20000000.0,0,2026-05-08 18:19:33.837897,reference
+drift_25538_865,muốn trekking ở Vũng Tàu,search_activity,0.916,Vũng Tàu,,0,2026-05-08 18:41:11.459924,reference
+drift_69891_728,đi trekking ở đâu,search_activity,0.99,,,0,2026-05-08 19:02:49.081952,reference
+drift_37085_710,khoảng 4 ngày 3 đêm ạ,inform,0.87,,20000000.0,0,2026-05-08 19:24:26.703979,reference
+drift_39638_378,Huế có đặc sản gì bot ơi,search_food_dining,0.988,Huế,,0,2026-05-08 19:46:04.326007,reference
+drift_60621_66,đi Đà Lạt bằng gì,ask_transportation,0.901,Đà Lạt,,0,2026-05-08 20:07:41.948034,reference
+drift_83440_511,tầm 15000k,inform,0.861,,3000000.0,0,2026-05-08 20:29:19.570062,reference
+drift_93915_933,nên đi đâu chơi,search_destination,0.858,,,0,2026-05-08 20:50:57.192089,reference
+drift_80203_192,Đà Lạt có gì đẹp,ask_location_feature,0.851,Đà Lạt,,0,2026-05-08 21:12:34.814117,reference
+drift_53611_155,tìm tour Hà Nội 2 ngày 1 đêm,search_travel,0.935,Hà Nội,,0,2026-05-08 21:34:12.436144,reference
+drift_59201_550,Huế có đặc sản gì,search_food_dining,0.947,Huế,,0,2026-05-08 21:55:50.058172,reference
+drift_55619_233,muốn chèo thuyền ở Sapa,search_activity,0.886,Sapa,,0,2026-05-08 22:17:27.680199,reference
+drift_69150_240,đi lặn san hô ở đâu,search_activity,0.955,,,0,2026-05-08 22:39:05.302227,reference
+drift_79895_349,gợi ý điểm du lịch,search_destination,0.959,,,0,2026-05-08 23:00:42.924255,reference
+drift_57783_943,tìm homestay giá rẻ Huế,search_accommodation,0.93,Huế,,0,2026-05-08 23:22:20.546282,reference
+drift_37292_336,đi tàu hỏa nhé,inform,0.921,,5000000.0,0,2026-05-08 23:43:58.168310,reference
+drift_29269_881,trekking,inform,0.925,,2000000.0,0,2026-05-09 00:05:35.790337,reference
+drift_98164_433,giải bài tập này giúp tôi,out_of_scope,0.899,,,0,2026-05-09 00:27:13.412365,reference
+drift_14193_984,tour này có hdv không,ask_tour_info,0.983,,,0,2026-05-09 00:48:51.034392,reference
+drift_31086_604,có chỗ nào trekking không,search_activity,0.944,,,0,2026-05-09 01:10:28.656420,reference
+drift_63674_549,muốn trekking ở Hà Giang,search_activity,0.887,Hà Giang,,0,2026-05-09 01:32:06.278447,reference
+drift_25462_626,cho thuê xe chèo thuyền ạ,search_activity,0.98,,,0,2026-05-09 01:53:43.900475,reference
+drift_64669_234,ok cảm ơn nha,goodbye,0.882,,,0,2026-05-09 02:15:21.522502,reference
+drift_11662_56,tháng 4 đi đâu đẹp,search_destination,0.972,,,0,2026-05-09 02:36:59.144530,reference
+drift_93219_108,cảm ơn ạ,goodbye,0.941,,,0,2026-05-09 02:58:36.766557,reference
+drift_81203_599,đồ ăn Hà Giang thế nào,search_food_dining,0.887,Hà Giang,,0,2026-05-09 03:20:14.388585,reference
+drift_70844_698,muốn đặt tour Đà Lạt,book_tour,0.957,Đà Lạt,,0,2026-05-09 03:41:52.010612,reference
+drift_50794_646,đi Đà Nẵng chi phí bao nhiêu,search_price,0.916,Đà Nẵng,15000000.0,0,2026-05-09 04:03:29.632640,reference
+drift_97237_74,ừ ạ,affirm,0.884,,,0,2026-05-09 04:25:07.254668,reference
+drift_21215_143,Phú Quốc,inform,0.948,Phú Quốc,2000000.0,0,2026-05-09 04:46:44.876695,reference
+drift_34735_981,tháng 8,inform,0.873,,,0,2026-05-09 05:08:22.498723,reference
+drift_25896_480,thôi,deny,0.944,,,0,2026-05-09 05:30:00.120750,reference
+drift_84625_253,cho mình xin nhà nghỉ Sapa,search_accommodation,0.912,Sapa,2000000.0,0,2026-05-09 05:51:37.742778,reference
+drift_67729_145,muốn đi du lịch Nha Trang 15 triệu nhé,search_travel,0.904,Nha Trang,3000000.0,0,2026-05-09 06:13:15.364805,reference
+drift_19769_951,phương tiện đi Vũng Tàu,ask_transportation,0.893,Vũng Tàu,,0,2026-05-09 06:34:52.986833,reference
+drift_58622_918,mở cửa hàng lúc mấy giờ,out_of_scope,0.935,,,0,2026-05-09 06:56:30.608860,reference
+drift_85268_143,đồ ăn Phú Quốc thế nào bot ơi,search_food_dining,0.978,Phú Quốc,,0,2026-05-09 07:18:08.230888,reference
+drift_39743_695,nên đi đâu chơi,search_destination,0.892,,,0,2026-05-09 07:39:45.852915,reference
+drift_67559_423,ai lập trình ra bạn,bot_challenge,0.958,,,0,2026-05-09 08:01:23.474943,reference
+drift_49477_864,đi Đà Lạt 3 ngày 3 đêm nên đi đâu,ask_itinerary,0.968,Đà Lạt,3000000.0,0,2026-05-09 08:23:01.096970,reference
+drift_69642_916,đi Hội An 4 ngày 1 đêm nên đi đâu,ask_itinerary,0.855,Hội An,3000000.0,0,2026-05-09 08:44:38.718998,reference
+drift_95215_725,tháng 7 gấp ạ,inform,0.878,,,0,2026-05-09 09:06:16.341026,reference
+drift_58819_797,thôi bot ơi,deny,0.908,,,0,2026-05-09 09:27:53.963053,reference
+drift_30424_77,có nơi nào đẹp để đi chơi không shop,search_destination,0.904,,,0,2026-05-09 09:49:31.585081,reference
+drift_89813_709,gợi ý lịch trình Vũng Tàu 3 ngày 4 đêm tư vấn với,ask_itinerary,0.862,Vũng Tàu,,0,2026-05-09 10:11:09.207108,reference
+drift_57820_581,bye,goodbye,0.973,,,0,2026-05-09 10:32:46.829136,reference
+drift_98634_736,muốn cắm trại ở Đà Nẵng,search_activity,0.989,Đà Nẵng,,0,2026-05-09 10:54:24.451163,reference
+drift_66983_83,đi Nha Trang chi phí bao nhiêu,search_price,0.968,Nha Trang,3000000.0,0,2026-05-09 11:16:02.073191,reference
+drift_63475_972,đi Sapa bằng gì,ask_transportation,0.902,Sapa,,0,2026-05-09 11:37:39.695218,reference
+drift_84604_971,chính sách hủy tour,ask_policy_booking,0.969,,,0,2026-05-09 11:59:17.317246,reference
+drift_88349_156,Đà Nẵng shop,inform,0.889,Đà Nẵng,20000000.0,0,2026-05-09 12:20:54.939273,reference
+drift_33980_736,tháng 6 đi đâu đẹp ạ,search_destination,0.983,,,0,2026-05-09 12:42:32.561301,reference
+drift_98343_495,ok cảm ơn tư vấn với,goodbye,0.863,,,0,2026-05-09 13:04:10.183328,reference
+drift_20467_123,đi Hà Nội chi phí thế nào,search_travel,0.902,Hà Nội,,0,2026-05-09 13:25:47.805356,reference
+drift_95424_561,nên đi đâu chơi,search_destination,0.892,,,0,2026-05-09 13:47:25.427383,reference
+drift_20895_490,tìm chỗ chèo thuyền,search_activity,0.871,,,0,2026-05-09 14:09:03.049411,reference
+drift_14836_840,Hà Giang có đặc sản gì,search_food_dining,0.884,Hà Giang,,0,2026-05-09 14:30:40.671439,reference
+drift_34294_962,tìm chỗ leo núi bot ơi,search_activity,0.886,,,0,2026-05-09 14:52:18.293466,reference
+drift_74537_250,tháng 12,inform,0.887,,,0,2026-05-09 15:13:55.915494,reference
+drift_53857_556,có chỗ nào trekking không,search_activity,0.855,,,0,2026-05-09 15:35:33.537521,reference
+drift_72915_388,tour này có hdv không,ask_tour_info,0.938,,10000000.0,0,2026-05-09 15:57:11.159549,reference
+drift_18575_358,gợi ý lịch trình Sapa 4 ngày 1 đêm,ask_itinerary,0.919,Sapa,8000000.0,0,2026-05-09 16:18:48.781576,reference
+drift_79904_812,đi lặn san hô ở đâu shop,search_activity,0.919,,,0,2026-05-09 16:40:26.403604,reference
+drift_82304_922,đi máy bay nhé gấp ạ,inform,0.863,,,0,2026-05-09 17:02:04.025631,reference
+drift_69955_210,tour giá rẻ,search_price,0.955,,,0,2026-05-09 17:23:41.647659,reference
+drift_84194_115,muốn đi du lịch tháng 3,search_destination,0.988,,,0,2026-05-09 17:45:19.269686,reference
+drift_23384_587,đi dù lượn ở đâu,search_activity,0.896,,,0,2026-05-09 18:06:56.891714,reference
+drift_13081_298,giá tour này bao nhiêu nhé,search_price,0.971,,20000000.0,0,2026-05-09 18:28:34.513741,reference
+drift_99901_75,đi xe khách nhé,inform,0.851,,15000000.0,0,2026-05-09 18:50:12.135769,reference
+drift_43771_723,tháng 2 đi đâu đẹp nha,search_destination,0.901,,,0,2026-05-09 19:11:49.757796,reference
+drift_10786_822,có được hoàn không,ask_policy_booking,0.923,,,0,2026-05-09 19:33:27.379824,reference
+drift_97690_946,cho mình hỏi tour Hội An,search_travel,0.855,Hội An,15000000.0,0,2026-05-09 19:55:05.001852,reference
+drift_17979_654,bye,goodbye,0.96,,,0,2026-05-09 20:16:42.623879,reference
+drift_56482_761,có chỗ nào cắm trại không,search_activity,0.87,,,0,2026-05-09 20:38:20.245907,reference
+drift_84257_831,tầm 8000k gấp ạ,inform,0.91,,2000000.0,0,2026-05-09 20:59:57.867934,reference
+drift_82458_783,khoảng 2 ngày 4 đêm shop,inform,0.909,,3000000.0,0,2026-05-09 21:21:35.489962,reference
+drift_68469_693,cắm trại shop,inform,0.881,,8000000.0,0,2026-05-09 21:43:13.111989,reference
+drift_36548_191,ok,affirm,0.907,,,0,2026-05-09 22:04:50.734017,reference
+drift_86449_893,cho mình hỏi tour Hội An,search_travel,0.926,Hội An,20000000.0,0,2026-05-09 22:26:28.356044,reference
+drift_66938_199,giá tour này bao nhiêu,search_price,0.866,,20000000.0,0,2026-05-09 22:48:05.978072,reference
+drift_93784_110,đi xe máy nhé,inform,0.851,,8000000.0,0,2026-05-09 23:09:43.600099,reference
+drift_95683_752,ừ tư vấn với,affirm,0.924,,,0,2026-05-09 23:31:21.222127,reference
+drift_99816_62,có homestay nào ở Sapa không,search_accommodation,0.938,Sapa,,0,2026-05-09 23:52:58.844154,reference
+drift_42263_121,ok bạn,affirm,0.981,,,0,2026-05-10 00:14:36.466182,reference
+drift_90817_914,ừ,affirm,0.873,,,0,2026-05-10 00:36:14.088209,reference
+drift_45145_91,phương tiện đi Nha Trang,ask_transportation,0.918,Nha Trang,,0,2026-05-10 00:57:51.710237,reference
+drift_92587_783,đi xe máy nhé gấp ạ,inform,0.984,,8000000.0,0,2026-05-10 01:19:29.332265,reference
+drift_22760_47,đi Đà Nẵng chi phí bao nhiêu,search_price,0.964,Đà Nẵng,,0,2026-05-10 01:41:06.954292,reference
+drift_85102_446,khoảng 4 ngày 4 đêm gấp ạ,inform,0.883,,15000000.0,0,2026-05-10 02:02:44.576320,reference
+drift_43437_742,thông tin chi tiết tour Hội An,ask_tour_info,0.935,Hội An,,0,2026-05-10 02:24:22.198347,reference
+drift_20983_783,tầm 20000k,inform,0.966,,5000000.0,0,2026-05-10 02:45:59.820375,reference
+drift_97361_468,tour này có hdv không shop,ask_tour_info,0.945,,,0,2026-05-10 03:07:37.442402,reference
+drift_41826_76,cho em xin tour Hà Giang 10 triệu,search_travel,0.91,Hà Giang,5000000.0,0,2026-05-10 03:29:15.064430,reference
+drift_23446_549,có nơi nào đẹp để đi chơi không,search_destination,0.92,,,0,2026-05-10 03:50:52.686457,reference
+drift_89496_31,đi Hội An bằng gì,ask_transportation,0.924,Hội An,,0,2026-05-10 04:12:30.308485,reference
+drift_33648_714,cảm ơn,goodbye,0.862,,,0,2026-05-10 04:34:07.930512,reference
+drift_73642_238,ok,affirm,0.904,,,0,2026-05-10 04:55:45.552540,reference
+drift_76091_114,Vũng Tàu có gì đẹp,ask_location_feature,0.92,Vũng Tàu,,0,2026-05-10 05:17:23.174567,reference
+drift_45752_276,tháng 2,inform,0.989,,3000000.0,0,2026-05-10 05:39:00.796595,reference
+drift_54163_877,gợi ý lịch trình Hội An 4 ngày 2 đêm,ask_itinerary,0.875,Hội An,20000000.0,0,2026-05-10 06:00:38.418623,reference
+drift_43495_144,cho em xin tour Vũng Tàu 2 triệu,search_travel,0.917,Vũng Tàu,,0,2026-05-10 06:22:16.040650,reference
+drift_65442_917,tháng 5,inform,0.939,,5000000.0,0,2026-05-10 06:43:53.662678,reference
+drift_42278_692,đăng ký tour Đà Lạt shop,book_tour,0.877,Đà Lạt,,0,2026-05-10 07:05:31.284705,reference
+drift_99045_573,muốn trekking ở Vũng Tàu,search_activity,0.886,Vũng Tàu,,0,2026-05-10 07:27:08.906733,reference
+drift_37639_691,tìm homestay giá rẻ Hà Giang,search_accommodation,0.894,Hà Giang,5000000.0,0,2026-05-10 07:48:46.528760,reference
+drift_35723_264,có quán nào ngon ở Vũng Tàu,search_food_dining,0.94,Vũng Tàu,,0,2026-05-10 08:10:24.150788,reference
+drift_11620_206,lịch trình tour Huế,ask_tour_info,0.873,Huế,10000000.0,0,2026-05-10 08:32:01.772815,reference
+drift_35964_524,thời tiết hôm nay thế nào,out_of_scope,0.939,,,0,2026-05-10 08:53:39.394843,reference
+drift_37615_20,đi tàu hỏa nhé nha,inform,0.988,,15000000.0,0,2026-05-10 09:15:17.016870,reference
+drift_18708_587,Đà Nẵng có gì đẹp,ask_location_feature,0.927,Đà Nẵng,,0,2026-05-10 09:36:54.638898,reference
+drift_68579_409,phương tiện đi Hội An tư vấn với,ask_transportation,0.955,Hội An,,0,2026-05-10 09:58:32.260925,reference
+drift_98948_908,Hội An có gì chơi,ask_location_feature,0.983,Hội An,,0,2026-05-10 10:20:09.882953,reference
+drift_54147_349,tìm tour Hà Giang 2 ngày 3 đêm,search_travel,0.858,Hà Giang,15000000.0,0,2026-05-10 10:41:47.504980,reference
+drift_28938_393,du lịch tiết kiệm,search_price,0.862,,8000000.0,0,2026-05-10 11:03:25.127008,reference
+drift_32514_937,có resort nào ở Sapa không,search_accommodation,0.958,Sapa,,0,2026-05-10 11:25:02.749036,reference
+drift_78573_504,có xe khách đi Đà Nẵng không,ask_transportation,0.944,Đà Nẵng,,0,2026-05-10 11:46:40.371063,reference
+drift_94232_565,đi Sapa bằng gì,ask_transportation,0.958,Sapa,,0,2026-05-10 12:08:17.993091,reference
+drift_17007_98,tháng 5 ạ,inform,0.851,,20000000.0,0,2026-05-10 12:29:55.615118,reference
+drift_73178_378,hi,greet,0.953,,,0,2026-05-10 12:51:33.237146,reference
+drift_19099_766,cho thuê xe đạp xe,search_activity,0.875,,,0,2026-05-10 13:13:10.859173,reference
+drift_58724_577,có xe khách đi Hà Giang không bot ơi,ask_transportation,0.983,Hà Giang,,0,2026-05-10 13:34:48.481201,reference
+drift_20931_245,tháng 5,inform,0.855,,2000000.0,0,2026-05-10 13:56:26.103228,reference
+drift_51544_257,nên đi đâu chơi,search_destination,0.865,,,0,2026-05-10 14:18:03.725256,reference
+drift_32760_589,từ Vinh đi Huế bằng xe gì,search_travel,0.856,Huế,10000000.0,0,2026-05-10 14:39:41.347283,reference
+drift_48911_428,cho thuê xe lặn san hô,search_activity,0.958,,,0,2026-05-10 15:01:18.969311,reference
+drift_42131_595,khoảng 4 ngày 4 đêm bot ơi,inform,0.851,,,0,2026-05-10 15:22:56.591338,reference
+drift_90230_234,không,deny,0.907,,,0,2026-05-10 15:44:34.213366,reference
+drift_37713_829,tour này có hdv không,ask_tour_info,0.942,,,0,2026-05-10 16:06:11.835393,reference
+drift_99473_90,ok bạn,affirm,0.897,,,0,2026-05-10 16:27:49.457421,reference

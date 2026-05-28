@@ -1,0 +1,120 @@
+{
+  "drift_detected": false,
+  "overall_drift_score": 0.1159,
+  "severity": "low",
+  "methods": {
+    "centroid_cosine_distance": 0.0019,
+    "lr_confidence_on_drift": 0.8116,
+    "lr_accuracy_on_drift": 0.4017,
+    "kl_divergence_intent": 0.1555
+  },
+  "by_intent": {
+    "affirm": {
+      "ref_count": 58,
+      "drift_count": 51,
+      "drift_score": 0.0037
+    },
+    "ask_itinerary": {
+      "ref_count": 31,
+      "drift_count": 36,
+      "drift_score": 0.004
+    },
+    "ask_location_feature": {
+      "ref_count": 23,
+      "drift_count": 28,
+      "drift_score": 0.0132
+    },
+    "ask_policy_booking": {
+      "ref_count": 26,
+      "drift_count": 51,
+      "drift_score": 0.0022
+    },
+    "ask_tour_info": {
+      "ref_count": 39,
+      "drift_count": 46,
+      "drift_score": 0.0084
+    },
+    "ask_transportation": {
+      "ref_count": 33,
+      "drift_count": 32,
+      "drift_score": 0.0085
+    },
+    "book_tour": {
+      "ref_count": 17,
+      "drift_count": 19,
+      "drift_score": 0.0129
+    },
+    "bot_challenge": {
+      "ref_count": 10,
+      "drift_count": 45,
+      "drift_score": 0.014
+    },
+    "deny": {
+      "ref_count": 19,
+      "drift_count": 16,
+      "drift_score": 0.0091
+    },
+    "goodbye": {
+      "ref_count": 38,
+      "drift_count": 35,
+      "drift_score": 0.0021
+    },
+    "greet": {
+      "ref_count": 36,
+      "drift_count": 57,
+      "drift_score": 0.0077
+    },
+    "inform": {
+      "ref_count": 93,
+      "drift_count": 81,
+      "drift_score": 0.0045
+    },
+    "nlu_fallback": {
+      "ref_count": 0,
+      "drift_count": 69,
+      "drift_score": null
+    },
+    "out_of_scope": {
+      "ref_count": 18,
+      "drift_count": 101,
+      "drift_score": 0.012
+    },
+    "search_accommodation": {
+      "ref_count": 51,
+      "drift_count": 61,
+      "drift_score": 0.006
+    },
+    "search_activity": {
+      "ref_count": 80,
+      "drift_count": 99,
+      "drift_score": 0.0068
+    },
+    "search_destination": {
+      "ref_count": 48,
+      "drift_count": 59,
+      "drift_score": 0.0021
+    },
+    "search_food_dining": {
+      "ref_count": 43,
+      "drift_count": 44,
+      "drift_score": 0.0058
+    },
+    "search_price": {
+      "ref_count": 37,
+      "drift_count": 74,
+      "drift_score": 0.0083
+    },
+    "search_travel": {
+      "ref_count": 100,
+      "drift_count": 196,
+      "drift_score": 0.0092
+    }
+  },
+  "data_profile": {
+    "total_rows": 2000,
+    "reference_rows": 800,
+    "drift_rows": 1200,
+    "reference_intents": 19,
+    "drift_intents": 20
+  }
+}
