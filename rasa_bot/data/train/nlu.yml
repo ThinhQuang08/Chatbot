@@ -403,6 +403,10 @@ nlu:
       - từ [Sài Gòn]{"entity": "location", "role": "departure"} đi [Nha Trang]{"entity": "location", "role": "destination"} bằng [tàu hỏa](transportation)
       - từ [Hà Nội]{"entity": "location", "role": "departure"} đi [Sapa]{"entity": "location", "role": "destination"} bằng [xe khách](transportation)
       - tôi muốn từ [Hà Nội]{"entity": "location", "role": "departure"} đi [Hà Giang]{"entity": "location", "role": "destination"}
+      - từ [Sài Gòn]{"entity": "location", "role": "departure"} đến [Đà Lạt]{"entity": "location", "role": "destination"}
+      - từ [Hà Nội]{"entity": "location", "role": "departure"} đến [Hà Giang]{"entity": "location", "role": "destination"}
+      - tôi muốn đi từ [Hà Nội]{"entity": "location", "role": "departure"} đến [Hà Giang]{"entity": "location", "role": "destination"}
+      - muốn từ [Sài Gòn]{"entity": "location", "role": "departure"} đến [Nha Trang]{"entity": "location", "role": "destination"}
       - muốn từ [Sài Gòn]{"entity": "location", "role": "departure"} ra [Phú Quốc]{"entity": "location", "role": "destination"}
       - tôi muốn từ [Sài Gòn]{"entity": "location", "role": "departure"} đi [Đà Lạt]{"entity": "location", "role": "destination"} [3 ngày](duration)
 
