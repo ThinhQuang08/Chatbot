@@ -92,6 +92,28 @@ def _first_valid_location(entities, role="destination"):
     return None
 
 
+def _log_to_analytics(tracker, no_results_flag, destination=None, parsed_budget=None):
+    session_id = tracker.sender_id
+    raw_text = tracker.latest_message.get("text", "")
+    intent_data = tracker.latest_message.get("intent", {}) or {}
+    intent = intent_data.get("name")
+    confidence = intent_data.get("confidence")
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO ai_chat_analytics
+                (session_id, raw_text, predicted_intent, confidence_score,
+                 destination, parsed_budget, no_results_flag)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """, (session_id, raw_text, intent, confidence, destination, parsed_budget, no_results_flag))
+        conn.commit()
+        cur.close()
+        conn.close()
+    except Exception as e:
+        print(f"[ANALYTICS ERROR] {e}")
+
+
 CATEGORY_KEYWORDS = {
     "resort": "resort", "nghỉ dưỡng": "resort", "khu nghỉ dưỡng": "resort",
     "homestay": "homestay",
@@ -461,6 +483,7 @@ class ActionSearchTourInfo(Action):
             if not rows:
                 msg = f"Mình đã tìm kỹ nhưng hiện tại chưa thấy {category or 'chỗ ở'} nào ở {destination} trong hệ thống. Bạn thử đổi địa điểm khác xem sao nhé!"
                 dispatcher.utter_message(text=msg)
+                _log_to_analytics(tracker, 1, destination)
                 return []
 
             # Format văn bản Bot trả lời
@@ -489,6 +512,7 @@ class ActionSearchTourInfo(Action):
 
             dispatcher.utter_message(text=response_text.strip())
             dispatcher.utter_message(response="utter_suggest_more")
+            _log_to_analytics(tracker, 0, destination)
 
         except Exception as e:
             print(f"[ERROR] Database query failed: {e}")
@@ -623,6 +647,7 @@ class ActionSearchTravel(Action):
             if suggestions:
                 msg += f" Bạn thử {' hoặc '.join(suggestions)} nhé!"
             dispatcher.utter_message(text=msg)
+            _log_to_analytics(tracker, 1, destination_value, max_budget)
             return reset_events
 
         # Chỉ set destination từ top result khi có search intent thực sự (tránh slot bleed)
@@ -658,6 +683,7 @@ class ActionSearchTravel(Action):
             if ai_response is not None and final_text and final_text != "None":
                 dispatcher.utter_message(text=final_text.strip())
                 dispatcher.utter_message(response="utter_suggest_more")
+                _log_to_analytics(tracker, 0, destination_value, max_budget)
                 return reset_events
             else:
                 print("⚠️ Cảnh báo: AI trả về rỗng hoặc None, chuyển sang Fallback DB.")
@@ -679,6 +705,7 @@ class ActionSearchTravel(Action):
 
         dispatcher.utter_message(text=response)
         dispatcher.utter_message(response="utter_suggest_more")
+        _log_to_analytics(tracker, 0, destination_value, max_budget)
         return reset_events
 
 
@@ -760,6 +787,7 @@ class ActionSearchTour(Action):
             dispatcher.utter_message(
                 text="Mình đã tìm kỹ nhưng chưa thấy tour nào phù hợp. Bạn thử đổi địa điểm hoặc ngân sách khác xem sao nhé! 😊"
             )
+            _log_to_analytics(tracker, 1, destination, max_budget)
             return reset_events
 
         print("[GEN-AI] Calling generate_tour_ai_response...")
@@ -773,6 +801,7 @@ class ActionSearchTour(Action):
                 print(f"[GEN-AI] OK — response has {len(ai_response.split(chr(10)))} line(s).")
                 dispatcher.utter_message(text=ai_response.strip())
                 dispatcher.utter_message(response="utter_suggest_more")
+                _log_to_analytics(tracker, 0, destination, max_budget)
                 return reset_events
             else:
                 print("[GEN-AI] Empty response — falling back to DB text.")
@@ -805,6 +834,7 @@ class ActionSearchTour(Action):
         print(f"[FALLBACK] Sent {len(results)} tour(s) as plain text.")
         dispatcher.utter_message(text=response_text)
         dispatcher.utter_message(response="utter_suggest_more")
+        _log_to_analytics(tracker, 0, destination, max_budget)
         return reset_events
 
 
@@ -862,6 +892,7 @@ class ActionSearchActivity(Action):
                     response += "\n"
                 dispatcher.utter_message(text=response.strip())
                 dispatcher.utter_message(response="utter_suggest_more")
+                _log_to_analytics(tracker, 0, destination)
                 print(f"→ Tìm thấy {len(activity_results)} địa điểm có hoạt động phù hợp")
                 return []
 
@@ -876,6 +907,7 @@ class ActionSearchActivity(Action):
                 text="Xin lỗi, mình chưa tìm thấy hoạt động phù hợp trong hệ thống."
             )
 
+        _log_to_analytics(tracker, 1, destination)
         print("====================================================\n")
         return [SlotSet("destination", destination)]
 
@@ -904,6 +936,7 @@ class ActionAIConsultant(Action):
             destination = _match_destination_from_text(user_message)
 
         db_context = []
+        analytics_no_results = None
         if destination:
             try:
                 results = search_destinations(destination=destination)
@@ -911,6 +944,7 @@ class ActionAIConsultant(Action):
                     db_context.append(
                         f"Điểm đến: {r.get('location')} | Hoạt động giải trí: {r.get('activities')} | Chi tiết: {r.get('description')}"
                     )
+                analytics_no_results = 1 if not db_context else 0
             except Exception as e:
                 print(f"[DB LOG] Lỗi truy xuất DB: {e}")
 
@@ -929,6 +963,8 @@ class ActionAIConsultant(Action):
                 text="Trợ lý hơi lag xíu, bạn chờ mình ngâm cứu thêm xíu nha! 😅"
             )
 
+        if analytics_no_results is not None:
+            _log_to_analytics(tracker, analytics_no_results, destination)
         print("====================================================\n")
         return [SlotSet("destination", destination)]
 

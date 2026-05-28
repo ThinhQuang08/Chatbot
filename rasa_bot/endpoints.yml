@@ -54,10 +54,3 @@ tracker_store:
 #  password: password
 #  queue: queue
 
-event_broker:
-  type: "pika"
-  url: "localhost"
-  username: "guest"
-  password: "guest"
-  queues:
-    - "rasa_analytics_queue"

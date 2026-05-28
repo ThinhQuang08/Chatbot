@@ -26,6 +26,27 @@ NLU_FILE = RASA_DIR / "data" / "train" / "nlu.yml"
 
 app = Flask(__name__)
 
+
+DVC_BIN = ROOT_DIR / ".dvc-venv" / "bin" / "dvc"
+
+
+def _ensure_dvc_data():
+    """Pull latest CSV data from DVC remote on startup."""
+    dvc = shutil.which("dvc") or str(DVC_BIN)
+    try:
+        result = subprocess.run(
+            [dvc, "pull"],
+            capture_output=True, text=True, timeout=120
+        )
+        print(f"[DVC PULL] {'OK' if result.returncode == 0 else 'FAILED'}")
+        if result.returncode != 0:
+            print(f"[DVC PULL] stderr: {result.stderr.strip()}")
+    except FileNotFoundError:
+        print("[DVC PULL] WARNING: dvc not found, skip")
+    except subprocess.TimeoutExpired:
+        print("[DVC PULL] WARNING: timeout (>120s), continue anyway")
+
+
 ENTITY_MAP = {
     "location": [
         "hà nội", "hồ chí minh", "sài gòn", "đà nẵng", "hải phòng", "cần thơ",
@@ -537,4 +558,5 @@ def export_csv():
 
 
 if __name__ == "__main__":
+    _ensure_dvc_data()
     app.run(host="0.0.0.0", port=5001, debug=True, use_reloader=False)

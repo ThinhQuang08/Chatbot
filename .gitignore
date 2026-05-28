@@ -5,6 +5,7 @@ __pycache__/
 
 # Environments & Secrets
 .venv/
+.dvc-venv/
 .env
 
 # Rasa
