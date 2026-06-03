@@ -1,0 +1,39 @@
+{
+    "metrics": [
+        {
+            "id": "15e89f895b482f9b84ba7274ed18a106",
+            "metric_name": "DriftedColumnsCount(drift_share=0.5)",
+            "config": {
+                "type": "evidently:metric_v2:DriftedColumnsCount",
+                "drift_share": 0.5
+            },
+            "value": {
+                "count": 2.0,
+                "share": 1.0
+            }
+        },
+        {
+            "id": "8ce75ebe46e8a4a71ef33accf28ec1e9",
+            "metric_name": "ValueDrift(column=predicted_intent,method=chi-square p_value,threshold=0.05)",
+            "config": {
+                "type": "evidently:metric_v2:ValueDrift",
+                "column": "predicted_intent",
+                "method": "chi-square p_value",
+                "threshold": 0.05
+            },
+            "value": 0.0
+        },
+        {
+            "id": "877a4b9b3bb1be0bc6fcccd5e9391050",
+            "metric_name": "ValueDrift(column=cleaned_text,method=Percentile text content drift,threshold=0.95)",
+            "config": {
+                "type": "evidently:metric_v2:ValueDrift",
+                "column": "cleaned_text",
+                "method": "Percentile text content drift",
+                "threshold": 0.95
+            },
+            "value": 0.9463087248322147
+        }
+    ],
+    "tests": []
+}
