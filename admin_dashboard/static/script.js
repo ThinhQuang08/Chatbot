@@ -553,6 +553,38 @@ function updateMetricsCards(latest) {
   });
 }
 
+// --- Matrix Images ---
+const MATRIX_LABELS = {
+  "intent_confusion_matrix.png": "Ma trận nhầm lẫn các Intent — Thể hiện mô hình dự đoán nhầm intent nào với intent nào",
+  "intent_histogram.png": "Biểu đồ phân phối độ tin cậy Intent — Mức độ tự tin của mô hình khi dự đoán từng intent",
+  "DIETClassifier_confusion_matrix.png": "Ma trận nhầm lẫn Entity DIET — Thể hiện mô hình nhận diện sai loại thực thể (entity)",
+  "DIETClassifier_histogram.png": "Biểu đồ phân phối độ tin cậy Entity DIET — Mức độ tự tin khi trích xuất thực thể",
+  "RegexEntityExtractor_confusion_matrix.png": "Ma trận nhầm lẫn Entity Regex — Thể hiện các lỗi trích xuất thực thể bằng RegexEntityExtractor"
+};
+
+async function loadMatrixImages() {
+  const images = await api('/api/results-images');
+  const gallery = $('#matrixGallery');
+  if (!gallery) return;
+
+  if (!images || images.length === 0) {
+    gallery.innerHTML = '<div class="loading">Chưa có dữ liệu. Chạy Retrain để tạo ma trận.</div>';
+    return;
+  }
+
+  gallery.innerHTML = images.map(img => {
+    const label = MATRIX_LABELS[img.filename] || img.label;
+    return `
+      <div class="matrix-item">
+        <div class="matrix-img-wrap">
+          <img src="${img.url}" alt="${label}" loading="lazy" onclick="window.open('${img.url}', '_blank')">
+        </div>
+        <span class="matrix-label">${label}</span>
+      </div>
+    `;
+  }).join('');
+}
+
 // --- Export NLU ---
 $('#exportBtn')?.addEventListener('click', async () => {
   $('#exportBtn').disabled = true;
@@ -657,6 +689,7 @@ function startLogPolling() {
       $('#retrainBtn').textContent = 'Retrain Model';
 
       await loadMetricsChart();
+      await loadMatrixImages();
 
       if (status.error) {
         toast(`Training failed: ${status.error}`, 'error');
@@ -722,6 +755,7 @@ async function init() {
   await loadHistory();
   await loadChart();
   await loadMetricsChart();
+  await loadMatrixImages();
   initTabs();
 
   const status = await api('/api/train-status');

@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from flask import Flask, jsonify, request, render_template, Response
+from flask import Flask, jsonify, request, render_template, Response, send_from_directory
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
@@ -665,6 +665,31 @@ def export_csv():
             "Content-type": "text/csv; charset=utf-8"
         }
     )
+
+
+@app.route("/api/results-images")
+def list_results_images():
+    """Return list of .png images available in results/ directory."""
+    img_dir = RESULTS_DIR
+    valid_prefixes = ("intent_", "DIETClassifier_", "RegexEntityExtractor_")
+    valid_suffixes = ("confusion_matrix.png", "histogram.png")
+
+    images = []
+    if img_dir.exists():
+        for f in sorted(img_dir.iterdir()):
+            if f.suffix == ".png" and f.name.startswith(valid_prefixes):
+                images.append({
+                    "filename": f.name,
+                    "label": f.name.replace("_", " ").replace(".png", "").title(),
+                    "url": f"/results-img/{f.name}"
+                })
+    return jsonify(images)
+
+
+@app.route("/results-img/<filename>")
+def serve_results_image(filename):
+    """Serve a .png image from the results/ directory."""
+    return send_from_directory(str(RESULTS_DIR), filename)
 
 
 if __name__ == "__main__":
