@@ -20,6 +20,7 @@ RASA_DIR = ROOT_DIR / "rasa_bot"
 RESULTS_DIR = RASA_DIR / "results"
 STATE_FILE = DATA_DIR / "review_state.json"
 HISTORY_FILE = RESULTS_DIR / "training_history.json"
+DRIFT_FILE = RESULTS_DIR / "model_drift_history.json"
 CSV_FILE = DATA_DIR / "needs_human_review.csv"
 DOMAIN_FILE = RASA_DIR / "domain.yml"
 NLU_FILE = RASA_DIR / "data" / "train" / "nlu.yml"
@@ -176,6 +177,7 @@ def export_to_nlu(approved_rows):
         backup_name = f"nlu_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.yml"
         backup_path = RASA_DIR / "data" / "backups" / backup_name
         shutil.copy(NLU_FILE, backup_path)
+        training_state["last_backup"] = str(backup_path)
 
     intent_groups = {}
     for row in approved_rows:
@@ -235,11 +237,52 @@ def save_training_history(history):
         json.dump(history, f, indent=2)
 
 
+def load_drift_history():
+    if DRIFT_FILE.exists():
+        with open(DRIFT_FILE, "r") as f:
+            return json.load(f)
+    return []
+
+
+def save_drift_history(history):
+    DRIFT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(DRIFT_FILE, "w") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+
 def append_log_to_file(log_line):
     log_path = RESULTS_DIR / "training_log.txt"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     with open(log_path, "a", encoding="utf-8") as f:
         f.write(log_line)
+
+
+def run_cv_and_get_metrics(data_path, out_dir, log_fn):
+    """Run rasa test nlu --cross-validation and return metrics dict."""
+    eval_proc = subprocess.run(
+        ["rasa", "test", "nlu", "--cross-validation", "--folds", "3",
+         "--data", str(data_path), "--out", str(out_dir)],
+        cwd=str(RASA_DIR),
+        capture_output=True, text=True, timeout=3600
+    )
+
+    if eval_proc.stdout.strip():
+        log_fn(eval_proc.stdout.strip())
+    if eval_proc.stderr.strip():
+        log_fn("STDERR: " + eval_proc.stderr.strip())
+
+    report_path = out_dir / "intent_report.json"
+    if report_path.exists():
+        with open(report_path, "r") as f:
+            report = json.load(f)
+        macro_avg = report.get("macro avg", {})
+        return {
+            "f1_score": macro_avg.get("f1-score", 0.0),
+            "accuracy": report.get("accuracy", 0.0),
+            "precision": macro_avg.get("precision", 0.0),
+            "recall": macro_avg.get("recall", 0.0)
+        }
+    return None
 
 
 def run_training():
@@ -249,6 +292,9 @@ def run_training():
     training_state["start_time"] = datetime.now().isoformat()
     training_state["error"] = None
     training_state["metrics"] = None
+
+    # Capture backup path before thread starts (avoid race with export)
+    last_backup = training_state.get("last_backup")
 
     def log(msg):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -260,6 +306,36 @@ def run_training():
     try:
         start_time = time.time()
 
+        # ---- Step 0: Pre-drift evaluation on OLD data (before adding new) ----
+        new_examples_count = 0
+        if last_backup and Path(last_backup).exists():
+            log("🧪 Đánh giá drift trước khi train (pre-test trên dữ liệu cũ)...")
+            tmp_dir = RASA_DIR / "data" / "tmp_drift_eval"
+            tmp_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy(last_backup, tmp_dir / "nlu.yml")
+
+            out_dir = RESULTS_DIR / "eval_pre"
+            pre_metrics = run_cv_and_get_metrics(tmp_dir, out_dir, log)
+
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+
+            if pre_metrics:
+                drift_history = load_drift_history()
+                drift_history.append({
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "phase": "pre",
+                    **pre_metrics,
+                    "new_examples_count": None
+                })
+                save_drift_history(drift_history)
+                log(f"📊 Pre-test — F1: {pre_metrics['f1_score']:.4f}, "
+                    f"Accuracy: {pre_metrics['accuracy']:.4f}")
+            else:
+                log("⚠️ Pre-test: Không tìm thấy intent_report.json, bỏ qua.")
+        else:
+            log("ℹ️ Không có backup dữ liệu cũ, bỏ qua pre-test drift.")
+
+        # ---- Step 1: Train ----
         log("🚀 Bắt đầu huấn luyện Rasa model...")
         train_proc = subprocess.run(
             ["rasa", "train", "--data", "data/train"],
@@ -281,53 +357,51 @@ def run_training():
 
         log("✅ Training thành công!")
 
+        # ---- Step 2: Post-training evaluation ----
         log("🧪 Đang đánh giá model với cross-validation (3 folds)...")
-        eval_proc = subprocess.run(
-            ["rasa", "test", "nlu", "--cross-validation", "--folds", "3", "--data", "data/train"],
-            cwd=str(RASA_DIR),
-            capture_output=True, text=True, timeout=3600
+        eval_dir = RESULTS_DIR / "eval_post"
+        post_metrics = run_cv_and_get_metrics(
+            RASA_DIR / "data" / "train", eval_dir, log
         )
 
-        if eval_proc.stdout.strip():
-            log(eval_proc.stdout.strip())
-        if eval_proc.stderr.strip():
-            log("STDERR: " + eval_proc.stderr.strip())
-
-        report_path = RESULTS_DIR / "intent_report.json"
-        if report_path.exists():
-            with open(report_path, "r") as f:
-                report = json.load(f)
-
-            macro_avg = report.get("macro avg", {})
-            metrics = {
-                "f1_score": macro_avg.get("f1-score", 0.0),
-                "accuracy": report.get("accuracy", 0.0),
-                "precision": macro_avg.get("precision", 0.0),
-                "recall": macro_avg.get("recall", 0.0)
-            }
-            training_state["metrics"] = metrics
+        if post_metrics:
+            training_state["metrics"] = post_metrics
             training_duration = round(time.time() - start_time, 2)
 
+            # Save to existing training_history (backward compatible)
             history = load_training_history()
             history.append({
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "duration_seconds": training_duration,
-                **metrics
+                **post_metrics
             })
             save_training_history(history)
 
-            log(f"📊 F1 Score:  {metrics['f1_score']:.4f}")
-            log(f"📊 Accuracy: {metrics['accuracy']:.4f}")
+            # Save to drift_history as "post"
+            drift_history = load_drift_history()
+            drift_history.append({
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "phase": "post",
+                **post_metrics,
+                "new_examples_count": new_examples_count,
+                "duration_seconds": training_duration
+            })
+            save_drift_history(drift_history)
+
+            log(f"📊 F1 Score:  {post_metrics['f1_score']:.4f}")
+            log(f"📊 Accuracy: {post_metrics['accuracy']:.4f}")
             log("✅ Đánh giá hoàn tất!")
         else:
             log("⚠️ Không tìm thấy intent_report.json. Training có thể chưa đủ data test.")
+
+        # Clear backup reference after successful cycle
+        training_state["last_backup"] = None
 
     except subprocess.TimeoutExpired:
         training_state["error"] = "Training timeout (>30 phút)"
         log("❌ Training timeout (>30 phút)")
     except Exception as e:
         training_state["error"] = str(e)
-        log(f"❌ Lỗi: {e}")
     finally:
         training_state["end_time"] = datetime.now().isoformat()
         training_state["running"] = False
@@ -473,6 +547,39 @@ def train_status():
 @app.route("/api/train-history")
 def train_history():
     return jsonify(load_training_history())
+
+
+@app.route("/api/model-metrics")
+def model_metrics():
+    history = load_drift_history()
+    if not history:
+        return jsonify({"labels": [], "datasets": [], "latest": None})
+
+    labels = [e["timestamp"] for e in history]
+
+    def series(key):
+        return [e.get(key, 0.0) for e in history]
+
+    datasets = [
+        {"label": "F1 Score",  "data": series("f1_score"),
+         "borderColor": "#6c5ce7", "backgroundColor": "rgba(108,92,231,0.1)"},
+        {"label": "Accuracy",  "data": series("accuracy"),
+         "borderColor": "#00b894", "backgroundColor": "rgba(0,184,148,0.1)"},
+        {"label": "Precision", "data": series("precision"),
+         "borderColor": "#fdcb6e", "backgroundColor": "rgba(253,203,110,0.1)"},
+        {"label": "Recall",    "data": series("recall"),
+         "borderColor": "#e17055", "backgroundColor": "rgba(225,112,85,0.1)"},
+    ]
+
+    latest = dict(history[-1]) if history else None
+    if latest and len(history) >= 2:
+        prev = history[-2]
+        latest["deltas"] = {
+            k: round(latest[k] - prev[k], 4)
+            for k in ["f1_score", "accuracy", "precision", "recall"]
+        }
+
+    return jsonify({"labels": labels, "datasets": datasets, "latest": latest})
 
 
 @app.route("/api/reset", methods=["POST"])

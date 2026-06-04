@@ -5,6 +5,7 @@ let selectedIds = new Set();
 
 let currentPage = 1;
 let intentChart = null;
+let metricsChart = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -451,6 +452,107 @@ async function loadChart() {
   });
 }
 
+// --- Metrics Chart ---
+async function loadMetricsChart() {
+  const data = await api('/api/model-metrics');
+  const ctx = document.getElementById('metricsChart');
+  if (!ctx) return;
+
+  if (!data.labels || data.labels.length === 0) {
+    if (metricsChart) { metricsChart.destroy(); metricsChart = null; }
+    return;
+  }
+
+  updateMetricsCards(data.latest);
+
+  if (metricsChart) {
+    metricsChart.data.labels = data.labels;
+    metricsChart.data.datasets = data.datasets.map(ds => ({
+      ...ds,
+      fill: false,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      borderWidth: 2.5
+    }));
+    metricsChart.update();
+    return;
+  }
+
+  metricsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.labels,
+      datasets: data.datasets.map(ds => ({
+        ...ds,
+        fill: false,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2.5
+      }))
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#8b90a5', font: { size: 12 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1a1d27',
+          titleColor: '#e1e4ed',
+          bodyColor: '#8b90a5',
+          borderColor: '#2e3348',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx) {
+              return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(4);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 11 }, maxRotation: 45 }
+        },
+        y: {
+          min: 0, max: 1,
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', callback: function(v) { return v.toFixed(2); } }
+        }
+      }
+    }
+  });
+}
+
+function updateMetricsCards(latest) {
+  if (!latest) return;
+  const keys = [
+    { key: 'f1_score', id: 'mF1', deltaId: 'dF1' },
+    { key: 'accuracy', id: 'mAccuracy', deltaId: 'dAccuracy' },
+    { key: 'precision', id: 'mPrecision', deltaId: 'dPrecision' },
+    { key: 'recall', id: 'mRecall', deltaId: 'dRecall' }
+  ];
+  keys.forEach(({ key, id, deltaId }) => {
+    const valEl = document.getElementById(id);
+    const deltaEl = document.getElementById(deltaId);
+    if (valEl) valEl.textContent = latest[key] != null ? latest[key].toFixed(4) : '—';
+    if (deltaEl) {
+      if (latest.deltas && latest.deltas[key] !== undefined) {
+        const d = latest.deltas[key];
+        deltaEl.textContent = (d >= 0 ? '+' : '') + d.toFixed(4);
+        deltaEl.className = 'metric-delta ' + (d >= 0 ? 'positive' : 'negative');
+      } else {
+        deltaEl.textContent = '';
+        deltaEl.className = 'metric-delta';
+      }
+    }
+  });
+}
+
 // --- Export NLU ---
 $('#exportBtn')?.addEventListener('click', async () => {
   $('#exportBtn').disabled = true;
@@ -469,6 +571,7 @@ $('#exportBtn')?.addEventListener('click', async () => {
     selectedIds.clear();
     await loadData();
     await loadChart();
+    await loadMetricsChart();
   } else {
     toast(res.error || 'Export failed', 'error');
   }
@@ -553,6 +656,8 @@ function startLogPolling() {
       $('#retrainBtn').disabled = false;
       $('#retrainBtn').textContent = 'Retrain Model';
 
+      await loadMetricsChart();
+
       if (status.error) {
         toast(`Training failed: ${status.error}`, 'error');
       } else if (status.metrics) {
@@ -593,11 +698,31 @@ $('#clearLogBtn')?.addEventListener('click', () => {
   $('#logConsole').innerHTML = '<span class="log-placeholder">Waiting for training...</span>';
 });
 
+// --- Tab switching ---
+function initTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const tabId = this.dataset.tab === 'review' ? 'tabReview' : 'tabMetrics';
+      const tab = document.getElementById(tabId);
+      if (tab) tab.classList.add('active');
+
+      if (this.dataset.tab === 'metrics' && metricsChart) {
+        metricsChart.resize();
+      }
+    });
+  });
+}
+
 // --- Init ---
 async function init() {
   await loadData();
   await loadHistory();
   await loadChart();
+  await loadMetricsChart();
+  initTabs();
 
   const status = await api('/api/train-status');
   if (status.running) {

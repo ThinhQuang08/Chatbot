@@ -14,136 +14,179 @@
       <span class="subtitle">Human Review & Label Data</span>
     </header>
 
-    <div class="stats-bar" id="statsBar">
-      <div class="stat-item total"><span class="stat-label">Total</span><span class="stat-value" id="statTotal">0</span></div>
-      <div class="stat-item pending"><span class="stat-label">Pending</span><span class="stat-value" id="statPending">0</span></div>
-      <div class="stat-item approved"><span class="stat-label">Approved</span><span class="stat-value" id="statApproved">0</span></div>
-      <div class="stat-item rejected"><span class="stat-label">Rejected</span><span class="stat-value" id="statRejected">0</span></div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="review">Review Data</button>
+      <button class="tab-btn" data-tab="metrics">Model Metrics</button>
     </div>
 
-    <div class="chart-section">
-      <div class="chart-header">
-        <h3>Intent Distribution</h3>
-        <span class="chart-hint">Phân bố intent của dữ liệu cần review</span>
+    <!-- Tab 1: Review Data -->
+    <div class="tab-content active" id="tabReview">
+      <div class="stats-bar" id="statsBar">
+        <div class="stat-item total"><span class="stat-label">Total</span><span class="stat-value" id="statTotal">0</span></div>
+        <div class="stat-item pending"><span class="stat-label">Pending</span><span class="stat-value" id="statPending">0</span></div>
+        <div class="stat-item approved"><span class="stat-label">Approved</span><span class="stat-value" id="statApproved">0</span></div>
+        <div class="stat-item rejected"><span class="stat-label">Rejected</span><span class="stat-value" id="statRejected">0</span></div>
       </div>
-      <div class="chart-wrap">
-        <canvas id="intentChart"></canvas>
-      </div>
-    </div>
 
-    <div class="filter-bar">
-      <div class="filter-group">
-        <label>Status:</label>
-        <select id="filterStatus">
-          <option value="all">All</option>
-          <option value="pending">Pending</option>
-          <option value="approved">Approved</option>
-          <option value="rejected">Rejected</option>
-        </select>
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Intent Distribution</h3>
+          <span class="chart-hint">Phân bố intent của dữ liệu cần review</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="intentChart"></canvas>
+        </div>
       </div>
-      <div class="filter-group">
-        <label>Intent:</label>
-        <select id="filterIntent">
-          <option value="all">All</option>
-        </select>
-      </div>
-      <div class="filter-group search-group">
-        <label>Search:</label>
-        <input type="text" id="filterSearch" placeholder="Tìm kiếm text...">
-      </div>
-    </div>
 
-    <div class="batch-bar">
-      <label class="checkbox-wrapper">
-        <input type="checkbox" id="selectAll">
-        <span>Select All</span>
-      </label>
-      <div class="batch-actions">
-        <select id="batchIntentSelect">
-          <option value="">-- Chọn intent --</option>
-        </select>
-        <button class="btn btn-approve" id="batchApproveBtn" disabled>Approve Selected</button>
-        <button class="btn btn-reject" id="batchRejectBtn" disabled>Reject Selected</button>
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label>Status:</label>
+          <select id="filterStatus">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Intent:</label>
+          <select id="filterIntent">
+            <option value="all">All</option>
+          </select>
+        </div>
+        <div class="filter-group search-group">
+          <label>Search:</label>
+          <input type="text" id="filterSearch" placeholder="Tìm kiếm text...">
+        </div>
       </div>
-    </div>
 
-    <div class="pagination-bar">
-      <div class="pagination-info">
-        Showing <span id="showingStart">0</span>&ndash;<span id="showingEnd">0</span> of <span id="showingTotal">0</span> rows
+      <div class="batch-bar">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="selectAll">
+          <span>Select All</span>
+        </label>
+        <div class="batch-actions">
+          <select id="batchIntentSelect">
+            <option value="">-- Chọn intent --</option>
+          </select>
+          <button class="btn btn-approve" id="batchApproveBtn" disabled>Approve Selected</button>
+          <button class="btn btn-reject" id="batchRejectBtn" disabled>Reject Selected</button>
+        </div>
       </div>
-      <div class="pagination-controls">
-        <label>Rows per page:</label>
-        <select id="pageSizeSelect">
-          <option value="10">10</option>
-          <option value="25" selected>25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-          <option value="all">All</option>
-        </select>
+
+      <div class="pagination-bar">
+        <div class="pagination-info">
+          Showing <span id="showingStart">0</span>&ndash;<span id="showingEnd">0</span> of <span id="showingTotal">0</span> rows
+        </div>
+        <div class="pagination-controls">
+          <label>Rows per page:</label>
+          <select id="pageSizeSelect">
+            <option value="10">10</option>
+            <option value="25" selected>25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="all">All</option>
+          </select>
+        </div>
       </div>
-    </div>
 
-    <div class="table-container">
-      <table class="data-table" id="dataTable">
-        <thead>
-          <tr>
-            <th class="col-check"><input type="checkbox" id="selectAllHead"></th>
-            <th class="col-id">ID</th>
-            <th class="col-text">Raw Text</th>
-            <th class="col-text">Cleaned Text</th>
-            <th class="col-intent">Snorkel Intent</th>
-            <th class="col-conf">Conf</th>
-            <th class="col-intent">Label</th>
-            <th class="col-actions">Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr><td colspan="8" class="loading">Loading...</td></tr>
-        </tbody>
-        <tfoot id="tableFoot" style="display:none">
-          <tr>
-            <td colspan="8" class="table-footer-actions">
-              <div class="pagination-btns" id="paginationBtns"></div>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-
-    <div class="bottom-actions">
-      <button class="btn btn-export" id="exportBtn">Export to NLU</button>
-      <button class="btn btn-export" id="exportCsvBtn">Export CSV</button>
-      <button class="btn btn-train" id="retrainBtn">Retrain Model</button>
-    </div>
-
-    <div class="log-section" id="logSection">
-      <div class="log-header">
-        <h3>Training Log</h3>
-        <button class="btn btn-small" id="clearLogBtn">Clear</button>
-      </div>
-      <div class="log-console" id="logConsole">
-        <span class="log-placeholder">Waiting for training...</span>
-      </div>
-    </div>
-
-    <div class="history-section">
-      <h3>Training History</h3>
-      <div class="history-table-wrap">
-        <table class="history-table" id="historyTable">
+      <div class="table-container">
+        <table class="data-table" id="dataTable">
           <thead>
             <tr>
-              <th>Time</th>
-              <th>Duration (s)</th>
-              <th>F1 Score</th>
-              <th>Accuracy</th>
-              <th>Precision</th>
-              <th>Recall</th>
+              <th class="col-check"><input type="checkbox" id="selectAllHead"></th>
+              <th class="col-id">ID</th>
+              <th class="col-text">Raw Text</th>
+              <th class="col-text">Cleaned Text</th>
+              <th class="col-intent">Snorkel Intent</th>
+              <th class="col-conf">Conf</th>
+              <th class="col-intent">Label</th>
+              <th class="col-actions">Actions</th>
             </tr>
           </thead>
-          <tbody id="historyBody">
-            <tr><td colspan="6" class="loading">No history yet</td></tr>
+          <tbody id="tableBody">
+            <tr><td colspan="8" class="loading">Loading...</td></tr>
           </tbody>
+          <tfoot id="tableFoot" style="display:none">
+            <tr>
+              <td colspan="8" class="table-footer-actions">
+                <div class="pagination-btns" id="paginationBtns"></div>
+              </td>
+            </tr>
+          </tfoot>
         </table>
+      </div>
+
+      <div class="bottom-actions">
+        <button class="btn btn-export" id="exportBtn">Export to NLU</button>
+        <button class="btn btn-export" id="exportCsvBtn">Export CSV</button>
+        <button class="btn btn-train" id="retrainBtn">Retrain Model</button>
+      </div>
+
+      <div class="log-section" id="logSection">
+        <div class="log-header">
+          <h3>Training Log</h3>
+          <button class="btn btn-small" id="clearLogBtn">Clear</button>
+        </div>
+        <div class="log-console" id="logConsole">
+          <span class="log-placeholder">Waiting for training...</span>
+        </div>
+      </div>
+
+      <div class="history-section">
+        <h3>Training History</h3>
+        <div class="history-table-wrap">
+          <table class="history-table" id="historyTable">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Duration (s)</th>
+                <th>F1 Score</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody">
+              <tr><td colspan="6" class="loading">No history yet</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Model Metrics -->
+    <div class="tab-content" id="tabMetrics">
+      <div class="metrics-grid">
+        <div class="metric-card" data-metric="f1">
+          <span class="metric-label">F1 Score</span>
+          <span class="metric-value" id="mF1">—</span>
+          <span class="metric-delta" id="dF1"></span>
+        </div>
+        <div class="metric-card" data-metric="accuracy">
+          <span class="metric-label">Accuracy</span>
+          <span class="metric-value" id="mAccuracy">—</span>
+          <span class="metric-delta" id="dAccuracy"></span>
+        </div>
+        <div class="metric-card" data-metric="precision">
+          <span class="metric-label">Precision</span>
+          <span class="metric-value" id="mPrecision">—</span>
+          <span class="metric-delta" id="dPrecision"></span>
+        </div>
+        <div class="metric-card" data-metric="recall">
+          <span class="metric-label">Recall</span>
+          <span class="metric-value" id="mRecall">—</span>
+          <span class="metric-delta" id="dRecall"></span>
+        </div>
+      </div>
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Model Metrics Trend</h3>
+          <span class="chart-hint">Biểu đồ biến động hiệu năng qua các lần đánh giá</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 400px;">
+          <canvas id="metricsChart"></canvas>
+        </div>
       </div>
     </div>
   </div>
