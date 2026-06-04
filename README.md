@@ -1,204 +1,235 @@
-# Chatbot Du Lịch (Rasa + PostgreSQL + Qdrant)
+# Chatbot Du Lịch (Rasa + PostgreSQL + Qdrant + MinIO)
 
-Dự án này là chatbot tư vấn du lịch tiếng Việt, dùng:
+Dự án chatbot tư vấn du lịch tiếng Việt, hỗ trợ cả chạy local và Docker.
 
-- Rasa cho NLU + hội thoại
-- PostgreSQL cho dữ liệu điểm đến
-- Qdrant cho semantic rerank (vector search)
-- (Tuỳ chọn) Gemini để sinh câu trả lời tự nhiên dựa trên kết quả truy xuất
+## Kiến trúc tổng quan
 
-## 1) Yêu cầu máy cài đặt
+| Thành phần | Vai trò |
+| --- | --- |
+| **Rasa** | NLU + hội thoại, serve REST API (port 5005) |
+| **Action Server** | Xử lý custom actions (port 5055) |
+| **PostgreSQL** | Lưu dữ liệu điểm đến + tracker store |
+| **Qdrant** | Vector search cho semantic rerank |
+| **MinIO** | Model registry (lưu Rasa model, load tại runtime) |
+| **MLflow** | Tracking training metrics & artifacts |
+| **RabbitMQ** | Event broker cho conversation events |
+| **Dashboard** | Flask app gán nhãn dữ liệu + retrain |
 
-- Linux/macOS (khuyến nghị Ubuntu 22.04+)
+## Yêu cầu
+
+- Linux/macOS (Ubuntu 22.04+ khuyến nghị)
 - Python 3.10
 - Docker
-- PostgreSQL (đã chạy và có database)
 
-### Nếu chưa có PostgreSQL: chạy nhanh bằng Docker
+---
 
-Bạn có thể dựng PostgreSQL bằng 1 lệnh (đúng luôn với `.env.example`):
+## 1) Chạy Local (không Docker hóa Rasa)
 
-```bash
-docker run -d \
-	--name chatbot-postgres \
-	-e POSTGRES_USER=chatbot_user \
-	-e POSTGRES_PASSWORD=supersecret \
-	-e POSTGRES_DB=chatbot \
-	-p 5432:5432 \
-	-v chatbot_pg_data:/var/lib/postgresql/data \
-	postgres:15
-```
-
-Kiểm tra container chạy:
+### 1.1 Lần đầu tiên
 
 ```bash
-docker ps --filter name=chatbot-postgres
-```
-
-Kiểm tra kết nối DB:
-
-```bash
-docker exec -it chatbot-postgres psql -U chatbot_user -d chatbot -c "SELECT 1;"
-```
-
-Nếu cần dừng/xoá PostgreSQL container:
-
-```bash
-docker stop chatbot-postgres
-docker rm chatbot-postgres
-# (tuỳ chọn) xoá luôn dữ liệu volume:
-docker volume rm chatbot_pg_data
-```
-
-## 2) Cách chạy dự án (One-command)
-
-### 2.1) Dành cho người mới cài lần đầu (Vừa git clone)
-
-Khi vừa tải dự án về, chạy duy nhất script khởi tạo tự động toàn bộ môi trường (PostgreSQL, Qdrant, Dependencies, Nạp dữ liệu, Train Rasa Model):
-
-```bash
-cd Chatbot
 bash scripts/start_first_time.sh
 ```
 
-### 2.2) Chạy hàng ngày (Daily Run)
+Script tự động: tạo venv → cài pip → khởi tạo DB → train model → push MinIO → chạy stack.
 
-Khi đã setup dữ liệu và mô hình ở lần đầu thành công, các lần khởi động sau bạn chỉ cần:
+### 1.2 Chạy hàng ngày
 
 ```bash
-cd Chatbot
 bash scripts/start_all.sh
 ```
 
-Lưu ý: lệnh chạy hàng ngày giúp thay đổi (code, webhook) có hiệu lực rất nhanh vì bỏ qua cài PIP và tái nạp Database, tuy nhiên nó sẽ không phục hồi PostgreSQL nếu container đã bị tắt. Đảm bảo `chatbot-postgres` vẫn đang chạy.
+Tự động: kiểm tra PostgreSQL → khởi động Qdrant + RabbitMQ → sync vector → gen endpoints.yml → start action server → mở Rasa shell.
 
-Để dừng sạch toàn bộ stack (actions + rasa process còn sót + Qdrant container):
+### 1.3 Dừng stack
 
 ```bash
 bash scripts/stop_all.sh
+# xoá luôn container Qdrant nếu muốn:
+PURGE_QDRANT=true bash scripts/stop_all.sh
 ```
 
-Script `start_all.sh` sẽ tự động:
+---
 
-1. Tạo `.venv` nếu chưa có
-2. Cài dependencies từ `requirements.txt`
-3. Tạo `.env` từ `.env.example` nếu thiếu
-4. Kiểm tra PostgreSQL và tự import dữ liệu nếu bảng `destinations` chưa tồn tại
-5. Khởi động Qdrant bằng Docker (có volume để giữ dữ liệu)
-6. Sync embeddings vào Qdrant
-7. Chạy `rasa run actions`
-8. Mở `rasa shell` để test
+## 2) Chạy Docker (single image)
 
-Script `stop_all.sh` sẽ tự động:
+Build 1 image duy nhất chứa cả Rasa API + Action Server, model load từ MinIO.
 
-1. Dừng action server theo PID runtime
-2. Quét và dừng các process Rasa còn sót trong thư mục project
-3. Dừng Qdrant container
-4. Dọn file runtime state để tránh ghost process lần chạy sau
+### 2.1 Build image
 
-## 3) Cấu hình môi trường
+```bash
+docker build -t chatbot-rasa .
+```
 
-### 3.1 Tạo file .env
+### 2.2 Chạy container
+
+```bash
+docker run -d \
+  --name chatbot \
+  -p 5005:5005 \
+  -p 5055:5055 \
+  --env-file .env \
+  --add-host host.docker.internal:host-gateway \
+  chatbot-rasa
+```
+
+Container sẽ: gen endpoints.yml → start action server (bg) → wait health → start Rasa API (fg cuối).
+
+---
+
+## 3) Huấn luyện & Quản lý Model
+
+### 3.1 Train + Auto-deploy lên MinIO
+
+```bash
+python -m scripts.train_mlflow
+```
+
+Pipeline: train → cross-val → log lên MLflow → so sánh F1 → nếu &gt;= best thì push `.tar.gz` lên MinIO → gọi Rasa reload API.
+
+### 3.2 Deploy model hiện có lên MinIO
+
+```bash
+python -m scripts.upload_model_s3
+```
+
+### 3.3 Cơ chế load model trong container
+
+- `endpoints.yml` trỏ `models.url` tới `MINIO_MODEL_URL` (VD: `http://minio:9000/chatbot-models/latest_model.tar.gz`)
+- Rasa tự động download model vào `/tmp/` mỗi 10 giây (`wait_time_between_pulls: 10`)
+- MinIO bucket cần set policy public read để Rasa GET được model qua HTTP
+
+---
+
+## 4) Dashboard gán nhãn & Retrain
+
+Flask app cho phép review dữ liệu Snorkel, gán nhãn lại, export NLU, và kick retrain.
+
+```bash
+python -m admin_dashboard.app
+```
+
+Truy cập: `http://localhost:5001`
+
+---
+
+## 5) CI/CD với Jenkins
+
+Build Jenkins container có sẵn Python:
+
+```bash
+docker-compose up -d
+```
+
+Truy cập `http://localhost:8080`, pipeline đọc từ `Jenkinsfile`.
+
+---
+
+## 6) Cấu hình môi trường (`.env`)
 
 ```bash
 cp .env.example .env
 ```
 
-Giá trị cần chỉnh tối thiểu trong `.env`:
+### Database
 
-- `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
-- `GEMINI_API_KEY` (nếu muốn bật trả lời bằng Gemini)
+| Var | Default |
+| --- | --- |
+| DB_HOST | localhost |
+| DB_PORT | 5432 |
+| DB_NAME | chatbot |
+| DB_USER | chatbot_user |
+| DB_PASSWORD | supersecret |
 
-Model semantic mặc định đang để:
+### Gemini (tuỳ chọn)
 
-- `SEMANTIC_MODEL_NAME=keepitreal/vietnamese-sbert`
+| Var | Default |
+| --- | --- |
+| GEMINI_API_KEY | *(để trống = tắt)* |
+| GEMINI_MODEL | gemini-2.5-flash |
 
-## 4) Chạy thủ công (nếu không dùng one-command)
+### Qdrant
 
-```bash
-cd Chatbot
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-cp .env.example .env  # nếu chưa có
+| Var | Default |
+| --- | --- |
+| QDRANT_URL | http://localhost:6333 |
+| QDRANT_COLLECTION | travel_destinations |
+| QDRANT_TOUR_COLLECTION | travel_tours |
 
-# nếu chưa có PostgreSQL thì chạy container PostgreSQL trước
-docker run -d --name chatbot-postgres -e POSTGRES_USER=chatbot_user -e POSTGRES_PASSWORD=supersecret -e POSTGRES_DB=chatbot -p 5432:5432 -v chatbot_pg_data:/var/lib/postgresql/data postgres:15
+### MinIO (Model Registry)
 
-# import dữ liệu điểm đến vào PostgreSQL
-.venv/bin/python -m database.import_data
+| Var | Default |
+| --- | --- |
+| MINIO_URL | http://localhost:9000 |
+| MINIO_ACCESS_KEY | admin |
+| MINIO_SECRET_KEY | password123 |
+| MINIO_BUCKET | chatbot-models |
+| MINIO_MODEL_FILE | latest_model.tar.gz |
 
-docker run -d --name chatbot-qdrant --restart unless-stopped -p 6333:6333 -p 6334:6334 -v chatbot_qdrant_data:/qdrant/storage qdrant/qdrant
+### MLflow
 
-.venv/bin/python -m scripts.sync_qdrant --recreate
+| Var | Default |
+| --- | --- |
+| MLFLOW_TRACKING_URI | http://localhost:5000 |
+| MLFLOW_EXPERIMENT | Travel_Chatbot_Rasa |
 
-cd rasa_bot
-../.venv/bin/rasa run actions
-# terminal khác:
-../.venv/bin/rasa shell --model models/level45-level5-v2.tar.gz
-```
+### Rasa
 
-## 5) Ghi chú quan trọng
+| Var | Default |
+| --- | --- |
+| RASA_API_URL | http://localhost:5005 |
+| RASA_ACTION_URL | http://localhost:5055/webhook |
 
-- Để tránh lỗi `pkg_resources`, đã pin `setuptools<81` trong `requirements.txt`.
-- Để tránh lỗi Qdrant point ID, hệ thống dùng UUID deterministic khi upsert points.
-- Nếu thay model semantic, nên sync lại:
+### RabbitMQ
 
-```bash
-.venv/bin/python -m scripts.sync_qdrant --recreate
-```
+| Var | Default |
+| --- | --- |
+| RABBITMQ_HOST | localhost |
+| RABBITMQ_PORT | 5672 |
+| RABBITMQ_MGM_PORT | 15672 |
 
-## 6) Script và file chính
+### Dashboard
 
-- Script one-command: [scripts/start_all.sh](scripts/start_all.sh)
-- Script dừng sạch stack: [scripts/stop_all.sh](scripts/stop_all.sh)
-- Sync vector store: [scripts/sync_qdrant.py](scripts/sync_qdrant.py)
-- Healthcheck Qdrant: [scripts/check_qdrant.py](scripts/check_qdrant.py)
-- Cấu hình env mẫu: [.env.example](.env.example)
-- Dependency pin: [requirements.txt](requirements.txt)
+| Var | Default |
+| --- | --- |
+| DASHBOARD_HOST | 0.0.0.0 |
+| DASHBOARD_PORT | 5001 |
 
-### Tuỳ chọn dọn sâu Qdrant container
+---
 
-Nếu muốn dừng **và xoá container** Qdrant:
+## 7) File & Script chính
 
-```bash
-PURGE_QDRANT=true bash scripts/stop_all.sh
-```
+| File | Chức năng |
+| --- | --- |
+| `Dockerfile` | Build image Rasa + Action Server |
+| `scripts/docker-entrypoint.sh` | Entrypoint container: gen endpoints → start actions → start API |
+| `scripts/generate_endpoints.py` | Thay `__PLACEHOLDER__` trong `endpoints.yml` bằng env vars |
+| `scripts/start_all.sh` | Start local stack (Qdrant, RabbitMQ, actions, shell) |
+| `scripts/stop_all.sh` | Dừng sạch local stack |
+| `scripts/start_first_time.sh` | Setup từ đầu cho người mới clone |
+| `scripts/train_mlflow.py` | Train + eval + auto-push MinIO |
+| `scripts/deploy_model.py` | So sánh F1 → upload MinIO → reload Rasa |
+| `scripts/upload_model_s3.py` | Upload model local lên MinIO |
+| `scripts/sync_qdrant.py` | Sync embeddings destinations lên Qdrant |
+| `scripts/sync_qdrant_tour.py` | Sync embeddings tours lên Qdrant |
+| `scripts/check_qdrant.py` | Healthcheck Qdrant |
+| `admin_dashboard/app.py` | Flask dashboard gán nhãn + retrain |
+| `config/settings.py` | Tập trung tất cả env vars |
+| `rasa_bot/endpoints.yml` | Template endpoints (có `__PLACEHOLDER__`) |
+| `.env.example` | Mẫu cấu hình env |
+| `.env.docker` | Env mẫu cho Docker test (dùng host.docker.internal) |
+| `docker-compose.yml` | Jenkins container |
+| `Dockerfile.jenkins` | Jenkins image + Python |
 
-## 7) Khắc phục sự cố nhanh
+---
 
-### Lỗi `ModuleNotFoundError: pkg_resources`
+## 8) Khắc phục sự cố
 
-Chạy lại:
-
-```bash
-.venv/bin/pip install "setuptools<81"
-```
-
-### Qdrant báo collection chưa tồn tại
-
-Chạy lại sync:
-
-```bash
-.venv/bin/python -m scripts.sync_qdrant --recreate
-```
-
-### Lỗi `relation "destinations" does not exist`
-
-Chạy import dữ liệu PostgreSQL:
-
-```bash
-.venv/bin/python -m database.import_data
-```
-
-hoặc chạy lại one-command script (script đã tự bootstrap bảng nếu thiếu):
-
-```bash
-bash scripts/start_all.sh
-```
-
-### Chạy bằng sai Python interpreter
-
-Luôn dùng binary trong `.venv`, ví dụ:
-
-- `.venv/bin/python`
-- `.venv/bin/rasa`
+| Lỗi | Cách fix |
+| --- | --- |
+| `pkg_resources` not found | `.venv/bin/pip install "setuptools<81"` |
+| Qdrant collection not found | `.venv/bin/python -m scripts.sync_qdrant --recreate` |
+| `relation "destinations" does not exist` | `.venv/bin/python -m database.init_db && .venv/bin/python -m database.importData` |
+| Container không kết nối được DB | Dùng `--add-host host.docker.internal:host-gateway` hoặc trỏ DB_HOST đúng IP |
+| Rasa không pull được model từ MinIO | Kiểm tra bucket policy public read, kiểm tra `MINIO_MODEL_URL` trong `endpoints.yml` |
+| Action server bind error 5055 | Chỉ chạy 1 instance, dùng `scripts/stop_all.sh` dọn process cũ |

@@ -6,6 +6,7 @@ RUNTIME_DIR="$ROOT_DIR/.runtime"
 
 QDRANT_CONTAINER_DEFAULT="${QDRANT_CONTAINER:-chatbot-qdrant}"
 PURGE_QDRANT="${PURGE_QDRANT:-false}"
+RABBITMQ_CONTAINER="${RABBITMQ_CONTAINER:-chatbot-rabbitmq}"
 
 read_runtime_file() {
   local file_path="$1"
@@ -92,6 +93,14 @@ stop_qdrant_container() {
   fi
 }
 
+stop_rabbitmq() {
+  local rabbitmq_container="$RABBITMQ_CONTAINER"
+  if docker ps --format '{{.Names}}' | grep -q "^${rabbitmq_container}$"; then
+    echo "[INFO] Stopping RabbitMQ container: $rabbitmq_container"
+    docker stop "$rabbitmq_container" >/dev/null || true
+  fi
+}
+
 cleanup_runtime_files() {
   rm -f "$RUNTIME_DIR/action_server.pid"
   rm -f "$RUNTIME_DIR/qdrant_container"
@@ -104,6 +113,7 @@ main() {
   stop_pid_file_process "action server" "$RUNTIME_DIR/action_server.pid"
   stop_project_rasa_processes
   stop_qdrant_container
+  stop_rabbitmq
   cleanup_runtime_files
 
   echo "[INFO] Cleanup completed"
