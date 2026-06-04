@@ -29,6 +29,7 @@ app = Flask(__name__)
 
 
 DVC_BIN = ROOT_DIR / ".dvc-venv" / "bin" / "dvc"
+RASA_BIN = ROOT_DIR / ".venv" / "bin" / "rasa"
 
 
 def _ensure_dvc_data():
@@ -259,9 +260,10 @@ def append_log_to_file(log_line):
 
 def run_cv_and_get_metrics(data_path, out_dir, log_fn):
     """Run rasa test nlu --cross-validation and return metrics dict."""
+    rasa_bin = shutil.which("rasa") or str(RASA_BIN)
     eval_proc = subprocess.run(
-        ["rasa", "test", "nlu", "--cross-validation", "--folds", "3",
-         "--data", str(data_path), "--out", str(out_dir)],
+        [rasa_bin, "test", "nlu", "--cross-validation", "--folds", "3",
+         "--nlu", str(data_path), "--out", str(out_dir)],
         cwd=str(RASA_DIR),
         capture_output=True, text=True, timeout=3600
     )
@@ -305,6 +307,7 @@ def run_training():
 
     try:
         start_time = time.time()
+        rasa_bin = shutil.which("rasa") or str(RASA_BIN)
 
         # ---- Step 0: Pre-drift evaluation on OLD data (before adding new) ----
         new_examples_count = 0
@@ -338,7 +341,7 @@ def run_training():
         # ---- Step 1: Train ----
         log("🚀 Bắt đầu huấn luyện Rasa model...")
         train_proc = subprocess.run(
-            ["rasa", "train", "--data", "data/train"],
+            [rasa_bin, "train", "--data", "data/train"],
             cwd=str(RASA_DIR),
             capture_output=True, text=True, timeout=1800
         )

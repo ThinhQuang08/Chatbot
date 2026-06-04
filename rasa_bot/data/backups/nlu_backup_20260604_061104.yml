@@ -888,12 +888,3 @@ nlu:
       - đi bộ
 
 
-
-
-# --- HUMAN REVIEWED DATA (2026-06-04 06:11:04) ---
-  - intent: ask_location_feature
-    examples: |
-      - [đặc sản](activity) [Sa Pa](location) là gì
-  - intent: search_destination
-    examples: |
-      - thời tiết [Nha Trang](location) sao
