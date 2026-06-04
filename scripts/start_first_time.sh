@@ -30,10 +30,10 @@ else
     echo "[INFO] Khởi tạo container PostgreSQL lần đầu..."
     docker run -d \
         --name chatbot-postgres \
-        -e POSTGRES_USER=chatbot_user \
-        -e POSTGRES_PASSWORD=supersecret \
-        -e POSTGRES_DB=chatbot \
-        -p 5432:5432 \
+        -e POSTGRES_USER="${DB_USER:-chatbot_user}" \
+        -e POSTGRES_PASSWORD="${DB_PASSWORD:-supersecret}" \
+        -e POSTGRES_DB="${DB_NAME:-chatbot}" \
+        -p "${DB_PORT:-5432}":5432 \
         -v chatbot_pg_data:/var/lib/postgresql/data \
         postgres:15 >/dev/null
     echo "[INFO] Đợi 5 giây để PostgreSQL cấu hình xong..."
@@ -62,7 +62,7 @@ if [[ ! -f "$MODEL_PATH" ]]; then
     echo "[INFO] Tiến hành huấn luyện (train) mô hình mặc định..."
     (
         cd "$ROOT_DIR/rasa_bot"
-        "$VENV_DIR/bin/rasa" train --data data/train --fixed-model-name "level45-level5-v2"
+        "$VENV_DIR/bin/rasa" train --data data/train --fixed-model-name "${MODEL_FILE:-level45-level5-v2}"
     )
 fi
 

@@ -5,6 +5,8 @@ import re
 import requests
 from typing import List, Optional
 
+from config.settings import GEMINI_MODEL
+
 logger = logging.getLogger(__name__)
 
 
@@ -120,7 +122,7 @@ def generate_genz_ai_consultant(
         "Nhiệm vụ: Hãy tư vấn, giải đáp ngắn gọn, súc tích (dưới 150 chữ). Ưu tiên RÚT TRÍCH TỪ PHẦN DỮ LIỆU TỪ HỆ THỐNG BÊN TRÊN. KHÔNG bịa đặt dữ liệu (hallucination)."
     )
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -189,7 +191,7 @@ def generate_grounded_ai_response(
     )
 
     # GỌI TRỰC TIẾP REST API BẰNG REQUESTS (Bypass SDK)
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -355,7 +357,7 @@ def generate_tour_ai_response(
         '{"intro": "<Câu tư vấn ngắn gọn>", "tours": ["<tên tour 1>", "<tên tour 2>"]}'
     )
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],

@@ -15,7 +15,7 @@ Qdrant_PORT="${QDRANT_PORT:-6333}"
 QDRANT_GRPC_PORT="${QDRANT_GRPC_PORT:-6334}"
 QDRANT_VOLUME="${QDRANT_VOLUME:-chatbot_qdrant_data}"
 
-MODEL_FILE="level45-level5-v4.tar.gz"
+MODEL_FILE="${MODEL_FILE:-level45-level5-v4.tar.gz}"
 SYNC_RECREATE="${SYNC_RECREATE:-false}" # true = tạo mới dữ liệu
 
 ACTION_PID=""
@@ -144,8 +144,8 @@ ensure_rabbitmq() {
   echo "[INFO] Creating and starting RabbitMQ container..."
   docker run -d \
     --name chatbot-rabbitmq \
-    -p 5672:5672 \
-    -p 15672:15672 \
+    -p "${RABBITMQ_PORT:-5672}":5672 \
+    -p "${RABBITMQ_MGM_PORT:-15672}":15672 \
     rabbitmq:3-management >/dev/null
   echo "[INFO] Wait 5s for RabbitMQ to be ready..."
   sleep 5

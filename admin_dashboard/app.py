@@ -24,6 +24,9 @@ CSV_FILE = DATA_DIR / "needs_human_review.csv"
 DOMAIN_FILE = RASA_DIR / "domain.yml"
 NLU_FILE = RASA_DIR / "data" / "train" / "nlu.yml"
 
+sys.path.insert(0, str(ROOT_DIR))
+from config.settings import DASHBOARD_HOST, DASHBOARD_PORT
+
 app = Flask(__name__)
 
 
@@ -559,4 +562,4 @@ def export_csv():
 
 if __name__ == "__main__":
     _ensure_dvc_data()
-    app.run(host="0.0.0.0", port=5001, debug=True, use_reloader=False)
+    app.run(host=DASHBOARD_HOST, port=DASHBOARD_PORT, debug=True, use_reloader=False)

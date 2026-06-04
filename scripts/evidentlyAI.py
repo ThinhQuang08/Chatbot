@@ -2,6 +2,11 @@ import pandas as pd
 import os
 import warnings
 
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from config.settings import DB_HOST
+
 # Thêm Dataset và DataDefinition từ cú pháp mới
 from evidently import Dataset, DataDefinition
 from evidently import Report
@@ -9,9 +14,10 @@ from evidently.presets import DataDriftPreset
 
 warnings.filterwarnings("ignore")
 
-REFERENCE_CSV_PATH = "data/reference_data.csv"
-PRODUCTION_CSV_PATH = "data/cleaned_chat_logs.csv"
-REPORT_OUTPUT_DIR = "results/evidently_reports"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+REFERENCE_CSV_PATH = os.getenv("REFERENCE_CSV_PATH", os.path.join(ROOT_DIR, "data", "reference_data.csv"))
+PRODUCTION_CSV_PATH = os.getenv("PRODUCTION_CSV_PATH", os.path.join(ROOT_DIR, "data", "cleaned_chat_logs.csv"))
+REPORT_OUTPUT_DIR = os.getenv("EVIDENTLY_REPORT_DIR", os.path.join(ROOT_DIR, "results", "evidently_reports"))
 
 os.makedirs(REPORT_OUTPUT_DIR, exist_ok=True)
 

@@ -15,7 +15,7 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "${RASA_ACTION_URL}"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
@@ -24,11 +24,11 @@ action_endpoint:
 tracker_store:
   type: SQL
   dialect: postgresql
-  url: localhost
-  db: chatbot
-  port: 5432
-  username: chatbot_user
-  password: supersecret
+  url: "${DB_HOST}"
+  db: "${DB_NAME}"
+  port: ${DB_PORT}
+  username: "${DB_USER}"
+  password: "${DB_PASSWORD}"
 
 #tracker_store:
 #    type: redis

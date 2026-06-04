@@ -4,6 +4,11 @@ import os
 import requests
 import boto3
 
+from config.settings import (
+    MINIO_URL, MINIO_ACCESS_KEY, MINIO_SECRET_KEY,
+    MINIO_BUCKET, MINIO_MODEL_FILE, RASA_API_URL
+)
+
 # ==========================================
 # CẤU HÌNH HỆ THỐNG & MINIO
 # ==========================================
@@ -12,14 +17,10 @@ RESULTS_DIR = os.path.join(RASA_DIR, "results")
 MODEL_DIR = os.path.join(RASA_DIR, "models")
 BEST_F1_RECORD_FILE = os.path.join(RASA_DIR, "best_f1_score.txt")
 
-BUCKET_NAME = 'chatbot-models'
-TARGET_MODEL_NAME = 'latest_model.tar.gz'
-MINIO_URL = 'http://localhost:9000'
-
 s3_client = boto3.client('s3',
                          endpoint_url=MINIO_URL,
-                         aws_access_key_id='admin',
-                         aws_secret_access_key='password123')
+                         aws_access_key_id=MINIO_ACCESS_KEY,
+                         aws_secret_access_key=MINIO_SECRET_KEY)
 
 def get_current_f1():
     report_path = os.path.join(RESULTS_DIR, "intent_report.json")
@@ -36,8 +37,8 @@ def get_best_f1():
 def upload_to_minio(latest_file):
     print(f"☁️ Đang đẩy mô hình {os.path.basename(latest_file)} lên MinIO...")
     try:
-        s3_client.upload_file(latest_file, BUCKET_NAME, TARGET_MODEL_NAME)
-        download_url = f"{MINIO_URL}/{BUCKET_NAME}/{TARGET_MODEL_NAME}"
+        s3_client.upload_file(latest_file, MINIO_BUCKET, MINIO_MODEL_FILE)
+        download_url = f"{MINIO_URL}/{MINIO_BUCKET}/{MINIO_MODEL_FILE}"
         print(f"✅ Đã up lên Model Registry: {download_url}")
         return download_url
     except Exception as e:
@@ -53,8 +54,7 @@ def trigger_rasa_reload(model_url):
         }
     }
     try:
-        # Rasa mặc định mở API ở cổng 5005
-        response = requests.put("http://localhost:5005/model", json=payload)
+        response = requests.put(f"{RASA_API_URL}/model", json=payload)
         if response.status_code == 204:
             print("🚀 THÀNH CÔNG: Rasa đã nạp mô hình mới nóng hổi. Bot đã thông minh hơn!")
         else:
