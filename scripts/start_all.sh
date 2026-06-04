@@ -15,7 +15,7 @@ Qdrant_PORT="${QDRANT_PORT:-6333}"
 QDRANT_GRPC_PORT="${QDRANT_GRPC_PORT:-6334}"
 QDRANT_VOLUME="${QDRANT_VOLUME:-chatbot_qdrant_data}"
 
-MODEL_FILE="${MODEL_FILE:-level45-level5-v4.tar.gz}"
+# MODEL_FILE="${MODEL_FILE:-level45-level5-v4.tar.gz}"
 SYNC_RECREATE="${SYNC_RECREATE:-false}" # true = tạo mới dữ liệu
 
 ACTION_PID=""
@@ -72,6 +72,13 @@ ensure_env_file() {
 }
 
 export PYTHONPATH="$ROOT_DIR"
+
+# Load .env vào environment để Rasa có thể đọc
+if [[ -f "$ROOT_DIR/.env" ]]; then
+  set -a
+  source "$ROOT_DIR/.env"
+  set +a
+fi
 
 ensure_database_ready() {
   echo "[INFO] Checking PostgreSQL table: destinations"
@@ -165,7 +172,13 @@ sync_qdrant() {
   fi
 }
 
+generate_endpoints() {
+  echo "[INFO] Generating endpoints.yml from environment variables..."
+  "$PYTHON_BIN" -m scripts.generate_endpoints
+}
+
 start_actions() {
+  generate_endpoints
   mkdir -p "$LOG_DIR"
   mkdir -p "$RUNTIME_DIR"
   echo "[INFO] Starting action server (logs/actions.log)"
@@ -179,16 +192,17 @@ start_actions() {
 }
 
 start_shell() {
-  local model_path="$ROOT_DIR/rasa_bot/models/$MODEL_FILE"
-  if [[ ! -f "$model_path" ]]; then
-    echo "[ERROR] Model not found: $model_path"
-    echo "[INFO] Train a model first, e.g."
-    # echo "       $RASA_BIN train --fixed-model-name level45-level5-v2"
-    echo "       $RASA_BIN train"
-    exit 1
-  fi
+  generate_endpoints
+  #local model_path="$ROOT_DIR/rasa_bot/models/$MODEL_FILE"
+#  if [[ ! -f "$model_path" ]]; then
+ #   echo "[ERROR] Model not found: $model_path"
+  #  echo "[INFO] Train a model first, e.g."
+   # # echo "       $RASA_BIN train --fixed-model-name level45-level5-v2"
+    #echo "       $RASA_BIN train"
+    #exit 1
+ # fi
 
-  echo "[INFO] Starting Rasa shell with model: $MODEL_FILE"
+  echo "[INFO] Starting Rasa shell with model:"
   cd "$ROOT_DIR/rasa_bot"
   # "$RASA_BIN" shell --model "models/$MODEL_FILE"
   "$RASA_BIN" shell
