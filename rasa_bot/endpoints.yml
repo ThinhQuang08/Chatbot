@@ -5,7 +5,14 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "__RASA_ACTION_URL__"
+
+# Server where the models are pulled from.
+# https://rasa.com/docs/rasa/model-storage#fetching-models-from-a-server
+
+models:
+  url: "__MINIO_MODEL_URL__"
+  wait_time_between_pulls: 10
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
@@ -14,11 +21,11 @@ action_endpoint:
 tracker_store:
   type: SQL
   dialect: postgresql
-  url: "localhost"
-  db: "chatbot"
-  port: 5432
-  username: "chatbot_user"
-  password: "supersecret"
+  url: "__DB_HOST__"
+  db: "__DB_NAME__"
+  port: __DB_PORT__
+  username: "__DB_USER__"
+  password: "__DB_PASSWORD__"
 
 #tracker_store:
 #    type: redis

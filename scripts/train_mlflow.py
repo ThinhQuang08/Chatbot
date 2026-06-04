@@ -119,5 +119,17 @@ def train_and_evaluate_mlflow():
         
         print(f"Tích hợp MLOps hoàn tất! Mở {MLFLOW_TRACKING_URI} để chiêm ngưỡng thành quả.")
 
+        # ==========================================
+        # 5. TỰ ĐỘNG PUSH MODEL LÊN MINIO
+        # ==========================================
+        print("\n" + "=" * 50)
+        print("🔄 TỰ ĐỘNG ĐẨY MODEL LÊN MINIO...")
+        print("=" * 50)
+
+        from scripts.deploy_model import run_cd_pipeline
+
+        run_cd_pipeline()
+
+
 if __name__ == "__main__":
     train_and_evaluate_mlflow()

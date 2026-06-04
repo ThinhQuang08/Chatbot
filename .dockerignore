@@ -1,16 +1,47 @@
-# Bỏ qua môi trường ảo (Thủ phạm chính)
+# Environment
+.env
+.env.example
+
+# Virtual environments
 .venv/
 venv/
 env/
 
-# Bỏ qua các model nặng
+# Model & training files (loaded from MinIO at runtime)
 rasa_bot/models/
 rasa_bot/results/
+rasa_bot/tests/
 mlruns/
 mlartifacts/
-models/
 
-# Bỏ qua các file rác của Python
+# Data pipeline (not needed at runtime)
+data/
+
+# Git & DVC
+.git/
+.gitignore
+.dvc/
+.dvcignore
+.dvc-venv/
+
+# Logs & runtime
+logs/
+.runtime/
+error_log.txt
+
+# Config files for CI/CD
+Jenkinsfile
+Dockerfile.jenkins
+docker-compose.yml
+
+# Python cache
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Docs & notebooks
+*.md
+notebooks/
+
+# System
+mise.toml

@@ -74,7 +74,15 @@ if [[ ! -f "$MODEL_PATH" ]]; then
     )
 fi
 
-# 6. Chạy toàn bộ stack
+# 6. Push model lên MinIO
+echo "[INFO] Đẩy model vừa train lên MinIO..."
+"$PYTHON_BIN" -c "
+import sys; sys.path.insert(0, '$ROOT_DIR')
+from scripts.deploy_model import run_cd_pipeline
+run_cd_pipeline()
+"
+
+# 7. Chạy toàn bộ stack
 echo "=================================================="
 echo "   Môi trường chuẩn bị xong - Khởi chạy Chatbot   "
 echo "=================================================="
