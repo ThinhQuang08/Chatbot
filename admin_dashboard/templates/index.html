@@ -120,6 +120,7 @@
       <div class="bottom-actions">
         <button class="btn btn-export" id="exportBtn">Export to NLU</button>
         <button class="btn btn-export" id="exportCsvBtn">Export CSV</button>
+        <button class="btn btn-evaluate" id="evaluateBtn">Evaluate</button>
         <button class="btn btn-train" id="retrainBtn">Retrain Model</button>
       </div>
 
@@ -186,6 +187,15 @@
         </div>
         <div class="chart-wrap" style="max-height: 400px;">
           <canvas id="metricsChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Pre vs Post — So sánh trước và sau khi train</h3>
+          <span class="chart-hint">Trước khi train (Pre) = đánh giá trên dữ liệu cũ | Sau khi train (Post) = đánh giá sau khi thêm dữ liệu mới</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 350px;">
+          <canvas id="comparisonChart"></canvas>
         </div>
       </div>
       <div class="matrix-section">

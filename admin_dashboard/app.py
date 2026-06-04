@@ -114,11 +114,13 @@ ENTITY_MAP = {
 
 training_state = {
     "running": False,
+    "mode": None,
     "logs": "",
     "start_time": None,
     "end_time": None,
     "metrics": None,
-    "error": None
+    "error": None,
+    "evaluate_result": None
 }
 
 
@@ -290,13 +292,12 @@ def run_cv_and_get_metrics(data_path, out_dir, log_fn):
 def run_training():
     global training_state
     training_state["running"] = True
+    training_state["mode"] = "train"
     training_state["logs"] = ""
     training_state["start_time"] = datetime.now().isoformat()
     training_state["error"] = None
     training_state["metrics"] = None
-
-    # Capture backup path before thread starts (avoid race with export)
-    last_backup = training_state.get("last_backup")
+    training_state["evaluate_result"] = None
 
     def log(msg):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -308,35 +309,6 @@ def run_training():
     try:
         start_time = time.time()
         rasa_bin = shutil.which("rasa") or str(RASA_BIN)
-
-        # ---- Step 0: Pre-drift evaluation on OLD data (before adding new) ----
-        new_examples_count = 0
-        if last_backup and Path(last_backup).exists():
-            log("🧪 Đánh giá drift trước khi train (pre-test trên dữ liệu cũ)...")
-            tmp_dir = RASA_DIR / "data" / "tmp_drift_eval"
-            tmp_dir.mkdir(parents=True, exist_ok=True)
-            shutil.copy(last_backup, tmp_dir / "nlu.yml")
-
-            out_dir = RESULTS_DIR / "eval_pre"
-            pre_metrics = run_cv_and_get_metrics(tmp_dir, out_dir, log)
-
-            shutil.rmtree(tmp_dir, ignore_errors=True)
-
-            if pre_metrics:
-                drift_history = load_drift_history()
-                drift_history.append({
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "phase": "pre",
-                    **pre_metrics,
-                    "new_examples_count": None
-                })
-                save_drift_history(drift_history)
-                log(f"📊 Pre-test — F1: {pre_metrics['f1_score']:.4f}, "
-                    f"Accuracy: {pre_metrics['accuracy']:.4f}")
-            else:
-                log("⚠️ Pre-test: Không tìm thấy intent_report.json, bỏ qua.")
-        else:
-            log("ℹ️ Không có backup dữ liệu cũ, bỏ qua pre-test drift.")
 
         # ---- Step 1: Train ----
         log("🚀 Bắt đầu huấn luyện Rasa model...")
@@ -386,7 +358,6 @@ def run_training():
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "phase": "post",
                 **post_metrics,
-                "new_examples_count": new_examples_count,
                 "duration_seconds": training_duration
             })
             save_drift_history(drift_history)
@@ -394,17 +365,149 @@ def run_training():
             log(f"📊 F1 Score:  {post_metrics['f1_score']:.4f}")
             log(f"📊 Accuracy: {post_metrics['accuracy']:.4f}")
             log("✅ Đánh giá hoàn tất!")
+
+            # Copy fresh PNG images to results/ for dashboard display
+            for f in eval_dir.glob("*.png"):
+                shutil.copy(f, RESULTS_DIR / f.name)
+                log(f"🖼️  Đã cập nhật {f.name}")
         else:
             log("⚠️ Không tìm thấy intent_report.json. Training có thể chưa đủ data test.")
-
-        # Clear backup reference after successful cycle
-        training_state["last_backup"] = None
 
     except subprocess.TimeoutExpired:
         training_state["error"] = "Training timeout (>30 phút)"
         log("❌ Training timeout (>30 phút)")
     except Exception as e:
         training_state["error"] = str(e)
+    finally:
+        training_state["end_time"] = datetime.now().isoformat()
+        training_state["running"] = False
+
+
+def run_evaluate():
+    global training_state
+    training_state["running"] = True
+    training_state["mode"] = "evaluate"
+    training_state["logs"] = ""
+    training_state["start_time"] = datetime.now().isoformat()
+    training_state["error"] = None
+    training_state["metrics"] = None
+    training_state["evaluate_result"] = None
+
+    def log(msg):
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        line = f"[{timestamp}] {msg}"
+        training_state["logs"] += line + "\n"
+        append_log_to_file(line + "\n")
+        print(line)
+
+    try:
+        # Step 1: Find latest model
+        model_dir = RASA_DIR / "models"
+        models = sorted(model_dir.glob("*.tar.gz"), key=lambda f: f.stat().st_mtime, reverse=True)
+        if not models:
+            log("❌ Không tìm thấy model trong thư mục models/. Hãy Retrain trước khi Evaluate.")
+            training_state["error"] = "No model found"
+            training_state["end_time"] = datetime.now().isoformat()
+            training_state["running"] = False
+            return
+
+        latest_model = models[0]
+        model_name = latest_model.name
+        log(f"📦 Sử dụng model: {model_name}")
+
+        # Step 2: Extract new data sections from nlu.yml
+        if not NLU_FILE.exists():
+            log("❌ Không tìm thấy nlu.yml.")
+            training_state["error"] = "nlu.yml not found"
+            training_state["end_time"] = datetime.now().isoformat()
+            training_state["running"] = False
+            return
+
+        nlu_content = NLU_FILE.read_text(encoding="utf-8")
+        marker = "# --- HUMAN REVIEWED DATA"
+        marker_idx = nlu_content.find(marker)
+        if marker_idx == -1:
+            log("ℹ️ Không có dữ liệu mới nào. Hãy Export to NLU trước khi Evaluate.")
+            training_state["error"] = "No new data found in nlu.yml"
+            training_state["end_time"] = datetime.now().isoformat()
+            training_state["running"] = False
+            return
+
+        new_data_section = nlu_content[marker_idx:].strip()
+        new_examples_count = new_data_section.count("\n  - intent:")
+        log(f"📝 Tìm thấy {new_examples_count} intent section(s) từ dữ liệu mới.")
+
+        temp_nlu = f"""version: "3.1"
+
+nlu:
+{new_data_section}
+"""
+        temp_file = RASA_DIR / "data" / "tmp_eval_new_data.yml"
+        temp_file.write_text(temp_nlu, encoding="utf-8")
+        log(f"📄 Đã tạo file tạm: {temp_file.name}")
+
+        # Step 3: Run rasa test with model on new data
+        rasa_bin = shutil.which("rasa") or str(RASA_BIN)
+        out_dir = RESULTS_DIR / "eval_pre"
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        log("🧪 Đang test model hiện tại trên dữ liệu mới...")
+        eval_proc = subprocess.run(
+            [rasa_bin, "test", "nlu", "--model", str(latest_model),
+             "--nlu", str(temp_file), "--out", str(out_dir)],
+            cwd=str(RASA_DIR),
+            capture_output=True, text=True, timeout=600
+        )
+
+        if eval_proc.stdout.strip():
+            log(eval_proc.stdout.strip())
+        if eval_proc.stderr.strip():
+            log("STDERR: " + eval_proc.stderr.strip())
+
+        # Step 4: Parse results
+        report_path = out_dir / "intent_report.json"
+        if report_path.exists():
+            with open(report_path, "r") as f:
+                report = json.load(f)
+
+            macro_avg = report.get("macro avg", {})
+            metrics = {
+                "f1_score": macro_avg.get("f1-score", 0.0),
+                "accuracy": report.get("accuracy", 0.0),
+                "precision": macro_avg.get("precision", 0.0),
+                "recall": macro_avg.get("recall", 0.0)
+            }
+
+            drift_history = load_drift_history()
+            drift_history.append({
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "phase": "pre",
+                "test_type": "model_on_new_data",
+                "model_used": model_name,
+                "new_examples_count": new_examples_count,
+                **metrics
+            })
+            save_drift_history(drift_history)
+
+            training_state["metrics"] = metrics
+            training_state["evaluate_result"] = metrics
+
+            log(f"📊 F1 Score:  {metrics['f1_score']:.4f}")
+            log(f"📊 Accuracy: {metrics['accuracy']:.4f}")
+            log("✅ Evaluate hoàn tất!")
+        else:
+            log("⚠️ Evaluate: Không tìm thấy intent_report.json.")
+            training_state["error"] = "Evaluation failed: no intent_report.json"
+
+        # Step 5: Cleanup temp file
+        temp_file.unlink(missing_ok=True)
+
+    except subprocess.TimeoutExpired:
+        training_state["error"] = "Evaluate timeout (>10 phút)"
+        log("❌ Evaluate timeout (>10 phút)")
+    except Exception as e:
+        training_state["error"] = str(e)
+        log(f"❌ Lỗi evaluate: {e}")
     finally:
         training_state["end_time"] = datetime.now().isoformat()
         training_state["running"] = False
@@ -542,6 +645,16 @@ def retrain():
     return jsonify({"success": True})
 
 
+@app.route("/api/evaluate", methods=["POST"])
+def evaluate():
+    if training_state["running"]:
+        return jsonify({"success": False, "error": "Another process is already running"})
+
+    thread = threading.Thread(target=run_evaluate, daemon=True)
+    thread.start()
+    return jsonify({"success": True})
+
+
 @app.route("/api/train-status")
 def train_status():
     return jsonify(training_state)
@@ -556,7 +669,7 @@ def train_history():
 def model_metrics():
     history = load_drift_history()
     if not history:
-        return jsonify({"labels": [], "datasets": [], "latest": None})
+        return jsonify({"labels": [], "datasets": [], "latest": None, "comparison": None})
 
     labels = [e["timestamp"] for e in history]
 
@@ -582,7 +695,31 @@ def model_metrics():
             for k in ["f1_score", "accuracy", "precision", "recall"]
         }
 
-    return jsonify({"labels": labels, "datasets": datasets, "latest": latest})
+    # Find the most recent pre/post pair for comparison chart
+    comparison = None
+    pre_entry = None
+    post_entry = None
+    for entry in reversed(history):
+        if entry.get("phase") == "post" and post_entry is None:
+            post_entry = entry
+        if entry.get("phase") == "pre" and pre_entry is None:
+            pre_entry = entry
+        if pre_entry and post_entry:
+            break
+    if pre_entry and post_entry:
+        metrics = ["f1_score", "accuracy", "precision", "recall"]
+        comparison = {
+            "labels": ["F1 Score", "Accuracy", "Precision", "Recall"],
+            "pre": [pre_entry.get(m, 0) for m in metrics],
+            "post": [post_entry.get(m, 0) for m in metrics]
+        }
+
+    return jsonify({
+        "labels": labels,
+        "datasets": datasets,
+        "latest": latest,
+        "comparison": comparison
+    })
 
 
 @app.route("/api/reset", methods=["POST"])

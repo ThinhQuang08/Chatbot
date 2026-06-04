@@ -888,3 +888,23 @@ nlu:
       - đi bộ
 
 
+
+
+# --- HUMAN REVIEWED DATA (2026-06-04 06:11:04) ---
+  - intent: ask_location_feature
+    examples: |
+      - [đặc sản](activity) [Sa Pa](location) là gì
+  - intent: search_destination
+    examples: |
+      - thời tiết [Nha Trang](location) sao
+
+
+# --- HUMAN REVIEWED DATA (2026-06-04 07:41:27) ---
+  - intent: search_accommodation
+    examples: |
+      - book [phòng](category) [sài gòn](location)
+      - tìm [homestay](category) view đẹp ở [Phú Quốc](location) vậy
+      - đặt [phòng](category) [khách sạn](category) [Đà Lạt](location)
+  - intent: ask_weather_timing
+    examples: |
+      - thời tiết [Nha Trang](location) sao

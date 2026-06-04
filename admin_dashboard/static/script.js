@@ -6,6 +6,7 @@ let selectedIds = new Set();
 let currentPage = 1;
 let intentChart = null;
 let metricsChart = null;
+let comparisonChart = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -553,6 +554,74 @@ function updateMetricsCards(latest) {
   });
 }
 
+// --- Comparison Chart ---
+async function loadComparisonChart() {
+  const data = await api('/api/model-metrics');
+  const ctx = document.getElementById('comparisonChart');
+  if (!ctx) return;
+
+  if (!data.comparison || !data.comparison.pre || !data.comparison.post) {
+    if (comparisonChart) { comparisonChart.destroy(); comparisonChart = null; }
+    return;
+  }
+
+  const cmp = data.comparison;
+  const colors = {
+    pre: { bg: 'rgba(108,92,231,0.7)', border: '#6c5ce7' },
+    post: { bg: 'rgba(0,184,148,0.7)', border: '#00b894' }
+  };
+
+  if (comparisonChart) {
+    comparisonChart.data.datasets[0].data = cmp.pre;
+    comparisonChart.data.datasets[1].data = cmp.post;
+    comparisonChart.update();
+    return;
+  }
+
+  comparisonChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: cmp.labels,
+      datasets: [
+        { label: 'Pre (trước khi train)', data: cmp.pre,
+          backgroundColor: colors.pre.bg, borderColor: colors.pre.border, borderWidth: 1 },
+        { label: 'Post (sau khi train)', data: cmp.post,
+          backgroundColor: colors.post.bg, borderColor: colors.post.border, borderWidth: 1 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: { color: '#8b90a5', font: { size: 12 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1a1d27',
+          titleColor: '#e1e4ed',
+          bodyColor: '#8b90a5',
+          borderColor: '#2e3348',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx) { return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(4); }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 11 } }
+        },
+        y: {
+          min: 0, max: 1,
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', callback: function(v) { return v.toFixed(2); } }
+        }
+      }
+    }
+  });
+}
+
 // --- Matrix Images ---
 const MATRIX_LABELS = {
   "intent_confusion_matrix.png": "Ma trận nhầm lẫn các Intent — Thể hiện mô hình dự đoán nhầm intent nào với intent nào",
@@ -663,11 +732,45 @@ $('#retrainBtn')?.addEventListener('click', async () => {
   }
 
   toast('Training started!', 'info');
-  $('#retrainBtn').disabled = true;
-  $('#retrainBtn').textContent = 'Training...';
+  disableActionButtons('training');
   $('#logConsole').innerHTML = '';
   startLogPolling();
 });
+
+// --- Evaluate ---
+$('#evaluateBtn')?.addEventListener('click', async () => {
+  if ($('#evaluateBtn').disabled) return;
+
+  const res = await api('/api/evaluate', { method: 'POST' });
+
+  if (!res.success) {
+    toast(res.error || 'Failed to start evaluation', 'error');
+    return;
+  }
+
+  toast('Evaluation started!', 'info');
+  disableActionButtons('evaluating');
+  $('#logConsole').innerHTML = '';
+  startLogPolling();
+});
+
+function disableActionButtons(mode) {
+  $('#evaluateBtn').disabled = true;
+  $('#evaluateBtn').textContent = mode === 'evaluating' ? 'Evaluating...' : 'Evaluate';
+  $('#retrainBtn').disabled = true;
+  $('#retrainBtn').textContent = mode === 'training' ? 'Training...' : 'Retrain Model';
+  $('#exportBtn').disabled = true;
+  $('#exportCsvBtn').disabled = true;
+}
+
+function enableActionButtons() {
+  $('#evaluateBtn').disabled = false;
+  $('#evaluateBtn').textContent = 'Evaluate';
+  $('#retrainBtn').disabled = false;
+  $('#retrainBtn').textContent = 'Retrain Model';
+  $('#exportBtn').disabled = false;
+  $('#exportCsvBtn').disabled = false;
+}
 
 function startLogPolling() {
   if (pollingInterval) clearInterval(pollingInterval);
@@ -685,10 +788,10 @@ function startLogPolling() {
     if (!status.running) {
       clearInterval(pollingInterval);
       pollingInterval = null;
-      $('#retrainBtn').disabled = false;
-      $('#retrainBtn').textContent = 'Retrain Model';
+      enableActionButtons();
 
       await loadMetricsChart();
+      await loadComparisonChart();
       await loadMatrixImages();
 
       if (status.error) {
@@ -755,13 +858,13 @@ async function init() {
   await loadHistory();
   await loadChart();
   await loadMetricsChart();
+  await loadComparisonChart();
   await loadMatrixImages();
   initTabs();
 
   const status = await api('/api/train-status');
   if (status.running) {
-    $('#retrainBtn').disabled = true;
-    $('#retrainBtn').textContent = 'Training...';
+    disableActionButtons(status.mode === 'evaluate' ? 'evaluating' : 'training');
     startLogPolling();
   }
 }
