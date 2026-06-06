@@ -48,6 +48,9 @@ pipeline {
                         echo "✅ Môi trường Python 3.10 và Rasa đã sẵn sàng. Bỏ qua bước cài đặt."
                     fi
 
+                    echo "📦 Đảm bảo DVC luôn được cài đặt..."
+                    "${PIP}" install dvc dvc-s3 --quiet
+
                     echo "✅ Python env sẵn sàng: \$(${PY} --version)"
                 """
             }
