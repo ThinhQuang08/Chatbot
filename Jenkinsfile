@@ -34,15 +34,19 @@ pipeline {
                 sh """
                     set -e
                     
-                    # XÓA venv cũ (được tạo bằng Python 3.12) và TẠO LẠI bằng Python 3.10
-                    echo "🔧 Tạo/Re-create virtualenv mới tại ${VENV_DIR} với Python 3.10..."
-                    rm -rf "${VENV_DIR}"
-                    python3.10 -m venv "${VENV_DIR}"
-
-                    # Cài / cập nhật dependencies
-                    ${PIP} install --upgrade pip --quiet
-                    ${PIP} install pandas boto3 python-dotenv mlflow pyyaml --quiet
-                    ${PIP} install -r requirements.txt --quiet
+                    # Kiểm tra xem venv có hợp lệ và đã cài rasa chưa
+                    if ! "${PY}" -c "import rasa" > /dev/null 2>&1; then
+                        echo "🔧 Rasa chưa được cài đặt hoặc venv hỏng. Tái tạo virtualenv tại ${VENV_DIR} với Python 3.10..."
+                        rm -rf "${VENV_DIR}"
+                        python3.10 -m venv "${VENV_DIR}"
+                        
+                        echo "📦 Đang tải và cài đặt dependencies (có thể tốn vài phút)..."
+                        "${PIP}" install --upgrade pip --quiet
+                        "${PIP}" install pandas boto3 python-dotenv mlflow pyyaml --quiet
+                        "${PIP}" install -r requirements.txt --quiet
+                    else
+                        echo "✅ Môi trường Python 3.10 và Rasa đã sẵn sàng. Bỏ qua bước cài đặt."
+                    fi
 
                     echo "✅ Python env sẵn sàng: \$(${PY} --version)"
                 """
