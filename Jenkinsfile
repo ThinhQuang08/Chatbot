@@ -72,6 +72,7 @@ pipeline {
                         export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
                         export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}"
                         export PYTHONPATH="."
+                        export PATH="${VENV_DIR}/bin:\$PATH"
                         
                         echo "⬇️ Kéo dữ liệu từ AWS S3 thông qua DVC..."
                         "${VENV_DIR}/bin/dvc" pull
@@ -104,6 +105,7 @@ pipeline {
                         export CHATBOT_S3_BUCKET="${CHATBOT_S3_BUCKET}"
                         export CHATBOT_S3_MODEL_KEY="${CHATBOT_S3_MODEL_KEY}"
                         export PYTHONPATH="."
+                        export PATH="${VENV_DIR}/bin:\$PATH"
 
                         "${PY}" scripts/train_mlflow.py
                     """
