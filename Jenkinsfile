@@ -8,7 +8,7 @@ pipeline {
         DOCKER_IMAGE = "mnhat1/chatbot-rasa"
         // k8s-manifests repo để update image tag
         K8S_MANIFESTS_REPO = "https://github.com/minhnhatuit734/k8s-manifests.git"
-        K8S_MANIFESTS_DIR  = "/workspace/k8s-manifests"
+        K8S_MANIFESTS_DIR  = "${WORKSPACE}/k8s-manifests"
         // AWS S3 bucket (non-secret config)
         CHATBOT_S3_BUCKET    = "kltn-chatbot-artifacts-dev"
         CHATBOT_S3_MODEL_KEY = "models/latest_model.tar.gz"
@@ -19,7 +19,6 @@ pipeline {
             steps {
                 echo "🧹 Làm sạch, gán nhãn bằng Snorkel và Validate..."
                 sh """
-                    cd /workspace
                     ${PYTHON_CMD} data/csv_to_rasa.py
                 """
             }
@@ -28,7 +27,6 @@ pipeline {
             steps {
                 echo "🚀 Train Rasa và log metrics lên MLflow..."
                 sh """
-                    cd /workspace
                     ${PYTHON_CMD} scripts/train_mlflow.py
                 """
             }
@@ -64,7 +62,6 @@ pipeline {
                     string(credentialsId: 'aws-secret-access-key', variable: 'AWS_SECRET_ACCESS_KEY')
                 ]) {
                     sh """
-                        cd /workspace
                         ${PYTHON_CMD} scripts/deploy_model.py
                     """
                 }
@@ -84,9 +81,9 @@ pipeline {
                         string(credentialsId: 'aws-secret-access-key', variable: 'AWS_SECRET_ACCESS_KEY')
                     ]) {
                         sh """
-                            mkdir -p /workspace/rasa_bot/models
+                            mkdir -p rasa_bot/models
                             aws s3 cp s3://${CHATBOT_S3_BUCKET}/${CHATBOT_S3_MODEL_KEY} \
-                                /workspace/rasa_bot/models/latest_model.tar.gz \
+                                rasa_bot/models/latest_model.tar.gz \
                                 --region ${AWS_DEFAULT_REGION}
                         """
                     }
@@ -97,7 +94,7 @@ pipeline {
                     )]) {
                         sh """
                             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                            docker build -f Dockerfile.prod -t ${env.FULL_IMAGE} /workspace
+                            docker build -f Dockerfile.prod -t ${env.FULL_IMAGE} .
                             docker push ${env.FULL_IMAGE}
                             docker rmi ${env.FULL_IMAGE} || true
                         """
@@ -146,11 +143,11 @@ pipeline {
         }
         aborted {
             echo "⚠️ Pipeline bị hủy"
-            sh "rm -f /workspace/rasa_bot/models/latest_model.tar.gz || true"
+            sh "rm -f rasa_bot/models/latest_model.tar.gz || true"
         }
         failure {
             echo "🔥 Pipeline thất bại"
-            sh "rm -f /workspace/rasa_bot/models/latest_model.tar.gz || true"
+            sh "rm -f rasa_bot/models/latest_model.tar.gz || true"
             echo "🗑️ Đã cleanup model file"
         }
     }
