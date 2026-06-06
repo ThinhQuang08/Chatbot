@@ -29,7 +29,7 @@ def import_tours():
     """)
 
     # 2. Đọc file JSON chuẩn hóa
-    json_file = "data/data_normalized_tour.json"
+    json_file = "data/json_file/data_normalized_tour.json"
     with open(json_file, "r", encoding="utf-8") as f:
         tours = json.load(f)
 

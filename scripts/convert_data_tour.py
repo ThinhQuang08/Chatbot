@@ -1,8 +1,8 @@
 import json
 import re
 
-INPUT_FILE = "data/tour.json"
-OUTPUT_FILE = "data/data_normalized_tour.json"
+INPUT_FILE = "data/json_file/tour.json"
+OUTPUT_FILE = "data/json_file/data_normalized_tour.json"
 
 def parse_price(price_str):
     """Chuyển đổi chuỗi giá (VD: '750,000') thành số nguyên."""

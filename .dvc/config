@@ -1,5 +1,5 @@
 [core]
-    remote = minio_remote
-['remote "minio_remote"']
-    url = s3://chatbot-models/dvc_store
-    endpointurl = http://localhost:9000
+    remote = aws_remote
+['remote "aws_remote"']
+    url = s3://kltn-chatbot-artifacts-dev/dvc_store
+    region = ap-southeast-1

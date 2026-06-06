@@ -42,7 +42,7 @@ pipeline {
                         
                         echo "📦 Đang tải và cài đặt dependencies (có thể tốn vài phút)..."
                         "${PIP}" install --upgrade pip --quiet
-                        "${PIP}" install pandas boto3 python-dotenv mlflow pyyaml --quiet
+                        "${PIP}" install dvc dvc-s3 pandas boto3 python-dotenv mlflow pyyaml --quiet
                         "${PIP}" install -r requirements.txt --quiet
                     else
                         echo "✅ Môi trường Python 3.10 và Rasa đã sẵn sàng. Bỏ qua bước cài đặt."
@@ -54,15 +54,29 @@ pipeline {
         }
 
         // ─────────────────────────────────────────────────
-        // STAGE 1: Data Pipeline — Snorkel label → nlu.yml
+        // STAGE 1: Data Pipeline — DVC Pull & Snorkel label
         // ─────────────────────────────────────────────────
         stage('1. Data Pipeline') {
             steps {
-                echo "🧹 Chạy csv_to_rasa.py để append data vào nlu.yml..."
-                sh """
-                    set -e
-                    ${PY} data/csv_to_rasa.py
-                """
+                echo "🧹 DVC Pull dữ liệu từ S3 và chạy csv_to_rasa.py..."
+                withCredentials([
+                    string(credentialsId: 'aws-access-key-id',     variable: 'AWS_ACCESS_KEY_ID'),
+                    string(credentialsId: 'aws-secret-access-key', variable: 'AWS_SECRET_ACCESS_KEY')
+                ]) {
+                    sh """
+                        set -e
+                        export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+                        export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+                        export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}"
+                        export PYTHONPATH="."
+                        
+                        echo "⬇️ Kéo dữ liệu từ AWS S3 thông qua DVC..."
+                        "${VENV_DIR}/bin/dvc" pull
+                        
+                        echo "🔄 Chạy tiền xử lý dữ liệu..."
+                        "${PY}" data/csv_to_rasa.py
+                    """
+                }
             }
         }
 
@@ -86,8 +100,9 @@ pipeline {
                         export MLFLOW_EXPERIMENT="${MLFLOW_EXPERIMENT}"
                         export CHATBOT_S3_BUCKET="${CHATBOT_S3_BUCKET}"
                         export CHATBOT_S3_MODEL_KEY="${CHATBOT_S3_MODEL_KEY}"
+                        export PYTHONPATH="."
 
-                        ${PY} scripts/train_mlflow.py
+                        "${PY}" scripts/train_mlflow.py
                     """
                 }
             }
