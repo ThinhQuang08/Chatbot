@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_CMD = 'python'
+        PYTHON_CMD = '. .venv/bin/activate && python'
         PROJECT_DIR = "${WORKSPACE}"
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
         // DockerHub image name (Thay bằng username DockerHub của bạn nếu cần)
@@ -15,6 +15,19 @@ pipeline {
         AWS_DEFAULT_REGION   = "ap-southeast-1"
     }
     stages {
+        stage('0. Setup Environment') {
+            steps {
+                echo "📦 Đang cài đặt thư viện Python (Rasa, Pandas, MLflow)..."
+                sh '''
+                    # Dùng python3 để tạo venv (phòng trường hợp 'python' không tồn tại)
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install pandas
+                    pip install -r requirements.txt
+                '''
+            }
+        }
         stage('1. Data Pipeline') {
             steps {
                 echo "🧹 Làm sạch, gán nhãn bằng Snorkel và Validate..."
