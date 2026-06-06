@@ -7,14 +7,15 @@
 venv/
 env/
 
-# Model & training files (loaded from MinIO at runtime)
-rasa_bot/models/
+# Model & training files
+rasa_bot/models/*
+!rasa_bot/models/model.tar.gz
 rasa_bot/results/
 rasa_bot/tests/
 mlruns/
 mlartifacts/
 
-# Data pipeline (not needed at runtime)
+# Data pipeline
 data/
 
 # Git & DVC

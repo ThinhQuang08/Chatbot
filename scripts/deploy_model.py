@@ -1,103 +1,104 @@
+"""
+deploy_model.py — Option A: Upload model artifact lên S3.
+Jenkins sẽ tiếp tục build Docker image (model baked-in) sau khi script này thành công.
+"""
+
 import json
 import glob
 import os
-import requests
-import boto3
 
+import boto3
+from botocore.exceptions import BotoCoreError, ClientError
+
+# ==========================================
+# CONFIG — đọc từ env hoặc config/settings
+# ==========================================
 from config.settings import (
-    MINIO_URL, MINIO_ACCESS_KEY, MINIO_SECRET_KEY,
-    MINIO_BUCKET, MINIO_MODEL_FILE, RASA_API_URL
+    AWS_DEFAULT_REGION,
+    CHATBOT_S3_BUCKET,
+    CHATBOT_S3_MODEL_KEY,
 )
 
-# ==========================================
-# CẤU HÌNH HỆ THỐNG & MINIO
-# ==========================================
 RASA_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "rasa_bot"))
 RESULTS_DIR = os.path.join(RASA_DIR, "results")
 MODEL_DIR = os.path.join(RASA_DIR, "models")
 BEST_F1_RECORD_FILE = os.path.join(RASA_DIR, "best_f1_score.txt")
 
-s3_client = boto3.client('s3',
-                         endpoint_url=MINIO_URL,
-                         aws_access_key_id=MINIO_ACCESS_KEY,
-                         aws_secret_access_key=MINIO_SECRET_KEY)
+# boto3 S3 client — dùng AWS S3 thật (không endpoint_url)
+s3_client = boto3.client("s3", region_name=AWS_DEFAULT_REGION)
+
 
 def get_current_f1():
     report_path = os.path.join(RESULTS_DIR, "intent_report.json")
-    if not os.path.exists(report_path): return 0.0
+    if not os.path.exists(report_path):
+        return 0.0
     with open(report_path, "r", encoding="utf-8") as f:
         return json.load(f).get("macro avg", {}).get("f1-score", 0.0)
 
+
 def get_best_f1():
-    if not os.path.exists(BEST_F1_RECORD_FILE): return 0.0
+    if not os.path.exists(BEST_F1_RECORD_FILE):
+        return 0.0
     with open(BEST_F1_RECORD_FILE, "r") as f:
-        try: return float(f.read().strip())
-        except ValueError: return 0.0
+        try:
+            return float(f.read().strip())
+        except ValueError:
+            return 0.0
 
-def upload_to_minio(latest_file):
-    print(f"☁️ Đang đẩy mô hình {os.path.basename(latest_file)} lên MinIO...")
-    try:
-        s3_client.upload_file(latest_file, MINIO_BUCKET, MINIO_MODEL_FILE)
-        download_url = f"{MINIO_URL}/{MINIO_BUCKET}/{MINIO_MODEL_FILE}"
-        print(f"✅ Đã up lên Model Registry: {download_url}")
-        return download_url
-    except Exception as e:
-        print(f"❌ Lỗi đẩy MinIO: {e}")
-        return None
 
-def trigger_rasa_reload(model_url):
-    print("🔔 Đang gọi Webhook API ép Rasa nạp lại mô hình mới từ MinIO...")
-    # Gọi API của Rasa để thay thế mô hình đang chạy trong bộ nhớ
-    payload = {
-        "model_server": {
-            "url": model_url
-        }
-    }
+def upload_to_s3(local_file: str) -> bool:
+    """Upload model file lên S3. Trả về True nếu thành công."""
+    print(f"☁️  Uploading {os.path.basename(local_file)} → s3://{CHATBOT_S3_BUCKET}/{CHATBOT_S3_MODEL_KEY}")
     try:
-        response = requests.put(f"{RASA_API_URL}/model", json=payload)
-        if response.status_code == 204:
-            print("🚀 THÀNH CÔNG: Rasa đã nạp mô hình mới nóng hổi. Bot đã thông minh hơn!")
-        else:
-            print(f"⚠️ Rasa phản hồi lạ: {response.status_code} - {response.text}")
-    except requests.exceptions.ConnectionError:
-        print("❌ Không gọi được Rasa. Hãy chắc chắn sếp đã chạy Rasa với cờ --enable-api")
+        s3_client.upload_file(local_file, CHATBOT_S3_BUCKET, CHATBOT_S3_MODEL_KEY)
+        print(f"✅ Upload thành công: s3://{CHATBOT_S3_BUCKET}/{CHATBOT_S3_MODEL_KEY}")
+        return True
+    except (BotoCoreError, ClientError) as e:
+        print(f"❌ Upload S3 thất bại: {e}")
+        return False
+
 
 def run_cd_pipeline():
-    print("-" * 50)
-    print("🛡️ KÍCH HOẠT HỆ THỐNG GÁC CỔNG VÀ DEPLOY (MINIO)...")
-    print("-" * 50)
-    
+    print("-" * 60)
+    print("🛡️  DEPLOY PIPELINE — Option A (S3 Upload)")
+    print("-" * 60)
+
     current_f1 = get_current_f1()
     best_f1 = get_best_f1()
-    
-    print(f"📊 F1-Score Mô hình vừa học: {current_f1:.4f}")
-    print(f"🏆 F1-Score Kỷ lục cũ      : {best_f1:.4f}")
-    
-    list_of_models = glob.glob(os.path.join(MODEL_DIR, '*.tar.gz'))
-    if not list_of_models:
-        print("❌ Không tìm thấy file model nào.")
-        return
-        
-    latest_model = max(list_of_models, key=os.path.getctime)
-    
-    # 1. KIỂM ĐỊNH (FAIL-SAFE)
-    if current_f1 < best_f1:
-        print("\n❌ FAIL-SAFE KÍCH HOẠT: Mô hình mới TỆ HƠN mô hình cũ!")
-        print(f"🗑️ Đang xóa mô hình {os.path.basename(latest_model)} để bảo vệ chất lượng...")
-        os.remove(latest_model)
-        print("🛑 Đã hủy quy trình Deploy. MinIO vẫn giữ bản model cũ an toàn.")
-        return
 
-    print("\n✅ PASS: Mô hình đạt chuẩn! Tiến hành Deploy...")
+    print(f"📊 F1-Score vừa train : {current_f1:.4f}")
+    print(f"🏆 F1-Score kỷ lục   : {best_f1:.4f}")
+
+    list_of_models = glob.glob(os.path.join(MODEL_DIR, "*.tar.gz"))
+    if not list_of_models:
+        print("❌ Không tìm thấy file model nào trong rasa_bot/models/")
+        raise FileNotFoundError("No model .tar.gz found")
+
+    latest_model = max(list_of_models, key=os.path.getctime)
+    print(f"📦 Model file: {os.path.basename(latest_model)}")
+
+    # FAIL-SAFE: chỉ deploy nếu model mới tốt hơn
+    if current_f1 < best_f1:
+        print(f"\n❌ FAIL-SAFE: Model mới ({current_f1:.4f}) tệ hơn kỷ lục ({best_f1:.4f})")
+        print("🗑️  Xóa model để tiết kiệm dung lượng...")
+        os.remove(latest_model)
+        print("🛑 Deploy bị hủy. S3 vẫn giữ bản model cũ an toàn.")
+        raise SystemExit(1)
+
+    print("\n✅ Model đạt chuẩn — tiến hành upload S3...")
+
+    # Cập nhật record F1 tốt nhất
     with open(BEST_F1_RECORD_FILE, "w") as f:
         f.write(str(current_f1))
-        
-    # 2. PUSH MODEL LÊN MINIO
-    model_url = upload_to_minio(latest_model)
-    
-    # 3. KÍCH HOẠT RASA RELOAD
-    if model_url:
-        trigger_rasa_reload(model_url)
+
+    # Upload lên S3
+    success = upload_to_s3(latest_model)
+    if not success:
+        raise RuntimeError("S3 upload failed — aborting pipeline")
+
+    print("\n🎉 S3 upload hoàn tất!")
+    print("➡️  Jenkins sẽ tiếp tục: build Docker image → push DockerHub → update k8s-manifests image tag")
+
 
 if __name__ == "__main__":
     run_cd_pipeline()
