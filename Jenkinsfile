@@ -230,12 +230,21 @@ pipeline {
                 script {
                     echo "📝 Cập nhật image tag trong k8s-manifests repo..."
                     withCredentials([usernamePassword(
-                        credentialsId: 'github-credentials',
+                        credentialsId: 'github',
                         usernameVariable: 'GH_USER',
                         passwordVariable: 'GH_TOKEN'
                     )]) {
                         sh """
                             set -e
+
+                            # Sử dụng GIT_ASKPASS để xử lý mật khẩu chứa ký tự đặc biệt (@, #, !)
+                            cat << 'EOF' > "\${WORKSPACE}/git-askpass.sh"
+#!/bin/sh
+echo "\$GH_TOKEN"
+EOF
+                            chmod +x "\${WORKSPACE}/git-askpass.sh"
+                            export GIT_ASKPASS="\${WORKSPACE}/git-askpass.sh"
+                            export GIT_USERNAME="\${GH_USER}"
 
                             # Clone nếu chưa có, pull nếu đã có
                             if [ -d "${K8S_MANIFESTS_DIR}/.git" ]; then
@@ -243,10 +252,12 @@ pipeline {
                                 git pull origin main
                             else
                                 rm -rf "${K8S_MANIFESTS_DIR}"
-                                # FIX: URL chỉ dùng GH_TOKEN để tránh lỗi Bad hostname khi password có chứa ký tự đặc biệt như @
-                                git clone https://\${GH_TOKEN}@github.com/minhnhatuit734/k8s-manifests.git "${K8S_MANIFESTS_DIR}"
+                                git clone https://github.com/minhnhatuit734/k8s-manifests.git "${K8S_MANIFESTS_DIR}"
                                 cd "${K8S_MANIFESTS_DIR}"
                             fi
+                            
+                            # Xóa script sau khi dùng xong
+                            rm -f "\${WORKSPACE}/git-askpass.sh"
 
                             cd "${K8S_MANIFESTS_DIR}"
                             git config user.email "jenkins@kltn.local"
@@ -261,7 +272,7 @@ pipeline {
                             git diff --cached --quiet && echo "No changes to commit" || \\
                                 git commit -m "chatbot: update rasa image to ${env.IMAGE_TAG} [skip ci]"
 
-                            git push https://\${GH_USER}:\${GH_TOKEN}@github.com/minhnhatuit734/k8s-manifests.git main
+                            git push origin main
                         """
                     }
                     echo "🚀 ArgoCD sẽ tự động sync image mới vào EKS!"
