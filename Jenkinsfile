@@ -17,14 +17,19 @@ pipeline {
     stages {
         stage('0. Setup Environment') {
             steps {
-                echo "📦 Đang cài đặt thư viện Python (Rasa, Pandas, MLflow)..."
+                echo "📦 Cài python3-venv (system) và thư viện Python..."
                 sh '''
-                    # Dùng python3 để tạo venv (phòng trường hợp 'python' không tồn tại)
-                    python3 -m venv .venv
+                    # Cài python3-venv nếu chưa có (cần sudo NOPASSWD cho jenkins)
+                    sudo apt-get install -y python3-venv python3-pip || true
+
+                    # Tạo/tái sử dụng venv để cache packages giữa các lần build
+                    if [ ! -d ".venv" ]; then
+                        python3 -m venv .venv
+                    fi
                     . .venv/bin/activate
-                    pip install --upgrade pip
-                    pip install pandas
-                    pip install -r requirements.txt
+                    pip install --upgrade pip --quiet
+                    pip install pandas --quiet
+                    pip install -r requirements.txt --quiet
                 '''
             }
         }
