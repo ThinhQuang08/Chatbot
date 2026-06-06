@@ -57,6 +57,37 @@ pipeline {
         }
 
         // ─────────────────────────────────────────────────
+        // STAGE 0.1: Code & Library Validation
+        // ─────────────────────────────────────────────────
+        stage('0.1. Validation') {
+            steps {
+                echo "🔍 Đang kiểm tra mã nguồn và thư viện..."
+                sh """
+                    set -e
+                    export PATH="${VENV_DIR}/bin:\$PATH"
+                    
+                    echo "1️⃣ Validate Thư viện Code (Dependencies)..."
+                    "${PIP}" install flake8 pip-audit --quiet
+                    
+                    # Kiểm tra xung đột thư viện trong môi trường
+                    "${PIP}" check || echo "⚠️ Cảnh báo: Có xung đột nhỏ về phiên bản thư viện (Pip Check Failed)"
+                    
+                    # Quét lỗ hổng bảo mật thư viện (bỏ qua lỗi để không làm sập pipeline)
+                    pip-audit -r requirements.txt || echo "⚠️ Cảnh báo: Phát hiện lỗ hổng bảo mật trong thư viện (Chỉ cảnh báo)"
+                    
+                    echo "2️⃣ Validate Code (Linting Python scripts)..."
+                    # Flake8: Phát hiện lỗi cú pháp nghiêm trọng (sẽ block pipeline nếu có lỗi Syntax)
+                    flake8 scripts/ data/ database/ --count --select=E9,F63,F7,F82 --show-source --statistics
+                    
+                    # Flake8: Phát hiện cảnh báo style code (không block pipeline)
+                    flake8 scripts/ data/ database/ --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
+                    
+                    echo "✅ Validation hoàn tất mượt mà!"
+                """
+            }
+        }
+
+        // ─────────────────────────────────────────────────
         // STAGE 1: Data Pipeline — DVC Pull & Snorkel label
         // ─────────────────────────────────────────────────
         stage('1. Data Pipeline') {
@@ -209,7 +240,8 @@ pipeline {
                                 git pull origin main
                             else
                                 rm -rf "${K8S_MANIFESTS_DIR}"
-                                git clone https://\${GH_USER}:\${GH_TOKEN}@github.com/minhnhatuit734/k8s-manifests.git "${K8S_MANIFESTS_DIR}"
+                                # FIX: URL chỉ dùng GH_TOKEN để tránh lỗi Bad hostname khi password có chứa ký tự đặc biệt như @
+                                git clone https://\${GH_TOKEN}@github.com/minhnhatuit734/k8s-manifests.git "${K8S_MANIFESTS_DIR}"
                                 cd "${K8S_MANIFESTS_DIR}"
                             fi
 
