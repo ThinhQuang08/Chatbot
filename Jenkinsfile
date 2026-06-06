@@ -30,15 +30,21 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('0. Setup Python Env') {
             steps {
-                echo "📦 Kiểm tra và cài đặt môi trường Python..."
+                echo "📦 Cài python3.10-venv (Rasa 3.6 yêu cầu Python 3.8-3.10, Ubuntu 24.04 là 3.12)..."
                 sh """
                     set -e
+                    # Cài python3.10 qua PPA deadsnakes
+                    sudo apt-get update
+                    sudo apt-get install -y software-properties-common
+                    sudo add-apt-repository -y ppa:deadsnakes/ppa
+                    sudo apt-get update
+                    sudo apt-get install -y python3.10 python3.10-venv python3.10-dev build-essential
 
-                    # Tạo venv nếu chưa có hoặc bị hỏng
+                    # Tạo venv với Python 3.10
                     if [ ! -f "${VENV_DIR}/bin/activate" ]; then
-                        echo "🔧 Tạo virtualenv mới tại ${VENV_DIR}..."
+                        echo "🔧 Tạo virtualenv mới tại ${VENV_DIR} với Python 3.10..."
                         rm -rf "${VENV_DIR}"
-                        python3 -m venv "${VENV_DIR}"
+                        python3.10 -m venv "${VENV_DIR}"
                     fi
 
                     # Cài / cập nhật dependencies
