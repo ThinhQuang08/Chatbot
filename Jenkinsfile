@@ -99,7 +99,7 @@ pipeline {
                         export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
                         export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
                         export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}"
-                        export MLFLOW_TRACKING_URI="${MLFLOW_TRACKING_URI}"
+                        export MLFLOW_TRACKING_URI="file://\$(pwd)/mlruns"
                         export MLFLOW_EXPERIMENT="${MLFLOW_EXPERIMENT}"
                         export CHATBOT_S3_BUCKET="${CHATBOT_S3_BUCKET}"
                         export CHATBOT_S3_MODEL_KEY="${CHATBOT_S3_MODEL_KEY}"
