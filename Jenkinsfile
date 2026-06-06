@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         // Venv nằm ngoài workspace → tồn tại giữa các lần build, không bị xóa
-        VENV_DIR   = "/var/lib/jenkins/.rasa-venv-v2"
-        PY         = "/var/lib/jenkins/.rasa-venv-v2/bin/python"
-        PIP        = "/var/lib/jenkins/.rasa-venv-v2/bin/pip"
+        VENV_DIR   = "/var/lib/jenkins/.rasa-venv"
+        PY         = "/var/lib/jenkins/.rasa-venv/bin/python"
+        PIP        = "/var/lib/jenkins/.rasa-venv/bin/pip"
 
         // Docker image trên DockerHub
         DOCKER_IMAGE = "mnhat1/chatbot-rasa"
@@ -140,6 +140,9 @@ pipeline {
                         export CHATBOT_S3_MODEL_KEY="${CHATBOT_S3_MODEL_KEY}"
                         export PYTHONPATH="."
                         export PATH="${VENV_DIR}/bin:\$PATH"
+
+                        echo "🔧 Sửa lỗi xung đột thư viện của Rasa 3.x..."
+                        "${PIP}" install "pydantic<1.10.10" "aiohttp<3.10" "prompt-toolkit<3.0.29" "attrs<22.2" "packaging<21.0" --quiet
 
                         "${PY}" scripts/train_mlflow.py
                     """
