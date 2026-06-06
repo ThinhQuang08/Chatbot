@@ -34,12 +34,10 @@ pipeline {
                 sh """
                     set -e
                     
-                    # Tạo venv với Python 3.10
-                    if [ ! -f "${VENV_DIR}/bin/activate" ]; then
-                        echo "🔧 Tạo virtualenv mới tại ${VENV_DIR} với Python 3.10..."
-                        rm -rf "${VENV_DIR}"
-                        python3.10 -m venv "${VENV_DIR}"
-                    fi
+                    # XÓA venv cũ (được tạo bằng Python 3.12) và TẠO LẠI bằng Python 3.10
+                    echo "🔧 Tạo/Re-create virtualenv mới tại ${VENV_DIR} với Python 3.10..."
+                    rm -rf "${VENV_DIR}"
+                    python3.10 -m venv "${VENV_DIR}"
 
                     # Cài / cập nhật dependencies
                     ${PIP} install --upgrade pip --quiet
