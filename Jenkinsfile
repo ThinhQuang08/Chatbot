@@ -70,8 +70,8 @@ pipeline {
                     "${PIP}" install flake8 --quiet
                     
                     if [ ! -f "${VENV_DIR}/bin/trivy" ]; then
-                        echo "⬇️ Đang tải Trivy..."
-                        wget -qO- https://github.com/aquasecurity/trivy/releases/download/v0.51.1/trivy_0.51.1_Linux-64bit.tar.gz | tar -xz -C "${VENV_DIR}/bin" trivy
+                        echo "⬇️ Đang tải Trivy qua official script..."
+                        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b "${VENV_DIR}/bin"
                     fi
                     
                     # Quét lỗ hổng thư viện và file cấu hình (Trivy)
