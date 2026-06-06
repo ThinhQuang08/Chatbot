@@ -51,6 +51,21 @@ pipeline {
                     echo "📦 Đảm bảo DVC và AWS CLI luôn được cài đặt..."
                     "${PIP}" install dvc dvc-s3 awscli --quiet
 
+                    # ── Cài kustomize nếu chưa có ──────────────────────────────────
+                    if [ ! -f "${VENV_DIR}/bin/kustomize" ]; then
+                        echo "⬇️ Đang tải Kustomize..."
+                        KUSTOMIZE_VERSION="v5.3.0"
+                        curl -sLo /tmp/kustomize.tar.gz \
+                            "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F\${KUSTOMIZE_VERSION}/kustomize_\${KUSTOMIZE_VERSION}_linux_amd64.tar.gz"
+                        tar -xzf /tmp/kustomize.tar.gz -C "${VENV_DIR}/bin"
+                        chmod +x "${VENV_DIR}/bin/kustomize"
+                        rm -f /tmp/kustomize.tar.gz
+                        echo "✅ Kustomize đã cài: \$("${VENV_DIR}/bin/kustomize" version)"
+                    else
+                        echo "✅ Kustomize đã có sẵn: \$("${VENV_DIR}/bin/kustomize" version)"
+                    fi
+                    # ────────────────────────────────────────────────────────────────
+
                     echo "✅ Python env sẵn sàng: \$(${PY} --version)"
                 """
             }
@@ -239,6 +254,7 @@ pipeline {
                     )]) {
                         sh """
                             set -e
+                            export PATH="${VENV_DIR}/bin:\$PATH"
 
                             # Sử dụng GIT_ASKPASS để xử lý mật khẩu chứa ký tự đặc biệt (@, #, !)
                             cat << 'EOF' > "\${WORKSPACE}/git-askpass.sh"
