@@ -48,8 +48,8 @@ pipeline {
                         echo "✅ Môi trường Python 3.10 và Rasa đã sẵn sàng. Bỏ qua bước cài đặt."
                     fi
 
-                    echo "📦 Đảm bảo DVC luôn được cài đặt..."
-                    "${PIP}" install dvc dvc-s3 --quiet
+                    echo "📦 Đảm bảo DVC và AWS CLI luôn được cài đặt..."
+                    "${PIP}" install dvc dvc-s3 awscli --quiet
 
                     echo "✅ Python env sẵn sàng: \$(${PY} --version)"
                 """
@@ -159,6 +159,7 @@ pipeline {
                     ]) {
                         sh """
                             set -e
+                            export PATH="${VENV_DIR}/bin:\$PATH"
                             mkdir -p rasa_bot/models
                             echo "⬇️  Downloading model từ S3..."
                             aws s3 cp s3://${CHATBOT_S3_BUCKET}/${CHATBOT_S3_MODEL_KEY} \\
