@@ -1,6 +1,7 @@
 import yaml
 import re
 import pandas as pd
+import os
 
 # Giả sử đây là hàm tách từ (Word Segmentation) mà sếp đang dùng trong file preprocess_data.py
 # Sếp hãy import hàm thật của sếp vào đây nhé (ví dụ: from underthesea import word_tokenize)
@@ -19,11 +20,7 @@ def clean_rasa_entity(text):
     cleaned = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
     return cleaned.strip()
 
-def create_reference_csv(yml_path=None, output_csv=None):
-    if yml_path is None:
-        yml_path = os.getenv("NLU_YML_PATH", "rasa_bot/data/train/nlu.yml")
-    if output_csv is None:
-        output_csv = os.getenv("REFERENCE_CSV_PATH", "data/reference_data.csv")
+def create_reference_csv(yml_path="rasa_bot/data/train/nlu.yml", output_csv="data/reference_data.csv"):
     print(f"📖 Đang đọc dữ liệu từ {yml_path}...")
     
     with open(yml_path, 'r', encoding='utf-8') as f:

@@ -66,14 +66,17 @@ pipeline {
                     set -e
                     export PATH="${VENV_DIR}/bin:\$PATH"
                     
-                    echo "1️⃣ Validate Thư viện Code (Dependencies)..."
-                    "${PIP}" install flake8 pip-audit --quiet
+                    echo "1️⃣ Validate Security (Trivy Vulnerability Scanner)..."
+                    "${PIP}" install flake8 --quiet
                     
-                    # Kiểm tra xung đột thư viện trong môi trường
-                    "${PIP}" check || echo "⚠️ Cảnh báo: Có xung đột nhỏ về phiên bản thư viện (Pip Check Failed)"
+                    if [ ! -f "${VENV_DIR}/bin/trivy" ]; then
+                        echo "⬇️ Đang tải Trivy..."
+                        wget -qO- https://github.com/aquasecurity/trivy/releases/download/v0.51.1/trivy_0.51.1_Linux-64bit.tar.gz | tar -xz -C "${VENV_DIR}/bin" trivy
+                    fi
                     
-                    # Quét lỗ hổng bảo mật thư viện (bỏ qua lỗi để không làm sập pipeline)
-                    pip-audit -r requirements.txt || echo "⚠️ Cảnh báo: Phát hiện lỗ hổng bảo mật trong thư viện (Chỉ cảnh báo)"
+                    # Quét lỗ hổng thư viện và file cấu hình (Trivy)
+                    # exit-code 0 để không làm sập pipeline nếu phát hiện lỗ hổng cũ của Rasa
+                    trivy fs . --scanners vuln,secret --severity HIGH,CRITICAL --exit-code 0
                     
                     echo "2️⃣ Validate Code (Linting Python scripts)..."
                     # Flake8: Phát hiện lỗi cú pháp nghiêm trọng (sẽ block pipeline nếu có lỗi Syntax)
