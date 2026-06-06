@@ -272,12 +272,7 @@ EOF
                             else
                                 rm -rf "${K8S_MANIFESTS_DIR}"
                                 git clone https://github.com/minhnhatuit734/k8s-manifests.git "${K8S_MANIFESTS_DIR}"
-                                cd "${K8S_MANIFESTS_DIR}"
                             fi
-                            
-                            # Xóa script sau khi dùng xong
-                            rm -f "\${WORKSPACE}/git-askpass.sh"
-
                             cd "${K8S_MANIFESTS_DIR}"
                             git config user.email "jenkins@kltn.local"
                             git config user.name "Jenkins Bot"
@@ -292,6 +287,9 @@ EOF
                                 git commit -m "chatbot: update rasa image to ${env.IMAGE_TAG} [skip ci]"
 
                             git push origin main
+
+                            # Xóa script SAU KHI git push hoàn tất
+                            rm -f "\${WORKSPACE}/git-askpass.sh"
                         """
                     }
                     echo "🚀 ArgoCD sẽ tự động sync image mới vào EKS!"
