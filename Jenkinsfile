@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         // Venv nằm ngoài workspace → tồn tại giữa các lần build, không bị xóa
-        VENV_DIR   = "/var/lib/jenkins/.rasa-venv"
-        PY         = "/var/lib/jenkins/.rasa-venv/bin/python"
-        PIP        = "/var/lib/jenkins/.rasa-venv/bin/pip"
+        VENV_DIR   = "/var/lib/jenkins/.rasa-venv-v2"
+        PY         = "/var/lib/jenkins/.rasa-venv-v2/bin/python"
+        PIP        = "/var/lib/jenkins/.rasa-venv-v2/bin/pip"
 
         // Docker image trên DockerHub
         DOCKER_IMAGE = "mnhat1/chatbot-rasa"
