@@ -44,8 +44,8 @@ pipeline {
                         parameters: [
                             choice(
                                 name: 'DECISION',
-                                choices: ['oke_deploy', 'nhu_cc_xoa'],
-                                description: 'Chọn hành động'
+                                choices: ['deploy', 'reject'],
+                                description: 'deploy = deploy model, reject = stop pipeline'
                             )
                         ]
                     )
