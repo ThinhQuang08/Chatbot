@@ -33,7 +33,7 @@ def auto_annotate_entities(text):
 
 def append_to_nlu_yml():
     csv_path = 'data/high_confidence_auto_labeled.csv'
-    yml_path = 'data/nlu_test.yml'
+    yml_path = 'rasa_bot/data/train/nlu.yml'
     
     print("[INFO] Đang chạy bản FINAL TUNE: Thêm từ khóa & Dọn rác teencode...")
     try:
