@@ -18,7 +18,8 @@ def train_and_evaluate_mlflow():
     if mlflow.active_run():
         mlflow.end_run()
     
-    mlflow.set_tracking_uri("http://localhost:5000")
+    tracking_uri = os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5000")
+    mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment("Travel_Chatbot_Rasa")
 
     # Tên mô hình
@@ -114,6 +115,18 @@ def train_and_evaluate_mlflow():
         # Đẩy nguyên thư mục results (chứa báo cáo lỗi, biểu đồ ma trận nhầm lẫn)
         if os.path.exists(RESULTS_DIR):
             mlflow.log_artifacts(RESULTS_DIR, artifact_path="evaluation_results")
+
+        # Đẩy file model lên root của bucket để Rasa Server tải về qua MODEL_SERVER_URL
+        print("Đang đẩy mô hình lên S3 (latest_model.tar.gz)...")
+        import boto3
+        endpoint_url = os.environ.get("MLFLOW_S3_ENDPOINT_URL", "http://s3:9000")
+        s3 = boto3.client('s3', endpoint_url=endpoint_url)
+        bucket_name = os.environ.get("MINIO_BUCKET", "chatbot-models")
+        try:
+            s3.upload_file(latest_model, bucket_name, "latest_model.tar.gz")
+            print("Đã tải mô hình mới nhất lên S3 thành công (latest_model.tar.gz)!")
+        except Exception as e:
+            print(f"Lỗi tải mô hình lên S3: {e}")
         
         print("Tích hợp MLOps hoàn tất! Mở http://localhost:5000 để chiêm ngưỡng thành quả.")
 

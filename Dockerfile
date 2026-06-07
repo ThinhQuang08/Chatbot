@@ -25,4 +25,4 @@ EXPOSE 5005
 
 # Lệnh mặc định khi Container khởi chạy
 # (Bật API, mở CORS cho web client và trỏ tới file endpoints)
-# CMD ["rasa", "run", "--enable-api", "--cors", "*", "--endpoints", "endpoints.yml"]
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--endpoints", "endpoints.yml"]

@@ -1,20 +1,302 @@
-version: '3.3'
-
 services:
+
+  # ================================================================
+  # LAYER 1: HẠ TẦNG (Infrastructure)
+  # Khởi động đầu tiên, không phụ thuộc vào service nào khác
+  # ================================================================
+
+  # ---------------- PostgreSQL Database ----------------
+  db:
+    image: postgres:15
+    container_name: chatbot_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-chatbot_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-supersecret}
+      POSTGRES_DB: ${DB_NAME:-chatbot}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-chatbot_user} -d ${DB_NAME:-chatbot}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - chatbot_network
+
+  # ---------------- MinIO (Object Storage / S3) ----------------
+  s3:
+    image: minio/minio
+    container_name: chatbot_s3
+    restart: always
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-password123}
+    ports:
+      - "9000:9000"
+      - "9001:9001"   # Web Console: http://localhost:9001
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - chatbot_network
+
+  # ---------------- Qdrant (Vector Database) ----------------
+  qdrant:
+    image: qdrant/qdrant
+    container_name: chatbot_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"   # REST API: http://localhost:6333
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    networks:
+      - chatbot_network
+
+  # ================================================================
+  # LAYER 2: INITIALIZATION (Chạy 1 lần rồi thoát)
+  # Chờ Layer 1 healthy xong mới chạy
+  # ================================================================
+
+  # ---------------- Tạo bucket MinIO tự động ----------------
+  minio-setup:
+    image: minio/mc
+    container_name: chatbot_s3_setup
+    depends_on:
+      s3:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set myminio http://s3:9000 ${MINIO_ACCESS_KEY:-admin} ${MINIO_SECRET_KEY:-password123};
+      /usr/bin/mc mb myminio/${MINIO_BUCKET:-chatbot-models} --ignore-existing;
+      /usr/bin/mc anonymous set public myminio/${MINIO_BUCKET:-chatbot-models};
+      echo '[OK] Bucket MinIO da san sang!';
+      exit 0;
+      "
+    networks:
+      - chatbot_network
+
+  # ---------------- Init: DB Schema + Import Data + Sync Qdrant ----------------
+  init:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot_init
+    # Khong co "profiles" -> chay cung docker-compose up -d
+    # Chay 1 lan roi dung (restart: no mac dinh)
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/app
+      - DB_HOST=db
+      - DB_PORT=5432
+      - QDRANT_URL=http://qdrant:6333
+      - ENABLE_SEMANTIC_SEARCH=true
+    volumes:
+      - ./:/app
+    command: >
+      bash -c "
+        echo '=== [1/6] Khoi tao Schema Database...' &&
+        python -m database.init_db &&
+
+        echo '=== [2/6] Import du lieu Destinations...' &&
+        cp /app/data/json_file/data_normalized_destination.json /app/data/data_normalized_destination.json 2>/dev/null || true &&
+        python -m database.importData &&
+
+        echo '=== [3/6] Import du lieu Tours...' &&
+        cp /app/data/json_file/data_normalized_tour.json /app/data/data_normalized_tour.json 2>/dev/null || true &&
+        python -m database.importTour &&
+
+        echo '=== [4/6] Import du lieu Accommodations...' &&
+        python -m database.import_accommodations &&
+
+        echo '=== [5/6] Sync Destinations len Qdrant...' &&
+        python scripts/sync_qdrant.py --recreate &&
+
+        echo '=== [6/6] Sync Tours len Qdrant...' &&
+        python scripts/sync_qdrant_tour.py --recreate &&
+
+        echo '=== HOAN TAT! DB + Qdrant da san sang ==='
+      "
+    networks:
+      - chatbot_network
+
+  # ---------------- Rasa Action Server ----------------
+  rasa-actions:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot_rasa_actions
+    restart: always
+    working_dir: /app/rasa_bot
+    ports:
+      - "5055:5055"
+    depends_on:
+      db:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/app
+      - DB_HOST=db
+      - DB_PORT=5432
+      - QDRANT_URL=http://qdrant:6333
+      - ENABLE_SEMANTIC_SEARCH=true
+    volumes:
+      - ./:/app
+    command: rasa run actions
+    networks:
+      - chatbot_network
+
+  # ---------------- Rasa Server ----------------
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot_rasa
+    restart: always
+    working_dir: /app/rasa_bot
+    ports:
+      - "5005:5005"
+    depends_on:
+      db:
+        condition: service_healthy
+      s3:
+        condition: service_healthy
+      rasa-actions:
+        condition: service_started
+      init:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - MINIO_URL=http://s3:9000
+      - RASA_ACTION_URL=http://rasa-actions:5055/webhook
+      - MODEL_SERVER_URL=http://s3:9000/${MINIO_BUCKET:-chatbot-models}/${MINIO_MODEL_FILE:-latest_model.tar.gz}
+    volumes:
+      - ./:/app
+    command: rasa run --enable-api --cors "*" --endpoints endpoints.yml
+    networks:
+      - chatbot_network
+
+  # ---------------- MLflow Tracking Server ----------------
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot_mlflow
+    restart: always
+    ports:
+      - "5000:5000"   # UI: http://localhost:5000
+    depends_on:
+      db:
+        condition: service_healthy
+      s3:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_S3_ENDPOINT_URL=http://s3:9000
+      - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY:-admin}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_KEY:-password123}
+      - MLFLOW_SERVER_ALLOWED_HOSTS=*
+    command: >
+      mlflow server
+      --backend-store-uri postgresql://${DB_USER:-chatbot_user}:${DB_PASSWORD:-supersecret}@db:5432/${DB_NAME:-chatbot}
+      --default-artifact-root s3://${MINIO_BUCKET:-chatbot-models}/mlflow
+      --host 0.0.0.0
+      --port 5000
+    networks:
+      - chatbot_network
+
+  # ================================================================
+  # LAYER 4: ON-DEMAND (Chỉ chạy khi gọi --profile)
+  # ================================================================
+
+  # ---------------- Trainer: Train Rasa + Log MLflow ----------------
+  # Cách dùng: docker-compose --profile train up trainer
+  trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot_trainer
+    profiles:
+      - train
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+      s3:
+        condition: service_healthy
+      mlflow:
+        condition: service_started
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_S3_ENDPOINT_URL=http://s3:9000
+      - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY:-admin}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_KEY:-password123}
+      - PYTHONPATH=/app
+      - GIT_PYTHON_REFRESH=quiet
+    volumes:
+      - ./:/app
+    command: python scripts/train_mlflow.py
+    networks:
+      - chatbot_network
+
+  # ---------------- Jenkins MLOps ----------------
+  # Cách dùng: docker-compose --profile jenkins up jenkins-mlops
   jenkins-mlops:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.jenkins
     container_name: jenkins_bot_du_lich
     restart: unless-stopped
+    profiles:
+      - jenkins
     user: root
     ports:
-      - "8080:8080" # Cổng giao diện Web Jenkins
-      - "50000:50000" # Cổng kết nối Agent (Mặc định)
+      - "${JENKINS_PORT:-8080}:8080"
+      - "${JENKINS_AGENT_PORT:-50000}:50000"
     volumes:
       - jenkins_data:/var/jenkins_home
-      # Gắn toàn bộ code từ máy tính của sếp vào ổ /workspace trong Jenkins
-      - ./:/workspace 
+      - ./:/workspace
+    networks:
+      - chatbot_network
+
+networks:
+  chatbot_network:
+    driver: bridge
 
 volumes:
+  pgdata:
+  minio_data:
+  qdrant_data:
   jenkins_data:

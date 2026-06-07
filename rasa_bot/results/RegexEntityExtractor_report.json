@@ -1,46 +1,16 @@
 {
-  "duration": {
-    "precision": 0.7142857142857143,
-    "recall": 0.8974358974358975,
-    "f1-score": 0.7954545454545455,
-    "support": 39,
-    "confused_with": {}
-  },
-  "month_to": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 22,
-    "confused_with": {
-      "month": 22
-    }
-  },
-  "activity": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 29,
+  "season": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 8,
     "confused_with": {}
   },
   "transportation": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 19,
-    "confused_with": {}
-  },
-  "budget": {
-    "precision": 1.0,
+    "precision": 0.8571428571428571,
     "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 71,
-    "confused_with": {}
-  },
-  "season": {
-    "precision": 0.875,
-    "recall": 1.0,
-    "f1-score": 0.9333333333333333,
-    "support": 14,
+    "f1-score": 0.923076923076923,
+    "support": 6,
     "confused_with": {}
   },
   "party_size": {
@@ -50,67 +20,96 @@
     "support": 18,
     "confused_with": {}
   },
+  "location.destination": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 79,
+    "confused_with": {
+      "location": 69
+    }
+  },
+  "duration": {
+    "precision": 1.0,
+    "recall": 0.8461538461538461,
+    "f1-score": 0.9166666666666666,
+    "support": 13,
+    "confused_with": {}
+  },
+  "time_window": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 18,
+    "confused_with": {}
+  },
+  "month": {
+    "precision": 0.3888888888888889,
+    "recall": 1.0,
+    "f1-score": 0.56,
+    "support": 28,
+    "confused_with": {}
+  },
   "month_from": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 22,
+    "support": 18,
     "confused_with": {
-      "month": 22
+      "month": 18
     }
   },
-  "category": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 115,
-    "confused_with": {}
-  },
-  "time_window": {
+  "budget": {
     "precision": 1.0,
-    "recall": 0.14814814814814814,
-    "f1-score": 0.25806451612903225,
-    "support": 27,
-    "confused_with": {}
-  },
-  "month": {
-    "precision": 0.4230769230769231,
     "recall": 1.0,
-    "f1-score": 0.5945945945945945,
-    "support": 44,
+    "f1-score": 1.0,
+    "support": 41,
     "confused_with": {}
   },
-  "destination": {
+  "category": {
+    "precision": 0.5566037735849056,
+    "recall": 0.855072463768116,
+    "f1-score": 0.6742857142857143,
+    "support": 69,
+    "confused_with": {
+      "activity": 10
+    }
+  },
+  "month_to": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 155,
-    "confused_with": {}
+    "support": 18,
+    "confused_with": {
+      "month": 18
+    }
   },
-  "departure": {
+  "location.departure": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 11,
-    "confused_with": {}
+    "support": 10,
+    "confused_with": {
+      "location": 8
+    }
   },
   "micro avg": {
-    "precision": 0.6885245901639344,
-    "recall": 0.28668941979522183,
-    "f1-score": 0.40481927710843374,
-    "support": 586
+    "precision": 0.6047430830039525,
+    "recall": 0.46932515337423314,
+    "f1-score": 0.5284974093264249,
+    "support": 326
   },
   "macro avg": {
-    "precision": 0.30864327979712597,
-    "recall": 0.3111987727372343,
-    "f1-score": 0.2754959222701159,
-    "support": 586
+    "precision": 0.3835529599680543,
+    "recall": 0.4751021924934969,
+    "f1-score": 0.4135765160765161,
+    "support": 326
   },
   "weighted avg": {
-    "precision": 0.26744458613059297,
-    "recall": 0.28668941979522183,
-    "f1-score": 0.25293395569460747,
-    "support": 586
+    "precision": 0.35226198285001387,
+    "recall": 0.46932515337423314,
+    "f1-score": 0.3919385079814528,
+    "support": 326
   },
-  "accuracy": 0.8448275862068966
+  "accuracy": 0.7920792079207921
 }
