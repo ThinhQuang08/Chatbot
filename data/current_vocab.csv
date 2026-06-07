@@ -1,0 +1,41 @@
+text,intent
+homestay đó view đẹp wá xịn xò luôn á,search_accommodation
+tour nha trang này bao củ vậy tr,search_price
+check in resort biển đỉnh của chịuuu,search_activity
+phòng ở đây chill hongg,search_accommodation
+cho tui xin info khách sạn view biển với,search_accommodation
+resort đó sống ảo đẹp quá trời,search_accommodation
+review homestay này xịn sò thiệc luôn,search_accommodation
+gu du lịch của tui là resort biển ó,search_accommodation
+đi nha trang mua he check in sống ảo đỉnh nóc,search_activity
+tour phú quốc bjo giảm giá hong,search_price
+resort nì view đẹp sock luôn,search_accommodation
+đi biển chơi mà hong cần lo gì hết,search_activity
+homestay đà lạt mới tinh luôn á,search_accommodation
+review đi phú quốc mùa hè nè,search_travel
+đi phượt bằng xe máy đã ghee,search_activity
+sao bữa h hỏi hong ai trả lời z,inform
+cho em hỏi booking tour này ntn ạ,book_tour
+có ai đi phú quốc tháng 6 hong,search_destination
+đi đâu chơi ở nha trang mùa hè v mấy bồ,ask_itinerary
+tour 2 ngày 1 đêm đi đâu chơi được,search_travel
+homestay ở nha trang a zui hong,search_accommodation
+resort biển có hồ bơi vô cực xịn lắm hông,search_accommodation
+cho em xin vài review về vinpearl nha trang,ask_tour_info
+đi phú quốc tự túc chi phí cỡ nào,search_price
+bữa ni đi biển nha trang đẹp hong,ask_weather_timing
+check in resort chill nhất định phải thử,search_activity
+có nên book tour trước hong mọi người,ask_policy_booking
+phòng đôi giá bao nhiu z,search_price
+đi đà nẵng mùa hè mặc gì cho mát,inform
+có tour du thuyền nào đỉnh hong,search_activity
+gu ẩm thực biển của tui là hải sản nướng,search_food_dining
+resort nào cho check in sớm v,ask_policy_booking
+đi nha trang bằng tàu lửa có tiện hong,ask_transportation
+homestay nào đẹp mà gần biển chỉ tui với,search_accommodation
+tính đi phú quốc mà hong biết mùa nào đẹp,ask_weather_timing
+mua hè đi biển mà hong bôi kem chống nắng là sock đó,inform
+tour này có bảo hiểm du lịch hong,ask_policy_booking
+chỗ nào bán hải sản tươi ngon mà rẻ z,search_food_dining
+tính book tour 3 ngày cho gia đình 4 người,book_tour
+ai đi phú quốc rồi review tui với,ask_tour_info
