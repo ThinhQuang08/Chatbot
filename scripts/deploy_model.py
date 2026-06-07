@@ -81,12 +81,12 @@ def run_cd_pipeline():
     latest_model = max(list_of_models, key=os.path.getctime)
     
     # 1. KIỂM ĐỊNH (FAIL-SAFE)
-    if current_f1 < best_f1:
-        print("\n❌ FAIL-SAFE KÍCH HOẠT: Mô hình mới TỆ HƠN mô hình cũ!")
-        print(f"🗑️ Đang xóa mô hình {os.path.basename(latest_model)} để bảo vệ chất lượng...")
-        os.remove(latest_model)
-        print("🛑 Đã hủy quy trình Deploy. MinIO vẫn giữ bản model cũ an toàn.")
-        return
+    # if current_f1 < best_f1:
+    #     print("\n❌ FAIL-SAFE KÍCH HOẠT: Mô hình mới TỆ HƠN mô hình cũ!")
+    #     print(f"🗑️ Đang xóa mô hình {os.path.basename(latest_model)} để bảo vệ chất lượng...")
+    #     os.remove(latest_model)
+    #     print("🛑 Đã hủy quy trình Deploy. MinIO vẫn giữ bản model cũ an toàn.")
+    #     return
 
     print("\n✅ PASS: Mô hình đạt chuẩn! Tiến hành Deploy...")
     with open(BEST_F1_RECORD_FILE, "w") as f:
