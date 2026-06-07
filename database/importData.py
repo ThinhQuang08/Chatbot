@@ -1,7 +1,7 @@
 import json
 from database.db_connection import get_connection
 
-INPUT_FILE = "data/data_normalized_destination.json"
+INPUT_FILE = "data/json_file/data_normalized_destination.json"
 
 def to_legacy_season(start: int | None, end: int | None) -> str | None:
     if start is None or end is None:

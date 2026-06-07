@@ -38,6 +38,11 @@ MLFLOW_EXPERIMENT = os.getenv("MLFLOW_EXPERIMENT", "Travel_Chatbot_Rasa")
 RASA_API_URL = os.getenv("RASA_API_URL", "http://localhost:5005")
 RASA_ACTION_URL = os.getenv("RASA_ACTION_URL", "http://localhost:5055/webhook")
 
+# AWS S3 — model artifact storage (Option A: bake model into Docker image)
+AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION", "ap-southeast-1")
+CHATBOT_S3_BUCKET = os.getenv("CHATBOT_S3_BUCKET", "kltn-chatbot-artifacts-dev")
+CHATBOT_S3_MODEL_KEY = os.getenv("CHATBOT_S3_MODEL_KEY", "models/latest_model.tar.gz")
+
 RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "localhost")
 RABBITMQ_PORT = os.getenv("RABBITMQ_PORT", "5672")
 RABBITMQ_MGM_PORT = os.getenv("RABBITMQ_MGM_PORT", "15672")

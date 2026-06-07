@@ -1,0 +1,37 @@
+# ============================================================
+# Dockerfile.prod — Option A: Bake trained model into image
+# Dùng cho Jenkins CI/CD khi deploy lên EKS.
+# Yêu cầu: rasa_bot/models/ phải có file .tar.gz trước khi build.
+# ============================================================
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# OS dependencies (netcat cho healthcheck nội bộ nếu cần)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    netcat-traditional \
+    && rm -rf /var/lib/apt/lists/*
+
+# Cài dependencies trước để tận dụng Docker layer cache
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy toàn bộ source code (bao gồm rasa_bot/models/*.tar.gz)
+COPY config/     config/
+COPY services/   services/
+COPY database/   database/
+COPY utils/      utils/
+COPY scripts/generate_endpoints.py scripts/
+COPY scripts/docker-entrypoint.sh  scripts/
+COPY rasa_bot/   rasa_bot/
+
+RUN chmod +x scripts/docker-entrypoint.sh
+
+# Ports: 5005 (Rasa API), 5055 (Action Server)
+EXPOSE 5005 5055
+
+ENTRYPOINT ["/app/scripts/docker-entrypoint.sh"]

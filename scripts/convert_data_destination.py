@@ -1,8 +1,8 @@
 import json
 import re
 
-INPUT_FILE = "data/destination.json"
-OUTPUT_FILE = "data/data_normalized_destination.json"
+INPUT_FILE = "data/json_file/destination.json"
+OUTPUT_FILE = "data/json_file/data_normalized_destination.json"
 
 
 def parse_cost(cost_text):
