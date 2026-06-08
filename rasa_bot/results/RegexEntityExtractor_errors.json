@@ -5,6 +5,14 @@
     "predicted_entities": [
       {
         "entity": "time_window",
+        "start": 4,
+        "end": 7,
+        "confidence_entity": 0.7687594294548035,
+        "value": "này",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time_window",
         "start": 0,
         "end": 7,
         "value": "sắp tới",
@@ -39,9 +47,9 @@
         "entity": "location",
         "start": 29,
         "end": 35,
-        "confidence_entity": 0.9992732405662537,
+        "confidence_entity": 0.9989986419677734,
         "role": "destination",
-        "confidence_role": 0.9908797740936279,
+        "confidence_role": 0.991436779499054,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -90,27 +98,27 @@
     ],
     "predicted_entities": [
       {
-        "entity": "duration",
-        "start": 6,
-        "end": 9,
-        "confidence_entity": 0.6645281314849854,
-        "value": "vài",
-        "extractor": "DIETClassifier"
-      },
-      {
         "entity": "category",
         "start": 14,
-        "end": 22,
-        "confidence_entity": 0.66,
-        "value": "miền Tây",
+        "end": 18,
+        "confidence_entity": 0.976906955242157,
+        "value": "miền",
         "extractor": "DIETClassifier"
       },
       {
-        "entity": "category",
-        "start": 23,
+        "entity": "location",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.7874324917793274,
+        "value": "Tây",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time_window",
+        "start": 27,
         "end": 30,
-        "confidence_entity": 0.37999483942985535,
-        "value": "tết này",
+        "confidence_entity": 0.7301434874534607,
+        "value": "này",
         "extractor": "DIETClassifier"
       },
       {
@@ -144,15 +152,15 @@
         "entity": "time_window",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.9526500105857849,
+        "confidence_entity": 0.9967584609985352,
         "value": "cuối",
         "extractor": "DIETClassifier"
       },
       {
-        "entity": "activity",
+        "entity": "location",
         "start": 12,
         "end": 16,
-        "confidence_entity": 0.5180677175521851,
+        "confidence_entity": 0.49005454778671265,
         "value": "biển",
         "extractor": "DIETClassifier",
         "processors": [
@@ -163,9 +171,9 @@
         "entity": "location",
         "start": 17,
         "end": 25,
-        "confidence_entity": 0.9995723366737366,
+        "confidence_entity": 0.9995045065879822,
         "role": "destination",
-        "confidence_role": 0.9961593151092529,
+        "confidence_role": 0.9844415783882141,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -206,7 +214,7 @@
         "entity": "category",
         "start": 13,
         "end": 22,
-        "confidence_entity": 0.9930229187011719,
+        "confidence_entity": 0.9803918600082397,
         "value": "chữa lành",
         "extractor": "DIETClassifier",
         "processors": [
@@ -243,7 +251,7 @@
         "entity": "activity",
         "start": 9,
         "end": 16,
-        "confidence_entity": 0.9923222661018372,
+        "confidence_entity": 0.9947656393051147,
         "value": "leo núi",
         "extractor": "DIETClassifier",
         "processors": [
@@ -287,7 +295,7 @@
         "entity": "activity",
         "start": 0,
         "end": 7,
-        "confidence_entity": 0.9902209043502808,
+        "confidence_entity": 0.9923219680786133,
         "value": "leo núi",
         "extractor": "DIETClassifier",
         "processors": [
@@ -298,7 +306,7 @@
         "entity": "month",
         "start": 8,
         "end": 16,
-        "confidence_entity": 0.9549819231033325,
+        "confidence_entity": 0.9849138259887695,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -349,7 +357,7 @@
         "entity": "month",
         "start": 22,
         "end": 30,
-        "confidence_entity": 0.9374075531959534,
+        "confidence_entity": 0.9829368591308594,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -400,7 +408,7 @@
         "entity": "month",
         "start": 24,
         "end": 32,
-        "confidence_entity": 0.9123902320861816,
+        "confidence_entity": 0.9804742336273193,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -451,7 +459,7 @@
         "entity": "activity",
         "start": 0,
         "end": 8,
-        "confidence_entity": 0.9743358492851257,
+        "confidence_entity": 0.8934358358383179,
         "value": "trekking",
         "extractor": "DIETClassifier",
         "processors": [
@@ -462,7 +470,7 @@
         "entity": "month",
         "start": 9,
         "end": 17,
-        "confidence_entity": 0.9640235304832458,
+        "confidence_entity": 0.9827213287353516,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -503,7 +511,7 @@
         "entity": "activity",
         "start": 3,
         "end": 11,
-        "confidence_entity": 0.9622437357902527,
+        "confidence_entity": 0.977833092212677,
         "value": "trekking",
         "extractor": "DIETClassifier",
         "processors": [
@@ -514,7 +522,7 @@
         "entity": "month",
         "start": 16,
         "end": 24,
-        "confidence_entity": 0.9149064421653748,
+        "confidence_entity": 0.9705983996391296,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -555,7 +563,7 @@
         "entity": "month",
         "start": 19,
         "end": 27,
-        "confidence_entity": 0.8820216655731201,
+        "confidence_entity": 0.9579030871391296,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -606,7 +614,7 @@
         "entity": "month",
         "start": 11,
         "end": 19,
-        "confidence_entity": 0.9039962887763977,
+        "confidence_entity": 0.9725327491760254,
         "value": "tháng 10",
         "extractor": "DIETClassifier",
         "processors": [
@@ -650,7 +658,7 @@
         "entity": "activity",
         "start": 15,
         "end": 23,
-        "confidence_entity": 0.9835424423217773,
+        "confidence_entity": 0.9959531426429749,
         "value": "cắm trại",
         "extractor": "DIETClassifier",
         "processors": [
@@ -690,7 +698,7 @@
         "entity": "activity",
         "start": 9,
         "end": 16,
-        "confidence_entity": 0.9956531524658203,
+        "confidence_entity": 0.9972368478775024,
         "value": "săn mây",
         "extractor": "DIETClassifier",
         "processors": [
@@ -717,7 +725,7 @@
         "entity": "activity",
         "start": 10,
         "end": 17,
-        "confidence_entity": 0.9917809367179871,
+        "confidence_entity": 0.9945905208587646,
         "value": "leo núi",
         "extractor": "DIETClassifier",
         "processors": [
@@ -754,7 +762,7 @@
         "entity": "activity",
         "start": 0,
         "end": 8,
-        "confidence_entity": 0.7669181227684021,
+        "confidence_entity": 0.8172812461853027,
         "value": "trekking",
         "extractor": "DIETClassifier",
         "processors": [
@@ -781,7 +789,7 @@
         "entity": "activity",
         "start": 9,
         "end": 17,
-        "confidence_entity": 0.9143373370170593,
+        "confidence_entity": 0.8692620396614075,
         "value": "trekking",
         "extractor": "DIETClassifier",
         "processors": [
@@ -808,7 +816,7 @@
         "entity": "activity",
         "start": 8,
         "end": 16,
-        "confidence_entity": 0.9743611216545105,
+        "confidence_entity": 0.9144589900970459,
         "value": "trekking",
         "extractor": "DIETClassifier",
         "processors": [
@@ -867,7 +875,7 @@
         "entity": "activity",
         "start": 10,
         "end": 21,
-        "confidence_entity": 0.9389170408248901,
+        "confidence_entity": 0.9808354377746582,
         "value": "đi cáp treo",
         "extractor": "DIETClassifier",
         "processors": [
@@ -914,7 +922,7 @@
         "entity": "category",
         "start": 8,
         "end": 18,
-        "confidence_entity": 0.5668916702270508,
+        "confidence_entity": 0.4914325177669525,
         "value": "nghỉ dưỡng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1016,10 +1024,10 @@
     ],
     "predicted_entities": [
       {
-        "entity": "month",
+        "entity": "month_from",
         "start": 16,
         "end": 23,
-        "confidence_entity": 0.28137218952178955,
+        "confidence_entity": 0.33351701498031616,
         "value": "tháng 1",
         "extractor": "DIETClassifier"
       },
@@ -1074,7 +1082,7 @@
         "entity": "time_window",
         "start": 16,
         "end": 25,
-        "confidence_entity": 0.8842581510543823,
+        "confidence_entity": 0.8735130429267883,
         "value": "cuối tuần",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1146,12 +1154,20 @@
         "entity": "category",
         "start": 8,
         "end": 14,
-        "confidence_entity": 0.9938176274299622,
+        "confidence_entity": 0.9963306188583374,
         "value": "resort",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
         ]
+      },
+      {
+        "entity": "party_size",
+        "start": 15,
+        "end": 16,
+        "confidence_entity": 0.3382054567337036,
+        "value": "5",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "category",
@@ -1187,25 +1203,20 @@
         "entity": "budget",
         "start": 23,
         "end": 31,
-        "confidence_entity": 0.9780634045600891,
+        "confidence_entity": 0.9699182510375977,
         "value": "20 triệu",
         "extractor": "DIETClassifier"
       },
       {
-        "entity": "budget",
-        "start": 32,
-        "end": 33,
-        "confidence_entity": 0.9249879121780396,
-        "value": "2",
-        "extractor": "DIETClassifier"
-      },
-      {
         "entity": "party_size",
-        "start": 34,
+        "start": 32,
         "end": 42,
-        "confidence_entity": 0.65,
-        "value": "vợ chồng",
-        "extractor": "DIETClassifier"
+        "confidence_entity": 0.78,
+        "value": "2 vợ chồng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
       },
       {
         "entity": "budget",
@@ -1245,9 +1256,9 @@
         "entity": "location",
         "start": 12,
         "end": 20,
-        "confidence_entity": 0.9996378421783447,
+        "confidence_entity": 0.9994311332702637,
         "role": "destination",
-        "confidence_role": 0.9897896647453308,
+        "confidence_role": 0.9869781732559204,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1258,7 +1269,7 @@
         "entity": "duration",
         "start": 21,
         "end": 33,
-        "confidence_entity": 0.6995988488197327,
+        "confidence_entity": 0.8795278668403625,
         "value": "3 ngày 2 đêm",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1327,9 +1338,9 @@
         "entity": "location",
         "start": 15,
         "end": 19,
-        "confidence_entity": 0.988628089427948,
+        "confidence_entity": 0.9905813932418823,
         "role": "departure",
-        "confidence_role": 0.9182456135749817,
+        "confidence_role": 0.9237472414970398,
         "value": "Vinh",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1340,9 +1351,9 @@
         "entity": "location",
         "start": 23,
         "end": 43,
-        "confidence_entity": 0.9810011982917786,
+        "confidence_entity": 0.9858450889587402,
         "role": "destination",
-        "confidence_role": 0.9311258792877197,
+        "confidence_role": 0.9707660675048828,
         "value": "Đồi Chè Thanh Chương",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1380,9 +1391,9 @@
         "entity": "location",
         "start": 21,
         "end": 27,
-        "confidence_entity": 0.9992207288742065,
+        "confidence_entity": 0.9993801116943359,
         "role": "destination",
-        "confidence_role": 0.9632552862167358,
+        "confidence_role": 0.8905499577522278,
         "value": "Hà Nội",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1393,7 +1404,7 @@
         "entity": "party_size",
         "start": 32,
         "end": 39,
-        "confidence_entity": 0.7349327206611633,
+        "confidence_entity": 0.8746120929718018,
         "value": "4 người",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1448,9 +1459,9 @@
         "entity": "location",
         "start": 13,
         "end": 21,
-        "confidence_entity": 0.9994600415229797,
+        "confidence_entity": 0.9994341135025024,
         "role": "destination",
-        "confidence_role": 0.9719541668891907,
+        "confidence_role": 0.9220004081726074,
         "value": "Thái Lan",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1461,9 +1472,9 @@
         "entity": "location",
         "start": 35,
         "end": 38,
-        "confidence_entity": 0.9922451376914978,
+        "confidence_entity": 0.9885872602462769,
         "role": "departure",
-        "confidence_role": 0.9381923675537109,
+        "confidence_role": 0.9415398240089417,
         "value": "Hồ Chí Minh",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1474,7 +1485,7 @@
         "entity": "time_window",
         "start": 39,
         "end": 48,
-        "confidence_entity": 0.7258704900741577,
+        "confidence_entity": 0.9045231342315674,
         "value": "tháng sau",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1518,9 +1529,9 @@
         "entity": "location",
         "start": 11,
         "end": 18,
-        "confidence_entity": 0.9996522665023804,
+        "confidence_entity": 0.9996423125267029,
         "role": "destination",
-        "confidence_role": 0.9638442993164062,
+        "confidence_role": 0.8417877554893494,
         "value": "Đà Nẵng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1531,7 +1542,7 @@
         "entity": "budget",
         "start": 37,
         "end": 41,
-        "confidence_entity": 0.9896816611289978,
+        "confidence_entity": 0.9893712997436523,
         "value": "5 củ",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1589,9 +1600,9 @@
         "entity": "location",
         "start": 24,
         "end": 32,
-        "confidence_entity": 0.9989066123962402,
+        "confidence_entity": 0.9996249079704285,
         "role": "destination",
-        "confidence_role": 0.983269453048706,
+        "confidence_role": 0.8596018552780151,
         "value": "Hà Giang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1602,7 +1613,7 @@
         "entity": "time_window",
         "start": 33,
         "end": 41,
-        "confidence_entity": 0.8262473940849304,
+        "confidence_entity": 0.7603138089179993,
         "value": "tuần tới",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1657,9 +1668,9 @@
         "entity": "location",
         "start": 5,
         "end": 9,
-        "confidence_entity": 0.9990562796592712,
+        "confidence_entity": 0.996880829334259,
         "role": "destination",
-        "confidence_role": 0.994433581829071,
+        "confidence_role": 0.9963419437408447,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1669,26 +1680,21 @@
       {
         "entity": "duration",
         "start": 10,
-        "end": 16,
-        "confidence_entity": 0.6146553754806519,
-        "value": "2 ngày",
-        "extractor": "DIETClassifier"
-      },
-      {
-        "entity": "duration",
-        "start": 17,
         "end": 22,
-        "confidence_entity": 0.572208046913147,
-        "value": "1 đêm",
-        "extractor": "DIETClassifier"
+        "confidence_entity": 0.4921262860298157,
+        "value": "2 ngày 1 đêm",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
       },
       {
         "entity": "location",
         "start": 29,
         "end": 35,
-        "confidence_entity": 0.9978085160255432,
+        "confidence_entity": 0.9964747428894043,
         "role": "destination",
-        "confidence_role": 0.7072448134422302,
+        "confidence_role": 0.8735109567642212,
         "value": "Hà Nội",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1769,7 +1775,7 @@
         "entity": "category",
         "start": 13,
         "end": 21,
-        "confidence_entity": 0.9697568416595459,
+        "confidence_entity": 0.9800205230712891,
         "value": "nhà hàng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1780,7 +1786,7 @@
         "entity": "category",
         "start": 22,
         "end": 31,
-        "confidence_entity": 0.9359450936317444,
+        "confidence_entity": 0.9356292486190796,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1791,9 +1797,9 @@
         "entity": "location",
         "start": 38,
         "end": 46,
-        "confidence_entity": 0.998396098613739,
+        "confidence_entity": 0.9987932443618774,
         "role": "destination",
-        "confidence_role": 0.9863895773887634,
+        "confidence_role": 0.9656144380569458,
         "value": "Kim Liên",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1885,9 +1891,9 @@
         "entity": "location",
         "start": 25,
         "end": 33,
-        "confidence_entity": 0.9994158744812012,
+        "confidence_entity": 0.9991920590400696,
         "role": "destination",
-        "confidence_role": 0.9649335145950317,
+        "confidence_role": 0.8814632892608643,
         "value": "Hà Giang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1898,7 +1904,7 @@
         "entity": "time_window",
         "start": 44,
         "end": 49,
-        "confidence_entity": 0.8367292881011963,
+        "confidence_entity": 0.787007749080658,
         "value": "thứ 6",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1946,9 +1952,9 @@
         "entity": "location",
         "start": 22,
         "end": 34,
-        "confidence_entity": 0.8890800476074219,
+        "confidence_entity": 0.9306172728538513,
         "role": "destination",
-        "confidence_role": 0.8062383532524109,
+        "confidence_role": 0.947807252407074,
         "value": "vịnh Hạ Long",
         "extractor": "DIETClassifier",
         "processors": [
@@ -1959,7 +1965,7 @@
         "entity": "party_size",
         "start": 35,
         "end": 55,
-        "confidence_entity": 0.6009869575500488,
+        "confidence_entity": 0.6272913217544556,
         "value": "2 người lớn 1 trẻ em",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2007,9 +2013,9 @@
         "entity": "location",
         "start": 31,
         "end": 35,
-        "confidence_entity": 0.9988594055175781,
+        "confidence_entity": 0.9978222846984863,
         "role": "destination",
-        "confidence_role": 0.978532612323761,
+        "confidence_role": 0.9939847588539124,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2020,7 +2026,7 @@
         "entity": "time_window",
         "start": 39,
         "end": 52,
-        "confidence_entity": 0.6222817301750183,
+        "confidence_entity": 0.4831309914588928,
         "value": "cuối tuần này",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2068,9 +2074,9 @@
         "entity": "location",
         "start": 5,
         "end": 11,
-        "confidence_entity": 0.9998242259025574,
+        "confidence_entity": 0.9996749758720398,
         "role": "destination",
-        "confidence_role": 0.9549605846405029,
+        "confidence_role": 0.9442185163497925,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2081,7 +2087,7 @@
         "entity": "month",
         "start": 12,
         "end": 20,
-        "confidence_entity": 0.9834715127944946,
+        "confidence_entity": 0.9877420663833618,
         "value": "tháng 12",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2145,9 +2151,9 @@
         "entity": "location",
         "start": 10,
         "end": 16,
-        "confidence_entity": 0.9764877557754517,
+        "confidence_entity": 0.9996113181114197,
         "role": "destination",
-        "confidence_role": 0.985831081867218,
+        "confidence_role": 0.9879205226898193,
         "value": "Hội An",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2174,9 +2180,9 @@
         "entity": "location",
         "start": 2,
         "end": 8,
-        "confidence_entity": 0.9996200799942017,
+        "confidence_entity": 0.9995893836021423,
         "role": "destination",
-        "confidence_role": 0.7812502384185791,
+        "confidence_role": 0.7919850945472717,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2203,9 +2209,9 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.9992853999137878,
+        "confidence_entity": 0.9989159107208252,
         "role": "destination",
-        "confidence_role": 0.8404280543327332,
+        "confidence_role": 0.9313973784446716,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2232,9 +2238,9 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.8433558940887451,
+        "confidence_entity": 0.9860315918922424,
         "role": "destination",
-        "confidence_role": 0.8830912113189697,
+        "confidence_role": 0.9047399759292603,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2268,7 +2274,7 @@
         "entity": "activity",
         "start": 11,
         "end": 19,
-        "confidence_entity": 0.992874264717102,
+        "confidence_entity": 0.9969249367713928,
         "value": "cắm trại",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2309,7 +2315,7 @@
         "entity": "category",
         "start": 4,
         "end": 13,
-        "confidence_entity": 0.7622413635253906,
+        "confidence_entity": 0.879350483417511,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2320,9 +2326,9 @@
         "entity": "location",
         "start": 16,
         "end": 24,
-        "confidence_entity": 0.999721348285675,
+        "confidence_entity": 0.9989080429077148,
         "role": "destination",
-        "confidence_role": 0.9979187846183777,
+        "confidence_role": 0.9990761876106262,
         "value": "Vũng Tàu",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2380,7 +2386,7 @@
         "entity": "category",
         "start": 3,
         "end": 9,
-        "confidence_entity": 0.9959720969200134,
+        "confidence_entity": 0.9972802400588989,
         "value": "resort",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2391,9 +2397,9 @@
         "entity": "location",
         "start": 18,
         "end": 22,
-        "confidence_entity": 0.9995137453079224,
+        "confidence_entity": 0.9988157749176025,
         "role": "destination",
-        "confidence_role": 0.9974821209907532,
+        "confidence_role": 0.9984336495399475,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2437,7 +2443,7 @@
         "entity": "category",
         "start": 8,
         "end": 18,
-        "confidence_entity": 0.5668916702270508,
+        "confidence_entity": 0.4914325177669525,
         "value": "nghỉ dưỡng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2485,7 +2491,7 @@
         "entity": "category",
         "start": 14,
         "end": 22,
-        "confidence_entity": 0.991560161113739,
+        "confidence_entity": 0.9891974329948425,
         "value": "homestay",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2496,9 +2502,9 @@
         "entity": "location",
         "start": 25,
         "end": 31,
-        "confidence_entity": 0.9996405839920044,
+        "confidence_entity": 0.9994038343429565,
         "role": "destination",
-        "confidence_role": 0.9935356378555298,
+        "confidence_role": 0.9938359260559082,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2555,7 +2561,7 @@
         "entity": "category",
         "start": 13,
         "end": 21,
-        "confidence_entity": 0.9697568416595459,
+        "confidence_entity": 0.9800205230712891,
         "value": "nhà hàng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2566,7 +2572,7 @@
         "entity": "category",
         "start": 22,
         "end": 31,
-        "confidence_entity": 0.9359450936317444,
+        "confidence_entity": 0.9356292486190796,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2577,9 +2583,9 @@
         "entity": "location",
         "start": 38,
         "end": 46,
-        "confidence_entity": 0.998396098613739,
+        "confidence_entity": 0.9987932443618774,
         "role": "destination",
-        "confidence_role": 0.9863895773887634,
+        "confidence_role": 0.9656144380569458,
         "value": "Kim Liên",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2634,18 +2640,10 @@
     ],
     "predicted_entities": [
       {
-        "entity": "transportation",
-        "start": 4,
-        "end": 7,
-        "confidence_entity": 0.6003968715667725,
-        "value": "cần",
-        "extractor": "DIETClassifier"
-      },
-      {
         "entity": "category",
         "start": 12,
         "end": 21,
-        "confidence_entity": 0.5772625803947449,
+        "confidence_entity": 0.7566767334938049,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2656,9 +2654,9 @@
         "entity": "location",
         "start": 24,
         "end": 30,
-        "confidence_entity": 0.9995092153549194,
+        "confidence_entity": 0.9993928670883179,
         "role": "destination",
-        "confidence_role": 0.992852509021759,
+        "confidence_role": 0.9959877729415894,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2709,7 +2707,7 @@
         "entity": "category",
         "start": 5,
         "end": 13,
-        "confidence_entity": 0.9687924385070801,
+        "confidence_entity": 0.9689497947692871,
         "value": "homestay",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2720,9 +2718,9 @@
         "entity": "location",
         "start": 23,
         "end": 27,
-        "confidence_entity": 0.9992865920066833,
+        "confidence_entity": 0.9932374954223633,
         "role": "destination",
-        "confidence_role": 0.9974971413612366,
+        "confidence_role": 0.9936218857765198,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2780,7 +2778,7 @@
         "entity": "category",
         "start": 3,
         "end": 9,
-        "confidence_entity": 0.9938393235206604,
+        "confidence_entity": 0.9968994855880737,
         "value": "resort",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2791,9 +2789,9 @@
         "entity": "location",
         "start": 20,
         "end": 28,
-        "confidence_entity": 0.9994379878044128,
+        "confidence_entity": 0.9995965361595154,
         "role": "destination",
-        "confidence_role": 0.9955207109451294,
+        "confidence_role": 0.9929284453392029,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2844,7 +2842,7 @@
         "entity": "category",
         "start": 4,
         "end": 12,
-        "confidence_entity": 0.5145836472511292,
+        "confidence_entity": 0.7593265175819397,
         "value": "nhà nghỉ",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2855,9 +2853,9 @@
         "entity": "location",
         "start": 27,
         "end": 36,
-        "confidence_entity": 0.9994909763336182,
+        "confidence_entity": 0.999351978302002,
         "role": "destination",
-        "confidence_role": 0.9979345798492432,
+        "confidence_role": 0.9985816478729248,
         "value": "Nha Trang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2915,7 +2913,7 @@
         "entity": "category",
         "start": 9,
         "end": 14,
-        "confidence_entity": 0.9864403605461121,
+        "confidence_entity": 0.9837432503700256,
         "value": "villa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2926,9 +2924,9 @@
         "entity": "location",
         "start": 17,
         "end": 25,
-        "confidence_entity": 0.9993152618408203,
+        "confidence_entity": 0.9989545345306396,
         "role": "destination",
-        "confidence_role": 0.9987775683403015,
+        "confidence_role": 0.9987657070159912,
         "value": "Vũng Tàu",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2986,7 +2984,7 @@
         "entity": "category",
         "start": 18,
         "end": 27,
-        "confidence_entity": 0.7252687811851501,
+        "confidence_entity": 0.5700832009315491,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -2997,9 +2995,9 @@
         "entity": "location",
         "start": 28,
         "end": 35,
-        "confidence_entity": 0.9992189407348633,
+        "confidence_entity": 0.9990068674087524,
         "role": "destination",
-        "confidence_role": 0.9551360011100769,
+        "confidence_role": 0.9925590753555298,
         "value": "Đà Nẵng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3050,7 +3048,7 @@
         "entity": "category",
         "start": 6,
         "end": 14,
-        "confidence_entity": 0.9929278492927551,
+        "confidence_entity": 0.9833475351333618,
         "value": "homestay",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3061,9 +3059,9 @@
         "entity": "location",
         "start": 17,
         "end": 23,
-        "confidence_entity": 0.9995766282081604,
+        "confidence_entity": 0.9996611475944519,
         "role": "destination",
-        "confidence_role": 0.9296844601631165,
+        "confidence_role": 0.9580957293510437,
         "value": "Hà Nội",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3114,7 +3112,7 @@
         "entity": "category",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.9904754757881165,
+        "confidence_entity": 0.9956709742546082,
         "value": "resort",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3125,9 +3123,9 @@
         "entity": "location",
         "start": 14,
         "end": 16,
-        "confidence_entity": 0.9969007968902588,
+        "confidence_entity": 0.9962080717086792,
         "role": "departure",
-        "confidence_role": 0.9079339504241943,
+        "confidence_role": 0.7975162267684937,
         "value": "hồ",
         "extractor": "DIETClassifier"
       },
@@ -3135,9 +3133,9 @@
         "entity": "location",
         "start": 23,
         "end": 32,
-        "confidence_entity": 0.999321460723877,
+        "confidence_entity": 0.9994687438011169,
         "role": "destination",
-        "confidence_role": 0.9987449645996094,
+        "confidence_role": 0.9984456896781921,
         "value": "Nha Trang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3202,9 +3200,9 @@
         "entity": "location",
         "start": 24,
         "end": 28,
-        "confidence_entity": 0.9992726445198059,
+        "confidence_entity": 0.9979379177093506,
         "role": "destination",
-        "confidence_role": 0.9859758019447327,
+        "confidence_role": 0.9965721964836121,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3255,7 +3253,7 @@
         "entity": "category",
         "start": 7,
         "end": 16,
-        "confidence_entity": 0.6108050346374512,
+        "confidence_entity": 0.7521125078201294,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3266,9 +3264,9 @@
         "entity": "location",
         "start": 17,
         "end": 23,
-        "confidence_entity": 0.9997040629386902,
+        "confidence_entity": 0.9997477531433105,
         "role": "destination",
-        "confidence_role": 0.9452371001243591,
+        "confidence_role": 0.941083550453186,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3317,17 +3315,20 @@
     "predicted_entities": [
       {
         "entity": "category",
-        "start": 8,
+        "start": 4,
         "end": 12,
-        "confidence_entity": 0.6181276440620422,
-        "value": "nghỉ",
-        "extractor": "DIETClassifier"
+        "confidence_entity": 0.6766274571418762,
+        "value": "chỗ nghỉ",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
       },
       {
         "entity": "party_size",
         "start": 17,
         "end": 25,
-        "confidence_entity": 0.66,
+        "confidence_entity": 0.4048711657524109,
         "value": "gia đình",
         "extractor": "DIETClassifier"
       },
@@ -3335,9 +3336,9 @@
         "entity": "location",
         "start": 28,
         "end": 36,
-        "confidence_entity": 0.9939090013504028,
+        "confidence_entity": 0.9915980100631714,
         "role": "destination",
-        "confidence_role": 0.9947475790977478,
+        "confidence_role": 0.9980156421661377,
         "value": "Vũng Tàu",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3395,7 +3396,7 @@
         "entity": "category",
         "start": 0,
         "end": 8,
-        "confidence_entity": 0.9948409199714661,
+        "confidence_entity": 0.9774797558784485,
         "value": "homestay",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3406,9 +3407,9 @@
         "entity": "location",
         "start": 11,
         "end": 18,
-        "confidence_entity": 0.999681830406189,
+        "confidence_entity": 0.9996251463890076,
         "role": "destination",
-        "confidence_role": 0.8657145500183105,
+        "confidence_role": 0.8586000204086304,
         "value": "Đà Nẵng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3445,17 +3446,6 @@
         "entity": "category",
         "start": 11,
         "end": 16,
-        "confidence_entity": 0.848222017288208,
-        "value": "chỗ ở",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
-      {
-        "entity": "category",
-        "start": 11,
-        "end": 16,
         "value": "chỗ ở",
         "extractor": "RegexEntityExtractor",
         "processors": [
@@ -3468,17 +3458,6 @@
     "text": "gợi ý chỗ ở",
     "entities": [],
     "predicted_entities": [
-      {
-        "entity": "category",
-        "start": 6,
-        "end": 11,
-        "confidence_entity": 0.8240976929664612,
-        "value": "chỗ ở",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
       {
         "entity": "category",
         "start": 6,
@@ -3498,13 +3477,10 @@
       {
         "entity": "category",
         "start": 0,
-        "end": 5,
-        "confidence_entity": 0.5411320924758911,
-        "value": "chỗ ở",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
+        "end": 3,
+        "confidence_entity": 0.5200883746147156,
+        "value": "chỗ",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "category",
@@ -3526,7 +3502,7 @@
         "entity": "category",
         "start": 0,
         "end": 9,
-        "confidence_entity": 0.964866042137146,
+        "confidence_entity": 0.9517019987106323,
         "value": "khách sạn",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3553,14 +3529,22 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.9994169473648071,
+        "confidence_entity": 0.9996458888053894,
         "role": "destination",
-        "confidence_role": 0.9226206541061401,
+        "confidence_role": 0.8968548774719238,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
         ]
+      },
+      {
+        "entity": "season",
+        "start": 7,
+        "end": 10,
+        "confidence_entity": 0.9468812942504883,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "location",
@@ -3582,9 +3566,9 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.9994745850563049,
+        "confidence_entity": 0.9996435046195984,
         "role": "destination",
-        "confidence_role": 0.8615274429321289,
+        "confidence_role": 0.8317793607711792,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3595,7 +3579,7 @@
         "entity": "season",
         "start": 7,
         "end": 13,
-        "confidence_entity": 0.8476186394691467,
+        "confidence_entity": 0.9141684174537659,
         "value": "mùa hè",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3629,12 +3613,20 @@
     "entities": [],
     "predicted_entities": [
       {
+        "entity": "season",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9235754609107971,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
+      },
+      {
         "entity": "location",
         "start": 11,
         "end": 17,
-        "confidence_entity": 0.9997124075889587,
+        "confidence_entity": 0.9997682571411133,
         "role": "destination",
-        "confidence_role": 0.9670193791389465,
+        "confidence_role": 0.9404699206352234,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3661,14 +3653,22 @@
         "entity": "location",
         "start": 10,
         "end": 16,
-        "confidence_entity": 0.9996919631958008,
+        "confidence_entity": 0.9997117519378662,
         "role": "destination",
-        "confidence_role": 0.970726728439331,
+        "confidence_role": 0.9527594447135925,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
         ]
+      },
+      {
+        "entity": "season",
+        "start": 17,
+        "end": 20,
+        "confidence_entity": 0.7533046007156372,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "location",
@@ -3690,14 +3690,22 @@
         "entity": "location",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.9987642765045166,
+        "confidence_entity": 0.9983299970626831,
         "role": "destination",
-        "confidence_role": 0.9986722469329834,
+        "confidence_role": 0.997900664806366,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
         ]
+      },
+      {
+        "entity": "month",
+        "start": 5,
+        "end": 10,
+        "confidence_entity": 0.9003570079803467,
+        "value": "tháng",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "location",
@@ -3719,14 +3727,22 @@
         "entity": "location",
         "start": 0,
         "end": 9,
-        "confidence_entity": 0.9701806902885437,
+        "confidence_entity": 0.9968087077140808,
         "role": "destination",
-        "confidence_role": 0.9769423007965088,
+        "confidence_role": 0.974486231803894,
         "value": "Nha Trang",
         "extractor": "DIETClassifier",
         "processors": [
           "EntitySynonymMapper"
         ]
+      },
+      {
+        "entity": "season",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9522958397865295,
+        "value": "mùa",
+        "extractor": "DIETClassifier"
       },
       {
         "entity": "location",
@@ -3748,9 +3764,9 @@
         "entity": "location",
         "start": 10,
         "end": 18,
-        "confidence_entity": 0.9996531009674072,
+        "confidence_entity": 0.9994524121284485,
         "role": "destination",
-        "confidence_role": 0.993327260017395,
+        "confidence_role": 0.989507794380188,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3758,10 +3774,10 @@
         ]
       },
       {
-        "entity": "month",
+        "entity": "month_to",
         "start": 22,
         "end": 27,
-        "confidence_entity": 0.8486831784248352,
+        "confidence_entity": 0.30861708521842957,
         "value": "tháng",
         "extractor": "DIETClassifier"
       },
@@ -3785,9 +3801,9 @@
         "entity": "location",
         "start": 3,
         "end": 10,
-        "confidence_entity": 0.9995452761650085,
+        "confidence_entity": 0.9994495511054993,
         "role": "destination",
-        "confidence_role": 0.7324976325035095,
+        "confidence_role": 0.796053409576416,
         "value": "Đà Nẵng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3798,7 +3814,7 @@
         "entity": "season",
         "start": 11,
         "end": 14,
-        "confidence_entity": 0.894733726978302,
+        "confidence_entity": 0.8543987274169922,
         "value": "mùa",
         "extractor": "DIETClassifier"
       },
@@ -3822,9 +3838,9 @@
         "entity": "location",
         "start": 27,
         "end": 35,
-        "confidence_entity": 0.9973681569099426,
+        "confidence_entity": 0.9976806640625,
         "role": "destination",
-        "confidence_role": 0.9977217316627502,
+        "confidence_role": 0.9985606074333191,
         "value": "Vũng Tàu",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3858,15 +3874,15 @@
         "entity": "time_window",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.9427018761634827,
+        "confidence_entity": 0.9956890344619751,
         "value": "cuối",
         "extractor": "DIETClassifier"
       },
       {
-        "entity": "activity",
+        "entity": "category",
         "start": 12,
         "end": 16,
-        "confidence_entity": 0.8130538463592529,
+        "confidence_entity": 0.7302793860435486,
         "value": "biển",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3893,9 +3909,9 @@
         "entity": "location",
         "start": 19,
         "end": 25,
-        "confidence_entity": 0.999643087387085,
+        "confidence_entity": 0.9992572069168091,
         "role": "destination",
-        "confidence_role": 0.9903163313865662,
+        "confidence_role": 0.9819100499153137,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3922,9 +3938,9 @@
         "entity": "location",
         "start": 17,
         "end": 26,
-        "confidence_entity": 0.9995049238204956,
+        "confidence_entity": 0.9995348453521729,
         "role": "destination",
-        "confidence_role": 0.9939164519309998,
+        "confidence_role": 0.9910532832145691,
         "value": "Nha Trang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3951,9 +3967,9 @@
         "entity": "location",
         "start": 12,
         "end": 20,
-        "confidence_entity": 0.9995204210281372,
+        "confidence_entity": 0.9996182322502136,
         "role": "destination",
-        "confidence_role": 0.9717591404914856,
+        "confidence_role": 0.9551088809967041,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -3993,7 +4009,7 @@
         "entity": "month_from",
         "start": 6,
         "end": 13,
-        "confidence_entity": 0.44975537061691284,
+        "confidence_entity": 0.40742120146751404,
         "value": "tháng 9",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4001,10 +4017,10 @@
         ]
       },
       {
-        "entity": "month",
+        "entity": "month_from",
         "start": 19,
         "end": 27,
-        "confidence_entity": 0.34923213720321655,
+        "confidence_entity": 0.3534131646156311,
         "value": "tháng 11",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4045,7 +4061,7 @@
         "entity": "time_window",
         "start": 7,
         "end": 11,
-        "confidence_entity": 0.8827639818191528,
+        "confidence_entity": 0.7944031953811646,
         "value": "30/4",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4075,7 +4091,7 @@
         "entity": "category",
         "start": 30,
         "end": 38,
-        "confidence_entity": 0.9831157326698303,
+        "confidence_entity": 0.9809450507164001,
         "value": "yên tĩnh",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4086,7 +4102,7 @@
         "entity": "duration",
         "start": 42,
         "end": 50,
-        "confidence_entity": 0.9512062668800354,
+        "confidence_entity": 0.9223211407661438,
         "value": "vài ngày",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4170,6 +4186,17 @@
     ],
     "predicted_entities": [
       {
+        "entity": "category",
+        "start": 30,
+        "end": 34,
+        "confidence_entity": 0.4257363975048065,
+        "value": "biển",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
         "entity": "time_window",
         "start": 0,
         "end": 7,
@@ -4202,17 +4229,6 @@
       }
     ],
     "predicted_entities": [
-      {
-        "entity": "activity",
-        "start": 11,
-        "end": 19,
-        "confidence_entity": 0.9606150984764099,
-        "value": "tắm biển",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
       {
         "entity": "activity",
         "start": 11,
@@ -4264,7 +4280,7 @@
         "entity": "activity",
         "start": 8,
         "end": 16,
-        "confidence_entity": 0.9740842580795288,
+        "confidence_entity": 0.9866816997528076,
         "value": "tắm biển",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4308,7 +4324,7 @@
         "entity": "activity",
         "start": 11,
         "end": 19,
-        "confidence_entity": 0.9926195740699768,
+        "confidence_entity": 0.9961888194084167,
         "value": "cắm trại",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4343,9 +4359,9 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.999356210231781,
+        "confidence_entity": 0.999175488948822,
         "role": "destination",
-        "confidence_role": 0.9798246622085571,
+        "confidence_role": 0.9610929489135742,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4380,9 +4396,9 @@
         "entity": "location",
         "start": 0,
         "end": 6,
-        "confidence_entity": 0.9987987279891968,
+        "confidence_entity": 0.999236524105072,
         "role": "departure",
-        "confidence_role": 0.7776907682418823,
+        "confidence_role": 0.8733899593353271,
         "value": "Hà Nội",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4416,7 +4432,7 @@
         "entity": "party_size",
         "start": 10,
         "end": 17,
-        "confidence_entity": 0.8230814933776855,
+        "confidence_entity": 0.9266752600669861,
         "value": "6 người",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4441,9 +4457,9 @@
         "entity": "location",
         "start": 18,
         "end": 25,
-        "confidence_entity": 0.9994248151779175,
+        "confidence_entity": 0.9992662072181702,
         "role": "destination",
-        "confidence_role": 0.5692885518074036,
+        "confidence_role": 0.7719712853431702,
         "value": "Đà Nẵng",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4478,9 +4494,9 @@
         "entity": "location",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.9978265166282654,
+        "confidence_entity": 0.9977084398269653,
         "role": "destination",
-        "confidence_role": 0.9970365762710571,
+        "confidence_role": 0.9976173043251038,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4515,9 +4531,9 @@
         "entity": "location",
         "start": 0,
         "end": 8,
-        "confidence_entity": 0.9969857335090637,
+        "confidence_entity": 0.9987269639968872,
         "role": "destination",
-        "confidence_role": 0.9877730011940002,
+        "confidence_role": 0.9851731061935425,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4551,7 +4567,7 @@
         "entity": "party_size",
         "start": 0,
         "end": 7,
-        "confidence_entity": 0.9108998775482178,
+        "confidence_entity": 0.9546411037445068,
         "value": "4 người",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4574,13 +4590,18 @@
       {
         "entity": "party_size",
         "start": 0,
+        "end": 11,
+        "confidence_entity": 0.5498431921005249,
+        "value": "2 người lớn",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "party_size",
+        "start": 12,
         "end": 20,
-        "confidence_entity": 0.6509104371070862,
-        "value": "2 người lớn 1 trẻ em",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
+        "confidence_entity": 0.735317051410675,
+        "value": "1 trẻ em",
+        "extractor": "DIETClassifier"
       }
     ]
   },
@@ -4599,7 +4620,7 @@
         "entity": "time_window",
         "start": 0,
         "end": 9,
-        "confidence_entity": 0.9544552564620972,
+        "confidence_entity": 0.9433157444000244,
         "value": "cuối tuần",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4624,9 +4645,9 @@
         "entity": "location",
         "start": 3,
         "end": 9,
-        "confidence_entity": 0.998974084854126,
+        "confidence_entity": 0.9989190101623535,
         "role": "destination",
-        "confidence_role": 0.9708036780357361,
+        "confidence_role": 0.992622435092926,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4661,9 +4682,9 @@
         "entity": "location",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.9952723383903503,
+        "confidence_entity": 0.9975903034210205,
         "role": "destination",
-        "confidence_role": 0.9986943602561951,
+        "confidence_role": 0.9981259703636169,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4698,9 +4719,9 @@
         "entity": "location",
         "start": 13,
         "end": 20,
-        "confidence_entity": 0.9992577433586121,
+        "confidence_entity": 0.9981796741485596,
         "role": "departure",
-        "confidence_role": 0.9507368803024292,
+        "confidence_role": 0.9441370964050293,
         "value": "Hồ Chí Minh",
         "extractor": "DIETClassifier",
         "processors": [
@@ -4736,14 +4757,6 @@
       }
     ],
     "predicted_entities": [
-      {
-        "entity": "month",
-        "start": 15,
-        "end": 22,
-        "confidence_entity": 0.49824386835098267,
-        "value": "tháng 7",
-        "extractor": "DIETClassifier"
-      },
       {
         "entity": "month",
         "start": 3,
@@ -4782,17 +4795,6 @@
     "predicted_entities": [
       {
         "entity": "month",
-        "start": 16,
-        "end": 24,
-        "confidence_entity": 0.49824386835098267,
-        "value": "tháng 12",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
-      {
-        "entity": "month",
         "start": 3,
         "end": 10,
         "value": "tháng 1",
@@ -4824,14 +4826,6 @@
       }
     ],
     "predicted_entities": [
-      {
-        "entity": "month",
-        "start": 15,
-        "end": 22,
-        "confidence_entity": 0.49824386835098267,
-        "value": "tháng 3",
-        "extractor": "DIETClassifier"
-      },
       {
         "entity": "month",
         "start": 3,
@@ -4977,28 +4971,6 @@
         "entity": "month",
         "start": 21,
         "end": 28,
-        "confidence_entity": 0.45120173692703247,
-        "value": "tháng 9",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
-      {
-        "entity": "month_from",
-        "start": 42,
-        "end": 50,
-        "confidence_entity": 0.36352863907814026,
-        "value": "tháng 12",
-        "extractor": "DIETClassifier",
-        "processors": [
-          "EntitySynonymMapper"
-        ]
-      },
-      {
-        "entity": "month",
-        "start": 21,
-        "end": 28,
         "value": "tháng 9",
         "extractor": "RegexEntityExtractor",
         "processors": [
@@ -5030,9 +5002,9 @@
         "entity": "location",
         "start": 4,
         "end": 12,
-        "confidence_entity": 0.9985681772232056,
+        "confidence_entity": 0.9992391467094421,
         "role": "destination",
-        "confidence_role": 0.9809212684631348,
+        "confidence_role": 0.981041431427002,
         "value": "Vũng Tàu",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5074,9 +5046,9 @@
         "entity": "location",
         "start": 8,
         "end": 14,
-        "confidence_entity": 0.99982088804245,
+        "confidence_entity": 0.9995837807655334,
         "role": "destination",
-        "confidence_role": 0.9643787145614624,
+        "confidence_role": 0.9662856459617615,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5111,9 +5083,9 @@
         "entity": "location",
         "start": 0,
         "end": 4,
-        "confidence_entity": 0.99941086769104,
+        "confidence_entity": 0.9986716508865356,
         "role": "destination",
-        "confidence_role": 0.9984622001647949,
+        "confidence_role": 0.9987810850143433,
         "value": "Sapa",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5148,9 +5120,9 @@
         "entity": "location",
         "start": 5,
         "end": 11,
-        "confidence_entity": 0.9996461868286133,
+        "confidence_entity": 0.9993736743927002,
         "role": "departure",
-        "confidence_role": 0.659454345703125,
+        "confidence_role": 0.7754942774772644,
         "value": "Hà Nội",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5185,9 +5157,9 @@
         "entity": "location",
         "start": 9,
         "end": 17,
-        "confidence_entity": 0.9994590878486633,
+        "confidence_entity": 0.9995630979537964,
         "role": "destination",
-        "confidence_role": 0.9692240357398987,
+        "confidence_role": 0.9426507353782654,
         "value": "Phú Quốc",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5222,7 +5194,7 @@
         "entity": "transportation",
         "start": 7,
         "end": 10,
-        "confidence_entity": 0.9428509473800659,
+        "confidence_entity": 0.774693489074707,
         "value": "tàu",
         "extractor": "DIETClassifier"
       },
@@ -5261,9 +5233,9 @@
         "entity": "location",
         "start": 6,
         "end": 15,
-        "confidence_entity": 0.9994115829467773,
+        "confidence_entity": 0.9996156096458435,
         "role": "destination",
-        "confidence_role": 0.9395321607589722,
+        "confidence_role": 0.9497689604759216,
         "value": "Nha Trang",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5274,7 +5246,7 @@
         "entity": "location",
         "start": 16,
         "end": 19,
-        "confidence_entity": 0.6096470355987549,
+        "confidence_entity": 0.9307525157928467,
         "value": "xem",
         "extractor": "DIETClassifier"
       },
@@ -5306,9 +5278,9 @@
         "entity": "location",
         "start": 3,
         "end": 9,
-        "confidence_entity": 0.999737560749054,
+        "confidence_entity": 0.9996804594993591,
         "role": "destination",
-        "confidence_role": 0.8632158041000366,
+        "confidence_role": 0.8413942456245422,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5335,9 +5307,9 @@
         "entity": "location",
         "start": 2,
         "end": 8,
-        "confidence_entity": 0.9997318387031555,
+        "confidence_entity": 0.9996938109397888,
         "role": "destination",
-        "confidence_role": 0.8491734266281128,
+        "confidence_role": 0.8156222105026245,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5364,9 +5336,9 @@
         "entity": "location",
         "start": 4,
         "end": 10,
-        "confidence_entity": 0.9997411370277405,
+        "confidence_entity": 0.9996954202651978,
         "role": "destination",
-        "confidence_role": 0.8851571679115295,
+        "confidence_role": 0.8194532990455627,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [
@@ -5393,9 +5365,9 @@
         "entity": "location",
         "start": 4,
         "end": 10,
-        "confidence_entity": 0.9997461438179016,
+        "confidence_entity": 0.9996980428695679,
         "role": "destination",
-        "confidence_role": 0.8701016306877136,
+        "confidence_role": 0.8415133357048035,
         "value": "Đà Lạt",
         "extractor": "DIETClassifier",
         "processors": [

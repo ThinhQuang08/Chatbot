@@ -4,15 +4,15 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.5274533033370972
+      "confidence": 0.9021926522254944
     }
   },
   {
     "text": "chán ghê",
     "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.4792149066925049
+      "name": "greet",
+      "confidence": 0.7391351461410522
     }
   },
   {
@@ -20,7 +20,7 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.31317004561424255
+      "confidence": 0.43329641222953796
     }
   },
   {
@@ -28,15 +28,15 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9204391241073608
+      "confidence": 0.9358277916908264
     }
   },
   {
-    "text": "không vui",
+    "text": "chán đời",
     "intent": "deny",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.46469801664352417
+      "confidence": 0.6454055905342102
     }
   },
   {
@@ -44,39 +44,47 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.6147514581680298
+      "confidence": 0.7892721891403198
+    }
+  },
+  {
+    "text": "tệ quá",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.882965087890625
     }
   },
   {
     "text": "cảm ơn",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.675592303276062
+      "name": "affirm",
+      "confidence": 0.8813803791999817
     }
   },
   {
     "text": "cảm ơn bạn",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.34680598974227905
+      "name": "affirm",
+      "confidence": 0.7406334280967712
     }
   },
   {
     "text": "cảm ơn bot",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.31488654017448425
+      "name": "affirm",
+      "confidence": 0.6130978465080261
     }
   },
   {
     "text": "thank you",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.4955616593360901
+      "name": "goodbye",
+      "confidence": 0.42360013723373413
     }
   },
   {
@@ -84,15 +92,15 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.5526288747787476
+      "confidence": 0.7377611994743347
     }
   },
   {
     "text": "thanks bot",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "bot_challenge",
-      "confidence": 0.2799578607082367
+      "name": "greet",
+      "confidence": 0.4446645677089691
     }
   },
   {
@@ -100,15 +108,15 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "goodbye",
-      "confidence": 0.7240292429924011
+      "confidence": 0.379643976688385
     }
   },
   {
     "text": "cảm ơn nhiều nha",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.5629015564918518
+      "name": "ask_location_feature",
+      "confidence": 0.6450791954994202
     }
   },
   {
@@ -116,7 +124,7 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "deny",
-      "confidence": 0.8462885618209839
+      "confidence": 0.5576382875442505
     }
   },
   {
@@ -124,7 +132,7 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "bot_challenge",
-      "confidence": 0.3017045259475708
+      "confidence": 0.45478355884552
     }
   },
   {
@@ -132,7 +140,7 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "goodbye",
-      "confidence": 0.8657062649726868
+      "confidence": 0.47317588329315186
     }
   },
   {
@@ -140,7 +148,7 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "inform",
-      "confidence": 0.9952303171157837
+      "confidence": 0.9955095052719116
     }
   },
   {
@@ -148,23 +156,15 @@
     "intent": "thanks",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.2567235827445984
+      "confidence": 0.9082813858985901
     }
   },
   {
     "text": "mình định đi vào Tết",
     "intent": "search_destination",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.5982846021652222
-    }
-  },
-  {
-    "text": "muốn đi ngắm tuyết ở miền núi thì đi tháng mấy",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.6814907789230347
+      "name": "ask_location_feature",
+      "confidence": 0.35755687952041626
     }
   },
   {
@@ -172,7 +172,7 @@
     "intent": "search_destination",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9844788908958435
+      "confidence": 0.9994552731513977
     }
   },
   {
@@ -180,7 +180,7 @@
     "intent": "search_activity",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.9964333772659302
+      "confidence": 0.9899004101753235
     }
   },
   {
@@ -188,7 +188,7 @@
     "intent": "search_activity",
     "intent_prediction": {
       "name": "ask_location_feature",
-      "confidence": 0.7852996587753296
+      "confidence": 0.5699082016944885
     }
   },
   {
@@ -196,7 +196,7 @@
     "intent": "search_activity",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9970580339431763
+      "confidence": 0.9979077577590942
     }
   },
   {
@@ -204,7 +204,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.996875524520874
+      "confidence": 0.9884790778160095
     }
   },
   {
@@ -212,7 +212,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.7791389226913452
+      "confidence": 0.9912541508674622
     }
   },
   {
@@ -220,7 +220,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9078416228294373
+      "confidence": 0.8578762412071228
     }
   },
   {
@@ -228,7 +228,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9549152851104736
+      "confidence": 0.8946335911750793
     }
   },
   {
@@ -236,7 +236,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9999338388442993
+      "confidence": 0.9999094009399414
     }
   },
   {
@@ -244,7 +244,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.971808671951294
+      "confidence": 0.9864206314086914
     }
   },
   {
@@ -252,15 +252,15 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9959689378738403
+      "confidence": 0.9986127614974976
     }
   },
   {
     "text": "tôi muốn đi chơi nhưng chỉ có 10tr",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.8923982977867126
+      "name": "search_destination",
+      "confidence": 0.6415508389472961
     }
   },
   {
@@ -268,7 +268,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.569499135017395
+      "confidence": 0.8380784392356873
     }
   },
   {
@@ -276,15 +276,15 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.985844612121582
+      "confidence": 0.9960986375808716
     }
   },
   {
     "text": "mình có 8tr, gợi ý giúp mình",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.4259323477745056
+      "name": "ask_itinerary",
+      "confidence": 0.7676976919174194
     }
   },
   {
@@ -292,7 +292,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9999386072158813
+      "confidence": 0.9999037981033325
     }
   },
   {
@@ -300,7 +300,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.8447414040565491
+      "confidence": 0.9745908975601196
     }
   },
   {
@@ -308,7 +308,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.8674023151397705
+      "confidence": 0.9867803454399109
     }
   },
   {
@@ -316,7 +316,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9999403953552246
+      "confidence": 0.9998121857643127
     }
   },
   {
@@ -324,7 +324,7 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9999526739120483
+      "confidence": 0.999966025352478
     }
   },
   {
@@ -332,7 +332,7 @@
     "intent": "ask_tour_info",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9999780654907227
+      "confidence": 0.9999855756759644
     }
   },
   {
@@ -340,15 +340,7 @@
     "intent": "ask_tour_info",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.996529757976532
-    }
-  },
-  {
-    "text": "tour Đà Lạt tháng 12",
-    "intent": "ask_tour_info",
-    "intent_prediction": {
-      "name": "book_tour",
-      "confidence": 0.7672004699707031
+      "confidence": 0.9986245632171631
     }
   },
   {
@@ -356,15 +348,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.9933295845985413
-    }
-  },
-  {
-    "text": "Chơi gì ở Hội An vào buổi tối?",
-    "intent": "ask_location_feature",
-    "intent_prediction": {
-      "name": "search_food_dining",
-      "confidence": 0.4303508996963501
+      "confidence": 0.9916632175445557
     }
   },
   {
@@ -372,7 +356,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.3774068057537079
+      "confidence": 0.3747636675834656
     }
   },
   {
@@ -380,7 +364,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.8447988033294678
+      "confidence": 0.927967369556427
     }
   },
   {
@@ -388,7 +372,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.4693029522895813
+      "confidence": 0.507871150970459
     }
   },
   {
@@ -396,7 +380,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9941917061805725
+      "confidence": 0.998431384563446
     }
   },
   {
@@ -404,7 +388,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.995639443397522
+      "confidence": 0.9982746839523315
     }
   },
   {
@@ -412,7 +396,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.9994944334030151
+      "confidence": 0.9998241066932678
     }
   },
   {
@@ -420,7 +404,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9874401092529297
+      "confidence": 0.9977268576622009
     }
   },
   {
@@ -428,7 +412,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9980217218399048
+      "confidence": 0.9984813332557678
     }
   },
   {
@@ -436,7 +420,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9951348900794983
+      "confidence": 0.9992751479148865
     }
   },
   {
@@ -444,7 +428,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9970580339431763
+      "confidence": 0.9979077577590942
     }
   },
   {
@@ -452,7 +436,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9946210384368896
+      "confidence": 0.9990848302841187
     }
   },
   {
@@ -460,7 +444,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.996529757976532
+      "confidence": 0.9986245632171631
     }
   },
   {
@@ -468,7 +452,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9945011138916016
+      "confidence": 0.9972584247589111
     }
   },
   {
@@ -476,7 +460,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9945671558380127
+      "confidence": 0.9972467422485352
     }
   },
   {
@@ -484,7 +468,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9923641681671143
+      "confidence": 0.9975689053535461
     }
   },
   {
@@ -492,7 +476,7 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.994550883769989
+      "confidence": 0.9983419179916382
     }
   },
   {
@@ -500,15 +484,31 @@
     "intent": "ask_location_feature",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.993862509727478
+      "confidence": 0.998160183429718
+    }
+  },
+  {
+    "text": "muốn đặt villa ở Vũng Tàu",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "book_tour",
+      "confidence": 0.5712137222290039
     }
   },
   {
     "text": "có chỗ ở nào view đẹp ở Sapa không",
     "intent": "search_accommodation",
     "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.5078267455101013
+      "name": "ask_location_feature",
+      "confidence": 0.9517655968666077
+    }
+  },
+  {
+    "text": "review khách sạn Đà Lạt giá hợp lý",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_destination",
+      "confidence": 0.49841687083244324
     }
   },
   {
@@ -516,7 +516,7 @@
     "intent": "search_accommodation",
     "intent_prediction": {
       "name": "inform",
-      "confidence": 0.37237077951431274
+      "confidence": 0.15509505569934845
     }
   },
   {
@@ -524,15 +524,15 @@
     "intent": "search_accommodation",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.5091990232467651
+      "confidence": 0.8161458373069763
     }
   },
   {
     "text": "chỗ ở",
     "intent": "search_accommodation",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.9427746534347534
+      "name": "deny",
+      "confidence": 0.39721623063087463
     }
   },
   {
@@ -540,7 +540,7 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "ask_location_feature",
-      "confidence": 0.9475229978561401
+      "confidence": 0.8499927520751953
     }
   },
   {
@@ -548,15 +548,15 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.8456788063049316
+      "confidence": 0.9452579021453857
     }
   },
   {
     "text": "mùa này đi Đà Lạt có đẹp không",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.5162272453308105
+      "name": "ask_location_feature",
+      "confidence": 0.6531164646148682
     }
   },
   {
@@ -564,7 +564,7 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "ask_location_feature",
-      "confidence": 0.9840371608734131
+      "confidence": 0.988752543926239
     }
   },
   {
@@ -572,31 +572,31 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.39728590846061707
+      "confidence": 0.8603149056434631
     }
   },
   {
     "text": "Nha Trang mùa này đi được không",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.7170063257217407
+      "name": "ask_location_feature",
+      "confidence": 0.3731187582015991
     }
   },
   {
     "text": "mùa mưa ở Phú Quốc là tháng mấy",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "ask_location_feature",
-      "confidence": 0.9744491577148438
+      "name": "ask_transportation",
+      "confidence": 0.2664259672164917
     }
   },
   {
     "text": "đi Đà Nẵng mùa nào đẹp",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9061695337295532
+      "name": "search_destination",
+      "confidence": 0.7265660762786865
     }
   },
   {
@@ -604,7 +604,7 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9061906933784485
+      "confidence": 0.5057448744773865
     }
   },
   {
@@ -612,7 +612,7 @@
     "intent": "ask_weather_timing",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9489022493362427
+      "confidence": 0.9946877956390381
     }
   },
   {
@@ -620,7 +620,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.7063589096069336
+      "confidence": 0.4629819989204407
     }
   },
   {
@@ -628,15 +628,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9986649751663208
-    }
-  },
-  {
-    "text": "tôi muốn đi chơi",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.6843083500862122
+      "confidence": 0.9947099685668945
     }
   },
   {
@@ -644,7 +636,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9994331002235413
+      "confidence": 0.9967844486236572
     }
   },
   {
@@ -652,7 +644,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9994353652000427
+      "confidence": 0.9981934428215027
     }
   },
   {
@@ -660,7 +652,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.999380350112915
+      "confidence": 0.994125247001648
     }
   },
   {
@@ -668,7 +660,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9954370856285095
+      "confidence": 0.9805017113685608
     }
   },
   {
@@ -676,7 +668,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.997525155544281
+      "confidence": 0.9907163977622986
     }
   },
   {
@@ -684,7 +676,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.5266126394271851
+      "confidence": 0.8080819845199585
     }
   },
   {
@@ -692,7 +684,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.8325328826904297
+      "confidence": 0.761019766330719
     }
   },
   {
@@ -700,7 +692,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.9993388056755066
+      "confidence": 0.9996775388717651
     }
   },
   {
@@ -708,7 +700,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.9984375834465027
+      "confidence": 0.99739670753479
     }
   },
   {
@@ -716,7 +708,7 @@
     "intent": "search_travel",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.9992826581001282
+      "confidence": 0.9987258315086365
     }
   },
   {
@@ -724,7 +716,7 @@
     "intent": "test_s3",
     "intent_prediction": {
       "name": "search_food_dining",
-      "confidence": 0.42024046182632446
+      "confidence": 0.7213382124900818
     }
   },
   {
@@ -732,7 +724,7 @@
     "intent": "reset_slots",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.5583323240280151
+      "confidence": 0.5905231833457947
     }
   },
   {
@@ -740,15 +732,15 @@
     "intent": "reset_slots",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.6371074914932251
+      "confidence": 0.7565418481826782
     }
   },
   {
     "text": "clear session",
     "intent": "reset_slots",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.6662207245826721
+      "name": "inform",
+      "confidence": 0.5444520711898804
     }
   },
   {
@@ -756,7 +748,7 @@
     "intent": "reset_slots",
     "intent_prediction": {
       "name": "inform",
-      "confidence": 0.9812719225883484
+      "confidence": 0.7691217660903931
     }
   },
   {
@@ -764,7 +756,7 @@
     "intent": "reset_slots",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.5923032760620117
+      "confidence": 0.6543431282043457
     }
   },
   {
@@ -772,7 +764,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9940395355224609
+      "confidence": 0.9411313533782959
     }
   },
   {
@@ -780,7 +772,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9940395355224609
+      "confidence": 0.9411313533782959
     }
   },
   {
@@ -788,7 +780,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9940395355224609
+      "confidence": 0.9411313533782959
     }
   },
   {
@@ -796,7 +788,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9954370856285095
+      "confidence": 0.9805017113685608
     }
   },
   {
@@ -804,7 +796,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9902932643890381
+      "confidence": 0.9696890115737915
     }
   },
   {
@@ -812,7 +804,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_destination",
-      "confidence": 0.9981420040130615
+      "confidence": 0.9922757744789124
     }
   },
   {
@@ -820,7 +812,7 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.9935542345046997
+      "confidence": 0.8779773116111755
     }
   },
   {
@@ -828,15 +820,15 @@
     "intent": "inform",
     "intent_prediction": {
       "name": "search_travel",
-      "confidence": 0.8893404603004456
+      "confidence": 0.6386821269989014
     }
   },
   {
     "text": "tìm ở Nha Trang xem",
     "intent": "inform",
     "intent_prediction": {
-      "name": "search_food_dining",
-      "confidence": 0.36594849824905396
+      "name": "search_accommodation",
+      "confidence": 0.5966902375221252
     }
   }
 ]

@@ -199,6 +199,10 @@ services:
       - MINIO_URL=http://s3:9000
       - RASA_ACTION_URL=http://rasa-actions:5055/webhook
       - MODEL_SERVER_URL=http://s3:9000/${MINIO_BUCKET:-chatbot-models}/${MINIO_MODEL_FILE:-latest_model.tar.gz}
+      - VIRTUAL_HOST=chatbot.uittravel.shop
+      - VIRTUAL_PORT=5005
+      - LETSENCRYPT_HOST=chatbot.uittravel.shop
+      - LETSENCRYPT_EMAIL=kledkhongngu@gmail.com
     volumes:
       - ./:/app
     command: rasa run --enable-api --cors "*" --endpoints endpoints.yml
@@ -291,6 +295,37 @@ services:
     networks:
       - chatbot_network
 
+  # ---------------- NGINX Proxy + Let's Encrypt ----------------
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+    networks:
+      - chatbot_network
+
+  acme-companion:
+    image: nginxproxy/acme-companion
+    container_name: nginx_proxy_acme
+    environment:
+      - DEFAULT_EMAIL=kledkhongngu@gmail.com
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs:rw
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+    networks:
+      - chatbot_network
+
 networks:
   chatbot_network:
     driver: bridge
@@ -300,3 +335,7 @@ volumes:
   minio_data:
   qdrant_data:
   jenkins_data:
+  certs:
+  vhost:
+  html:
+  acme:
