@@ -11,11 +11,11 @@ pipeline {
         PROJECT_DIR = "${WORKSPACE}"
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
 
-        // Sử dụng IP của Docker Host (172.17.0.1) vì Jenkins không phân giải được tên container nội bộ
-        MLFLOW_TRACKING_URI = "http://172.17.0.1:5000"
-        MLFLOW_S3_ENDPOINT_URL = "http://172.17.0.1:9000"
-        MINIO_URL = "http://172.17.0.1:9000"
-        RASA_API_URL = "http://172.17.0.1:5005"
+        // Sử dụng IP Gateway của mạng chatbot_default (172.18.0.1)
+        MLFLOW_TRACKING_URI = "http://172.18.0.1:5000"
+        MLFLOW_S3_ENDPOINT_URL = "http://172.18.0.1:9000"
+        MINIO_URL = "http://172.18.0.1:9000"
+        RASA_API_URL = "http://172.18.0.1:5005"
     }
 
     stages {
