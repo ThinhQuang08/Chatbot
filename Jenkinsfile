@@ -92,6 +92,7 @@ pipeline {
                 echo "🧹 Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
                 sh """
                     cd "${WORKSPACE}"
+                    export PATH="${VENV_DIR}/bin:\$PATH"
                     ${PY} data/csv_to_rasa.py
                 """
             }
@@ -105,6 +106,7 @@ pipeline {
                 echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
                 sh """
                     cd "${WORKSPACE}"
+                    export PATH="${VENV_DIR}/bin:\$PATH"
                     ${PY} scripts/train_mlflow.py
                 """
             }
@@ -147,6 +149,7 @@ pipeline {
                 echo "☁️ Đang deploy model..."
                 sh """
                     cd "${WORKSPACE}"
+                    export PATH="${VENV_DIR}/bin:\$PATH"
                     ${PY} scripts/deploy_model.py
                 """
             }
