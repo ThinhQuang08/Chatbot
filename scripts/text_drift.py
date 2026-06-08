@@ -64,7 +64,7 @@ def make_serializable(obj):
 
 
 def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
-        scenario="text_drift", description="", device=None):
+        scenario="text_drift", description="", device=None, quiet=False):
     ref_path = os.path.join(DATA_DIR, ref_name)
     cur_path = os.path.join(DATA_DIR, cur_name)
 
@@ -87,7 +87,8 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
     texts_ref = [t for t in texts_ref if isinstance(t, str) and len(t.strip()) >= 3]
     texts_cur = [t for t in texts_cur if isinstance(t, str) and len(t.strip()) >= 3]
 
-    print(f"[{scenario}] Ref: {len(texts_ref)} texts, Cur: {len(texts_cur)} texts")
+    if not quiet:
+        print(f"[{scenario}] Ref: {len(texts_ref)} texts, Cur: {len(texts_cur)} texts")
 
     if len(texts_ref) < 3 or len(texts_cur) < 3:
         print("Can not compute drift (< 3 texts each)")
@@ -99,7 +100,7 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
     all_embs = embed_texts(all_texts, tokenizer, model, dev)
     n_ref = len(texts_ref)
 
-    n_components = min(5, len(all_texts) - 1)
+    n_components = min(20, len(all_texts) - 1)
     pca = PCA(n_components=n_components)
     scores = pca.fit_transform(all_embs)
 
@@ -111,6 +112,7 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
         "n_cur": len(texts_cur),
         "pca_components": n_components,
         "pca_explained_variance_ratio": pca.explained_variance_ratio_.tolist(),
+        "pca_total_variance_ratio": float(sum(pca.explained_variance_ratio_)),
         "components": []
     }
 
@@ -131,12 +133,16 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
     results["overall_drift_detected"] = overall_p < 0.05
     results["overall_min_p_value"] = overall_p
 
-    print(f"  Overall min p_value: {overall_p:.6f}")
-    print(f"  Drift detected: {results['overall_drift_detected']}")
-    for c in results["components"]:
-        flag = "🚨" if c["drift_detected"] else "🟢"
-        print(f"  PC{c['component']+1} (var={c['explained_variance_ratio']:.2%}): "
-              f"{flag} KS={c['ks_statistic']:.4f} p={c['ks_p_value']:.4f}")
+    if not quiet:
+        total_var = sum(pca.explained_variance_ratio_) * 100
+        print(f"  Overall min p_value: {overall_p:.6f}")
+        print(f"  Drift detected: {results['overall_drift_detected']}")
+        print(f"  Total variance explained by {n_components} PCs: {total_var:.1f}%")
+        print(f"  Top 5 PCs:")
+        for c in results["components"][:5]:
+            flag = "🚨" if c["drift_detected"] else "🟢"
+            print(f"    PC{c['component']+1} (var={c['explained_variance_ratio']:.2%}): "
+                  f"{flag} KS={c['ks_statistic']:.4f} p={c['ks_p_value']:.4f}")
 
     results = make_serializable(results)
 

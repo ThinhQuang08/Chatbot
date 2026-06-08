@@ -27,3 +27,4 @@ logs/
 mlruns/
 mlartifacts/
 
+*/__init__.py
