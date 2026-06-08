@@ -7,6 +7,8 @@ import glob
 import time
 import json
 
+from config.settings import MLFLOW_TRACKING_URI, MLFLOW_EXPERIMENT
+
 # Đường dẫn tĩnh dựa trên cấu trúc thư mục
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 RASA_DIR = os.path.join(ROOT_DIR, "rasa_bot")
@@ -18,8 +20,8 @@ def train_and_evaluate_mlflow():
     if mlflow.active_run():
         mlflow.end_run()
     
-    mlflow.set_tracking_uri("http://localhost:5000")
-    mlflow.set_experiment("Travel_Chatbot_Rasa")
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+    mlflow.set_experiment(MLFLOW_EXPERIMENT)
 
     # Tên mô hình
     with mlflow.start_run(run_name=f"Train_Eval_{int(time.time())}"):
@@ -115,7 +117,19 @@ def train_and_evaluate_mlflow():
         if os.path.exists(RESULTS_DIR):
             mlflow.log_artifacts(RESULTS_DIR, artifact_path="evaluation_results")
         
-        print("Tích hợp MLOps hoàn tất! Mở http://localhost:5000 để chiêm ngưỡng thành quả.")
+        print(f"Tích hợp MLOps hoàn tất! Mở {MLFLOW_TRACKING_URI} để chiêm ngưỡng thành quả.")
+
+        # ==========================================
+        # 5. TỰ ĐỘNG PUSH MODEL LÊN MINIO
+        # ==========================================
+        print("\n" + "=" * 50)
+        print("🔄 TỰ ĐỘNG ĐẨY MODEL LÊN MINIO...")
+        print("=" * 50)
+
+        from scripts.deploy_model import run_cd_pipeline
+
+        run_cd_pipeline()
+
 
 if __name__ == "__main__":
     train_and_evaluate_mlflow()

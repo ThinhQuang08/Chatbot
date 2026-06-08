@@ -27,4 +27,8 @@ logs/
 mlruns/
 mlartifacts/
 
+<<<<<<< HEAD
 */__init__.py
+=======
+*/__init__.py
+>>>>>>> main
