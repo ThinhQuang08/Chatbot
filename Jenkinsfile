@@ -12,10 +12,10 @@ pipeline {
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
 
         // Các service trong Docker network
-        MLFLOW_TRACKING_URI = "http://mlflow:5000"
-        MLFLOW_S3_ENDPOINT_URL = "http://s3:9000"
-        MINIO_URL = "http://s3:9000"
-        RASA_API_URL = "http://rasa:5005"
+        MLFLOW_TRACKING_URI = "http://chatbot_mlflow:5000"
+        MLFLOW_S3_ENDPOINT_URL = "http://chatbot_s3:9000"
+        MINIO_URL = "http://chatbot_s3:9000"
+        RASA_API_URL = "http://chatbot_rasa:5005"
     }
 
     stages {
