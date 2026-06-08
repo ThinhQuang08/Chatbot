@@ -19,6 +19,11 @@ pipeline {
         MINIO_URL = "http://${CHATBOT_HOST}:9000"
         MINIO_ENDPOINT = "http://${CHATBOT_HOST}:9000"
         RASA_API_URL = "http://${CHATBOT_HOST}:5005"
+
+        // AWS/MinIO credentials for boto3 and mlflow artifact upload
+        AWS_ACCESS_KEY_ID = "admin"
+        AWS_SECRET_ACCESS_KEY = "password123"
+        AWS_DEFAULT_REGION = "ap-southeast-1"
     }
 
     stages {
