@@ -1,46 +1,113 @@
 pipeline {
-
     agent any
 
     environment {
-        PYTHON_CMD = 'python'
+        // Venv nằm ngoài workspace -> tồn tại giữa các lần build, không bị xóa
+        VENV_DIR   = "/var/lib/jenkins/.rasa-venv"
+        PY         = "/var/lib/jenkins/.rasa-venv/bin/python"
+        PIP        = "/var/lib/jenkins/.rasa-venv/bin/pip"
 
         // workspace thật của Jenkins
         PROJECT_DIR = "${WORKSPACE}"
-
-        MODEL_DIR = "${WORKSPACE}/rasa_bot/models"
+        MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
     }
 
     stages {
+        // ─────────────────────────────────────────────────
+        // STAGE 0: Setup Python Environment
+        // ─────────────────────────────────────────────────
+        stage('0. Setup Python Env') {
+            steps {
+                echo "📦 Cài đặt môi trường ảo (virtualenv) và các dependencies..."
+                sh """
+                    set -e
+                    cd /workspace
+                    
+                    if ! "${PY}" -c "import rasa" > /dev/null 2>&1; then
+                        echo "🔧 Rasa chưa được cài đặt hoặc venv bị lỗi. Tạo lại virtualenv tại ${VENV_DIR}..."
+                        rm -rf "${VENV_DIR}"
+                        python3 -m venv "${VENV_DIR}"
+                        
+                        echo "📦 Đang cài đặt thư viện..."
+                        "${PIP}" install --upgrade pip --quiet
+                        # Cài đặt requirements.txt
+                        if [ -f "requirements.txt" ]; then
+                            "${PIP}" install -r requirements.txt --quiet
+                        fi
+                        # Bổ sung các thư viện cần thiết cho CI
+                        "${PIP}" install flake8 dvc pandas boto3 python-dotenv mlflow pyyaml --quiet
+                    else
+                        echo "✅ Môi trường Python đã sẵn sàng."
+                    fi
+                """
+            }
+        }
 
+        // ─────────────────────────────────────────────────
+        // STAGE 0.1: Code & Library Validation
+        // ─────────────────────────────────────────────────
+        stage('0.1. Validation & Scan') {
+            steps {
+                echo "🔍 Đang kiểm tra mã nguồn (Linting) và quét lỗ hổng bảo mật..."
+                sh """
+                    set -e
+                    cd /workspace
+                    export PATH="${VENV_DIR}/bin:\$PATH"
+                    
+                    echo "1️⃣ Quét lỗ hổng bảo mật (Trivy)..."
+                    if ! command -v trivy >/dev/null 2>&1; then
+                        echo "⬇️ Đang tải Trivy scanner..."
+                        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b "${VENV_DIR}/bin"
+                    fi
+                    
+                    # Quét toàn bộ repo (chỉ warning HIGH, CRITICAL, exit-code 0 để không chặn pipeline nếu lỗi nhỏ)
+                    trivy fs . --scanners vuln,secret --severity HIGH,CRITICAL --exit-code 0
+                    
+                    echo "2️⃣ Validate Code (Flake8)..."
+                    # Kiểm tra lỗi cú pháp (Syntax errors) - block pipeline nếu có
+                    flake8 scripts/ data/ --count --select=E9,F63,F7,F82 --show-source --statistics
+                    
+                    # Cảnh báo format/style code (không block)
+                    flake8 scripts/ data/ --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
+                    
+                    echo "✅ Quét hoàn tất!"
+                """
+            }
+        }
+
+        // ─────────────────────────────────────────────────
+        // STAGE 1: Data Pipeline
+        // ─────────────────────────────────────────────────
         stage('1. Data Pipeline') {
             steps {
                 echo "🧹 Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
-
                 sh """
                     cd /workspace
-                    ${PYTHON_CMD} data/csv_to_rasa.py
+                    ${PY} data/csv_to_rasa.py
                 """
             }
         }
 
+        // ─────────────────────────────────────────────────
+        // STAGE 2: Train Model
+        // ─────────────────────────────────────────────────
         stage('2. Train Model') {
             steps {
                 echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
-
                 sh """
                     cd /workspace
-                    ${PYTHON_CMD} scripts/train_mlflow.py
+                    ${PY} scripts/train_mlflow.py
                 """
             }
         }
 
+        // ─────────────────────────────────────────────────
+        // STAGE 3: Human Approval
+        // ─────────────────────────────────────────────────
         stage('3. Human Approval (Gửi TN)') {
             steps {
                 script {
-
                     echo "🔔 Đang chờ sếp kiểm tra thông số trên MLflow..."
-
                     def userInput = input(
                         id: 'DeployGate',
                         message: 'Thông số mô hình đã có trên MLflow. Sếp quyết định sao?',
@@ -63,43 +130,32 @@ pipeline {
             }
         }
 
+        // ─────────────────────────────────────────────────
+        // STAGE 4: Deploy to MinIO & Rasa
+        // ─────────────────────────────────────────────────
         stage('4. Deploy to MinIO & Rasa') {
             steps {
-
                 echo "☁️ Đang deploy model..."
-
                 sh """
                     cd /workspace
-                    ${PYTHON_CMD} scripts/deploy_model.py
+                    ${PY} scripts/deploy_model.py
                 """
             }
         }
     }
 
     post {
-
         success {
             echo "🎉 PIPELINE HOÀN TẤT!"
         }
-
         aborted {
-
             echo "⚠️ Pipeline bị hủy"
-
-            sh """
-                rm -f /workspace/rasa_bot/models/*.tar.gz || true
-            """
+            sh "rm -f /workspace/rasa_bot/models/*.tar.gz || true"
         }
-
         failure {
-
             echo "🔥 Pipeline thất bại"
-
-            sh """
-                rm -f /workspace/rasa_bot/models/*.tar.gz || true
-            """
-
-            echo "🗑️ Đã cleanup"
+            sh "rm -f /workspace/rasa_bot/models/*.tar.gz || true"
+            echo "🗑️ Đã cleanup file rác."
         }
     }
 }
