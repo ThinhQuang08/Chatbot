@@ -131,13 +131,13 @@ pipeline {
                         parameters: [
                             choice(
                                 name: 'DECISION',
-                                choices: ['oke_deploy', 'nhu_cc_xoa'],
+                                choices: ['oke_deploy', 'abort'],
                                 description: 'Chọn hành động'
                             )
                         ]
                     )
 
-                    if (userInput == 'nhu_cc_xoa') {
+                    if (userInput == 'abort') {
                         error("🛑 Mô hình bị reject")
                     }
 
