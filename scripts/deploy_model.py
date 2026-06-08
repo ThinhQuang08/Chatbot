@@ -14,7 +14,8 @@ BEST_F1_RECORD_FILE = os.path.join(RASA_DIR, "best_f1_score.txt")
 
 BUCKET_NAME = 'chatbot-models'
 TARGET_MODEL_NAME = 'latest_model.tar.gz'
-MINIO_URL = 'http://localhost:9000'
+MINIO_URL = os.environ.get('MINIO_URL', 'http://localhost:9000')
+RASA_API_URL = os.environ.get('RASA_API_URL', 'http://localhost:5005')
 
 s3_client = boto3.client('s3',
                          endpoint_url=MINIO_URL,
@@ -54,7 +55,7 @@ def trigger_rasa_reload(model_url):
     }
     try:
         # Rasa mặc định mở API ở cổng 5005
-        response = requests.put("http://localhost:5005/model", json=payload)
+        response = requests.put(f"{RASA_API_URL}/model", json=payload)
         if response.status_code == 204:
             print("🚀 THÀNH CÔNG: Rasa đã nạp mô hình mới nóng hổi. Bot đã thông minh hơn!")
         else:
