@@ -21,7 +21,7 @@ pipeline {
                 echo "📦 Cài đặt môi trường ảo (virtualenv) và các dependencies..."
                 sh """
                     set -e
-                    cd /workspace
+                    cd "${WORKSPACE}"
                     
                     if ! "${PY}" -c "import rasa" > /dev/null 2>&1; then
                         echo "🔧 Rasa chưa được cài đặt hoặc venv bị lỗi. Tạo lại virtualenv tại ${VENV_DIR}..."
@@ -51,7 +51,7 @@ pipeline {
                 echo "🔍 Đang kiểm tra mã nguồn (Linting) và quét lỗ hổng bảo mật..."
                 sh """
                     set -e
-                    cd /workspace
+                    cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
                     
                     echo "1️⃣ Quét lỗ hổng bảo mật (Trivy)..."
@@ -82,7 +82,7 @@ pipeline {
             steps {
                 echo "🧹 Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
                 sh """
-                    cd /workspace
+                    cd "${WORKSPACE}"
                     ${PY} data/csv_to_rasa.py
                 """
             }
@@ -95,7 +95,7 @@ pipeline {
             steps {
                 echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
                 sh """
-                    cd /workspace
+                    cd "${WORKSPACE}"
                     ${PY} scripts/train_mlflow.py
                 """
             }
@@ -137,7 +137,7 @@ pipeline {
             steps {
                 echo "☁️ Đang deploy model..."
                 sh """
-                    cd /workspace
+                    cd "${WORKSPACE}"
                     ${PY} scripts/deploy_model.py
                 """
             }
@@ -150,11 +150,11 @@ pipeline {
         }
         aborted {
             echo "⚠️ Pipeline bị hủy"
-            sh "rm -f /workspace/rasa_bot/models/*.tar.gz || true"
+            sh "rm -f \"${WORKSPACE}/rasa_bot/models/*.tar.gz\" || true"
         }
         failure {
             echo "🔥 Pipeline thất bại"
-            sh "rm -f /workspace/rasa_bot/models/*.tar.gz || true"
+            sh "rm -f \"${WORKSPACE}/rasa_bot/models/*.tar.gz\" || true"
             echo "🗑️ Đã cleanup file rác."
         }
     }
