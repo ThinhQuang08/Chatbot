@@ -11,11 +11,11 @@ pipeline {
         PROJECT_DIR = "${WORKSPACE}"
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
 
-        // Sử dụng IP Gateway của mạng chatbot_default (172.18.0.1)
-        MLFLOW_TRACKING_URI = "http://172.18.0.1:5000"
-        MLFLOW_S3_ENDPOINT_URL = "http://172.18.0.1:9000"
-        MINIO_URL = "http://172.18.0.1:9000"
-        RASA_API_URL = "http://172.18.0.1:5005"
+        // Sử dụng tên container nội bộ (Jenkins đã được đưa vào cùng mạng)
+        MLFLOW_TRACKING_URI = "http://chatbot_mlflow:5000"
+        MLFLOW_S3_ENDPOINT_URL = "http://chatbot_s3:9000"
+        MINIO_URL = "http://chatbot_s3:9000"
+        RASA_API_URL = "http://chatbot_rasa:5005"
     }
 
     stages {
