@@ -11,11 +11,14 @@ pipeline {
         PROJECT_DIR = "${WORKSPACE}"
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
 
-        // Sử dụng Service Name (KHÔNG dùng container name có dấu gạch dưới vì Python urllib3 sẽ từ chối resolve)
-        MLFLOW_TRACKING_URI = "http://mlflow:5000"
-        MLFLOW_S3_ENDPOINT_URL = "http://s3:9000"
-        MINIO_URL = "http://s3:9000"
-        RASA_API_URL = "http://rasa:5005"
+        // Private IP của Chatbot EC2 (vì hệ thống đang chạy trên 2 EC2 riêng biệt)
+        CHATBOT_HOST = "172.31.39.149"
+
+        MLFLOW_TRACKING_URI = "http://${CHATBOT_HOST}:5000"
+        MLFLOW_S3_ENDPOINT_URL = "http://${CHATBOT_HOST}:9000"
+        MINIO_URL = "http://${CHATBOT_HOST}:9000"
+        MINIO_ENDPOINT = "http://${CHATBOT_HOST}:9000"
+        RASA_API_URL = "http://${CHATBOT_HOST}:5005"
     }
 
     stages {
