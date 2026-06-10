@@ -1,0 +1,102 @@
+# Auto-split from nlu.yml
+version: "3.1"
+
+nlu:
+  - intent: affirm
+    examples: |
+      - chính xác
+      - of course
+      - thế cũng được
+  - intent: ask_itinerary
+    examples: |
+      - cách sắp xếp thời gian đi [Hà Giang]{"entity": "location", "role": "destination"}
+      - thiết kế cho mình lịch trình đi phú quốc 4 ngày 3 đêm
+      - tạo lịch trình 2 ngày 1 đêm sapa
+  - intent: ask_location_feature
+    examples: |
+      - khu đấy có gần biển không
+      - thời tiết ở [Sapa]{"entity": "location", "role": "destination"} [tháng 11](month) thế nào
+      - view ở đó có đẹp không bot
+  - intent: ask_policy_booking
+    examples: |
+      - bé 4 tuổi thì phụ thu thế nào
+      - nếu có việc bận dời ngày được không
+      - điều kiện hoàn tiền là gì
+  - intent: ask_tour_info
+    examples: |
+      - tour này có hdv theo suốt tuyến không
+      - tìm cho mình tour đi [Đà Lạt]{"entity": "location", "role": "destination"}
+      - mình cần tìm tour đi [Hà Nội]{"entity": "location", "role": "destination"} cho [4 người](party_size)
+  - intent: ask_transportation
+    examples: |
+      - đi bằng [ô tô](transportation) cá nhân được không
+      - tới [Hạ Long]{"entity": "location", "role": "destination"} đi xe gì hợp lý
+      - đi từ [hồ chí minh]{"entity": "location", "role": "departure"} ra [nha trang]{"entity": "location", "role": "destination"} thì đi xe gì
+  - intent: book_tour
+    examples: |
+      - book tour [Nha Trang]{"entity": "location", "role": "destination"} đi
+      - đặt chỗ tour [Hà Nội]{"entity": "location", "role": "destination"}
+  - intent: bot_challenge
+    examples: |
+      - bạn là người hay máy
+  - intent: deny
+    examples: |
+      - nhầm rồi bot ơi
+      - ko
+  - intent: goodbye
+    examples: |
+      - bye bye
+      - đi ngủ đây
+  - intent: greet
+    examples: |
+      - hey
+      - hello there
+      - chào ngày mới
+  - intent: inform
+    examples: |
+      - [5 triệu](budget)
+      - tầm [5 triệu](budget)
+      - [tháng 8](month)
+      - mà cho tôi hỏi thêm
+      - hỏi thêm xíu
+  - intent: out_of_scope
+    examples: |
+      - ai là tổng thống mỹ
+      - cách sửa lỗi code python
+      - huỳnh như đá ở đội nào
+  - intent: search_accommodation
+    examples: |
+      - ở đó có [resort](category) nào đẹp không
+      - [khách sạn](category) nào gần trung tâm không
+      - thuê [resort](category) [hà nội](location)
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên]{"entity": "location", "role": "destination"} rẻ rẻ không
+  - intent: search_activity
+    examples: |
+      - phú quốc có [lặn ngắm san hô](activity) không
+      - có tour nào [đi xe đạp](activity) quanh bản làng không
+      - có chỗ nào đi thuyền không
+      - tôi muốn [leo núi](activity)
+      - đi [Sapa]{"entity": "location", "role": "destination"} [leo núi](activity)
+  - intent: search_destination
+    examples: |
+      - đi đâu [mùa đông](season) thì hợp
+      - review [Phú Quốc](location) mùa này vậy
+      - có chỗ nào đi trốn nắng [mùa hè](season) không
+      - có nơi nào chill chill không bot
+  - intent: search_food_dining
+    examples: |
+      - gợi ý quán ăn trưa
+      - món nào ăn nhức nách ở đà lạt
+  - intent: search_price
+    examples: |
+      - du lịch tiết kiệm
+      - tổn thất khoảng bao nhiêu
+      - nơi nào đi chơi tiết kiệm
+  - intent: search_travel
+    examples: |
+      - cầm [10 củ](budget) đi [Đà Lạt]{"entity": "location", "role": "destination"} đủ không
+      - từ [Hà Nội]{"entity": "location", "role": "departure"} vào [Sài Gòn]{"entity": "location", "role": "destination"}
+      - muốn từ [Sài Gòn]{"entity": "location", "role": "departure"} ra [Phú Quốc]{"entity": "location", "role": "destination"}
+      - cho mình đi [Phú Quốc]{"entity": "location", "role": "destination"}
+      - du lịch [500 nghìn](budget) có lựa chọn nào không
+      - chốt kèo đi biển nha

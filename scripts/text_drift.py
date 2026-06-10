@@ -63,7 +63,7 @@ def make_serializable(obj):
     return obj
 
 
-def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
+def run(ref_name="reference_normal_v3.csv", cur_name="current_trend_v3.csv",
         scenario="text_drift", description="", device=None, quiet=False):
     ref_path = os.path.join(DATA_DIR, ref_name)
     cur_path = os.path.join(DATA_DIR, cur_name)

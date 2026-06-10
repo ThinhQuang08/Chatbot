@@ -12,6 +12,7 @@ __pycache__/
 rasa_bot/.rasa/
 rasa_bot/models/*.tar.gz
 rasa_bot/results/
+rasa_bot/models/
 
 # Logs & Runtime
 logs/
@@ -27,8 +28,4 @@ logs/
 mlruns/
 mlartifacts/
 
-<<<<<<< HEAD
 */__init__.py
-=======
-*/__init__.py
->>>>>>> main
