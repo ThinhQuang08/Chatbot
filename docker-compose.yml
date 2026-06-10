@@ -35,6 +35,11 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-admin}
       MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-password123}
+      # nginx-proxy: redirect MinIO Console (port 9001) qua HTTPS
+      VIRTUAL_HOST: minio.uittravel.shop
+      VIRTUAL_PORT: "9001"
+      LETSENCRYPT_HOST: minio.uittravel.shop
+      LETSENCRYPT_EMAIL: kledkhongngu@gmail.com
     ports:
       - "9000:9000"
       - "9001:9001"   # Web Console: http://localhost:9001
@@ -230,6 +235,11 @@ services:
       - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY:-admin}
       - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_KEY:-password123}
       - MLFLOW_SERVER_ALLOWED_HOSTS=*
+      # nginx-proxy: expose MLflow UI qua HTTPS
+      - VIRTUAL_HOST=mlflow.uittravel.shop
+      - VIRTUAL_PORT=5000
+      - LETSENCRYPT_HOST=mlflow.uittravel.shop
+      - LETSENCRYPT_EMAIL=kledkhongngu@gmail.com
     command: >
       mlflow server
       --backend-store-uri postgresql://${DB_USER:-chatbot_user}:${DB_PASSWORD:-supersecret}@db:5432/${DB_NAME:-chatbot}
