@@ -29,3 +29,7 @@ mlruns/
 mlartifacts/
 
 */__init__.py
+
+.rasa/
+data/scenario3/
+results/*

@@ -1,0 +1,1741 @@
+﻿text,intent
+Tắm nước nóng Hà Nội,search_activity
+Nhiệt độ Phú Quốc trung bình,ask_weather_timing
+Cho mình hỏi nhà nghỉ Nha Trang giá rẻ,search_accommodation
+Mình muốn hỏi tour Đà Nẵng team building,search_travel
+Mình muốn xe đạp đi Phú Quốc,ask_transportation
+Làm ơn cho mình taxi ở Nha Trang giá rẻ,ask_transportation
+Mình cần tìm đi bộ biển Đà Lạt,search_activity
+Top địa điểm Huế,search_destination
+Mình cần hải sản Hà Nội tươi ngon,search_food_dining
+Tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Ngắm hoàng hôn Hội An,search_activity
+Resort Đà Lạt 5 sao,search_accommodation
+Đặt tour Vũng Tàu cho đoàn,book_tour
+Đi bộ biển Mũi Né,search_activity
+Đặt phòng khách sạn Đà Lạt,book_tour
+Hội An ở đâu,search_destination
+Mũi Né có quán nào nổi tiếng,search_food_dining
+Mình muốn Phú Quốc nổi tiếng về gì,search_destination
+Bạn ơi đặc sản Sa Pa phải thử,search_food_dining
+Ẩm thực Hội An món gì đặc sản,search_food_dining
+Combo Phú Quốc trọn gói,search_travel
+Bạn ơi thời tiết Huế tháng 12,ask_weather_timing
+Tôi muốn đưa con đi Phú Quốc,inform
+Các hãng bay đến Vũng Tàu,ask_transportation
+Mình cần hải sản Sa Pa tươi ngon,search_food_dining
+Cho mình tour du lịch Đà Lạt giá rẻ,search_travel
+Mình muốn hỏi hải sản Phú Quốc tươi ngon,search_food_dining
+Tìm giúp vẻ đẹp Sa Pa,search_destination
+Cho mình hỏi chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Đi thác Đà Nẵng tham quan,search_activity
+Mình muốn hỏi cả nhà tôi đi Huế dịp tết,inform
+Tôi muốn đưa con đi Mũi Né,inform
+Có đi thác Đà Nẵng tham quan,search_activity
+Có hải sản Phú Quốc tươi ngon,search_food_dining
+Làm ơn cho mình du lịch Đà Nẵng tự túc,search_travel
+Em muốn tắm nước nóng Đà Lạt,search_activity
+Cho mình hỏi bố mẹ tôi thích Nha Trang,inform
+Đi bộ biển Đà Lạt,search_activity
+Tour Vũng Tàu cho cặp đôi,search_travel
+Resort Mũi Né gia đình,search_accommodation
+Nhờ bạn Sa Pa ăn gì cho bữa sáng,search_food_dining
+Gợi ý tour Nha Trang 2 ngày,ask_itinerary
+Giúp mình hải sản Sa Pa giá rẻ,search_food_dining
+Có lịch trình Mũi Né tự túc,ask_itinerary
+Mình cần đi Mũi Né bằng xe máy,ask_transportation
+Có ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Tiền ăn ở Hội An 1 ngày,search_price
+Du lịch Nha Trang mùa đông,search_travel
+Món việt Nha Trang ngon,search_food_dining
+Tôi nghe nói Đà Nẵng rất đẹp,inform
+Mình cần công ty tôi tổ chức team building ở Mũi Né,inform
+Đi phượt Sa Pa bằng xe máy,search_activity
+Cho mình nhiệt độ Nha Trang trung bình,ask_weather_timing
+Nha Trang ăn gì cho bữa sáng,search_food_dining
+Tour Phú Quốc giá học sinh,search_travel
+Phiền bạn khách sạn Hà Nội giá rẻ,search_accommodation
+Có lịch trình Phú Quốc cho gia đình,ask_itinerary
+Cả nhà tôi đi Nha Trang dịp tết,inform
+Có nhiệt độ Sa Pa trung bình,ask_weather_timing
+Mình cần buffet Hội An giá rẻ,search_food_dining
+Mình muốn thời tiết Huế tháng 12,ask_weather_timing
+Kế hoạch du lịch Huế,ask_itinerary
+Ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Em muốn bạn tôi gợi ý đi Mũi Né,inform
+Cho mình hỏi combo Phú Quốc trọn gói,search_travel
+Cảnh đẹp Đà Nẵng nổi tiếng,search_destination
+Làm ơn cho mình từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Có gì đẹp ở Hội An,search_destination
+Admin ơi booking tour Nha Trang giá tốt,search_travel
+Hải sản Hà Nội tươi ngon,search_food_dining
+Giúp mình đi thuyền Vũng Tàu,search_activity
+Tìm giúp công ty tôi tổ chức team building ở Mũi Né,inform
+Check in Đà Nẵng ở đâu,search_destination
+Cho mình hỏi tour Sa Pa vip 5 sao,search_travel
+Bạn ơi tour Vũng Tàu giá học sinh,search_travel
+Có đi Nha Trang tham quan gì,search_destination
+Giúp mình booking tour Đà Lạt giá rẻ,book_tour
+Bạn ơi book phòng Đà Lạt view biển,book_tour
+Cho mình hỏi ngắm hoàng hôn Hội An,search_activity
+Booking tour Vũng Tàu giá rẻ,book_tour
+Mình cần tôi nghe nói Sa Pa rất đẹp,inform
+Em muốn đặt tour Đà Nẵng tiết kiệm,book_tour
+Phiền bạn khám phá ẩm thực đường phố Hội An,search_activity
+Làm ơn cho mình check in Huế ở đâu,search_destination
+Bạn ơi kỳ nghỉ Hà Nội,search_travel
+Admin ơi nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Admin ơi kỳ nghỉ Hà Nội,search_travel
+Cho mình hỏi Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Đi chợ Hội An về đêm,search_activity
+Mình cần tìm tour Huế cho cặp đôi,search_travel
+Phiền bạn booking tour Nha Trang giá tốt,search_travel
+Em muốn đặt vé máy bay đi Sa Pa,book_tour
+Giúp mình tour Sa Pa trọn gói bao gồm,search_travel
+Tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Bài viết về Đà Nẵng,search_destination
+Mình muốn khám phá Hà Nội,search_destination
+Ăn tối trên du thuyền Mũi Né,search_activity
+Nhờ bạn hải sản Sa Pa giá rẻ,search_food_dining
+Cho mình hỏi đặt tour Hội An khuyến mãi,book_tour
+Đi Sa Pa bằng tàu cao tốc,ask_transportation
+Mình muốn hỏi đi Huế bao nhiêu ngày,ask_itinerary
+Cả nhà tôi đi Huế dịp tết,inform
+Cho mình hỏi đi Nha Trang tham quan gì,search_destination
+Cho mình hỏi đi Mũi Né bằng xe máy,ask_transportation
+Đặt tour Đà Nẵng tiết kiệm,book_tour
+Mình muốn tôi muốn đưa con đi Vũng Tàu,inform
+Cho mình tour Hội An nghỉ dưỡng,search_travel
+Nhờ bạn tour du lịch Đà Nẵng giá rẻ,search_travel
+Tôi muốn tìm hiểu về Vũng Tàu,inform
+Mình muốn hỏi đặc sản Sa Pa phải thử,search_food_dining
+Có check in Huế ở đâu,search_destination
+Làm ơn cho mình tour Đà Nẵng cho người già,search_travel
+Mình muốn giá vé tham quan Sa Pa,search_price
+Booking tour Đà Nẵng giá rẻ,book_tour
+Mình cần tiền ăn ở Hội An 1 ngày,search_price
+Có du lịch Đà Nẵng tự túc,search_travel
+Mình cần tìm từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Phiền bạn homestay Huế view đẹp,search_accommodation
+Admin ơi tour Nha Trang 4 ngày 3 đêm,search_travel
+Xe giường nằm đi Huế,ask_transportation
+Giúp mình tôi muốn đưa con đi Phú Quốc,inform
+Em muốn cả nhà tôi đi Nha Trang dịp tết,inform
+Mình muốn vẻ đẹp Sa Pa,search_destination
+Đặt tour Hà Nội khuyến mãi,book_tour
+Nha Trang cách Hà Nội bao xa,search_destination
+Làm ơn cho mình vẻ đẹp Sa Pa,search_destination
+Làm ơn cho mình leo núi ở Mũi Né,search_activity
+Admin ơi đi thuyền Hà Nội,search_activity
+Đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Nhà nghỉ Nha Trang giá rẻ,search_accommodation
+Cho mình check in Đà Nẵng ở đâu,search_destination
+Cho mình hỏi đặc sản Đà Nẵng phải thử,search_food_dining
+Hải sản Đà Lạt tươi ngon,search_food_dining
+Cho mình hỏi đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Phiền bạn chi phí thuê xe Vũng Tàu,search_price
+Tour Hội An team building,search_travel
+Nhà hàng Vũng Tàu sang trọng,search_food_dining
+Chi phí du lịch Huế 3 ngày,search_price
+Mình cần cảnh đẹp Đà Nẵng nổi tiếng,search_destination
+Mua vé tham quan Đà Lạt,book_tour
+Khuyến mãi tour Phú Quốc,search_price
+Cho mình hỏi Mũi Né có quán nào nổi tiếng,search_food_dining
+Cho mình hỏi đặt tour Đà Lạt tiết kiệm,book_tour
+Bạn tôi gợi ý đi Mũi Né,inform
+Đi Nha Trang tham quan gì,search_destination
+Có đi Hội An dịp lễ có vui không,ask_weather_timing
+Cho mình Phú Quốc nổi tiếng về gì,search_destination
+Bạn ơi Nha Trang có quán nào nổi tiếng,search_food_dining
+Xe limousine đi Mũi Né,ask_transportation
+Cho mình review du lịch Huế,search_destination
+Thông tin du lịch Mũi Né,search_destination
+Gợi ý lịch trình Mũi Né,ask_itinerary
+Booking tour Huế giá tốt,search_travel
+Giúp mình Mũi Né có quán nào nổi tiếng,search_food_dining
+Cho mình hỏi tắm nước nóng Phú Quốc,search_activity
+Bạn ơi tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Mình cần ẩm thực Hội An món gì đặc sản,search_food_dining
+Tour Đà Nẵng 3 ngày 2 đêm,search_travel
+Cho mình hỏi chi phí ăn uống ở Đà Lạt,search_price
+Mì quảng Hà Nội,search_food_dining
+Mình cần ăn vặt Huế,search_food_dining
+Mình cần các hãng bay đến Vũng Tàu,ask_transportation
+Bạn ơi cafe view đẹp Hội An,search_food_dining
+Làm ơn cho mình hải sản Sa Pa tươi ngon,search_food_dining
+Có booking tour Vũng Tàu giá rẻ,book_tour
+Tour Huế team building,search_travel
+Mình muốn vé máy bay Hội An khứ hồi,search_price
+Cho mình hỏi cafe view đẹp Nha Trang,search_food_dining
+Phiền bạn đặt vé máy bay đi Hà Nội,book_tour
+Cho mình hỏi điểm đến Đà Lạt,search_destination
+Có đặt vé máy bay đi Hà Nội,book_tour
+Admin ơi mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Lặn ngắm san hô Sa Pa,search_activity
+Đi Huế bao nhiêu ngày,ask_itinerary
+Có thời tiết Huế tháng 12,ask_weather_timing
+Có nhà hàng Vũng Tàu sang trọng,search_food_dining
+Em muốn căn hộ Hội An view đẹp,search_accommodation
+Cho mình hỏi tour Huế cho cặp đôi,search_travel
+Sa Pa cách Hà Nội bao xa,search_destination
+Du lịch Đà Lạt tự túc,search_travel
+Cảnh đẹp Mũi Né nổi tiếng,search_destination
+Khám phá ẩm thực đường phố Hội An,search_activity
+Cho mình hỏi chi phí thuê xe Hà Nội,search_price
+Mình muốn hỏi chi phí du lịch Nha Trang 3 ngày,search_price
+Làm ơn cho mình hải sản Phú Quốc tươi ngon,search_food_dining
+Booking tour Đà Lạt giá rẻ,book_tour
+Mình muốn hỏi đặt tour Vũng Tàu cho đoàn,book_tour
+Giúp mình resort Mũi Né gia đình,search_accommodation
+Mình cần đi bộ biển Đà Nẵng,search_activity
+Phiền bạn lặn ngắm san hô Nha Trang,search_activity
+Admin ơi chia sẻ kinh nghiệm Vũng Tàu,search_destination
+Em muốn bánh xèo Phú Quốc,search_food_dining
+Cho mình hỏi quán ăn ngon ở Hội An,search_food_dining
+Em muốn vé máy bay Hội An khứ hồi,search_price
+Giúp mình chi phí du lịch Hà Nội 3 ngày,search_price
+Admin ơi tiền ăn ở Hà Nội 1 ngày,search_price
+Cho mình hỏi tour Sa Pa trọn gói bao gồm,search_travel
+Tìm giúp chia sẻ kinh nghiệm Phú Quốc,search_destination
+Phiền bạn tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Nhờ bạn đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Căn hộ Hội An view đẹp,search_accommodation
+Bạn ơi nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Làm ơn cho mình tour Nha Trang 5 ngày 4 đêm,search_travel
+Cho mình hỏi Phú Quốc nổi tiếng về gì,search_destination
+Du lịch Đà Nẵng tự túc,search_travel
+Mình cần khách sạn Sa Pa gần chợ đêm,search_accommodation
+Taxi ở Nha Trang giá rẻ,ask_transportation
+Bạn ơi chi phí thuê xe Hội An,search_price
+Mình cần tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Em muốn order tour Vũng Tàu,book_tour
+Tour Nha Trang cuối tuần,search_travel
+Đi Hội An dịp lễ có vui không,ask_weather_timing
+Câu cá ở Đà Nẵng,search_activity
+Bạn ơi du lịch Đà Lạt tự túc,search_travel
+Bánh xèo Hà Nội,search_food_dining
+Cho mình hỏi hải sản Sa Pa giá rẻ,search_food_dining
+Review du lịch Huế,search_destination
+Mình cần giới thiệu về Phú Quốc,search_destination
+Mình muốn tour Nha Trang 4 ngày 3 đêm,search_travel
+Có kinh phí đi Sa Pa tiết kiệm,search_price
+Book combo Huế,book_tour
+Mình cần tìm ăn tối trên du thuyền Mũi Né,search_activity
+Nhờ bạn booking tour Huế giá tốt,search_travel
+Em muốn Nha Trang ăn gì cho bữa sáng,search_food_dining
+Phiền bạn khu nghỉ dưỡng Hội An,search_accommodation
+Mình muốn booking tour Đà Lạt giá rẻ,book_tour
+Hải sản Sa Pa tươi ngon,search_food_dining
+Chia sẻ kinh nghiệm Vũng Tàu,search_destination
+Mình muốn hỏi tour Sa Pa trọn gói bao gồm,search_travel
+Tìm giúp cả nhà tôi đi Nha Trang dịp tết,inform
+Nhờ bạn Nha Trang ăn gì cho bữa sáng,search_food_dining
+Làm ơn cho mình tour Nha Trang khuyến mãi,search_travel
+Homestay Huế view đẹp,search_accommodation
+Xe khách đi Hội An giờ nào,ask_transportation
+Cho mình ăn vặt Hội An,search_food_dining
+Cho mình hỏi khám phá Huế,search_destination
+Cho mình tour Vũng Tàu giá học sinh,search_travel
+Tìm giúp giới thiệu về Phú Quốc,search_destination
+Admin ơi gợi ý tour Nha Trang 2 ngày,ask_itinerary
+Mình cần tìm homestay Vũng Tàu view đẹp,search_accommodation
+Khách sạn Hà Nội giá rẻ,search_accommodation
+Tour Huế cho cặp đôi,search_travel
+Kinh phí đi Huế tiết kiệm,search_price
+Vũng Tàu nổi tiếng về gì,search_destination
+Tìm giúp bài viết về Đà Lạt,search_destination
+Cho mình hỏi tour Nha Trang cuối tuần,search_travel
+Cafe view đẹp Hội An,search_food_dining
+Làm ơn cho mình tắm nước nóng Phú Quốc,search_activity
+Mình muốn khu nghỉ dưỡng Hội An,search_accommodation
+Em muốn homestay đẹp ở Hà Nội,search_accommodation
+Villa Mũi Né hồ bơi,search_accommodation
+Đi Đà Lạt trong 2 ngày,ask_itinerary
+Nhờ bạn đặt tour Mũi Né cho đoàn,book_tour
+Mình muốn hỏi đi Đà Lạt mùa nào đẹp,search_destination
+Homestay đẹp ở Hà Nội,search_accommodation
+Làm ơn cho mình xe limousine đi Hội An,ask_transportation
+Admin ơi tour Phú Quốc giá học sinh,search_travel
+Em muốn câu cá ở Đà Nẵng,search_activity
+Đặc sản Sa Pa phải thử,search_food_dining
+Khu nghỉ dưỡng Hội An,search_accommodation
+Admin ơi homestay Mũi Né gần trung tâm,search_accommodation
+Bánh xèo Phú Quốc,search_food_dining
+Chi phí thuê xe Vũng Tàu,search_price
+Lịch Sa Pa phù hợp,ask_itinerary
+Mình cần nhiệt độ Nha Trang trung bình,ask_weather_timing
+Resort Đà Nẵng hồ bơi,search_accommodation
+Bạn ơi cafe view đẹp Hà Nội,search_food_dining
+Mình muốn hỏi resort Đà Nẵng hồ bơi,search_accommodation
+Nhờ bạn review du lịch Hà Nội,search_destination
+Tìm giúp đặt tour Vũng Tàu cho đoàn,book_tour
+Làm ơn cho mình vợ chồng tôi cưới ở Phú Quốc,inform
+Giá vé tham quan Sa Pa,search_price
+Mình muốn hỏi bài viết về Đà Lạt,search_destination
+Tìm giúp lịch trình tour Nha Trang,search_travel
+Leo núi ở Mũi Né,search_activity
+Admin ơi order tour Vũng Tàu,book_tour
+Giúp mình mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Admin ơi cảnh đẹp Mũi Né nổi tiếng,search_destination
+Có cắm trại Hội An,search_activity
+Tìm giúp top địa điểm Huế,search_destination
+Tour Sa Pa vip 5 sao,search_travel
+Mình muốn đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Mình muốn đi Đà Lạt trong 2 ngày,ask_itinerary
+Có tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Mình muốn hỏi chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Lượng mưa Đà Lạt hàng năm,ask_weather_timing
+Cho mình hỏi review du lịch Hà Nội,search_destination
+Mình cần tìm homestay Mũi Né gần trung tâm,search_accommodation
+Cho mình hỏi mua vé tham quan Đà Lạt,book_tour
+Khu nghỉ dưỡng Sa Pa,search_accommodation
+Đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Tìm giúp đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Sa Pa ăn gì cho bữa sáng,search_food_dining
+Mình cần villa Mũi Né hồ bơi,search_accommodation
+Kinh phí đi Vũng Tàu tiết kiệm,search_price
+Phiền bạn thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Lịch trình Vũng Tàu tự túc,ask_itinerary
+Đi thuyền Vũng Tàu,search_activity
+Admin ơi check in Hà Nội ở đâu,search_destination
+Mình cần giá vé tham quan Sa Pa,search_price
+Em muốn tôi đã đi Hội An năm ngoái rất thích,inform
+Gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Vợ chồng tôi cưới ở Hội An,inform
+Nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Homestay Mũi Né gần trung tâm,search_accommodation
+Phiền bạn check in Đà Nẵng ở đâu,search_destination
+Tour du lịch Đà Nẵng giá rẻ,search_travel
+Cho mình chi phí đi Vũng Tàu tự túc,search_price
+Tàu hỏa đi Nha Trang,ask_transportation
+Cho mình hỏi book phòng Đà Lạt view biển,book_tour
+Giúp mình booking tour Vũng Tàu giá rẻ,book_tour
+Mình muốn hỏi tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Có cắm trại Huế,search_activity
+Bạn ơi tắm nước nóng Đà Lạt,search_activity
+Admin ơi tắm nước nóng Phú Quốc,search_activity
+Em muốn mùa khô ở Hà Nội,ask_weather_timing
+Ở Hà Nội ăn gì ngon,search_food_dining
+Cho mình hỏi cắm trại Huế,search_activity
+Quán ăn ngon ở Nha Trang,search_food_dining
+Cho mình hỏi tôi muốn tìm hiểu về Vũng Tàu,inform
+Cho mình tôi nghe nói Sa Pa rất đẹp,inform
+Khách sạn Sa Pa giá rẻ,search_accommodation
+Phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Mình cần đi Huế bao nhiêu ngày,ask_itinerary
+Làm ơn cho mình tour Vũng Tàu giá học sinh,search_travel
+Mình cần nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Giúp mình du lịch Nha Trang mùa đông,search_travel
+Mình muốn hỏi hải sản Hà Nội tươi ngon,search_food_dining
+Có kinh phí đi Đà Nẵng tiết kiệm,search_price
+Ở Đà Nẵng mấy ngày là đủ,ask_itinerary
+Mình muốn hỏi tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Có check in Hà Nội ở đâu,search_destination
+Mình muốn hỏi tàu hỏa đi Nha Trang,ask_transportation
+Admin ơi lịch trình Mũi Né tự túc,ask_itinerary
+Phiền bạn đặt tour Hội An khuyến mãi,book_tour
+Mình cần tìm lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Giúp mình gợi ý lịch trình Mũi Né,ask_itinerary
+Du lịch Hà Nội tự túc,search_travel
+Mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Top địa điểm Hà Nội,search_destination
+Có du lịch Đà Lạt tự túc,search_travel
+Em muốn hải sản Phú Quốc tươi ngon,search_food_dining
+Giúp mình giới thiệu về Mũi Né,search_destination
+Xe limousine đi Hội An,ask_transportation
+Phiền bạn check in Hà Nội ở đâu,search_destination
+Làm ơn cho mình villa Mũi Né hồ bơi,search_accommodation
+Giúp mình đi Đà Lạt mùa nào đẹp,search_destination
+Giúp mình tour Vũng Tàu giá học sinh,search_travel
+Chi phí đi Vũng Tàu tự túc,search_price
+Mình muốn tôi muốn đưa con đi Mũi Né,inform
+Có homestay Đà Lạt cho đôi người,search_accommodation
+Mình muốn hỏi homestay Huế view đẹp,search_accommodation
+Cho mình hỏi khách sạn Hà Nội giá rẻ,search_accommodation
+Phiền bạn khách sạn Nha Trang gần sân bay,search_accommodation
+Cho mình các hãng bay đến Vũng Tàu,ask_transportation
+Giúp mình thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Review du lịch Hà Nội,search_destination
+Tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Khách sạn Sa Pa gần chợ đêm,search_accommodation
+Nhờ bạn reserve phòng Đà Nẵng,book_tour
+Cho mình hỏi giới thiệu về Mũi Né,search_destination
+Bạn ơi Hà Nội nổi tiếng về gì,search_destination
+Cho mình hỏi chè Hội An ngon,search_food_dining
+Bạn ơi review du lịch Hà Nội,search_destination
+Combo Huế trọn gói,search_travel
+Cho mình hỏi khách sạn Sa Pa giá rẻ,search_accommodation
+Mình cần tìm bánh xèo Phú Quốc,search_food_dining
+Cho mình du lịch Hà Nội tự túc,search_travel
+Cắm trại Hội An,search_activity
+Lịch trình tour Nha Trang,search_travel
+Tour Phú Quốc 4 ngày 3 đêm,search_travel
+Đà Lạt có homestay nào đẹp,search_accommodation
+Mình muốn hỏi đặc sản Đà Nẵng phải thử,search_food_dining
+Mình cần homestay Vũng Tàu view đẹp,search_accommodation
+Check in Hà Nội ở đâu,search_destination
+Có đi bộ biển Đà Nẵng,search_activity
+Em muốn lẩu Hà Nội ăn ở đâu,search_food_dining
+Tìm giúp tour Sa Pa vip 5 sao,search_travel
+Bạn ơi đi thuyền Vũng Tàu,search_activity
+Có homestay Huế view đẹp,search_accommodation
+Có tôi muốn đưa con đi Mũi Né,inform
+Giúp mình taxi ở Nha Trang giá rẻ,ask_transportation
+Bạn ơi hải sản Sa Pa giá rẻ,search_food_dining
+Mình cần tìm leo núi ở Huế,search_activity
+Em muốn đi Đà Lạt trong 2 ngày,ask_itinerary
+Thời tiết Nha Trang tháng 12,ask_weather_timing
+Cho mình hỏi bài viết về Đà Nẵng,search_destination
+Công ty tôi tổ chức team building ở Mũi Né,inform
+Admin ơi chi phí đi Vũng Tàu tự túc,search_price
+Mình cần khách sạn Sa Pa giá rẻ,search_accommodation
+Mình cần tìm xe limousine đi Mũi Né,ask_transportation
+Làm ơn cho mình tôi muốn tìm hiểu về Vũng Tàu,inform
+Lẩu Hà Nội ăn ở đâu,search_food_dining
+Em muốn xe khách đi Hội An giờ nào,ask_transportation
+Bạn ơi ăn tối trên du thuyền Mũi Né,search_activity
+Nha Trang có quán nào nổi tiếng,search_food_dining
+Admin ơi quán ăn ngon ở Nha Trang,search_food_dining
+Mình muốn hỏi homestay đẹp ở Hà Nội,search_accommodation
+Cho mình hỏi Nha Trang ăn gì cho bữa sáng,search_food_dining
+Cho mình chèo thuyền ở Đà Lạt,search_activity
+Mình cần tìm tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Bạn ơi combo Huế trọn gói,search_travel
+Có kỳ nghỉ Hà Nội,search_travel
+Mình muốn hỏi homestay Đà Lạt cho đôi người,search_accommodation
+Nhờ bạn xe đạp đi Phú Quốc,ask_transportation
+Cho mình xe giường nằm đi Huế,ask_transportation
+Mình muốn tắm nước nóng Hà Nội,search_activity
+Mình muốn tour Phú Quốc 4 ngày 3 đêm,search_travel
+Tìm giúp tour Huế team building,search_travel
+Cho mình hỏi khuyến mãi tour Phú Quốc,search_price
+Cho mình hỏi tôi muốn đưa con đi Đà Lạt,inform
+Tour Huế khuyến mãi,search_travel
+Mình muốn tiền ăn ở Hà Nội 1 ngày,search_price
+Bạn ơi villa Mũi Né hồ bơi,search_accommodation
+Làm ơn cho mình vé máy bay Hội An khứ hồi,search_price
+Giới thiệu về Mũi Né,search_destination
+Cho mình hỏi cắm trại Hội An,search_activity
+Có đi Mũi Né bằng xe máy,ask_transportation
+Có book combo Huế,book_tour
+Cho mình hỏi tàu hỏa đi Nha Trang,ask_transportation
+Lịch trình Phú Quốc cho gia đình,ask_itinerary
+Reserve phòng Đà Nẵng,book_tour
+Phiền bạn tôi muốn đưa con đi Phú Quốc,inform
+Có nên đi Mũi Né không,search_destination
+Phú Quốc nổi tiếng về gì,search_destination
+Chi phí du lịch Đà Lạt 3 ngày,search_price
+Đi thuyền Hà Nội,search_activity
+Có đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Em muốn khách sạn Nha Trang gần sân bay,search_accommodation
+Phiền bạn homestay Vũng Tàu view đẹp,search_accommodation
+Giúp mình Hà Nội nổi tiếng về gì,search_destination
+Giá vé Huế cho trẻ em,search_price
+Phiền bạn từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Admin ơi tour Đà Nẵng nghỉ dưỡng,search_travel
+Có ăn tối trên du thuyền Huế,search_activity
+Mình cần tìm kinh phí đi Sa Pa tiết kiệm,search_price
+Cho mình hỏi leo núi ở Huế,search_activity
+Nhờ bạn nhiệt độ Nha Trang trung bình,ask_weather_timing
+Phiền bạn đi phượt Sa Pa bằng xe máy,search_activity
+Phiền bạn Nha Trang cách Hà Nội bao xa,search_destination
+Đặt vé máy bay đi Hà Nội,book_tour
+Tìm giúp kinh phí đi Huế tiết kiệm,search_price
+Đi Vũng Tàu bằng xe máy,ask_transportation
+Nên đi Mũi Né không,search_destination
+Mình muốn hỏi đi Sa Pa bằng tàu cao tốc,ask_transportation
+Cho mình hỏi đi Hội An dịp lễ có vui không,ask_weather_timing
+Admin ơi tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Vợ chồng tôi cưới ở Phú Quốc,inform
+Mình cần khu nghỉ dưỡng Sa Pa,search_accommodation
+Phiền bạn gợi ý tour Nha Trang 2 ngày,ask_itinerary
+Làm ơn cho mình khu nghỉ dưỡng Sa Pa,search_accommodation
+Cho mình hỏi đi Đà Lạt trong 2 ngày,ask_itinerary
+Hải sản Phú Quốc tươi ngon,search_food_dining
+Cho mình hỏi ăn vặt Hội An,search_food_dining
+Mình cần tìm mua vé tham quan Đà Lạt,book_tour
+Giúp mình đi thuyền Hà Nội,search_activity
+Phiền bạn tour Nha Trang 4 ngày 3 đêm,search_travel
+Giúp mình cả nhà tôi đi Huế dịp tết,inform
+Nhờ bạn Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Nhờ bạn đi Vũng Tàu bằng xe máy,ask_transportation
+Phiền bạn homestay đẹp ở Đà Nẵng,search_accommodation
+Bạn ơi tour du lịch Đà Lạt giá rẻ,search_travel
+Mình muốn chi phí Mũi Né 4 ngày 3 đêm,search_price
+Cho mình homestay Đà Lạt cho đôi người,search_accommodation
+Lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Mình cần tìm lịch trình Mũi Né tự túc,ask_itinerary
+Đặt tour Mũi Né cho đoàn,book_tour
+Giúp mình homestay Mũi Né gần trung tâm,search_accommodation
+Tìm giúp booking tour Huế giá tốt,search_travel
+Tour Đà Nẵng cho người già,search_travel
+Cho mình hỏi du lịch Đà Nẵng tự túc,search_travel
+Có khách sạn Sa Pa giá rẻ,search_accommodation
+Bạn ơi công ty tôi tổ chức team building ở Mũi Né,inform
+Tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Cho mình khách sạn Vũng Tàu trung tâm,search_accommodation
+Mình cần tôi muốn đưa con đi Vũng Tàu,inform
+Phú Quốc có gì chơi,search_destination
+Có cafe view đẹp Nha Trang,search_food_dining
+Nhờ bạn Phú Quốc có gì ngon,search_food_dining
+Mình cần tìm dự báo thời tiết Huế,ask_weather_timing
+Mình muốn căn hộ Phú Quốc view đẹp,search_accommodation
+Cho mình hỏi nhiệt độ Nha Trang trung bình,ask_weather_timing
+Bạn ơi Sa Pa ăn gì cho bữa sáng,search_food_dining
+Mình cần tìm đi Mũi Né bằng xe máy,ask_transportation
+Ẩm thực Hà Nội món gì đặc sản,search_food_dining
+Nhóm bạn tôi định đi Vũng Tàu tháng sau,inform
+Giúp mình căn hộ Hội An view đẹp,search_accommodation
+Mình cần tôi đã đi Hội An năm ngoái rất thích,inform
+Cho mình hỏi Nha Trang cách Hà Nội bao xa,search_destination
+Làm ơn cho mình tour Nha Trang 4 ngày 3 đêm,search_travel
+Có bài viết về Đà Nẵng,search_destination
+Mình muốn hỏi hải sản Sa Pa tươi ngon,search_food_dining
+Mình muốn review du lịch Hà Nội,search_destination
+Bạn ơi cả nhà tôi đi Huế dịp tết,inform
+Chợ Mũi Né ẩm thực,search_food_dining
+Mình muốn nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Admin ơi Phú Quốc có gì chơi,search_destination
+Mình cần tour Đà Nẵng nghỉ dưỡng,search_travel
+Em muốn đi Vũng Tàu bằng xe máy,ask_transportation
+Lịch trình Hội An cho người già,ask_itinerary
+Nhờ bạn chi phí du lịch Nha Trang 3 ngày,search_price
+Tìm giúp nên đi Phú Quốc mấy ngày,ask_itinerary
+Nhờ bạn resort Đà Nẵng hồ bơi,search_accommodation
+Làm ơn cho mình Sa Pa cách Hà Nội bao xa,search_destination
+Em muốn đi chợ Hội An về đêm,search_activity
+Chi phí thuê xe Hà Nội,search_price
+Cafe view đẹp Nha Trang,search_food_dining
+Kinh phí đi Sa Pa tiết kiệm,search_price
+Nhờ bạn khách sạn Vũng Tàu trung tâm,search_accommodation
+Em muốn tour Phú Quốc trọn gói bao gồm,search_travel
+Mình cần khách sạn Hà Nội giá rẻ,search_accommodation
+Nhờ bạn xe giường nằm đi Huế,ask_transportation
+Homestay Đà Lạt cho đôi người,search_accommodation
+Giới thiệu về Phú Quốc,search_destination
+Làm ơn cho mình Nha Trang ăn gì cho bữa sáng,search_food_dining
+Lặn ngắm san hô Nha Trang,search_activity
+Cho mình tour Huế cho cặp đôi,search_travel
+Admin ơi kinh phí đi Huế tiết kiệm,search_price
+Nhiệt độ Nha Trang trung bình,ask_weather_timing
+Cho mình hỏi mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Cho mình hỏi ẩm thực Hà Nội món gì đặc sản,search_food_dining
+Có chèo thuyền ở Đà Lạt,search_activity
+Cho mình tôi muốn đưa con đi Đà Lạt,inform
+Mình cần du lịch Nha Trang mùa đông,search_travel
+Tôi đã đi Hội An năm ngoái rất thích,inform
+Ăn vặt Hội An,search_food_dining
+Mình cần nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Nhờ bạn đi thuyền Vũng Tàu,search_activity
+Làm ơn cho mình Phú Quốc nổi tiếng về gì,search_destination
+Admin ơi villa Mũi Né hồ bơi,search_accommodation
+Tìm giúp du lịch Nha Trang mùa đông,search_travel
+Bạn ơi check in Huế ở đâu,search_destination
+Mình cần tìm check in Huế ở đâu,search_destination
+Giúp mình tour Huế team building,search_travel
+Cho mình hỏi kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Bạn ơi giá vé Huế cho trẻ em,search_price
+Có ở Hà Nội ăn gì ngon,search_food_dining
+Khí hậu Vũng Tàu như thế nào,ask_weather_timing
+Mình cần tìm điểm đến Đà Lạt,search_destination
+Có đặt tour Mũi Né cho đoàn,book_tour
+Lịch trình Mũi Né tự túc,ask_itinerary
+Em muốn mì quảng Hà Nội,search_food_dining
+Cho mình hỏi review du lịch Huế,search_destination
+Cho mình hỏi khách sạn Vũng Tàu trung tâm,search_accommodation
+Giúp mình Phú Quốc có gì chơi,search_destination
+Tour Hội An nghỉ dưỡng,search_travel
+Tôi muốn đưa con đi Đà Lạt,inform
+Tour Phú Quốc trọn gói bao gồm,search_travel
+Làm ơn cho mình kế hoạch du lịch Huế,ask_itinerary
+Tour Vũng Tàu 5 ngày 4 đêm,search_travel
+Bạn ơi book combo Huế,book_tour
+Em muốn booking tour Đà Lạt giá rẻ,book_tour
+Làm ơn cho mình resort Mũi Né gia đình,search_accommodation
+Làm ơn cho mình đi chợ Hội An về đêm,search_activity
+Tour Sa Pa cho người già,search_travel
+Tìm giúp chợ Mũi Né ẩm thực,search_food_dining
+Nhờ bạn kinh phí đi Vũng Tàu tiết kiệm,search_price
+Có công ty tôi tổ chức team building ở Mũi Né,inform
+Check in Huế ở đâu,search_destination
+Tìm giúp tour Huế khuyến mãi,search_travel
+Em muốn mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Tìm giúp Hội An ở đâu,search_destination
+Nhờ bạn book combo Huế,book_tour
+Cho mình hỏi Đà Lạt có homestay nào đẹp,search_accommodation
+Phiền bạn resort Mũi Né gia đình,search_accommodation
+Admin ơi ăn tối trên du thuyền Huế,search_activity
+Admin ơi chè Hội An ngon,search_food_dining
+Giúp mình tôi đã đi Sa Pa năm ngoái rất thích,inform
+Cho mình hỏi resort Đà Nẵng hồ bơi,search_accommodation
+Tìm giúp tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Cho mình Hà Nội ở đâu,search_destination
+Cho mình hỏi tour Đà Nẵng cho người già,search_travel
+Mình muốn hỏi tour Sa Pa cho người già,search_travel
+Admin ơi khách sạn Sa Pa gần chợ đêm,search_accommodation
+Làm ơn cho mình hải sản Sa Pa giá rẻ,search_food_dining
+Nhờ bạn leo núi ở Huế,search_activity
+Admin ơi khách sạn Vũng Tàu trung tâm,search_accommodation
+Cho mình từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Giúp mình lưu trú ở Sa Pa gần chợ,search_accommodation
+Admin ơi có gì đẹp ở Hội An,search_destination
+Em muốn căn hộ Phú Quốc view đẹp,search_accommodation
+Nhờ bạn tắm nước nóng Phú Quốc,search_activity
+Làm ơn cho mình gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Phiền bạn căn hộ Phú Quốc view đẹp,search_accommodation
+Quán ăn ngon ở Hội An,search_food_dining
+Phiền bạn đặt tour Hà Nội khuyến mãi,book_tour
+Mình cần Hà Nội nổi tiếng về gì,search_destination
+Mình cần tìm leo núi ở Mũi Né,search_activity
+Booking homestay Đà Nẵng giá rẻ,book_tour
+Mình cần tìm tôi muốn tìm hiểu về Vũng Tàu,inform
+Em muốn buffet Nha Trang giá rẻ,search_food_dining
+Cho mình lặn ngắm san hô Sa Pa,search_activity
+Mình muốn hỏi lịch trình Hội An cho người già,ask_itinerary
+Hà Nội nổi tiếng về gì,search_destination
+Giúp mình Phú Quốc nổi tiếng về gì,search_destination
+Cho mình hỏi khám phá Hà Nội,search_destination
+Làm ơn cho mình du lịch Đà Lạt tự túc,search_travel
+Cho mình hỏi cafe view đẹp Hội An,search_food_dining
+Tắm nước nóng Phú Quốc,search_activity
+Admin ơi ẩm thực Hội An món gì đặc sản,search_food_dining
+Căn hộ Phú Quốc view đẹp,search_accommodation
+Thời tiết Huế tháng 12,ask_weather_timing
+Nhờ bạn đặt phòng khách sạn Đà Lạt,book_tour
+Giúp mình tour Huế khuyến mãi,search_travel
+Chè Hội An ngon,search_food_dining
+Nhờ bạn book phòng Đà Lạt view biển,book_tour
+Mình cần thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Có tour Phú Quốc cho cặp đôi,search_travel
+Làm ơn cho mình Hà Nội ở đâu,search_destination
+Tour Vũng Tàu giá học sinh,search_travel
+Vé máy bay Hội An khứ hồi,search_price
+Mình cần tìm gợi ý lịch trình Mũi Né,ask_itinerary
+Làm ơn cho mình đặt vé máy bay đi Hà Nội,book_tour
+Bạn ơi đặt phòng khách sạn Đà Lạt,book_tour
+Mình muốn hỏi lặn ngắm san hô Nha Trang,search_activity
+Mình muốn hỏi khách sạn Sa Pa gần chợ đêm,search_accommodation
+Cho mình đặc sản Sa Pa phải thử,search_food_dining
+Làm ơn cho mình mì quảng Hà Nội,search_food_dining
+Cho mình tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Giúp mình ăn vặt Huế,search_food_dining
+Cho mình hỏi nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Bạn ơi giá vé tham quan Sa Pa,search_price
+Em muốn Đà Lạt có homestay nào đẹp,search_accommodation
+Mình cần taxi ở Nha Trang giá rẻ,ask_transportation
+Có ngắm hoàng hôn Hội An,search_activity
+Mình cần xe limousine đi Mũi Né,ask_transportation
+Admin ơi đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Tìm giúp kinh phí đi Vũng Tàu tiết kiệm,search_price
+Bạn ơi tour Đà Nẵng 3 ngày 2 đêm,search_travel
+Mình cần nhiệt độ Phú Quốc trung bình,ask_weather_timing
+Mình cần tìm bánh xèo Hà Nội,search_food_dining
+Chi phí du lịch Hà Nội 3 ngày,search_price
+Mình cần tìm Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Em muốn xe đạp đi Phú Quốc,ask_transportation
+Tour Phú Quốc cho cặp đôi,search_travel
+Có reserve phòng Đà Nẵng,book_tour
+Công ty tôi tổ chức team building ở Phú Quốc,inform
+Mình cần tàu hỏa Huế bao nhiêu tiền,ask_transportation
+Có tour Hà Nội cho gia đình,search_travel
+Giá tour Phú Quốc bao nhiêu,search_price
+Mình cần từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Cho mình hỏi gợi ý tour Nha Trang 2 ngày,ask_itinerary
+Hà Nội ở đâu,search_destination
+Tìm giúp Vũng Tàu nổi tiếng về gì,search_destination
+Admin ơi tàu hỏa đi Nha Trang,ask_transportation
+Có chi phí đi Vũng Tàu tự túc,search_price
+Ăn vặt Huế,search_food_dining
+Nhờ bạn Phú Quốc nổi tiếng về gì,search_destination
+Mình cần tìm lặn ngắm san hô Sa Pa,search_activity
+Mình muốn tôi muốn tìm hiểu về Vũng Tàu,inform
+Nhờ bạn món việt Nha Trang ngon,search_food_dining
+Mình muốn hỏi tour Sa Pa vip 5 sao,search_travel
+Mình cần thời tiết Huế tháng 12,ask_weather_timing
+Tìm giúp tour Hội An team building,search_travel
+Tìm giúp Đà Lạt có homestay nào đẹp,search_accommodation
+Lặn biển ở Nha Trang,search_activity
+Cắm trại Huế,search_activity
+Mình cần tìm đi Vũng Tàu bằng xe máy,ask_transportation
+Giúp mình đi bộ biển Đà Nẵng,search_activity
+Làm ơn cho mình quán ăn ngon ở Nha Trang,search_food_dining
+Chia sẻ kinh nghiệm Phú Quốc,search_destination
+Cho mình hỏi giá vé Huế cho trẻ em,search_price
+Admin ơi chi phí du lịch Huế 3 ngày,search_price
+Mình muốn cắm trại Hội An,search_activity
+Cho mình đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Phú Quốc có gì ngon,search_food_dining
+Cho mình hỏi tôi muốn đưa con đi Vũng Tàu,inform
+Tìm giúp khám phá Hà Nội,search_destination
+Cho mình hỏi đi Vũng Tàu bằng xe máy,ask_transportation
+Mình muốn hỏi căn hộ Phú Quốc view đẹp,search_accommodation
+Lưu trú ở Sa Pa gần chợ,search_accommodation
+Tìm giúp Sa Pa cách Hà Nội bao xa,search_destination
+Nhiệt độ Sa Pa trung bình,ask_weather_timing
+Cho mình hỏi ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Cho mình hỏi tour Phú Quốc cuối tuần,search_travel
+Có khách sạn Vũng Tàu trung tâm,search_accommodation
+Cho mình hỏi homestay Huế view đẹp,search_accommodation
+Cho mình hỏi homestay Đà Lạt cho đôi người,search_accommodation
+Đặt vé máy bay đi Sa Pa,book_tour
+Mình muốn hỏi đặt tour Đà Nẵng tiết kiệm,book_tour
+Mình muốn xe khách đi Hội An giờ nào,ask_transportation
+Chi phí Mũi Né 4 ngày 3 đêm,search_price
+Mình cần tìm giá vé tham quan Sa Pa,search_price
+Cho mình chi phí thuê xe Vũng Tàu,search_price
+Nhờ bạn kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Cho mình hỏi tour Nha Trang khuyến mãi,search_travel
+Em muốn câu cá ở Huế,search_activity
+Admin ơi khách sạn Hà Nội giá rẻ,search_accommodation
+Nhờ bạn xe khách đi Hội An giờ nào,ask_transportation
+Có xe limousine đi Mũi Né,ask_transportation
+Mình muốn hỏi tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Tìm giúp đặt tour Đà Lạt tiết kiệm,book_tour
+Giúp mình kinh phí đi Huế tiết kiệm,search_price
+Có Hà Nội nổi tiếng về gì,search_destination
+Tìm giúp xe limousine đi Mũi Né,ask_transportation
+Phiền bạn lặn ngắm san hô Sa Pa,search_activity
+Mình cần lịch trình tour Nha Trang,search_travel
+Cho mình hỏi xe đạp đi Phú Quốc,ask_transportation
+Cho mình hỏi từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Dự báo thời tiết Huế,ask_weather_timing
+Giúp mình các hãng bay đến Vũng Tàu,ask_transportation
+Cho mình lịch Sa Pa phù hợp,ask_itinerary
+Tour Nha Trang 5 ngày 4 đêm,search_travel
+Có leo núi ở Mũi Né,search_activity
+Cho mình hỏi có gì đẹp ở Hội An,search_destination
+Buffet Nha Trang giá rẻ,search_food_dining
+Mình muốn du lịch Đà Nẵng tự túc,search_travel
+Em muốn đặt vé máy bay đi Hà Nội,book_tour
+Có tôi muốn tìm hiểu về Vũng Tàu,inform
+Phiền bạn tắm nước nóng Đà Lạt,search_activity
+Em muốn đi Nha Trang tham quan gì,search_destination
+Bạn ơi tour Sa Pa trọn gói bao gồm,search_travel
+Mình muốn hỏi tôi muốn đưa con đi Đà Lạt,inform
+Cho mình leo núi ở Mũi Né,search_activity
+Giúp mình đi chợ Hội An về đêm,search_activity
+Cho mình hỏi đi thuyền Vũng Tàu,search_activity
+Leo núi ở Huế,search_activity
+Bạn ơi lặn ngắm san hô Sa Pa,search_activity
+Có giá tour Phú Quốc bao nhiêu,search_price
+Bạn ơi khám phá Huế,search_destination
+Giúp mình tour Phú Quốc cho cặp đôi,search_travel
+Mình cần tìm giá vé Huế cho trẻ em,search_price
+Phiền bạn nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Mình muốn hỏi order tour Vũng Tàu,book_tour
+Có nên đi Phú Quốc mấy ngày,ask_itinerary
+Mình cần giá tour Phú Quốc bao nhiêu,search_price
+Mình cần tìm vé máy bay Hội An khứ hồi,search_price
+Chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Nhờ bạn Vũng Tàu nổi tiếng về gì,search_destination
+Booking tour Nha Trang giá tốt,search_travel
+Điểm đến Đà Lạt,search_destination
+Tour Đà Nẵng nghỉ dưỡng,search_travel
+Tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Làm ơn cho mình tour Phú Quốc giá học sinh,search_travel
+Tour Nha Trang khuyến mãi,search_travel
+Cho mình hỏi đặt tour Vũng Tàu cho đoàn,book_tour
+Nhờ bạn leo núi ở Mũi Né,search_activity
+Homestay Vũng Tàu view đẹp,search_accommodation
+Cho mình nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Nhờ bạn du lịch Đà Nẵng tự túc,search_travel
+Phiền bạn glamping Đà Lạt,search_accommodation
+Mình muốn hỏi đi thác Đà Nẵng tham quan,search_activity
+Cho mình hỏi Hà Nội ở đâu,search_destination
+Có taxi ở Nha Trang giá rẻ,ask_transportation
+Em muốn chi phí ăn uống ở Đà Lạt,search_price
+Cho mình hỏi homestay đẹp ở Đà Nẵng,search_accommodation
+Mình cần tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Cho mình đi bộ biển Đà Lạt,search_activity
+Có Hà Nội ở đâu,search_destination
+Phiền bạn khí hậu Vũng Tàu như thế nào,ask_weather_timing
+Nhờ bạn đặt tour Đà Nẵng tiết kiệm,book_tour
+Cho mình hỏi booking tour Nha Trang giá tốt,search_travel
+Mình cần bánh xèo Hà Nội,search_food_dining
+Phiền bạn xe giường nằm đi Huế,ask_transportation
+Mùa khô ở Hà Nội,ask_weather_timing
+Phiền bạn thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Bạn tôi gợi ý đi Sa Pa,inform
+Mình muốn hỏi dự báo thời tiết Huế,ask_weather_timing
+Mình muốn tour Sa Pa vip 5 sao,search_travel
+Có tour Sa Pa cho người già,search_travel
+Mình cần tìm Mũi Né ăn gì cho bữa sáng,search_food_dining
+Bố mẹ tôi thích Nha Trang,inform
+Mình muốn chia sẻ kinh nghiệm Vũng Tàu,search_destination
+Order tour Vũng Tàu,book_tour
+Em muốn Sa Pa ăn gì cho bữa sáng,search_food_dining
+Phiền bạn bài viết về Đà Lạt,search_destination
+Em muốn nhiệt độ Sa Pa trung bình,ask_weather_timing
+Tìm giúp tôi đã đi Hội An năm ngoái rất thích,inform
+Nhờ bạn dự báo thời tiết Huế,ask_weather_timing
+Có vé máy bay Hội An khứ hồi,search_price
+Mình muốn nên đi Phú Quốc mấy ngày,ask_itinerary
+Cho mình hỏi kinh phí đi Đà Nẵng tiết kiệm,search_price
+Mình cần tìm order tour Vũng Tàu,book_tour
+Bạn ơi chi phí thuê xe Vũng Tàu,search_price
+Mũi Né mùa nào đẹp nhất,search_destination
+Vẻ đẹp Sa Pa,search_destination
+Mình cần tìm combo Huế trọn gói,search_travel
+Bạn ơi hải sản Hà Nội tươi ngon,search_food_dining
+Admin ơi công ty tôi tổ chức team building ở Phú Quốc,inform
+Mình cần đặt tour Mũi Né cho đoàn,book_tour
+Em muốn chi phí thuê xe Hội An,search_price
+Mình muốn hỏi cảnh đẹp Mũi Né nổi tiếng,search_destination
+Giúp mình chi phí đi Vũng Tàu tự túc,search_price
+Làm ơn cho mình tour Phú Quốc trọn gói bao gồm,search_travel
+Tour Hà Nội cho gia đình,search_travel
+Mình muốn hỏi lịch Sa Pa phù hợp,ask_itinerary
+Đi Đà Lạt mùa nào đẹp,search_destination
+Thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Mình cần đi Đà Lạt mùa nào đẹp,search_destination
+Mình cần tìm chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Mình cần đặt tour Đà Lạt tiết kiệm,book_tour
+Có chè Hội An ngon,search_food_dining
+Tìm giúp Nha Trang cách Hà Nội bao xa,search_destination
+Cho mình chi phí du lịch Đà Lạt 3 ngày,search_price
+Giúp mình nhà nghỉ Nha Trang giá rẻ,search_accommodation
+Nhờ bạn đi thác Đà Nẵng tham quan,search_activity
+Có kinh phí đi Vũng Tàu tiết kiệm,search_price
+Cho mình hỏi kinh phí đi Sa Pa tiết kiệm,search_price
+Phiền bạn ăn tối trên du thuyền Mũi Né,search_activity
+Cho mình khu nghỉ dưỡng Hội An,search_accommodation
+Đặc sản Đà Nẵng phải thử,search_food_dining
+Nhờ bạn tour Đà Nẵng team building,search_travel
+Có tour Nha Trang cuối tuần,search_travel
+Có khách sạn Nha Trang gần sân bay,search_accommodation
+Mũi Né ăn gì cho bữa sáng,search_food_dining
+Mình muốn lịch trình Phú Quốc cho gia đình,ask_itinerary
+Cho mình hỏi lịch trình tour Nha Trang,search_travel
+Phiền bạn tôi muốn đưa con đi Mũi Né,inform
+Mình muốn hỏi đi thuyền Vũng Tàu,search_activity
+Tìm giúp tour Vũng Tàu cho cặp đôi,search_travel
+Tìm giúp book combo Huế,book_tour
+Có tour du lịch Đà Nẵng giá rẻ,search_travel
+Glamping Đà Lạt,search_accommodation
+Làm ơn cho mình glamping Đà Lạt,search_accommodation
+Chèo thuyền ở Đà Lạt,search_activity
+Tìm giúp từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Có lịch trình Hội An cho người già,ask_itinerary
+Cho mình hỏi chi phí thuê xe Hội An,search_price
+Mình muốn hỏi thời tiết Huế tháng 12,ask_weather_timing
+Cho mình hỏi leo núi ở Mũi Né,search_activity
+Cho mình tắm nước nóng Phú Quốc,search_activity
+Có đặt vé máy bay đi Sa Pa,book_tour
+Cho mình du lịch Đà Lạt tự túc,search_travel
+Cho mình hỏi tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Cho mình hỏi tour Phú Quốc 4 ngày 3 đêm,search_travel
+Có tắm nước nóng Hà Nội,search_activity
+Có bạn tôi gợi ý đi Mũi Né,inform
+Admin ơi Phú Quốc nổi tiếng về gì,search_destination
+Mình cần đặt tour Hà Nội khuyến mãi,book_tour
+Khám phá Huế,search_destination
+Phiền bạn đặt tour Đà Lạt tiết kiệm,book_tour
+Tìm giúp tour Phú Quốc cuối tuần,search_travel
+Tìm giúp thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Tour du lịch Đà Lạt giá rẻ,search_travel
+Mình muốn lặn biển ở Nha Trang,search_activity
+Phiền bạn nhiệt độ Sa Pa trung bình,ask_weather_timing
+Giúp mình tour Phú Quốc trọn gói bao gồm,search_travel
+Admin ơi tiền ăn ở Hội An 1 ngày,search_price
+Nhờ bạn lịch trình Hội An cho người già,ask_itinerary
+Câu cá ở Huế,search_activity
+Mình muốn lịch trình Vũng Tàu tự túc,ask_itinerary
+Cho mình hỏi lịch trình Hội An cho người già,ask_itinerary
+Mình muốn từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Admin ơi đi Đà Lạt mùa nào đẹp,search_destination
+Admin ơi chi phí Mũi Né 4 ngày 3 đêm,search_price
+Homestay đẹp ở Đà Nẵng,search_accommodation
+Mình cần tìm nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Mình cần đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Mình muốn tour du lịch Đà Nẵng giá rẻ,search_travel
+Em muốn Phú Quốc có gì ngon,search_food_dining
+Giúp mình cafe view đẹp Hội An,search_food_dining
+Đi phượt Hội An bằng xe máy,search_activity
+Mình muốn hỏi chợ Mũi Né ẩm thực,search_food_dining
+Cho mình tour Huế khuyến mãi,search_travel
+Mình muốn hỏi nên đi Mũi Né không,search_destination
+Nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Giúp mình chi phí du lịch Nha Trang 3 ngày,search_price
+Khách sạn Vũng Tàu trung tâm,search_accommodation
+Admin ơi thông tin du lịch Mũi Né,search_destination
+Tìm giúp thời tiết Huế tháng 12,ask_weather_timing
+Tìm giúp tour Vũng Tàu giá học sinh,search_travel
+Bạn ơi câu cá ở Huế,search_activity
+Cho mình tour Nha Trang 4 ngày 3 đêm,search_travel
+Bạn ơi nhà hàng Vũng Tàu sang trọng,search_food_dining
+Mình muốn tôi đã đi Sa Pa năm ngoái rất thích,inform
+Mình cần Nha Trang có quán nào nổi tiếng,search_food_dining
+Bạn ơi tour Nha Trang 5 ngày 4 đêm,search_travel
+Cho mình hỏi Hội An ở đâu,search_destination
+Nhờ bạn review du lịch Huế,search_destination
+Có bài viết về Đà Lạt,search_destination
+Phiền bạn thông tin du lịch Mũi Né,search_destination
+Giúp mình lượng mưa Đà Lạt hàng năm,ask_weather_timing
+Phiền bạn ăn tối trên du thuyền Huế,search_activity
+Mình cần hải sản Đà Lạt tươi ngon,search_food_dining
+Nhờ bạn phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Mình muốn hỏi đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Tìm giúp lịch trình Hội An cho người già,ask_itinerary
+Admin ơi kinh phí đi Đà Nẵng tiết kiệm,search_price
+Cho mình hỏi thông tin du lịch Mũi Né,search_destination
+Cho mình hỏi tour Sa Pa cho người già,search_travel
+Mình cần resort Đà Nẵng hồ bơi,search_accommodation
+Cho mình hỏi top địa điểm Hà Nội,search_destination
+Nhờ bạn Hội An ở đâu,search_destination
+Tour Nha Trang 4 ngày 3 đêm,search_travel
+Có vợ chồng tôi cưới ở Hội An,inform
+Mình muốn hỏi Đà Lạt có homestay nào đẹp,search_accommodation
+Mình cần tìm chi phí Mũi Né 4 ngày 3 đêm,search_price
+Mình muốn các hãng bay đến Vũng Tàu,ask_transportation
+Admin ơi booking tour Huế giá tốt,search_travel
+Mình muốn khách sạn Hà Nội giá rẻ,search_accommodation
+Nhờ bạn đi bộ biển Mũi Né,search_activity
+Buffet Hội An giá rẻ,search_food_dining
+Giúp mình chợ Mũi Né ẩm thực,search_food_dining
+Nhờ bạn câu cá ở Huế,search_activity
+Nhờ bạn Sa Pa cách Hà Nội bao xa,search_destination
+Cho mình tour Nha Trang 5 ngày 4 đêm,search_travel
+Làm ơn cho mình tắm nước nóng Hà Nội,search_activity
+Tìm giúp Phú Quốc có gì ngon,search_food_dining
+Cafe view đẹp Hà Nội,search_food_dining
+Mình muốn đi Đà Lạt mùa nào đẹp,search_destination
+Mình cần vợ chồng tôi cưới ở Hội An,inform
+Cho mình hỏi kỳ nghỉ Hà Nội,search_travel
+Giúp mình thời tiết Nha Trang tháng 12,ask_weather_timing
+Admin ơi căn hộ Phú Quốc view đẹp,search_accommodation
+Phiền bạn đi Đà Lạt mùa nào đẹp,search_destination
+Tôi muốn đưa con đi Vũng Tàu,inform
+Bạn ơi nhiệt độ Sa Pa trung bình,ask_weather_timing
+Cho mình homestay Huế view đẹp,search_accommodation
+Làm ơn cho mình quán ăn ngon ở Hội An,search_food_dining
+Tìm giúp dự báo thời tiết Huế,ask_weather_timing
+Cho mình hỏi bạn tôi gợi ý đi Sa Pa,inform
+Giúp mình resort Đà Lạt 5 sao,search_accommodation
+Cho mình hỏi tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Mình cần tìm đi chợ Hội An về đêm,search_activity
+Đi Mũi Né bằng xe máy,ask_transportation
+Cho mình hỏi đi phượt Sa Pa bằng xe máy,search_activity
+Mình cần hải sản Sa Pa giá rẻ,search_food_dining
+Tìm giúp mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Giúp mình từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Admin ơi xe limousine đi Mũi Né,ask_transportation
+Em muốn tour Phú Quốc cho cặp đôi,search_travel
+Có tour Hội An nghỉ dưỡng,search_travel
+Em muốn resort Mũi Né gia đình,search_accommodation
+Mình cần tìm mùa khô ở Hà Nội,ask_weather_timing
+Nhờ bạn hải sản Hà Nội tươi ngon,search_food_dining
+Nhờ bạn cảnh đẹp Mũi Né nổi tiếng,search_destination
+Em muốn tour Phú Quốc 4 ngày 3 đêm,search_travel
+Giúp mình điểm đến Đà Lạt,search_destination
+Cho mình hỏi đặt tour Hà Nội khuyến mãi,book_tour
+Cho mình hỏi các hãng bay đến Vũng Tàu,ask_transportation
+Giúp mình khuyến mãi tour Phú Quốc,search_price
+Nhờ bạn chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Làm ơn cho mình ăn tối trên du thuyền Huế,search_activity
+Bạn ơi homestay Huế view đẹp,search_accommodation
+Phiền bạn đi Đà Lạt trong 2 ngày,ask_itinerary
+Tìm giúp tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Mình cần dự báo thời tiết Huế,ask_weather_timing
+Làm ơn cho mình mùa khô ở Hà Nội,ask_weather_timing
+Mình muốn kinh phí đi Huế tiết kiệm,search_price
+Cho mình hỏi Mũi Né mùa nào đẹp nhất,search_destination
+Nhờ bạn tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Cho mình hỏi check in Hà Nội ở đâu,search_destination
+Mình muốn hỏi vé máy bay Hội An khứ hồi,search_price
+Nhờ bạn nên đi Mũi Né không,search_destination
+Mình muốn hỏi đặt tour Mũi Né cho đoàn,book_tour
+Bạn ơi chi phí du lịch Huế 3 ngày,search_price
+Nhờ bạn resort Đà Lạt 5 sao,search_accommodation
+Nhờ bạn tour Sa Pa vip 5 sao,search_travel
+Cho mình hỏi đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Phiền bạn tour Đà Nẵng 3 ngày 2 đêm,search_travel
+Em muốn resort Đà Nẵng hồ bơi,search_accommodation
+Cho mình hỏi chèo thuyền ở Đà Lạt,search_activity
+Phiền bạn tắm nước nóng Phú Quốc,search_activity
+Có đặt phòng khách sạn Đà Lạt,book_tour
+Nhờ bạn khuyến mãi tour Phú Quốc,search_price
+Nhờ bạn ẩm thực Hội An món gì đặc sản,search_food_dining
+Làm ơn cho mình nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Tìm giúp Nha Trang có quán nào nổi tiếng,search_food_dining
+Cho mình chè Hội An ngon,search_food_dining
+Em muốn cafe view đẹp Hội An,search_food_dining
+Cho mình cafe view đẹp Nha Trang,search_food_dining
+Cho mình hỏi đi bộ biển Đà Lạt,search_activity
+Cho mình hỏi order tour Vũng Tàu,book_tour
+Nên đi Phú Quốc mấy ngày,ask_itinerary
+Mình cần tìm lặn ngắm san hô Nha Trang,search_activity
+Giúp mình tôi nghe nói Sa Pa rất đẹp,inform
+Cho mình bánh xèo Phú Quốc,search_food_dining
+Phiền bạn ẩm thực Hà Nội món gì đặc sản,search_food_dining
+Mình cần tìm review du lịch Hà Nội,search_destination
+Mình muốn hỏi chi phí thuê xe Hội An,search_price
+Mình cần tour Sa Pa vip 5 sao,search_travel
+Có lặn ngắm san hô Nha Trang,search_activity
+Làm ơn cho mình tôi nghe nói Đà Nẵng rất đẹp,inform
+Em muốn chèo thuyền ở Đà Lạt,search_activity
+Mình cần combo Phú Quốc trọn gói,search_travel
+Em muốn check in Đà Nẵng ở đâu,search_destination
+Cho mình xe limousine đi Mũi Né,ask_transportation
+Ăn tối trên du thuyền Huế,search_activity
+Cho mình hỏi vợ chồng tôi cưới ở Phú Quốc,inform
+Mình muốn hỏi review du lịch Huế,search_destination
+Cho mình hỏi ăn tối trên du thuyền Mũi Né,search_activity
+Có khám phá Hà Nội,search_destination
+Admin ơi chi phí ăn uống ở Đà Lạt,search_price
+Mình muốn top địa điểm Huế,search_destination
+Mình muốn hỏi chi phí du lịch Hà Nội 3 ngày,search_price
+Mình muốn hỏi leo núi ở Huế,search_activity
+Cho mình hỏi khu nghỉ dưỡng Sa Pa,search_accommodation
+Có booking tour Đà Nẵng giá rẻ,book_tour
+Mình cần khám phá Huế,search_destination
+Có mua vé tham quan Đà Lạt,book_tour
+Em muốn tour Đà Nẵng cho người già,search_travel
+Có tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Cho mình Vũng Tàu nổi tiếng về gì,search_destination
+Giúp mình tour Hội An nghỉ dưỡng,search_travel
+Cho mình hỏi tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Mình muốn buffet Hội An giá rẻ,search_food_dining
+Mình muốn Sa Pa cách Hà Nội bao xa,search_destination
+Admin ơi dự báo thời tiết Huế,ask_weather_timing
+Mình cần Phú Quốc có gì chơi,search_destination
+Khách sạn Nha Trang gần sân bay,search_accommodation
+Cho mình hỏi chi phí đi Vũng Tàu tự túc,search_price
+Cho mình hải sản Đà Lạt tươi ngon,search_food_dining
+Cho mình hỏi tour Phú Quốc trọn gói bao gồm,search_travel
+Cho mình hỏi ăn vặt Huế,search_food_dining
+Giúp mình đi phượt Sa Pa bằng xe máy,search_activity
+Phiền bạn chi phí du lịch Đà Lạt 3 ngày,search_price
+Mình cần tìm câu cá ở Huế,search_activity
+Cho mình hỏi thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Em muốn combo Huế trọn gói,search_travel
+Cho mình hỏi quán ăn ngon ở Nha Trang,search_food_dining
+Giúp mình chia sẻ kinh nghiệm Vũng Tàu,search_destination
+Phiền bạn cảnh đẹp Đà Nẵng nổi tiếng,search_destination
+Mình cần tìm căn hộ Phú Quốc view đẹp,search_accommodation
+Mình cần tìm đi thuyền Vũng Tàu,search_activity
+Cho mình hỏi căn hộ Hội An view đẹp,search_accommodation
+Admin ơi cảnh đẹp Đà Nẵng nổi tiếng,search_destination
+Cho mình resort Đà Nẵng hồ bơi,search_accommodation
+Em muốn tour Đà Nẵng nghỉ dưỡng,search_travel
+Phiền bạn nhóm bạn tôi định đi Vũng Tàu tháng sau,inform
+Mình muốn khám phá Huế,search_destination
+Tìm giúp ăn vặt Huế,search_food_dining
+Admin ơi tour Sa Pa vip 5 sao,search_travel
+Cho mình hỏi tắm nước nóng Hà Nội,search_activity
+Mình cần tìm chi phí thuê xe Vũng Tàu,search_price
+Mình cần tìm cafe view đẹp Hà Nội,search_food_dining
+Mình muốn hỏi đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Admin ơi ngắm hoàng hôn Hội An,search_activity
+Cho mình lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Cho mình hỏi đi bộ biển Đà Nẵng,search_activity
+Nhờ bạn kỳ nghỉ Hà Nội,search_travel
+Có giá vé Huế cho trẻ em,search_price
+Có lượng mưa Đà Lạt hàng năm,ask_weather_timing
+Tìm giúp đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Mình muốn combo Phú Quốc trọn gói,search_travel
+Cho mình hỏi lịch trình Vũng Tàu tự túc,ask_itinerary
+Cho mình hỏi booking homestay Đà Nẵng giá rẻ,book_tour
+Cho mình hỏi bánh xèo Phú Quốc,search_food_dining
+Mình cần tìm resort Đà Lạt 5 sao,search_accommodation
+Có leo núi ở Huế,search_activity
+Cho mình ở Hà Nội ăn gì ngon,search_food_dining
+Giúp mình đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Làm ơn cho mình ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Có nhóm bạn tôi định đi Vũng Tàu tháng sau,inform
+Mình muốn hỏi lịch trình Vũng Tàu tự túc,ask_itinerary
+Em muốn booking tour Nha Trang giá tốt,search_travel
+Mình cần Phú Quốc có gì ngon,search_food_dining
+Tắm nước nóng Đà Lạt,search_activity
+Mình muốn hải sản Sa Pa giá rẻ,search_food_dining
+Tour Sa Pa trọn gói bao gồm,search_travel
+Đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Mình muốn hỏi bạn tôi gợi ý đi Mũi Né,inform
+Làm ơn cho mình Hà Nội nổi tiếng về gì,search_destination
+Giúp mình bạn tôi gợi ý đi Sa Pa,inform
+Em muốn resort Đà Lạt 5 sao,search_accommodation
+Cho mình hỏi homestay Mũi Né gần trung tâm,search_accommodation
+Có buffet Nha Trang giá rẻ,search_food_dining
+Em muốn tour Hà Nội cho gia đình,search_travel
+Em muốn check in Hà Nội ở đâu,search_destination
+Mình cần đi phượt Hội An bằng xe máy,search_activity
+Mình cần tìm ăn vặt Hội An,search_food_dining
+Em muốn chi phí du lịch Hà Nội 3 ngày,search_price
+Cho mình hỏi reserve phòng Đà Nẵng,book_tour
+Bạn ơi kinh phí đi Vũng Tàu tiết kiệm,search_price
+Mình cần đi bộ biển Mũi Né,search_activity
+Có ẩm thực Hội An món gì đặc sản,search_food_dining
+Bạn ơi nên đi Phú Quốc mấy ngày,ask_itinerary
+Mình muốn hỏi cả nhà tôi đi Nha Trang dịp tết,inform
+Cho mình hỏi lẩu Hà Nội ăn ở đâu,search_food_dining
+Kỳ nghỉ Hà Nội,search_travel
+Cho mình Sa Pa cách Hà Nội bao xa,search_destination
+Cho mình tour Phú Quốc trọn gói bao gồm,search_travel
+Khám phá Hà Nội,search_destination
+Cho mình hỏi thời tiết Huế tháng 12,ask_weather_timing
+Mình muốn hỏi tôi muốn đưa con đi Phú Quốc,inform
+Cho mình hỏi ẩm thực Hội An món gì đặc sản,search_food_dining
+Cho mình gợi ý tour Nha Trang 2 ngày,ask_itinerary
+Tìm giúp giới thiệu về Mũi Né,search_destination
+Cho mình tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Cho mình đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Admin ơi bài viết về Đà Lạt,search_destination
+Giúp mình lịch trình Vũng Tàu tự túc,ask_itinerary
+Làm ơn cho mình chi phí du lịch Đà Lạt 3 ngày,search_price
+Có tôi đã đi Hội An năm ngoái rất thích,inform
+Phiền bạn giá tour Phú Quốc bao nhiêu,search_price
+Admin ơi đi bộ biển Đà Nẵng,search_activity
+Cho mình hỏi combo Huế trọn gói,search_travel
+Tôi đã đi Sa Pa năm ngoái rất thích,inform
+Tìm giúp du lịch Hà Nội tự túc,search_travel
+Cho mình hỏi check in Đà Nẵng ở đâu,search_destination
+Mình muốn hỏi tour Nha Trang khuyến mãi,search_travel
+Nhờ bạn nhà nghỉ Nha Trang giá rẻ,search_accommodation
+Tìm giúp đi Nha Trang tham quan gì,search_destination
+Bạn ơi buffet Hội An giá rẻ,search_food_dining
+Tìm giúp chi phí thuê xe Hội An,search_price
+Tìm giúp có gì đẹp ở Hội An,search_destination
+Admin ơi đi chợ Hội An về đêm,search_activity
+Cho mình hỏi xe limousine đi Hội An,ask_transportation
+Có top địa điểm Hà Nội,search_destination
+Có hải sản Sa Pa giá rẻ,search_food_dining
+Kinh phí đi Đà Nẵng tiết kiệm,search_price
+Nhờ bạn đi Mũi Né bằng xe máy,ask_transportation
+Có đi phượt Sa Pa bằng xe máy,search_activity
+Phiền bạn vẻ đẹp Sa Pa,search_destination
+Cho mình hỏi kinh phí đi Vũng Tàu tiết kiệm,search_price
+Mình cần tìm tour Sa Pa cho người già,search_travel
+Có bố mẹ tôi thích Nha Trang,inform
+Nhờ bạn tour du lịch Đà Lạt giá rẻ,search_travel
+Giúp mình nhà hàng Vũng Tàu sang trọng,search_food_dining
+Đặt tour Đà Lạt tiết kiệm,book_tour
+Phiền bạn đặc sản Đà Nẵng phải thử,search_food_dining
+Có chi phí du lịch Hà Nội 3 ngày,search_price
+Giúp mình mì quảng Hà Nội,search_food_dining
+Mình cần Sa Pa ăn gì cho bữa sáng,search_food_dining
+Chi phí ăn uống ở Đà Lạt,search_price
+Mình muốn hỏi resort Đà Lạt 5 sao,search_accommodation
+Mình muốn hỏi du lịch Đà Nẵng tự túc,search_travel
+Em muốn đi Sa Pa bằng tàu cao tốc,ask_transportation
+Mình muốn du lịch Nha Trang mùa đông,search_travel
+Cho mình hỏi lượng mưa Đà Lạt hàng năm,ask_weather_timing
+Cho mình hỏi tour Nha Trang 4 ngày 3 đêm,search_travel
+Phiền bạn gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Mình cần chia sẻ kinh nghiệm Phú Quốc,search_destination
+Cho mình hỏi đi chợ Hội An về đêm,search_activity
+Em muốn giới thiệu về Mũi Né,search_destination
+Giúp mình tour Vũng Tàu cho cặp đôi,search_travel
+Giúp mình chèo thuyền ở Đà Lạt,search_activity
+Có khí hậu Vũng Tàu như thế nào,ask_weather_timing
+Có tiền ăn ở Hà Nội 1 ngày,search_price
+Mình muốn hỏi cafe view đẹp Hội An,search_food_dining
+Bạn ơi khu nghỉ dưỡng Hội An,search_accommodation
+Phiền bạn đi Nha Trang tham quan gì,search_destination
+Mình cần tìm Sa Pa ăn gì cho bữa sáng,search_food_dining
+Cho mình mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Mình muốn hỏi tour Huế khuyến mãi,search_travel
+Mình cần tìm tàu hỏa đi Nha Trang,ask_transportation
+Admin ơi khám phá Hà Nội,search_destination
+Admin ơi booking tour Vũng Tàu giá rẻ,book_tour
+Nhờ bạn glamping Đà Lạt,search_accommodation
+Giúp mình homestay đẹp ở Hà Nội,search_accommodation
+Em muốn chia sẻ kinh nghiệm Sa Pa,search_destination
+Giúp mình bài viết về Đà Lạt,search_destination
+Giúp mình đi phượt Hội An bằng xe máy,search_activity
+Cho mình hỏi resort Đà Lạt 5 sao,search_accommodation
+Làm ơn cho mình ăn chay Huế,search_food_dining
+Em muốn gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Phiền bạn review du lịch Huế,search_destination
+Có tour Nha Trang khuyến mãi,search_travel
+Nhờ bạn tour Sa Pa trọn gói bao gồm,search_travel
+Cho mình hỏi chợ Mũi Né ẩm thực,search_food_dining
+Admin ơi lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Mình muốn hỏi top địa điểm Hà Nội,search_destination
+Có khuyến mãi tour Phú Quốc,search_price
+Admin ơi đi thác Đà Nẵng tham quan,search_activity
+Giúp mình lặn biển ở Nha Trang,search_activity
+Bạn ơi quán ăn ngon ở Hội An,search_food_dining
+Mình cần tour Đà Nẵng 3 ngày 2 đêm,search_travel
+Làm ơn cho mình ăn vặt Hội An,search_food_dining
+Bạn ơi homestay đẹp ở Hà Nội,search_accommodation
+Có chi phí thuê xe Hà Nội,search_price
+Cho mình hỏi Sa Pa ăn gì cho bữa sáng,search_food_dining
+Tìm giúp gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Cho mình kinh phí đi Sa Pa tiết kiệm,search_price
+Bạn ơi resort Mũi Né gia đình,search_accommodation
+Làm ơn cho mình tour du lịch Đà Lạt giá rẻ,search_travel
+Admin ơi kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Phiền bạn du lịch Đà Lạt tự túc,search_travel
+Làm ơn cho mình buffet Nha Trang giá rẻ,search_food_dining
+Mình cần lặn ngắm san hô Sa Pa,search_activity
+Phiền bạn lặn biển ở Nha Trang,search_activity
+Tìm giúp khách sạn Sa Pa gần chợ đêm,search_accommodation
+Mình cần tìm tôi nghe nói Sa Pa rất đẹp,inform
+Tôi nghe nói Sa Pa rất đẹp,inform
+Admin ơi tour Nha Trang khuyến mãi,search_travel
+Cho mình hỏi chi phí du lịch Nha Trang 3 ngày,search_price
+Nhờ bạn tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Phiền bạn tour Sa Pa cho người già,search_travel
+Nhờ bạn đi Huế bao nhiêu ngày,ask_itinerary
+Cho mình book phòng Đà Lạt view biển,book_tour
+Mình muốn hỏi tôi nghe nói Sa Pa rất đẹp,inform
+Mình cần tìm lịch trình Phú Quốc cho gia đình,ask_itinerary
+Có ăn tối trên du thuyền Mũi Né,search_activity
+Em muốn cafe view đẹp Hà Nội,search_food_dining
+Cho mình du lịch Đà Nẵng tự túc,search_travel
+Phiền bạn đặt vé máy bay đi Sa Pa,book_tour
+Cho mình chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Cho mình hỏi gợi ý tour Mũi Né 2 ngày,ask_itinerary
+Admin ơi lẩu Hà Nội ăn ở đâu,search_food_dining
+Cho mình hỏi chia sẻ kinh nghiệm Sa Pa,search_destination
+Mình cần tìm cắm trại Huế,search_activity
+Cho mình hỏi Phú Quốc có gì chơi,search_destination
+Mình muốn bạn tôi gợi ý đi Sa Pa,inform
+Có lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Em muốn cảnh đẹp Mũi Né nổi tiếng,search_destination
+Phiền bạn resort Đà Lạt 5 sao,search_accommodation
+Mình muốn tour Sa Pa trọn gói bao gồm,search_travel
+Tour Đà Nẵng team building,search_travel
+Hải sản Sa Pa giá rẻ,search_food_dining
+Có book phòng Đà Lạt view biển,book_tour
+Mình cần tìm khám phá ẩm thực đường phố Hội An,search_activity
+Mình muốn hỏi khu nghỉ dưỡng Sa Pa,search_accommodation
+Mình muốn hỏi tour Huế team building,search_travel
+Em muốn cả nhà tôi đi Huế dịp tết,inform
+Cho mình hỏi buffet Nha Trang giá rẻ,search_food_dining
+Bạn ơi lưu trú ở Sa Pa gần chợ,search_accommodation
+Mình cần Nha Trang ăn gì cho bữa sáng,search_food_dining
+Bạn ơi đặt tour Hà Nội khuyến mãi,book_tour
+Mình cần tìm xe khách đi Hội An giờ nào,ask_transportation
+Mình muốn hỏi kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Mình cần tìm ăn tối trên du thuyền Huế,search_activity
+Cho mình phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Nhờ bạn ở Đà Nẵng mấy ngày là đủ,ask_itinerary
+Phiền bạn top địa điểm Huế,search_destination
+Cho mình lịch trình Vũng Tàu tự túc,ask_itinerary
+Mình muốn hỏi booking tour Huế giá tốt,search_travel
+Admin ơi thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Chi phí du lịch Nha Trang 3 ngày,search_price
+Mình cần tìm Sa Pa cách Hà Nội bao xa,search_destination
+Có tour Đà Nẵng 4 ngày 3 đêm,search_travel
+Có đi Đà Lạt trong 2 ngày,ask_itinerary
+Cho mình hỏi đặt vé máy bay đi Sa Pa,book_tour
+Giúp mình homestay Huế view đẹp,search_accommodation
+Mình cần tour du lịch Đà Lạt giá rẻ,search_travel
+Có tour Đà Nẵng team building,search_travel
+Cho mình kế hoạch du lịch Huế,ask_itinerary
+Giúp mình chi phí Mũi Né 4 ngày 3 đêm,search_price
+Mình cần tìm ở Hà Nội ăn gì ngon,search_food_dining
+Nhờ bạn chi phí du lịch Hà Nội 3 ngày,search_price
+Có resort Đà Nẵng hồ bơi,search_accommodation
+Phiền bạn tour Vũng Tàu giá học sinh,search_travel
+Tìm giúp tôi muốn đưa con đi Mũi Né,inform
+Mình muốn hỏi phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Có chia sẻ kinh nghiệm Vũng Tàu,search_destination
+Phiền bạn nên đi Phú Quốc mấy ngày,ask_itinerary
+Làm ơn cho mình tôi muốn đưa con đi Đà Lạt,inform
+Bạn ơi đi Mũi Né bằng xe máy,ask_transportation
+Nhờ bạn tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Cho mình hải sản Hà Nội tươi ngon,search_food_dining
+Em muốn lịch trình Hội An cho người già,ask_itinerary
+Nhờ bạn lặn ngắm san hô Sa Pa,search_activity
+Có ẩm thực Hà Nội món gì đặc sản,search_food_dining
+Có lịch trình tour Nha Trang,search_travel
+Có từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Có tôi đã đi Sa Pa năm ngoái rất thích,inform
+Cho mình hỏi vé máy bay Hội An khứ hồi,search_price
+Mình muốn hỏi món việt Nha Trang ngon,search_food_dining
+Cho mình hỏi tour Hội An team building,search_travel
+Em muốn tôi nghe nói Đà Nẵng rất đẹp,inform
+Cho mình hỏi check in Huế ở đâu,search_destination
+Mình cần tìm tour Phú Quốc 4 ngày 3 đêm,search_travel
+Mình cần tìm cảnh đẹp Đà Nẵng nổi tiếng,search_destination
+Nhờ bạn lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Mình muốn hỏi booking homestay Đà Nẵng giá rẻ,book_tour
+Mình cần tìm tour Hà Nội cho gia đình,search_travel
+Giúp mình Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Phiền bạn xe limousine đi Mũi Né,ask_transportation
+Nhờ bạn chia sẻ kinh nghiệm Phú Quốc,search_destination
+Mình cần tìm Phú Quốc nổi tiếng về gì,search_destination
+Có lặn ngắm san hô Sa Pa,search_activity
+Mình muốn hỏi đi phượt Sa Pa bằng xe máy,search_activity
+Giúp mình ngắm hoàng hôn Hội An,search_activity
+Giúp mình cắm trại Hội An,search_activity
+Cho mình hỏi ăn chay Huế,search_food_dining
+Mình muốn kinh phí đi Vũng Tàu tiết kiệm,search_price
+Nhờ bạn tour Huế team building,search_travel
+Bạn ơi tour Hội An nghỉ dưỡng,search_travel
+Bạn ơi quán ăn ngon ở Nha Trang,search_food_dining
+Mình muốn order tour Vũng Tàu,book_tour
+Xe đạp đi Phú Quốc,ask_transportation
+Làm ơn cho mình đặt tour Đà Nẵng tiết kiệm,book_tour
+Cho mình hỏi hải sản Hà Nội tươi ngon,search_food_dining
+Bạn ơi tiền ăn ở Hội An 1 ngày,search_price
+Mình muốn hỏi buffet Hội An giá rẻ,search_food_dining
+Bạn ơi Nha Trang cách Hà Nội bao xa,search_destination
+Bạn ơi chi phí Mũi Né 4 ngày 3 đêm,search_price
+Có lặn biển ở Nha Trang,search_activity
+Phiền bạn tour Phú Quốc giá học sinh,search_travel
+Mình cần tìm chi phí thuê xe Hội An,search_price
+Admin ơi nhóm bạn tôi định đi Vũng Tàu tháng sau,inform
+Mình muốn hỏi lịch trình Mũi Né tự túc,ask_itinerary
+Mình muốn hỏi chi phí đi Vũng Tàu tự túc,search_price
+Có Phú Quốc có gì ngon,search_food_dining
+Tìm giúp căn hộ Phú Quốc view đẹp,search_accommodation
+Làm ơn cho mình giá vé tham quan Sa Pa,search_price
+Cho mình hỏi đi Mũi Né dịp lễ có vui không,ask_weather_timing
+Phiền bạn tour Phú Quốc 4 ngày 3 đêm,search_travel
+Tìm giúp review du lịch Huế,search_destination
+Giúp mình kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Cho mình Nha Trang cách Hà Nội bao xa,search_destination
+Từ Hà Nội đi Phú Quốc bằng gì,ask_transportation
+Tìm giúp nhà nghỉ Nha Trang giá rẻ,search_accommodation
+Làm ơn cho mình đặc sản Đà Nẵng phải thử,search_food_dining
+Mình cần đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Mình muốn hỏi cắm trại Hội An,search_activity
+Nhờ bạn khám phá Hà Nội,search_destination
+Ăn chay Huế,search_food_dining
+Mình cần ăn chay Huế,search_food_dining
+Đi bộ biển Đà Nẵng,search_activity
+Bạn ơi xe limousine đi Hội An,ask_transportation
+Cho mình hỏi tour Vũng Tàu giá học sinh,search_travel
+Bạn ơi tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Tìm giúp giá vé Huế cho trẻ em,search_price
+Mình muốn nhà hàng Vũng Tàu sang trọng,search_food_dining
+Tìm giúp nhiệt độ Phú Quốc trung bình,ask_weather_timing
+Cho mình hỏi đi bộ biển Mũi Né,search_activity
+Tìm giúp Mũi Né có quán nào nổi tiếng,search_food_dining
+Cho mình hải sản Phú Quốc tươi ngon,search_food_dining
+Phiền bạn booking tour Đà Nẵng giá rẻ,book_tour
+Có lưu trú ở Sa Pa gần chợ,search_accommodation
+Mình muốn hỏi Hội An ở đâu,search_destination
+Cho mình kinh phí đi Đà Nẵng tiết kiệm,search_price
+Mình muốn hỏi đặt phòng khách sạn Đà Lạt,book_tour
+Cho mình hỏi hải sản Đà Lạt tươi ngon,search_food_dining
+Em muốn điểm đến Đà Lạt,search_destination
+Làm ơn cho mình ăn vặt Huế,search_food_dining
+Nhờ bạn tôi muốn đưa con đi Vũng Tàu,inform
+Mình cần tìm cắm trại Hội An,search_activity
+Làm ơn cho mình giá vé Huế cho trẻ em,search_price
+Cho mình đi Mũi Né bằng xe máy,ask_transportation
+Bạn ơi mua vé tham quan Đà Lạt,book_tour
+Phiền bạn tour Vũng Tàu 5 ngày 4 đêm,search_travel
+Mình muốn hỏi tour Phú Quốc cuối tuần,search_travel
+Bạn ơi đi Vũng Tàu bằng xe máy,ask_transportation
+Nhờ bạn đi chợ Hội An về đêm,search_activity
+Phiền bạn combo Phú Quốc trọn gói,search_travel
+Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Cho mình hỏi phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Tiền ăn ở Hà Nội 1 ngày,search_price
+Phiền bạn quán ăn ngon ở Hội An,search_food_dining
+Mình cần đi thác Đà Nẵng tham quan,search_activity
+Mình muốn hỏi bố mẹ tôi thích Nha Trang,inform
+Em muốn ẩm thực Hội An món gì đặc sản,search_food_dining
+Có tour Phú Quốc trọn gói bao gồm,search_travel
+Admin ơi tour du lịch Đà Lạt giá rẻ,search_travel
+Mình cần Đà Lạt có homestay nào đẹp,search_accommodation
+Cho mình hỏi tour Đà Nẵng nghỉ dưỡng,search_travel
+Em muốn đi thuyền Vũng Tàu,search_activity
+Cho mình tour Phú Quốc giá học sinh,search_travel
+Mình muốn tour du lịch Đà Lạt giá rẻ,search_travel
+Cho mình hỏi glamping Đà Lạt,search_accommodation
+Cho mình khách sạn Hà Nội giá rẻ,search_accommodation
+Tìm giúp đặc sản Sa Pa phải thử,search_food_dining
+Có đặc sản Đà Nẵng phải thử,search_food_dining
+Có chi phí ăn uống ở Đà Lạt,search_price
+Mình cần tìm Vũng Tàu nổi tiếng về gì,search_destination
+Cho mình hỏi xe giường nằm đi Huế,ask_transportation
+Em muốn chi phí du lịch Đà Lạt 3 ngày,search_price
+Bạn ơi tôi muốn tìm hiểu về Vũng Tàu,inform
+Có Vũng Tàu nổi tiếng về gì,search_destination
+Mình cần homestay Mũi Né gần trung tâm,search_accommodation
+Giúp mình nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Bạn ơi bài viết về Đà Lạt,search_destination
+Cho mình đi thuyền Vũng Tàu,search_activity
+Cho mình homestay đẹp ở Đà Nẵng,search_accommodation
+Em muốn công ty tôi tổ chức team building ở Phú Quốc,inform
+Mình muốn tour Sa Pa cho người già,search_travel
+Chia sẻ kinh nghiệm Sa Pa,search_destination
+Mình cần tìm nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Em muốn tôi muốn đưa con đi Phú Quốc,inform
+Mình muốn cắm trại Huế,search_activity
+Có giới thiệu về Mũi Né,search_destination
+Cho mình hỏi đi phượt Hội An bằng xe máy,search_activity
+Admin ơi lịch trình Vũng Tàu tự túc,ask_itinerary
+Giúp mình cắm trại Huế,search_activity
+Mình muốn hỏi giới thiệu về Phú Quốc,search_destination
+Cho mình hỏi nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Bài viết về Đà Lạt,search_destination
+Có booking tour Huế giá tốt,search_travel
+Cho mình hỏi Vũng Tàu nổi tiếng về gì,search_destination
+Admin ơi tôi đã đi Hội An năm ngoái rất thích,inform
+Cho mình xe đạp đi Phú Quốc,ask_transportation
+Làm ơn cho mình lẩu Hà Nội ăn ở đâu,search_food_dining
+Admin ơi thời tiết Huế tháng 12,ask_weather_timing
+Nhờ bạn công ty tôi tổ chức team building ở Phú Quốc,inform
+Có tắm nước nóng Đà Lạt,search_activity
+Mình cần khuyến mãi tour Phú Quốc,search_price
+Đặt tour Hội An khuyến mãi,book_tour
+Cho mình hỏi đi Đà Lạt mùa nào đẹp,search_destination
+Phiền bạn tour du lịch Đà Lạt giá rẻ,search_travel
+Cho mình hỏi ở Đà Nẵng mấy ngày là đủ,ask_itinerary
+Có đặt tour Vũng Tàu cho đoàn,book_tour
+Giúp mình homestay Đà Lạt cho đôi người,search_accommodation
+Có nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Làm ơn cho mình Nha Trang cách Hà Nội bao xa,search_destination
+Mình cần tìm taxi ở Nha Trang giá rẻ,ask_transportation
+Giúp mình đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Giúp mình top địa điểm Huế,search_destination
+Cho mình hỏi chi phí du lịch Huế 3 ngày,search_price
+Admin ơi Hà Nội nổi tiếng về gì,search_destination
+Có dự báo thời tiết Huế,ask_weather_timing
+Nhờ bạn chi phí thuê xe Hà Nội,search_price
+Phiền bạn giá vé Huế cho trẻ em,search_price
+Làm ơn cho mình bố mẹ tôi thích Nha Trang,inform
+Em muốn book combo Huế,book_tour
+Cho mình hỏi Hà Nội nổi tiếng về gì,search_destination
+Mình muốn hỏi cafe view đẹp Hà Nội,search_food_dining
+Mình cần tìm chia sẻ kinh nghiệm Sa Pa,search_destination
+Giúp mình mùa khô ở Hà Nội,ask_weather_timing
+Cho mình vợ chồng tôi cưới ở Phú Quốc,inform
+Mình cần combo Huế trọn gói,search_travel
+Phiền bạn đặc sản Sa Pa phải thử,search_food_dining
+Làm ơn cho mình đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Mình cần tìm các hãng bay đến Vũng Tàu,ask_transportation
+Có order tour Vũng Tàu,book_tour
+Cho mình thông tin du lịch Mũi Né,search_destination
+Phiền bạn cafe view đẹp Hà Nội,search_food_dining
+Bạn ơi tour Đà Nẵng team building,search_travel
+Cho mình hỏi tour Vũng Tàu cho cặp đôi,search_travel
+Mình muốn hỏi tour Nha Trang cuối tuần,search_travel
+Mình muốn nên đi Mũi Né không,search_destination
+Tìm giúp đi bộ biển Đà Lạt,search_activity
+Cho mình hỏi đi Sa Pa bằng tàu cao tốc,ask_transportation
+Cho mình hỏi tôi đã đi Sa Pa năm ngoái rất thích,inform
+Nhờ bạn tắm nước nóng Hà Nội,search_activity
+Bạn ơi top địa điểm Huế,search_destination
+Phiền bạn đi bộ biển Đà Lạt,search_activity
+Mình muốn hỏi xe khách đi Hội An giờ nào,ask_transportation
+Bạn ơi tour Phú Quốc trọn gói bao gồm,search_travel
+Admin ơi đi Hội An dịp lễ có vui không,ask_weather_timing
+Giúp mình booking tour Nha Trang giá tốt,search_travel
+Mình cần tìm bài viết về Đà Nẵng,search_destination
+Cho mình hỏi công ty tôi tổ chức team building ở Phú Quốc,inform
+Mình muốn món việt Nha Trang ngon,search_food_dining
+Mình muốn hỏi check in Hà Nội ở đâu,search_destination
+Em muốn tour du lịch Đà Lạt giá rẻ,search_travel
+Em muốn tiền ăn ở Hội An 1 ngày,search_price
+Làm ơn cho mình bài viết về Đà Lạt,search_destination
+Admin ơi khám phá ẩm thực đường phố Hội An,search_activity
+Phiền bạn tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Cho mình hỏi tôi nghe nói Đà Nẵng rất đẹp,inform
+Bạn ơi chia sẻ kinh nghiệm Đà Nẵng,search_destination
+Cho mình hỏi đặt vé máy bay đi Hà Nội,book_tour
+Cho mình hỏi tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Nhờ bạn tour Huế cho cặp đôi,search_travel
+Cho mình top địa điểm Hà Nội,search_destination
+Tìm giúp tour Đà Nẵng team building,search_travel
+Nhờ bạn đi Hội An dịp lễ có vui không,ask_weather_timing
+Làm ơn cho mình tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Nhờ bạn khám phá ẩm thực đường phố Hội An,search_activity
+Admin ơi hải sản Sa Pa tươi ngon,search_food_dining
+Cho mình hỏi chi phí thuê xe Vũng Tàu,search_price
+Em muốn tôi muốn tìm hiểu về Vũng Tàu,inform
+Cho mình hỏi vẻ đẹp Sa Pa,search_destination
+Mình cần tìm khí hậu Vũng Tàu như thế nào,ask_weather_timing
+Mình cần Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Mình muốn hỏi ở Hà Nội ăn gì ngon,search_food_dining
+Tìm giúp Nha Trang ăn gì cho bữa sáng,search_food_dining
+Mình cần kinh phí đi Huế tiết kiệm,search_price
+Mình muốn hỏi Mũi Né có quán nào nổi tiếng,search_food_dining
+Mình muốn bánh xèo Phú Quốc,search_food_dining
+Làm ơn cho mình tôi muốn đưa con đi Vũng Tàu,inform
+Có thông tin du lịch Mũi Né,search_destination
+Có giới thiệu về Phú Quốc,search_destination
+Cho mình hỏi khí hậu Vũng Tàu như thế nào,ask_weather_timing
+Có tour Vũng Tàu giá học sinh,search_travel
+Có cả nhà tôi đi Nha Trang dịp tết,inform
+Làm ơn cho mình phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Mình cần review du lịch Hà Nội,search_destination
+Giúp mình tour Đà Nẵng team building,search_travel
+Mình muốn đặt tour Mũi Né cho đoàn,book_tour
+Cho mình hỏi dự báo thời tiết Huế,ask_weather_timing
+Mình muốn hỏi Đà Nẵng ăn gì cho bữa sáng,search_food_dining
+Mình cần Mũi Né mùa nào đẹp nhất,search_destination
+Làm ơn cho mình Mũi Né mùa nào đẹp nhất,search_destination
+Mình muốn hỏi kế hoạch du lịch Huế,ask_itinerary
+Cho mình hỏi món việt Nha Trang ngon,search_food_dining
+Mình cần tìm tiền ăn ở Hội An 1 ngày,search_price
+Mình cần cafe view đẹp Nha Trang,search_food_dining
+Mình cần tìm đặt tour Đà Nẵng tiết kiệm,book_tour
+Phiền bạn cafe view đẹp Nha Trang,search_food_dining
+Cho mình tour Đà Lạt khởi hành từ Hà Nội,search_travel
+Cho mình hỏi nên đi Phú Quốc mấy ngày,ask_itinerary
+Phiền bạn chi phí thuê xe Hội An,search_price
+Cho mình hỏi đi thuyền Hà Nội,search_activity
+Giúp mình đặt tour Đà Nẵng tiết kiệm,book_tour
+Làm ơn cho mình tour Sa Pa cho người già,search_travel
+Mình cần tìm tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Cho mình hỏi chi phí Mũi Né 4 ngày 3 đêm,search_price
+Admin ơi Hội An ở đâu,search_destination
+Mình cần tìm công ty tôi tổ chức team building ở Phú Quốc,inform
+Làm ơn cho mình khám phá Huế,search_destination
+Admin ơi khách sạn Sa Pa giá rẻ,search_accommodation
+Admin ơi booking tour Đà Lạt giá rẻ,book_tour
+Cho mình đi Nha Trang tham quan gì,search_destination
+Nhờ bạn mua vé tham quan Đà Lạt,book_tour
+Bạn ơi resort Đà Lạt 5 sao,search_accommodation
+Giúp mình xe limousine đi Mũi Né,ask_transportation
+Bạn ơi ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Giúp mình chia sẻ kinh nghiệm Phú Quốc,search_destination
+Mình cần tìm tour Đà Nẵng nghỉ dưỡng,search_travel
+Cho mình hỏi lưu trú ở Sa Pa gần chợ,search_accommodation
+Tìm giúp leo núi ở Mũi Né,search_activity
+Có xe giường nằm đi Huế,ask_transportation
+Mình cần chia sẻ kinh nghiệm Sa Pa,search_destination
+Tìm giúp glamping Đà Lạt,search_accommodation
+Nhờ bạn Đà Lạt có homestay nào đẹp,search_accommodation
+Làm ơn cho mình đi Đà Lạt 1 ngày thì đi đâu,ask_itinerary
+Làm ơn cho mình lịch trình Phú Quốc cho gia đình,ask_itinerary
+Book phòng Đà Lạt view biển,book_tour
+Có đi Vũng Tàu bằng xe máy,ask_transportation
+Nhờ bạn bánh xèo Hà Nội,search_food_dining
+Làm ơn cho mình đi Sa Pa bằng tàu cao tốc,ask_transportation
+Bạn ơi chia sẻ kinh nghiệm Phú Quốc,search_destination
+Mình muốn hỏi Hà Nội ở đâu,search_destination
+Mình muốn hỏi nhà nghỉ Mũi Né giá rẻ,search_accommodation
+Nhờ bạn top địa điểm Hà Nội,search_destination
+Tour Phú Quốc cuối tuần,search_travel
+Cho mình hỏi du lịch Hà Nội tự túc,search_travel
+Nhờ bạn Mũi Né mùa nào đẹp nhất,search_destination
+Nhờ bạn tiền ăn ở Hội An 1 ngày,search_price
+Admin ơi homestay Vũng Tàu view đẹp,search_accommodation
+Mình cần nhà hàng Vũng Tàu sang trọng,search_food_dining
+Giúp mình đi bộ biển Mũi Né,search_activity
+Có phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Admin ơi leo núi ở Mũi Né,search_activity
+Bạn ơi chèo thuyền ở Đà Lạt,search_activity
+Cho mình hỏi tour du lịch Đà Nẵng giá rẻ,search_travel
+Admin ơi bố mẹ tôi thích Nha Trang,inform
+Có check in Đà Nẵng ở đâu,search_destination
+Cho mình hỏi lặn biển ở Nha Trang,search_activity
+Cho mình hỏi homestay Vũng Tàu view đẹp,search_accommodation
+Nhờ bạn nên đi Phú Quốc mấy ngày,ask_itinerary
+Mình cần resort Mũi Né gia đình,search_accommodation
+Làm ơn cho mình chi phí ăn uống ở Đà Lạt,search_price
+Cho mình hỏi booking tour Huế giá tốt,search_travel
+Mình cần kinh phí đi Đà Nẵng tiết kiệm,search_price
+Có chi phí du lịch Đà Lạt 3 ngày,search_price
+Mình muốn hỏi nhiệt độ Phú Quốc trung bình,ask_weather_timing
+Em muốn Hà Nội nổi tiếng về gì,search_destination
+Phiền bạn buffet Hội An giá rẻ,search_food_dining
+Mình cần vẻ đẹp Sa Pa,search_destination
+Kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Làm ơn cho mình Phú Quốc có gì ngon,search_food_dining
+Nhờ bạn booking tour Đà Lạt giá rẻ,book_tour
+Admin ơi tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Mình muốn homestay Đà Lạt cho đôi người,search_accommodation
+Phiền bạn kỳ nghỉ Hà Nội,search_travel
+Em muốn thông tin du lịch Mũi Né,search_destination
+Giúp mình lịch trình Hội An cho người già,ask_itinerary
+Mình muốn homestay Vũng Tàu view đẹp,search_accommodation
+Mình cần ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Cho mình hỏi thời tiết Nha Trang tháng 12,ask_weather_timing
+Admin ơi chia sẻ kinh nghiệm Sa Pa,search_destination
+Giúp mình đặt tour Vũng Tàu cho đoàn,book_tour
+Phiền bạn khách sạn Sa Pa giá rẻ,search_accommodation
+Cho mình hỏi resort Mũi Né gia đình,search_accommodation
+Nhờ bạn lặn ngắm san hô Nha Trang,search_activity
+Mình cần bánh xèo Phú Quốc,search_food_dining
+Mình muốn hỏi Mũi Né mùa nào đẹp nhất,search_destination
+Phiền bạn đi thác Đà Nẵng tham quan,search_activity
+Cho mình có gì đẹp ở Hội An,search_destination
+Bạn ơi đặt tour Đà Nẵng tiết kiệm,book_tour
+Phiền bạn quán ăn ngon ở Nha Trang,search_food_dining
+Tìm giúp giá vé tham quan Sa Pa,search_price
+Mình muốn hỏi thời tiết Vũng Tàu tháng 6,ask_weather_timing
+Mình cần tìm giới thiệu về Mũi Né,search_destination
+Làm ơn cho mình chợ Mũi Né ẩm thực,search_food_dining
+Mình cần tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Mình muốn hỏi nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Cho mình tour Sa Pa cho người già,search_travel
+Cho mình hỏi lịch Sa Pa phù hợp,ask_itinerary
+Tìm giúp đi Hội An dịp lễ có vui không,ask_weather_timing
+Nhờ bạn nhà nghỉ Sa Pa giá rẻ,search_accommodation
+Em muốn tour Vũng Tàu cho cặp đôi,search_travel
+Cho mình thời tiết Nha Trang tháng 12,ask_weather_timing
+Phiền bạn tiền ăn ở Hà Nội 1 ngày,search_price
+Làm ơn cho mình lịch trình Mũi Né tự túc,ask_itinerary
+Mình muốn hỏi tour Phú Quốc trọn gói bao gồm,search_travel
+Phiền bạn chi phí du lịch Hà Nội 3 ngày,search_price
+Mình cần tìm ẩm thực Hội An món gì đặc sản,search_food_dining
+Tìm giúp lưu trú ở Sa Pa gần chợ,search_accommodation
+Phiền bạn chia sẻ kinh nghiệm Phú Quốc,search_destination
+Admin ơi chia sẻ kinh nghiệm Phú Quốc,search_destination
+Làm ơn cho mình khuyến mãi tour Phú Quốc,search_price
+Cho mình leo núi ở Huế,search_activity
+Mình cần từ Hà Nội đi Sa Pa bằng gì,ask_transportation
+Có tour Hội An team building,search_travel
+Mình cần tour Huế team building,search_travel
+Tìm giúp mùa khô ở Hà Nội,ask_weather_timing
+Bạn ơi nên đi Mũi Né không,search_destination
+Bạn ơi chợ Mũi Né ẩm thực,search_food_dining
+Giúp mình check in Hà Nội ở đâu,search_destination
+Có căn hộ Hội An view đẹp,search_accommodation
+Có tôi muốn đưa con đi Phú Quốc,inform
+Có Phú Quốc có gì chơi,search_destination
+Làm ơn cho mình kỳ nghỉ Hà Nội,search_travel
+Cho mình khám phá Hà Nội,search_destination
+Có ăn vặt Hội An,search_food_dining
+Cho mình hỏi bạn tôi gợi ý đi Mũi Né,inform
+Mình cần tour Đà Nẵng team building,search_travel
+Giúp mình đi Huế bao nhiêu ngày,ask_itinerary
+Mình muốn hỏi chi phí ăn uống ở Đà Lạt,search_price
+Giúp mình bánh xèo Phú Quốc,search_food_dining
+Giúp mình lặn ngắm san hô Sa Pa,search_activity
+Admin ơi Đà Lạt có homestay nào đẹp,search_accommodation
+Mình muốn hỏi điểm đến Đà Lạt,search_destination
+Bạn ơi lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Phiền bạn đặt phòng khách sạn Đà Lạt,book_tour
+Có đi bộ biển Mũi Né,search_activity
+Em muốn chợ Mũi Né ẩm thực,search_food_dining
+Mình muốn hỏi tour Huế cho cặp đôi,search_travel
+Mình muốn lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Mình muốn hỏi chia sẻ kinh nghiệm Phú Quốc,search_destination
+Em muốn chi phí du lịch Nha Trang 3 ngày,search_price
+Cho mình hỏi tour Phú Quốc cho cặp đôi,search_travel
+Bạn ơi chi phí du lịch Hà Nội 3 ngày,search_price
+Cho mình hỏi tắm nước nóng Đà Lạt,search_activity
+Bạn ơi Sa Pa cách Hà Nội bao xa,search_destination
+Cho mình căn hộ Hội An view đẹp,search_accommodation
+Mình cần tìm đặt tour Hội An khuyến mãi,book_tour
+Admin ơi đi Vũng Tàu bằng xe máy,ask_transportation
+Em muốn tour Vũng Tàu giá học sinh,search_travel
+Có villa Mũi Né hồ bơi,search_accommodation
+Mình cần tìm booking tour Vũng Tàu giá rẻ,book_tour
+Mình cần Nha Trang cách Hà Nội bao xa,search_destination
+Làm ơn cho mình công ty tôi tổ chức team building ở Mũi Né,inform
+Mình muốn đi bộ biển Đà Lạt,search_activity
+Admin ơi Hà Nội ở đâu,search_destination
+Mình muốn xe limousine đi Mũi Né,ask_transportation
+Nhờ bạn Nha Trang cách Hà Nội bao xa,search_destination
+Cho mình top địa điểm Huế,search_destination
+Em muốn tour Phú Quốc cuối tuần,search_travel
+Giúp mình vé máy bay Hội An khứ hồi,search_price
+Chi phí thuê xe Hội An,search_price
+Cho mình hỏi thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Nhờ bạn lượng mưa Đà Lạt hàng năm,ask_weather_timing
+Mình cần check in Đà Nẵng ở đâu,search_destination
+Mình cần booking tour Vũng Tàu giá rẻ,book_tour
+Làm ơn cho mình nhà nghỉ Đà Nẵng trung tâm,search_accommodation
+Cho mình ăn tối trên du thuyền Huế,search_activity
+Mình muốn homestay đẹp ở Hà Nội,search_accommodation
+Nhờ bạn bạn tôi gợi ý đi Sa Pa,inform
+Bạn ơi tôi nghe nói Sa Pa rất đẹp,inform
+Có thời gian lý tưởng đi Vũng Tàu,ask_weather_timing
+Mình cần cắm trại Hội An,search_activity
+Bạn ơi tôi muốn đưa con đi Đà Lạt,inform
+Mình muốn chia sẻ kinh nghiệm Sa Pa,search_destination
+Cho mình bố mẹ tôi thích Nha Trang,inform
+Tìm giúp chè Hội An ngon,search_food_dining
+Cho mình hỏi kinh phí đi Huế tiết kiệm,search_price
+Admin ơi tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Làm ơn cho mình nhiệt độ Nha Trang trung bình,ask_weather_timing
+Mình muốn villa Mũi Né hồ bơi,search_accommodation
+Giúp mình lịch trình Đà Lạt 3 ngày 2 đêm,ask_itinerary
+Mình muốn hỏi thông tin du lịch Mũi Né,search_destination
+Giúp mình câu cá ở Đà Nẵng,search_activity
+Admin ơi căn hộ Hội An view đẹp,search_accommodation
+Bạn ơi đi phượt Sa Pa bằng xe máy,search_activity
+Giúp mình nhiệt độ Sa Pa trung bình,ask_weather_timing
+Giúp mình ở Hà Nội ăn gì ngon,search_food_dining
+Giúp mình tôi ở Phú Quốc rồi muốn đi tiếp,inform
+Có Mũi Né ăn gì cho bữa sáng,search_food_dining
+Nhờ bạn order tour Vũng Tàu,book_tour
+Có chia sẻ kinh nghiệm Phú Quốc,search_destination
+Mình muốn hỏi tour Vũng Tàu 3 ngày 2 đêm,search_travel
+Tìm giúp homestay Đà Lạt cho đôi người,search_accommodation
+Mình cần tìm chi phí du lịch Hà Nội 3 ngày,search_price
+Cho mình hỏi tour Hà Nội cho gia đình,search_travel
+Có câu cá ở Đà Nẵng,search_activity
+Cho mình hỏi ở Hà Nội ăn gì ngon,search_food_dining
+Mình muốn hỏi ăn vặt Hội An,search_food_dining
+Bạn ơi khám phá Hà Nội,search_destination
+Mình muốn hỏi tour Phú Quốc giá học sinh,search_travel
+Mình muốn quán ăn ngon ở Hội An,search_food_dining
+Mình cần tìm tôi ở Vũng Tàu rồi muốn đi tiếp,inform
+Tìm giúp lặn ngắm san hô Sa Pa,search_activity
+Phiền bạn có gì đẹp ở Hội An,search_destination
+Admin ơi du lịch Nha Trang mùa đông,search_travel
+Phiền bạn buffet Nha Trang giá rẻ,search_food_dining
+Làm ơn cho mình kinh phí đi Đà Nẵng tiết kiệm,search_price
+Mình muốn hỏi chè Hội An ngon,search_food_dining
+Admin ơi resort Đà Nẵng hồ bơi,search_accommodation
+Giúp mình phương tiện đi Hà Nội rẻ nhất,ask_transportation
+Cho mình hỏi chi phí du lịch Đà Lạt 3 ngày,search_price
+Em muốn homestay Vũng Tàu view đẹp,search_accommodation
+Em muốn booking homestay Đà Nẵng giá rẻ,book_tour
+Em muốn kinh nghiệm đi Đà Nẵng lần đầu,search_destination
+Có combo Huế trọn gói,search_travel
+Nhờ bạn Phú Quốc có gì chơi,search_destination
+Mình muốn hỏi ăn tối trên du thuyền Huế,search_activity
+Phiền bạn ăn chay Huế,search_food_dining
+Tìm giúp cả nhà tôi đi Huế dịp tết,inform
+Nhờ bạn đặt tour Hà Nội khuyến mãi,book_tour
+Admin ơi tour Vũng Tàu 5 ngày 4 đêm,search_travel
+Cho mình hỏi câu cá ở Đà Nẵng,search_activity
+Tìm giúp nên đi Mũi Né không,search_destination
+Admin ơi nên đi Phú Quốc mấy ngày,ask_itinerary
+Cho mình hỏi đi Vũng Tàu bao nhiêu ngày,ask_itinerary
+Admin ơi đi bộ biển Mũi Né,search_activity
+Có bánh xèo Hà Nội,search_food_dining
+Bạn ơi tour Phú Quốc cho cặp đôi,search_travel
+Phiền bạn Vũng Tàu nổi tiếng về gì,search_destination
+Cho mình booking tour Nha Trang giá tốt,search_travel
+Có review du lịch Huế,search_destination
+Tìm giúp chi phí thuê xe Hà Nội,search_price
+Mình muốn giá vé Huế cho trẻ em,search_price
+Mình muốn câu cá ở Đà Nẵng,search_activity
+Mình cần tìm khách sạn Vũng Tàu trung tâm,search_accommodation
+Tìm giúp đặt vé máy bay đi Hà Nội,book_tour
+Admin ơi đi Sa Pa bằng tàu cao tốc,ask_transportation
+Mình cần chi phí Mũi Né 4 ngày 3 đêm,search_price
+Làm ơn cho mình khách sạn Nha Trang gần sân bay,search_accommodation
+Có đặt tour Đà Lạt tiết kiệm,book_tour
+Em muốn top địa điểm Huế,search_destination
+Nhờ bạn mùa mưa ở Mũi Né tháng nào,ask_weather_timing
+Mình muốn hỏi lịch trình Phú Quốc cho gia đình,ask_itinerary
+Bạn ơi tôi muốn đưa con đi Vũng Tàu,inform
+Có bạn tôi gợi ý đi Sa Pa,inform
+Phiền bạn Sa Pa ăn gì cho bữa sáng,search_food_dining
+Tìm giúp ăn chay Huế,search_food_dining
+Tìm giúp đi thuyền Vũng Tàu,search_activity
+Em muốn tour Nha Trang 4 ngày 3 đêm,search_travel
+Có Nha Trang có quán nào nổi tiếng,search_food_dining
+Mình muốn cảnh đẹp Mũi Né nổi tiếng,search_destination
+Mình cần khu nghỉ dưỡng Hội An,search_accommodation
+Em muốn kinh phí đi Vũng Tàu tiết kiệm,search_price
+Bạn ơi giá tour Phú Quốc bao nhiêu,search_price
+Cho mình glamping Đà Lạt,search_accommodation
+Mình cần chi phí du lịch Huế 3 ngày,search_price
+Mình muốn taxi ở Nha Trang giá rẻ,ask_transportation
+Admin ơi ở Phú Quốc 4 ngày đi đâu,ask_itinerary
+Nhờ bạn tour Phú Quốc cuối tuần,search_travel
+Bạn ơi đi thác Đà Nẵng tham quan,search_activity
+Cho mình hỏi khám phá ẩm thực đường phố Hội An,search_activity
+Bạn ơi đặt vé máy bay đi Hà Nội,book_tour
+Phiền bạn Nha Trang có quán nào nổi tiếng,search_food_dining
+Mình cần tìm đi Đà Lạt bằng tàu cao tốc,ask_transportation
+Có khách sạn Hà Nội giá rẻ,search_accommodation
+Em muốn xe limousine đi Hội An,ask_transportation
+Em muốn tour Vũng Tàu 5 ngày 4 đêm,search_travel
+Mình cần lặn ngắm san hô Nha Trang,search_activity
+Em muốn đặt tour Hội An khuyến mãi,book_tour
+Phiền bạn công ty tôi tổ chức team building ở Phú Quốc,inform
+Cho mình vợ chồng tôi cưới ở Hội An,inform
+Cho mình hỏi buffet Hội An giá rẻ,search_food_dining
+Tìm giúp tour Vũng Tàu 5 ngày 4 đêm,search_travel
