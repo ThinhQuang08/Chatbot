@@ -760,3 +760,84 @@ body {
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .tab-btn { padding: 8px 14px; font-size: 13px; }
 }
+
+/* --- Data Quality Tab --- */
+.dq-score-section {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.dq-gauge-card {
+  flex: 0 0 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dq-gauge {
+  font-size: 4rem;
+  font-weight: 800;
+  transition: color 0.3s;
+}
+
+.dq-gauge.gauge-ok { color: var(--green); }
+.dq-gauge.gauge-warn { color: var(--yellow); }
+.dq-gauge.gauge-bad { color: var(--red); }
+
+.dq-label {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.dq-threshold {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.dq-summary {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.dq-table-wrap {
+  overflow-x: auto;
+}
+
+.dq-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.dq-table th {
+  background: var(--surface-2);
+  color: var(--text-dim);
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dq-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 0.85rem;
+}
+
+.dq-table tbody tr:hover {
+  background: rgba(108, 92, 231, 0.05);
+}

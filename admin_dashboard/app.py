@@ -832,6 +832,40 @@ def serve_results_image(filename):
     return send_from_directory(str(RESULTS_DIR), filename)
 
 
+@app.route("/api/data-quality")
+def get_data_quality():
+    from database.db_connection import get_connection
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT id, metrics, created_at
+        FROM mlops_reports
+        WHERE report_type = 'data_quality_drift'
+        ORDER BY created_at DESC
+        LIMIT 50
+    """)
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    history = []
+    latest = None
+    for row in rows:
+        record = {
+            "id": row[0],
+            "created_at": row[2].isoformat() if hasattr(row[2], "isoformat") else str(row[2]),
+            **row[1]
+        }
+        history.append(record)
+        if latest is None:
+            latest = record
+
+    return jsonify({
+        "latest": latest,
+        "history": history
+    })
+
+
 if __name__ == "__main__":
     _ensure_dvc_data()
     app.run(host=DASHBOARD_HOST, port=DASHBOARD_PORT, debug=True, use_reloader=False)

@@ -7,6 +7,7 @@ let currentPage = 1;
 let intentChart = null;
 let metricsChart = null;
 let comparisonChart = null;
+let dqChart = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -841,18 +842,187 @@ function initTabs() {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       this.classList.add('active');
-      const tabId = this.dataset.tab === 'review' ? 'tabReview' : 'tabMetrics';
+      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality' };
+      const tabId = tabMap[this.dataset.tab] || 'tabReview';
       const tab = document.getElementById(tabId);
       if (tab) tab.classList.add('active');
 
       if (this.dataset.tab === 'metrics' && metricsChart) {
         metricsChart.resize();
       }
+      if (this.dataset.tab === 'quality') {
+        fetchDataQuality();
+        if (dqChart) dqChart.resize();
+      }
     });
   });
 }
 
-// --- Init ---
+// --- Data Quality ---
+async function fetchDataQuality() {
+  try {
+    const data = await api('/api/data-quality');
+    renderDataQuality(data);
+  } catch (e) {
+    console.error('fetchDataQuality error:', e);
+  }
+}
+
+function renderDataQuality(data) {
+  const latest = data.latest;
+  const history = data.history || [];
+
+  if (!latest) {
+    $('#dqGauge').textContent = '—';
+    return;
+  }
+
+  const score = latest.quality_score || 0;
+  const threshold = latest.threshold || 0.50;
+  const breached = latest.breached_count || 0;
+  const total = latest.total_features || 7;
+  const features = latest.features || [];
+
+  // Gauge
+  const gauge = $('#dqGauge');
+  gauge.textContent = (score * 100).toFixed(0) + '%';
+  gauge.className = 'dq-gauge';
+  if (score >= threshold) gauge.classList.add('gauge-ok');
+  else if (score >= threshold * 0.7) gauge.classList.add('gauge-warn');
+  else gauge.classList.add('gauge-bad');
+
+  $('#dqThreshold').textContent = threshold.toFixed(2);
+  $('#dqRefRows').textContent = latest.ref_rows || '—';
+  $('#dqCurRows').textContent = latest.cur_rows || '—';
+  $('#dqBreached').textContent = breached;
+  $('#dqBreachedTotal').textContent = '/' + total;
+
+  const statusEl = $('#dqStatus');
+  if (score >= threshold) {
+    statusEl.textContent = 'OK';
+    statusEl.style.color = 'var(--green)';
+  } else {
+    statusEl.textContent = 'Cảnh báo';
+    statusEl.style.color = 'var(--red)';
+  }
+
+  // Feature table
+  const tbody = $('#dqBody');
+  if (!features.length) {
+    tbody.innerHTML = '<tr><td colspan="6" class="loading">Không có dữ liệu feature</td></tr>';
+  } else {
+    tbody.innerHTML = features.map(f => {
+      const drifted = (f.penalty || 0) > 0.30;
+      const delta = f.delta_pct != null ? (f.delta_pct > 0 ? '+' : '') + f.delta_pct.toFixed(1) + '%' : '—';
+      const deltaColor = drifted ? 'var(--red)' : 'var(--green)';
+      const statusColor = drifted ? 'var(--red)' : 'var(--green)';
+      const statusLabel = drifted ? 'Degraded' : 'OK';
+      return `<tr>
+        <td><strong>${f.name}</strong></td>
+        <td>${f.ref_mean != null ? f.ref_mean.toFixed(4) : '—'}</td>
+        <td>${f.cur_mean != null ? f.cur_mean.toFixed(4) : '—'}</td>
+        <td style="color:${deltaColor}">${delta}</td>
+        <td>${(f.penalty || 0).toFixed(2)}</td>
+        <td style="color:${statusColor};font-weight:600">${statusLabel}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Email log
+  const emailSent = latest.email_sent;
+  const emailEl = $('#dqEmailContent');
+  if (emailSent) {
+    emailEl.innerHTML = `<span style="color:var(--green)">📧 Đã gửi cảnh báo email tới ${latest.alert_email || 'SMTP_EMAIL'} lúc chất lượng giảm dưới ngưỡng.</span>`;
+  } else if (score < threshold) {
+    emailEl.innerHTML = `<span style="color:var(--orange)">⚠ Quality Score dưới ngưỡng. Email sẵn sàng gửi khi SMTP được config.</span>`;
+  } else {
+    emailEl.innerHTML = `<span class="log-placeholder">Chất lượng trong ngưỡng an toàn. Không cần gửi email.</span>`;
+  }
+
+  // Timeline chart
+  if (history.length > 1) {
+    renderDqChart(history);
+  } else {
+    const canvas = $('#dqChart');
+    if (canvas) canvas.style.display = 'none';
+  }
+}
+
+function renderDqChart(history) {
+  const canvas = $('#dqChart');
+  if (!canvas) return;
+  canvas.style.display = 'block';
+
+  const labels = history.map(h => {
+    const d = new Date(h.created_at);
+    return d.toLocaleDateString('vi-VN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  }).reverse();
+
+  const scores = history.map(h => (h.quality_score || 0) * 100).reverse();
+  const threshold = (history[0]?.threshold || 0.50) * 100;
+
+  const ctx = canvas.getContext('2d');
+  if (dqChart) dqChart.destroy();
+
+  dqChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Quality Score (%)',
+        data: scores,
+        borderColor: '#00e676',
+        backgroundColor: 'rgba(0,230,118,0.1)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#e0e0e0' } }
+      },
+      scales: {
+        x: { ticks: { color: '#aaa', maxTicksLimit: 10 } },
+        y: {
+          min: 0,
+          max: 100,
+          ticks: { color: '#aaa', callback: v => v + '%' },
+          grid: { color: 'rgba(255,255,255,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+// Override threshold line using plugin
+const dqThresholdPlugin = {
+  id: 'dqThreshold',
+  beforeDraw(chart) {
+    if (!chart.data || !chart.data.datasets || chart.data.datasets.length === 0) return;
+    const threshold = (chart.data.datasets[0]?.data?.length > 0 || true) ? 
+      parseFloat($('#dqThreshold')?.textContent || '0.50') * 100 : 50;
+    const yAxis = chart.scales.y;
+    const xAxis = chart.scales.x;
+    if (!yAxis || !xAxis) return;
+    const y = yAxis.getPixelForValue(threshold);
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = '#ff5252';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xAxis.left, y);
+    ctx.lineTo(xAxis.right, y);
+    ctx.stroke();
+    ctx.restore();
+  }
+};
+Chart.register(dqThresholdPlugin);
+
 async function init() {
   await loadData();
   await loadHistory();
@@ -860,6 +1030,7 @@ async function init() {
   await loadMetricsChart();
   await loadComparisonChart();
   await loadMatrixImages();
+  await fetchDataQuality();
   initTabs();
 
   const status = await api('/api/train-status');

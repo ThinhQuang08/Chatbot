@@ -17,6 +17,7 @@
     <div class="tab-bar">
       <button class="tab-btn active" data-tab="review">Review Data</button>
       <button class="tab-btn" data-tab="metrics">Model Metrics</button>
+      <button class="tab-btn" data-tab="quality">Data Quality</button>
     </div>
 
     <!-- Tab 1: Review Data -->
@@ -205,6 +206,66 @@
         </div>
         <div class="matrix-gallery" id="matrixGallery">
           <div class="loading">Chưa có dữ liệu. Chạy Retrain để tạo ma trận.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Data Quality -->
+    <div class="tab-content" id="tabQuality">
+      <div class="dq-score-section">
+        <div class="dq-gauge-card">
+          <div class="dq-gauge" id="dqGauge">—</div>
+          <div class="dq-label">Quality Score</div>
+          <div class="dq-threshold">Ngưỡng: <span id="dqThreshold">0.50</span></div>
+        </div>
+        <div class="dq-summary">
+          <div class="metric-card"><span class="metric-label">Reference</span><span class="metric-value" id="dqRefRows">—</span></div>
+          <div class="metric-card"><span class="metric-label">Current</span><span class="metric-value" id="dqCurRows">—</span></div>
+          <div class="metric-card"><span class="metric-label">Breached</span><span class="metric-value" id="dqBreached">—</span><span class="metric-delta" id="dqBreachedTotal">/7</span></div>
+          <div class="metric-card"><span class="metric-label">Status</span><span class="metric-value" id="dqStatus">—</span></div>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Quality Score Timeline</h3>
+          <span class="chart-hint">Biến động chất lượng dữ liệu theo thời gian</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 300px;">
+          <canvas id="dqChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Feature Drift Details</h3>
+          <span class="chart-hint">So sánh từng feature giữa reference và current</span>
+        </div>
+        <div class="dq-table-wrap">
+          <table class="dq-table" id="dqTable">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Reference</th>
+                <th>Current</th>
+                <th>Delta</th>
+                <th>p-value</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="dqBody">
+              <tr><td colspan="6" class="loading">Chưa có dữ liệu. Chạy data_quality_monitor.py trước.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="log-section" id="dqEmailLog">
+        <div class="log-header">
+          <h3>Email Notification</h3>
+        </div>
+        <div class="log-console" id="dqEmailContent">
+          <span class="log-placeholder">Chưa có cảnh báo nào được gửi.</span>
         </div>
       </div>
     </div>
