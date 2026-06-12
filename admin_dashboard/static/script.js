@@ -883,6 +883,16 @@ function renderDataQuality(data) {
   const total = latest.total_features || 7;
   const features = latest.features || [];
 
+  const FEATURE_LABELS = {
+    'text_length': 'Độ dài câu',
+    'word_count': 'Số từ',
+    'diacritic_ratio': 'Tỷ lệ có dấu',
+    'has_emoji': 'Có emoji',
+    'is_empty': 'Text rỗng',
+    'char_diversity': 'Đa dạng ký tự',
+    'ends_with_question': 'Kết thúc bằng ?',
+  };
+
   // Gauge
   const gauge = $('#dqGauge');
   gauge.textContent = (score * 100).toFixed(0) + '%';
@@ -917,8 +927,10 @@ function renderDataQuality(data) {
       const deltaColor = drifted ? 'var(--red)' : 'var(--green)';
       const statusColor = drifted ? 'var(--red)' : 'var(--green)';
       const statusLabel = drifted ? 'Degraded' : 'OK';
+      const label = FEATURE_LABELS[f.name] || f.name;
       return `<tr>
         <td><strong>${f.name}</strong></td>
+        <td style="color:var(--text-dim);font-size:0.8rem">${label}</td>
         <td>${f.ref_mean != null ? f.ref_mean.toFixed(4) : '—'}</td>
         <td>${f.cur_mean != null ? f.cur_mean.toFixed(4) : '—'}</td>
         <td style="color:${deltaColor}">${delta}</td>
