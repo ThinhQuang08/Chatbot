@@ -82,7 +82,7 @@ pipeline {
                     flake8 scripts/ data/ --count --select=E9,F63,F7,F82 --show-source --statistics
                     
                     # Cảnh báo format/style code (không block)
-                    flake8 scripts/ data/ --count --max-complexity=15 --max-line-length=127 --statistics
+                    flake8 scripts/ data/ --count --max-complexity=15 --max-line-length=127 --statistics --exit-zero
                     
                     echo "✅ Quét hoàn tất!"
                 """
