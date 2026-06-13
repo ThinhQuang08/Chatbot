@@ -1,9 +1,11 @@
+import sys
 import json
 import glob
 import os
 import requests
 import boto3
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from config.settings import (
     MINIO_URL, MINIO_ACCESS_KEY, MINIO_SECRET_KEY,
     MINIO_BUCKET, MINIO_MODEL_FILE, RASA_API_URL
