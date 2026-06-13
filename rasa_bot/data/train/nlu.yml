@@ -229,11 +229,9 @@ nlu:
       - nơi nào đi chơi tiết kiệm
       - tôi muốn đi du lịch giá rẻ
       - đi [sapa]{"entity": "location", "role": "destination"} chi phí bao nhiêu
-
       - trọn gói vậy có phát sinh phụ phí gì không
       - cho mình hỏi giá vé cáp treo vinpearl
       - giá vé Safari
-
       - đi vậy thiệt hại cỡ nhiêu
       - rổ giá như nào
       - tổn thất khoảng bao nhiêu
@@ -887,16 +885,115 @@ nlu:
       - ca nô
       - đi bộ
 
+  - intent: thanks
+    examples: |
+      - cảm ơn
+      - cảm ơn bạn
+      - cảm ơn ban
+      - cảm ơn bot
+      - cảm ơn nha
+      - thank you
+      - thanks
+      - thanks bot
+      - thanks bạn nha
+      - cám ơn nhiều
+      - cám ơn shop
+      - cảm ơn nhiều nha
+      - ok cảm ơn
+      - ok cảm ơn bạn
+      - thank you so much
+      - cảm ơn nhé
+      - tốt quá cảm ơn
+      - cảm ơn bạn nhiều lắm
+      - cảm ơn đã tư vấn
+      - cám ơn đã giúp đỡ
+      - cám ơn bot nhiều nha
+      - thanks đã hỗ trợ
+
+  - intent: ask_weather_timing
+    examples: |
+      - tháng mấy đi [Huế](location) đẹp nhất
+      - mùa khô ở [Phú Quốc](location) là tháng mấy
+      - thời gian lý tưởng để đi [Hội An](location) là khi nào
+      - mùa nào đi [Sapa](location) có tuyết rơi
+      - thời tiết [miền Trung](category) [tháng 8](month) thế nào
+      - mùa thu có nên đi biển không
+      - khi nào đi [Hà Giang](location) ngắm hoa tam giác mạch
+      - [tháng 12](month) nên đi du lịch ở đâu
+      - mùa hè nên đi biển hay lên núi
+      - mùa đông đi [Đà Lạt](location) có lạnh lắm không
+      - đi [Nha Trang](location) [tháng mấy](month) có bão
+      - mùa nào ít mưa ở [miền Tây](category)
+      - [tháng 6](month) [tháng 7](month) đi [Phú Quốc](location) được không
+      - mùa [mùa xuân](season) đi đâu ở [miền Bắc](category) đẹp
+      - thời điểm nào thích hợp để đi [Vịnh Hạ Long](location)
 
 
-
+# --- AUGMENTED DATA (Hướng 6) ---
+  - intent: search_destination
+    examples: |
+      - chỗ nào hợp để đi chơi [cuối tuần](time_window)
+      - biển nào gần [Sài Gòn]{"entity": "location", "role": "departure"} nhất
+      - địa điểm du lịch gần [Hà Nội]{"entity": "location", "role": "departure"}
+      - review [đà lạt](location) [tháng 5](month) đi có đẹp không
+      - chỗ nào đẹp để chụp ảnh sống ảo
+      - review [nha trang](location) mùa này thế nào
+      - gợi ý điểm du lịch cho dân văn phòng
+      - tour nào đang hot [tháng này](time_window)
+      - chỗ nào đẹp ở [Sapa](location) ngoài Fansipan
+      - [Quảng Bình](location) có gì chơi không
+  - intent: search_travel
+    examples: |
+      - từ [Sài Gòn]{"entity": "location", "role": "departure"} muốn đi chơi [3 ngày](duration)
+      - lên kèo đi [Nha Trang]{"entity": "location", "role": "destination"} với [bạn bè](party_size)
+      - tính cuối tuần đi chơi xa xa tí
+      - rủ [cả nhà](party_size) đi du lịch [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - sắp xếp chuyến đi [Phú Quốc]{"entity": "location", "role": "destination"} cho [gia đình](party_size)
+      - từ [Hà Nội]{"entity": "location", "role": "departure"} muốn đi chơi [2 ngày](duration)
+      - dự định đi nghỉ mát [hè này](season)
+      - tính đi du lịch cùng [đồng nghiệp](party_size)
+      - muốn tổ chức trip cho [công ty](party_size)
+      - đang planning chuyến đi [Đà Lạt]{"entity": "location", "role": "destination"} [4 ngày](duration)
+      - sắp xếp lịch đi [Hội An]{"entity": "location", "role": "destination"} cho [2 đứa](party_size)
+  - intent: search_price
+    examples: |
+      - chi phí đi [biển](category) là bao nhiêu
+      - đi du lịch [4 ngày](duration) tốn khoảng bao nhiêu
+      - du lịch bụi có tốn kém không
+      - [vé máy bay](transportation) đi [Hà Nội]{"entity": "location", "role": "destination"} giá bao nhiêu
+      - chi phí ăn ở [Đà Lạt]{"entity": "location", "role": "destination"} đắt không
+      - tổng chi phí chuyến đi [Sapa]{"entity": "location", "role": "destination"} là bao nhiêu
+      - tour [Nha Trang]{"entity": "location", "role": "destination"} giá mềm có không
+      - đi [Phú Quốc]{"entity": "location", "role": "destination"} tự túc hết tầm bao nhiêu
+  - intent: ask_weather_timing
+    examples: |
+      - thời điểm đẹp nhất trong năm để đi [biển](category)
+      - mùa có bão ở [miền Trung](category) là tháng mấy
+      - [tháng 3](month) đi [Sapa](location) có hoa gì
+      - thời tiết [Đà Lạt](location) [tháng 6](month) mưa nhiều không
+      - mùa khô và mùa mưa ở [Phú Quốc](location)
+      - [tháng 10](month) có nên đi [Hà Giang](location) không
+      - mùa nào leo núi [Fansipan](location) an toàn nhất
+      - thời gian lý tưởng du lịch [miền Tây](category)
+      - mùa [mùa hè](season) hợp đi du lịch chỗ nào
+  - intent: ask_location_feature
+    examples: |
+      - [Đà Lạt]{"entity": "location", "role": "destination"} giờ có đông khách du lịch không
+      - đường xá ở [Sapa]{"entity": "location", "role": "destination"} có khó đi không
+      - chỗ đó ban đêm có an toàn để đi dạo không
+      - [đặc sản](activity) [Hội An](location) có gì ngon
+      - dân cư ở đó có thân thiện không
+      - chỗ đó có wifi mạnh không
+      - phương tiện di chuyển ở [Phú Quốc]{"entity": "location", "role": "destination"} có thuận tiện không
+      - có chỗ đỗ xe ô tô ở đó không
+  
 # --- HUMAN REVIEWED DATA (2026-06-04 06:11:04) ---
   - intent: ask_location_feature
     examples: |
       - [đặc sản](activity) [Sa Pa](location) là gì
   - intent: search_destination
     examples: |
-      - thời tiết [Nha Trang](location) sao
+      - review [Nha Trang](location) mùa này đẹp không
 
 
 # --- HUMAN REVIEWED DATA (2026-06-04 07:41:27) ---

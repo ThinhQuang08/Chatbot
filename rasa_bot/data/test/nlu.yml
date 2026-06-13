@@ -1,268 +1,200 @@
-#data/nlu.yml
 version: "3.1"
 
 nlu:
   - intent: greet
     examples: |
-      - hey
-      - hello
-      - hi
-      - hello there
-      - good morning
-      - good evening
-      - moin
-      - hey there
-      - let's go
-      - hey dude
-      - goodmorning
-      - goodevening
-      - good afternoon
-      - chào bạn
-      - xin chào
-      - alo
-      - ê bot
-      - hi shop
-      - chào ad
-      - buổi sáng tốt lành
-      - hi
-      - chào ngày mới
-      - có ai ở đó không
-      - hello ad
-      - súp bro
-      - tư vấn mình với
+      - chào shop ê
+      - helo
+      - chào cậu
+      - chào bạn ơi
+      - alo shop
+      - mình chào shop
+      - hey bot
+      - hello bạn
+      - hi bạn
+      - chào em
+      - chào bot nha
+      - mình ghé shop chào cái
+      - chào buổi sáng
+      - chào buổi chiều
+      - chào cả nhà
+      - chủ shop ơi
+      - ê mày
+      - này bot
+      - ơi bot
+      - bot ơi
+      - chào bạn hiền
+      - chào thân ái
+      - hế lô
+      - hế nhô
+      - hello cả nhà
+      - xin chào quý khách
 
   - intent: goodbye
     examples: |
-      - cu
-      - good by
-      - cee you later
-      - good night
-      - bye
-      - goodbye
-      - have a nice day
-      - see you around
-      - bye bye
-      - see you later
-      - tạm biệt
-      - cám ơn bot nhé bye
-      - pp
-      - bai bai
-      - off đây
-      - bye shop
-      - out nha
-      - hẹn gặp lại
-      - đi ngủ đây
-      - lúc khác nhắn tiếp
+      - tôi đi đây
+      - nghỉ đây
+      - tắt máy đây
+      - hẹn lần sau
+      - gặp sau nha
+      - mai mốt nói tiếp
+      - tôi out đây
+      - cút đây
+      - ngủ đây
+      - nghỉ ngơi thôi
+      - bye bye nha
+      - đi ngủ
+      - chào tạm biệt
+      - tạm biệt nha
+      - tạm biệt shop
+      - cảm ơn và tạm biệt
+      - hẹn gặp lại shop
+      - tôi phải đi rồi
+      - thôi mình đi đây
+      - tan ca
 
   - intent: affirm
     examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
-      - đúng rồi
-      - chuẩn
-      - oke
-      - duyệt
-      - đồng ý
-      - dạ đúng
-      - chính xác
-      - yup
-      - chốt luôn
-      - okela
-      - đúng ý mình
-      - thế cũng được
-      - đúng rồi
-      - chuẩn
-      - chốt luôn
-      - tuyệt vời
-      - đỉnh quá
-      - xịn xò
-      - quá tuyệt
-      - ưng ý lắm
-      - 10 điểm cho shop
+      - chuẩn luôn
+      - đúng đó
+      - đúng vậy
+      - chính xác luôn
+      - ưng quá
+      - ok luôn
+      - được đó
+      - được đấy
+      - nghe cũng được
+      - ngon lành
+      - ổn áp
+      - tạm ổn
+      - đồng ý luôn
+      - em đồng ý
+      - chốt đơn
+      - chốt kèo
+      - đỉnh
+      - quá đỉnh
+      - tuyệt cú mèo
+      - hay quá
+      - thích quá
+      - mê luôn
+      - uki
+      - oki
 
   - intent: deny
     examples: |
-      - không phải
-      - sai rồi
-      - k
-      - ko
-      - thôi
-      - đổi cái khác đi
-      - không thích
-      - bỏ đi
-      - đắt quá thôi
-      - không ok lắm
-      - nhầm rồi bot ơi
-      - nope
-      - không phải
-      - sai rồi
-      - k
-      - ko
-      - thôi
-      - đổi cái khác đi
-      - bỏ đi
-      - nhầm rồi bot ơi
-      - buồn quá
-      - chán ghê
-      - mệt mỏi
-      - dạo này đang stress
-      - chán đời
-      - không vui
-      - tụt mood
-      - tệ quá
-
-  - intent: thanks
-    examples: |
-      - cảm ơn
-      - cảm ơn bạn
-      - cảm ơn bot
-      - thank you
-      - thanks
-      - thanks bot
-      - cám ơn nhiều
-      - cảm ơn nhiều nha
-      - ok cảm ơn
-      - thank you so much
-      - cám ơn
-      - cảm ơn nhé
-      - tốt quá cảm ơn
-
-  # - intent: mood_great
-  #   examples: |
-  #     - perfect
-  #     - great
-  #     - amazing
-  #     - feeling like a king
-  #     - wonderful
-  #     - I am feeling very good
-  #     - I am great
-  #     - I am amazing
-  #     - super stoked
-  #     - extremely good
-  #     - so so perfect
-  #     - so good
-  #     - so perfect
-  #     - tuyệt vời
-  #     - đỉnh quá
-  #     - 10 điểm
-  #     - đang rất vui
-  #     - háo hức quá
-  #     - xịn xò
-  #     - quá đã
-  #     - ưng ý lắm
-  #     - quá tuyệt
-  #     - perfect nha
-
-  # - intent: mood_unhappy
-  #   examples: |
-  #     - my day was horrible
-  #     - I am sad
-  #     - I don't feel very well
-  #     - I am disappointed
-  #     - super sad
-  #     - I'm so sad
-  #     - sad
-  #     - very sad
-  #     - unhappy
-  #     - not good
-  #     - not very good
-  #     - extremly sad
-  #     - so saad
-  #     - so sad
-  #     - buồn quá
-  #     - chán ghê
-  #     - mệt mỏi
-  #     - dạo này đang stress
-  #     - trầm cảm
-  #     - áp lực công việc quá
-  #     - chán đời
-  #     - không vui
-  #     - đang sầu
-  #     - tụt mood
+      - không thích tí nào
+      - tệ quá đi
+      - dở ẹc
+      - không có hứng
+      - chán
+      - không ngon
+      - không ổn
+      - không được
+      - không hợp
+      - chê
+      - bỏ qua
+      - next
+      - không ưng
+      - thôi bỏ
+      - chán chả buồn nói
+      - dẹp đi
+      - không phải ý mình
+      - ý khác cơ
+      - không đúng
+      - bó tay
 
   - intent: bot_challenge
     examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
-      - bạn là người hay máy
-      - đang chat với bot à
-      - ai đang chat vậy
-      - shop dùng auto reply à
-      - gọi nhân viên thật ra đây
-      - mày là AI hả
+      - tôi đang chat với ai vậy
+      - bot hay người
+      - phía bên kia là ai
+      - ai đang trả lời tôi
+      - có người thật không
+      - shop bán tự động à
+      - tụi bây có người không
+      - mình có người thật không
+      - reply tự động hả
+      - chắc gì đã là người thật
 
   - intent: out_of_scope
     examples: |
-      - giá vàng hôm nay bao nhiêu
-      - ai là tổng thống mỹ
-      - bạn ăn cơm chưa
-      - hướng dẫn nấu phở bò
-      - mở nhạc cho tôi nghe
-      - 1 cộng 1 bằng mấy
-      - thời tiết hà nội hôm nay thế nào
-      - ronaldo hay messi đá hay hơn
-      - cách sửa lỗi code python
-      - bitcoin đang giá bao nhiêu
-      - nay đề về bao nhiêu
-      - kể cho tôi một câu chuyện cười
-      - huỳnh như đá ở đội nào
-      - viết bài văn tả con mèo
-      - cách trồng cây bonsai
-      - cách chữa đau dạ dày
+      - thời sự hôm nay có gì hot
+      - tỷ giá usd hôm nay
+      - xem tử vi cho tôi
+      - bói bài tarot
+      - tập yoga thế nào
+      - mở cửa sổ giúp tôi
+      - cài đặt máy lạnh
+      - sửa ống nước
+      - thợ điện ơi
+      - đặt đồ ăn
+      - ship cho tôi cốc trà sữa
+      - học tiếng anh thế nào
+      - viết code python
+      - làm thơ 4 chữ
+      - hát cho tôi nghe
+      - kể chuyện ma
+
+  - intent: thanks
+    examples: |
+      - mơn
+      - mơn bạn
+      - mơn nha
+      - cám ơn shop nhiều
+      - cảm ơn nhiều ạ
+      - tks
+      - tks bạn
+      - thank
+      - thanks bạn
+      - cám ơn nha
+      - mơn mơn
+      - cảm ơn nhìu
+      - rất cảm ơn
 
   - intent: search_destination
     examples: |
-      - gợi ý điểm du lịch
-      - có nơi nào đẹp để đi chơi không
-      - gợi ý địa điểm du lịch
       - thời điểm nào đẹp nhất để đi Đà Lạt
       - [mùa hè](season) nên đi đâu tránh nóng
       - [tháng 9](month) có chỗ nào đẹp để săn ảnh
       - mình định đi vào [Tết](time_window)
-      - có chỗ nào đi trốn nắng [mùa hè](season) không
       - gợi ý vài nơi [miền Tây](category) [tết](time_window) này đi
       - muốn đi ngắm tuyết ở [miền núi](category) thì đi tháng mấy
       - [cuối năm](time_window) đi biển [Phú Quốc]{"entity": "location", "role": "destination"} có hợp lý không
-      - muốn tìm nơi [chữa lành](category)
-
+      - [Sapa]{"entity": "location", "role": "destination"} mùa nào đẹp nhất
+      - chỗ nào [yên tĩnh](category) để nghỉ ngơi
+      - gợi ý điểm [tắm biển](category) gần [Hà Nội]{"entity": "location", "role": "departure"}
+      - đi đâu [cuối tuần](time_window) cho thoải mái
+      - review [Đà Nẵng]{"entity": "location", "role": "destination"} mùa này
 
   - intent: search_activity
     examples: |
       - tôi muốn leo núi
       - leo núi [tháng 10](month)
-      - mình muốn leo núi vào [tháng 10](month)
-      - chỗ nào leo núi đẹp vào [tháng 10](month)
       - trekking [tháng 10](month)
       - đi trekking vào [tháng 10](month) thì nên đi đâu
-      - chi phí đi leo núi [tháng 10](month) là bao nhiêu
-      - đi leo núi [tháng 10](month) hết bao nhiêu tiền
       - nơi nào có thể cắm trại
-      - có chỗ nào đi thuyền không
       - tôi muốn săn mây
       - gợi ý chỗ leo núi
       - trekking
       - tôi muốn trekking
       - chỗ nào trekking đẹp
-      - chỗ nào có bãi biển đẹp
-      - muốn đi lặn san hô
       - gợi ý nơi đi cáp treo
-      - có điểm nào ăn uống ngon không
       - tôi muốn đi nơi khí hậu mát mẻ
-      - muốn trải nghiệm văn hóa bản địa
-      - tìm khu [nghỉ dưỡng](category) có spa
+      - có chỗ nào [cắm trại](category) không
+      - tìm chỗ [chụp ảnh](activity) ở [Đà Lạt]{"entity": "location", "role": "destination"}
+      - nơi nào có [thác nước](activity) đẹp
+      - gợi ý [đi bộ](activity) đường dài
+      - cho thuê [xe đạp](activity) ở [Hội An]{"entity": "location", "role": "destination"}
+      - có tour [chèo thuyền](activity) không
+      - muốn [câu cá](activity) ở biển
+      - tìm chỗ [ngắm hoàng hôn](activity)
+      - có khu [vui chơi](activity) giải trí nào không
+      - muốn [tham quan](activity) [chùa chiền](category)
+      - gợi ý [spa](activity) [massage](activity) ở [Sapa]{"entity": "location", "role": "destination"}
+      - có [tour đảo](activity) nào không
 
   - intent: search_price
     examples: |
-      - du lịch tiết kiệm
-      - gợi ý nơi giá rẻ
-      - nơi nào đi chơi tiết kiệm
-      - tôi muốn đi du lịch giá rẻ
       - tôi có [2 triệu](budget) đi được đâu
       - gợi ý nơi đi chơi dưới [1500k](budget)
       - [tháng 6](month) tôi có [3 triệu](budget) nên đi đâu
@@ -274,52 +206,43 @@ nlu:
       - tôi chỉ có [10tr](budget) thì đi đâu ổn
       - ngân sách [10tr](budget) đi đâu đẹp
       - mình có [8tr](budget), gợi ý giúp mình
-      - kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu ko bot
       - dới [3tr](budget) nha, đi [cuối tuần](time_window)
       - giá rẻ thôi tầm [1000k](budget) đổ lại
       - muốn đi resort [5 sao](category) giá không thành vấn đề
       - đi trăng mật ngân sách [20 triệu](budget) 2 vợ chồng
-      - tài chính [10 củ](budget) quay đầu
-
+      - vé [máy bay](transportation) đi [Hà Nội]{"entity": "location", "role": "destination"} giá bao nhiêu
+      - đi [Đà Lạt]{"entity": "location", "role": "destination"} bao nhiêu tiền là đủ
+      - túi tiền [3 triệu](budget) đi chơi [3 ngày](duration) có ổn không
+      - [khách sạn](category) [Đà Nẵng]{"entity": "location", "role": "destination"} giá phòng bao nhiêu
+      - đi du lịch bụi [Phú Quốc]{"entity": "location", "role": "destination"} hết bao nhiêu
+      - tính sơ bộ chi phí chuyến [biển](category) giúp mình
 
   - intent: ask_tour_info
     examples: |
-      - tìm tour đi [Phú Quốc]{"entity": "location", "role": "destination"} [3 ngày 2 đêm](duration)
       - có tour nào từ [Vinh]{"entity": "location", "role": "departure"} đi [Đồi Chè Thanh Chương]{"entity": "location", "role": "destination"} ko?
-      - mình cần tìm tour đi [Hà Nội]{"entity": "location", "role": "destination"} cho [4 người](party_size)
-      - báo giá tour [Thái Lan]{"entity": "location", "role": "destination"} khởi hành từ [HCM]{"entity": "location", "role": "departure"} [tháng sau](time_window)
-      - tui mún đi [Đà Nẵng]{"entity": "location", "role": "destination"} [4n3đ](duration) ngân sách cỡ [5 củ](budget)
-      - cho xem lịch trình tour [Hà Giang]{"entity": "location", "role": "destination"} [tuần tới](time_window)
       - tour [Sapa]{"entity": "location", "role": "destination"} [2 ngày 1 đêm](duration) đi từ [Hà Nội]{"entity": "location", "role": "departure"} giá bao nhiêu
-      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên]{"entity": "location", "role": "destination"} rẻ rẻ ko
       - giá tour đã bao gồm vé [máy bay](transportation) chưa shop
-      - có tour ghép đoàn nào đi [Hà Giang]{"entity": "location", "role": "destination"} khởi hành [thứ 6](time_window) không
-      - mình muốn đặt tour đi [vịnh Hạ Long]{"entity": "location", "role": "destination"} [2 người lớn 1 trẻ em](party_size)
-      - xin lịch trình và báo giá tour [Sapa]{"entity": "location", "role": "destination"} đi [cuối tuần này](time_window)
       - tour [Đà Lạt]{"entity": "location", "role": "destination"} [tháng 12](month)
+      - tour [Phú Quốc]{"entity": "location", "role": "destination"} [5 ngày 4 đêm](duration) còn trống không
+      - có tour [Nha Trang]{"entity": "location", "role": "destination"} khởi hành từ [Hà Nội]{"entity": "location", "role": "departure"} không
+      - lịch trình tour [Đà Nẵng]{"entity": "location", "role": "destination"} [3 ngày](duration) thế nào
+      - tour [Hội An]{"entity": "location", "role": "destination"} có ăn trưa không
+      - mình muốn xem thông tin tour biển
+      - giá tour cho [trẻ em](party_size) thế nào
+      - tour [Sapa]{"entity": "location", "role": "destination"} khởi hành từ [HCM]{"entity": "location", "role": "departure"}
+      - cho xin itinerary tour [Hạ Long]{"entity": "location", "role": "destination"}
+      - tour ghép đoàn [Đà Lạt]{"entity": "location", "role": "destination"} có không
 
   - intent: ask_location_feature
     examples: |
-      - Vũng Tàu có đặc sản gì?
-      - Chơi gì ở Hội An vào buổi tối?
+      - Chơi gì ở Hội An vào buổi tối
       - Ở Đà Lạt có gì chơi
       - Đà Lạt có gì
       - Đà Lạt có gì hay không
-      - các [khách sạn](category) ở đó thì sao
-      - tìm [homestay](category)
-      - có chỗ nào [cắm trại](category) không
-      - ở đó có [resort](category) nào đẹp không
-      - tìm [khách sạn](category) ở [Vũng Tàu]{"entity": "location", "role": "destination"}
-      - có [resort](category) nào tại [Sapa]{"entity": "location", "role": "destination"} không
-      - tìm khu [nghỉ dưỡng](category) có spa
-      - gợi ý vài cái [homestay](category) ở [Đà Lạt]{"entity": "location", "role": "destination"}
-      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên]{"entity": "location", "role": "destination"} rẻ rẻ ko
-      - [nhà nghỉ](category) thì sao
-      - thế còn [khách sạn](category) thì sao
-      - [resort](category) thì sao hả bot
-      - cho tui xem [homestay](category) thì sao
-      - đổi sang [nhà nghỉ](category) nhé
-
+      - Sapa thời tiết thế nào
+      - Đà Nẵng có gì chơi buổi tối
+      - biển ở Nha Trang có đẹp không
+      - khu [Hội An]{"entity": "location", "role": "destination"} về đêm có gì vui
 
   - intent: search_accommodation
     examples: |
@@ -339,7 +262,7 @@ nlu:
       - gợi ý chỗ ở
       - chỗ ở
       - khách sạn thì sao
-
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên]{"entity": "location", "role": "destination"} rẻ rẻ ko
 
   - intent: ask_weather_timing
     examples: |
@@ -357,25 +280,21 @@ nlu:
   - intent: search_travel
     examples: |
       - tui muốn đi chơi
-      - tôi muốn đi đâu đó
       - tôi muốn đi chơi
       - mà thôi cho tôi đi Đà Lạt
       - thôi tôi muốn đi Nha Trang
       - thôi thì đi Phú Quốc vậy
-      - đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp
-      - dịp lễ [30/4](time_window) nên đi tỉnh nào
       - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) ko
-      - tui muốn đi từ tháng 2 đến tháng 5
-      - muốn đi đâu đó từ tháng 1 tới tháng 3
       - dạo này nóng quá mình muốn đi [biển](category)
       - gợi ý tour [tắm biển](category) giá rẻ
       - tìm chỗ [tắm biển](category)
       - tôi muốn lên [núi](category) chơi
       - gợi ý điểm [cắm trại](category)
-
-  - intent: test_s3
-    examples: |
-      - mật mã s3 là gì
+      - tính đi [biển](category) [3 ngày](duration)
+      - muốn tổ chức chuyến đi chơi [cuối tuần](time_window)
+      - đi chơi [Đà Nẵng]{"entity": "location", "role": "destination"} [4 ngày](duration)
+      - từ [Hà Nội]{"entity": "location", "role": "departure"} đi chơi xa
+      - booking chuyến đi [Sapa]{"entity": "location", "role": "destination"} luôn
 
   - intent: reset_slots
     examples: |
@@ -387,36 +306,6 @@ nlu:
 
   - intent: inform
     examples: |
-      - [Đà Lạt]{"entity": "location", "role": "destination"}
-      - [Hà Nội]{"entity": "location", "role": "departure"} nha
-      - khoảng [3 ngày](duration)
-      - tầm [5 triệu](budget)
-      - [6tr](budget)
-      - [5 triệu](budget)
-      - tầm [10 củ](budget)
-      - [tháng 11](month)
-      - nhóm mình [6 người](party_size)
-      - đi [máy bay](transportation) nhé
-      - mình xuất phát từ [Đà Nẵng]{"entity": "location", "role": "departure"}
-      - [Sapa]{"entity": "location", "role": "destination"}
-      - [Phú Quốc]{"entity": "location", "role": "destination"}
-      - [4 người](party_size)
-      - [2 người lớn 1 trẻ em](party_size)
-      - [cuối tuần](time_window)
-      - [tháng 8](month)
-      - [mùa thu](season)
-      - đi [biển](category)
-      - đi [đà lạt]{"entity": "location", "role": "destination"}
-      - [sapa]{"entity": "location", "role": "destination"}
-      - muốn đi [biển](category)
-      - [núi](category)
-      - ngân sách [5tr](budget)
-      - khoảng [6 củ](budget)
-      - [10 triệu](budget)
-      - [2 củ](budget)
-      - [10tr](budget)
-      - khởi hành từ [Sài Gòn]{"entity": "location", "role": "departure"}
-      - [xe khách](transportation)
       - từ [tháng 5](month_from) đến [tháng 7](month_to)
       - từ [tháng 10](month_from) đến [tháng 12](month_to)
       - từ [tháng 1](month_from) đến [tháng 3](month_to)
@@ -437,42 +326,72 @@ nlu:
       - thế Đà Lạt thì sao
       - [5 triệu](budget) thì sao
       - đi [tháng 10](month) thì sao
-      - cho tôi hỏi thêm
       - hỏi thêm chút
-      - mà cho tôi hỏi thêm
       - cho hỏi thêm tí
 
-  - synonym: mùa xuân
+  - intent: search_food_dining
     examples: |
-      - mua xuan
-      - mùa hoa nở
-      - ra tết
+      - quán hải sản ngon ở Nha Trang
+      - khu ẩm thực đường phố Sài Gòn
+      - món chay ở Đà Lạt có gì ngon
+      - địa chỉ ăn vặt Hội An
+      - buổi sáng ở Huế nên ăn món gì
+      - nhà hàng lãng mạn ở Đà Nẵng
+      - quán cà phê view đẹp ở Sapa
+      - đồ nướng ở Vũng Tàu quán nào ngon
 
-  - synonym: mùa hè
+  - intent: ask_itinerary
     examples: |
-      - mua he
-      - hè
-      - mùa nóng
-      - nghỉ hè
+      - lên kế hoạch du lịch Sapa 5 ngày
+      - gợi ý hành trình Hà Nội 2 ngày
+      - sắp xếp lịch tham quan Huế
+      - itinerary Đà Nẵng 3 ngày 2 đêm
+      - tour tự túc Phú Quốc nên đi đâu
+      - lịch trình du lịch biển Nha Trang
+      - đi Hội An trong ngày nên tham quan những đâu
+      - phân bổ thời gian tham quan Đà Lạt
 
-  - synonym: mùa thu
+  - intent: ask_transportation
     examples: |
-      - mua thu
-      - thu
+      - đi từ Đà Nẵng ra Huế bằng gì tiện nhất
+      - phương tiện di chuyển giữa các đảo Phú Quốc
+      - thuê xe tự lái ở Nha Trang giá thế nào
+      - có xe đưa đón sân bay Đà Lạt không
+      - vé tàu hỏa từ Sài Gòn đi Nha Trang bao nhiêu
+      - đi xe máy từ Hà Nội lên Sapa có an toàn không
+      - cách di chuyển từ trung tâm ra bãi biển Mỹ Khê
+      - tàu cao tốc từ Rạch Giá ra Phú Quốc mất mấy tiếng
 
-  - synonym: mùa đông
+  - intent: ask_policy_booking
     examples: |
-      - mua dong
-      - mùa lạnh
-      - đông
+      - chính sách hoàn hủy khi mưa bão
+      - đặt cọc online có an toàn không
+      - muốn thay đổi ngày khởi hành thì làm sao
+      - trẻ em dưới 5 tuổi có tính phí không
+      - thanh toán bằng thẻ tín dụng được không
+      - hủy tour trước 7 ngày mất phí bao nhiêu
+      - có bảo hiểm du lịch trong gói không
+      - xuất hóa đơn đỏ cho công ty được không
 
-  - synonym: Sài Gòn
+  - intent: book_tour
     examples: |
-      - HCM
+      - muốn đặt tour Sapa cho nhóm 10 người
+      - book combo khách sạn vé máy bay Đà Nẵng
+      - đặt tour ghép đoàn đi Hà Giang
+      - booking tour Phú Quốc tháng 6
+      - đặt giúp tour Hội An 1 ngày
+      - đặt chỗ tour Nha Trang cho gia đình
+      - book tour du lịch Hạ Long cuối tuần
+      - mình muốn mua tour Đà Lạt 3 ngày 2 đêm
+
+  - synonym: Hồ Chí Minh
+    examples: |
+      - Sài Gòn
+      - tphcm
+      - hcm
+      - sg
       - TP HCM
       - TPHCM
-      - SG
-      - Hồ Chí Minh
 
   - synonym: sắp tới
     examples: |
@@ -508,6 +427,3 @@ nlu:
     examples: |
       - sắp tới
       - sap toi
-
-
-

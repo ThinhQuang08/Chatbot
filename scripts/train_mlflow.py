@@ -16,6 +16,12 @@ CONFIG_PATH = os.path.join(RASA_DIR, "config.yml")
 MODEL_DIR = os.path.join(RASA_DIR, "models")
 RESULTS_DIR = os.path.join(RASA_DIR, "results")
 
+# Đảm bảo PYTHONPATH để import được rasa_bot.components
+_ENV = os.environ.copy()
+_PYTHONPATH = _ENV.get("PYTHONPATH", "")
+if ROOT_DIR not in _PYTHONPATH.split(os.pathsep):
+    _ENV["PYTHONPATH"] = os.pathsep.join(filter(None, [_PYTHONPATH, ROOT_DIR]))
+
 def train_and_evaluate_mlflow():
     if mlflow.active_run():
         mlflow.end_run()
@@ -44,7 +50,7 @@ def train_and_evaluate_mlflow():
         # ==========================================
         print("🚀 Bắt đầu huấn luyện Rasa Model...")
         start_time = time.time()
-        train_result = subprocess.run(["rasa", "train", "--data", "data/train"], cwd=RASA_DIR, capture_output=True, text=True)
+        train_result = subprocess.run(["rasa", "train", "--data", "data/train"], cwd=RASA_DIR, capture_output=True, text=True, env=_ENV)
         training_time = time.time() - start_time
         mlflow.log_metric("training_duration_seconds", training_time)
 
@@ -74,7 +80,8 @@ def train_and_evaluate_mlflow():
             ["rasa", "test", "nlu", "--cross-validation", "--folds", "3", "--data", "data/train"], 
             cwd=RASA_DIR, 
             capture_output=True, 
-            text=True
+            text=True,
+            env=_ENV,
         )
 
         print("🧪 Kiểm tra trên held-out test set...")
@@ -82,7 +89,8 @@ def train_and_evaluate_mlflow():
             ["rasa", "test", "nlu", "--nlu", "data/test/nlu.yml", "--model", latest_model],
             cwd=RASA_DIR,
             capture_output=True,
-            text=True
+            text=True,
+            env=_ENV,
         )
 
 

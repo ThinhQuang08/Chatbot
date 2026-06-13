@@ -1,91 +1,77 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
 stories:
-- story: happy path 1
+- story: greet then search destination
   steps:
   - user: |
-      hello there!
+      chào bot
     intent: greet
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      gợi ý điểm du lịch miền Trung
+    intent: search_destination
+  - action: action_search_travel
 
-- story: happy path 2
+- story: search travel with form
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      tôi muốn đi du lịch
+    intent: search_travel
+  - action: travel_form
+  - active_loop: travel_form
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      Đà Lạt
+    intent: inform
+  - action: travel_form
+  - active_loop: travel_form
   - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      5 triệu
+    intent: inform
+  - action: travel_form
+  - active_loop: null
+  - action: action_search_travel
 
-- story: sad path 1
+- story: ask about tour info then thanks
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
+      tìm tour đi Phú Quốc 3 ngày 2 đêm
+    intent: ask_tour_info
+  - action: action_search_tour
   - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+      cảm ơn bạn nhiều
+    intent: thanks
+  - action: utter_suggest_more
 
-- story: sad path 2
+- story: search accommodation then change mind
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
+      tìm khách sạn ở Vũng Tàu
+    intent: search_accommodation
+  - action: action_search_tour_info
   - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+      đổi sang homestay nhé
+    intent: inform
+  - action: action_search_tour_info
 
-- story: sad path 3
+- story: out of scope then correct question
   steps:
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
+      giá vàng hôm nay bao nhiêu
+    intent: out_of_scope
+  - action: utter_out_of_scope
   - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+      cho tôi hỏi thăm quan ở Hội An
+    intent: ask_location_feature
+  - action: action_ai_consultant
 
 - story: say goodbye
   steps:
   - user: |
-      bye-bye!
+      tạm biệt
     intent: goodbye
   - action: utter_goodbye
 
 - story: bot challenge
   steps:
   - user: |
-      are you a bot?
+      bạn là ai
     intent: bot_challenge
   - action: utter_iamabot

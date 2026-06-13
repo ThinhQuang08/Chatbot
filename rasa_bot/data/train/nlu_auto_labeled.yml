@@ -1,0 +1,205 @@
+version: "3.1"
+
+nlu:
+
+  - intent: ask_location_feature
+    examples: |
+      - ăn gì ở [Cao Bằng](destination)
+      - ăn gì ở [Huế](destination)
+      - ăn gì ở [Huế](destination) gấp ạ
+      - ăn gì ở [Huế](destination) shop
+      - ăn gì ở [Hà Nội](destination)
+      - ăn gì ở [Hà Nội](destination) bot ơi
+      - ăn gì ở [Hà Nội](destination) ạ
+      - ăn gì ở [Hội An](destination)
+      - ăn gì ở [Phú Quý](destination)
+      - ăn gì ở [Phú Quốc](destination)
+      - ăn gì ở [Phú Quốc](destination) nhé
+      - ăn gì ở [Phú Quốc](destination) shop
+      - ăn gì ở [Sa Pa](destination)
+      - ăn gì ở [Sa Pa](destination) gấp ạ
+      - ăn gì ở [Vũng Tàu](destination)
+      - ăn gì ở [Vũng Tàu](destination) shop
+      - ăn gì ở [Đà Lạt](destination)
+      - ăn gì ở [Đà Nẵng](destination)
+      - ăn gì ở [Đà Nẵng](destination) ạ
+      - đồ ăn [Huế](destination) thế nào
+      - đồ ăn [Hà Giang](destination) thế nào
+      - đồ ăn [Hà Giang](destination) thế nào gấp ạ
+      - đồ ăn [Hà Giang](destination) thế nào tư vấn với
+      - đồ ăn [Hà Nội](destination) thế nào
+      - đồ ăn [Hà Nội](destination) thế nào nhé
+      - đồ ăn [Hội An](destination) thế nào
+      - đồ ăn [Hội An](destination) thế nào shop
+      - đồ ăn [Phú Quốc](destination) thế nào
+      - đồ ăn [Phú Quốc](destination) thế nào bot ơi
+      - đồ ăn [Sa Pa](destination) thế nào
+      - đồ ăn [Đà Lạt](destination) thế nào
+      - đồ ăn [Đà Lạt](destination) thế nào ạ
+      - đồ ăn [Đà Nẵng](destination) thế nào
+      - đồ ăn [Đà Nẵng](destination) thế nào tư vấn với
+
+  - intent: ask_policy_booking
+    examples: |
+      - chính sách hủy [tour](category)
+      - chính sách hủy [tour](category) bot ơi
+      - chính sách hủy [tour](category) gấp ạ
+      - chính sách hủy [tour](category) nhé
+      - chính sách hủy [tour](category) tư vấn với
+      - hoàn tiền thế nào
+      - hoàn tiền thế nào bot ơi
+      - hoàn tiền thế nào gấp ạ
+      - hoàn tiền thế nào nha
+      - hoàn tiền thế nào nhé
+      - hoàn tiền thế nào shop
+
+  - intent: ask_tour_info
+    examples: |
+      - gợi ý lịch trình [Măng Đen](destination) 5 ngày 2 đêm bot ơi
+      - gợi ý lịch trình [Pù Luông](destination) 4 ngày 1 đêm ạ
+      - gợi ý lịch trình [Trị An](destination) 5 ngày 1 đêm
+      - gợi ý lịch trình [Tà Xùa](destination) 2 ngày 1 đêm
+      - lịch trình [tour](category) [Huế](destination)
+      - lịch trình [tour](category) [Hà Giang](destination)
+      - lịch trình [tour](category) [Hà Giang](destination) nhé
+      - lịch trình [tour](category) [Hà Nội](destination) shop
+      - lịch trình [tour](category) [Măng Đen](destination)
+      - lịch trình [tour](category) [Nha Trang](destination)
+      - lịch trình [tour](category) [Phú Quý](destination) nha
+      - lịch trình [tour](category) [Phú Quốc](destination)
+      - lịch trình [tour](category) [Phú Quốc](destination) bot ơi
+      - lịch trình [tour](category) [Phú Quốc](destination) nhé
+      - lịch trình [tour](category) [Phú Quốc](destination) shop
+      - lịch trình [tour](category) [Sa Pa](destination)
+      - lịch trình [tour](category) [Sa Pa](destination) gấp ạ
+      - lịch trình [tour](category) [Sa Pa](destination) nhé
+      - lịch trình [tour](category) [Tà Năng](destination)
+      - lịch trình [tour](category) [Vũng Tàu](destination)
+      - lịch trình [tour](category) [Đà Lạt](destination) nha
+      - lịch trình [tour](category) [Đà Nẵng](destination) nha
+
+  - intent: ask_weather_timing
+    examples: |
+      - [Pù Luông](destination) mùa nào đẹp nhất
+      - thời tiết hôm nay thế nào
+      - thời tiết hôm nay thế nào bot ơi
+      - thời tiết hôm nay thế nào gấp ạ
+      - thời tiết hôm nay thế nào nhé
+      - thời tiết hôm nay thế nào ạ
+      - đi [Trị An](destination) mùa nào đẹp
+      - đi [Trị An](destination) mùa nào đẹp nha
+
+  - intent: out_of_scope
+    examples: |
+      - bạn có biết nấu ăn không
+      - bạn có biết nấu ăn không gấp ạ
+      - bạn có biết nấu ăn không nhé
+      - giải bài tập này giúp tôi
+      - giải bài tập này giúp tôi nha
+      - giải bài tập này giúp tôi shop
+
+  - intent: search_accommodation
+    examples: |
+      - cho mình xin [homestay](category) [Đà Lạt](destination)
+      - cho mình xin [khách sạn](category) [Hà Nội](destination)
+      - cho mình xin [khách sạn](category) [Hội An](destination)
+      - cho mình xin [khách sạn](category) [Đà Nẵng](destination)
+      - cho mình xin [nhà nghỉ](category) [Phú Quốc](destination)
+      - cho mình xin [nhà nghỉ](category) [Sa Pa](destination)
+      - cho mình xin [nhà nghỉ](category) [Sa Pa](destination) nhé
+      - cho mình xin [nhà nghỉ](category) [Vũng Tàu](destination)
+      - cho mình xin [resort](category) [Huế](destination)
+      - cho mình xin [resort](category) [Vũng Tàu](destination)
+      - cho mình xin [resort](category) [Đà Lạt](destination) nha
+      - cho mình xin [resort](category) [Đà Nẵng](destination)
+      - cho mình xin [villa](category) [Huế](destination)
+      - cho mình xin [villa](category) [Hà Nội](destination) gấp ạ
+      - cho mình xin [villa](category) [Sa Pa](destination)
+      - cho mình xin [villa](category) [Vũng Tàu](destination)
+      - cho mình xin [villa](category) [Đà Lạt](destination) gấp ạ
+      - có [homestay](category) nào ở [Huế](destination) không
+      - có [homestay](category) nào ở [Hà Giang](destination) không bot ơi
+      - có [homestay](category) nào ở [Hội An](destination) không gấp ạ
+      - có [homestay](category) nào ở [Nha Trang](destination) không
+      - có [homestay](category) nào ở [Phú Quốc](destination) không
+      - có [homestay](category) nào ở [Sa Pa](destination) không
+      - có [homestay](category) nào ở [Vũng Tàu](destination) không
+      - có [homestay](category) nào ở [Vũng Tàu](destination) không bot ơi
+      - có [khách sạn](category) nào ở [Cao Bằng](destination) không
+      - có [khách sạn](category) nào ở [Sa Pa](destination) không
+      - có [nhà nghỉ](category) nào ở [Huế](destination) không
+      - có [nhà nghỉ](category) nào ở [Nha Trang](destination) không
+      - có [nhà nghỉ](category) nào ở [Pù Luông](destination) không tư vấn với
+      - có [nhà nghỉ](category) nào ở [Đà Lạt](destination) không nhé
+      - có [resort](category) nào ở [Hà Giang](destination) không
+      - có [resort](category) nào ở [Hà Nội](destination) không
+      - có [resort](category) nào ở [Nha Trang](destination) không
+      - có [resort](category) nào ở [Phú Quốc](destination) không
+      - có [resort](category) nào ở [Sa Pa](destination) không
+      - có [resort](category) nào ở [Trị An](destination) không bot ơi
+      - có [resort](category) nào ở [Vũng Tàu](destination) không tư vấn với
+      - có [resort](category) nào ở [Đà Lạt](destination) không
+      - có [resort](category) nào ở [Đà Nẵng](destination) không nha
+      - có [villa](category) nào ở [Huế](destination) không
+      - có [villa](category) nào ở [Hà Nội](destination) không ạ
+      - có [villa](category) nào ở [Nha Trang](destination) không shop
+      - có [villa](category) nào ở [Nha Trang](destination) không ạ
+      - có [villa](category) nào ở [Phú Quốc](destination) không
+      - có [villa](category) nào ở [Đà Nẵng](destination) không gấp ạ
+      - ở [Huế](destination) có [khách sạn](category) nào tốt
+      - ở [Huế](destination) có [nhà nghỉ](category) nào tốt
+      - ở [Huế](destination) có [nhà nghỉ](category) nào tốt ạ
+      - ở [Hà Giang](destination) có [nhà nghỉ](category) nào tốt
+      - ở [Hà Giang](destination) có [resort](category) nào tốt bot ơi
+      - ở [Hà Giang](destination) có [villa](category) nào tốt
+      - ở [Hà Nội](destination) có [homestay](category) nào tốt
+      - ở [Hội An](destination) có [khách sạn](category) nào tốt
+      - ở [Hội An](destination) có [nhà nghỉ](category) nào tốt gấp ạ
+      - ở [Hội An](destination) có [resort](category) nào tốt
+      - ở [Hội An](destination) có [villa](category) nào tốt
+      - ở [Măng Đen](destination) có [khách sạn](category) nào tốt
+      - ở [Măng Đen](destination) có [villa](category) nào tốt ạ
+      - ở [Nha Trang](destination) có [nhà nghỉ](category) nào tốt bot ơi
+      - ở [Nha Trang](destination) có [nhà nghỉ](category) nào tốt shop
+      - ở [Phú Quý](destination) có [homestay](category) nào tốt gấp ạ
+      - ở [Sa Pa](destination) có [homestay](category) nào tốt
+      - ở [Sa Pa](destination) có [nhà nghỉ](category) nào tốt gấp ạ
+      - ở [Tà Xùa](destination) có [khách sạn](category) nào tốt
+      - ở [Tà Xùa](destination) có [villa](category) nào tốt
+      - ở [Vũng Tàu](destination) có [villa](category) nào tốt
+      - ở [Đà Lạt](destination) có [khách sạn](category) nào tốt
+      - ở [Đà Lạt](destination) có [khách sạn](category) nào tốt gấp ạ
+      - ở [Đà Lạt](destination) có [resort](category) nào tốt
+      - ở [Đà Nẵng](destination) có [homestay](category) nào tốt
+      - ở [Đà Nẵng](destination) có [khách sạn](category) nào tốt
+      - ở [Đà Nẵng](destination) có [resort](category) nào tốt ạ
+      - ở [Đà Nẵng](destination) có [villa](category) nào tốt
+
+  - intent: search_activity
+    examples: |
+      - cho thuê xe [chèo thuyền](activity)
+      - cho thuê xe [chèo thuyền](activity) gấp ạ
+      - cho thuê xe [chèo thuyền](activity) ạ
+      - cho thuê xe [cắm trại](activity)
+      - cho thuê xe [cắm trại](activity) shop
+      - cho thuê xe [cắm trại](activity) ạ
+      - cho thuê xe [dù lượn](activity)
+      - cho thuê xe [lặn san hô](activity)
+      - cho thuê xe [lặn san hô](activity) tư vấn với
+      - cho thuê xe [săn mây](activity)
+      - cho thuê xe [trekking](activity) bot ơi
+      - cho thuê xe [trekking](activity) gấp ạ
+      - cho thuê xe [trekking](activity) nha
+      - cho thuê xe [đạp xe](activity)
+      - cho thuê xe leo [núi](category)
+
+  - intent: search_travel
+    examples: |
+      - muốn đặt [tour](category) [Hà Giang](destination)
+      - muốn đặt [tour](category) [Hà Nội](destination)
+      - muốn đặt [tour](category) [Hội An](destination) ạ
+      - muốn đặt [tour](category) [Nha Trang](destination)
+      - muốn đặt [tour](category) [Đà Lạt](destination)
+      - muốn đặt [tour](category) [Đà Lạt](destination) tư vấn với
+      - muốn đặt [tour](category) [Đà Nẵng](destination)
+      - muốn đặt [tour](category) [Đà Nẵng](destination) nha

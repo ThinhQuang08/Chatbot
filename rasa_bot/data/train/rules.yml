@@ -102,6 +102,11 @@ rules:
       - action: travel_form
       - active_loop: travel_form
 
+  - rule: Xử lý đặt tour
+    steps:
+      - intent: book_tour
+      - action: utter_book_tour
+
   - rule: 2. Xử lý sau khi Form thu thập đủ thông tin
     condition:
       - active_loop: travel_form

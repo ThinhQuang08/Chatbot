@@ -201,6 +201,9 @@ responses:
     - text: "Mình chỉ chuyên tư vấn du lịch thôi bạn ơi! Bạn thử hỏi mình về địa điểm, tour, khách sạn hoặc ẩm thực xem sao nhé! 😊"
     - text: "Chuyện đó ngoài vùng du lịch của mình rồi. Bạn muốn gợi ý điểm đến hay tìm tour thì mình sẵn sàng nha!"
 
+  utter_book_tour:
+    - text: "Cảm ơn bạn đã quan tâm! Hiện tại mình có thể tư vấn thông tin tour, bạn muốn tìm hiểu thêm chi tiết về tour nào không?"
+
   utter_ask_destination:
     - text: "Chuyến đi này bạn dự định ghé thăm tỉnh thành hay địa điểm cụ thể nào?"
     - text: "Tuyệt vời! Bạn đã chọn được điểm đến nào chưa (ví dụ: Sapa, Đà Lạt, vùng biển...)?"
