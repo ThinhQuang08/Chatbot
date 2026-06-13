@@ -13,15 +13,18 @@ Implementing implicit namespace packages (as specified in PEP 420) is preferred 
   declare_namespace(pkg)
 /home/tieens/Github/Chatbot/.venv/lib/python3.10/site-packages/sanic_cors/extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
   SANIC_VERSION = LooseVersion(sanic_version)
-2026-05-23 11:48:47 INFO     rasa_sdk.endpoint  - Starting action endpoint server...
+2026-06-04 23:35:34 INFO     rasa_sdk.endpoint  - Starting action endpoint server...
 /home/tieens/Github/Chatbot/.venv/lib/python3.10/site-packages/opentelemetry/util/_importlib_metadata.py:32: DeprecationWarning: SelectableGroups dict interface is deprecated. Use select.
   return EntryPoints(ep for group_eps in eps.values() for ep in group_eps)
-2026-05-23 11:48:49 INFO     rasa_sdk.executor  - Registered function for 'action_search_tour_info'.
-2026-05-23 11:48:49 INFO     rasa_sdk.executor  - Registered function for 'action_search_travel'.
-2026-05-23 11:48:49 INFO     rasa_sdk.executor  - Registered function for 'action_ai_consultant'.
-2026-05-23 11:48:49 INFO     rasa_sdk.executor  - Registered function for 'validate_travel_form'.
-2026-05-23 11:48:49 INFO     rasa_sdk.endpoint  - Starting plugins...
-2026-05-23 11:48:49 INFO     rasa_sdk.endpoint  - Action endpoint is up and running on http://0.0.0.0:5055
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_search_tour_info'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_search_travel'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_search_tour'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_search_activity'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_ai_consultant'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'action_reset_slots'.
+2026-06-04 23:35:36 INFO     rasa_sdk.executor  - Registered function for 'validate_travel_form'.
+2026-06-04 23:35:36 INFO     rasa_sdk.endpoint  - Starting plugins...
+2026-06-04 23:35:36 INFO     rasa_sdk.endpoint  - Action endpoint is up and running on http://0.0.0.0:5055
 Unable to start server
 Traceback (most recent call last):
   File "/home/tieens/Github/Chatbot/.venv/lib/python3.10/site-packages/sanic/server/runners.py", line 133, in serve

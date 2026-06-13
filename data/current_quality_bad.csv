@@ -1,0 +1,51 @@
+text,intent
+đi phú quốc chơi gì vào mùa hè,search_destination
+,search_destination
+tour nha trang 3 ngày 2 đêm bao nhiêu tiền,search_price
+,search_accommodation
+đi phú quốc chơi gì vào mùa hè,search_destination
+resort nào view biển đẹp ở đà nẵng,search_accommodation
+☃️☃️☃️☃️☃️,search_activity
+a,search_destination
+đi phú quốc chơi gì vào mùa hè,search_destination
+,search_food_dining
+khách sạn giá rẻ gần biển nha trang,search_accommodation
+? ,ask_weather_timing
+tour lặn biển san hô ở nha trang,search_activity
+,search_destination
+@@,search_activity
+... ,search_destination
+vé máy bay đi đà nẵng từ sg,ask_transportation
+khách sạn giá rẻ gần biển nha trang,search_accommodation
+,search_accommodation
+đi phú quốc chơi gì vào mùa hè,search_destination
+resort nào view biển đẹp ở đà nẵng,search_accommodation
+,search_activity
+homestay đà lạt giá rẻ cho sinh viên,search_accommodation
+,ask_itinerary
+,
+,search_destination
+b,inform
+tour du thuyền trên vịnh hạ long,search_activity
+,search_price
+,search_accommodation
+địa điểm ăn hải sản ngon ở vũng tàu,search_food_dining
+,search_travel
+hải sản nha trang có đắt không,search_food_dining
+,search_accommodation
+đi phú quốc chơi gì vào mùa hè,search_destination
+,search_activity
+na,ask_transportation
+homestay view núi ở sa pa,search_accommodation
+,search_destination
+đặt phòng khách sạn ở đà lạt,book_tour
+,search_accommodation
+thời tiết nha trang tháng 8 thế nào,ask_weather_timing
+,search_activity
+,search_food_dining
+resort nào view biển đẹp ở đà nẵng,search_accommodation
+,search_destination
+,search_accommodation
+tour đà lạt 2 ngày 1 đêm bao nhiêu,search_price
+,search_price
+x,search_travel

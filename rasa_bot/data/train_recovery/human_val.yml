@@ -1,0 +1,78 @@
+# Auto-split from nlu.yml
+version: "3.1"
+
+nlu:
+  - intent: affirm
+    examples: |
+      - 10 điểm cho shop
+      - indeed
+  - intent: ask_itinerary
+    examples: |
+      - đi [Hà Nội]{"entity": "location", "role": "destination"} [1 ngày](duration) thì đi đâu
+  - intent: ask_location_feature
+    examples: |
+      - [đà lạt]{"entity": "location", "role": "destination"} đợt này có lễ hội gì không
+  - intent: ask_policy_booking
+    examples: |
+      - đi nước ngoài cần chuẩn bị visa không
+  - intent: ask_tour_info
+    examples: |
+      - tour [đà lạt]{"entity": "location", "role": "destination"} 3 ngày 2 đêm này giá chính xác bao nhiêu
+  - intent: ask_transportation
+    examples: |
+      - bên bạn có hỗ trợ đặt vé [máy bay](transportation) không
+  - intent: book_tour
+    examples: |
+      - đặt tour [Hội An]{"entity": "location", "role": "destination"} cho [2 vợ chồng](party_size)
+  - intent: bot_challenge
+    examples: |
+      - gọi nhân viên thật ra đây
+  - intent: deny
+    examples: |
+      - thôi
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - cu
+  - intent: greet
+    examples: |
+      - hey there
+      - let's go
+  - intent: inform
+    examples: |
+      - [Đà Lạt]{"entity": "location", "role": "destination"}
+      - khoảng [3 ngày](duration)
+      - [mùa thu](season)
+      - [10tr](budget)
+  - intent: out_of_scope
+    examples: |
+      - hướng dẫn nấu phở bò
+  - intent: search_accommodation
+    examples: |
+      - đặt [phòng](category) [khách sạn](category) [Nha Trang](location)
+      - tìm [khách sạn 5 sao](category) ở [Nha Trang]{"entity": "location", "role": "destination"}
+      - tìm [homestay](category) view đẹp ở [Đà Lạt](location)
+  - intent: search_activity
+    examples: |
+      - chỗ nào có bãi biển đẹp
+      - gợi ý chỗ [leo núi](activity)
+      - [lặn san hô](activity) [Phú Quốc]{"entity": "location", "role": "destination"} [tháng 10](month)
+  - intent: search_destination
+    examples: |
+      - tui muốn đi từ tháng 2 đến tháng 5
+      - review [Đà Lạt](location) mùa này
+  - intent: search_food_dining
+    examples: |
+      - có nhà hàng nào lãng mạn không
+      - Vũng Tàu có đặc sản gì?
+  - intent: search_price
+    examples: |
+      - giá vé Safari
+      - mức giá vé như nào
+  - intent: search_travel
+    examples: |
+      - cho tôi đi [Đà Lạt]{"entity": "location", "role": "destination"}
+      - từ [Sài Gòn]{"entity": "location", "role": "departure"} đến [Đà Lạt]{"entity": "location", "role": "destination"}
+      - tôi đi [Nha Trang]{"entity": "location", "role": "destination"} nha
+      - với [3 triệu](budget) nha, đi [cuối tuần](time_window)
+      - tôi muốn đi [Nha Trang]{"entity": "location", "role": "destination"}

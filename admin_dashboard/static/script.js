@@ -5,6 +5,9 @@ let selectedIds = new Set();
 
 let currentPage = 1;
 let intentChart = null;
+let metricsChart = null;
+let comparisonChart = null;
+let dqChart = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -451,6 +454,207 @@ async function loadChart() {
   });
 }
 
+// --- Metrics Chart ---
+async function loadMetricsChart() {
+  const data = await api('/api/model-metrics');
+  const ctx = document.getElementById('metricsChart');
+  if (!ctx) return;
+
+  if (!data.labels || data.labels.length === 0) {
+    if (metricsChart) { metricsChart.destroy(); metricsChart = null; }
+    return;
+  }
+
+  updateMetricsCards(data.latest);
+
+  if (metricsChart) {
+    metricsChart.data.labels = data.labels;
+    metricsChart.data.datasets = data.datasets.map(ds => ({
+      ...ds,
+      fill: false,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      borderWidth: 2.5
+    }));
+    metricsChart.update();
+    return;
+  }
+
+  metricsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.labels,
+      datasets: data.datasets.map(ds => ({
+        ...ds,
+        fill: false,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2.5
+      }))
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#8b90a5', font: { size: 12 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1a1d27',
+          titleColor: '#e1e4ed',
+          bodyColor: '#8b90a5',
+          borderColor: '#2e3348',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx) {
+              return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(4);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 11 }, maxRotation: 45 }
+        },
+        y: {
+          min: 0, max: 1,
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', callback: function(v) { return v.toFixed(2); } }
+        }
+      }
+    }
+  });
+}
+
+function updateMetricsCards(latest) {
+  if (!latest) return;
+  const keys = [
+    { key: 'f1_score', id: 'mF1', deltaId: 'dF1' },
+    { key: 'accuracy', id: 'mAccuracy', deltaId: 'dAccuracy' },
+    { key: 'precision', id: 'mPrecision', deltaId: 'dPrecision' },
+    { key: 'recall', id: 'mRecall', deltaId: 'dRecall' }
+  ];
+  keys.forEach(({ key, id, deltaId }) => {
+    const valEl = document.getElementById(id);
+    const deltaEl = document.getElementById(deltaId);
+    if (valEl) valEl.textContent = latest[key] != null ? latest[key].toFixed(4) : '—';
+    if (deltaEl) {
+      if (latest.deltas && latest.deltas[key] !== undefined) {
+        const d = latest.deltas[key];
+        deltaEl.textContent = (d >= 0 ? '+' : '') + d.toFixed(4);
+        deltaEl.className = 'metric-delta ' + (d >= 0 ? 'positive' : 'negative');
+      } else {
+        deltaEl.textContent = '';
+        deltaEl.className = 'metric-delta';
+      }
+    }
+  });
+}
+
+// --- Comparison Chart ---
+async function loadComparisonChart() {
+  const data = await api('/api/model-metrics');
+  const ctx = document.getElementById('comparisonChart');
+  if (!ctx) return;
+
+  if (!data.comparison || !data.comparison.pre || !data.comparison.post) {
+    if (comparisonChart) { comparisonChart.destroy(); comparisonChart = null; }
+    return;
+  }
+
+  const cmp = data.comparison;
+  const colors = {
+    pre: { bg: 'rgba(108,92,231,0.7)', border: '#6c5ce7' },
+    post: { bg: 'rgba(0,184,148,0.7)', border: '#00b894' }
+  };
+
+  if (comparisonChart) {
+    comparisonChart.data.datasets[0].data = cmp.pre;
+    comparisonChart.data.datasets[1].data = cmp.post;
+    comparisonChart.update();
+    return;
+  }
+
+  comparisonChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: cmp.labels,
+      datasets: [
+        { label: 'Pre (trước khi train)', data: cmp.pre,
+          backgroundColor: colors.pre.bg, borderColor: colors.pre.border, borderWidth: 1 },
+        { label: 'Post (sau khi train)', data: cmp.post,
+          backgroundColor: colors.post.bg, borderColor: colors.post.border, borderWidth: 1 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: { color: '#8b90a5', font: { size: 12 }, usePointStyle: true, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1a1d27',
+          titleColor: '#e1e4ed',
+          bodyColor: '#8b90a5',
+          borderColor: '#2e3348',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx) { return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(4); }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 11 } }
+        },
+        y: {
+          min: 0, max: 1,
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', callback: function(v) { return v.toFixed(2); } }
+        }
+      }
+    }
+  });
+}
+
+// --- Matrix Images ---
+const MATRIX_LABELS = {
+  "intent_confusion_matrix.png": "Ma trận nhầm lẫn các Intent — Thể hiện mô hình dự đoán nhầm intent nào với intent nào",
+  "intent_histogram.png": "Biểu đồ phân phối độ tin cậy Intent — Mức độ tự tin của mô hình khi dự đoán từng intent",
+  "DIETClassifier_confusion_matrix.png": "Ma trận nhầm lẫn Entity DIET — Thể hiện mô hình nhận diện sai loại thực thể (entity)",
+  "DIETClassifier_histogram.png": "Biểu đồ phân phối độ tin cậy Entity DIET — Mức độ tự tin khi trích xuất thực thể",
+  "RegexEntityExtractor_confusion_matrix.png": "Ma trận nhầm lẫn Entity Regex — Thể hiện các lỗi trích xuất thực thể bằng RegexEntityExtractor"
+};
+
+async function loadMatrixImages() {
+  const images = await api('/api/results-images');
+  const gallery = $('#matrixGallery');
+  if (!gallery) return;
+
+  if (!images || images.length === 0) {
+    gallery.innerHTML = '<div class="loading">Chưa có dữ liệu. Chạy Retrain để tạo ma trận.</div>';
+    return;
+  }
+
+  gallery.innerHTML = images.map(img => {
+    const label = MATRIX_LABELS[img.filename] || img.label;
+    return `
+      <div class="matrix-item">
+        <div class="matrix-img-wrap">
+          <img src="${img.url}" alt="${label}" loading="lazy" onclick="window.open('${img.url}', '_blank')">
+        </div>
+        <span class="matrix-label">${label}</span>
+      </div>
+    `;
+  }).join('');
+}
+
 // --- Export NLU ---
 $('#exportBtn')?.addEventListener('click', async () => {
   $('#exportBtn').disabled = true;
@@ -469,6 +673,7 @@ $('#exportBtn')?.addEventListener('click', async () => {
     selectedIds.clear();
     await loadData();
     await loadChart();
+    await loadMetricsChart();
   } else {
     toast(res.error || 'Export failed', 'error');
   }
@@ -528,11 +733,45 @@ $('#retrainBtn')?.addEventListener('click', async () => {
   }
 
   toast('Training started!', 'info');
-  $('#retrainBtn').disabled = true;
-  $('#retrainBtn').textContent = 'Training...';
+  disableActionButtons('training');
   $('#logConsole').innerHTML = '';
   startLogPolling();
 });
+
+// --- Evaluate ---
+$('#evaluateBtn')?.addEventListener('click', async () => {
+  if ($('#evaluateBtn').disabled) return;
+
+  const res = await api('/api/evaluate', { method: 'POST' });
+
+  if (!res.success) {
+    toast(res.error || 'Failed to start evaluation', 'error');
+    return;
+  }
+
+  toast('Evaluation started!', 'info');
+  disableActionButtons('evaluating');
+  $('#logConsole').innerHTML = '';
+  startLogPolling();
+});
+
+function disableActionButtons(mode) {
+  $('#evaluateBtn').disabled = true;
+  $('#evaluateBtn').textContent = mode === 'evaluating' ? 'Evaluating...' : 'Evaluate';
+  $('#retrainBtn').disabled = true;
+  $('#retrainBtn').textContent = mode === 'training' ? 'Training...' : 'Retrain Model';
+  $('#exportBtn').disabled = true;
+  $('#exportCsvBtn').disabled = true;
+}
+
+function enableActionButtons() {
+  $('#evaluateBtn').disabled = false;
+  $('#evaluateBtn').textContent = 'Evaluate';
+  $('#retrainBtn').disabled = false;
+  $('#retrainBtn').textContent = 'Retrain Model';
+  $('#exportBtn').disabled = false;
+  $('#exportCsvBtn').disabled = false;
+}
 
 function startLogPolling() {
   if (pollingInterval) clearInterval(pollingInterval);
@@ -550,8 +789,11 @@ function startLogPolling() {
     if (!status.running) {
       clearInterval(pollingInterval);
       pollingInterval = null;
-      $('#retrainBtn').disabled = false;
-      $('#retrainBtn').textContent = 'Retrain Model';
+      enableActionButtons();
+
+      await loadMetricsChart();
+      await loadComparisonChart();
+      await loadMatrixImages();
 
       if (status.error) {
         toast(`Training failed: ${status.error}`, 'error');
@@ -593,16 +835,219 @@ $('#clearLogBtn')?.addEventListener('click', () => {
   $('#logConsole').innerHTML = '<span class="log-placeholder">Waiting for training...</span>';
 });
 
-// --- Init ---
+// --- Tab switching ---
+function initTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality' };
+      const tabId = tabMap[this.dataset.tab] || 'tabReview';
+      const tab = document.getElementById(tabId);
+      if (tab) tab.classList.add('active');
+
+      if (this.dataset.tab === 'metrics' && metricsChart) {
+        metricsChart.resize();
+      }
+      if (this.dataset.tab === 'quality') {
+        fetchDataQuality();
+        if (dqChart) dqChart.resize();
+      }
+    });
+  });
+}
+
+// --- Data Quality ---
+async function fetchDataQuality() {
+  try {
+    const data = await api('/api/data-quality');
+    renderDataQuality(data);
+  } catch (e) {
+    console.error('fetchDataQuality error:', e);
+  }
+}
+
+function renderDataQuality(data) {
+  const latest = data.latest;
+  const history = data.history || [];
+
+  if (!latest) {
+    $('#dqGauge').textContent = '—';
+    return;
+  }
+
+  const score = latest.quality_score || 0;
+  const threshold = latest.threshold || 0.50;
+  const breached = latest.breached_count || 0;
+  const total = latest.total_features || 7;
+  const features = latest.features || [];
+
+  const FEATURE_LABELS = {
+    'text_length': 'Độ dài câu',
+    'word_count': 'Số từ',
+    'diacritic_ratio': 'Tỷ lệ có dấu',
+    'has_emoji': 'Có emoji',
+    'is_empty': 'Text rỗng',
+    'char_diversity': 'Đa dạng ký tự',
+    'ends_with_question': 'Kết thúc bằng ?',
+  };
+
+  // Gauge
+  const gauge = $('#dqGauge');
+  gauge.textContent = (score * 100).toFixed(0) + '%';
+  gauge.className = 'dq-gauge';
+  if (score >= threshold) gauge.classList.add('gauge-ok');
+  else if (score >= threshold * 0.7) gauge.classList.add('gauge-warn');
+  else gauge.classList.add('gauge-bad');
+
+  $('#dqThreshold').textContent = threshold.toFixed(2);
+  $('#dqRefRows').textContent = latest.ref_rows || '—';
+  $('#dqCurRows').textContent = latest.cur_rows || '—';
+  $('#dqBreached').textContent = breached;
+  $('#dqBreachedTotal').textContent = '/' + total;
+
+  const statusEl = $('#dqStatus');
+  if (score >= threshold) {
+    statusEl.textContent = 'OK';
+    statusEl.style.color = 'var(--green)';
+  } else {
+    statusEl.textContent = 'Cảnh báo';
+    statusEl.style.color = 'var(--red)';
+  }
+
+  // Feature table
+  const tbody = $('#dqBody');
+  if (!features.length) {
+    tbody.innerHTML = '<tr><td colspan="6" class="loading">Không có dữ liệu feature</td></tr>';
+  } else {
+    tbody.innerHTML = features.map(f => {
+      const drifted = (f.penalty || 0) > 0.30;
+      const delta = f.delta_pct != null ? (f.delta_pct > 0 ? '+' : '') + f.delta_pct.toFixed(1) + '%' : '—';
+      const deltaColor = drifted ? 'var(--red)' : 'var(--green)';
+      const statusColor = drifted ? 'var(--red)' : 'var(--green)';
+      const statusLabel = drifted ? 'Degraded' : 'OK';
+      const label = FEATURE_LABELS[f.name] || f.name;
+      return `<tr>
+        <td><strong>${f.name}</strong></td>
+        <td style="color:var(--text-dim);font-size:0.8rem">${label}</td>
+        <td>${f.ref_mean != null ? f.ref_mean.toFixed(4) : '—'}</td>
+        <td>${f.cur_mean != null ? f.cur_mean.toFixed(4) : '—'}</td>
+        <td style="color:${deltaColor}">${delta}</td>
+        <td>${(f.penalty || 0).toFixed(2)}</td>
+        <td style="color:${statusColor};font-weight:600">${statusLabel}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Email log
+  const emailSent = latest.email_sent;
+  const emailEl = $('#dqEmailContent');
+  if (emailSent) {
+    emailEl.innerHTML = `<span style="color:var(--green)">📧 Đã gửi cảnh báo email tới ${latest.alert_email || 'SMTP_EMAIL'} lúc chất lượng giảm dưới ngưỡng.</span>`;
+  } else if (score < threshold) {
+    emailEl.innerHTML = `<span style="color:var(--orange)">⚠ Quality Score dưới ngưỡng. Email sẵn sàng gửi khi SMTP được config.</span>`;
+  } else {
+    emailEl.innerHTML = `<span class="log-placeholder">Chất lượng trong ngưỡng an toàn. Không cần gửi email.</span>`;
+  }
+
+  // Timeline chart
+  if (history.length > 1) {
+    renderDqChart(history);
+  } else {
+    const canvas = $('#dqChart');
+    if (canvas) canvas.style.display = 'none';
+  }
+}
+
+function renderDqChart(history) {
+  const canvas = $('#dqChart');
+  if (!canvas) return;
+  canvas.style.display = 'block';
+
+  const labels = history.map(h => {
+    const d = new Date(h.created_at);
+    return d.toLocaleDateString('vi-VN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  }).reverse();
+
+  const scores = history.map(h => (h.quality_score || 0) * 100).reverse();
+  const threshold = (history[0]?.threshold || 0.50) * 100;
+
+  const ctx = canvas.getContext('2d');
+  if (dqChart) dqChart.destroy();
+
+  dqChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Quality Score (%)',
+        data: scores,
+        borderColor: '#00e676',
+        backgroundColor: 'rgba(0,230,118,0.1)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#e0e0e0' } }
+      },
+      scales: {
+        x: { ticks: { color: '#aaa', maxTicksLimit: 10 } },
+        y: {
+          min: 0,
+          max: 100,
+          ticks: { color: '#aaa', callback: v => v + '%' },
+          grid: { color: 'rgba(255,255,255,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+// Override threshold line using plugin
+const dqThresholdPlugin = {
+  id: 'dqThreshold',
+  beforeDraw(chart) {
+    if (!chart.data || !chart.data.datasets || chart.data.datasets.length === 0) return;
+    const threshold = (chart.data.datasets[0]?.data?.length > 0 || true) ? 
+      parseFloat($('#dqThreshold')?.textContent || '0.50') * 100 : 50;
+    const yAxis = chart.scales.y;
+    const xAxis = chart.scales.x;
+    if (!yAxis || !xAxis) return;
+    const y = yAxis.getPixelForValue(threshold);
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = '#ff5252';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xAxis.left, y);
+    ctx.lineTo(xAxis.right, y);
+    ctx.stroke();
+    ctx.restore();
+  }
+};
+Chart.register(dqThresholdPlugin);
+
 async function init() {
   await loadData();
   await loadHistory();
   await loadChart();
+  await loadMetricsChart();
+  await loadComparisonChart();
+  await loadMatrixImages();
+  await fetchDataQuality();
+  initTabs();
 
   const status = await api('/api/train-status');
   if (status.running) {
-    $('#retrainBtn').disabled = true;
-    $('#retrainBtn').textContent = 'Training...';
+    disableActionButtons(status.mode === 'evaluate' ? 'evaluating' : 'training');
     startLogPolling();
   }
 }

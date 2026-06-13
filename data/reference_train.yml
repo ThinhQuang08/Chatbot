@@ -1,0 +1,2423 @@
+# Reference training set (80% of reference_normal_v3)
+version: "3.1"
+
+nlu:
+  - intent: ask_itinerary
+    examples: |
+      - cho tôi hỏi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - Đi Đà Lạt trong 2 ngày
+      - cho em hỏi Kế hoạch du lịch Huế
+      - làm ơn Ở Phú Quốc 4 ngày đi đâu
+      - ad ơi Lịch Sa Pa phù hợp
+      - mình hỏi Gợi ý lịch trình Mũi Né
+      - cho tôi hỏi Lịch trình Hội An cho người già
+      - cho em hỏi Lịch Sa Pa phù hợp
+      - Đi Đà Lạt 1 ngày thì đi đâu
+      - làm ơn Lịch trình Mũi Né tự túc
+      - cho tôi hỏi Lịch trình Phú Quốc cho gia đình
+      - Nên đi Phú Quốc mấy ngày
+      - Lịch trình Hội An cho người già
+      - mình hỏi Lịch trình Hội An cho người già
+      - cho tôi hỏi Ở Phú Quốc 4 ngày đi đâu
+      - cho tôi hỏi Lịch trình Hội An cho người già
+      - ad ơi Lịch trình Phú Quốc cho gia đình
+      - Lịch trình Vũng Tàu tự túc
+      - Lịch trình Mũi Né tự túc
+      - cho tôi hỏi Đi Vũng Tàu bao nhiêu ngày
+      - mình hỏi Lịch trình Mũi Né tự túc
+      - cho tôi hỏi Nên đi Phú Quốc mấy ngày
+      - cho tôi hỏi Lịch trình Hội An cho người già
+      - cho em hỏi Gợi ý tour Nha Trang 2 ngày
+      - mình hỏi Lịch trình Phú Quốc cho gia đình
+      - cho tôi hỏi Ở Đà Nẵng mấy ngày là đủ
+      - cho em hỏi Lịch trình Mũi Né tự túc
+      - Đi Huế bao nhiêu ngày
+      - cho em hỏi Lịch trình Mũi Né tự túc
+      - ad ơi Đi Huế bao nhiêu ngày
+      - ad ơi Gợi ý tour Mũi Né 2 ngày
+      - Gợi ý tour Mũi Né 2 ngày
+      - Lịch trình Phú Quốc cho gia đình
+      - Kế hoạch du lịch Huế
+      - cho em hỏi Gợi ý tour Mũi Né 2 ngày
+      - làm ơn Kế hoạch du lịch Huế
+      - mình hỏi Lịch trình Vũng Tàu tự túc
+      - Lịch trình Đà Lạt 3 ngày 2 đêm
+      - làm ơn Lịch trình Hội An cho người già
+      - cho tôi hỏi Đi Huế bao nhiêu ngày
+      - cho tôi hỏi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - mình hỏi Lịch trình Hội An cho người già
+      - Lịch trình Vũng Tàu tự túc
+      - Lịch trình Đà Lạt 3 ngày 2 đêm
+      - làm ơn Đi Huế bao nhiêu ngày
+      - cho tôi hỏi Gợi ý tour Nha Trang 2 ngày
+      - ad ơi Ở Phú Quốc 4 ngày đi đâu
+      - ad ơi Ở Phú Quốc 4 ngày đi đâu
+      - cho tôi hỏi Gợi ý lịch trình Mũi Né
+      - cho tôi hỏi Lịch Sa Pa phù hợp
+      - làm ơn Nên đi Phú Quốc mấy ngày
+      - mình hỏi Kế hoạch du lịch Huế
+      - cho em hỏi Đi Đà Lạt 1 ngày thì đi đâu
+      - cho tôi hỏi Lịch trình Phú Quốc cho gia đình
+      - cho em hỏi Đi Đà Lạt 1 ngày thì đi đâu
+      - cho em hỏi Đi Đà Lạt trong 2 ngày
+      - cho em hỏi Lịch Sa Pa phù hợp
+      - mình hỏi Đi Đà Lạt trong 2 ngày
+      - làm ơn Đi Đà Lạt trong 2 ngày
+      - ad ơi Nên đi Phú Quốc mấy ngày
+      - làm ơn Gợi ý lịch trình Mũi Né
+      - Lịch trình Hội An cho người già
+      - làm ơn Lịch trình Đà Lạt 3 ngày 2 đêm
+      - mình hỏi Đi Vũng Tàu bao nhiêu ngày
+      - mình hỏi Đi Huế bao nhiêu ngày
+      - Ở Đà Nẵng mấy ngày là đủ
+      - ad ơi Lịch trình Hội An cho người già
+      - Đi Đà Lạt trong 2 ngày
+      - cho em hỏi Đi Vũng Tàu bao nhiêu ngày
+      - cho em hỏi Đi Đà Lạt trong 2 ngày
+      - cho em hỏi Đi Đà Lạt 1 ngày thì đi đâu
+      - Lịch trình Phú Quốc cho gia đình
+      - cho em hỏi Lịch trình Vũng Tàu tự túc
+      - cho tôi hỏi Nên đi Phú Quốc mấy ngày
+      - làm ơn Đi Đà Lạt 1 ngày thì đi đâu
+      - Đi Vũng Tàu bao nhiêu ngày
+      - mình hỏi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - mình hỏi Nên đi Phú Quốc mấy ngày
+      - làm ơn Gợi ý tour Mũi Né 2 ngày
+      - mình hỏi Lịch Sa Pa phù hợp
+      - mình hỏi Gợi ý tour Mũi Né 2 ngày
+      - Lịch trình Mũi Né tự túc
+      - cho tôi hỏi Lịch trình Phú Quốc cho gia đình
+      - làm ơn Lịch trình Đà Lạt 3 ngày 2 đêm
+      - cho em hỏi Lịch trình Phú Quốc cho gia đình
+      - ad ơi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - Gợi ý tour Nha Trang 2 ngày
+      - cho em hỏi Nên đi Phú Quốc mấy ngày
+      - cho tôi hỏi Ở Phú Quốc 4 ngày đi đâu
+      - ad ơi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - ad ơi Nên đi Phú Quốc mấy ngày
+      - Lịch Sa Pa phù hợp
+      - làm ơn Lịch trình Hội An cho người già
+      - mình hỏi Ở Phú Quốc 4 ngày đi đâu
+      - cho tôi hỏi Lịch trình Vũng Tàu tự túc
+      - ad ơi Lịch trình Mũi Né tự túc
+      - Lịch trình Hội An cho người già
+      - Gợi ý lịch trình Mũi Né
+      - cho tôi hỏi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - cho em hỏi Ở Đà Nẵng mấy ngày là đủ
+      - cho tôi hỏi Đi Đà Lạt 1 ngày thì đi đâu
+      - cho em hỏi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - ad ơi Lịch trình Đà Lạt 3 ngày 2 đêm
+      - làm ơn Đi Vũng Tàu bao nhiêu ngày
+      - cho tôi hỏi Gợi ý tour Mũi Né 2 ngày
+      - cho tôi hỏi Lịch trình Vũng Tàu tự túc
+      - Lịch trình Vũng Tàu tự túc
+      - ad ơi Ở Đà Nẵng mấy ngày là đủ
+      - mình hỏi Gợi ý tour Nha Trang 2 ngày
+      - mình hỏi Gợi ý tour Nha Trang 2 ngày
+      - ad ơi Lịch trình Mũi Né tự túc
+      - mình hỏi Đi Đà Lạt trong 2 ngày
+      - ad ơi Đi Đà Lạt trong 2 ngày
+      - cho tôi hỏi Gợi ý tour Nha Trang 2 ngày
+      - cho tôi hỏi Đi Vũng Tàu bao nhiêu ngày
+      - cho tôi hỏi Lịch trình Vũng Tàu tự túc
+      - mình hỏi Lịch Sa Pa phù hợp
+      - mình hỏi Ở Đà Nẵng mấy ngày là đủ
+      - cho tôi hỏi Lịch trình Mũi Né tự túc
+      - cho em hỏi Kế hoạch du lịch Huế
+      - cho em hỏi Kế hoạch du lịch Huế
+      - ad ơi Đi Đà Lạt 1 ngày thì đi đâu
+      - ad ơi Gợi ý lịch trình Mũi Né
+      - làm ơn Nên đi Phú Quốc mấy ngày
+      - ad ơi Ở Đà Nẵng mấy ngày là đủ
+      - mình hỏi Đi Đà Lạt 1 ngày thì đi đâu
+      - mình hỏi Lịch trình Hội An cho người già
+      - cho tôi hỏi Đi Đà Lạt trong 2 ngày
+      - mình hỏi Lịch trình Vũng Tàu tự túc
+      - làm ơn Ở Đà Nẵng mấy ngày là đủ
+      - ad ơi Gợi ý tour Nha Trang 2 ngày
+      - ad ơi Lịch trình Vũng Tàu tự túc
+      - cho em hỏi Nên đi Phú Quốc mấy ngày
+      - làm ơn Gợi ý tour Nha Trang 2 ngày
+      - cho em hỏi Lịch trình Hội An cho người già
+      - cho tôi hỏi Gợi ý tour Mũi Né 2 ngày
+      - Ở Phú Quốc 4 ngày đi đâu
+      - làm ơn Lịch Sa Pa phù hợp
+      - làm ơn Ở Đà Nẵng mấy ngày là đủ
+  - intent: ask_transportation
+    examples: |
+      - mình hỏi Từ Hà Nội đi Phú Quốc bằng gì
+      - làm ơn Đi Đà Lạt bằng tàu cao tốc
+      - cho em hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - cho em hỏi Từ Hà Nội đi Phú Quốc bằng gì
+      - ad ơi Xe limousine đi Hội An
+      - mình hỏi Phương tiện đi Hà Nội rẻ nhất
+      - làm ơn Tàu hỏa đi Nha Trang
+      - làm ơn Phương tiện đi Hà Nội rẻ nhất
+      - Xe limousine đi Hội An
+      - cho tôi hỏi Đi Vũng Tàu bằng xe máy
+      - Tàu hỏa đi Nha Trang
+      - mình hỏi Xe khách đi Hội An giờ nào
+      - cho em hỏi Phương tiện đi Hà Nội rẻ nhất
+      - làm ơn Đi Sa Pa bằng tàu cao tốc
+      - Xe giường nằm đi Huế
+      - ad ơi Đi Đà Lạt bằng tàu cao tốc
+      - cho tôi hỏi Xe đạp đi Phú Quốc
+      - ad ơi Đi Mũi Né bằng xe máy
+      - Xe limousine đi Mũi Né
+      - cho tôi hỏi Xe khách đi Hội An giờ nào
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - cho em hỏi Tàu hỏa Huế bao nhiêu tiền
+      - cho em hỏi Xe đạp đi Phú Quốc
+      - ad ơi Đi Vũng Tàu bằng xe máy
+      - cho tôi hỏi Các hãng bay đến Vũng Tàu
+      - mình hỏi Xe giường nằm đi Huế
+      - ad ơi Đi Sa Pa bằng tàu cao tốc
+      - ad ơi Phương tiện đi Hà Nội rẻ nhất
+      - làm ơn Từ Hà Nội đi Sa Pa bằng gì
+      - Đi Mũi Né bằng xe máy
+      - cho tôi hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - mình hỏi Xe limousine đi Hội An
+      - cho tôi hỏi Từ Hà Nội đi Phú Quốc bằng gì
+      - ad ơi Đi Sa Pa bằng tàu cao tốc
+      - Tàu hỏa đi Nha Trang
+      - cho em hỏi Đi Mũi Né bằng xe máy
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - cho em hỏi Xe limousine đi Hội An
+      - làm ơn Phương tiện đi Hà Nội rẻ nhất
+      - Các hãng bay đến Vũng Tàu
+      - Đi Vũng Tàu bằng xe máy
+      - Xe limousine đi Mũi Né
+      - cho tôi hỏi Tàu hỏa Huế bao nhiêu tiền
+      - làm ơn Các hãng bay đến Vũng Tàu
+      - cho tôi hỏi Đi Vũng Tàu bằng xe máy
+      - mình hỏi Đi Sa Pa bằng tàu cao tốc
+      - làm ơn Xe limousine đi Mũi Né
+      - làm ơn Các hãng bay đến Vũng Tàu
+      - cho tôi hỏi Xe limousine đi Hội An
+      - ad ơi Đi Mũi Né bằng xe máy
+      - làm ơn Xe giường nằm đi Huế
+      - cho tôi hỏi Đi Mũi Né bằng xe máy
+      - cho em hỏi Xe đạp đi Phú Quốc
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - ad ơi Từ Hà Nội đi Phú Quốc bằng gì
+      - cho tôi hỏi Tàu hỏa Huế bao nhiêu tiền
+      - cho tôi hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - cho tôi hỏi Phương tiện đi Hà Nội rẻ nhất
+      - mình hỏi Xe khách đi Hội An giờ nào
+      - cho em hỏi Đi Sa Pa bằng tàu cao tốc
+      - ad ơi Đi Mũi Né bằng xe máy
+      - cho em hỏi Xe khách đi Hội An giờ nào
+      - ad ơi Tàu hỏa đi Nha Trang
+      - cho em hỏi Đi Mũi Né bằng xe máy
+      - Từ Hà Nội đi Phú Quốc bằng gì
+      - làm ơn Xe limousine đi Hội An
+      - mình hỏi Đi Mũi Né bằng xe máy
+      - cho em hỏi Taxi ở Nha Trang giá rẻ
+      - làm ơn Từ Hà Nội đi Phú Quốc bằng gì
+      - cho em hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - Xe đạp đi Phú Quốc
+      - làm ơn Xe limousine đi Mũi Né
+      - ad ơi Xe khách đi Hội An giờ nào
+      - cho tôi hỏi Các hãng bay đến Vũng Tàu
+      - Các hãng bay đến Vũng Tàu
+      - cho tôi hỏi Đi Sa Pa bằng tàu cao tốc
+      - làm ơn Taxi ở Nha Trang giá rẻ
+      - cho em hỏi Các hãng bay đến Vũng Tàu
+      - mình hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - ad ơi Đi Vũng Tàu bằng xe máy
+      - Taxi ở Nha Trang giá rẻ
+      - Đi Sa Pa bằng tàu cao tốc
+      - làm ơn Tàu hỏa Huế bao nhiêu tiền
+      - mình hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - ad ơi Taxi ở Nha Trang giá rẻ
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - làm ơn Xe limousine đi Mũi Né
+      - làm ơn Taxi ở Nha Trang giá rẻ
+      - ad ơi Các hãng bay đến Vũng Tàu
+      - làm ơn Đi Đà Lạt bằng tàu cao tốc
+      - cho em hỏi Phương tiện đi Hà Nội rẻ nhất
+      - ad ơi Từ Hà Nội đi Sa Pa bằng gì
+      - cho tôi hỏi Xe giường nằm đi Huế
+      - làm ơn Đi Mũi Né bằng xe máy
+      - mình hỏi Đi Đà Lạt bằng tàu cao tốc
+      - làm ơn Phương tiện đi Hà Nội rẻ nhất
+      - cho tôi hỏi Xe limousine đi Hội An
+      - làm ơn Tàu hỏa Huế bao nhiêu tiền
+      - làm ơn Các hãng bay đến Vũng Tàu
+      - mình hỏi Xe giường nằm đi Huế
+      - cho em hỏi Các hãng bay đến Vũng Tàu
+      - làm ơn Tàu hỏa Huế bao nhiêu tiền
+      - cho em hỏi Đi Mũi Né bằng xe máy
+      - cho tôi hỏi Taxi ở Nha Trang giá rẻ
+      - mình hỏi Xe đạp đi Phú Quốc
+      - Đi Sa Pa bằng tàu cao tốc
+      - mình hỏi Xe limousine đi Hội An
+      - mình hỏi Tàu hỏa Huế bao nhiêu tiền
+      - mình hỏi Đi Vũng Tàu bằng xe máy
+      - cho em hỏi Tàu hỏa đi Nha Trang
+      - mình hỏi Tàu hỏa Huế bao nhiêu tiền
+      - cho em hỏi Đi Sa Pa bằng tàu cao tốc
+      - cho em hỏi Xe giường nằm đi Huế
+      - cho em hỏi Đi Mũi Né bằng xe máy
+      - làm ơn Xe khách đi Hội An giờ nào
+      - mình hỏi Xe giường nằm đi Huế
+      - cho em hỏi Xe khách đi Hội An giờ nào
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - Các hãng bay đến Vũng Tàu
+      - làm ơn Xe khách đi Hội An giờ nào
+      - cho em hỏi Các hãng bay đến Vũng Tàu
+      - mình hỏi Tàu hỏa đi Nha Trang
+      - cho em hỏi Xe limousine đi Mũi Né
+      - cho em hỏi Xe limousine đi Mũi Né
+      - làm ơn Đi Vũng Tàu bằng xe máy
+      - mình hỏi Tàu hỏa đi Nha Trang
+      - làm ơn Phương tiện đi Hà Nội rẻ nhất
+      - Xe limousine đi Mũi Né
+      - làm ơn Xe đạp đi Phú Quốc
+      - Xe limousine đi Mũi Né
+      - cho tôi hỏi Từ Hà Nội đi Phú Quốc bằng gì
+      - Tàu hỏa Huế bao nhiêu tiền
+      - ad ơi Xe limousine đi Hội An
+      - ad ơi Tàu hỏa Huế bao nhiêu tiền
+      - mình hỏi Xe limousine đi Hội An
+      - Xe limousine đi Mũi Né
+      - ad ơi Xe limousine đi Hội An
+      - cho em hỏi Từ Hà Nội đi Sa Pa bằng gì
+      - cho em hỏi Tàu hỏa Huế bao nhiêu tiền
+      - ad ơi Xe limousine đi Mũi Né
+      - cho em hỏi Từ Hà Nội đi Phú Quốc bằng gì
+      - mình hỏi Xe limousine đi Mũi Né
+      - Phương tiện đi Hà Nội rẻ nhất
+      - Xe limousine đi Mũi Né
+      - mình hỏi Đi Mũi Né bằng xe máy
+      - mình hỏi Xe đạp đi Phú Quốc
+      - cho em hỏi Đi Đà Lạt bằng tàu cao tốc
+      - làm ơn Từ Hà Nội đi Phú Quốc bằng gì
+      - cho tôi hỏi Xe limousine đi Mũi Né
+      - cho em hỏi Taxi ở Nha Trang giá rẻ
+      - mình hỏi Xe limousine đi Mũi Né
+      - mình hỏi Các hãng bay đến Vũng Tàu
+      - cho tôi hỏi Taxi ở Nha Trang giá rẻ
+      - mình hỏi Tàu hỏa Huế bao nhiêu tiền
+      - ad ơi Tàu hỏa đi Nha Trang
+  - intent: ask_weather_timing
+    examples: |
+      - cho em hỏi Khí hậu Vũng Tàu như thế nào
+      - cho em hỏi Thời tiết Vũng Tàu tháng 6
+      - cho tôi hỏi Lượng mưa Đà Lạt hàng năm
+      - cho tôi hỏi Dự báo thời tiết Huế
+      - làm ơn Thời tiết Nha Trang tháng 12
+      - mình hỏi Mùa khô ở Hà Nội
+      - ad ơi Mùa khô ở Hà Nội
+      - ad ơi Thời tiết Vũng Tàu tháng 6
+      - Mùa khô ở Hà Nội
+      - mình hỏi Đi Mũi Né dịp lễ có vui không
+      - làm ơn Dự báo thời tiết Huế
+      - cho em hỏi Mùa khô ở Hà Nội
+      - cho em hỏi Dự báo thời tiết Huế
+      - làm ơn Nhiệt độ Nha Trang trung bình
+      - ad ơi Dự báo thời tiết Huế
+      - cho em hỏi Nhiệt độ Nha Trang trung bình
+      - Thời tiết Nha Trang tháng 12
+      - Dự báo thời tiết Huế
+      - Lượng mưa Đà Lạt hàng năm
+      - cho tôi hỏi Mùa mưa ở Mũi Né tháng nào
+      - mình hỏi Thời tiết Nha Trang tháng 12
+      - cho tôi hỏi Thời tiết Nha Trang tháng 12
+      - Nhiệt độ Nha Trang trung bình
+      - cho tôi hỏi Đi Mũi Né dịp lễ có vui không
+      - Nhiệt độ Nha Trang trung bình
+      - làm ơn Mùa mưa ở Mũi Né tháng nào
+      - mình hỏi Thời tiết Vũng Tàu tháng 6
+      - làm ơn Nhiệt độ Nha Trang trung bình
+      - Thời tiết Nha Trang tháng 12
+      - cho em hỏi Khí hậu Vũng Tàu như thế nào
+      - Nhiệt độ Nha Trang trung bình
+      - ad ơi Thời tiết Vũng Tàu tháng 6
+      - làm ơn Mùa khô ở Hà Nội
+      - cho tôi hỏi Khí hậu Vũng Tàu như thế nào
+      - làm ơn Thời tiết Vũng Tàu tháng 6
+      - làm ơn Thời tiết Huế tháng 12
+      - làm ơn Nhiệt độ Nha Trang trung bình
+      - mình hỏi Nhiệt độ Nha Trang trung bình
+      - mình hỏi Dự báo thời tiết Huế
+      - làm ơn Đi Mũi Né dịp lễ có vui không
+      - cho em hỏi Đi Mũi Né dịp lễ có vui không
+      - ad ơi Đi Hội An dịp lễ có vui không
+      - mình hỏi Thời gian lý tưởng đi Vũng Tàu
+      - làm ơn Nhiệt độ Nha Trang trung bình
+      - ad ơi Thời tiết Huế tháng 12
+      - Thời tiết Huế tháng 12
+      - mình hỏi Đi Hội An dịp lễ có vui không
+      - ad ơi Thời tiết Huế tháng 12
+      - mình hỏi Lượng mưa Đà Lạt hàng năm
+      - ad ơi Thời tiết Huế tháng 12
+      - cho em hỏi Nhiệt độ Sa Pa trung bình
+      - cho tôi hỏi Nhiệt độ Sa Pa trung bình
+      - cho em hỏi Đi Hội An dịp lễ có vui không
+      - làm ơn Thời tiết Nha Trang tháng 12
+      - làm ơn Nhiệt độ Sa Pa trung bình
+      - Lượng mưa Đà Lạt hàng năm
+      - làm ơn Thời gian lý tưởng đi Vũng Tàu
+      - cho tôi hỏi Khí hậu Vũng Tàu như thế nào
+      - ad ơi Nhiệt độ Nha Trang trung bình
+      - cho tôi hỏi Nhiệt độ Phú Quốc trung bình
+      - Dự báo thời tiết Huế
+      - cho tôi hỏi Mùa khô ở Hà Nội
+      - ad ơi Đi Hội An dịp lễ có vui không
+      - làm ơn Lượng mưa Đà Lạt hàng năm
+      - ad ơi Nhiệt độ Nha Trang trung bình
+      - ad ơi Nhiệt độ Phú Quốc trung bình
+      - cho tôi hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Nhiệt độ Nha Trang trung bình
+      - mình hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Nhiệt độ Nha Trang trung bình
+      - mình hỏi Thời gian lý tưởng đi Vũng Tàu
+      - mình hỏi Mùa mưa ở Mũi Né tháng nào
+      - làm ơn Lượng mưa Đà Lạt hàng năm
+      - cho tôi hỏi Lượng mưa Đà Lạt hàng năm
+      - làm ơn Dự báo thời tiết Huế
+      - ad ơi Thời gian lý tưởng đi Vũng Tàu
+      - làm ơn Khí hậu Vũng Tàu như thế nào
+      - cho tôi hỏi Dự báo thời tiết Huế
+      - Khí hậu Vũng Tàu như thế nào
+      - mình hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Thời gian lý tưởng đi Vũng Tàu
+      - mình hỏi Mùa mưa ở Mũi Né tháng nào
+      - Đi Mũi Né dịp lễ có vui không
+      - Thời tiết Huế tháng 12
+      - làm ơn Nhiệt độ Sa Pa trung bình
+      - cho em hỏi Dự báo thời tiết Huế
+      - mình hỏi Thời gian lý tưởng đi Vũng Tàu
+      - ad ơi Lượng mưa Đà Lạt hàng năm
+      - Thời gian lý tưởng đi Vũng Tàu
+      - Dự báo thời tiết Huế
+      - mình hỏi Lượng mưa Đà Lạt hàng năm
+      - cho tôi hỏi Dự báo thời tiết Huế
+      - Nhiệt độ Phú Quốc trung bình
+      - Khí hậu Vũng Tàu như thế nào
+      - mình hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Lượng mưa Đà Lạt hàng năm
+      - làm ơn Mùa mưa ở Mũi Né tháng nào
+      - cho em hỏi Mùa mưa ở Mũi Né tháng nào
+      - cho tôi hỏi Mùa khô ở Hà Nội
+      - cho tôi hỏi Thời tiết Vũng Tàu tháng 6
+      - ad ơi Nhiệt độ Phú Quốc trung bình
+      - cho em hỏi Nhiệt độ Phú Quốc trung bình
+      - ad ơi Đi Mũi Né dịp lễ có vui không
+      - cho em hỏi Mùa mưa ở Mũi Né tháng nào
+      - ad ơi Mùa mưa ở Mũi Né tháng nào
+      - cho tôi hỏi Mùa khô ở Hà Nội
+      - mình hỏi Dự báo thời tiết Huế
+      - Thời tiết Huế tháng 12
+      - Mùa mưa ở Mũi Né tháng nào
+      - cho tôi hỏi Nhiệt độ Nha Trang trung bình
+      - cho tôi hỏi Mùa mưa ở Mũi Né tháng nào
+      - Đi Mũi Né dịp lễ có vui không
+      - ad ơi Khí hậu Vũng Tàu như thế nào
+      - làm ơn Mùa khô ở Hà Nội
+      - Nhiệt độ Sa Pa trung bình
+      - làm ơn Đi Hội An dịp lễ có vui không
+      - cho em hỏi Thời gian lý tưởng đi Vũng Tàu
+      - cho em hỏi Thời tiết Huế tháng 12
+      - cho tôi hỏi Khí hậu Vũng Tàu như thế nào
+      - Đi Mũi Né dịp lễ có vui không
+      - Thời gian lý tưởng đi Vũng Tàu
+      - cho em hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Thời tiết Huế tháng 12
+      - cho em hỏi Thời gian lý tưởng đi Vũng Tàu
+  - intent: book_tour
+    examples: |
+      - cho em hỏi Reserve phòng Đà Nẵng
+      - ad ơi Đặt tour Hội An khuyến mãi
+      - cho em hỏi Book phòng Đà Lạt view biển
+      - Đặt vé máy bay đi Hà Nội
+      - Booking tour Đà Lạt giá rẻ
+      - Booking tour Vũng Tàu giá rẻ
+      - ad ơi Order tour Vũng Tàu
+      - ad ơi Book phòng Đà Lạt view biển
+      - cho tôi hỏi Booking tour Vũng Tàu giá rẻ
+      - cho tôi hỏi Đặt phòng khách sạn Đà Lạt
+      - mình hỏi Book phòng Đà Lạt view biển
+      - mình hỏi Book phòng Đà Lạt view biển
+      - Order tour Vũng Tàu
+      - cho em hỏi Đặt tour Mũi Né cho đoàn
+      - ad ơi Book phòng Đà Lạt view biển
+      - Booking tour Vũng Tàu giá rẻ
+      - cho tôi hỏi Booking homestay Đà Nẵng giá rẻ
+      - cho tôi hỏi Đặt tour Hà Nội khuyến mãi
+      - cho tôi hỏi Đặt vé máy bay đi Sa Pa
+      - ad ơi Reserve phòng Đà Nẵng
+      - cho tôi hỏi Đặt tour Hội An khuyến mãi
+      - cho em hỏi Book combo Huế
+      - cho em hỏi Reserve phòng Đà Nẵng
+      - mình hỏi Đặt tour Vũng Tàu cho đoàn
+      - ad ơi Order tour Vũng Tàu
+      - cho tôi hỏi Booking tour Đà Lạt giá rẻ
+      - làm ơn Booking tour Đà Lạt giá rẻ
+      - cho em hỏi Đặt tour Đà Lạt tiết kiệm
+      - làm ơn Đặt phòng khách sạn Đà Lạt
+      - cho tôi hỏi Đặt tour Hà Nội khuyến mãi
+      - cho tôi hỏi Mua vé tham quan Đà Lạt
+      - Đặt tour Vũng Tàu cho đoàn
+      - mình hỏi Booking tour Đà Nẵng giá rẻ
+      - làm ơn Đặt tour Mũi Né cho đoàn
+      - cho tôi hỏi Booking tour Đà Nẵng giá rẻ
+      - làm ơn Booking tour Đà Nẵng giá rẻ
+      - ad ơi Book combo Huế
+      - cho tôi hỏi Đặt vé máy bay đi Sa Pa
+      - ad ơi Đặt vé máy bay đi Hà Nội
+      - Booking tour Đà Lạt giá rẻ
+      - ad ơi Đặt tour Đà Lạt tiết kiệm
+      - ad ơi Booking tour Vũng Tàu giá rẻ
+      - Book combo Huế
+      - mình hỏi Reserve phòng Đà Nẵng
+      - Đặt tour Đà Nẵng tiết kiệm
+      - cho tôi hỏi Mua vé tham quan Đà Lạt
+      - làm ơn Đặt tour Đà Nẵng tiết kiệm
+      - Đặt tour Hà Nội khuyến mãi
+      - ad ơi Booking tour Đà Lạt giá rẻ
+      - cho tôi hỏi Order tour Vũng Tàu
+      - cho em hỏi Order tour Vũng Tàu
+      - cho tôi hỏi Book phòng Đà Lạt view biển
+      - làm ơn Reserve phòng Đà Nẵng
+      - Đặt vé máy bay đi Hà Nội
+      - làm ơn Đặt tour Vũng Tàu cho đoàn
+      - làm ơn Booking tour Vũng Tàu giá rẻ
+      - Đặt vé máy bay đi Sa Pa
+      - cho tôi hỏi Booking tour Vũng Tàu giá rẻ
+      - cho em hỏi Đặt vé máy bay đi Hà Nội
+      - Book combo Huế
+      - làm ơn Booking tour Đà Lạt giá rẻ
+      - Đặt tour Đà Nẵng tiết kiệm
+      - mình hỏi Booking homestay Đà Nẵng giá rẻ
+      - ad ơi Đặt phòng khách sạn Đà Lạt
+      - cho em hỏi Booking tour Đà Nẵng giá rẻ
+      - cho em hỏi Đặt tour Đà Lạt tiết kiệm
+      - mình hỏi Order tour Vũng Tàu
+      - Order tour Vũng Tàu
+      - cho em hỏi Booking tour Vũng Tàu giá rẻ
+      - ad ơi Đặt vé máy bay đi Hà Nội
+      - ad ơi Book phòng Đà Lạt view biển
+      - ad ơi Booking tour Đà Lạt giá rẻ
+      - cho tôi hỏi Đặt tour Mũi Né cho đoàn
+      - làm ơn Book combo Huế
+      - ad ơi Đặt tour Hà Nội khuyến mãi
+      - cho em hỏi Đặt tour Vũng Tàu cho đoàn
+      - cho em hỏi Đặt vé máy bay đi Hà Nội
+      - làm ơn Đặt phòng khách sạn Đà Lạt
+      - cho em hỏi Đặt tour Đà Nẵng tiết kiệm
+      - cho em hỏi Đặt tour Hà Nội khuyến mãi
+      - làm ơn Đặt vé máy bay đi Hà Nội
+      - Đặt tour Mũi Né cho đoàn
+      - Đặt vé máy bay đi Hà Nội
+      - ad ơi Booking tour Đà Nẵng giá rẻ
+      - cho em hỏi Booking tour Vũng Tàu giá rẻ
+      - ad ơi Đặt tour Vũng Tàu cho đoàn
+      - làm ơn Đặt vé máy bay đi Hà Nội
+      - Đặt vé máy bay đi Hà Nội
+      - mình hỏi Đặt vé máy bay đi Hà Nội
+      - làm ơn Đặt tour Đà Nẵng tiết kiệm
+      - Reserve phòng Đà Nẵng
+      - cho tôi hỏi Đặt tour Đà Nẵng tiết kiệm
+      - cho em hỏi Đặt tour Đà Nẵng tiết kiệm
+      - Booking tour Vũng Tàu giá rẻ
+      - làm ơn Đặt tour Hà Nội khuyến mãi
+      - Đặt tour Mũi Né cho đoàn
+      - cho em hỏi Mua vé tham quan Đà Lạt
+      - Đặt tour Hội An khuyến mãi
+      - mình hỏi Booking tour Đà Lạt giá rẻ
+      - làm ơn Book phòng Đà Lạt view biển
+      - Đặt tour Hà Nội khuyến mãi
+      - Đặt phòng khách sạn Đà Lạt
+      - cho em hỏi Order tour Vũng Tàu
+      - làm ơn Đặt vé máy bay đi Sa Pa
+      - cho em hỏi Reserve phòng Đà Nẵng
+      - làm ơn Đặt tour Đà Lạt tiết kiệm
+      - cho em hỏi Đặt phòng khách sạn Đà Lạt
+      - cho tôi hỏi Booking tour Vũng Tàu giá rẻ
+      - làm ơn Booking tour Vũng Tàu giá rẻ
+      - làm ơn Order tour Vũng Tàu
+      - cho em hỏi Book phòng Đà Lạt view biển
+      - cho em hỏi Đặt vé máy bay đi Sa Pa
+      - cho em hỏi Booking tour Đà Lạt giá rẻ
+      - mình hỏi Đặt tour Đà Lạt tiết kiệm
+      - cho em hỏi Đặt tour Hội An khuyến mãi
+      - mình hỏi Đặt tour Hội An khuyến mãi
+      - ad ơi Đặt phòng khách sạn Đà Lạt
+      - cho tôi hỏi Đặt tour Đà Lạt tiết kiệm
+      - Mua vé tham quan Đà Lạt
+      - Mua vé tham quan Đà Lạt
+      - làm ơn Booking tour Đà Lạt giá rẻ
+      - cho em hỏi Đặt tour Đà Lạt tiết kiệm
+      - cho tôi hỏi Mua vé tham quan Đà Lạt
+      - làm ơn Đặt tour Hà Nội khuyến mãi
+      - ad ơi Mua vé tham quan Đà Lạt
+      - ad ơi Booking tour Đà Nẵng giá rẻ
+      - Reserve phòng Đà Nẵng
+      - cho em hỏi Booking homestay Đà Nẵng giá rẻ
+      - mình hỏi Book combo Huế
+      - mình hỏi Booking tour Đà Lạt giá rẻ
+      - Book phòng Đà Lạt view biển
+      - cho tôi hỏi Book combo Huế
+      - làm ơn Order tour Vũng Tàu
+      - cho em hỏi Mua vé tham quan Đà Lạt
+      - cho tôi hỏi Đặt phòng khách sạn Đà Lạt
+      - ad ơi Booking homestay Đà Nẵng giá rẻ
+      - làm ơn Đặt tour Đà Lạt tiết kiệm
+      - mình hỏi Đặt tour Đà Lạt tiết kiệm
+      - cho tôi hỏi Đặt tour Vũng Tàu cho đoàn
+      - mình hỏi Đặt tour Hà Nội khuyến mãi
+      - mình hỏi Đặt tour Đà Nẵng tiết kiệm
+      - cho em hỏi Order tour Vũng Tàu
+      - mình hỏi Order tour Vũng Tàu
+      - làm ơn Đặt tour Hội An khuyến mãi
+      - ad ơi Mua vé tham quan Đà Lạt
+      - cho tôi hỏi Book phòng Đà Lạt view biển
+      - làm ơn Mua vé tham quan Đà Lạt
+      - mình hỏi Mua vé tham quan Đà Lạt
+      - mình hỏi Booking tour Vũng Tàu giá rẻ
+      - mình hỏi Đặt phòng khách sạn Đà Lạt
+  - intent: inform
+    examples: |
+      - Vợ chồng tôi cưới ở Hội An
+      - ad ơi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - ad ơi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - ad ơi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - ad ơi Bạn tôi gợi ý đi Mũi Né
+      - Tôi muốn đưa con đi Mũi Né
+      - cho tôi hỏi Tôi đã đi Hội An năm ngoái rất thích
+      - Tôi đã đi Sa Pa năm ngoái rất thích
+      - cho tôi hỏi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - cho tôi hỏi Bạn tôi gợi ý đi Sa Pa
+      - Vợ chồng tôi cưới ở Phú Quốc
+      - mình hỏi Tôi muốn đưa con đi Mũi Né
+      - cho tôi hỏi Công ty tôi tổ chức team building ở Mũi Né
+      - Tôi ở Phú Quốc rồi muốn đi tiếp
+      - ad ơi Cả nhà tôi đi Nha Trang dịp Tết
+      - Tôi muốn tìm hiểu về Vũng Tàu
+      - ad ơi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - cho tôi hỏi Tôi muốn đưa con đi Vũng Tàu
+      - ad ơi Bạn tôi gợi ý đi Sa Pa
+      - ad ơi Tôi đã đi Hội An năm ngoái rất thích
+      - mình hỏi Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - cho em hỏi Bạn tôi gợi ý đi Sa Pa
+      - cho em hỏi Tôi nghe nói Sa Pa rất đẹp
+      - cho em hỏi Cả nhà tôi đi Nha Trang dịp Tết
+      - mình hỏi Bố mẹ tôi thích Nha Trang
+      - làm ơn Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - Bố mẹ tôi thích Nha Trang
+      - làm ơn Bạn tôi gợi ý đi Sa Pa
+      - cho tôi hỏi Vợ chồng tôi cưới ở Hội An
+      - mình hỏi Bạn tôi gợi ý đi Mũi Né
+      - cho em hỏi Tôi đã đi Hội An năm ngoái rất thích
+      - mình hỏi Bạn tôi gợi ý đi Mũi Né
+      - làm ơn Tôi đã đi Sa Pa năm ngoái rất thích
+      - cho tôi hỏi Tôi muốn đưa con đi Vũng Tàu
+      - cho tôi hỏi Cả nhà tôi đi Nha Trang dịp Tết
+      - mình hỏi Công ty tôi tổ chức team building ở Phú Quốc
+      - ad ơi Tôi muốn tìm hiểu về Vũng Tàu
+      - mình hỏi Tôi muốn đưa con đi Mũi Né
+      - cho em hỏi Cả nhà tôi đi Nha Trang dịp Tết
+      - cho em hỏi Công ty tôi tổ chức team building ở Mũi Né
+      - ad ơi Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - làm ơn Tôi ở Phú Quốc rồi muốn đi tiếp
+      - mình hỏi Bạn tôi gợi ý đi Sa Pa
+      - ad ơi Bạn tôi gợi ý đi Mũi Né
+      - cho tôi hỏi Công ty tôi tổ chức team building ở Mũi Né
+      - Tôi muốn đưa con đi Phú Quốc
+      - ad ơi Cả nhà tôi đi Nha Trang dịp Tết
+      - cho em hỏi Tôi muốn đưa con đi Phú Quốc
+      - Vợ chồng tôi cưới ở Phú Quốc
+      - cho em hỏi Công ty tôi tổ chức team building ở Mũi Né
+      - cho tôi hỏi Bạn tôi gợi ý đi Mũi Né
+      - ad ơi Tôi nghe nói Đà Nẵng rất đẹp
+      - cho em hỏi Công ty tôi tổ chức team building ở Phú Quốc
+      - cho tôi hỏi Bố mẹ tôi thích Nha Trang
+      - làm ơn Tôi nghe nói Đà Nẵng rất đẹp
+      - làm ơn Tôi muốn đưa con đi Phú Quốc
+      - Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - làm ơn Bạn tôi gợi ý đi Mũi Né
+      - cho em hỏi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - cho em hỏi Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - ad ơi Cả nhà tôi đi Huế dịp Tết
+      - ad ơi Công ty tôi tổ chức team building ở Phú Quốc
+      - cho em hỏi Vợ chồng tôi cưới ở Phú Quốc
+      - Tôi nghe nói Sa Pa rất đẹp
+      - ad ơi Công ty tôi tổ chức team building ở Mũi Né
+      - Tôi nghe nói Sa Pa rất đẹp
+      - mình hỏi Tôi đã đi Sa Pa năm ngoái rất thích
+      - cho tôi hỏi Tôi muốn đưa con đi Mũi Né
+      - Bố mẹ tôi thích Nha Trang
+      - làm ơn Cả nhà tôi đi Nha Trang dịp Tết
+      - làm ơn Công ty tôi tổ chức team building ở Phú Quốc
+      - làm ơn Tôi muốn đưa con đi Phú Quốc
+      - ad ơi Tôi muốn đưa con đi Mũi Né
+      - cho em hỏi Tôi muốn đưa con đi Mũi Né
+      - cho tôi hỏi Tôi muốn đưa con đi Mũi Né
+      - cho tôi hỏi Tôi muốn tìm hiểu về Vũng Tàu
+      - cho em hỏi Tôi muốn đưa con đi Phú Quốc
+      - làm ơn Tôi nghe nói Sa Pa rất đẹp
+      - làm ơn Tôi muốn đưa con đi Vũng Tàu
+      - Tôi muốn đưa con đi Đà Lạt
+      - Tôi muốn đưa con đi Phú Quốc
+      - mình hỏi Cả nhà tôi đi Nha Trang dịp Tết
+      - làm ơn Cả nhà tôi đi Huế dịp Tết
+      - cho tôi hỏi Cả nhà tôi đi Huế dịp Tết
+      - làm ơn Tôi muốn đưa con đi Mũi Né
+      - cho tôi hỏi Tôi đã đi Hội An năm ngoái rất thích
+      - mình hỏi Cả nhà tôi đi Huế dịp Tết
+      - mình hỏi Cả nhà tôi đi Huế dịp Tết
+      - làm ơn Tôi nghe nói Đà Nẵng rất đẹp
+      - mình hỏi Bố mẹ tôi thích Nha Trang
+      - làm ơn Vợ chồng tôi cưới ở Phú Quốc
+      - làm ơn Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - cho em hỏi Tôi muốn đưa con đi Đà Lạt
+      - ad ơi Tôi muốn tìm hiểu về Vũng Tàu
+      - ad ơi Vợ chồng tôi cưới ở Phú Quốc
+      - Tôi nghe nói Đà Nẵng rất đẹp
+      - mình hỏi Tôi muốn đưa con đi Phú Quốc
+      - mình hỏi Tôi nghe nói Đà Nẵng rất đẹp
+      - mình hỏi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - ad ơi Bạn tôi gợi ý đi Sa Pa
+      - làm ơn Bạn tôi gợi ý đi Sa Pa
+      - cho em hỏi Tôi nghe nói Sa Pa rất đẹp
+      - làm ơn Tôi muốn đưa con đi Vũng Tàu
+      - ad ơi Tôi nghe nói Đà Nẵng rất đẹp
+      - Cả nhà tôi đi Huế dịp Tết
+      - ad ơi Tôi đã đi Sa Pa năm ngoái rất thích
+      - cho em hỏi Bạn tôi gợi ý đi Mũi Né
+      - cho em hỏi Vợ chồng tôi cưới ở Hội An
+      - mình hỏi Tôi muốn đưa con đi Phú Quốc
+      - cho tôi hỏi Vợ chồng tôi cưới ở Phú Quốc
+      - làm ơn Tôi muốn tìm hiểu về Vũng Tàu
+      - cho tôi hỏi Tôi muốn đưa con đi Phú Quốc
+      - Tôi nghe nói Sa Pa rất đẹp
+      - làm ơn Tôi đã đi Hội An năm ngoái rất thích
+      - cho em hỏi Tôi nghe nói Đà Nẵng rất đẹp
+      - ad ơi Công ty tôi tổ chức team building ở Phú Quốc
+      - cho tôi hỏi Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - cho em hỏi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - làm ơn Công ty tôi tổ chức team building ở Mũi Né
+      - ad ơi Tôi muốn đưa con đi Vũng Tàu
+      - Cả nhà tôi đi Nha Trang dịp Tết
+      - mình hỏi Bạn tôi gợi ý đi Mũi Né
+      - làm ơn Công ty tôi tổ chức team building ở Phú Quốc
+      - Tôi muốn đưa con đi Phú Quốc
+      - cho tôi hỏi Bạn tôi gợi ý đi Mũi Né
+      - mình hỏi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - ad ơi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - cho em hỏi Cả nhà tôi đi Huế dịp Tết
+      - cho tôi hỏi Bạn tôi gợi ý đi Sa Pa
+      - cho em hỏi Vợ chồng tôi cưới ở Hội An
+      - Tôi đã đi Hội An năm ngoái rất thích
+      - cho em hỏi Tôi đã đi Hội An năm ngoái rất thích
+      - mình hỏi Tôi muốn tìm hiểu về Vũng Tàu
+      - ad ơi Bố mẹ tôi thích Nha Trang
+      - ad ơi Tôi muốn đưa con đi Đà Lạt
+      - làm ơn Tôi ở Phú Quốc rồi muốn đi tiếp
+      - cho tôi hỏi Tôi muốn đưa con đi Vũng Tàu
+      - mình hỏi Tôi muốn đưa con đi Vũng Tàu
+      - cho tôi hỏi Tôi muốn tìm hiểu về Vũng Tàu
+      - mình hỏi Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - cho em hỏi Bố mẹ tôi thích Nha Trang
+      - cho tôi hỏi Công ty tôi tổ chức team building ở Phú Quốc
+      - Bố mẹ tôi thích Nha Trang
+      - cho em hỏi Tôi đã đi Sa Pa năm ngoái rất thích
+      - Tôi đã đi Hội An năm ngoái rất thích
+      - cho tôi hỏi Công ty tôi tổ chức team building ở Mũi Né
+      - làm ơn Bố mẹ tôi thích Nha Trang
+      - mình hỏi Tôi muốn đưa con đi Đà Lạt
+      - Cả nhà tôi đi Nha Trang dịp Tết
+      - mình hỏi Tôi nghe nói Sa Pa rất đẹp
+      - Bạn tôi gợi ý đi Mũi Né
+      - Công ty tôi tổ chức team building ở Mũi Né
+      - ad ơi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - ad ơi Tôi muốn đưa con đi Phú Quốc
+      - làm ơn Vợ chồng tôi cưới ở Phú Quốc
+      - ad ơi Bạn tôi gợi ý đi Sa Pa
+      - cho tôi hỏi Tôi muốn đưa con đi Đà Lạt
+      - cho tôi hỏi Tôi ở Phú Quốc rồi muốn đi tiếp
+      - ad ơi Bố mẹ tôi thích Nha Trang
+      - Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - cho tôi hỏi Tôi muốn đưa con đi Mũi Né
+      - mình hỏi Công ty tôi tổ chức team building ở Phú Quốc
+      - mình hỏi Vợ chồng tôi cưới ở Hội An
+      - làm ơn Bạn tôi gợi ý đi Sa Pa
+      - làm ơn Vợ chồng tôi cưới ở Hội An
+      - mình hỏi Tôi đã đi Hội An năm ngoái rất thích
+      - cho tôi hỏi Tôi đã đi Sa Pa năm ngoái rất thích
+      - cho tôi hỏi Tôi nghe nói Sa Pa rất đẹp
+      - ad ơi Tôi nghe nói Sa Pa rất đẹp
+      - mình hỏi Bạn tôi gợi ý đi Sa Pa
+      - làm ơn Tôi ở Vũng Tàu rồi muốn đi tiếp
+      - cho tôi hỏi Tôi muốn tìm hiểu về Vũng Tàu
+  - intent: search_accommodation
+    examples: |
+      - cho em hỏi Homestay Đà Lạt cho đôi người
+      - cho tôi hỏi Đà Lạt có homestay nào đẹp
+      - ad ơi Căn hộ Hội An view đẹp
+      - làm ơn Nhà nghỉ Sa Pa giá rẻ
+      - mình hỏi Khách sạn Hà Nội giá rẻ
+      - ad ơi Homestay Huế view đẹp
+      - cho em hỏi Khách sạn Hà Nội giá rẻ
+      - cho em hỏi Homestay Huế view đẹp
+      - làm ơn Resort Đà Lạt 5 sao
+      - ad ơi Homestay Vũng Tàu view đẹp
+      - làm ơn Resort Mũi Né gia đình
+      - Nhà nghỉ Sa Pa giá rẻ
+      - cho em hỏi Lưu trú ở Sa Pa gần chợ
+      - Resort Đà Lạt 5 sao
+      - mình hỏi Homestay Mũi Né gần trung tâm
+      - làm ơn Homestay đẹp ở Đà Nẵng
+      - cho tôi hỏi Căn hộ Hội An view đẹp
+      - mình hỏi Khách sạn Sa Pa gần chợ đêm
+      - mình hỏi Khu nghỉ dưỡng Hội An
+      - cho tôi hỏi Resort Mũi Né gia đình
+      - mình hỏi Resort Mũi Né gia đình
+      - ad ơi Homestay Mũi Né gần trung tâm
+      - cho tôi hỏi Nhà nghỉ Mũi Né giá rẻ
+      - mình hỏi Resort Đà Nẵng hồ bơi
+      - ad ơi Resort Đà Nẵng hồ bơi
+      - cho tôi hỏi Đà Lạt có homestay nào đẹp
+      - ad ơi Đà Lạt có homestay nào đẹp
+      - ad ơi Homestay Vũng Tàu view đẹp
+      - cho em hỏi Nhà nghỉ Nha Trang giá rẻ
+      - mình hỏi Khu nghỉ dưỡng Sa Pa
+      - Nhà nghỉ Sa Pa giá rẻ
+      - mình hỏi Nhà nghỉ Mũi Né giá rẻ
+      - cho em hỏi Căn hộ Hội An view đẹp
+      - cho em hỏi Homestay Huế view đẹp
+      - ad ơi Khu nghỉ dưỡng Sa Pa
+      - làm ơn Lưu trú ở Sa Pa gần chợ
+      - làm ơn Resort Mũi Né gia đình
+      - Đà Lạt có homestay nào đẹp
+      - làm ơn Căn hộ Hội An view đẹp
+      - ad ơi Nhà nghỉ Sa Pa giá rẻ
+      - làm ơn Căn hộ Hội An view đẹp
+      - ad ơi Căn hộ Hội An view đẹp
+      - làm ơn Khách sạn Hà Nội giá rẻ
+      - làm ơn Homestay đẹp ở Hà Nội
+      - cho tôi hỏi Lưu trú ở Sa Pa gần chợ
+      - cho em hỏi Khách sạn Nha Trang gần sân bay
+      - ad ơi Nhà nghỉ Sa Pa giá rẻ
+      - cho tôi hỏi Homestay Đà Lạt cho đôi người
+      - làm ơn Khách sạn Sa Pa gần chợ đêm
+      - cho em hỏi Villa Mũi Né hồ bơi
+      - ad ơi Homestay Huế view đẹp
+      - cho tôi hỏi Khách sạn Sa Pa gần chợ đêm
+      - Villa Mũi Né hồ bơi
+      - mình hỏi Khu nghỉ dưỡng Sa Pa
+      - mình hỏi Villa Mũi Né hồ bơi
+      - làm ơn Homestay Huế view đẹp
+      - mình hỏi Homestay Mũi Né gần trung tâm
+      - cho em hỏi Resort Đà Nẵng hồ bơi
+      - Homestay Đà Lạt cho đôi người
+      - Resort Mũi Né gia đình
+      - ad ơi Glamping Đà Lạt
+      - mình hỏi Homestay Huế view đẹp
+      - ad ơi Homestay đẹp ở Hà Nội
+      - Đà Lạt có homestay nào đẹp
+      - cho em hỏi Đà Lạt có homestay nào đẹp
+      - mình hỏi Đà Lạt có homestay nào đẹp
+      - làm ơn Homestay đẹp ở Đà Nẵng
+      - cho em hỏi Khu nghỉ dưỡng Hội An
+      - cho tôi hỏi Khách sạn Sa Pa giá rẻ
+      - làm ơn Glamping Đà Lạt
+      - mình hỏi Khách sạn Sa Pa giá rẻ
+      - làm ơn Homestay Vũng Tàu view đẹp
+      - mình hỏi Nhà nghỉ Nha Trang giá rẻ
+      - cho tôi hỏi Khách sạn Sa Pa gần chợ đêm
+      - cho em hỏi Homestay đẹp ở Hà Nội
+      - cho tôi hỏi Homestay Huế view đẹp
+      - ad ơi Nhà nghỉ Mũi Né giá rẻ
+      - Resort Đà Lạt 5 sao
+      - Homestay Vũng Tàu view đẹp
+      - mình hỏi Khách sạn Vũng Tàu trung tâm
+      - Khu nghỉ dưỡng Hội An
+      - cho tôi hỏi Đà Lạt có homestay nào đẹp
+      - làm ơn Đà Lạt có homestay nào đẹp
+      - cho tôi hỏi Căn hộ Phú Quốc view đẹp
+      - cho em hỏi Khách sạn Hà Nội giá rẻ
+      - mình hỏi Khách sạn Vũng Tàu trung tâm
+      - mình hỏi Glamping Đà Lạt
+      - ad ơi Villa Mũi Né hồ bơi
+      - Căn hộ Phú Quốc view đẹp
+      - mình hỏi Căn hộ Hội An view đẹp
+      - làm ơn Nhà nghỉ Đà Nẵng trung tâm
+      - làm ơn Nhà nghỉ Mũi Né giá rẻ
+      - làm ơn Khách sạn Hà Nội giá rẻ
+      - cho em hỏi Homestay Mũi Né gần trung tâm
+      - cho em hỏi Nhà nghỉ Nha Trang giá rẻ
+      - cho em hỏi Homestay Mũi Né gần trung tâm
+      - Khách sạn Vũng Tàu trung tâm
+      - ad ơi Resort Mũi Né gia đình
+      - cho em hỏi Villa Mũi Né hồ bơi
+      - ad ơi Resort Đà Lạt 5 sao
+      - cho em hỏi Homestay Mũi Né gần trung tâm
+      - cho tôi hỏi Khách sạn Hà Nội giá rẻ
+      - Khách sạn Hà Nội giá rẻ
+      - Homestay Huế view đẹp
+      - cho em hỏi Homestay đẹp ở Đà Nẵng
+      - làm ơn Homestay Mũi Né gần trung tâm
+      - mình hỏi Căn hộ Phú Quốc view đẹp
+      - mình hỏi Khách sạn Sa Pa giá rẻ
+      - Homestay đẹp ở Đà Nẵng
+      - ad ơi Lưu trú ở Sa Pa gần chợ
+      - Khu nghỉ dưỡng Sa Pa
+      - cho em hỏi Khách sạn Sa Pa giá rẻ
+      - Homestay đẹp ở Hà Nội
+      - cho em hỏi Resort Mũi Né gia đình
+      - cho tôi hỏi Khu nghỉ dưỡng Sa Pa
+      - Nhà nghỉ Sa Pa giá rẻ
+      - làm ơn Resort Mũi Né gia đình
+      - ad ơi Nhà nghỉ Sa Pa giá rẻ
+      - ad ơi Villa Mũi Né hồ bơi
+      - cho em hỏi Resort Mũi Né gia đình
+      - mình hỏi Căn hộ Hội An view đẹp
+      - mình hỏi Khu nghỉ dưỡng Sa Pa
+      - ad ơi Khách sạn Hà Nội giá rẻ
+      - cho em hỏi Căn hộ Hội An view đẹp
+      - cho tôi hỏi Homestay Mũi Né gần trung tâm
+      - cho em hỏi Căn hộ Hội An view đẹp
+      - mình hỏi Căn hộ Phú Quốc view đẹp
+      - mình hỏi Resort Đà Nẵng hồ bơi
+      - cho em hỏi Căn hộ Phú Quốc view đẹp
+      - cho em hỏi Khách sạn Vũng Tàu trung tâm
+      - Khách sạn Sa Pa gần chợ đêm
+      - cho tôi hỏi Khu nghỉ dưỡng Hội An
+      - mình hỏi Nhà nghỉ Đà Nẵng trung tâm
+      - làm ơn Khách sạn Nha Trang gần sân bay
+      - cho tôi hỏi Khách sạn Sa Pa giá rẻ
+      - làm ơn Nhà nghỉ Đà Nẵng trung tâm
+      - mình hỏi Khách sạn Hà Nội giá rẻ
+      - ad ơi Đà Lạt có homestay nào đẹp
+      - Khu nghỉ dưỡng Hội An
+      - cho em hỏi Khách sạn Sa Pa gần chợ đêm
+      - mình hỏi Khách sạn Sa Pa giá rẻ
+      - cho em hỏi Đà Lạt có homestay nào đẹp
+      - làm ơn Resort Đà Nẵng hồ bơi
+      - cho em hỏi Homestay Đà Lạt cho đôi người
+      - ad ơi Khách sạn Sa Pa giá rẻ
+      - cho tôi hỏi Homestay Đà Lạt cho đôi người
+      - làm ơn Khu nghỉ dưỡng Sa Pa
+      - cho tôi hỏi Homestay Vũng Tàu view đẹp
+      - cho tôi hỏi Khách sạn Sa Pa giá rẻ
+      - mình hỏi Homestay đẹp ở Đà Nẵng
+      - làm ơn Khách sạn Sa Pa giá rẻ
+      - làm ơn Khách sạn Vũng Tàu trung tâm
+      - làm ơn Nhà nghỉ Mũi Né giá rẻ
+      - cho tôi hỏi Nhà nghỉ Mũi Né giá rẻ
+      - cho em hỏi Khu nghỉ dưỡng Hội An
+      - mình hỏi Lưu trú ở Sa Pa gần chợ
+      - Khách sạn Sa Pa gần chợ đêm
+      - làm ơn Nhà nghỉ Nha Trang giá rẻ
+      - cho tôi hỏi Glamping Đà Lạt
+      - cho tôi hỏi Homestay Vũng Tàu view đẹp
+      - mình hỏi Đà Lạt có homestay nào đẹp
+      - Căn hộ Hội An view đẹp
+      - cho tôi hỏi Nhà nghỉ Sa Pa giá rẻ
+      - ad ơi Khách sạn Sa Pa gần chợ đêm
+      - ad ơi Homestay đẹp ở Đà Nẵng
+      - làm ơn Nhà nghỉ Mũi Né giá rẻ
+      - Nhà nghỉ Mũi Né giá rẻ
+      - ad ơi Khu nghỉ dưỡng Hội An
+      - cho em hỏi Nhà nghỉ Mũi Né giá rẻ
+      - ad ơi Khách sạn Nha Trang gần sân bay
+      - ad ơi Nhà nghỉ Mũi Né giá rẻ
+      - ad ơi Khách sạn Nha Trang gần sân bay
+      - cho em hỏi Glamping Đà Lạt
+      - làm ơn Khu nghỉ dưỡng Hội An
+      - Glamping Đà Lạt
+      - cho em hỏi Homestay Huế view đẹp
+      - ad ơi Khu nghỉ dưỡng Sa Pa
+      - làm ơn Khu nghỉ dưỡng Sa Pa
+      - Khu nghỉ dưỡng Sa Pa
+      - cho em hỏi Khu nghỉ dưỡng Sa Pa
+      - ad ơi Resort Đà Lạt 5 sao
+      - mình hỏi Homestay Vũng Tàu view đẹp
+      - mình hỏi Khách sạn Nha Trang gần sân bay
+      - mình hỏi Homestay Vũng Tàu view đẹp
+      - Homestay Đà Lạt cho đôi người
+      - ad ơi Khách sạn Hà Nội giá rẻ
+      - ad ơi Nhà nghỉ Đà Nẵng trung tâm
+      - cho em hỏi Khách sạn Vũng Tàu trung tâm
+      - ad ơi Resort Đà Lạt 5 sao
+      - Khách sạn Sa Pa giá rẻ
+      - Homestay Mũi Né gần trung tâm
+      - Khách sạn Sa Pa gần chợ đêm
+      - cho tôi hỏi Homestay Mũi Né gần trung tâm
+      - Resort Đà Nẵng hồ bơi
+      - cho tôi hỏi Khách sạn Nha Trang gần sân bay
+      - ad ơi Villa Mũi Né hồ bơi
+      - cho tôi hỏi Resort Đà Nẵng hồ bơi
+      - cho tôi hỏi Resort Đà Lạt 5 sao
+      - cho em hỏi Căn hộ Hội An view đẹp
+      - cho em hỏi Khách sạn Vũng Tàu trung tâm
+      - cho em hỏi Khách sạn Sa Pa gần chợ đêm
+      - mình hỏi Nhà nghỉ Nha Trang giá rẻ
+      - mình hỏi Homestay Huế view đẹp
+      - mình hỏi Homestay Đà Lạt cho đôi người
+      - cho em hỏi Khu nghỉ dưỡng Hội An
+      - làm ơn Resort Mũi Né gia đình
+      - làm ơn Homestay Đà Lạt cho đôi người
+      - làm ơn Homestay Mũi Né gần trung tâm
+      - làm ơn Homestay Huế view đẹp
+      - cho tôi hỏi Homestay đẹp ở Hà Nội
+      - mình hỏi Resort Đà Nẵng hồ bơi
+      - làm ơn Căn hộ Phú Quốc view đẹp
+      - cho tôi hỏi Khách sạn Nha Trang gần sân bay
+      - làm ơn Homestay Huế view đẹp
+      - cho tôi hỏi Lưu trú ở Sa Pa gần chợ
+      - ad ơi Căn hộ Phú Quốc view đẹp
+      - ad ơi Homestay Đà Lạt cho đôi người
+      - ad ơi Homestay Mũi Né gần trung tâm
+      - cho em hỏi Khách sạn Hà Nội giá rẻ
+      - cho em hỏi Homestay Vũng Tàu view đẹp
+      - mình hỏi Homestay Mũi Né gần trung tâm
+      - ad ơi Căn hộ Hội An view đẹp
+      - Homestay Mũi Né gần trung tâm
+      - Homestay Mũi Né gần trung tâm
+      - làm ơn Khách sạn Nha Trang gần sân bay
+      - Homestay đẹp ở Hà Nội
+      - Nhà nghỉ Đà Nẵng trung tâm
+      - cho tôi hỏi Resort Đà Lạt 5 sao
+      - cho tôi hỏi Homestay đẹp ở Đà Nẵng
+      - làm ơn Glamping Đà Lạt
+      - ad ơi Khách sạn Vũng Tàu trung tâm
+      - làm ơn Khách sạn Sa Pa giá rẻ
+      - cho em hỏi Resort Đà Nẵng hồ bơi
+      - Khách sạn Nha Trang gần sân bay
+      - cho tôi hỏi Khách sạn Vũng Tàu trung tâm
+      - cho em hỏi Nhà nghỉ Sa Pa giá rẻ
+      - làm ơn Homestay Vũng Tàu view đẹp
+      - cho em hỏi Nhà nghỉ Đà Nẵng trung tâm
+      - mình hỏi Nhà nghỉ Mũi Né giá rẻ
+      - mình hỏi Homestay đẹp ở Đà Nẵng
+  - intent: search_activity
+    examples: |
+      - ad ơi Cắm trại Huế
+      - mình hỏi Ngắm hoàng hôn Hội An
+      - cho tôi hỏi Đi thuyền Hà Nội
+      - ad ơi Tắm nước nóng Hà Nội
+      - làm ơn Ngắm hoàng hôn Hội An
+      - ad ơi Đi phượt Hội An bằng xe máy
+      - ad ơi Đi phượt Sa Pa bằng xe máy
+      - cho em hỏi Lặn ngắm san hô Sa Pa
+      - làm ơn Chèo thuyền ở Đà Lạt
+      - Câu cá ở Huế
+      - Cắm trại Hội An
+      - ad ơi Lặn biển ở Nha Trang
+      - Đi phượt Hội An bằng xe máy
+      - cho tôi hỏi Ngắm hoàng hôn Hội An
+      - Đi bộ biển Mũi Né
+      - ad ơi Ngắm hoàng hôn Hội An
+      - ad ơi Khám phá ẩm thực đường phố Hội An
+      - làm ơn Lặn ngắm san hô Sa Pa
+      - cho tôi hỏi Câu cá ở Huế
+      - cho tôi hỏi Đi bộ biển Đà Nẵng
+      - cho tôi hỏi Đi bộ biển Đà Lạt
+      - làm ơn Đi thác Đà Nẵng tham quan
+      - cho tôi hỏi Đi phượt Sa Pa bằng xe máy
+      - cho em hỏi Cắm trại Hội An
+      - cho tôi hỏi Đi bộ biển Đà Nẵng
+      - ad ơi Đi bộ biển Mũi Né
+      - Lặn ngắm san hô Sa Pa
+      - Đi chợ Hội An về đêm
+      - cho em hỏi Lặn ngắm san hô Nha Trang
+      - Đi chợ Hội An về đêm
+      - cho em hỏi Đi thuyền Vũng Tàu
+      - cho tôi hỏi Đi thác Đà Nẵng tham quan
+      - cho em hỏi Leo núi ở Mũi Né
+      - mình hỏi Đi bộ biển Đà Nẵng
+      - cho tôi hỏi Tắm nước nóng Đà Lạt
+      - cho em hỏi Đi thuyền Vũng Tàu
+      - cho tôi hỏi Tắm nước nóng Hà Nội
+      - ad ơi Đi chợ Hội An về đêm
+      - làm ơn Đi phượt Sa Pa bằng xe máy
+      - làm ơn Ăn tối trên du thuyền Huế
+      - cho tôi hỏi Đi bộ biển Đà Nẵng
+      - làm ơn Khám phá ẩm thực đường phố Hội An
+      - làm ơn Lặn biển ở Nha Trang
+      - cho em hỏi Chèo thuyền ở Đà Lạt
+      - làm ơn Leo núi ở Huế
+      - ad ơi Tắm nước nóng Phú Quốc
+      - cho tôi hỏi Leo núi ở Huế
+      - cho em hỏi Lặn ngắm san hô Sa Pa
+      - mình hỏi Tắm nước nóng Phú Quốc
+      - cho tôi hỏi Khám phá ẩm thực đường phố Hội An
+      - làm ơn Ăn tối trên du thuyền Huế
+      - làm ơn Đi thuyền Vũng Tàu
+      - ad ơi Ăn tối trên du thuyền Huế
+      - cho tôi hỏi Đi chợ Hội An về đêm
+      - cho em hỏi Tắm nước nóng Đà Lạt
+      - cho em hỏi Đi bộ biển Đà Lạt
+      - mình hỏi Leo núi ở Mũi Né
+      - cho em hỏi Tắm nước nóng Phú Quốc
+      - cho tôi hỏi Chèo thuyền ở Đà Lạt
+      - cho tôi hỏi Ăn tối trên du thuyền Huế
+      - cho em hỏi Đi phượt Hội An bằng xe máy
+      - Ngắm hoàng hôn Hội An
+      - làm ơn Tắm nước nóng Phú Quốc
+      - Đi bộ biển Mũi Né
+      - ad ơi Đi chợ Hội An về đêm
+      - cho em hỏi Câu cá ở Đà Nẵng
+      - ad ơi Ăn tối trên du thuyền Mũi Né
+      - ad ơi Đi bộ biển Đà Lạt
+      - Câu cá ở Đà Nẵng
+      - mình hỏi Khám phá ẩm thực đường phố Hội An
+      - Tắm nước nóng Phú Quốc
+      - mình hỏi Đi thác Đà Nẵng tham quan
+      - ad ơi Lặn biển ở Nha Trang
+      - mình hỏi Lặn ngắm san hô Nha Trang
+      - mình hỏi Câu cá ở Huế
+      - ad ơi Leo núi ở Mũi Né
+      - cho em hỏi Lặn biển ở Nha Trang
+      - mình hỏi Cắm trại Huế
+      - làm ơn Lặn ngắm san hô Nha Trang
+      - mình hỏi Đi bộ biển Đà Lạt
+      - Đi bộ biển Đà Lạt
+      - cho em hỏi Tắm nước nóng Đà Lạt
+      - cho em hỏi Chèo thuyền ở Đà Lạt
+      - Cắm trại Huế
+      - ad ơi Đi bộ biển Đà Lạt
+      - mình hỏi Đi chợ Hội An về đêm
+      - cho tôi hỏi Đi bộ biển Đà Lạt
+      - mình hỏi Đi phượt Sa Pa bằng xe máy
+      - làm ơn Đi thuyền Vũng Tàu
+      - Lặn biển ở Nha Trang
+      - cho em hỏi Ăn tối trên du thuyền Huế
+      - mình hỏi Đi thuyền Hà Nội
+      - cho tôi hỏi Lặn biển ở Nha Trang
+      - cho tôi hỏi Cắm trại Hội An
+      - Đi thác Đà Nẵng tham quan
+      - cho em hỏi Đi chợ Hội An về đêm
+      - cho tôi hỏi Đi bộ biển Đà Lạt
+      - cho em hỏi Câu cá ở Đà Nẵng
+      - Câu cá ở Huế
+      - Đi thuyền Vũng Tàu
+      - Đi chợ Hội An về đêm
+      - cho em hỏi Đi thuyền Vũng Tàu
+      - làm ơn Leo núi ở Huế
+      - mình hỏi Đi thuyền Vũng Tàu
+      - Tắm nước nóng Hà Nội
+      - cho em hỏi Đi thác Đà Nẵng tham quan
+      - làm ơn Lặn ngắm san hô Sa Pa
+      - ad ơi Leo núi ở Mũi Né
+      - cho tôi hỏi Câu cá ở Huế
+      - mình hỏi Đi thuyền Vũng Tàu
+      - cho tôi hỏi Ăn tối trên du thuyền Mũi Né
+      - làm ơn Tắm nước nóng Đà Lạt
+      - Leo núi ở Mũi Né
+      - làm ơn Leo núi ở Mũi Né
+      - làm ơn Đi bộ biển Đà Lạt
+      - mình hỏi Tắm nước nóng Phú Quốc
+      - ad ơi Đi bộ biển Đà Lạt
+      - mình hỏi Lặn biển ở Nha Trang
+      - Tắm nước nóng Đà Lạt
+      - Đi phượt Sa Pa bằng xe máy
+      - ad ơi Tắm nước nóng Đà Lạt
+      - ad ơi Đi thác Đà Nẵng tham quan
+      - cho em hỏi Lặn ngắm san hô Sa Pa
+      - ad ơi Câu cá ở Huế
+      - Đi thác Đà Nẵng tham quan
+      - mình hỏi Câu cá ở Đà Nẵng
+      - cho tôi hỏi Cắm trại Hội An
+      - cho em hỏi Cắm trại Huế
+      - cho tôi hỏi Tắm nước nóng Phú Quốc
+      - làm ơn Đi bộ biển Mũi Né
+      - cho em hỏi Khám phá ẩm thực đường phố Hội An
+      - Đi phượt Sa Pa bằng xe máy
+      - mình hỏi Chèo thuyền ở Đà Lạt
+      - cho tôi hỏi Cắm trại Hội An
+      - làm ơn Đi chợ Hội An về đêm
+      - Cắm trại Huế
+      - mình hỏi Đi thuyền Vũng Tàu
+      - cho em hỏi Cắm trại Hội An
+      - ad ơi Đi thác Đà Nẵng tham quan
+      - mình hỏi Khám phá ẩm thực đường phố Hội An
+      - cho em hỏi Ngắm hoàng hôn Hội An
+      - làm ơn Tắm nước nóng Hà Nội
+      - Đi phượt Hội An bằng xe máy
+      - cho tôi hỏi Lặn ngắm san hô Nha Trang
+      - mình hỏi Đi phượt Sa Pa bằng xe máy
+      - Cắm trại Huế
+      - làm ơn Khám phá ẩm thực đường phố Hội An
+      - làm ơn Đi thuyền Hà Nội
+      - mình hỏi Tắm nước nóng Hà Nội
+      - cho tôi hỏi Lặn ngắm san hô Sa Pa
+      - cho em hỏi Câu cá ở Đà Nẵng
+      - Chèo thuyền ở Đà Lạt
+      - cho tôi hỏi Đi thuyền Hà Nội
+      - Đi thuyền Vũng Tàu
+      - ad ơi Đi bộ biển Mũi Né
+      - mình hỏi Tắm nước nóng Hà Nội
+      - làm ơn Đi bộ biển Mũi Né
+      - cho tôi hỏi Đi thác Đà Nẵng tham quan
+      - cho em hỏi Đi bộ biển Đà Nẵng
+      - mình hỏi Tắm nước nóng Phú Quốc
+      - ad ơi Đi chợ Hội An về đêm
+      - cho tôi hỏi Leo núi ở Mũi Né
+      - làm ơn Ngắm hoàng hôn Hội An
+      - ad ơi Ăn tối trên du thuyền Huế
+      - cho em hỏi Cắm trại Hội An
+      - Ngắm hoàng hôn Hội An
+      - mình hỏi Ăn tối trên du thuyền Mũi Né
+      - ad ơi Tắm nước nóng Hà Nội
+      - làm ơn Lặn ngắm san hô Sa Pa
+      - ad ơi Chèo thuyền ở Đà Lạt
+      - cho tôi hỏi Cắm trại Huế
+      - làm ơn Cắm trại Huế
+      - ad ơi Đi thuyền Vũng Tàu
+      - cho em hỏi Lặn biển ở Nha Trang
+      - ad ơi Ngắm hoàng hôn Hội An
+      - làm ơn Ăn tối trên du thuyền Mũi Né
+      - làm ơn Đi phượt Hội An bằng xe máy
+      - mình hỏi Tắm nước nóng Đà Lạt
+      - cho tôi hỏi Đi bộ biển Đà Lạt
+      - ad ơi Đi thuyền Vũng Tàu
+      - cho tôi hỏi Leo núi ở Mũi Né
+      - ad ơi Đi bộ biển Đà Lạt
+      - mình hỏi Đi chợ Hội An về đêm
+      - làm ơn Tắm nước nóng Hà Nội
+      - cho tôi hỏi Đi chợ Hội An về đêm
+      - làm ơn Đi chợ Hội An về đêm
+      - ad ơi Tắm nước nóng Phú Quốc
+      - Leo núi ở Huế
+      - cho tôi hỏi Đi bộ biển Đà Nẵng
+      - mình hỏi Đi chợ Hội An về đêm
+      - mình hỏi Đi thuyền Vũng Tàu
+      - ad ơi Câu cá ở Đà Nẵng
+      - mình hỏi Đi bộ biển Đà Nẵng
+      - cho em hỏi Lặn ngắm san hô Sa Pa
+      - cho tôi hỏi Lặn ngắm san hô Nha Trang
+      - Tắm nước nóng Hà Nội
+      - Ngắm hoàng hôn Hội An
+      - cho em hỏi Leo núi ở Huế
+      - cho tôi hỏi Leo núi ở Mũi Né
+      - làm ơn Tắm nước nóng Phú Quốc
+      - Leo núi ở Mũi Né
+      - cho tôi hỏi Lặn biển ở Nha Trang
+      - làm ơn Đi thác Đà Nẵng tham quan
+      - cho tôi hỏi Câu cá ở Đà Nẵng
+      - cho em hỏi Đi thuyền Hà Nội
+      - ad ơi Đi bộ biển Đà Nẵng
+      - Khám phá ẩm thực đường phố Hội An
+      - mình hỏi Ăn tối trên du thuyền Huế
+      - cho tôi hỏi Đi phượt Hội An bằng xe máy
+      - làm ơn Đi phượt Sa Pa bằng xe máy
+      - cho em hỏi Đi chợ Hội An về đêm
+      - cho tôi hỏi Câu cá ở Đà Nẵng
+      - ad ơi Leo núi ở Huế
+      - cho em hỏi Đi chợ Hội An về đêm
+      - cho tôi hỏi Cắm trại Hội An
+      - cho tôi hỏi Lặn ngắm san hô Sa Pa
+      - mình hỏi Đi phượt Sa Pa bằng xe máy
+      - làm ơn Cắm trại Hội An
+      - cho em hỏi Chèo thuyền ở Đà Lạt
+      - cho em hỏi Đi thác Đà Nẵng tham quan
+      - cho tôi hỏi Ăn tối trên du thuyền Huế
+      - cho tôi hỏi Cắm trại Huế
+      - mình hỏi Đi bộ biển Mũi Né
+      - cho em hỏi Câu cá ở Huế
+      - cho em hỏi Lặn biển ở Nha Trang
+      - Đi bộ biển Đà Lạt
+      - làm ơn Câu cá ở Đà Nẵng
+      - cho tôi hỏi Đi bộ biển Mũi Né
+      - cho em hỏi Đi bộ biển Mũi Né
+      - cho tôi hỏi Leo núi ở Mũi Né
+      - ad ơi Câu cá ở Đà Nẵng
+      - cho tôi hỏi Câu cá ở Huế
+      - cho tôi hỏi Leo núi ở Mũi Né
+      - ad ơi Lặn ngắm san hô Nha Trang
+      - làm ơn Lặn biển ở Nha Trang
+      - mình hỏi Đi bộ biển Đà Lạt
+      - cho tôi hỏi Tắm nước nóng Hà Nội
+      - ad ơi Ăn tối trên du thuyền Mũi Né
+      - cho em hỏi Leo núi ở Huế
+      - ad ơi Lặn ngắm san hô Sa Pa
+      - cho tôi hỏi Cắm trại Huế
+      - ad ơi Đi phượt Sa Pa bằng xe máy
+      - làm ơn Đi bộ biển Đà Lạt
+      - Đi thác Đà Nẵng tham quan
+      - Ngắm hoàng hôn Hội An
+      - cho em hỏi Leo núi ở Mũi Né
+      - mình hỏi Đi phượt Sa Pa bằng xe máy
+      - làm ơn Đi chợ Hội An về đêm
+  - intent: search_destination
+    examples: |
+      - ad ơi Cảnh đẹp Đà Nẵng nổi tiếng
+      - Sa Pa cách Hà Nội bao xa
+      - ad ơi Phú Quốc nổi tiếng về gì
+      - làm ơn Hà Nội nổi tiếng về gì
+      - ad ơi Hà Nội nổi tiếng về gì
+      - ad ơi Đi Đà Lạt mùa nào đẹp
+      - làm ơn Chia sẻ kinh nghiệm Vũng Tàu
+      - mình hỏi Nha Trang cách Hà Nội bao xa
+      - mình hỏi Chia sẻ kinh nghiệm Đà Nẵng
+      - cho em hỏi Top địa điểm Huế
+      - Hà Nội nổi tiếng về gì
+      - cho em hỏi Hà Nội nổi tiếng về gì
+      - cho tôi hỏi Điểm đến Đà Lạt
+      - Top địa điểm Hà Nội
+      - cho em hỏi Đi Đà Lạt mùa nào đẹp
+      - mình hỏi Cảnh đẹp Mũi Né nổi tiếng
+      - làm ơn Chia sẻ kinh nghiệm Phú Quốc
+      - cho tôi hỏi Khám phá Huế
+      - ad ơi Điểm đến Đà Lạt
+      - cho em hỏi Check in Đà Nẵng ở đâu
+      - mình hỏi Top địa điểm Hà Nội
+      - làm ơn Đi Nha Trang tham quan gì
+      - cho tôi hỏi Phú Quốc có gì chơi
+      - cho tôi hỏi Có gì đẹp ở Hội An
+      - mình hỏi Top địa điểm Hà Nội
+      - cho tôi hỏi Nên đi Mũi Né không
+      - cho tôi hỏi Hội An ở đâu
+      - Top địa điểm Huế
+      - mình hỏi Chia sẻ kinh nghiệm Phú Quốc
+      - cho tôi hỏi Review du lịch Hà Nội
+      - Giới thiệu về Mũi Né
+      - làm ơn Top địa điểm Hà Nội
+      - mình hỏi Chia sẻ kinh nghiệm Sa Pa
+      - Thông tin du lịch Mũi Né
+      - Khám phá Huế
+      - làm ơn Vẻ đẹp Sa Pa
+      - cho em hỏi Check in Hà Nội ở đâu
+      - cho tôi hỏi Check in Đà Nẵng ở đâu
+      - mình hỏi Check in Huế ở đâu
+      - cho em hỏi Có gì đẹp ở Hội An
+      - mình hỏi Bài viết về Đà Lạt
+      - làm ơn Chia sẻ kinh nghiệm Đà Nẵng
+      - cho tôi hỏi Hà Nội ở đâu
+      - mình hỏi Đi Đà Lạt mùa nào đẹp
+      - làm ơn Phú Quốc nổi tiếng về gì
+      - ad ơi Nha Trang cách Hà Nội bao xa
+      - cho tôi hỏi Hội An ở đâu
+      - ad ơi Khám phá Huế
+      - ad ơi Check in Đà Nẵng ở đâu
+      - mình hỏi Phú Quốc nổi tiếng về gì
+      - cho em hỏi Chia sẻ kinh nghiệm Sa Pa
+      - ad ơi Hà Nội nổi tiếng về gì
+      - ad ơi Bài viết về Đà Lạt
+      - cho tôi hỏi Điểm đến Đà Lạt
+      - cho em hỏi Thông tin du lịch Mũi Né
+      - cho tôi hỏi Check in Huế ở đâu
+      - làm ơn Nên đi Mũi Né không
+      - Kinh nghiệm đi Đà Nẵng lần đầu
+      - làm ơn Mũi Né mùa nào đẹp nhất
+      - Có gì đẹp ở Hội An
+      - cho tôi hỏi Sa Pa cách Hà Nội bao xa
+      - ad ơi Check in Huế ở đâu
+      - cho tôi hỏi Phú Quốc nổi tiếng về gì
+      - mình hỏi Top địa điểm Hà Nội
+      - ad ơi Check in Hà Nội ở đâu
+      - Vũng Tàu nổi tiếng về gì
+      - mình hỏi Thông tin du lịch Mũi Né
+      - làm ơn Có gì đẹp ở Hội An
+      - cho em hỏi Vẻ đẹp Sa Pa
+      - cho tôi hỏi Chia sẻ kinh nghiệm Sa Pa
+      - cho em hỏi Nha Trang cách Hà Nội bao xa
+      - làm ơn Phú Quốc có gì chơi
+      - mình hỏi Review du lịch Hà Nội
+      - mình hỏi Sa Pa cách Hà Nội bao xa
+      - cho tôi hỏi Phú Quốc nổi tiếng về gì
+      - làm ơn Phú Quốc nổi tiếng về gì
+      - làm ơn Chia sẻ kinh nghiệm Phú Quốc
+      - Phú Quốc nổi tiếng về gì
+      - cho em hỏi Top địa điểm Huế
+      - cho tôi hỏi Đi Đà Lạt mùa nào đẹp
+      - cho tôi hỏi Chia sẻ kinh nghiệm Vũng Tàu
+      - cho tôi hỏi Điểm đến Đà Lạt
+      - mình hỏi Giới thiệu về Mũi Né
+      - mình hỏi Sa Pa cách Hà Nội bao xa
+      - cho em hỏi Đi Nha Trang tham quan gì
+      - cho tôi hỏi Sa Pa cách Hà Nội bao xa
+      - cho tôi hỏi Sa Pa cách Hà Nội bao xa
+      - Vũng Tàu nổi tiếng về gì
+      - ad ơi Chia sẻ kinh nghiệm Đà Nẵng
+      - Chia sẻ kinh nghiệm Phú Quốc
+      - làm ơn Đi Đà Lạt mùa nào đẹp
+      - cho tôi hỏi Kinh nghiệm đi Đà Nẵng lần đầu
+      - ad ơi Có gì đẹp ở Hội An
+      - Cảnh đẹp Đà Nẵng nổi tiếng
+      - làm ơn Check in Huế ở đâu
+      - Review du lịch Hà Nội
+      - mình hỏi Chia sẻ kinh nghiệm Đà Nẵng
+      - cho em hỏi Review du lịch Huế
+      - cho em hỏi Có gì đẹp ở Hội An
+      - làm ơn Cảnh đẹp Đà Nẵng nổi tiếng
+      - mình hỏi Đi Đà Lạt mùa nào đẹp
+      - Chia sẻ kinh nghiệm Đà Nẵng
+      - cho tôi hỏi Nha Trang cách Hà Nội bao xa
+      - làm ơn Top địa điểm Huế
+      - Review du lịch Hà Nội
+      - mình hỏi Top địa điểm Huế
+      - cho em hỏi Khám phá Huế
+      - mình hỏi Phú Quốc có gì chơi
+      - ad ơi Review du lịch Hà Nội
+      - ad ơi Chia sẻ kinh nghiệm Phú Quốc
+      - Đi Đà Lạt mùa nào đẹp
+      - Đi Nha Trang tham quan gì
+      - mình hỏi Nha Trang cách Hà Nội bao xa
+      - cho tôi hỏi Khám phá Hà Nội
+      - ad ơi Nha Trang cách Hà Nội bao xa
+      - Hội An ở đâu
+      - Review du lịch Hà Nội
+      - làm ơn Thông tin du lịch Mũi Né
+      - cho tôi hỏi Review du lịch Hà Nội
+      - cho tôi hỏi Cảnh đẹp Mũi Né nổi tiếng
+      - ad ơi Review du lịch Huế
+      - mình hỏi Sa Pa cách Hà Nội bao xa
+      - Hội An ở đâu
+      - làm ơn Top địa điểm Huế
+      - ad ơi Đi Nha Trang tham quan gì
+      - làm ơn Vũng Tàu nổi tiếng về gì
+      - mình hỏi Nên đi Mũi Né không
+      - làm ơn Check in Hà Nội ở đâu
+      - cho tôi hỏi Thông tin du lịch Mũi Né
+      - làm ơn Vẻ đẹp Sa Pa
+      - ad ơi Chia sẻ kinh nghiệm Sa Pa
+      - làm ơn Giới thiệu về Phú Quốc
+      - ad ơi Chia sẻ kinh nghiệm Sa Pa
+      - mình hỏi Giới thiệu về Mũi Né
+      - mình hỏi Giới thiệu về Mũi Né
+      - ad ơi Hà Nội nổi tiếng về gì
+      - cho tôi hỏi Hà Nội ở đâu
+      - cho em hỏi Kinh nghiệm đi Đà Nẵng lần đầu
+      - làm ơn Bài viết về Đà Nẵng
+      - làm ơn Sa Pa cách Hà Nội bao xa
+      - ad ơi Vũng Tàu nổi tiếng về gì
+      - cho em hỏi Top địa điểm Huế
+      - cho em hỏi Review du lịch Hà Nội
+      - làm ơn Sa Pa cách Hà Nội bao xa
+      - ad ơi Thông tin du lịch Mũi Né
+      - cho tôi hỏi Phú Quốc nổi tiếng về gì
+      - ad ơi Bài viết về Đà Lạt
+      - ad ơi Phú Quốc có gì chơi
+      - làm ơn Top địa điểm Huế
+      - mình hỏi Check in Huế ở đâu
+      - làm ơn Review du lịch Huế
+      - Check in Huế ở đâu
+      - Vũng Tàu nổi tiếng về gì
+      - làm ơn Phú Quốc nổi tiếng về gì
+      - Khám phá Huế
+      - cho tôi hỏi Hà Nội nổi tiếng về gì
+      - cho tôi hỏi Chia sẻ kinh nghiệm Phú Quốc
+      - Có gì đẹp ở Hội An
+      - làm ơn Nha Trang cách Hà Nội bao xa
+      - ad ơi Giới thiệu về Phú Quốc
+      - cho tôi hỏi Đi Đà Lạt mùa nào đẹp
+      - Giới thiệu về Phú Quốc
+      - cho em hỏi Top địa điểm Hà Nội
+      - cho em hỏi Phú Quốc có gì chơi
+      - mình hỏi Cảnh đẹp Đà Nẵng nổi tiếng
+      - Khám phá Hà Nội
+      - cho tôi hỏi Top địa điểm Hà Nội
+      - cho em hỏi Cảnh đẹp Mũi Né nổi tiếng
+      - cho em hỏi Giới thiệu về Mũi Né
+      - Nên đi Mũi Né không
+      - ad ơi Có gì đẹp ở Hội An
+      - mình hỏi Cảnh đẹp Mũi Né nổi tiếng
+      - mình hỏi Khám phá Hà Nội
+      - làm ơn Nha Trang cách Hà Nội bao xa
+      - mình hỏi Review du lịch Hà Nội
+      - Đi Nha Trang tham quan gì
+      - mình hỏi Đi Nha Trang tham quan gì
+      - mình hỏi Chia sẻ kinh nghiệm Đà Nẵng
+      - Cảnh đẹp Đà Nẵng nổi tiếng
+      - Bài viết về Đà Nẵng
+      - làm ơn Hà Nội nổi tiếng về gì
+      - cho em hỏi Cảnh đẹp Đà Nẵng nổi tiếng
+      - mình hỏi Bài viết về Đà Lạt
+      - cho tôi hỏi Top địa điểm Hà Nội
+      - Vẻ đẹp Sa Pa
+      - Hội An ở đâu
+      - cho tôi hỏi Vũng Tàu nổi tiếng về gì
+      - mình hỏi Vũng Tàu nổi tiếng về gì
+      - mình hỏi Hội An ở đâu
+      - làm ơn Phú Quốc có gì chơi
+      - mình hỏi Mũi Né mùa nào đẹp nhất
+      - cho tôi hỏi Top địa điểm Huế
+      - ad ơi Cảnh đẹp Đà Nẵng nổi tiếng
+      - Nha Trang cách Hà Nội bao xa
+      - cho em hỏi Đi Nha Trang tham quan gì
+      - ad ơi Giới thiệu về Mũi Né
+      - ad ơi Top địa điểm Huế
+      - ad ơi Review du lịch Huế
+      - ad ơi Mũi Né mùa nào đẹp nhất
+      - mình hỏi Bài viết về Đà Nẵng
+      - ad ơi Hà Nội ở đâu
+      - ad ơi Bài viết về Đà Nẵng
+      - cho tôi hỏi Sa Pa cách Hà Nội bao xa
+      - làm ơn Giới thiệu về Mũi Né
+      - ad ơi Review du lịch Hà Nội
+      - Top địa điểm Hà Nội
+      - cho em hỏi Hội An ở đâu
+      - Phú Quốc có gì chơi
+      - mình hỏi Đi Nha Trang tham quan gì
+      - cho em hỏi Hà Nội ở đâu
+      - cho em hỏi Bài viết về Đà Lạt
+      - cho tôi hỏi Khám phá Hà Nội
+      - cho tôi hỏi Giới thiệu về Mũi Né
+      - ad ơi Thông tin du lịch Mũi Né
+      - ad ơi Khám phá Huế
+      - Kinh nghiệm đi Đà Nẵng lần đầu
+      - cho tôi hỏi Nha Trang cách Hà Nội bao xa
+      - cho em hỏi Mũi Né mùa nào đẹp nhất
+      - cho tôi hỏi Chia sẻ kinh nghiệm Phú Quốc
+      - cho tôi hỏi Chia sẻ kinh nghiệm Sa Pa
+      - ad ơi Phú Quốc nổi tiếng về gì
+      - cho em hỏi Thông tin du lịch Mũi Né
+      - làm ơn Sa Pa cách Hà Nội bao xa
+      - Check in Đà Nẵng ở đâu
+      - làm ơn Vũng Tàu nổi tiếng về gì
+      - làm ơn Hà Nội nổi tiếng về gì
+      - mình hỏi Vũng Tàu nổi tiếng về gì
+      - cho em hỏi Khám phá Huế
+      - cho tôi hỏi Hà Nội nổi tiếng về gì
+      - Chia sẻ kinh nghiệm Sa Pa
+      - Hà Nội ở đâu
+      - cho em hỏi Hà Nội nổi tiếng về gì
+      - cho tôi hỏi Giới thiệu về Mũi Né
+      - Nên đi Mũi Né không
+      - cho tôi hỏi Phú Quốc nổi tiếng về gì
+      - cho em hỏi Nên đi Mũi Né không
+      - cho em hỏi Phú Quốc nổi tiếng về gì
+      - làm ơn Hội An ở đâu
+      - cho tôi hỏi Đi Nha Trang tham quan gì
+      - làm ơn Kinh nghiệm đi Đà Nẵng lần đầu
+      - cho tôi hỏi Top địa điểm Huế
+      - Mũi Né mùa nào đẹp nhất
+      - mình hỏi Điểm đến Đà Lạt
+      - cho em hỏi Điểm đến Đà Lạt
+      - Hà Nội nổi tiếng về gì
+      - cho em hỏi Review du lịch Huế
+      - mình hỏi Vẻ đẹp Sa Pa
+      - làm ơn Giới thiệu về Phú Quốc
+      - mình hỏi Bài viết về Đà Nẵng
+      - cho tôi hỏi Bài viết về Đà Lạt
+      - cho em hỏi Bài viết về Đà Nẵng
+      - cho tôi hỏi Check in Hà Nội ở đâu
+      - Cảnh đẹp Mũi Né nổi tiếng
+      - cho tôi hỏi Kinh nghiệm đi Đà Nẵng lần đầu
+      - làm ơn Top địa điểm Huế
+      - cho tôi hỏi Top địa điểm Hà Nội
+      - ad ơi Hội An ở đâu
+      - cho tôi hỏi Giới thiệu về Mũi Né
+      - cho em hỏi Khám phá Hà Nội
+      - cho em hỏi Chia sẻ kinh nghiệm Sa Pa
+      - mình hỏi Check in Đà Nẵng ở đâu
+      - ad ơi Sa Pa cách Hà Nội bao xa
+      - làm ơn Nha Trang cách Hà Nội bao xa
+      - cho tôi hỏi Giới thiệu về Phú Quốc
+      - mình hỏi Điểm đến Đà Lạt
+      - Nên đi Mũi Né không
+      - làm ơn Khám phá Hà Nội
+      - cho tôi hỏi Vẻ đẹp Sa Pa
+      - ad ơi Bài viết về Đà Lạt
+      - làm ơn Khám phá Huế
+      - ad ơi Đi Đà Lạt mùa nào đẹp
+      - làm ơn Bài viết về Đà Lạt
+      - ad ơi Check in Huế ở đâu
+      - cho tôi hỏi Vẻ đẹp Sa Pa
+      - mình hỏi Hà Nội nổi tiếng về gì
+      - cho em hỏi Thông tin du lịch Mũi Né
+      - Khám phá Huế
+      - cho tôi hỏi Vũng Tàu nổi tiếng về gì
+      - Mũi Né mùa nào đẹp nhất
+      - làm ơn Hội An ở đâu
+      - Nên đi Mũi Né không
+      - cho em hỏi Sa Pa cách Hà Nội bao xa
+      - làm ơn Vẻ đẹp Sa Pa
+      - Hà Nội ở đâu
+      - cho em hỏi Chia sẻ kinh nghiệm Đà Nẵng
+      - ad ơi Phú Quốc có gì chơi
+      - cho tôi hỏi Chia sẻ kinh nghiệm Phú Quốc
+      - ad ơi Sa Pa cách Hà Nội bao xa
+      - cho em hỏi Top địa điểm Huế
+      - làm ơn Cảnh đẹp Mũi Né nổi tiếng
+      - ad ơi Vẻ đẹp Sa Pa
+      - Có gì đẹp ở Hội An
+      - cho tôi hỏi Mũi Né mùa nào đẹp nhất
+      - ad ơi Vũng Tàu nổi tiếng về gì
+      - làm ơn Điểm đến Đà Lạt
+      - cho em hỏi Check in Hà Nội ở đâu
+      - ad ơi Review du lịch Hà Nội
+      - mình hỏi Giới thiệu về Phú Quốc
+      - cho tôi hỏi Vũng Tàu nổi tiếng về gì
+      - mình hỏi Giới thiệu về Phú Quốc
+      - làm ơn Cảnh đẹp Mũi Né nổi tiếng
+      - mình hỏi Có gì đẹp ở Hội An
+      - Review du lịch Huế
+      - cho em hỏi Check in Đà Nẵng ở đâu
+      - làm ơn Check in Đà Nẵng ở đâu
+      - Chia sẻ kinh nghiệm Phú Quốc
+      - cho tôi hỏi Phú Quốc nổi tiếng về gì
+      - ad ơi Cảnh đẹp Mũi Né nổi tiếng
+      - cho tôi hỏi Review du lịch Hà Nội
+      - mình hỏi Khám phá Huế
+      - cho em hỏi Nên đi Mũi Né không
+      - cho em hỏi Cảnh đẹp Đà Nẵng nổi tiếng
+      - mình hỏi Review du lịch Huế
+      - Chia sẻ kinh nghiệm Đà Nẵng
+      - làm ơn Mũi Né mùa nào đẹp nhất
+      - cho em hỏi Khám phá Hà Nội
+      - mình hỏi Điểm đến Đà Lạt
+      - ad ơi Check in Hà Nội ở đâu
+      - cho em hỏi Sa Pa cách Hà Nội bao xa
+      - Check in Hà Nội ở đâu
+  - intent: search_food_dining
+    examples: |
+      - ad ơi Mũi Né có quán nào nổi tiếng
+      - cho em hỏi Phú Quốc có gì ngon
+      - Quán ăn ngon ở Nha Trang
+      - cho em hỏi Hải sản Phú Quốc tươi ngon
+      - Quán ăn ngon ở Hội An
+      - mình hỏi Đà Nẵng ăn gì cho bữa sáng
+      - ad ơi Chè Hội An ngon
+      - cho em hỏi Hải sản Đà Lạt tươi ngon
+      - Đặc sản Sa Pa phải thử
+      - cho tôi hỏi Phú Quốc có gì ngon
+      - cho em hỏi Ở Hà Nội ăn gì ngon
+      - Chợ Mũi Né ẩm thực
+      - Hải sản Hà Nội tươi ngon
+      - Quán ăn ngon ở Nha Trang
+      - Nhà hàng Vũng Tàu sang trọng
+      - mình hỏi Hải sản Hà Nội tươi ngon
+      - Ẩm thực Hội An món gì đặc sản
+      - cho em hỏi Cafe view đẹp Hà Nội
+      - cho tôi hỏi Ăn vặt Huế
+      - cho em hỏi Cafe view đẹp Nha Trang
+      - cho tôi hỏi Hải sản Phú Quốc tươi ngon
+      - làm ơn Ở Hà Nội ăn gì ngon
+      - cho em hỏi Hải sản Đà Lạt tươi ngon
+      - ad ơi Nhà hàng Vũng Tàu sang trọng
+      - cho em hỏi Bánh xèo Phú Quốc
+      - làm ơn Bánh xèo Phú Quốc
+      - Buffet Nha Trang giá rẻ
+      - làm ơn Ẩm thực Hội An món gì đặc sản
+      - mình hỏi Phú Quốc có gì ngon
+      - mình hỏi Đặc sản Đà Nẵng phải thử
+      - mình hỏi Hải sản Phú Quốc tươi ngon
+      - Mũi Né ăn gì cho bữa sáng
+      - cho em hỏi Nha Trang có quán nào nổi tiếng
+      - cho em hỏi Đặc sản Sa Pa phải thử
+      - Nhà hàng Vũng Tàu sang trọng
+      - làm ơn Chợ Mũi Né ẩm thực
+      - làm ơn Hải sản Hà Nội tươi ngon
+      - mình hỏi Hải sản Hà Nội tươi ngon
+      - Mũi Né có quán nào nổi tiếng
+      - mình hỏi Ăn vặt Hội An
+      - cho tôi hỏi Ăn vặt Hội An
+      - mình hỏi Đà Nẵng ăn gì cho bữa sáng
+      - làm ơn Ăn vặt Huế
+      - Nha Trang ăn gì cho bữa sáng
+      - ad ơi Hải sản Đà Lạt tươi ngon
+      - làm ơn Hải sản Phú Quốc tươi ngon
+      - cho tôi hỏi Đà Nẵng ăn gì cho bữa sáng
+      - cho tôi hỏi Sa Pa ăn gì cho bữa sáng
+      - cho em hỏi Ẩm thực Hội An món gì đặc sản
+      - ad ơi Ăn vặt Huế
+      - Hải sản Đà Lạt tươi ngon
+      - ad ơi Bánh xèo Hà Nội
+      - Sa Pa ăn gì cho bữa sáng
+      - ad ơi Ăn chay Huế
+      - ad ơi Buffet Nha Trang giá rẻ
+      - cho tôi hỏi Nha Trang có quán nào nổi tiếng
+      - cho tôi hỏi Chè Hội An ngon
+      - mình hỏi Hải sản Sa Pa tươi ngon
+      - cho tôi hỏi Ăn chay Huế
+      - cho tôi hỏi Cafe view đẹp Hà Nội
+      - cho tôi hỏi Món Việt Nha Trang ngon
+      - ad ơi Đặc sản Đà Nẵng phải thử
+      - mình hỏi Nha Trang ăn gì cho bữa sáng
+      - mình hỏi Cafe view đẹp Nha Trang
+      - ad ơi Ở Hà Nội ăn gì ngon
+      - mình hỏi Sa Pa ăn gì cho bữa sáng
+      - Cafe view đẹp Hội An
+      - mình hỏi Chè Hội An ngon
+      - mình hỏi Chợ Mũi Né ẩm thực
+      - Sa Pa ăn gì cho bữa sáng
+      - cho em hỏi Nha Trang ăn gì cho bữa sáng
+      - cho em hỏi Bánh xèo Phú Quốc
+      - ad ơi Lẩu Hà Nội ăn ở đâu
+      - cho tôi hỏi Hải sản Phú Quốc tươi ngon
+      - làm ơn Quán ăn ngon ở Nha Trang
+      - cho tôi hỏi Nhà hàng Vũng Tàu sang trọng
+      - ad ơi Quán ăn ngon ở Nha Trang
+      - cho tôi hỏi Cafe view đẹp Nha Trang
+      - làm ơn Hải sản Phú Quốc tươi ngon
+      - cho tôi hỏi Nha Trang ăn gì cho bữa sáng
+      - cho em hỏi Ăn vặt Hội An
+      - làm ơn Nha Trang ăn gì cho bữa sáng
+      - làm ơn Bánh xèo Phú Quốc
+      - làm ơn Quán ăn ngon ở Hội An
+      - cho em hỏi Nhà hàng Vũng Tàu sang trọng
+      - cho em hỏi Nha Trang ăn gì cho bữa sáng
+      - cho em hỏi Nha Trang có quán nào nổi tiếng
+      - Cafe view đẹp Hội An
+      - Lẩu Hà Nội ăn ở đâu
+      - mình hỏi Nha Trang ăn gì cho bữa sáng
+      - cho tôi hỏi Đặc sản Sa Pa phải thử
+      - cho tôi hỏi Ẩm thực Hội An món gì đặc sản
+      - làm ơn Cafe view đẹp Nha Trang
+      - cho tôi hỏi Đà Nẵng ăn gì cho bữa sáng
+      - làm ơn Nhà hàng Vũng Tàu sang trọng
+      - Ăn vặt Huế
+      - ad ơi Cafe view đẹp Hội An
+      - Ăn vặt Huế
+      - mình hỏi Lẩu Hà Nội ăn ở đâu
+      - mình hỏi Cafe view đẹp Hà Nội
+      - cho tôi hỏi Mì quảng Hà Nội
+      - làm ơn Cafe view đẹp Nha Trang
+      - Ở Hà Nội ăn gì ngon
+      - làm ơn Nha Trang có quán nào nổi tiếng
+      - Ăn vặt Hội An
+      - Ăn chay Huế
+      - làm ơn Bánh xèo Hà Nội
+      - mình hỏi Đặc sản Sa Pa phải thử
+      - cho tôi hỏi Hải sản Sa Pa giá rẻ
+      - Ở Hà Nội ăn gì ngon
+      - ad ơi Nha Trang ăn gì cho bữa sáng
+      - ad ơi Đà Nẵng ăn gì cho bữa sáng
+      - Mì quảng Hà Nội
+      - ad ơi Nhà hàng Vũng Tàu sang trọng
+      - mình hỏi Ẩm thực Hội An món gì đặc sản
+      - cho em hỏi Món Việt Nha Trang ngon
+      - ad ơi Sa Pa ăn gì cho bữa sáng
+      - cho em hỏi Nha Trang ăn gì cho bữa sáng
+      - cho em hỏi Ăn chay Huế
+      - làm ơn Quán ăn ngon ở Hội An
+      - mình hỏi Ở Hà Nội ăn gì ngon
+      - cho tôi hỏi Ăn vặt Huế
+      - cho tôi hỏi Bánh xèo Hà Nội
+      - Buffet Hội An giá rẻ
+      - Ẩm thực Hà Nội món gì đặc sản
+      - mình hỏi Món Việt Nha Trang ngon
+      - cho em hỏi Đặc sản Sa Pa phải thử
+      - mình hỏi Ẩm thực Hà Nội món gì đặc sản
+      - ad ơi Hải sản Phú Quốc tươi ngon
+      - ad ơi Mũi Né ăn gì cho bữa sáng
+      - làm ơn Mì quảng Hà Nội
+      - mình hỏi Bánh xèo Phú Quốc
+      - mình hỏi Hải sản Đà Lạt tươi ngon
+      - cho em hỏi Phú Quốc có gì ngon
+      - làm ơn Buffet Nha Trang giá rẻ
+      - cho em hỏi Bánh xèo Phú Quốc
+      - cho em hỏi Lẩu Hà Nội ăn ở đâu
+      - cho tôi hỏi Hải sản Hà Nội tươi ngon
+      - ad ơi Bánh xèo Hà Nội
+      - cho em hỏi Ẩm thực Hội An món gì đặc sản
+      - làm ơn Lẩu Hà Nội ăn ở đâu
+      - Hải sản Sa Pa tươi ngon
+      - làm ơn Sa Pa ăn gì cho bữa sáng
+      - cho tôi hỏi Cafe view đẹp Nha Trang
+      - Ăn vặt Hội An
+      - mình hỏi Cafe view đẹp Hội An
+      - cho tôi hỏi Đà Nẵng ăn gì cho bữa sáng
+      - cho tôi hỏi Hải sản Đà Lạt tươi ngon
+      - mình hỏi Nha Trang có quán nào nổi tiếng
+      - ad ơi Hải sản Sa Pa tươi ngon
+      - cho tôi hỏi Buffet Nha Trang giá rẻ
+      - cho tôi hỏi Ở Hà Nội ăn gì ngon
+      - mình hỏi Cafe view đẹp Hội An
+      - cho em hỏi Cafe view đẹp Hội An
+      - mình hỏi Hải sản Hà Nội tươi ngon
+      - cho tôi hỏi Quán ăn ngon ở Hội An
+      - làm ơn Phú Quốc có gì ngon
+      - làm ơn Quán ăn ngon ở Nha Trang
+      - ad ơi Ăn vặt Huế
+      - mình hỏi Buffet Nha Trang giá rẻ
+      - Ăn vặt Hội An
+      - cho tôi hỏi Buffet Hội An giá rẻ
+      - mình hỏi Chè Hội An ngon
+      - cho em hỏi Đà Nẵng ăn gì cho bữa sáng
+      - làm ơn Đà Nẵng ăn gì cho bữa sáng
+      - ad ơi Mì quảng Hà Nội
+      - cho em hỏi Mũi Né ăn gì cho bữa sáng
+      - làm ơn Đặc sản Đà Nẵng phải thử
+      - ad ơi Quán ăn ngon ở Nha Trang
+      - cho em hỏi Buffet Nha Trang giá rẻ
+      - mình hỏi Cafe view đẹp Hà Nội
+      - ad ơi Nha Trang có quán nào nổi tiếng
+      - làm ơn Món Việt Nha Trang ngon
+      - làm ơn Mũi Né có quán nào nổi tiếng
+      - Quán ăn ngon ở Nha Trang
+      - mình hỏi Chợ Mũi Né ẩm thực
+      - Nha Trang có quán nào nổi tiếng
+      - cho em hỏi Ở Hà Nội ăn gì ngon
+      - cho tôi hỏi Bánh xèo Phú Quốc
+      - cho tôi hỏi Cafe view đẹp Hội An
+      - mình hỏi Sa Pa ăn gì cho bữa sáng
+      - cho tôi hỏi Món Việt Nha Trang ngon
+      - cho em hỏi Hải sản Sa Pa tươi ngon
+      - Buffet Nha Trang giá rẻ
+      - mình hỏi Hải sản Sa Pa giá rẻ
+      - Phú Quốc có gì ngon
+      - ad ơi Ẩm thực Hội An món gì đặc sản
+      - cho tôi hỏi Quán ăn ngon ở Hội An
+      - Hải sản Phú Quốc tươi ngon
+      - mình hỏi Ăn vặt Hội An
+      - Phú Quốc có gì ngon
+      - Hải sản Hà Nội tươi ngon
+      - mình hỏi Buffet Hội An giá rẻ
+      - làm ơn Sa Pa ăn gì cho bữa sáng
+      - cho em hỏi Hải sản Phú Quốc tươi ngon
+      - Hải sản Sa Pa tươi ngon
+      - làm ơn Ăn chay Huế
+      - ad ơi Quán ăn ngon ở Hội An
+      - mình hỏi Ăn vặt Huế
+      - làm ơn Lẩu Hà Nội ăn ở đâu
+      - làm ơn Bánh xèo Hà Nội
+      - mình hỏi Ẩm thực Hội An món gì đặc sản
+      - làm ơn Đặc sản Sa Pa phải thử
+      - cho em hỏi Đặc sản Đà Nẵng phải thử
+      - cho tôi hỏi Ẩm thực Hà Nội món gì đặc sản
+      - cho tôi hỏi Mũi Né có quán nào nổi tiếng
+      - làm ơn Ăn chay Huế
+      - cho em hỏi Cafe view đẹp Nha Trang
+      - Chè Hội An ngon
+      - làm ơn Cafe view đẹp Nha Trang
+      - ad ơi Ăn vặt Hội An
+      - làm ơn Cafe view đẹp Hà Nội
+      - mình hỏi Hải sản Phú Quốc tươi ngon
+      - cho em hỏi Hải sản Sa Pa giá rẻ
+      - cho tôi hỏi Hải sản Sa Pa giá rẻ
+      - cho tôi hỏi Đặc sản Đà Nẵng phải thử
+      - cho em hỏi Phú Quốc có gì ngon
+      - cho em hỏi Ẩm thực Hà Nội món gì đặc sản
+      - làm ơn Mũi Né ăn gì cho bữa sáng
+      - cho em hỏi Bánh xèo Phú Quốc
+      - Quán ăn ngon ở Hội An
+      - mình hỏi Mì quảng Hà Nội
+      - ad ơi Lẩu Hà Nội ăn ở đâu
+      - Mũi Né ăn gì cho bữa sáng
+      - ad ơi Cafe view đẹp Nha Trang
+      - cho tôi hỏi Cafe view đẹp Hội An
+      - Hải sản Đà Lạt tươi ngon
+      - mình hỏi Mũi Né ăn gì cho bữa sáng
+      - mình hỏi Buffet Hội An giá rẻ
+      - ad ơi Chè Hội An ngon
+      - làm ơn Buffet Hội An giá rẻ
+      - mình hỏi Quán ăn ngon ở Hội An
+      - cho em hỏi Buffet Hội An giá rẻ
+      - cho tôi hỏi Đà Nẵng ăn gì cho bữa sáng
+      - cho tôi hỏi Chợ Mũi Né ẩm thực
+      - làm ơn Ẩm thực Hà Nội món gì đặc sản
+      - Bánh xèo Hà Nội
+      - làm ơn Hải sản Hà Nội tươi ngon
+      - Mũi Né có quán nào nổi tiếng
+      - cho em hỏi Quán ăn ngon ở Hội An
+      - cho em hỏi Cafe view đẹp Nha Trang
+      - cho em hỏi Hải sản Đà Lạt tươi ngon
+      - cho tôi hỏi Ăn vặt Hội An
+      - làm ơn Hải sản Đà Lạt tươi ngon
+      - làm ơn Hải sản Sa Pa giá rẻ
+      - mình hỏi Hải sản Đà Lạt tươi ngon
+      - làm ơn Mì quảng Hà Nội
+      - cho em hỏi Buffet Nha Trang giá rẻ
+      - cho em hỏi Hải sản Sa Pa tươi ngon
+      - cho tôi hỏi Bánh xèo Phú Quốc
+      - Nha Trang có quán nào nổi tiếng
+      - ad ơi Chợ Mũi Né ẩm thực
+      - làm ơn Đặc sản Đà Nẵng phải thử
+      - cho em hỏi Chợ Mũi Né ẩm thực
+      - Hải sản Sa Pa tươi ngon
+      - ad ơi Ở Hà Nội ăn gì ngon
+      - Món Việt Nha Trang ngon
+      - làm ơn Nhà hàng Vũng Tàu sang trọng
+      - Nha Trang ăn gì cho bữa sáng
+      - ad ơi Hải sản Sa Pa giá rẻ
+      - ad ơi Mũi Né có quán nào nổi tiếng
+      - ad ơi Cafe view đẹp Hà Nội
+      - làm ơn Chè Hội An ngon
+      - làm ơn Ăn vặt Hội An
+      - cho em hỏi Cafe view đẹp Hội An
+      - cho tôi hỏi Phú Quốc có gì ngon
+      - cho em hỏi Hải sản Hà Nội tươi ngon
+      - mình hỏi Nhà hàng Vũng Tàu sang trọng
+      - ad ơi Phú Quốc có gì ngon
+      - làm ơn Phú Quốc có gì ngon
+      - cho tôi hỏi Chè Hội An ngon
+      - Đặc sản Đà Nẵng phải thử
+      - làm ơn Hải sản Sa Pa giá rẻ
+      - mình hỏi Cafe view đẹp Nha Trang
+      - mình hỏi Ăn chay Huế
+      - mình hỏi Hải sản Đà Lạt tươi ngon
+      - cho em hỏi Hải sản Hà Nội tươi ngon
+      - Phú Quốc có gì ngon
+      - cho em hỏi Mũi Né ăn gì cho bữa sáng
+      - cho em hỏi Ăn vặt Huế
+      - ad ơi Hải sản Sa Pa giá rẻ
+      - Cafe view đẹp Hà Nội
+      - làm ơn Món Việt Nha Trang ngon
+      - mình hỏi Sa Pa ăn gì cho bữa sáng
+      - cho tôi hỏi Bánh xèo Phú Quốc
+      - làm ơn Buffet Nha Trang giá rẻ
+      - ad ơi Chợ Mũi Né ẩm thực
+      - cho tôi hỏi Đà Nẵng ăn gì cho bữa sáng
+      - mình hỏi Hải sản Sa Pa tươi ngon
+      - mình hỏi Phú Quốc có gì ngon
+      - làm ơn Cafe view đẹp Hội An
+      - Món Việt Nha Trang ngon
+      - Nha Trang ăn gì cho bữa sáng
+      - ad ơi Đặc sản Sa Pa phải thử
+      - cho tôi hỏi Ẩm thực Hà Nội món gì đặc sản
+      - mình hỏi Hải sản Sa Pa giá rẻ
+      - làm ơn Đà Nẵng ăn gì cho bữa sáng
+      - ad ơi Quán ăn ngon ở Nha Trang
+      - cho em hỏi Hải sản Sa Pa giá rẻ
+      - mình hỏi Nha Trang có quán nào nổi tiếng
+      - cho em hỏi Hải sản Đà Lạt tươi ngon
+      - ad ơi Sa Pa ăn gì cho bữa sáng
+      - cho tôi hỏi Quán ăn ngon ở Nha Trang
+      - mình hỏi Quán ăn ngon ở Nha Trang
+      - làm ơn Ẩm thực Hà Nội món gì đặc sản
+      - làm ơn Hải sản Sa Pa giá rẻ
+      - cho em hỏi Hải sản Phú Quốc tươi ngon
+      - ad ơi Món Việt Nha Trang ngon
+      - Đặc sản Sa Pa phải thử
+      - ad ơi Buffet Hội An giá rẻ
+      - cho tôi hỏi Mũi Né ăn gì cho bữa sáng
+      - ad ơi Hải sản Sa Pa tươi ngon
+  - intent: search_price
+    examples: |
+      - Vé máy bay Hội An khứ hồi
+      - Chi phí ăn uống ở Đà Lạt
+      - ad ơi Kinh phí đi Đà Nẵng tiết kiệm
+      - cho em hỏi Kinh phí đi Đà Nẵng tiết kiệm
+      - cho em hỏi Giá vé tham quan Sa Pa
+      - Vé máy bay Hội An khứ hồi
+      - Chi phí du lịch Huế 3 ngày
+      - cho tôi hỏi Chi phí thuê xe Hà Nội
+      - làm ơn Kinh phí đi Huế tiết kiệm
+      - ad ơi Chi phí du lịch Huế 3 ngày
+      - cho tôi hỏi Giá vé tham quan Sa Pa
+      - cho tôi hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - làm ơn Giá vé Huế cho trẻ em
+      - cho em hỏi Kinh phí đi Sa Pa tiết kiệm
+      - ad ơi Chi phí du lịch Hà Nội 3 ngày
+      - cho em hỏi Kinh phí đi Huế tiết kiệm
+      - ad ơi Giá vé Huế cho trẻ em
+      - ad ơi Chi phí thuê xe Vũng Tàu
+      - cho tôi hỏi Kinh phí đi Huế tiết kiệm
+      - làm ơn Giá vé tham quan Sa Pa
+      - cho em hỏi Giá vé Huế cho trẻ em
+      - cho em hỏi Kinh phí đi Đà Nẵng tiết kiệm
+      - làm ơn Chi phí đi Vũng Tàu tự túc
+      - Chi phí thuê xe Vũng Tàu
+      - cho em hỏi Vé máy bay Hội An khứ hồi
+      - làm ơn Chi phí ăn uống ở Đà Lạt
+      - Kinh phí đi Huế tiết kiệm
+      - làm ơn Vé máy bay Hội An khứ hồi
+      - cho em hỏi Chi phí du lịch Nha Trang 3 ngày
+      - làm ơn Vé máy bay Hội An khứ hồi
+      - mình hỏi Chi phí Mũi Né 4 ngày 3 đêm
+      - mình hỏi Kinh phí đi Huế tiết kiệm
+      - mình hỏi Khuyến mãi tour Phú Quốc
+      - làm ơn Chi phí thuê xe Hà Nội
+      - cho tôi hỏi Chi phí thuê xe Hà Nội
+      - cho tôi hỏi Chi phí đi Vũng Tàu tự túc
+      - ad ơi Chi phí Mũi Né 4 ngày 3 đêm
+      - cho em hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - cho em hỏi Chi phí thuê xe Hội An
+      - làm ơn Khuyến mãi tour Phú Quốc
+      - Chi phí du lịch Đà Lạt 3 ngày
+      - mình hỏi Chi phí thuê xe Vũng Tàu
+      - ad ơi Chi phí Mũi Né 4 ngày 3 đêm
+      - ad ơi Kinh phí đi Đà Nẵng tiết kiệm
+      - ad ơi Khuyến mãi tour Phú Quốc
+      - làm ơn Chi phí thuê xe Vũng Tàu
+      - cho tôi hỏi Chi phí Mũi Né 4 ngày 3 đêm
+      - làm ơn Chi phí đi Vũng Tàu tự túc
+      - cho em hỏi Vé máy bay Hội An khứ hồi
+      - mình hỏi Chi phí đi Vũng Tàu tự túc
+      - ad ơi Chi phí thuê xe Hội An
+      - mình hỏi Chi phí thuê xe Hội An
+      - cho tôi hỏi Kinh phí đi Huế tiết kiệm
+      - Khuyến mãi tour Phú Quốc
+      - cho tôi hỏi Chi phí ăn uống ở Đà Lạt
+      - ad ơi Chi phí ăn uống ở Đà Lạt
+      - cho em hỏi Giá tour Phú Quốc bao nhiêu
+      - Chi phí Mũi Né 4 ngày 3 đêm
+      - làm ơn Kinh phí đi Vũng Tàu tiết kiệm
+      - làm ơn Tiền ăn ở Hội An 1 ngày
+      - mình hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - cho tôi hỏi Giá vé Huế cho trẻ em
+      - làm ơn Chi phí du lịch Huế 3 ngày
+      - cho em hỏi Chi phí đi Vũng Tàu tự túc
+      - Giá vé tham quan Sa Pa
+      - ad ơi Khuyến mãi tour Phú Quốc
+      - cho tôi hỏi Giá tour Phú Quốc bao nhiêu
+      - mình hỏi Chi phí du lịch Hà Nội 3 ngày
+      - cho tôi hỏi Chi phí du lịch Đà Lạt 3 ngày
+      - cho em hỏi Chi phí du lịch Hà Nội 3 ngày
+      - ad ơi Kinh phí đi Sa Pa tiết kiệm
+      - cho em hỏi Chi phí du lịch Đà Lạt 3 ngày
+      - ad ơi Giá vé tham quan Sa Pa
+      - làm ơn Kinh phí đi Sa Pa tiết kiệm
+      - cho tôi hỏi Tiền ăn ở Hà Nội 1 ngày
+      - Giá vé Huế cho trẻ em
+      - mình hỏi Chi phí ăn uống ở Đà Lạt
+      - Chi phí đi Vũng Tàu tự túc
+      - ad ơi Chi phí du lịch Huế 3 ngày
+      - làm ơn Giá vé Huế cho trẻ em
+      - cho em hỏi Chi phí Mũi Né 4 ngày 3 đêm
+      - mình hỏi Chi phí đi Vũng Tàu tự túc
+      - cho tôi hỏi Chi phí Mũi Né 4 ngày 3 đêm
+      - ad ơi Giá vé tham quan Sa Pa
+      - cho tôi hỏi Kinh phí đi Sa Pa tiết kiệm
+      - cho tôi hỏi Tiền ăn ở Hà Nội 1 ngày
+      - Tiền ăn ở Hội An 1 ngày
+      - ad ơi Chi phí đi Vũng Tàu tự túc
+      - ad ơi Chi phí Mũi Né 4 ngày 3 đêm
+      - mình hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - Chi phí thuê xe Vũng Tàu
+      - mình hỏi Kinh phí đi Sa Pa tiết kiệm
+      - làm ơn Kinh phí đi Đà Nẵng tiết kiệm
+      - làm ơn Giá vé tham quan Sa Pa
+      - làm ơn Chi phí du lịch Hà Nội 3 ngày
+      - ad ơi Chi phí thuê xe Vũng Tàu
+      - ad ơi Chi phí du lịch Đà Lạt 3 ngày
+      - cho tôi hỏi Chi phí thuê xe Hội An
+      - cho tôi hỏi Vé máy bay Hội An khứ hồi
+      - làm ơn Chi phí du lịch Nha Trang 3 ngày
+      - mình hỏi Giá vé Huế cho trẻ em
+      - cho em hỏi Tiền ăn ở Hà Nội 1 ngày
+      - mình hỏi Tiền ăn ở Hà Nội 1 ngày
+      - mình hỏi Kinh phí đi Huế tiết kiệm
+      - cho tôi hỏi Chi phí thuê xe Vũng Tàu
+      - Kinh phí đi Đà Nẵng tiết kiệm
+      - Chi phí đi Vũng Tàu tự túc
+      - cho tôi hỏi Vé máy bay Hội An khứ hồi
+      - cho tôi hỏi Chi phí du lịch Hà Nội 3 ngày
+      - Tiền ăn ở Hội An 1 ngày
+      - cho tôi hỏi Giá vé tham quan Sa Pa
+      - Tiền ăn ở Hà Nội 1 ngày
+      - cho tôi hỏi Chi phí thuê xe Hội An
+      - cho tôi hỏi Tiền ăn ở Hội An 1 ngày
+      - Kinh phí đi Huế tiết kiệm
+      - Giá tour Phú Quốc bao nhiêu
+      - làm ơn Khuyến mãi tour Phú Quốc
+      - cho tôi hỏi Kinh phí đi Sa Pa tiết kiệm
+      - mình hỏi Chi phí ăn uống ở Đà Lạt
+      - cho em hỏi Tiền ăn ở Hội An 1 ngày
+      - Khuyến mãi tour Phú Quốc
+      - cho tôi hỏi Vé máy bay Hội An khứ hồi
+      - mình hỏi Khuyến mãi tour Phú Quốc
+      - cho em hỏi Chi phí du lịch Huế 3 ngày
+      - mình hỏi Kinh phí đi Đà Nẵng tiết kiệm
+      - ad ơi Kinh phí đi Sa Pa tiết kiệm
+      - cho em hỏi Chi phí thuê xe Hà Nội
+      - mình hỏi Chi phí thuê xe Vũng Tàu
+      - mình hỏi Chi phí thuê xe Vũng Tàu
+      - cho em hỏi Khuyến mãi tour Phú Quốc
+      - Tiền ăn ở Hội An 1 ngày
+      - làm ơn Chi phí du lịch Hà Nội 3 ngày
+      - làm ơn Kinh phí đi Vũng Tàu tiết kiệm
+      - cho tôi hỏi Vé máy bay Hội An khứ hồi
+      - ad ơi Kinh phí đi Huế tiết kiệm
+      - cho tôi hỏi Kinh phí đi Sa Pa tiết kiệm
+      - Chi phí du lịch Hà Nội 3 ngày
+      - mình hỏi Chi phí thuê xe Vũng Tàu
+      - mình hỏi Tiền ăn ở Hội An 1 ngày
+      - cho tôi hỏi Chi phí ăn uống ở Đà Lạt
+      - làm ơn Khuyến mãi tour Phú Quốc
+      - mình hỏi Chi phí thuê xe Hà Nội
+      - cho tôi hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - ad ơi Giá tour Phú Quốc bao nhiêu
+      - cho em hỏi Chi phí du lịch Hà Nội 3 ngày
+      - mình hỏi Chi phí thuê xe Hội An
+      - cho tôi hỏi Giá tour Phú Quốc bao nhiêu
+      - làm ơn Kinh phí đi Huế tiết kiệm
+      - Giá vé tham quan Sa Pa
+      - ad ơi Vé máy bay Hội An khứ hồi
+      - làm ơn Chi phí du lịch Hà Nội 3 ngày
+      - ad ơi Chi phí du lịch Nha Trang 3 ngày
+      - Giá vé tham quan Sa Pa
+      - cho em hỏi Chi phí du lịch Huế 3 ngày
+      - ad ơi Giá vé Huế cho trẻ em
+      - ad ơi Kinh phí đi Huế tiết kiệm
+      - cho em hỏi Chi phí thuê xe Hội An
+      - làm ơn Chi phí du lịch Đà Lạt 3 ngày
+      - ad ơi Vé máy bay Hội An khứ hồi
+      - cho tôi hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - cho em hỏi Kinh phí đi Huế tiết kiệm
+      - làm ơn Kinh phí đi Vũng Tàu tiết kiệm
+      - làm ơn Chi phí thuê xe Vũng Tàu
+      - Chi phí thuê xe Hà Nội
+      - mình hỏi Kinh phí đi Sa Pa tiết kiệm
+      - làm ơn Chi phí Mũi Né 4 ngày 3 đêm
+      - cho em hỏi Vé máy bay Hội An khứ hồi
+      - Kinh phí đi Sa Pa tiết kiệm
+      - Giá vé tham quan Sa Pa
+      - cho tôi hỏi Giá vé Huế cho trẻ em
+      - làm ơn Chi phí thuê xe Hội An
+      - mình hỏi Chi phí thuê xe Hội An
+      - làm ơn Giá tour Phú Quốc bao nhiêu
+      - ad ơi Chi phí đi Vũng Tàu tự túc
+      - mình hỏi Chi phí du lịch Huế 3 ngày
+      - cho tôi hỏi Kinh phí đi Đà Nẵng tiết kiệm
+      - cho tôi hỏi Khuyến mãi tour Phú Quốc
+      - mình hỏi Vé máy bay Hội An khứ hồi
+      - cho em hỏi Giá vé Huế cho trẻ em
+      - cho tôi hỏi Kinh phí đi Vũng Tàu tiết kiệm
+      - cho tôi hỏi Kinh phí đi Huế tiết kiệm
+      - cho em hỏi Chi phí thuê xe Vũng Tàu
+      - cho tôi hỏi Chi phí du lịch Nha Trang 3 ngày
+      - làm ơn Chi phí du lịch Đà Lạt 3 ngày
+      - cho em hỏi Giá tour Phú Quốc bao nhiêu
+      - mình hỏi Chi phí du lịch Đà Lạt 3 ngày
+      - ad ơi Tiền ăn ở Hội An 1 ngày
+      - Chi phí du lịch Nha Trang 3 ngày
+  - intent: search_travel
+    examples: |
+      - ad ơi Tour Huế cho cặp đôi
+      - Tour Đà Nẵng team building
+      - mình hỏi Tour Vũng Tàu 5 ngày 4 đêm
+      - cho em hỏi Du lịch Đà Lạt tự túc
+      - làm ơn Tour Phú Quốc trọn gói bao gồm
+      - Booking tour Huế giá tốt
+      - cho tôi hỏi Du lịch Đà Lạt tự túc
+      - làm ơn Tour Đà Nẵng 3 ngày 2 đêm
+      - cho tôi hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - làm ơn Booking tour Huế giá tốt
+      - Tour Đà Nẵng nghỉ dưỡng
+      - ad ơi Tour Phú Quốc giá học sinh
+      - cho tôi hỏi Tour Phú Quốc trọn gói bao gồm
+      - cho em hỏi Tour Vũng Tàu cho cặp đôi
+      - ad ơi Tour Vũng Tàu giá học sinh
+      - làm ơn Tour Phú Quốc cuối tuần
+      - cho tôi hỏi Lịch trình tour Nha Trang
+      - Du lịch Nha Trang mùa đông
+      - làm ơn Tour Phú Quốc 4 ngày 3 đêm
+      - ad ơi Tour Sa Pa VIP 5 sao
+      - làm ơn Du lịch Đà Nẵng tự túc
+      - làm ơn Tour Sa Pa trọn gói bao gồm
+      - ad ơi Booking tour Huế giá tốt
+      - làm ơn Tour du lịch Đà Lạt giá rẻ
+      - cho tôi hỏi Tour Huế team building
+      - Tour Vũng Tàu 3 ngày 2 đêm
+      - làm ơn Tour Vũng Tàu giá học sinh
+      - ad ơi Booking tour Huế giá tốt
+      - ad ơi Tour Nha Trang khuyến mãi
+      - mình hỏi Tour Đà Nẵng cho người già
+      - cho tôi hỏi Tour Hà Nội cho gia đình
+      - ad ơi Tour Vũng Tàu giá học sinh
+      - mình hỏi Tour Vũng Tàu giá học sinh
+      - ad ơi Tour Hội An nghỉ dưỡng
+      - làm ơn Tour Vũng Tàu giá học sinh
+      - ad ơi Tour Nha Trang cuối tuần
+      - làm ơn Du lịch Đà Lạt tự túc
+      - Booking tour Huế giá tốt
+      - cho tôi hỏi Combo Phú Quốc trọn gói
+      - làm ơn Tour du lịch Đà Lạt giá rẻ
+      - làm ơn Tour Phú Quốc trọn gói bao gồm
+      - Tour Vũng Tàu cho cặp đôi
+      - ad ơi Tour Phú Quốc giá học sinh
+      - ad ơi Tour Vũng Tàu 3 ngày 2 đêm
+      - mình hỏi Tour Nha Trang 4 ngày 3 đêm
+      - cho em hỏi Tour Huế cho cặp đôi
+      - cho tôi hỏi Tour Sa Pa VIP 5 sao
+      - làm ơn Du lịch Đà Lạt tự túc
+      - làm ơn Tour Huế team building
+      - Tour Sa Pa trọn gói bao gồm
+      - mình hỏi Tour Nha Trang 5 ngày 4 đêm
+      - mình hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - cho tôi hỏi Du lịch Đà Nẵng tự túc
+      - làm ơn Tour Đà Nẵng cho người già
+      - làm ơn Tour Nha Trang 5 ngày 4 đêm
+      - Tour Nha Trang cuối tuần
+      - cho em hỏi Tour du lịch Đà Lạt giá rẻ
+      - ad ơi Tour Đà Nẵng 3 ngày 2 đêm
+      - làm ơn Du lịch Đà Lạt tự túc
+      - cho em hỏi Tour Phú Quốc cuối tuần
+      - Tour Vũng Tàu 3 ngày 2 đêm
+      - cho tôi hỏi Tour Nha Trang cuối tuần
+      - Booking tour Nha Trang giá tốt
+      - ad ơi Combo Huế trọn gói
+      - cho em hỏi Du lịch Nha Trang mùa đông
+      - mình hỏi Tour Huế khuyến mãi
+      - mình hỏi Lịch trình tour Nha Trang
+      - Tour Hội An team building
+      - mình hỏi Tour Hội An team building
+      - làm ơn Tour Hội An nghỉ dưỡng
+      - Tour Nha Trang khuyến mãi
+      - cho tôi hỏi Tour du lịch Đà Nẵng giá rẻ
+      - mình hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - ad ơi Tour Sa Pa cho người già
+      - ad ơi Lịch trình tour Nha Trang
+      - cho em hỏi Tour Nha Trang cuối tuần
+      - Tour du lịch Đà Nẵng giá rẻ
+      - mình hỏi Du lịch Đà Nẵng tự túc
+      - cho em hỏi Combo Phú Quốc trọn gói
+      - làm ơn Lịch trình tour Nha Trang
+      - ad ơi Tour Phú Quốc cho cặp đôi
+      - làm ơn Du lịch Hà Nội tự túc
+      - ad ơi Tour Phú Quốc trọn gói bao gồm
+      - mình hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - làm ơn Tour Huế cho cặp đôi
+      - làm ơn Tour Sa Pa VIP 5 sao
+      - ad ơi Tour Đà Nẵng 4 ngày 3 đêm
+      - làm ơn Tour Nha Trang 4 ngày 3 đêm
+      - Tour Huế team building
+      - cho em hỏi Tour Đà Nẵng cho người già
+      - mình hỏi Du lịch Đà Nẵng tự túc
+      - cho tôi hỏi Tour Vũng Tàu 5 ngày 4 đêm
+      - cho em hỏi Tour Vũng Tàu 5 ngày 4 đêm
+      - mình hỏi Tour Phú Quốc cuối tuần
+      - làm ơn Tour Đà Nẵng team building
+      - Tour du lịch Đà Lạt giá rẻ
+      - ad ơi Du lịch Hà Nội tự túc
+      - làm ơn Tour Sa Pa trọn gói bao gồm
+      - Tour Phú Quốc giá học sinh
+      - Tour Nha Trang 5 ngày 4 đêm
+      - ad ơi Kỳ nghỉ Hà Nội
+      - làm ơn Tour Hội An team building
+      - ad ơi Tour Sa Pa VIP 5 sao
+      - cho tôi hỏi Tour Hà Nội cho gia đình
+      - cho tôi hỏi Tour Huế team building
+      - ad ơi Tour Phú Quốc giá học sinh
+      - cho tôi hỏi Tour Sa Pa VIP 5 sao
+      - Combo Phú Quốc trọn gói
+      - cho em hỏi Booking tour Nha Trang giá tốt
+      - mình hỏi Tour du lịch Đà Lạt giá rẻ
+      - làm ơn Du lịch Nha Trang mùa đông
+      - cho em hỏi Du lịch Đà Nẵng tự túc
+      - cho em hỏi Combo Huế trọn gói
+      - ad ơi Tour Nha Trang cuối tuần
+      - làm ơn Tour Huế team building
+      - cho em hỏi Tour Sa Pa VIP 5 sao
+      - cho tôi hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - làm ơn Tour du lịch Đà Nẵng giá rẻ
+      - cho tôi hỏi Tour Sa Pa trọn gói bao gồm
+      - mình hỏi Tour Phú Quốc cho cặp đôi
+      - mình hỏi Tour Vũng Tàu giá học sinh
+      - cho tôi hỏi Du lịch Đà Nẵng tự túc
+      - mình hỏi Du lịch Hà Nội tự túc
+      - cho em hỏi Tour Huế team building
+      - cho tôi hỏi Tour du lịch Đà Nẵng giá rẻ
+      - ad ơi Tour Hội An team building
+      - ad ơi Tour Vũng Tàu cho cặp đôi
+      - Tour Nha Trang cuối tuần
+      - cho em hỏi Tour Nha Trang 5 ngày 4 đêm
+      - làm ơn Du lịch Đà Nẵng tự túc
+      - cho em hỏi Tour Đà Nẵng cho người già
+      - mình hỏi Tour Sa Pa trọn gói bao gồm
+      - cho em hỏi Combo Huế trọn gói
+      - ad ơi Tour du lịch Đà Lạt giá rẻ
+      - cho tôi hỏi Lịch trình tour Nha Trang
+      - làm ơn Tour Hội An team building
+      - ad ơi Tour Phú Quốc cuối tuần
+      - cho em hỏi Tour Nha Trang 4 ngày 3 đêm
+      - Tour Phú Quốc giá học sinh
+      - Tour Huế cho cặp đôi
+      - mình hỏi Tour Nha Trang cuối tuần
+      - cho tôi hỏi Tour Huế team building
+      - ad ơi Tour Hà Nội cho gia đình
+      - cho em hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - Tour Vũng Tàu 5 ngày 4 đêm
+      - làm ơn Tour Đà Lạt khởi hành từ Hà Nội
+      - cho em hỏi Tour Vũng Tàu 3 ngày 2 đêm
+      - ad ơi Kỳ nghỉ Hà Nội
+      - Tour Nha Trang khuyến mãi
+      - ad ơi Tour Phú Quốc 4 ngày 3 đêm
+      - mình hỏi Tour Phú Quốc cho cặp đôi
+      - mình hỏi Tour Đà Nẵng team building
+      - cho em hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - Tour Nha Trang 4 ngày 3 đêm
+      - mình hỏi Tour Nha Trang khuyến mãi
+      - Du lịch Đà Lạt tự túc
+      - cho em hỏi Tour Đà Nẵng cho người già
+      - làm ơn Tour Vũng Tàu 3 ngày 2 đêm
+      - ad ơi Tour Nha Trang 4 ngày 3 đêm
+      - mình hỏi Tour Hà Nội cho gia đình
+      - ad ơi Booking tour Nha Trang giá tốt
+      - Kỳ nghỉ Hà Nội
+      - làm ơn Tour Huế khuyến mãi
+      - làm ơn Tour Huế cho cặp đôi
+      - mình hỏi Tour Nha Trang 5 ngày 4 đêm
+      - cho tôi hỏi Tour Phú Quốc cho cặp đôi
+      - cho em hỏi Tour Đà Nẵng nghỉ dưỡng
+      - làm ơn Tour Đà Nẵng nghỉ dưỡng
+      - cho tôi hỏi Tour Huế cho cặp đôi
+      - cho em hỏi Tour Hội An team building
+      - cho em hỏi Tour Phú Quốc trọn gói bao gồm
+      - cho tôi hỏi Booking tour Huế giá tốt
+      - làm ơn Tour Huế team building
+      - cho em hỏi Tour Phú Quốc giá học sinh
+      - ad ơi Du lịch Đà Nẵng tự túc
+      - ad ơi Tour Phú Quốc cho cặp đôi
+      - cho tôi hỏi Tour Vũng Tàu giá học sinh
+      - cho em hỏi Tour Hà Nội cho gia đình
+      - Tour Sa Pa cho người già
+      - cho tôi hỏi Lịch trình tour Nha Trang
+      - Tour Huế khuyến mãi
+      - cho tôi hỏi Tour Đà Nẵng nghỉ dưỡng
+      - mình hỏi Tour Phú Quốc trọn gói bao gồm
+      - Tour Vũng Tàu 5 ngày 4 đêm
+      - Tour Nha Trang 5 ngày 4 đêm
+      - cho em hỏi Du lịch Hà Nội tự túc
+      - mình hỏi Tour Huế team building
+      - cho em hỏi Tour Sa Pa VIP 5 sao
+      - cho em hỏi Tour Sa Pa cho người già
+      - cho em hỏi Combo Phú Quốc trọn gói
+      - cho tôi hỏi Tour Sa Pa VIP 5 sao
+      - mình hỏi Tour Huế khuyến mãi
+      - ad ơi Tour Đà Nẵng 3 ngày 2 đêm
+      - Tour Huế team building
+      - cho em hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - cho em hỏi Tour Nha Trang 5 ngày 4 đêm
+      - Tour Hội An nghỉ dưỡng
+      - làm ơn Tour Vũng Tàu 5 ngày 4 đêm
+      - làm ơn Tour Sa Pa cho người già
+      - làm ơn Tour Nha Trang 4 ngày 3 đêm
+      - làm ơn Combo Phú Quốc trọn gói
+      - mình hỏi Tour du lịch Đà Nẵng giá rẻ
+      - ad ơi Tour Sa Pa VIP 5 sao
+      - Combo Phú Quốc trọn gói
+      - làm ơn Tour Đà Nẵng cho người già
+      - ad ơi Tour Nha Trang cuối tuần
+      - Tour Đà Nẵng nghỉ dưỡng
+      - mình hỏi Tour Nha Trang 4 ngày 3 đêm
+      - ad ơi Tour Vũng Tàu cho cặp đôi
+      - cho tôi hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - cho em hỏi Lịch trình tour Nha Trang
+      - ad ơi Tour du lịch Đà Nẵng giá rẻ
+      - cho tôi hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - cho tôi hỏi Tour Đà Nẵng team building
+      - ad ơi Tour Huế khuyến mãi
+      - ad ơi Tour Sa Pa trọn gói bao gồm
+      - mình hỏi Tour Sa Pa VIP 5 sao
+      - cho em hỏi Tour Hội An team building
+      - làm ơn Tour du lịch Đà Nẵng giá rẻ
+      - cho tôi hỏi Combo Huế trọn gói
+      - mình hỏi Tour Đà Lạt khởi hành từ Hà Nội
+      - cho em hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - ad ơi Tour Vũng Tàu 5 ngày 4 đêm
+      - cho em hỏi Tour du lịch Đà Lạt giá rẻ
+      - cho em hỏi Tour Vũng Tàu giá học sinh
+      - cho tôi hỏi Tour Huế cho cặp đôi
+      - Tour Phú Quốc 4 ngày 3 đêm
+      - làm ơn Tour Nha Trang cuối tuần
+      - làm ơn Kỳ nghỉ Hà Nội
+      - cho em hỏi Kỳ nghỉ Hà Nội
+      - làm ơn Tour Sa Pa cho người già
+      - cho em hỏi Tour Vũng Tàu giá học sinh
+      - làm ơn Tour Đà Nẵng 4 ngày 3 đêm
+      - cho tôi hỏi Combo Huế trọn gói
+      - cho tôi hỏi Tour Huế cho cặp đôi
+      - cho em hỏi Booking tour Huế giá tốt
+      - Tour Đà Nẵng team building
+      - Tour Đà Nẵng cho người già
+      - làm ơn Tour Sa Pa trọn gói bao gồm
+      - cho tôi hỏi Tour Vũng Tàu cho cặp đôi
+      - cho em hỏi Tour Huế khuyến mãi
+      - cho em hỏi Combo Huế trọn gói
+      - cho tôi hỏi Tour Phú Quốc trọn gói bao gồm
+      - ad ơi Combo Huế trọn gói
+      - cho tôi hỏi Tour Sa Pa cho người già
+      - cho em hỏi Tour Phú Quốc trọn gói bao gồm
+      - cho tôi hỏi Lịch trình tour Nha Trang
+      - cho em hỏi Tour Hội An nghỉ dưỡng
+      - cho tôi hỏi Tour du lịch Đà Lạt giá rẻ
+      - Tour Nha Trang 4 ngày 3 đêm
+      - cho em hỏi Tour Phú Quốc 4 ngày 3 đêm
+      - ad ơi Tour Đà Nẵng nghỉ dưỡng
+      - làm ơn Booking tour Nha Trang giá tốt
+      - mình hỏi Du lịch Nha Trang mùa đông
+      - mình hỏi Combo Huế trọn gói
+      - làm ơn Booking tour Nha Trang giá tốt
+      - cho tôi hỏi Tour Phú Quốc trọn gói bao gồm
+      - ad ơi Tour Đà Lạt khởi hành từ Hà Nội
+      - cho tôi hỏi Tour Đà Nẵng team building
+      - Tour du lịch Đà Nẵng giá rẻ
+      - ad ơi Combo Phú Quốc trọn gói
+      - mình hỏi Tour Đà Nẵng 3 ngày 2 đêm
+      - cho tôi hỏi Tour Nha Trang 4 ngày 3 đêm
+      - cho tôi hỏi Du lịch Nha Trang mùa đông
+      - ad ơi Tour Sa Pa trọn gói bao gồm
+      - ad ơi Du lịch Đà Nẵng tự túc
+      - làm ơn Tour Nha Trang khuyến mãi
+      - cho tôi hỏi Tour Sa Pa cho người già
+      - Tour Huế khuyến mãi
+      - Tour Vũng Tàu giá học sinh
+      - cho em hỏi Tour du lịch Đà Nẵng giá rẻ
+      - cho em hỏi Du lịch Đà Lạt tự túc
+      - mình hỏi Tour Huế team building
+      - cho tôi hỏi Tour Sa Pa trọn gói bao gồm
+      - cho tôi hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - cho em hỏi Tour Sa Pa trọn gói bao gồm
+      - mình hỏi Tour Huế cho cặp đôi
+      - làm ơn Kỳ nghỉ Hà Nội
+      - ad ơi Du lịch Nha Trang mùa đông
+      - mình hỏi Tour Phú Quốc cuối tuần
+      - cho tôi hỏi Combo Phú Quốc trọn gói
+      - cho em hỏi Du lịch Hà Nội tự túc
+      - Du lịch Hà Nội tự túc
+      - mình hỏi Kỳ nghỉ Hà Nội
+      - cho tôi hỏi Tour Phú Quốc cuối tuần
+      - ad ơi Tour du lịch Đà Lạt giá rẻ
+      - cho tôi hỏi Booking tour Huế giá tốt
+      - làm ơn Combo Phú Quốc trọn gói
+      - ad ơi Du lịch Đà Lạt tự túc
+      - cho tôi hỏi Tour Sa Pa cho người già
+      - làm ơn Tour Hội An nghỉ dưỡng
+      - cho em hỏi Tour Đà Nẵng 3 ngày 2 đêm
+      - cho em hỏi Du lịch Đà Lạt tự túc
+      - làm ơn Tour Vũng Tàu cho cặp đôi
+      - cho em hỏi Tour Nha Trang khuyến mãi
+      - cho tôi hỏi Tour Đà Nẵng 3 ngày 2 đêm
+      - mình hỏi Booking tour Huế giá tốt
+      - Tour Sa Pa VIP 5 sao
+      - mình hỏi Tour Sa Pa trọn gói bao gồm
+      - cho tôi hỏi Tour Hội An nghỉ dưỡng
+      - cho tôi hỏi Du lịch Nha Trang mùa đông
+      - làm ơn Tour Đà Nẵng team building
+      - làm ơn Tour Phú Quốc giá học sinh
+      - cho em hỏi Tour Nha Trang 4 ngày 3 đêm
+      - làm ơn Tour Vũng Tàu giá học sinh
+      - Tour Phú Quốc cuối tuần
+      - cho em hỏi Tour Đà Nẵng team building
+      - cho tôi hỏi Tour Vũng Tàu cho cặp đôi
+      - cho em hỏi Tour Vũng Tàu giá học sinh
+      - Tour Huế team building
+      - mình hỏi Tour Vũng Tàu cho cặp đôi
+      - làm ơn Tour Phú Quốc trọn gói bao gồm
+      - cho tôi hỏi Tour Sa Pa VIP 5 sao
+      - mình hỏi Tour Hội An nghỉ dưỡng
+      - cho tôi hỏi Tour Phú Quốc giá học sinh
+      - ad ơi Tour Phú Quốc 4 ngày 3 đêm
+      - Tour Phú Quốc trọn gói bao gồm
+      - làm ơn Tour Sa Pa VIP 5 sao
+      - cho tôi hỏi Tour Nha Trang khuyến mãi
+      - cho em hỏi Du lịch Đà Lạt tự túc
+      - mình hỏi Tour Sa Pa cho người già
+      - ad ơi Tour Huế team building
+      - Booking tour Nha Trang giá tốt
+      - mình hỏi Du lịch Đà Lạt tự túc
+      - ad ơi Du lịch Nha Trang mùa đông
+      - Combo Huế trọn gói
+      - Tour Phú Quốc cho cặp đôi
+      - mình hỏi Tour Vũng Tàu 3 ngày 2 đêm
+      - ad ơi Tour Phú Quốc cho cặp đôi
+      - làm ơn Tour Nha Trang 4 ngày 3 đêm
+      - cho tôi hỏi Tour Huế khuyến mãi
+      - cho tôi hỏi Tour Đà Nẵng 4 ngày 3 đêm
+      - ad ơi Tour Đà Nẵng team building
+      - mình hỏi Tour Vũng Tàu 5 ngày 4 đêm
+      - cho tôi hỏi Tour Đà Nẵng cho người già
+      - Lịch trình tour Nha Trang
+      - cho em hỏi Lịch trình tour Nha Trang
+      - làm ơn Tour Phú Quốc giá học sinh
+      - cho em hỏi Tour Đà Lạt khởi hành từ Hà Nội
+      - mình hỏi Tour Phú Quốc giá học sinh
+      - mình hỏi Tour Nha Trang 5 ngày 4 đêm
+      - cho tôi hỏi Tour Đà Lạt khởi hành từ Hà Nội
+      - Tour Hội An team building
+      - cho em hỏi Tour Nha Trang khuyến mãi
+      - Du lịch Đà Nẵng tự túc
+      - cho em hỏi Tour Phú Quốc cho cặp đôi
+      - mình hỏi Tour Huế team building
+      - cho em hỏi Lịch trình tour Nha Trang
+      - cho tôi hỏi Tour Nha Trang 4 ngày 3 đêm

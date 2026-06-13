@@ -1,12 +1,11 @@
-import psycopg2
+import sys
+import os
 
-conn = psycopg2.connect(
-    dbname="chatbot",
-    user="chatbot_user",
-    password="supersecret",
-    host="localhost",
-    port="5432"
-)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from database.db_connection import get_connection
+
+conn = get_connection()
 
 print("Connected to PostgreSQL!")
 

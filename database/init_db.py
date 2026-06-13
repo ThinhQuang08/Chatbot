@@ -68,6 +68,7 @@ def init_database():
         """)
         
         cur.execute("""
+<<<<<<< HEAD
             CREATE TABLE IF NOT EXISTS ai_chat_analytics (
                 id SERIAL PRIMARY KEY,
                 session_id VARCHAR(100),
@@ -83,6 +84,23 @@ def init_database():
                 user_feedback INTEGER DEFAULT 0,
                 model_version VARCHAR(20),
                 no_results_flag INT
+=======
+                CREATE TABLE ai_chat_analytics (
+            id SERIAL PRIMARY KEY,
+            session_id VARCHAR(100),
+            timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            raw_text TEXT,
+            predicted_intent VARCHAR(50),
+            confidence_score FLOAT,
+            destination VARCHAR(100),
+            category VARCHAR(50),
+            parsed_budget NUMERIC,
+            parsed_month INTEGER,
+            ai_response TEXT,
+            user_feedback INTEGER DEFAULT 0,
+            model_version VARCHAR(20),
+            no_results_flag INT;
+>>>>>>> d33e957bb1dd574140e336ec6fb81f8811ddf665
             );
         """)
 

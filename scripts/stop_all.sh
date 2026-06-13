@@ -6,6 +6,9 @@ RUNTIME_DIR="$ROOT_DIR/.runtime"
 
 QDRANT_CONTAINER_DEFAULT="${QDRANT_CONTAINER:-chatbot-qdrant}"
 PURGE_QDRANT="${PURGE_QDRANT:-false}"
+RABBITMQ_CONTAINER="${RABBITMQ_CONTAINER:-chatbot-rabbitmq}"
+MINIO_CONTAINER_DEFAULT="${MINIO_CONTAINER:-chatbot-minio}"
+PURGE_MINIO="${PURGE_MINIO:-false}"
 
 read_runtime_file() {
   local file_path="$1"
@@ -92,9 +95,35 @@ stop_qdrant_container() {
   fi
 }
 
+stop_rabbitmq() {
+  local rabbitmq_container="$RABBITMQ_CONTAINER"
+  if docker ps --format '{{.Names}}' | grep -q "^${rabbitmq_container}$"; then
+    echo "[INFO] Stopping RabbitMQ container: $rabbitmq_container"
+    docker stop "$rabbitmq_container" >/dev/null || true
+  fi
+}
+
+stop_minio() {
+  local minio_container
+  minio_container="$(read_runtime_file "$RUNTIME_DIR/minio_container")"
+  minio_container="${minio_container:-$MINIO_CONTAINER_DEFAULT}"
+
+  if docker ps --format '{{.Names}}' | grep -q "^${minio_container}$"; then
+    echo "[INFO] Stopping MinIO container: $minio_container"
+    docker stop "$minio_container" >/dev/null || true
+  fi
+
+  if [[ "$PURGE_MINIO" == "true" ]] && docker ps -a --format '{{.Names}}' | grep -q "^${minio_container}$"; then
+    echo "[INFO] Removing MinIO container: $minio_container"
+    docker rm "$minio_container" >/dev/null || true
+  fi
+}
+
 cleanup_runtime_files() {
   rm -f "$RUNTIME_DIR/action_server.pid"
   rm -f "$RUNTIME_DIR/qdrant_container"
+  rm -f "$RUNTIME_DIR/minio_container"
+  rm -f "$RUNTIME_DIR/mlflow.pid"
   rmdir "$RUNTIME_DIR" 2>/dev/null || true
 }
 
@@ -102,8 +131,11 @@ main() {
   echo "[INFO] Stopping Chatbot stack"
 
   stop_pid_file_process "action server" "$RUNTIME_DIR/action_server.pid"
+  stop_pid_file_process "MLflow" "$RUNTIME_DIR/mlflow.pid"
   stop_project_rasa_processes
   stop_qdrant_container
+  stop_rabbitmq
+  stop_minio
   cleanup_runtime_files
 
   echo "[INFO] Cleanup completed"

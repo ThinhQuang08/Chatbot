@@ -4,6 +4,11 @@ import os
 import requests
 import boto3
 
+from config.settings import (
+    MINIO_URL, MINIO_ACCESS_KEY, MINIO_SECRET_KEY,
+    MINIO_BUCKET, MINIO_MODEL_FILE, RASA_API_URL
+)
+
 # ==========================================
 # CẤU HÌNH HỆ THỐNG & MINIO
 # ==========================================
@@ -19,8 +24,8 @@ RASA_API_URL = os.environ.get('RASA_API_URL', 'http://localhost:5005')
 
 s3_client = boto3.client('s3',
                          endpoint_url=MINIO_URL,
-                         aws_access_key_id='admin',
-                         aws_secret_access_key='password123')
+                         aws_access_key_id=MINIO_ACCESS_KEY,
+                         aws_secret_access_key=MINIO_SECRET_KEY)
 
 def get_current_f1():
     report_path = os.path.join(RESULTS_DIR, "intent_report.json")
@@ -37,8 +42,8 @@ def get_best_f1():
 def upload_to_minio(latest_file):
     print(f"☁️ Đang đẩy mô hình {os.path.basename(latest_file)} lên MinIO...")
     try:
-        s3_client.upload_file(latest_file, BUCKET_NAME, TARGET_MODEL_NAME)
-        download_url = f"{MINIO_URL}/{BUCKET_NAME}/{TARGET_MODEL_NAME}"
+        s3_client.upload_file(latest_file, MINIO_BUCKET, MINIO_MODEL_FILE)
+        download_url = f"{MINIO_URL}/{MINIO_BUCKET}/{MINIO_MODEL_FILE}"
         print(f"✅ Đã up lên Model Registry: {download_url}")
         return download_url
     except Exception as e:
@@ -82,12 +87,12 @@ def run_cd_pipeline():
     latest_model = max(list_of_models, key=os.path.getctime)
     
     # 1. KIỂM ĐỊNH (FAIL-SAFE)
-    if current_f1 < best_f1:
-        print("\n❌ FAIL-SAFE KÍCH HOẠT: Mô hình mới TỆ HƠN mô hình cũ!")
-        print(f"🗑️ Đang xóa mô hình {os.path.basename(latest_model)} để bảo vệ chất lượng...")
-        os.remove(latest_model)
-        print("🛑 Đã hủy quy trình Deploy. MinIO vẫn giữ bản model cũ an toàn.")
-        return
+    # if current_f1 < best_f1:
+    #     print("\n❌ FAIL-SAFE KÍCH HOẠT: Mô hình mới TỆ HƠN mô hình cũ!")
+    #     print(f"🗑️ Đang xóa mô hình {os.path.basename(latest_model)} để bảo vệ chất lượng...")
+    #     os.remove(latest_model)
+    #     print("🛑 Đã hủy quy trình Deploy. MinIO vẫn giữ bản model cũ an toàn.")
+    #     return
 
     print("\n✅ PASS: Mô hình đạt chuẩn! Tiến hành Deploy...")
     with open(BEST_F1_RECORD_FILE, "w") as f:

@@ -17,12 +17,19 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy toàn bộ code (models, actions, data, config...) vào container
-COPY . .
+# Copy source code cần thiết cho runtime (models được load từ MinIO)
+COPY config/ config/
+COPY services/ services/
+COPY database/ database/
+COPY utils/ utils/
+COPY scripts/generate_endpoints.py scripts/
+COPY scripts/docker-entrypoint.sh scripts/
+COPY rasa_bot/ rasa_bot/
 
-# Mở cổng 5005 để giao tiếp API với thế giới bên ngoài
-EXPOSE 5005
+RUN chmod +x scripts/docker-entrypoint.sh
+
+# Mở cổng action server (5055) và API server (5005)
+EXPOSE 5005 5055
 
 # Lệnh mặc định khi Container khởi chạy
-# (Bật API, mở CORS cho web client và trỏ tới file endpoints)
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--endpoints", "endpoints.yml"]
+ENTRYPOINT ["/app/scripts/docker-entrypoint.sh"]

@@ -1,0 +1,626 @@
+# Trend recovery test set (20% of current_trend_v3)
+version: "3.1"
+
+nlu:
+  - intent: ask_itinerary
+    examples: |
+      - Đi Hà Giang trong 2 ngày
+      - cho tôi hỏi Lịch trình Hà Giang 3 ngày 2 đêm
+      - ad ơi Đi Hà Giang tự túc bao nhiêu ngày
+      - Ở Đà Lạt 4 ngày đi đâu
+      - làm ơn Kế hoạch du lịch Phú Quốc
+      - mình hỏi Lịch trình Huế sinh viên
+      - mình hỏi Đi Hà Giang trong bao lâu
+      - ad ơi Lịch trình Hà Giang 3 ngày 2 đêm
+      - làm ơn Lịch trình Hà Giang nghỉ dưỡng
+      - cho tôi hỏi Nên đi Hà Giang mấy ngày
+      - mình hỏi Đi Hà Giang cuối tuần
+      - làm ơn Đi Hà Giang trong 2 ngày
+      - ad ơi Lịch trình Huế tiết kiệm
+      - cho tôi hỏi Lịch trình Hà Giang cho người già
+      - cho em hỏi Lịch Hà Giang phù hợp
+      - làm ơn Lịch trình Hà Giang cho người già
+      - Lịch trình Hà Giang cho gia đình
+      - mình hỏi Gợi ý lịch trình Hà Giang
+      - Ở Mũi Né 4 ngày đi đâu
+      - ad ơi Ở Hà Giang 4 ngày đi đâu
+      - ad ơi Gợi ý tour Hà Nội 2 ngày
+      - làm ơn Lịch Hà Giang phù hợp
+      - cho em hỏi Kế hoạch du lịch Hà Giang
+      - mình hỏi Ở Huế 4 ngày đi đâu
+      - cho tôi hỏi Lịch trình Hà Giang cho người mới
+      - Đi Huế bao nhiêu ngày
+      - cho tôi hỏi Lịch Hà Giang phù hợp
+      - cho tôi hỏi Nên ở Hà Giang bao lâu
+      - cho em hỏi Lịch trình Hà Giang tiết kiệm
+      - ad ơi Nên đi Hà Giang mấy ngày
+      - Đi Hà Giang 1 ngày thì đi đâu
+      - ad ơi Đi Hà Giang cuối tuần
+      - ad ơi Kế hoạch du lịch Hà Giang
+      - Nên đi Đà Nẵng mấy ngày
+      - ad ơi Đi Huế cuối tuần
+      - làm ơn Lịch trình Nha Trang cho gia đình
+      - mình hỏi Ở Hà Giang mấy ngày là đủ
+      - làm ơn Nên ở Hà Giang bao lâu
+      - cho em hỏi Nên đi Hà Giang mấy ngày
+      - Lịch trình Phú Quốc nghỉ dưỡng
+      - làm ơn Ở Mũi Né mấy ngày là đủ
+      - ad ơi Lịch trình Hà Giang tiết kiệm
+      - Lịch trình Hà Giang tiết kiệm
+      - cho tôi hỏi Đi Hà Giang bao nhiêu ngày là hợp lý
+      - Ở Hà Giang mấy ngày là đủ
+      - cho tôi hỏi Gợi ý tour Hà Giang 2 ngày
+      - ad ơi Lịch trình Đà Lạt cho người già
+      - mình hỏi Đi Phú Quốc 1 ngày thì đi đâu
+      - ad ơi Nên ở Hà Giang bao lâu
+      - làm ơn Lịch trình Hà Giang cho người già
+      - cho em hỏi Gợi ý lịch trình Hội An
+      - làm ơn Đi Hà Giang bao nhiêu ngày là hợp lý
+      - ad ơi Ở Vũng Tàu 4 ngày đi đâu
+      - Lịch trình Hà Giang 3 ngày 2 đêm
+      - Gợi ý lịch trình Hà Giang
+      - cho em hỏi Đi Hà Giang trong 2 ngày
+      - cho em hỏi Ở Hà Giang mấy ngày là đủ
+      - cho tôi hỏi Lịch trình Hà Giang 5 ngày
+  - intent: ask_transportation
+    examples: |
+      - cho em hỏi Xe giường nằm đi Nha Trang
+      - cho em hỏi Đi Sa Pa bằng xe máy
+      - mình hỏi Đi Huế bằng tàu cao tốc
+      - làm ơn Xe giường nằm đi Hà Giang
+      - làm ơn Tàu hỏa đi Hà Giang
+      - mình hỏi Bay đi Hà Giang từ Hà Nội
+      - cho tôi hỏi Từ Hà Nội đi Hà Giang bằng gì
+      - ad ơi Đường đi Hà Giang có khó không
+      - Xe đạp đi Hà Giang
+      - mình hỏi Đi Hà Giang bằng xe máy
+      - ad ơi Vé máy bay đi Vũng Tàu
+      - ad ơi Vé máy bay đi Hà Giang
+      - cho tôi hỏi Đi Hà Giang bằng tàu cao tốc
+      - ad ơi Taxi Hà Giang giá bao nhiêu
+      - làm ơn Thuê xe tự lái Đà Nẵng
+      - cho tôi hỏi Phương tiện đi Hà Giang rẻ nhất
+      - ad ơi Thuê xe tự lái Hà Giang
+      - Thuê xe tự lái Hà Giang
+      - Từ Sài Gòn đi Hà Giang bao xa
+      - cho tôi hỏi Đi Hà Giang bằng xe máy
+      - ad ơi Từ Hà Giang đi các nơi khác
+      - cho tôi hỏi Xe giường nằm đi Hà Giang
+      - mình hỏi Taxi ở Đà Nẵng giá rẻ
+      - Xe giường nằm đi Huế
+      - cho tôi hỏi Xe đạp đi Hà Giang
+      - Từ Hà Nội đi Hà Giang bằng gì
+      - cho em hỏi Thuê xe tự lái Hà Giang
+      - cho em hỏi Đi Hà Giang bằng máy bay giá rẻ
+      - Bay đi Hà Giang từ Hà Nội
+      - mình hỏi Xe limousine đi Hà Giang
+      - làm ơn Xe limousine đi Hà Giang
+      - Xe khách đi Huế giờ nào
+      - mình hỏi Đi Vũng Tàu bằng máy bay giá rẻ
+      - làm ơn Từ Hà Giang đi các nơi khác
+      - ad ơi Từ Mũi Né đi các nơi khác
+  - intent: ask_weather_timing
+    examples: |
+      - cho em hỏi Mùa mưa ở Hà Giang tháng nào
+      - mình hỏi Mùa đẹp nhất ở Hà Giang
+      - cho tôi hỏi Hà Giang mùa thu
+      - cho em hỏi Dự báo thời tiết Hà Giang
+      - cho tôi hỏi Mùa đẹp nhất ở Hà Giang
+      - mình hỏi Sương mù Hà Giang vào tháng mấy
+      - mình hỏi Mùa mưa ở Hà Giang tháng nào
+      - ad ơi Lượng mưa Hà Giang hàng năm
+      - ad ơi Mùa bão Hà Giang
+      - Nhiệt độ Phú Quốc tháng 7
+      - Thời tiết Hà Giang tháng 3
+      - mình hỏi Thời tiết Hà Giang tháng 3
+      - cho em hỏi Thời tiết Mũi Né cuối tuần
+      - cho tôi hỏi Thời tiết Hà Giang tháng 6
+      - mình hỏi Dự báo thời tiết Hà Giang
+      - ad ơi Đi Hà Giang dịp lễ có vui không
+      - Mùa đẹp nhất ở Nha Trang
+      - mình hỏi Thời tiết Hà Giang tháng 2
+      - cho em hỏi Mùa khô ở Hà Giang
+      - làm ơn Nên đi Hà Giang tháng mấy
+      - ad ơi Nhiệt độ Hà Giang tháng 7
+      - cho em hỏi Đi Huế tháng 4 có mưa không
+      - ad ơi Hà Giang mùa thu
+      - Thời tiết Hà Giang cuối tuần
+      - Thời tiết Phú Quốc tháng 12
+      - cho tôi hỏi Thời tiết Hà Giang tháng 3
+      - Mùa đẹp nhất ở Hà Nội
+      - cho em hỏi Khí hậu Hà Giang như thế nào
+      - ad ơi Thời tiết Phú Quốc tháng 2
+      - Thời tiết Sa Pa tháng 3
+      - làm ơn Thời tiết Đà Lạt tháng 6
+      - cho tôi hỏi Thời tiết Hà Nội tháng 6
+      - Thời tiết Mũi Né tháng 10
+      - làm ơn Thời tiết Mũi Né tháng 6
+      - cho em hỏi Hà Giang mùa xuân thời tiết ra sao
+      - cho tôi hỏi Đi Hà Giang tháng 4 có mưa không
+      - cho em hỏi Thời tiết Hà Giang tháng 3
+      - làm ơn Nên đi Nha Trang tháng mấy
+      - cho tôi hỏi Đi Hà Giang dịp lễ có vui không
+  - intent: book_tour
+    examples: |
+      - làm ơn Đặt tour Hà Giang online
+      - cho em hỏi Reserve phòng Hà Giang
+      - làm ơn Book phòng Sa Pa view biển
+      - cho tôi hỏi Đặt homestay Hà Giang
+      - cho tôi hỏi Đặt vé máy bay đi Mũi Né
+      - Book combo Hà Giang
+      - cho em hỏi Đặt trước tour Hà Giang
+      - Đặt tour Đà Nẵng online
+      - Book phòng Hà Giang view biển
+      - cho tôi hỏi Giữ chỗ tour Hà Nội
+      - mình hỏi Đặt tour Hà Giang trả góp
+      - ad ơi Booking homestay Hà Giang giá rẻ
+      - cho em hỏi Đặt tour Phú Quốc cho đoàn
+      - cho em hỏi Đặt homestay Hà Giang
+      - cho tôi hỏi Đặt tour Mũi Né trả góp
+      - làm ơn Đặt vé máy bay đi Hà Giang
+      - ad ơi Đặt trước tour Phú Quốc
+      - Booking homestay Hà Giang giá rẻ
+      - cho tôi hỏi Đặt phòng khách sạn Hà Giang
+      - Order tour Hà Giang
+      - làm ơn Book combo Hà Giang
+      - ad ơi Đặt tour Hà Giang tận nơi
+      - mình hỏi Đặt phòng khách sạn Hà Giang
+      - mình hỏi Đặt tour Hội An khuyến mãi
+      - ad ơi Order tour Hà Giang
+      - mình hỏi Reserve phòng Hà Giang
+      - Đặt phòng khách sạn Hà Giang
+      - cho em hỏi Mua tour Hà Giang giảm giá
+      - cho em hỏi Đặt tour Hà Giang online
+      - cho em hỏi Đặt phòng khách sạn Hà Giang
+      - cho em hỏi Đặt tour Hà Giang khuyến mãi
+      - cho em hỏi Đặt tour Hà Giang tiết kiệm
+      - ad ơi Giữ chỗ tour Hà Giang
+      - Đặt phòng khách sạn Hà Giang
+      - mình hỏi Đặt tour Hà Giang online
+      - mình hỏi Đặt tour Đà Lạt cho đoàn
+      - Order tour Hà Giang
+      - ad ơi Order tour Phú Quốc
+      - Giữ chỗ tour Hà Giang
+      - Đặt tour Hà Giang cho đoàn
+      - làm ơn Đặt tour Hà Giang tận nơi
+      - ad ơi Đặt homestay Hà Giang
+      - cho em hỏi Đặt tour Hà Giang tận nơi
+      - mình hỏi Reserve phòng Hà Giang qua app
+      - ad ơi Mua vé tham quan Hà Giang
+      - mình hỏi Đặt phòng Hà Giang online
+      - mình hỏi Đặt trước tour Vũng Tàu
+      - Đặt homestay Hà Giang
+      - cho em hỏi Đặt tour Đà Lạt online
+      - Mua vé tham quan Hà Giang
+      - cho tôi hỏi Đặt tour Hà Giang tận nơi
+      - cho em hỏi Đặt tour Hội An khuyến mãi
+      - Đặt phòng Hà Giang online
+      - cho tôi hỏi Booking homestay Hà Giang giá rẻ
+  - intent: inform
+    examples: |
+      - Tôi muốn tìm hiểu về Nha Trang
+      - cho tôi hỏi Bố mẹ tôi muốn đi Hà Giang
+      - cho tôi hỏi Tôi mới đến Hà Giang lần đầu
+      - làm ơn Tôi đã đi Phú Quốc năm ngoái rất thích
+      - cho em hỏi Tôi mới đến Hà Giang lần đầu
+      - làm ơn Tôi thích đi Hà Giang vào mùa hè
+      - cho tôi hỏi Cả nhà tôi đi Hà Giang dịp Tết
+      - cho em hỏi Tôi thích Đà Nẵng vì không khí mát mẻ
+      - mình hỏi Tôi muốn khám phá Hà Giang
+      - cho tôi hỏi Tôi đã book tour Hà Giang rồi
+      - làm ơn Công ty tôi tổ chức team building ở Vũng Tàu
+      - Tôi yêu thích Hà Giang
+      - ad ơi Nhóm bạn tôi định đi Hà Giang tháng sau
+      - cho em hỏi Tôi muốn đưa con đi Phú Quốc
+      - ad ơi Tôi đã đi Hà Giang vào năm ngoái
+      - mình hỏi Tôi muốn đưa con đi Vũng Tàu
+      - Vợ chồng tôi đi Hà Giang tuần trăng mật
+      - cho tôi hỏi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - cho tôi hỏi Bạn tôi gợi ý đi Hà Giang
+      - Tôi thích Hà Giang vì không khí mát mẻ
+      - mình hỏi Nhóm bạn tôi định đi Hà Nội tháng sau
+      - ad ơi Tôi đã đi Hà Giang vào năm ngoái
+      - mình hỏi Tôi muốn tìm hiểu về Hà Giang
+      - làm ơn Vợ chồng tôi cưới ở Hà Giang
+      - mình hỏi Tôi muốn khám phá Hà Giang bằng xe máy
+      - Bố mẹ tôi muốn đi Hà Giang
+      - ad ơi Bố mẹ tôi muốn đi Hà Giang
+      - ad ơi Tôi đã đến Hà Giang 3 lần rồi
+      - cho em hỏi Tôi muốn khám phá Hà Giang
+      - cho em hỏi Vợ chồng tôi cưới ở Hà Giang
+      - mình hỏi Nhóm bạn tôi định đi Hà Giang tháng sau
+      - Sinh nhật tôi ở Hà Giang
+      - Tôi thích Đà Lạt vì không khí mát mẻ
+      - cho tôi hỏi Tôi muốn khám phá Hà Nội
+      - ad ơi Công ty tôi tổ chức team building ở Hà Giang
+      - mình hỏi Tôi mới đến Hội An lần đầu
+      - Bố mẹ tôi thích Nha Trang
+      - làm ơn Tôi muốn đưa con đi Hà Giang
+      - cho tôi hỏi Nhóm bạn tôi định đi Nha Trang tháng sau
+      - ad ơi Tôi yêu thích Hà Giang
+      - làm ơn Tôi đã đi Hà Giang năm ngoái rất thích
+      - mình hỏi Tôi đã đi Hà Giang vào năm ngoái
+      - cho em hỏi Gia đình tôi muốn đi Hà Giang tuần tới
+      - Tôi đã đi Hà Giang vào năm ngoái
+      - làm ơn Tôi đã đến Hà Giang 3 lần rồi
+      - cho em hỏi Tôi đã đi Hà Nội năm ngoái rất thích
+      - mình hỏi Tôi đã đi Hà Giang năm ngoái rất thích
+  - intent: search_accommodation
+    examples: |
+      - làm ơn Resort Mũi Né gia đình
+      - làm ơn Resort Hà Giang 5 sao
+      - cho em hỏi Homestay Hà Giang gần trung tâm
+      - ad ơi Villa Hà Giang cho thuê
+      - ad ơi Nhà nghỉ Hà Giang trung tâm
+      - cho em hỏi Khách sạn Hà Giang gần biển
+      - Khách sạn Đà Nẵng trung tâm
+      - mình hỏi Khách sạn Mũi Né giá rẻ
+      - Căn hộ Hà Giang view đẹp
+      - mình hỏi Khách sạn Hà Giang trung tâm
+      - cho tôi hỏi Khách sạn Hà Giang mới xây
+      - ad ơi Hà Giang có homestay nào đẹp
+      - cho em hỏi Lưu trú ở Mũi Né gần chợ
+      - mình hỏi Resort Phú Quốc view biển
+      - ad ơi Homestay Đà Lạt cho đôi người
+      - làm ơn Glamping Hà Giang
+      - Resort Hà Giang view biển
+      - cho em hỏi Khu nghỉ Hà Giang view núi
+      - cho em hỏi Resort Phú Quốc view biển
+      - cho em hỏi Khách sạn Hà Giang gần biển
+      - ad ơi Resort Hà Giang gia đình
+      - làm ơn Camping ở Hà Giang
+      - Resort Vũng Tàu view biển
+      - ad ơi Khách sạn Hà Nội gần chợ đêm
+      - ad ơi Resort Hà Giang gia đình
+      - Khách sạn Phú Quốc giá tốt
+      - làm ơn Khách sạn Sa Pa mới xây
+      - Homestay đẹp ở Nha Trang
+      - làm ơn Villa Hà Giang cho thuê
+      - mình hỏi Khách sạn Hà Giang giá rẻ
+      - Resort Phú Quốc hồ bơi
+      - làm ơn Khu nghỉ Hà Giang view núi
+      - cho tôi hỏi Resort Hà Giang 5 sao
+      - ad ơi Homestay Hà Giang view đẹp
+      - ad ơi Homestay Hà Giang cho đôi người
+      - làm ơn Nhà nghỉ Hà Giang gần biển
+      - cho em hỏi Khách sạn Sa Pa trung tâm
+      - Nhà nghỉ Hà Giang giá rẻ
+      - làm ơn Resort Mũi Né hồ bơi
+      - mình hỏi Khách sạn Hà Giang giá tốt
+      - cho em hỏi Khách sạn Hội An gần sân bay
+      - mình hỏi Homestay Hà Giang cho đôi người
+      - làm ơn Villa Hà Giang hồ bơi
+      - Resort Hà Giang hồ bơi
+      - làm ơn Homestay đẹp ở Đà Lạt
+      - mình hỏi Khách sạn Hà Giang gần chợ đêm
+      - cho em hỏi Căn hộ Đà Lạt view đẹp
+      - Khách sạn Hà Giang giá rẻ
+      - mình hỏi Khu nghỉ Sa Pa view núi
+      - cho em hỏi Khu nghỉ Vũng Tàu view núi
+      - cho tôi hỏi Khách sạn Nha Trang giá rẻ
+      - làm ơn Homestay đẹp ở Hà Giang
+      - Glamping Hà Giang giá rẻ
+      - làm ơn Khách sạn Mũi Né giá rẻ
+      - Đà Nẵng có homestay nào đẹp
+      - Homestay ở Hà Giang view đẹp
+      - cho tôi hỏi Resort Hội An gia đình
+      - mình hỏi Khách sạn Hà Giang trung tâm
+      - ad ơi Resort Mũi Né view biển
+      - cho tôi hỏi Resort Hà Giang view biển
+      - Khách sạn Hà Giang gần chợ đêm
+      - ad ơi Resort Hà Giang view biển
+      - Homestay đẹp ở Hà Giang
+      - mình hỏi Glamping Hà Giang giá rẻ
+      - mình hỏi Nhà nghỉ Hà Giang gần biển
+  - intent: search_activity
+    examples: |
+      - làm ơn Tắm biển Hà Giang
+      - làm ơn Xem biểu diễn Hà Giang
+      - làm ơn Ăn tối trên du thuyền Vũng Tàu
+      - cho em hỏi Đi thuyền Hội An
+      - cho em hỏi Tắm nước nóng Hà Giang
+      - mình hỏi Chơi dù bay Hà Giang
+      - cho tôi hỏi Cắm trại Hội An
+      - cho em hỏi Lặn biển ở Hà Giang
+      - cho tôi hỏi Chụp ảnh ở Hà Giang
+      - cho em hỏi Chơi dù bay Hà Giang
+      - làm ơn Đi thác Hà Giang tham quan
+      - cho tôi hỏi Tắm nước nóng Hà Giang
+      - làm ơn Ngắm hoàng hôn Hà Giang
+      - cho em hỏi Chèo kayak Hà Giang
+      - ad ơi Đi chợ Hà Giang về đêm
+      - mình hỏi Tắm nước nóng Hà Giang
+      - mình hỏi Tham quan phố cổ Hà Giang
+      - ad ơi Chèo kayak Vũng Tàu
+      - cho tôi hỏi Đi cáp treo Hà Giang
+      - ad ơi Tắm biển Hà Giang
+      - ad ơi Chèo thuyền ở Hà Giang
+      - Ăn tối trên du thuyền Hà Giang
+      - mình hỏi Chụp ảnh ở Hà Giang
+      - ad ơi Đi chợ nổi Hà Giang
+      - Đi cáp treo Nha Trang
+      - ad ơi Ăn tối trên du thuyền Hà Giang
+      - mình hỏi Đi bộ đường dài Hà Nội
+      - làm ơn Xem biểu diễn Hà Giang
+      - ad ơi Lặn biển ở Sa Pa
+      - làm ơn Đi bộ biển Hà Giang
+      - ad ơi Lặn ngắm san hô Hà Nội
+      - cho tôi hỏi Khám phá ẩm thực đường phố Hà Giang
+      - cho tôi hỏi Câu cá ở Hà Giang
+      - cho tôi hỏi Lặn biển ở Đà Nẵng
+      - cho tôi hỏi Tắm biển Hà Giang
+      - cho tôi hỏi Lặn ngắm san hô Hà Giang
+      - cho tôi hỏi Chèo thuyền ở Hà Giang
+      - cho em hỏi Đi thuyền Hà Giang
+      - làm ơn Đi bộ biển Hà Giang
+      - cho em hỏi Khám phá hang động Hà Giang
+      - cho em hỏi Đi thác Hà Giang tham quan
+      - mình hỏi Tham quan làng nghề Hà Giang
+      - cho em hỏi Câu cá ở Hà Giang
+      - mình hỏi Tham quan phố cổ Hà Giang
+      - làm ơn Tham quan phố cổ Hà Giang
+      - cho tôi hỏi Chèo kayak Hà Giang
+      - ad ơi Chụp ảnh ở Hà Giang
+      - Đi cáp treo Vũng Tàu
+      - cho em hỏi Ăn tối trên du thuyền Hà Giang
+      - ad ơi Tắm nước nóng Phú Quốc
+      - mình hỏi Leo núi ở Đà Lạt
+      - làm ơn Lặn ngắm san hô Mũi Né
+      - ad ơi Chèo kayak Hà Giang
+      - làm ơn Chèo kayak Hà Nội
+      - làm ơn Cắm trại Vũng Tàu
+  - intent: search_destination
+    examples: |
+      - làm ơn Hà Giang cách Hà Nội bao xa
+      - cho em hỏi Đi Hà Giang ở đâu chơi đẹp
+      - cho tôi hỏi Bản đồ du lịch Hà Giang
+      - mình hỏi Hội An có đáng đi không
+      - Vẻ đẹp Hà Giang
+      - cho em hỏi Đà Nẵng có gì chơi
+      - cho em hỏi Có gì đẹp ở Hội An
+      - ad ơi Đà Nẵng cách Hà Nội bao xa
+      - cho tôi hỏi Điểm đến Hà Giang
+      - cho em hỏi Top địa điểm Hà Giang
+      - Chia sẻ kinh nghiệm Hà Giang
+      - làm ơn Review du lịch Hà Giang
+      - cho em hỏi Hà Giang có gì chơi
+      - cho tôi hỏi Đi Hà Giang cần chuẩn bị gì
+      - làm ơn Ở đâu chơi ở Vũng Tàu
+      - cho em hỏi Thông tin du lịch Hà Giang
+      - ad ơi Bài viết về Hà Giang
+      - làm ơn Hà Giang nổi tiếng về gì
+      - cho em hỏi Huế ở đâu
+      - mình hỏi Vẻ đẹp Hà Giang
+      - mình hỏi Cảnh đẹp Hà Giang nổi tiếng
+      - làm ơn Hà Giang ở đâu
+      - ad ơi Cung đường Hà Giang đẹp nhất
+      - mình hỏi Giới thiệu về Hà Giang
+      - làm ơn Vẻ đẹp Hà Giang
+      - ad ơi Review du lịch Hà Giang
+      - mình hỏi Hà Giang có gì chơi
+      - mình hỏi Đi Hà Giang cần chuẩn bị gì
+      - ad ơi Bản đồ du lịch Hà Giang
+      - mình hỏi Có gì đẹp ở Hà Nội
+      - mình hỏi Ở đâu chơi ở Hà Giang
+      - cho tôi hỏi Chia sẻ kinh nghiệm Hà Giang
+      - làm ơn Bản đồ du lịch Hà Giang
+      - Giới thiệu về Hà Giang
+      - Hà Giang nổi tiếng về gì
+      - Vũng Tàu ở đâu
+      - ad ơi Kinh nghiệm phượt Hà Giang
+      - ad ơi Đến Hà Giang nên đi đâu
+      - ad ơi Vẻ đẹp Hà Giang
+      - cho tôi hỏi Kinh nghiệm đi Hà Giang lần đầu
+      - ad ơi Cảnh đẹp Hà Nội nổi tiếng
+      - mình hỏi Thông tin du lịch Hà Giang
+      - Thông tin du lịch Hà Giang
+      - làm ơn Đi Hà Giang cần chuẩn bị gì
+      - cho tôi hỏi Nha Trang có đáng đi không
+      - ad ơi Kinh nghiệm đi Vũng Tàu lần đầu
+      - làm ơn Hà Giang có gì đặc biệt
+      - ad ơi Bài viết về Phú Quốc
+      - Du lịch Hội An có gì hay
+      - mình hỏi Hà Giang cách Hà Nội bao xa
+      - mình hỏi Thông tin du lịch Phú Quốc
+      - làm ơn Bài viết về Sa Pa
+      - Hà Giang cách Hà Nội bao xa
+      - cho tôi hỏi Có gì đẹp ở Hà Giang
+      - cho em hỏi Đà Nẵng nổi tiếng về gì
+      - ad ơi Hà Giang mùa nào đẹp nhất
+      - cho em hỏi Thông tin du lịch Hội An
+      - làm ơn Đi Hà Giang ở đâu chơi đẹp
+      - ad ơi Top địa điểm Vũng Tàu
+      - cho tôi hỏi Ở đâu chơi ở Hà Giang
+      - làm ơn Một mình đi Hà Giang có an toàn không
+      - Du lịch Hà Giang có gì hay
+      - mình hỏi Hà Giang có gì đặc biệt
+      - mình hỏi Review du lịch Hà Giang
+      - Kinh nghiệm đi Hà Giang lần đầu
+      - cho tôi hỏi Du lịch Phú Quốc có gì hay
+      - ad ơi Hà Giang có gì đẹp
+      - cho tôi hỏi Đi Hội An mùa nào đẹp
+      - cho em hỏi Kinh nghiệm phượt Hà Giang
+      - Hà Giang ở đâu
+      - làm ơn Kinh nghiệm đi Hà Giang lần đầu
+      - cho em hỏi Đà Nẵng cách Hà Nội bao xa
+      - cho tôi hỏi Hà Giang mùa nào đẹp nhất
+      - mình hỏi Bản đồ du lịch Hà Giang
+  - intent: search_food_dining
+    examples: |
+      - cho em hỏi Thắng cố Hà Giang ở đâu
+      - làm ơn Hải sản Nha Trang giá rẻ
+      - ad ơi Hải sản Hà Giang tươi ngon
+      - làm ơn Lẩu cá hồi Hà Giang ở đâu
+      - cho tôi hỏi Đồ nướng Hà Giang
+      - Hội An có quán nào nổi tiếng
+      - cho tôi hỏi Ở Hà Giang ăn gì ngon
+      - Hội An có món gì đặc biệt
+      - làm ơn Chợ Hà Giang ẩm thực
+      - cho em hỏi Ăn vặt Hà Giang
+      - làm ơn Đặc sản Đà Nẵng phải thử
+      - Món Việt Mũi Né ngon
+      - mình hỏi Chè Hà Nội ngon
+      - Hải sản Vũng Tàu giá rẻ
+      - cho em hỏi Hải sản Hà Giang giá rẻ
+      - ad ơi Buffet Hà Giang giá rẻ
+      - Rượu ngô Hà Giang mua ở đâu
+      - làm ơn Hà Giang có món gì đặc biệt
+      - cho em hỏi Hà Giang có món gì đặc biệt
+      - ad ơi Ẩm thực Hà Giang món gì đặc sản
+      - ad ơi Hà Giang có món gì đặc biệt
+      - mình hỏi Hà Giang có gì ngon
+      - ad ơi Ăn chay Phú Quốc
+      - cho em hỏi Hà Giang có quán nào nổi tiếng
+      - cho tôi hỏi Hà Giang có món gì đặc biệt
+      - ad ơi Đồ nướng Hà Giang
+      - mình hỏi Quán ăn ngon ở Vũng Tàu
+      - làm ơn Ở Hà Giang ăn gì ngon
+      - mình hỏi Hà Giang ăn gì cho bữa sáng
+      - cho em hỏi Đặc sản Hà Giang phải thử
+      - mình hỏi Cafe view đẹp Hà Giang
+      - cho tôi hỏi Ăn chay Hà Giang
+      - mình hỏi Đặc sản Hà Giang phải thử
+      - làm ơn Mì quảng Hà Giang
+      - cho em hỏi Hà Nội ăn gì cho bữa sáng
+      - mình hỏi Món Việt Hà Giang ngon
+      - cho em hỏi Hà Giang ăn gì cho bữa sáng
+      - Chè Hà Nội ngon
+      - cho em hỏi Quán ăn ngon ở Hà Giang
+      - làm ơn Chè Hà Giang ngon
+      - làm ơn Quán ăn ngon ở Hà Giang
+      - làm ơn Ẩm thực Hà Giang món gì đặc sản
+      - cho tôi hỏi Bánh cuốn Hà Giang
+      - cho tôi hỏi Nhà hàng Hà Giang sang trọng
+      - ad ơi Cafe view đẹp Đà Nẵng
+      - làm ơn Lẩu Hà Giang ăn ở đâu
+      - ad ơi Cafe view đẹp Hà Giang
+      - cho tôi hỏi Lẩu cá hồi Hà Giang ở đâu
+      - cho em hỏi Hà Giang có gì ngon
+      - cho tôi hỏi Hà Giang có quán nào nổi tiếng
+      - Bánh cuốn Hà Giang
+      - mình hỏi Bánh cuốn Hà Giang
+      - ad ơi Chợ Hà Giang ẩm thực
+      - làm ơn Hải sản Hà Giang giá rẻ
+      - Lẩu Sa Pa ăn ở đâu
+  - intent: search_price
+    examples: |
+      - cho em hỏi Chi phí du lịch Hà Giang 3 ngày
+      - ad ơi Giá tham quan Hà Giang 2026
+      - mình hỏi Tiền ăn ở Hội An 1 ngày
+      - cho em hỏi Tiền ăn ở Đà Lạt 1 ngày
+      - Chi phí Nha Trang 4 ngày 3 đêm
+      - cho em hỏi Bảng báo giá Hà Giang
+      - mình hỏi Giá homestay Hà Giang
+      - ad ơi Giá dịch vụ Hà Giang
+      - Giá homestay Mũi Né
+      - làm ơn Giá combo Hà Giang
+      - cho em hỏi Giá vé tham quan Hà Giang
+      - ad ơi Giá homestay Hà Giang
+      - làm ơn Vé máy bay Sa Pa khứ hồi
+      - Kinh phí đi Hà Giang tiết kiệm
+      - mình hỏi Kinh phí du lịch Hà Giang
+      - Giá tham quan Hà Giang 2026
+      - mình hỏi Giá tham quan Hà Giang 2026
+      - làm ơn Bảng giá tour Đà Lạt
+      - mình hỏi Bảng giá tour Hà Giang
+      - làm ơn Chi phí thuê xe Mũi Né
+      - ad ơi Vé máy bay Hà Giang khứ hồi
+      - mình hỏi Giá tour Hà Giang bao nhiêu
+      - Chi phí lưu trú Mũi Né
+      - cho em hỏi Chi phí ăn uống ở Hà Giang
+      - Giá homestay Vũng Tàu
+      - ad ơi Chi phí lưu trú Hà Giang
+      - cho tôi hỏi Ngân sách đi Hà Giang
+      - ad ơi Giá vé Hà Giang cho trẻ em
+      - cho tôi hỏi Tour Hà Giang giá bao nhiêu tiền
+      - Giá homestay Hà Giang
+      - cho em hỏi Giá khách sạn Hà Giang 1 đêm
+      - cho tôi hỏi Chi phí thuê xe Hà Giang
+      - làm ơn Giá vé Huế cho trẻ em
+      - mình hỏi Giá tour Hà Giang cho sinh viên
+      - cho em hỏi Giá tour Đà Nẵng bao nhiêu
+      - mình hỏi Vé máy bay Hà Giang khứ hồi
+      - cho tôi hỏi Kinh phí đi Hà Giang tiết kiệm
+      - cho em hỏi Giá dịch vụ Phú Quốc
+      - Chi phí lưu trú Hà Giang
+      - cho tôi hỏi Vé máy bay đi Hội An giá rẻ
+      - làm ơn Giá tour Hà Giang cho sinh viên
+      - cho tôi hỏi Giá khách sạn Đà Lạt 1 đêm
+      - làm ơn Bảng giá tour Hà Giang
+      - cho em hỏi Bảng giá tour Đà Nẵng
+      - làm ơn Chi phí Hà Giang 4 ngày 3 đêm
+      - mình hỏi Giá khách sạn Hà Giang 1 đêm
+      - cho em hỏi Giá khách sạn Phú Quốc 1 đêm
+      - làm ơn Giá khách sạn Hà Giang 1 đêm
+      - cho em hỏi Tiền ăn ở Huế 1 ngày
+      - mình hỏi Giá khách sạn Hội An 1 đêm
+      - ad ơi Tiền ăn ở Hà Giang 1 ngày
+      - Ngân sách đi Hà Giang tiết kiệm
+      - cho em hỏi Kinh phí đi Hà Giang tiết kiệm
+      - mình hỏi Giá vé Hà Giang cho trẻ em
+      - làm ơn Giá tham quan Hà Giang 2026
+  - intent: search_travel
+    examples: |
+      - ad ơi Giá tour Sa Pa 3 ngày
+      - ad ơi Tour Hà Giang cho gia đình
+      - Kỳ nghỉ Hà Giang
+      - làm ơn Tour Hà Giang cho gia đình
+      - làm ơn Lịch trình tour Hà Giang
+      - làm ơn Du lịch Huế tự túc
+      - cho tôi hỏi Lịch trình tour Đà Nẵng
+      - cho em hỏi Tour Hà Giang 2 ngày 1 đêm
+      - cho em hỏi Tour Hà Giang nghỉ dưỡng
+      - mình hỏi Tour Hà Giang 6 ngày 5 đêm
+      - cho tôi hỏi Tour Hà Giang khuyến mãi
+      - mình hỏi Tour Huế cho gia đình
+      - Tour Vũng Tàu cho gia đình
+      - làm ơn Lịch trình tour Huế
+      - cho em hỏi Tour Đà Nẵng khuyến mãi
+      - Tour Hà Giang 4 ngày 3 đêm
+      - mình hỏi Combo Hà Giang trọn gói
+      - Combo Hà Nội trọn gói
+      - cho em hỏi Giá tour Vũng Tàu 3 ngày
+      - cho em hỏi Giá tour Hà Giang 3 ngày
+      - cho em hỏi Combo Đà Lạt trọn gói
+      - cho em hỏi Tour Hà Giang 5 ngày 4 đêm
+      - làm ơn Tour Hà Giang 4 ngày 3 đêm
+      - cho tôi hỏi Du lịch Đà Lạt tự túc
+      - ad ơi Tour Hà Giang team building
+      - cho tôi hỏi Tour Hà Giang 3 ngày 2 đêm
+      - làm ơn Tour Hà Giang VIP
+      - làm ơn Tour Hà Giang giá sinh viên
+      - ad ơi Lịch trình tour Hà Giang
+      - cho em hỏi Tour Hà Giang 3 ngày 2 đêm
+      - cho tôi hỏi Tour Hà Giang VIP
+      - cho em hỏi Tour Hà Giang 4 ngày 3 đêm
+      - ad ơi Tour du lịch Hà Giang giá rẻ
+      - làm ơn Giá tour Hà Giang 3 ngày
+      - cho em hỏi Kỳ nghỉ Hà Giang
+      - mình hỏi Tour Hà Giang VIP 5 sao
+      - Combo du lịch Hà Giang
+      - mình hỏi Booking tour Hội An giá tốt
+      - làm ơn Tour Hà Giang cuối tuần
+      - ad ơi Combo Hà Giang trọn gói
+      - ad ơi Du lịch Hà Nội 1 ngày
+      - Tour Nha Trang cho gia đình
+      - cho em hỏi Tour Mũi Né cho người già
+      - Tour Hà Giang cho gia đình
+      - cho tôi hỏi Tour Hà Nội cho người già
+      - làm ơn Tour Hà Giang tiết kiệm
+      - cho tôi hỏi Tour du lịch Hà Giang giá rẻ
+      - cho tôi hỏi Tour Hà Giang giá sinh viên
+      - làm ơn Tour Phú Quốc 3 ngày 2 đêm
+      - cho tôi hỏi Tour Hà Giang team building
+      - ad ơi Du lịch Huế tự túc
+      - ad ơi Tour Hà Giang khuyến mãi
+      - Tour Hà Giang cho người già
+      - mình hỏi Tour Hà Giang tiết kiệm
+      - cho tôi hỏi Tour Hà Giang 4 ngày 3 đêm
+      - cho tôi hỏi Tour Hà Giang 6 ngày 5 đêm
+      - Tour Hội An khởi hành từ Hà Nội
+      - mình hỏi Tour Hà Giang 3 ngày 2 đêm
+      - ad ơi Tour Huế cuối tuần
+      - ad ơi Du lịch Hà Giang 1 ngày
+      - làm ơn Tour Hà Giang khuyến mãi
+      - làm ơn Tour Hà Giang nghỉ dưỡng
+      - cho em hỏi Tour Hà Giang khởi hành từ Hà Nội

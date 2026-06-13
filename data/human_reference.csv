@@ -1,0 +1,352 @@
+﻿text,intent
+chốt luôn,affirm
+đỉnh quá,affirm
+correct,affirm
+oke,affirm
+chuẩn,affirm
+tuyệt vời,affirm
+okela,affirm
+đúng ý mình,affirm
+yup,affirm
+quá tuyệt,affirm
+y,affirm
+that sounds good,affirm
+ưng ý lắm,affirm
+đồng ý,affirm
+yes,affirm
+xịn xò,affirm
+đúng rồi,affirm
+dạ đúng,affirm
+duyệt,affirm
+nên đi những đâu trong [3 ngày](duration),ask_itinerary
+lên giúp mình lịch trình tự túc đà nẵng,ask_itinerary
+mình cần lên lịch trình đi sapa,ask_itinerary
+tư vấn lịch trình,ask_itinerary
+lên plan đi Đà Lạt giúp mình,ask_itinerary
+cho xin lịch trình tham quan,ask_itinerary
+lịch trình ăn chơi Đà Nẵng,ask_itinerary
+mình cần kế hoạch du lịch Phú Quốc,ask_itinerary
+sắp xếp lịch trình đi chơi Nha Trang,ask_itinerary
+tư vấn tour [4 ngày 3 đêm](duration),ask_itinerary
+nên phân bổ thời gian đi chơi thế nào,ask_itinerary
+tạo giúp mình lịch trình tự túc,ask_itinerary
+gợi ý plan đi chơi [cuối tuần](time_window),ask_itinerary
+gợi ý lịch trình đi Sapa [3 ngày 2 đêm](duration),ask_itinerary
+vị trí có thuận tiện đi lại không,ask_location_feature
+mùa này đi biển có bão không,ask_location_feature
+ở đó có mát không,ask_location_feature
+đường đi chỗ đó có dốc không,ask_location_feature
+an ninh khu vực đó thế nào,ask_location_feature
+ở đó mạng di động có khỏe không,ask_location_feature
+[đặc sản](activity) [Sa Pa](location) là gì,ask_location_feature
+phong cảnh Hà Giang mùa này sao,ask_location_feature
+Đà Lạt mưa nhiều không,ask_location_feature
+chỗ đó có ồn ào không,ask_location_feature
+tối ở đó có nhộn nhịp không,ask_location_feature
+khí hậu ở đó thế nào,ask_location_feature
+trên đó có lạnh không,ask_location_feature
+thanh toán qua chuyển khoản được không,ask_policy_booking
+hủy vé có mất phí không,ask_policy_booking
+bị ốm đột xuất hủy tour thế nào,ask_policy_booking
+chính sách đổi trả ra sao,ask_policy_booking
+thanh toán như thế nào,ask_policy_booking
+có xuất hóa đơn VAT không,ask_policy_booking
+mình muốn hủy phòng,ask_policy_booking
+trẻ dưới 2 tuổi tính vé sao,ask_policy_booking
+thủ tục đặt tour ra sao,ask_policy_booking
+đặt cọc trước bao nhiêu phần trăm,ask_policy_booking
+trẻ em có miễn phí không,ask_policy_booking
+chính sách cho người cao tuổi,ask_policy_booking
+bên mình hủy tour trước 3 ngày có được hoàn 100% tiền không,ask_policy_booking
+bao lâu thì nhận được tiền hoàn,ask_policy_booking
+báo giá tour Thái Lan khởi hành từ HCM [tháng sau](time_window),ask_tour_info
+tour khởi hành lúc mấy giờ,ask_tour_info
+trong tour có bao ăn uống không,ask_tour_info
+có tour ghép đoàn nào đi Hà Giang khởi hành [thứ 6](time_window) không,ask_tour_info
+tour Đà Lạt [tháng 12](month) còn trống chỗ không,ask_tour_info
+có tour nào dưới [2 triệu](budget) không,ask_tour_info
+tour đà lạt đi bằng xe giường nằm hay xe ngồi,ask_tour_info
+tìm tour đi Phú Quốc [3 ngày 2 đêm](duration),ask_tour_info
+xin lịch trình và báo giá tour Sapa đi [cuối tuần này](time_window),ask_tour_info
+mình muốn đặt tour đi vịnh Hạ Long [2 người lớn 1 trẻ em](party_size),ask_tour_info
+thông tin chi tiết tour đà nẵng,ask_tour_info
+lịch trình ngày 2 của tour sapa này đi những đâu,ask_tour_info
+có tour nào từ Vinh đi Đồi Chè Thanh Chương không?,ask_tour_info
+cho xem lịch trình tour Hà Giang [tuần tới](time_window),ask_tour_info
+đến đó bằng phương tiện gì,ask_transportation
+ở Phú Quốc có [taxi](transportation) không,ask_transportation
+vé máy bay đi Hà Nội,ask_transportation
+tư vấn phương tiện di chuyển,ask_transportation
+đặt xe [limousine](transportation) đi Sapa,ask_transportation
+đi [tàu hỏa](transportation) ra Đà Nẵng mất bao lâu,ask_transportation
+giá vé [xe khách](transportation) bao nhiêu,ask_transportation
+cách di chuyển từ sân bay về khách sạn,ask_transportation
+thuê [xe máy](transportation) ở đâu,ask_transportation
+mình muốn mua vé [xe giường nằm](transportation),ask_transportation
+vé máy bay khứ hồi hà nội phú quốc,ask_transportation
+từ sân bay về khách sạn có xe đưa đón không,ask_transportation
+từ sân bay có xe bus không,ask_transportation
+thời tiết [Nha Trang](location) sao,ask_weather_timing
+cho mình book tour Đà Nẵng,book_tour
+mình muốn book tour,book_tour
+book tour,book_tour
+đặt tour,book_tour
+mình muốn đặt tour Sapa,book_tour
+mình cần book tour Đà Lạt [tháng 12](month),book_tour
+đặt giúp mình tour Sapa [tuần sau](time_window),book_tour
+đặt tour Vũng Tàu [2 người](party_size),book_tour
+cho mình đặt tour Phú Quốc [gia đình 4 người](party_size),book_tour
+đặt tour Đà Lạt,book_tour
+muốn đặt tour du lịch,book_tour
+ai đang chat vậy,bot_challenge
+shop dùng auto reply à,bot_challenge
+mày là AI hả,bot_challenge
+are you a human?,bot_challenge
+are you a bot?,bot_challenge
+am I talking to a bot?,bot_challenge
+đang chat với bot à,bot_challenge
+am I talking to a human?,bot_challenge
+không phải,deny
+bỏ đi,deny
+nope,deny
+không thích,deny
+đắt quá thôi,deny
+đổi cái khác đi,deny
+không ok lắm,deny
+k,deny
+sai rồi,deny
+cám ơn bot nhé bye,goodbye
+lúc khác nhắn tiếp,goodbye
+see you around,goodbye
+bye shop,goodbye
+tạm biệt,goodbye
+pp,goodbye
+hẹn gặp lại,goodbye
+have a nice day,goodbye
+see you later,goodbye
+good by,goodbye
+off đây,goodbye
+good night,goodbye
+cee you later,goodbye
+bye,goodbye
+out nha,goodbye
+bai bai,goodbye
+ê bot,greet
+good afternoon,greet
+hey dude,greet
+buổi sáng tốt lành,greet
+chào ad,greet
+moin,greet
+good evening,greet
+goodmorning,greet
+alo,greet
+có ai ở đó không,greet
+goodevening,greet
+hi shop,greet
+hello,greet
+xin chào,greet
+hello ad,greet
+chào bạn,greet
+hi,greet
+súp bro,greet
+good morning,greet
+tư vấn mình với,greet
+đi đà lạt,inform
+tầm [10 củ](budget),inform
+Phú Quốc,inform
+[tháng 11](month),inform
+[xe khách](transportation),inform
+Đà Nẵng,inform
+đi [máy bay](transportation) nhé,inform
+cho hỏi thêm xíu nha,inform
+cho tôi hỏi thêm,inform
+đi [biển](category),inform
+[cuối tuần](time_window),inform
+Hội An,inform
+Huế,inform
+khoảng [6 củ](budget),inform
+Nha Trang,inform
+[2 củ](budget),inform
+ở Đà Lạt thì sao,inform
+sapa,inform
+Sapa,inform
+Hà Nội nha,inform
+[10 triệu](budget),inform
+[6tr](budget),inform
+thế còn Sapa,inform
+Vũng Tàu,inform
+còn Phú Quốc thì sao,inform
+khởi hành từ Sài Gòn,inform
+[4 người](party_size),inform
+[núi](category),inform
+ở Vũng Tàu thì sao,inform
+[2 người lớn 1 trẻ em](party_size),inform
+ngân sách [5tr](budget),inform
+mình xuất phát từ Đà Nẵng,inform
+Hà Nội,inform
+nhóm mình [6 người](party_size),inform
+muốn đi [biển](category),inform
+mở nhạc cho tôi nghe,out_of_scope
+cách chữa đau dạ dày,out_of_scope
+giá vàng hôm nay bao nhiêu,out_of_scope
+bạn ăn cơm chưa,out_of_scope
+cách trồng cây bonsai,out_of_scope
+giải dùm bài toán dợ,out_of_scope
+nay đề về bao nhiêu,out_of_scope
+thời tiết hà nội hôm nay thế nào,out_of_scope
+ronaldo hay messi đá hay hơn,out_of_scope
+viết bài văn tả con mèo,out_of_scope
+1 cộng 1 bằng mấy,out_of_scope
+kể cho tôi một câu chuyện cười,out_of_scope
+bitcoin đang giá bao nhiêu,out_of_scope
+tìm [homestay](category),search_accommodation
+book [phòng](category) [sài gòn](location),search_accommodation
+[nhà nghỉ](category) thì sao,search_accommodation
+các [khách sạn](category) ở đó thì sao,search_accommodation
+có [homestay](category) nào view đồi núi không,search_accommodation
+[resort](category) thì sao hả bot,search_accommodation
+cho tui xem [homestay](category) thì sao,search_accommodation
+thuê [resort](category) [đà nẵng](location),search_accommodation
+gợi ý vài cái [homestay](category) ở Đà Lạt,search_accommodation
+mình cần book [phòng](category),search_accommodation
+gợi ý mình vài [resort](category) view biển,search_accommodation
+đổi sang [nhà nghỉ](category) nhé,search_accommodation
+mình muốn tìm chỗ ăn ngủ,search_accommodation
+muốn thuê [villa](category) nguyên căn,search_accommodation
+tìm [khách sạn](category) ở Vũng Tàu,search_accommodation
+có homestay nào giá rẻ không,search_accommodation
+cho mình xem vài [khu nghỉ dưỡng](category),search_accommodation
+thế còn [khách sạn](category) thì sao,search_accommodation
+tìm khu [nghỉ dưỡng](category) có spa,search_accommodation
+đặt [phòng](category) [khách sạn](category) [Đà Lạt](location),search_accommodation
+tìm [homestay](category) view đẹp ở [Phú Quốc](location) vậy,search_accommodation
+[chỗ nghỉ](category) nào sạch sẽ giá tốt,search_accommodation
+có [resort](category) nào tại Sapa không,search_accommodation
+tìm [chỗ ở](category) quanh Đà Lạt,search_accommodation
+book [phòng](category) [Đà Lạt](location),search_accommodation
+[leo núi](activity) [tháng 10](month),search_activity
+tìm chỗ [tắm biển](activity),search_activity
+[đi trekking](activity),search_activity
+muốn đi lặn san hô,search_activity
+đi [leo núi](activity) ở đâu,search_activity
+[săn mây](activity) ở Tà Xùa,search_activity
+muốn trải nghiệm văn hóa bản địa,search_activity
+[trekking](activity) Sapa,search_activity
+đi [cắm trại](activity) ở đâu,search_activity
+đi [tắm biển](activity) ở đâu,search_activity
+tôi muốn [trekking](activity),search_activity
+đi [săn mây](activity) ở đâu,search_activity
+mình muốn leo núi vào [tháng 10](month),search_activity
+chỗ nào [trekking](activity) đẹp,search_activity
+[cắm trại](activity) ở Đà Lạt,search_activity
+[trekking](activity) [tháng 10](month),search_activity
+nơi nào có thể [cắm trại](activity),search_activity
+tôi muốn [lên núi](activity) chơi,search_activity
+[leo núi](activity) Lào Cai,search_activity
+chỗ nào leo núi đẹp vào [tháng 10](month),search_activity
+chi phí đi leo núi [tháng 10](month) là bao nhiêu,search_activity
+đi [trekking](activity) ở đâu,search_activity
+gợi ý nơi [đi cáp treo](activity),search_activity
+tôi muốn [săn mây](activity),search_activity
+đi [lặn san hô](activity) ở đâu,search_activity
+đi leo núi [tháng 10](month) hết bao nhiêu tiền,search_activity
+đi Phú Quốc [lặn san hô](activity),search_activity
+[lặn san hô](activity) phú quốc,search_activity
+đi [trekking](activity) vào [tháng 10](month) thì nên đi đâu,search_activity
+đợt này muốn đi trốn deadline quá,search_destination
+thời tiết [Nha Trang](location) sao,search_destination
+[sắp tới](time_window) tôi nên đi đâu,search_destination
+tôi muốn đi du lịch [mùa hè](season),search_destination
+dịp lễ [30/4](time_window) nên đi tỉnh nào,search_destination
+mình đang bị suy đi đâu hợp lý,search_destination
+gợi ý địa điểm du lịch,search_destination
+gợi ý chỗ nào đi chữa lành healing với bot,search_destination
+gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to),search_destination
+đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp,search_destination
+có nơi nào đẹp để đi chơi không,search_destination
+dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) không,search_destination
+gợi ý điểm du lịch,search_destination
+muốn đi đâu đó từ tháng 1 tới tháng 3,search_destination
+tôi muốn đi du lịch,search_destination
+muốn tìm nơi [chữa lành](category),search_destination
+tôi muốn đi đâu đó,search_destination
+tôi muốn đi trong [tháng 5](month),search_destination
+[tháng 12](month) đi đâu ở [miền bắc](category) đẹp,search_destination
+t muốn đi Đà Lạt,search_destination
+chỗ nào chụp hình sống ảo cháy máy ta,search_destination
+cho xin review đi Sapa [tháng 10](month),search_destination
+có quán nào ngon chân ái không,search_food_dining
+có điểm nào ăn uống ngon không,search_food_dining
+địa chỉ ăn hải sản ngon bổ rẻ,search_food_dining
+ăn tối ở Đà Lạt nên đi đâu,search_food_dining
+ăn gì ở hội an,search_food_dining
+Sapa có món gì ngon,search_food_dining
+cho mình xin địa chỉ vài quán hải sản hạt dẻ ở nha trang,search_food_dining
+quán nhậu ở Nha Trang,search_food_dining
+recommend vài quán nhậu ngon nha,search_food_dining
+đến huế thì ăn món gì ngon,search_food_dining
+đà lạt có đặc sản gì,search_food_dining
+chỗ nào bán đặc sản làm quà,search_food_dining
+đến Phú Quốc phải ăn gì,search_food_dining
+xin list đồ ăn vặt,search_food_dining
+ăn sáng ở đâu,search_food_dining
+món nào ngon cực dính,search_food_dining
+đi sapa chi phí bao nhiêu,search_price
+trọn gói vậy có phát sinh phụ phí gì không,search_price
+rổ giá như nào,search_price
+đi vậy thiệt hại cỡ nhiêu,search_price
+đi Đà Nẵng tầm bao nhiêu tiền,search_price
+cho hỏi giá phòng 1 đêm,search_price
+cho mình hỏi giá vé cáp treo vinpearl,search_price
+giá có hạt dẻ không,search_price
+điểm nào dành cho hệ học sinh sinh viên,search_price
+tôi muốn đi du lịch giá rẻ,search_price
+tour này mắc không,search_price
+xin bảng giá chi tiết,search_price
+ví đang mỏng có đi được không,search_price
+gợi ý nơi giá rẻ,search_price
+vé vào cửa đắt không,search_price
+chi phí ăn ở đi lại tốn bao nhiêu,search_price
+từ Sài Gòn ra Nha Trang bằng [máy bay](transportation),search_travel
+tôi muốn từ Hà Nội đi Hà Giang,search_travel
+mà thôi cho tôi đi Đà Lạt,search_travel
+tôi muốn đi Phú Quốc,search_travel
+tôi muốn đi Vũng Tàu,search_travel
+thôi cho mình đi Đà Nẵng,search_travel
+thôi đi Vũng Tàu,search_travel
+tôi muốn đi Hội An,search_travel
+tôi muốn từ Sài Gòn đi Đà Lạt [3 ngày](duration),search_travel
+du lịch quanh Hà Nội ngân sách [1 triệu](budget),search_travel
+"tôi muốn đi du lịch [mùa hè](season), ngân sách [1 triệu](budget)",search_travel
+từ Hà Nội đi Hà Giang,search_travel
+mình muốn đi Phú Quốc,search_travel
+tôi muốn đi Sapa,search_travel
+tôi muốn đi Đà Nẵng,search_travel
+kinh phí eo hẹp cỡ [2 củ](budget) thì đi đc đâu không bot,search_travel
+từ Sài Gòn qua Vũng Tàu,search_travel
+chi phí đi du lịch khoảng [5 triệu](budget),search_travel
+muốn đi Đà Nẵng [tháng 5](month) với ngân sách [6 củ](budget),search_travel
+mà thôi đi Phú Quốc,search_travel
+tui mún đi Đà Nẵng [4 ngày 3 đêm](duration) ngân sách cỡ [5 củ](budget),search_travel
+từ Đà Nẵng ra Huế,search_travel
+đang muốn set kèo đi Vũng Tàu,search_travel
+gợi ý chuyến đi Nha Trang [3 ngày](duration) tầm [5 triệu](budget),search_travel
+chi phí cho chuyến đi Phú Quốc [4 ngày](duration) rơi vào khoảng bao nhiêu,search_travel
+tôi muốn đi Hà Nội,search_travel
+thôi thì cho mình đi Sapa vậy,search_travel
+tôi muốn đi từ Hà Nội đến Hà Giang,search_travel
+muốn vi vu vài ngày,search_travel
+tài chính [10 củ](budget) quay đầu,search_travel
+từ Hà Nội đi Sapa bằng [xe khách](transportation),search_travel
+mình muốn đi Đà Lạt,search_travel
+đi phượt Sapa thôi,search_travel
+tầm [2 triệu](budget) đi Vũng Tàu [2 ngày 1 đêm](duration),search_travel
+thôi cho tôi đi Nha Trang,search_travel
+mình muốn đi Nha Trang,search_travel
+từ Sài Gòn đi Nha Trang bằng [tàu hỏa](transportation),search_travel
+từ Hà Nội đến Hà Giang,search_travel
+tôi muốn đi Đà Lạt,search_travel
+mình có tầm [4 triệu](budget),search_travel
+từ Sài Gòn đi Đà Lạt,search_travel
+[sắp tới](time_window) có chỗ nào đi được với [1.5 triệu](budget) không,search_travel
+muốn từ Sài Gòn đến Nha Trang,search_travel

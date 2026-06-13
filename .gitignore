@@ -12,7 +12,7 @@ __pycache__/
 rasa_bot/.rasa/
 rasa_bot/models/*.tar.gz
 rasa_bot/results/
-data/
+rasa_bot/models/
 
 # Logs & Runtime
 logs/
@@ -28,3 +28,8 @@ logs/
 mlruns/
 mlartifacts/
 
+*/__init__.py
+
+.rasa/
+data/scenario3/
+results/*

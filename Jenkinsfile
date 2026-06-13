@@ -75,14 +75,14 @@ pipeline {
                     fi
                     
                     # Quét toàn bộ repo (chỉ warning HIGH, CRITICAL, exit-code 0 để không chặn pipeline nếu lỗi nhỏ)
-                    trivy fs . --scanners vuln,secret --severity HIGH,CRITICAL --exit-code 0
+                    trivy fs . --scanners vuln,secret --severity HIGH,CRITICAL
                     
                     echo "2️⃣ Validate Code (Flake8)..."
                     # Kiểm tra lỗi cú pháp (Syntax errors) - block pipeline nếu có
                     flake8 scripts/ data/ --count --select=E9,F63,F7,F82 --show-source --statistics
                     
                     # Cảnh báo format/style code (không block)
-                    flake8 scripts/ data/ --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
+                    flake8 scripts/ data/ --count --max-complexity=15 --max-line-length=127 --statistics
                     
                     echo "✅ Quét hoàn tất!"
                 """

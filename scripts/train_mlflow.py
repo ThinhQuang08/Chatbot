@@ -7,6 +7,8 @@ import glob
 import time
 import json
 
+from config.settings import MLFLOW_TRACKING_URI, MLFLOW_EXPERIMENT
+
 # Đường dẫn tĩnh dựa trên cấu trúc thư mục
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 RASA_DIR = os.path.join(ROOT_DIR, "rasa_bot")

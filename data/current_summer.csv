@@ -1,0 +1,60 @@
+text,intent
+tour lặn biển Nha Trang,search_activity
+giá vé VinWonders Nam Hội An,search_price
+đi Phú Quốc tháng 6,search_destination
+resort view biển Vũng Tàu,search_accommodation
+thuê canô đi đảo,search_activity
+hải sản tươi sống ở Cát Bà,search_food_dining
+vé máy bay từ Sài Gòn ra Đà Nẵng,ask_transportation
+tour phượt miền Trung bằng xe máy,search_travel
+ngắm hoàng hôn trên biển,search_activity
+khách sạn gần biển ở Phú Quốc,search_accommodation
+giá trò chơi nước ở VinWonders,search_price
+đi đảo Nam Du mùa hè,search_destination
+thuê máy ảnh dưới nước,search_activity
+món nướng hải sản ngon ở Nha Trang,search_food_dining
+đi Nha Trang tháng mấy đẹp,ask_weather_timing
+tour Phú Quốc 3 ngày 2 đêm,search_travel
+resort có hồ bơi vô cực,search_accommodation
+lái xe máy vòng quanh đảo,search_activity
+đặt tour Nha Trang giá rẻ,book_tour
+hải sản đêm ở Vũng Tàu,search_food_dining
+cho thuê xuồng đi đảo Cát Bà,search_activity
+giá taxi từ sân bay Đà Nẵng vào trung tâm,ask_transportation
+nhà nghỉ gần biển Nha Trang,search_accommodation
+đi biển mùa hè ở miền Trung,search_destination
+thuê canô đi câu cá,search_activity
+cơm niêu ở Đà Nẵng,search_food_dining
+tour Đà Nẵng Hội An 5 ngày,search_travel
+bungalow view biển giá rẻ,search_accommodation
+vé tàu hỏa đi Nha Trang,ask_transportation
+đi Phú Quốc từ Hà Nội,ask_transportation
+thèm đi biển quá,inform
+ẩm thực biển ở Phan Thiết,search_food_dining
+homestay gần biển ở Đà Nẵng,search_accommodation
+lặn biển ngắm san hô,search_activity
+giá phòng resort ở Nha Trang,search_price
+đi Cát Bà tháng 7,search_destination
+vé tàu cao tốc ra đảo,ask_transportation
+quán ốc ngon ở Sài Gòn,search_food_dining
+tour phượt Phú Quốc bằng xe máy,search_travel
+khách sạn có lối đi ra biển riêng,search_accommodation
+đi chơi Vũng Tàu trong ngày,ask_itinerary
+nước mắm ngon mua về làm quà,search_food_dining
+thuê căn gia đình ở Vinpearl,search_price
+đi đảo ở Nha Trang,search_activity
+đặt vé máy bay đi Phú Quốc,book_tour
+phòng Airbnb Đà Nẵng view biển,search_accommodation
+thời tiết Nha Trang tháng 8,ask_weather_timing
+lẩu cá bớp ở Sài Gòn,search_food_dining
+cho thuê đồ lặn biển,search_activity
+cơm tấm ngon ở Đà Nẵng,search_food_dining
+đi Phú Quốc chơi gì thú vị,ask_itinerary
+resort 5 sao ở miền Trung,search_accommodation
+tour du thuyền Nha Trang,search_travel
+giá vé VinWonders Nha Trang,search_price
+đi biển gần Sài Gòn chỗ nào đẹp,search_destination
+thuê xe 7 chỗ ở Nha Trang đi đảo,ask_transportation
+khách sạn có spa gần biển,search_accommodation
+mua gì mang về từ Phú Quốc,inform
+đi biển Đà Nẵng tháng 6,search_activity
