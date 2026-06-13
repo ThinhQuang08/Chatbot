@@ -23,8 +23,8 @@ QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "travel_destinations")
 QDRANT_TOUR_COLLECTION = os.getenv("QDRANT_TOUR_COLLECTION", "travel_tours")
 
 MINIO_URL = os.getenv("MINIO_URL", "http://localhost:9000")
-MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "minioadmin")
-MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
+MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "admin")
+MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "password123")
 MINIO_BUCKET = os.getenv("MINIO_BUCKET", "chatbot-models")
 MINIO_MODEL_FILE = os.getenv("MINIO_MODEL_FILE", "latest_model.tar.gz")
 MINIO_MODEL_URL = os.getenv(
