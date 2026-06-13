@@ -5,6 +5,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pandas as pd
+import requests
 from database.db_connection import get_connection
 from evidently import Dataset, DataDefinition, Report
 from evidently.presets import DataDriftPreset
@@ -217,37 +218,72 @@ def run(ref_path, _cur_path):
         "email_sent": False,
     }
 
-    conn = get_connection()
-    cur = conn.cursor()
-    cur.execute(
-        "INSERT INTO mlops_reports (report_type, metrics) VALUES (%s, %s::jsonb)",
-        ("data_quality_drift", json.dumps(record)),
-    )
-    conn.commit()
-    cur.close()
-    conn.close()
-    log.info(f"  ✅ Đã lưu vào mlops_reports")
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+        cur.execute(
+            "INSERT INTO mlops_reports (report_type, metrics) VALUES (%s, %s::jsonb)",
+            ("data_quality_drift", json.dumps(record)),
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+        log.info(f"  ✅ Đã lưu vào mlops_reports")
+    except Exception as e:
+        log.warning(f"  ⚠ Không thể kết nối Database để lưu log: {e}")
+
+    def trigger_jenkins():
+        jenkins_url = os.getenv("JENKINS_URL")
+        job_name = os.getenv("JENKINS_JOB_NAME")
+        user = os.getenv("JENKINS_USER")
+        api_token = os.getenv("JENKINS_API_TOKEN")
+        build_token = os.getenv("JENKINS_BUILD_TOKEN")
+        
+        if not all([jenkins_url, job_name, user, api_token, build_token]):
+            log.warning("  ⚠ Thiếu cấu hình Jenkins trong .env, bỏ qua trigger.")
+            return
+            
+        trigger_url = f"{jenkins_url.rstrip('/')}/job/{job_name}/build?token={build_token}"
+        log.info(f"  ▶ Triggering Jenkins Pipeline: {job_name} ...")
+        try:
+            response = requests.post(trigger_url, auth=(user, api_token))
+            if response.status_code == 201:
+                log.info("  ✅ Đã kích hoạt Jenkins Pipeline thành công!")
+            else:
+                log.warning(f"  ⚠ Lỗi HTTP {response.status_code}: {response.text}")
+        except Exception as e:
+            log.error(f"  ❌ Lỗi kết nối đến Jenkins: {e}")
 
     if quality_score < QUALITY_THRESHOLD:
-        log.info(f"  Quality Score {quality_score:.2f} < {QUALITY_THRESHOLD} → gửi email...")
-        sent = send_alert_email(
-            score=quality_score,
-            threshold=QUALITY_THRESHOLD,
-            breached=breached_list,
-            feature_details=feature_results,
-            cur_rows=len(feat_cur),
-            ref_rows=len(feat_ref),
-        )
-        if sent:
-            conn = get_connection()
-            cur = conn.cursor()
-            cur.execute(
-                "UPDATE mlops_reports SET metrics = jsonb_set(metrics, '{email_sent}', 'true'::jsonb) "
-                "WHERE id = (SELECT max(id) FROM mlops_reports WHERE report_type = 'data_quality_drift')"
+        log.info(f"  Quality Score {quality_score:.2f} < {QUALITY_THRESHOLD} → gửi email và trigger Jenkins...")
+        
+        # Trigger Jenkins CI/CD pipeline
+        trigger_jenkins()
+        
+        try:
+            sent = send_alert_email(
+                score=quality_score,
+                threshold=QUALITY_THRESHOLD,
+                breached=breached_list,
+                feature_details=feature_results,
+                cur_rows=len(feat_cur),
+                ref_rows=len(feat_ref),
             )
-            conn.commit()
-            cur.close()
-            conn.close()
+            if sent:
+                try:
+                    conn = get_connection()
+                    cur = conn.cursor()
+                    cur.execute(
+                        "UPDATE mlops_reports SET metrics = jsonb_set(metrics, '{email_sent}', 'true'::jsonb) "
+                        "WHERE id = (SELECT max(id) FROM mlops_reports WHERE report_type = 'data_quality_drift')"
+                    )
+                    conn.commit()
+                    cur.close()
+                    conn.close()
+                except Exception as e:
+                    pass
+        except Exception as e:
+            log.warning(f"  ⚠ Không thể gửi email: {e}")
     else:
         log.info(f"  ⚠ Demo mode: Expected drift, got score={quality_score:.2f} >= {QUALITY_THRESHOLD}")
         log.info(f"    → Corruption not strong enough. Run again or adjust corrupt_to_trigger_drift().")

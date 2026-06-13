@@ -1,6 +1,7 @@
 import yaml
 import re
 import pandas as pd
+import os
 
 # Giả sử đây là hàm tách từ (Word Segmentation) mà sếp đang dùng trong file preprocess_data.py
 # Sếp hãy import hàm thật của sếp vào đây nhé (ví dụ: from underthesea import word_tokenize)
