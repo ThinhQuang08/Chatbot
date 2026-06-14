@@ -1156,3 +1156,75 @@ nlu:
       - [tháng 4](month) [tháng 5](month) đi [Nha Trang]{"entity": "location", "role": "destination"} có biển đẹp không
       - mùa nước nổi [miền Tây](category) là tháng mấy
       - khi nào [Hà Nội]{"entity": "location", "role": "destination"} đẹp nhất trong năm
+
+
+# --- OOS hard negatives + Augmentation ---
+  - intent: out_of_scope
+    examples: |
+      - nhiệt độ hôm nay bao nhiêu
+      - dự báo thời tiết ngày mai ở hà nội
+      - mưa lúc mấy giờ
+      - bao giờ hết mưa
+      - trời đang nắng quá
+      - hà nội rộng bao nhiêu km vuông
+      - dân số đà lạt là bao nhiêu
+      - quảng trường ba đình ở đâu
+      - sapa có bao nhiêu dân
+      - hom nay an gi
+      - nấu cơm thế nào
+      - mở quạt giúp tôi
+      - tắt đèn đi
+      - gọi taxi cho tôi
+      - ship đồ ăn ra đây
+      - thứ 6 ngày mấy
+      - hôm nay là thứ mấy
+      - bao giờ thì tới tết
+      - tết năm nay vào tháng mấy
+      - còn mấy ngày nữa tới tết
+      - tỷ giá usd sang vnd hôm nay
+      - giá xăng hôm nay
+      - mua iphone 16 giá bao nhiêu
+      - thuê nhà hà nội giá rẻ
+      - tiền điện tháng này bao nhiêu
+  - intent: travel_planning
+    examples: |
+      - có nơi nào hay để đi chơi không
+      - tui đang muốn kiếm chỗ đi chơi cuối tuần
+      - chỗ nào đẹp mà đi chơi được
+      - muốn tìm địa điểm du lịch hot hiện nay
+      - sắp tới rảnh rỗi muốn đi du lịch
+      - nên đi du lịch ở đâu trong nước
+      - gợi ý vài chỗ đi chơi cho 2 đứa
+      - tour du lịch giá rẻ đi biển
+      - review nha trang có gì chơi
+      - đi sapa có gì chơi không
+      - muốn đi chơi xa 2 ngày
+  - intent: search_price
+    examples: |
+      - chi phí tour nha trang giá bao nhiêu
+      - đi đà lạt tự túc tốn bao nhiêu tiền
+      - kinh phí du lịch sapa khoảng bao nhiêu
+      - đi phú quốc 3 ngày hết bao nhiêu
+      - tính tiền tour đà nẵng 4 ngày
+      - budget 2 triệu đi được tour nào
+      - vé máy bay đi phú quốc giá rẻ
+      - tour giá sinh viên có không
+  - intent: ask_weather_timing
+    examples: |
+      - thời điểm nào nên đi du lịch biển
+      - sapa tháng 6 mưa không
+      - đà lạt vào mùa nào có hoa
+      - thời tiết nha trang tháng 9 thế nào
+      - mùa xuân đi miền bắc ở đâu đẹp
+      - tháng 12 đi phú quốc được không
+      - khi nào đi du lịch đà nẵng đẹp nhất
+  - intent: ask_location_feature
+    examples: |
+      - phú quốc có gì hay
+      - đà nẵng chỗ nào chơi được
+      - biển sapa có được không
+      - hội an về đêm có đẹp không
+      - vũng tàu ngoài biển còn gì chơi
+      - đi nha trang ngoài tắm biển còn gì
+      - huế có món gì ngon
+

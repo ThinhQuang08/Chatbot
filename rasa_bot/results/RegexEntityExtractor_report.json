@@ -1,10 +1,42 @@
 {
-  "duration": {
-    "precision": 0.5,
-    "recall": 0.8888888888888888,
-    "f1-score": 0.64,
-    "support": 18,
+  "month_from": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 14,
+    "confused_with": {
+      "month": 14
+    }
+  },
+  "month": {
+    "precision": 0.25,
+    "recall": 1.0,
+    "f1-score": 0.4,
+    "support": 10,
     "confused_with": {}
+  },
+  "season": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 4,
+    "confused_with": {}
+  },
+  "budget": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 23,
+    "confused_with": {}
+  },
+  "month_to": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 14,
+    "confused_with": {
+      "month": 14
+    }
   },
   "activity": {
     "precision": 0.5151515151515151,
@@ -15,18 +47,20 @@
       "category": 1
     }
   },
-  "budget": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 23,
-    "confused_with": {}
+  "category": {
+    "precision": 0.3218390804597701,
+    "recall": 0.7567567567567568,
+    "f1-score": 0.45161290322580644,
+    "support": 37,
+    "confused_with": {
+      "activity": 8
+    }
   },
-  "season": {
-    "precision": 0.6666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.8,
-    "support": 4,
+  "time_window": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 10,
     "confused_with": {}
   },
   "location.destination": {
@@ -38,31 +72,6 @@
       "location": 41
     }
   },
-  "party_size": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1,
-    "confused_with": {}
-  },
-  "category": {
-    "precision": 0.3218390804597701,
-    "recall": 0.7567567567567568,
-    "f1-score": 0.45161290322580644,
-    "support": 37,
-    "confused_with": {
-      "activity": 8
-    }
-  },
-  "month_from": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 14,
-    "confused_with": {
-      "month": 14
-    }
-  },
   "transportation": {
     "precision": 0.2,
     "recall": 1.0,
@@ -70,11 +79,18 @@
     "support": 1,
     "confused_with": {}
   },
-  "month": {
-    "precision": 0.25,
-    "recall": 1.0,
-    "f1-score": 0.4,
-    "support": 10,
+  "duration": {
+    "precision": 0.5,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.64,
+    "support": 18,
+    "confused_with": {}
+  },
+  "party_size": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1,
     "confused_with": {}
   },
   "location.departure": {
@@ -85,22 +101,6 @@
     "confused_with": {
       "location": 4
     }
-  },
-  "month_to": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 14,
-    "confused_with": {
-      "month": 14
-    }
-  },
-  "time_window": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 10,
-    "confused_with": {}
   },
   "micro avg": {
     "precision": 0.43043478260869567,
@@ -117,7 +117,7 @@
   "weighted avg": {
     "precision": 0.29238906649285623,
     "recall": 0.4900990099009901,
-    "f1-score": 0.3524063746325004,
+    "f1-score": 0.35240637463250046,
     "support": 202
   },
   "accuracy": 0.8064759036144579

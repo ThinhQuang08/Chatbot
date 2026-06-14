@@ -1,63 +1,39 @@
 {
-  "duration": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 18,
-    "confused_with": {}
-  },
-  "activity": {
-    "precision": 0.40625,
-    "recall": 0.6842105263157895,
-    "f1-score": 0.5098039215686275,
-    "support": 19,
+  "month_from": {
+    "precision": 1.0,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.8333333333333333,
+    "support": 14,
     "confused_with": {
-      "category": 3
+      "month": 4
     }
   },
-  "budget": {
-    "precision": 1.0,
-    "recall": 0.391304347826087,
-    "f1-score": 0.5625,
-    "support": 23,
+  "month": {
+    "precision": 0.375,
+    "recall": 0.9,
+    "f1-score": 0.5294117647058825,
+    "support": 10,
     "confused_with": {
-      "month": 7
+      "duration": 1
     }
   },
   "season": {
-    "precision": 0.8,
+    "precision": 0.6666666666666666,
     "recall": 1.0,
-    "f1-score": 0.888888888888889,
+    "f1-score": 0.8,
     "support": 4,
     "confused_with": {}
   },
-  "location.destination": {
-    "precision": 0.42528735632183906,
-    "recall": 0.8222222222222222,
-    "f1-score": 0.5606060606060606,
-    "support": 45,
+  "budget": {
+    "precision": 1.0,
+    "recall": 0.43478260869565216,
+    "f1-score": 0.6060606060606061,
+    "support": 23,
     "confused_with": {
-      "destination": 6,
-      "location": 2
+      "month": 6
     }
   },
-  "party_size": {
-    "precision": 0.125,
-    "recall": 1.0,
-    "f1-score": 0.2222222222222222,
-    "support": 1,
-    "confused_with": {}
-  },
-  "category": {
-    "precision": 0.575,
-    "recall": 0.6216216216216216,
-    "f1-score": 0.5974025974025973,
-    "support": 37,
-    "confused_with": {
-      "activity": 8
-    }
-  },
-  "month_from": {
+  "month_to": {
     "precision": 1.0,
     "recall": 0.8571428571428571,
     "f1-score": 0.923076923076923,
@@ -66,62 +42,90 @@
       "month": 2
     }
   },
-  "transportation": {
-    "precision": 0.25,
-    "recall": 1.0,
-    "f1-score": 0.4,
-    "support": 1,
-    "confused_with": {}
-  },
-  "month": {
-    "precision": 0.4,
-    "recall": 1.0,
-    "f1-score": 0.5714285714285715,
-    "support": 10,
-    "confused_with": {}
-  },
-  "location.departure": {
-    "precision": 0.6,
-    "recall": 0.5,
-    "f1-score": 0.5454545454545454,
-    "support": 6,
+  "activity": {
+    "precision": 0.4583333333333333,
+    "recall": 0.5789473684210527,
+    "f1-score": 0.5116279069767442,
+    "support": 19,
     "confused_with": {
-      "location.destination": 3
+      "category": 1
     }
   },
-  "month_to": {
-    "precision": 0.9230769230769231,
-    "recall": 0.8571428571428571,
-    "f1-score": 0.888888888888889,
-    "support": 14,
+  "category": {
+    "precision": 0.575,
+    "recall": 0.6216216216216216,
+    "f1-score": 0.5974025974025973,
+    "support": 37,
     "confused_with": {
-      "month": 2
+      "activity": 6
     }
   },
   "time_window": {
-    "precision": 0.8,
-    "recall": 0.8,
-    "f1-score": 0.8000000000000002,
+    "precision": 0.75,
+    "recall": 0.6,
+    "f1-score": 0.6666666666666665,
     "support": 10,
+    "confused_with": {
+      "time_window.departure": 1
+    }
+  },
+  "location.destination": {
+    "precision": 0.4482758620689655,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.5909090909090909,
+    "support": 45,
+    "confused_with": {
+      "destination": 4,
+      "location": 2
+    }
+  },
+  "transportation": {
+    "precision": 0.2,
+    "recall": 1.0,
+    "f1-score": 0.33333333333333337,
+    "support": 1,
     "confused_with": {}
   },
+  "duration": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 18,
+    "confused_with": {}
+  },
+  "party_size": {
+    "precision": 0.14285714285714285,
+    "recall": 1.0,
+    "f1-score": 0.25,
+    "support": 1,
+    "confused_with": {}
+  },
+  "location.departure": {
+    "precision": 0.7142857142857143,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.7692307692307692,
+    "support": 6,
+    "confused_with": {
+      "location.destination": 1
+    }
+  },
   "micro avg": {
-    "precision": 0.527972027972028,
-    "recall": 0.7475247524752475,
-    "f1-score": 0.6188524590163934,
+    "precision": 0.5398550724637681,
+    "recall": 0.7376237623762376,
+    "f1-score": 0.6234309623430963,
     "support": 202
   },
   "macro avg": {
-    "precision": 0.6003549445691355,
-    "recall": 0.8102803409439565,
-    "f1-score": 0.6259184066310763,
+    "precision": 0.6023399014778325,
+    "recall": 0.8005215515512999,
+    "f1-score": 0.6213630506432779,
     "support": 202
   },
   "weighted avg": {
-    "precision": 0.6248997918691073,
-    "recall": 0.7475247524752475,
-    "f1-score": 0.6360755221449746,
+    "precision": 0.6371335902063112,
+    "recall": 0.7376237623762376,
+    "f1-score": 0.6401206694007143,
     "support": 202
   },
-  "accuracy": 0.8757530120481928
+  "accuracy": 0.8772590361445783
 }
