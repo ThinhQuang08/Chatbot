@@ -8,8 +8,7 @@ intents:
   # - test_s3
 
   - bot_challenge
-  - search_travel
-  - search_destination
+  - travel_planning
   - search_activity
   - search_accommodation
   - search_price

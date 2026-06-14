@@ -33,15 +33,14 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: search_travel
-  - action: travel_form
-  - active_loop: travel_form
+  - intent: travel_planning
+  - action: action_search_travel
 
 - story: Chào hỏi rồi hỏi về điểm đến
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: search_destination
+  - intent: travel_planning
   - action: action_search_travel
 
 - story: Cảm ơn rồi tạm biệt
@@ -77,7 +76,7 @@ stories:
 
 - story: Hỏi destination rồi bổ sung budget
   steps:
-  - intent: search_destination
+  - intent: travel_planning
   - action: action_search_travel
   - intent: inform
   - action: action_search_travel
@@ -134,7 +133,7 @@ stories:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
-  - intent: search_destination
+  - intent: travel_planning
   - action: action_search_travel
 
 - story: Tìm tour quay xe đổi ý

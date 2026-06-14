@@ -651,7 +651,7 @@ class ActionSearchTravel(Action):
             return reset_events
 
         # Chỉ set destination từ top result khi có search intent thực sự (tránh slot bleed)
-        SEARCH_INTENTS = {"search_travel", "search_destination", "search_price"}
+        SEARCH_INTENTS = {"travel_planning", "search_price"}
         if predicted_intent in SEARCH_INTENTS and results:
             top_location = results[0].get("location")
             if top_location:

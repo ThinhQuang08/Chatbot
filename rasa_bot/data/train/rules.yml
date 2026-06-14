@@ -51,11 +51,6 @@ rules:
       - intent: search_activity
       - action: action_search_activity
 
-  - rule: Xử lý tìm kiếm điểm đến
-    steps:
-      - intent: search_destination
-      - action: action_search_travel
-
   - rule: Xử lý tìm kiếm giá tour / ngân sách
     steps:
       - intent: search_price
@@ -76,6 +71,11 @@ rules:
       - intent: reset_slots
       - action: action_reset_slots
 
+  - rule: Xử lý tìm kiếm điểm đến
+    steps:
+      - intent: travel_planning
+      - action: action_search_travel
+
   - rule: Hủy form khi khách đổi ý (Gen Z quay xe)
     condition:
       - active_loop: travel_form
@@ -95,12 +95,6 @@ rules:
       - active_loop: null
       - action: utter_cancel_form
       - action: action_reset_slots
-
-  - rule: 1. Kích hoạt Form khi khách muốn tìm tour
-    steps:
-      - intent: search_travel
-      - action: travel_form
-      - active_loop: travel_form
 
   - rule: Xử lý đặt tour
     steps:

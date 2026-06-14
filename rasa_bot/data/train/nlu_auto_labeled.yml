@@ -193,7 +193,7 @@ nlu:
       - cho thuê xe [đạp xe](activity)
       - cho thuê xe leo [núi](category)
 
-  - intent: search_travel
+  - intent: travel_planning
     examples: |
       - muốn đặt [tour](category) [Hà Giang](destination)
       - muốn đặt [tour](category) [Hà Nội](destination)

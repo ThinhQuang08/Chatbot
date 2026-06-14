@@ -7,14 +7,14 @@ stories:
   - action: utter_greet
   - user: |
       gợi ý điểm du lịch miền Trung
-    intent: search_destination
+    intent: travel_planning
   - action: action_search_travel
 
 - story: search travel with form
   steps:
   - user: |
       tôi muốn đi du lịch
-    intent: search_travel
+    intent: travel_planning
   - action: travel_form
   - active_loop: travel_form
   - user: |

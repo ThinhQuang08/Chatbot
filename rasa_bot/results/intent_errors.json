@@ -1,50 +1,34 @@
 [
   {
+    "text": "ê mày",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5327672362327576
+    }
+  },
+  {
     "text": "này bot",
     "intent": "greet",
     "intent_prediction": {
       "name": "deny",
-      "confidence": 0.46949803829193115
+      "confidence": 0.5361090302467346
     }
   },
   {
-    "text": "hế lô",
+    "text": "bot ơi",
     "intent": "greet",
     "intent_prediction": {
       "name": "deny",
-      "confidence": 0.30659574270248413
+      "confidence": 0.23382817208766937
     }
   },
   {
     "text": "hế nhô",
     "intent": "greet",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.8764380812644958
-    }
-  },
-  {
-    "text": "tôi đi đây",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.46153533458709717
-    }
-  },
-  {
-    "text": "nghỉ đây",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "search_accommodation",
-      "confidence": 0.8649349808692932
-    }
-  },
-  {
-    "text": "nghỉ ngơi thôi",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "search_accommodation",
-      "confidence": 0.8291724920272827
+      "name": "affirm",
+      "confidence": 0.2970779836177826
     }
   },
   {
@@ -52,55 +36,31 @@
     "intent": "goodbye",
     "intent_prediction": {
       "name": "thanks",
-      "confidence": 0.6177445650100708
+      "confidence": 0.8224931955337524
     }
   },
   {
     "text": "tôi phải đi rồi",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.733889102935791
+      "name": "travel_planning",
+      "confidence": 0.6902318596839905
     }
   },
   {
-    "text": "thôi mình đi đây",
+    "text": "tan ca",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.8814970254898071
-    }
-  },
-  {
-    "text": "ngon lành",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.36364784836769104
-    }
-  },
-  {
-    "text": "ổn áp",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.9422532916069031
+      "name": "deny",
+      "confidence": 0.47143399715423584
     }
   },
   {
     "text": "tạm ổn",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.8414978981018066
-    }
-  },
-  {
-    "text": "chốt kèo",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9472658038139343
+      "name": "goodbye",
+      "confidence": 0.9767118692398071
     }
   },
   {
@@ -108,55 +68,47 @@
     "intent": "affirm",
     "intent_prediction": {
       "name": "deny",
-      "confidence": 0.5133110880851746
+      "confidence": 0.9653156995773315
     }
   },
   {
-    "text": "uki",
-    "intent": "affirm",
+    "text": "dở ẹc",
+    "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.40426239371299744
-    }
-  },
-  {
-    "text": "oki",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.5577876567840576
+      "name": "affirm",
+      "confidence": 0.9474574327468872
     }
   },
   {
     "text": "chán",
     "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.6452714800834656
+      "name": "affirm",
+      "confidence": 0.7481040358543396
     }
   },
   {
     "text": "không ngon",
     "intent": "deny",
     "intent_prediction": {
-      "name": "ask_location_feature",
-      "confidence": 0.6490283012390137
+      "name": "affirm",
+      "confidence": 0.48066169023513794
     }
   },
   {
     "text": "chê",
     "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.6823524236679077
+      "name": "affirm",
+      "confidence": 0.6803780794143677
     }
   },
   {
     "text": "next",
     "intent": "deny",
     "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.5333338975906372
+      "name": "goodbye",
+      "confidence": 0.6316505670547485
     }
   },
   {
@@ -164,23 +116,15 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.9624472856521606
+      "confidence": 0.9445937871932983
     }
   },
   {
     "text": "chán chả buồn nói",
     "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.44017112255096436
-    }
-  },
-  {
-    "text": "dẹp đi",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.4451405704021454
+      "name": "affirm",
+      "confidence": 0.29424697160720825
     }
   },
   {
@@ -188,15 +132,31 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.9600133299827576
+      "confidence": 0.9806773066520691
     }
   },
   {
     "text": "bó tay",
     "intent": "deny",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.3794204592704773
+      "name": "affirm",
+      "confidence": 0.713119626045227
+    }
+  },
+  {
+    "text": "phía bên kia là ai",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5065975785255432
+    }
+  },
+  {
+    "text": "ai đang trả lời tôi",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.635754406452179
     }
   },
   {
@@ -204,15 +164,7 @@
     "intent": "bot_challenge",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.6159032583236694
-    }
-  },
-  {
-    "text": "tụi bây có người không",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "ask_policy_booking",
-      "confidence": 0.4876571595668793
+      "confidence": 0.34388113021850586
     }
   },
   {
@@ -220,15 +172,23 @@
     "intent": "out_of_scope",
     "intent_prediction": {
       "name": "ask_weather_timing",
-      "confidence": 0.9812259674072266
+      "confidence": 0.9989780187606812
+    }
+  },
+  {
+    "text": "tỷ giá usd hôm nay",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.6855663061141968
     }
   },
   {
     "text": "xem tử vi cho tôi",
     "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9393830299377441
+      "name": "search_activity",
+      "confidence": 0.5915989279747009
     }
   },
   {
@@ -236,39 +196,39 @@
     "intent": "out_of_scope",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.46259820461273193
+      "confidence": 0.8443766236305237
     }
   },
   {
     "text": "cài đặt máy lạnh",
     "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.7180297374725342
+      "name": "ask_transportation",
+      "confidence": 0.5205284953117371
+    }
+  },
+  {
+    "text": "sửa ống nước",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8668017387390137
     }
   },
   {
     "text": "thợ điện ơi",
     "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.39853164553642273
+      "name": "deny",
+      "confidence": 0.26652947068214417
     }
   },
   {
     "text": "đặt đồ ăn",
     "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "search_food_dining",
-      "confidence": 0.6025360822677612
-    }
-  },
-  {
-    "text": "ship cho tôi cốc trà sữa",
-    "intent": "out_of_scope",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.7831538319587708
+      "name": "ask_location_feature",
+      "confidence": 0.8385859131813049
     }
   },
   {
@@ -276,159 +236,159 @@
     "intent": "out_of_scope",
     "intent_prediction": {
       "name": "ask_policy_booking",
-      "confidence": 0.2876116931438446
+      "confidence": 0.5666176080703735
     }
   },
   {
     "text": "làm thơ 4 chữ",
     "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "ask_itinerary",
-      "confidence": 0.35808873176574707
+      "name": "inform",
+      "confidence": 0.7635822296142578
+    }
+  },
+  {
+    "text": "kể chuyện ma",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.44833284616470337
+    }
+  },
+  {
+    "text": "mơn",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8623883724212646
+    }
+  },
+  {
+    "text": "mơn nha",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.6405248045921326
     }
   },
   {
     "text": "tks",
     "intent": "thanks",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.47172412276268005
-    }
-  },
-  {
-    "text": "thời điểm nào đẹp nhất để đi Đà Lạt",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "ask_weather_timing",
-      "confidence": 0.9746509194374084
+      "name": "deny",
+      "confidence": 0.7286356687545776
     }
   },
   {
     "text": "mùa hè nên đi đâu tránh nóng",
-    "intent": "search_destination",
+    "intent": "travel_planning",
     "intent_prediction": {
       "name": "ask_weather_timing",
-      "confidence": 0.9935619831085205
+      "confidence": 0.9992796778678894
     }
   },
   {
     "text": "tháng 9 có chỗ nào đẹp để săn ảnh",
-    "intent": "search_destination",
+    "intent": "travel_planning",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.6581937074661255
-    }
-  },
-  {
-    "text": "mình định đi vào Tết",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9881448745727539
-    }
-  },
-  {
-    "text": "muốn đi ngắm tuyết ở miền núi thì đi tháng mấy",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "ask_weather_timing",
-      "confidence": 0.9174516201019287
+      "confidence": 0.9915538430213928
     }
   },
   {
     "text": "cuối năm đi biển Phú Quốc có hợp lý không",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.33767691254615784
-    }
-  },
-  {
-    "text": "Sapa mùa nào đẹp nhất",
-    "intent": "search_destination",
+    "intent": "travel_planning",
     "intent_prediction": {
       "name": "ask_weather_timing",
-      "confidence": 0.9841899275779724
-    }
-  },
-  {
-    "text": "chỗ nào yên tĩnh để nghỉ ngơi",
-    "intent": "search_destination",
-    "intent_prediction": {
-      "name": "search_accommodation",
-      "confidence": 0.9097792506217957
+      "confidence": 0.47439900040626526
     }
   },
   {
     "text": "gợi ý điểm tắm biển gần Hà Nội",
-    "intent": "search_destination",
+    "intent": "travel_planning",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.944916844367981
+      "confidence": 0.9993659853935242
     }
   },
   {
     "text": "đi đâu cuối tuần cho thoải mái",
-    "intent": "search_destination",
+    "intent": "travel_planning",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.46056532859802246
+      "name": "search_price",
+      "confidence": 0.255748987197876
+    }
+  },
+  {
+    "text": "thôi thì đi Phú Quốc vậy",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.35395583510398865
+    }
+  },
+  {
+    "text": "dạo này nóng quá mình muốn đi biển",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.4222455620765686
+    }
+  },
+  {
+    "text": "đi từ tháng 1 tới tháng 3",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9971445202827454
+    }
+  },
+  {
+    "text": "gợi ý điểm cắm trại",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9999107122421265
+    }
+  },
+  {
+    "text": "tính đi biển 3 ngày",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9606267809867859
+    }
+  },
+  {
+    "text": "booking chuyến đi Sapa luôn",
+    "intent": "travel_planning",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.6284558773040771
     }
   },
   {
     "text": "tôi muốn đi nơi khí hậu mát mẻ",
     "intent": "search_activity",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.5425134301185608
+      "name": "travel_planning",
+      "confidence": 0.9683268666267395
     }
   },
   {
-    "text": "tìm chỗ chụp ảnh ở Đà Lạt",
+    "text": "nơi nào có thác nước đẹp",
     "intent": "search_activity",
     "intent_prediction": {
-      "name": "search_accommodation",
-      "confidence": 0.7698602080345154
-    }
-  },
-  {
-    "text": "gợi ý đi bộ đường dài",
-    "intent": "search_activity",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.3715253174304962
-    }
-  },
-  {
-    "text": "muốn câu cá ở biển",
-    "intent": "search_activity",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.8960294723510742
+      "name": "ask_location_feature",
+      "confidence": 0.3189716935157776
     }
   },
   {
     "text": "có khu vui chơi giải trí nào không",
     "intent": "search_activity",
     "intent_prediction": {
-      "name": "out_of_scope",
-      "confidence": 0.9505814909934998
-    }
-  },
-  {
-    "text": "muốn tham quan chùa chiền",
-    "intent": "search_activity",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.4566976726055145
-    }
-  },
-  {
-    "text": "gợi ý spa massage ở Sapa",
-    "intent": "search_activity",
-    "intent_prediction": {
-      "name": "search_accommodation",
-      "confidence": 0.8551313877105713
+      "name": "ask_location_feature",
+      "confidence": 0.9405509829521179
     }
   },
   {
@@ -436,23 +396,15 @@
     "intent": "search_activity",
     "intent_prediction": {
       "name": "ask_tour_info",
-      "confidence": 0.9638108611106873
+      "confidence": 0.6171035170555115
     }
   },
   {
     "text": "tôi có 2 triệu đi được đâu",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9264060854911804
-    }
-  },
-  {
-    "text": "gợi ý nơi đi chơi dưới 1500k",
-    "intent": "search_price",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.2650928199291229
+      "name": "ask_weather_timing",
+      "confidence": 0.8391910195350647
     }
   },
   {
@@ -460,79 +412,63 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "ask_weather_timing",
-      "confidence": 0.4698547422885895
-    }
-  },
-  {
-    "text": "tôi muốn đi tháng 4, chi phí tối đa 2000000",
-    "intent": "search_price",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9981289505958557
+      "confidence": 0.9918504357337952
     }
   },
   {
     "text": "tôi muốn đi mùa xuân với ngân sách 2.5tr",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9986099004745483
+      "name": "ask_weather_timing",
+      "confidence": 0.9887696504592896
     }
   },
   {
     "text": "đi tháng 11 đến tháng 1 với 4tr",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9622901082038879
+      "name": "inform",
+      "confidence": 0.6033796072006226
     }
   },
   {
     "text": "ngân sách 3 triệu thì nên đi đâu",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9021003842353821
+      "name": "ask_weather_timing",
+      "confidence": 0.7103169560432434
     }
   },
   {
     "text": "tôi muốn đi chơi nhưng chỉ có 10tr",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9993740916252136
+      "name": "travel_planning",
+      "confidence": 0.726699709892273
     }
   },
   {
     "text": "tôi chỉ có 10tr thì đi đâu ổn",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.6375213861465454
+      "name": "search_accommodation",
+      "confidence": 0.6252654194831848
     }
   },
   {
     "text": "ngân sách 10tr đi đâu đẹp",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.997885525226593
+      "name": "search_food_dining",
+      "confidence": 0.36844202876091003
     }
   },
   {
     "text": "mình có 8tr, gợi ý giúp mình",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "out_of_scope",
-      "confidence": 0.34393274784088135
-    }
-  },
-  {
-    "text": "dới 3tr nha, đi cuối tuần",
-    "intent": "search_price",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9455265998840332
+      "name": "greet",
+      "confidence": 0.16943424940109253
     }
   },
   {
@@ -540,23 +476,15 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9945133924484253
+      "confidence": 0.48707401752471924
     }
   },
   {
     "text": "đi trăng mật ngân sách 20 triệu 2 vợ chồng",
     "intent": "search_price",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9138956665992737
-    }
-  },
-  {
-    "text": "túi tiền 3 triệu đi chơi 3 ngày có ổn không",
-    "intent": "search_price",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.8602609038352966
+      "name": "book_tour",
+      "confidence": 0.26022201776504517
     }
   },
   {
@@ -564,271 +492,159 @@
     "intent": "search_price",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9998577833175659
+      "confidence": 0.6300351023674011
     }
   },
   {
-    "text": "tính sơ bộ chi phí chuyến biển giúp mình",
-    "intent": "search_price",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9989404082298279
-    }
-  },
-  {
-    "text": "tour Đà Lạt tháng 12",
+    "text": "giá tour đã bao gồm vé máy bay chưa shop",
     "intent": "ask_tour_info",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.6476742029190063
+      "name": "search_price",
+      "confidence": 0.9993540644645691
+    }
+  },
+  {
+    "text": "tour Hội An có ăn trưa không",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.9375578761100769
+    }
+  },
+  {
+    "text": "giá tour cho trẻ em thế nào",
+    "intent": "ask_tour_info",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9891384243965149
     }
   },
   {
     "text": "Chơi gì ở Hội An vào buổi tối",
     "intent": "ask_location_feature",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.6495891809463501
-    }
-  },
-  {
-    "text": "Ở Đà Lạt có gì chơi",
-    "intent": "ask_location_feature",
-    "intent_prediction": {
-      "name": "ask_itinerary",
-      "confidence": 0.34372636675834656
+      "name": "greet",
+      "confidence": 0.26050546765327454
     }
   },
   {
     "text": "Đà Nẵng có gì chơi buổi tối",
     "intent": "ask_location_feature",
     "intent_prediction": {
-      "name": "ask_itinerary",
-      "confidence": 0.6363801956176758
+      "name": "search_food_dining",
+      "confidence": 0.8533248901367188
+    }
+  },
+  {
+    "text": "homestay ở Đà Nẵng giá bao nhiêu",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_price",
+      "confidence": 0.9872108697891235
     }
   },
   {
     "text": "gợi ý thêm chỗ ở đi",
     "intent": "search_accommodation",
     "intent_prediction": {
-      "name": "ask_location_feature",
-      "confidence": 0.326265424489975
+      "name": "search_activity",
+      "confidence": 0.827336311340332
+    }
+  },
+  {
+    "text": "gợi ý chỗ ở",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.6023937463760376
+    }
+  },
+  {
+    "text": "chỗ ở",
+    "intent": "search_accommodation",
+    "intent_prediction": {
+      "name": "thanks",
+      "confidence": 0.7326438426971436
     }
   },
   {
     "text": "Đà Lạt mùa này đẹp không",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.6099501848220825
+      "name": "ask_location_feature",
+      "confidence": 0.5710098147392273
     }
   },
   {
-    "text": "đi Đà Nẵng mùa nào đẹp",
+    "text": "mùa này đi Đà Lạt có đẹp không",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.6106363534927368
+      "name": "travel_planning",
+      "confidence": 0.8422251343727112
     }
   },
   {
-    "text": "cuối năm đi biển có đẹp không",
+    "text": "thời tiết Đà Lạt mùa này thế nào",
     "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.5172180533409119
+      "name": "ask_location_feature",
+      "confidence": 0.9982288479804993
     }
   },
   {
-    "text": "tui muốn đi chơi",
-    "intent": "search_travel",
+    "text": "review Đà Nẵng mùa này",
+    "intent": "ask_weather_timing",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9548125863075256
-    }
-  },
-  {
-    "text": "dạo này stress quá có chỗ nào yên tĩnh đi vài ngày ko",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9990662932395935
-    }
-  },
-  {
-    "text": "dạo này nóng quá mình muốn đi biển",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.7214356064796448
-    }
-  },
-  {
-    "text": "gợi ý tour tắm biển giá rẻ",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.4095962941646576
-    }
-  },
-  {
-    "text": "tìm chỗ tắm biển",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.998999297618866
-    }
-  },
-  {
-    "text": "tôi muốn lên núi chơi",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.9985857009887695
-    }
-  },
-  {
-    "text": "gợi ý điểm cắm trại",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "search_activity",
-      "confidence": 0.9986258745193481
-    }
-  },
-  {
-    "text": "booking chuyến đi Sapa luôn",
-    "intent": "search_travel",
-    "intent_prediction": {
-      "name": "book_tour",
-      "confidence": 0.8041930198669434
-    }
-  },
-  {
-    "text": "reset slot",
-    "intent": "reset_slots",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.8607877492904663
-    }
-  },
-  {
-    "text": "reset slots",
-    "intent": "reset_slots",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.4181858003139496
-    }
-  },
-  {
-    "text": "clear session",
-    "intent": "reset_slots",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.38624677062034607
-    }
-  },
-  {
-    "text": "xoá dữ liệu",
-    "intent": "reset_slots",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.7121466994285583
-    }
-  },
-  {
-    "text": "reset",
-    "intent": "reset_slots",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.5119627714157104
-    }
-  },
-  {
-    "text": "từ tháng 5 đến tháng 7",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.981543779373169
-    }
-  },
-  {
-    "text": "từ tháng 10 đến tháng 12",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.978050708770752
-    }
-  },
-  {
-    "text": "từ tháng 1 đến tháng 3",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9780818223953247
-    }
-  },
-  {
-    "text": "tui muốn đi từ tháng 2 đến tháng 5",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9982422590255737
-    }
-  },
-  {
-    "text": "đi từ tháng 1 tới tháng 3",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9935871362686157
+      "name": "travel_planning",
+      "confidence": 0.9998114705085754
     }
   },
   {
     "text": "dời lịch sang từ tháng 6 đến tháng 8",
     "intent": "inform",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9932312965393066
-    }
-  },
-  {
-    "text": "chuyến đi bắt đầu từ tháng 9 kết thúc vào tháng 12",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9554144740104675
-    }
-  },
-  {
-    "text": "sang Hà Nội đi",
-    "intent": "inform",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9645287990570068
+      "name": "travel_planning",
+      "confidence": 0.6757394075393677
     }
   },
   {
     "text": "đổi sang Phú Quốc nhé",
     "intent": "inform",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9790674448013306
+      "name": "ask_location_feature",
+      "confidence": 0.6443759799003601
     }
   },
   {
-    "text": "đi tháng 10 thì sao",
+    "text": "tìm ở Nha Trang xem",
     "intent": "inform",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.9008039236068726
+      "name": "search_activity",
+      "confidence": 0.9379501938819885
     }
   },
   {
     "text": "khu ẩm thực đường phố Sài Gòn",
     "intent": "search_food_dining",
     "intent_prediction": {
+      "name": "search_activity",
+      "confidence": 0.9960888624191284
+    }
+  },
+  {
+    "text": "địa chỉ ăn vặt Hội An",
+    "intent": "search_food_dining",
+    "intent_prediction": {
       "name": "ask_location_feature",
-      "confidence": 0.9522122144699097
+      "confidence": 0.5570693612098694
+    }
+  },
+  {
+    "text": "quán cà phê view đẹp ở Sapa",
+    "intent": "search_food_dining",
+    "intent_prediction": {
+      "name": "ask_location_feature",
+      "confidence": 0.7443633675575256
     }
   },
   {
@@ -836,7 +652,7 @@
     "intent": "search_food_dining",
     "intent_prediction": {
       "name": "ask_location_feature",
-      "confidence": 0.773944079875946
+      "confidence": 0.9334591627120972
     }
   },
   {
@@ -844,7 +660,7 @@
     "intent": "ask_itinerary",
     "intent_prediction": {
       "name": "ask_tour_info",
-      "confidence": 0.9529005885124207
+      "confidence": 0.727273166179657
     }
   },
   {
@@ -852,47 +668,31 @@
     "intent": "ask_itinerary",
     "intent_prediction": {
       "name": "ask_tour_info",
-      "confidence": 0.9756876230239868
-    }
-  },
-  {
-    "text": "lịch trình du lịch biển Nha Trang",
-    "intent": "ask_itinerary",
-    "intent_prediction": {
-      "name": "ask_tour_info",
-      "confidence": 0.7136940360069275
+      "confidence": 0.9957578778266907
     }
   },
   {
     "text": "đi từ Đà Nẵng ra Huế bằng gì tiện nhất",
     "intent": "ask_transportation",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.9825630187988281
+      "name": "ask_weather_timing",
+      "confidence": 0.4499349594116211
     }
   },
   {
     "text": "thuê xe tự lái ở Nha Trang giá thế nào",
     "intent": "ask_transportation",
     "intent_prediction": {
-      "name": "ask_location_feature",
-      "confidence": 0.7809951305389404
+      "name": "search_price",
+      "confidence": 0.9918249249458313
     }
   },
   {
     "text": "vé tàu hỏa từ Sài Gòn đi Nha Trang bao nhiêu",
     "intent": "ask_transportation",
     "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.648808479309082
-    }
-  },
-  {
-    "text": "đi xe máy từ Hà Nội lên Sapa có an toàn không",
-    "intent": "ask_transportation",
-    "intent_prediction": {
-      "name": "search_travel",
-      "confidence": 0.5555101633071899
+      "name": "search_price",
+      "confidence": 0.9998643398284912
     }
   },
   {
@@ -900,23 +700,31 @@
     "intent": "ask_transportation",
     "intent_prediction": {
       "name": "search_activity",
-      "confidence": 0.8984845280647278
+      "confidence": 0.9916191101074219
     }
   },
   {
-    "text": "tàu cao tốc từ Rạch Giá ra Phú Quốc mất mấy tiếng",
-    "intent": "ask_transportation",
+    "text": "đặt cọc online có an toàn không",
+    "intent": "ask_policy_booking",
     "intent_prediction": {
-      "name": "ask_tour_info",
-      "confidence": 0.44644176959991455
+      "name": "out_of_scope",
+      "confidence": 0.8476671576499939
+    }
+  },
+  {
+    "text": "muốn thay đổi ngày khởi hành thì làm sao",
+    "intent": "ask_policy_booking",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.3617710471153259
     }
   },
   {
     "text": "có bảo hiểm du lịch trong gói không",
     "intent": "ask_policy_booking",
     "intent_prediction": {
-      "name": "search_destination",
-      "confidence": 0.27448770403862
+      "name": "ask_tour_info",
+      "confidence": 0.36730536818504333
     }
   },
   {
@@ -924,15 +732,15 @@
     "intent": "book_tour",
     "intent_prediction": {
       "name": "search_accommodation",
-      "confidence": 0.9998694658279419
+      "confidence": 0.9650492072105408
     }
   },
   {
-    "text": "đặt tour ghép đoàn đi Hà Giang",
+    "text": "đặt chỗ tour Nha Trang cho gia đình",
     "intent": "book_tour",
     "intent_prediction": {
-      "name": "ask_tour_info",
-      "confidence": 0.4501660168170929
+      "name": "travel_planning",
+      "confidence": 0.8177610635757446
     }
   },
   {
@@ -940,7 +748,7 @@
     "intent": "book_tour",
     "intent_prediction": {
       "name": "ask_tour_info",
-      "confidence": 0.6318684220314026
+      "confidence": 0.9909495711326599
     }
   }
 ]

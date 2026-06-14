@@ -16,10 +16,10 @@ pipeline:
     max_ngram: 5
   
   - name: rasa_bot.components.vietnamese_sbert_featurizer.VietnameseSBertFeaturizer
-    model_name: keepitreal/vietnamese-sbert
+    model_name: bkai-foundation-models/vietnamese-bi-encoder
   
   - name: DIETClassifier
-    epochs: 200
+    epochs: 300
     learning_rate: 0.001
     hidden_layers_sizes:
       text: [256, 128]
