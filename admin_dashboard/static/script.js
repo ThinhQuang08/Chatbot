@@ -872,6 +872,8 @@ async function fetchDataQuality() {
   }
 }
 
+let dqFeatureCharts = {};
+
 function renderDataQuality(data) {
   const latest = data.latest;
   const history = data.history || [];
@@ -886,6 +888,7 @@ function renderDataQuality(data) {
   const breached = latest.breached_count || 0;
   const total = latest.total_features || 7;
   const features = latest.features || [];
+  const distributions = latest.distributions || {};
 
   const FEATURE_LABELS = {
     'text_length': 'Độ dài câu',
@@ -923,26 +926,55 @@ function renderDataQuality(data) {
   // Feature table
   const tbody = $('#dqBody');
   if (!features.length) {
-    tbody.innerHTML = '<tr><td colspan="6" class="loading">Không có dữ liệu feature</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="8" class="loading">Không có dữ liệu feature</td></tr>';
   } else {
-    tbody.innerHTML = features.map(f => {
+    tbody.innerHTML = features.map((f, idx) => {
       const drifted = (f.penalty || 0) > 0.30;
       const delta = f.delta_pct != null ? (f.delta_pct > 0 ? '+' : '') + f.delta_pct.toFixed(1) + '%' : '—';
       const deltaColor = drifted ? 'var(--red)' : 'var(--green)';
       const statusColor = drifted ? 'var(--red)' : 'var(--green)';
       const statusLabel = drifted ? 'Degraded' : 'OK';
       const label = FEATURE_LABELS[f.name] || f.name;
-      return `<tr>
+      const ksP = f.ks_p_value != null ? f.ks_p_value.toFixed(4) : '—';
+      const ksColor = f.ks_p_value != null && f.ks_p_value <= 0.05 ? 'var(--red)' : 'var(--green)';
+      const hasDist = distributions[f.name] != null;
+      return `<tr class="dq-feature-row" data-feature="${f.name}" data-idx="${idx}" style="cursor:pointer">
         <td><strong>${f.name}</strong></td>
         <td style="color:var(--text-dim);font-size:0.8rem">${label}</td>
         <td>${f.ref_mean != null ? f.ref_mean.toFixed(4) : '—'}</td>
         <td>${f.cur_mean != null ? f.cur_mean.toFixed(4) : '—'}</td>
         <td style="color:${deltaColor}">${delta}</td>
         <td>${(f.penalty || 0).toFixed(2)}</td>
+        <td style="color:${ksColor};font-weight:600">${ksP}</td>
         <td style="color:${statusColor};font-weight:600">${statusLabel}</td>
+      </tr>
+      <tr class="dq-expand-row" data-feature="${f.name}" style="display:none">
+        <td colspan="8" style="padding:0">
+          <div class="dq-histogram-wrap">
+            <canvas id="dqHist_${idx}" width="600" height="240"></canvas>
+          </div>
+        </td>
       </tr>`;
     }).join('');
   }
+
+  // Click handler for expandable rows
+  $$('.dq-feature-row').forEach(row => {
+    row.addEventListener('click', function() {
+      const feature = this.dataset.feature;
+      const idx = this.dataset.idx;
+      const expandRow = document.querySelector(`.dq-expand-row[data-feature="${feature}"]`);
+      if (!expandRow) return;
+
+      const isVisible = expandRow.style.display !== 'none';
+      expandRow.style.display = isVisible ? 'none' : 'table-row';
+
+      if (!isVisible && distributions[feature]) {
+        const d = distributions[feature];
+        renderDqHistogram(`dqHist_${idx}`, d.bins, d.ref_counts, d.cur_counts, feature);
+      }
+    });
+  });
 
   // Email log
   const emailSent = latest.email_sent;
@@ -1008,6 +1040,73 @@ function renderDqChart(history) {
           max: 100,
           ticks: { color: '#aaa', callback: v => v + '%' },
           grid: { color: 'rgba(255,255,255,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+function renderDqHistogram(canvasId, bins, refCounts, curCounts, featureName) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  // Destroy existing chart
+  if (dqFeatureCharts[canvasId]) {
+    dqFeatureCharts[canvasId].destroy();
+  }
+
+  const labels = bins.slice(0, -1).map((v, i) =>
+    v.toFixed(1) + '–' + bins[i + 1].toFixed(1)
+  );
+
+  const ctx = canvas.getContext('2d');
+  dqFeatureCharts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Reference',
+          data: refCounts,
+          backgroundColor: 'rgba(108,92,231,0.7)',
+          borderColor: 'rgba(108,92,231,1)',
+          borderWidth: 1,
+          borderRadius: 2,
+        },
+        {
+          label: 'Current',
+          data: curCounts,
+          backgroundColor: 'rgba(225,112,85,0.7)',
+          borderColor: 'rgba(225,112,85,1)',
+          borderWidth: 1,
+          borderRadius: 2,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: featureName + ' — Phân phối Reference vs Current',
+          color: '#e1e4ed',
+          font: { size: 13, weight: '600' },
+          padding: { bottom: 12 }
+        },
+        legend: {
+          labels: { color: '#8b90a5', font: { size: 11 }, usePointStyle: true, padding: 12 }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 10 }, maxRotation: 60 }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#8b90a5', font: { size: 10 }, stepSize: 1 }
         }
       }
     }

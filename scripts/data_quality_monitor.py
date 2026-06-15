@@ -2,6 +2,9 @@ import sys, os, json, warnings, smtplib, ssl, logging
 from email.message import EmailMessage
 from datetime import datetime
 
+import numpy as np
+from scipy.stats import ks_2samp
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pandas as pd
@@ -142,10 +145,13 @@ def run(ref_path, cur_path):
 
     # Custom quality scoring — drift from Evidently's KS test is unreliable for
     # binary features (is_empty, has_emoji). Use relative delta scoring instead.
+    # But we still compute KS test for display purposes in the dashboard.
     feature_results = []
     for col in FEATURE_NAMES:
-        ref_mean = float(feat_ref[col].mean())
-        cur_mean = float(feat_cur[col].mean())
+        ref_vals = feat_ref[col].values
+        cur_vals = feat_cur[col].values
+        ref_mean = float(ref_vals.mean())
+        cur_mean = float(cur_vals.mean())
         if abs(ref_mean) > 1e-9:
             delta_pct = (cur_mean - ref_mean) / abs(ref_mean) * 100
         else:
@@ -157,12 +163,20 @@ def run(ref_path, cur_path):
             penalty = abs(cur_mean - ref_mean) / 0.01
         penalty = min(penalty, 1.0)
 
+        # KS test
+        try:
+            ks_stat, ks_p = ks_2samp(ref_vals, cur_vals)
+        except Exception:
+            ks_stat, ks_p = 0.0, 1.0
+
         feature_results.append({
             "name": col,
             "ref_mean": round(ref_mean, 4),
             "cur_mean": round(cur_mean, 4),
             "delta_pct": round(delta_pct, 2),
             "penalty": round(penalty, 4),
+            "ks_stat": round(float(ks_stat), 4),
+            "ks_p_value": round(float(ks_p), 4),
         })
 
     total = len(FEATURE_NAMES)
@@ -183,6 +197,21 @@ def run(ref_path, cur_path):
         log.info(f"    {icon} {f['name']:20s} {f['ref_mean']:.3f} → {f['cur_mean']:.3f}  "
                  f"delta={f['delta_pct']:+.1f}%  penalty={f['penalty']:.2f}")
 
+    # Build histogram distributions for each feature
+    distributions = {}
+    for col in FEATURE_NAMES:
+        ref_vals = feat_ref[col].values
+        cur_vals = feat_cur[col].values
+        all_vals = np.concatenate([ref_vals, cur_vals])
+        bins = np.histogram_bin_edges(all_vals, bins=15)
+        ref_hist, _ = np.histogram(ref_vals, bins=bins)
+        cur_hist, _ = np.histogram(cur_vals, bins=bins)
+        distributions[col] = {
+            "bins": [round(float(b), 4) for b in bins],
+            "ref_counts": [int(c) for c in ref_hist],
+            "cur_counts": [int(c) for c in cur_hist],
+        }
+
     record = {
         "quality_score": round(quality_score, 4),
         "threshold": QUALITY_THRESHOLD,
@@ -192,6 +221,7 @@ def run(ref_path, cur_path):
         "breached_count": len(breached_list),
         "total_features": total,
         "features": feature_results,
+        "distributions": distributions,
         "ref_source": os.path.basename(ref_path),
         "cur_source": os.path.basename(cur_path),
         "email_sent": False,

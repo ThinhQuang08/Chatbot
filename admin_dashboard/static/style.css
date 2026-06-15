@@ -842,6 +842,21 @@ body {
   background: rgba(108, 92, 231, 0.05);
 }
 
+.dq-feature-row:hover {
+  background: rgba(108, 92, 231, 0.08) !important;
+}
+
+.dq-expand-row td {
+  background: var(--surface-2);
+  border-bottom: 2px solid var(--accent);
+}
+
+.dq-histogram-wrap {
+  padding: 16px 24px;
+  max-height: 300px;
+  position: relative;
+}
+
 /* --- Evidently Report Tab --- */
 .er-header {
   display: flex;
