@@ -866,6 +866,65 @@ def get_data_quality():
     })
 
 
+EVIDENTLY_REPORTS_DIR = ROOT_DIR / "results" / "evidently_reports"
+
+
+@app.route("/api/evidently-reports")
+def list_evidently_reports():
+    """List all Evidently HTML reports with DB metadata."""
+    reports = []
+    if EVIDENTLY_REPORTS_DIR.exists():
+        for f in sorted(EVIDENTLY_REPORTS_DIR.glob("*.html"), key=lambda f: f.stat().st_mtime, reverse=True):
+            reports.append({
+                "filename": f.name,
+                "size_kb": round(f.stat().st_size / 1024, 1),
+                "mtime": datetime.fromtimestamp(f.stat().st_mtime).isoformat(),
+                "url": f"/evidently-report/{f.name}"
+            })
+
+    # Merge with DB records that have report_html_filename
+    from database.db_connection import get_connection
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT id, metrics, created_at, report_type
+        FROM mlops_reports
+        WHERE metrics ? 'report_html_filename'
+        ORDER BY created_at DESC
+        LIMIT 50
+    """)
+    db_rows = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    db_map = {}
+    for row in db_rows:
+        m = row[1] if isinstance(row[1], dict) else {}
+        fname = m.get("report_html_filename")
+        if fname:
+            db_map[fname] = {
+                "db_id": row[0],
+                "report_type": row[3] if len(row) > 3 else "unknown",
+                "quality_score": m.get("quality_score"),
+                "breached_count": m.get("breached_count"),
+                "ref_rows": m.get("ref_rows"),
+                "cur_rows": m.get("cur_rows"),
+                "created_at": row[2].isoformat() if hasattr(row[2], "isoformat") else str(row[2]),
+            }
+
+    for r in reports:
+        if r["filename"] in db_map:
+            r["db"] = db_map[r["filename"]]
+
+    return jsonify(reports)
+
+
+@app.route("/evidently-report/<filename>")
+def serve_evidently_report(filename):
+    """Serve an Evidently HTML report file."""
+    return send_from_directory(str(EVIDENTLY_REPORTS_DIR), filename)
+
+
 if __name__ == "__main__":
     _ensure_dvc_data()
     app.run(host=DASHBOARD_HOST, port=DASHBOARD_PORT, debug=True, use_reloader=False)

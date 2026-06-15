@@ -1,5 +1,6 @@
 # detect drift dữ liệu 2 mùa
 import sys, os, json, warnings
+from datetime import datetime
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pandas as pd
@@ -55,6 +56,14 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
     report = Report(metrics=[DataDriftPreset()])
     result = report.run(reference_data=dataset_ref, current_data=dataset_cur)
 
+    # Save interactive HTML report
+    reports_dir = os.path.join(os.path.dirname(__file__), "..", "results", "evidently_reports")
+    os.makedirs(reports_dir, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    html_path = os.path.join(reports_dir, f"data_drift_{scenario}_{ts}.html")
+    result.save_html(html_path)
+    print(f"  Đã lưu Evidently report: {html_path}")
+
     try:
         d = result.as_dict()
     except AttributeError:
@@ -63,6 +72,7 @@ def run(ref_name="reference_winter.csv", cur_name="current_summer.csv",
     d = make_serializable(d)
     d["scenario"] = scenario
     d["description"] = description
+    d["report_html_filename"] = f"data_drift_{scenario}_{ts}.html"
 
     for m in d["metrics"]:
         name = m["metric_name"]

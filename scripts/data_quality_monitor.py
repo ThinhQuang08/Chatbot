@@ -120,6 +120,14 @@ def run(ref_path, cur_path):
     report = Report(metrics=[DataDriftPreset(num_threshold=0.05)])
     result = report.run(reference_data=dataset_ref, current_data=dataset_cur)
 
+    # Save interactive HTML report
+    reports_dir = os.path.join(ROOT, "results", "evidently_reports")
+    os.makedirs(reports_dir, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    html_path = os.path.join(reports_dir, f"data_quality_drift_{ts}.html")
+    result.save_html(html_path)
+    log.info(f"  ✅ Đã lưu Evidently report: {html_path}")
+
     try:
         raw = result.as_dict()
     except AttributeError:
@@ -187,6 +195,7 @@ def run(ref_path, cur_path):
         "ref_source": os.path.basename(ref_path),
         "cur_source": os.path.basename(cur_path),
         "email_sent": False,
+        "report_html_filename": f"data_quality_drift_{ts}.html",
     }
 
     conn = get_connection()

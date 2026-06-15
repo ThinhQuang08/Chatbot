@@ -11,6 +11,7 @@ let dqChart = null;
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
+let erReports = [];
 
 async function api(url, opts = {}) {
   const res = await fetch(url, {
@@ -842,7 +843,7 @@ function initTabs() {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       this.classList.add('active');
-      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality' };
+      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality', evidently: 'tabEvidently' };
       const tabId = tabMap[this.dataset.tab] || 'tabReview';
       const tab = document.getElementById(tabId);
       if (tab) tab.classList.add('active');
@@ -853,6 +854,9 @@ function initTabs() {
       if (this.dataset.tab === 'quality') {
         fetchDataQuality();
         if (dqChart) dqChart.resize();
+      }
+      if (this.dataset.tab === 'evidently') {
+        loadEvidentlyReports();
       }
     });
   });
@@ -1034,6 +1038,86 @@ const dqThresholdPlugin = {
   }
 };
 Chart.register(dqThresholdPlugin);
+
+// --- Evidently Report Tab ---
+async function loadEvidentlyReports() {
+  try {
+    const reports = await api('/api/evidently-reports');
+    erReports = reports || [];
+    renderErList();
+  } catch (e) {
+    console.error('loadEvidentlyReports error:', e);
+  }
+}
+
+function renderErList() {
+  const list = $('#erList');
+  const count = $('#erCount');
+  if (!list) return;
+
+  count.textContent = erReports.length;
+
+  if (!erReports.length) {
+    list.innerHTML = '<div class="loading">Chưa có báo cáo. Chạy data_quality_monitor.py trước.</div>';
+    return;
+  }
+
+  list.innerHTML = erReports.map((r, i) => {
+    const db = r.db || {};
+    let scoreHtml = '';
+    if (db.quality_score != null) {
+      const s = db.quality_score;
+      const cls = s >= 0.50 ? 'good' : s >= 0.35 ? 'warn' : 'bad';
+      scoreHtml = `<span class="er-item-score ${cls}">${(s * 100).toFixed(0)}%</span>`;
+    }
+
+    const typeIcon = r.filename.includes('data_quality') ? '📊' : '📈';
+    const typeLabel = db.report_type || (r.filename.includes('data_quality') ? 'Quality Drift' : 'Data Drift');
+
+    const timeStr = db.created_at
+      ? new Date(db.created_at).toLocaleString('vi-VN')
+      : new Date(r.mtime).toLocaleString('vi-VN');
+
+    return `<div class="er-item" data-url="${r.url}" data-filename="${r.filename}" onclick="selectErReport(this)">
+      <div class="er-item-name">${typeIcon} ${r.filename}</div>
+      <div class="er-item-type">${typeLabel}</div>
+      <div class="er-item-meta">
+        <span>${timeStr}</span>
+        <span>${r.size_kb} KB</span>
+        ${scoreHtml}
+        ${db.breached_count != null ? `<span>🔴 ${db.breached_count} breached</span>` : ''}
+        ${db.ref_rows != null ? `<span>📄 ${db.ref_rows} → ${db.cur_rows}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selectErReport(el) {
+  // Highlight
+  $$('.er-item').forEach(e => e.classList.remove('active'));
+  el.classList.add('active');
+
+  const url = el.dataset.url;
+  const filename = el.dataset.filename;
+  const db = erReports.find(r => r.filename === filename)?.db || {};
+
+  // Update header
+  const title = $('#erReportTitle');
+  const meta = $('#erReportMeta');
+  title.textContent = filename;
+  let metaParts = [];
+  if (db.quality_score != null) metaParts.push(`Score: ${(db.quality_score * 100).toFixed(0)}%`);
+  if (db.breached_count != null) metaParts.push(`Breached: ${db.breached_count}`);
+  if (db.created_at) metaParts.push(new Date(db.created_at).toLocaleString('vi-VN'));
+  meta.textContent = metaParts.join(' | ');
+
+  // Show iframe
+  const frame = $('#erFrame');
+  const placeholder = $('#erPlaceholder');
+  frame.src = url;
+  frame.style.display = 'block';
+  placeholder.style.display = 'none';
+}
 
 async function init() {
   await loadData();
