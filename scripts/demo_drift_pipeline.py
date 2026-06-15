@@ -9,6 +9,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 random.seed(42)
 
+# Intent mapping from old taxonomy → current taxonomy
+INTENT_MAP = {
+    "search_destination": "travel_planning",
+    "search_travel": "travel_planning",
+}
+
 BASE = Path(__file__).resolve().parent.parent
 RASA_DIR = BASE / "rasa_bot"
 DATA_DIR = BASE / "data"
@@ -178,15 +184,18 @@ def main():
     shutil.rmtree(DEMO_DIR)
     DEMO_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Read CSVs
+    # Read CSVs with intent mapping
+    def map_intent(i):
+        return INTENT_MAP.get(i, i)
+
     ref_rows = []
     with open(REF_CSV, encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            ref_rows.append((row["text"].strip(), row["intent"].strip()))
+            ref_rows.append((row["text"].strip(), map_intent(row["intent"].strip())))
     cur_rows = []
     with open(CUR_CSV, encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            cur_rows.append((row["text"].strip(), row["intent"].strip()))
+            cur_rows.append((row["text"].strip(), map_intent(row["intent"].strip())))
 
     log(f"Loaded {len(ref_rows)} reference rows, {len(cur_rows)} current trend rows")
 

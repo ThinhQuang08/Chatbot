@@ -1,0 +1,804 @@
+version: "3.1"
+
+nlu:
+  - intent: affirm
+    examples: |
+      - 10 điểm cho shop
+      - chuẩn
+      - chính xác
+      - chốt luôn
+      - correct
+      - duyệt
+      - dạ đúng
+      - hay
+      - indeed
+      - nghe hay đó
+      - ngon
+      - of course
+      - ok
+      - oke
+      - okela
+      - quá tuyệt
+      - that sounds good
+      - thế cũng được
+      - tuyệt
+      - tuyệt vời
+      - xịn xò
+      - y
+      - yes
+      - yup
+      - đúng rồi
+      - đúng ý mình
+      - đỉnh quá
+      - đồng ý
+      - ưng ý lắm
+
+  - intent: ask_itinerary
+    examples: |
+      - cho em hỏi Đi Hà Giang trong 2 ngày
+      - cho xin lịch trình tham quan
+      - cách sắp xếp thời gian đi [Hà Giang]{"entity": "location", "role": "destination"}
+      - gợi ý lịch trình đi [Sapa]{"entity": "location", "role": "destination"} [3 ngày 2 đêm](duration)
+      - gợi ý plan đi chơi [cuối tuần](time_window)
+      - làm ơn Lịch trình Huế tiết kiệm
+      - lên giúp mình lịch trình tự túc đà nẵng
+      - lên plan đi [Đà Lạt]{"entity": "location", "role": "destination"} giúp mình
+      - lịch trình ăn chơi [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - mình cần kế hoạch du lịch [Phú Quốc]{"entity": "location", "role": "destination"}
+      - mình cần lên lịch trình đi sapa
+      - nên phân bổ thời gian đi chơi thế nào
+      - nên đi những đâu trong [3 ngày](duration)
+      - sắp xếp lịch trình đi chơi [Nha Trang]{"entity": "location", "role": "destination"}
+      - thiết kế cho mình lịch trình đi phú quốc 4 ngày 3 đêm
+      - tư vấn lịch trình
+      - tư vấn tour [4 ngày 3 đêm](duration)
+      - tạo giúp mình lịch trình tự túc
+      - tạo lịch trình 2 ngày 1 đêm sapa
+      - đi [Hà Nội]{"entity": "location", "role": "destination"} [1 ngày](duration) thì đi đâu
+
+  - intent: ask_location_feature
+    examples: |
+      - [Hội An]{"entity": "location", "role": "destination"} về đêm vui không
+      - [Nha Trang]{"entity": "location", "role": "destination"} có gì hay ho không
+      - [Sapa]{"entity": "location", "role": "destination"} có gì đặc biệt
+      - [Vũng Tàu]{"entity": "location", "role": "destination"} tắm biển ở đâu đẹp
+      - [Đà Lạt]{"entity": "location", "role": "destination"} giờ có đông khách du lịch không
+      - [Đà Lạt]{"entity": "location", "role": "destination"} mưa nhiều không
+      - [đà lạt]{"entity": "location", "role": "destination"} đợt này có lễ hội gì không
+      - [đặc sản](activity) [Hội An](location) có gì ngon
+      - [đặc sản](activity) [Sa Pa](location) là gì
+      - an ninh khu vực đó thế nào
+      - biển sapa có được không
+      - check in [đà lạt](location) chỗ nào đẹp nhất
+      - chất lượng dịch vụ ở [Phú Quốc]{"entity": "location", "role": "destination"}
+      - chỗ đó ban đêm có an toàn để đi dạo không
+      - chỗ đó có wifi mạnh không
+      - chỗ đó có ồn ào không
+      - có chỗ đỗ xe ô tô ở đó không
+      - cảnh quan [Vịnh Hạ Long]{"entity": "location", "role": "destination"} đẹp không
+      - dân cư ở đó có thân thiện không
+      - giải trí ở [Đà Nẵng]{"entity": "location", "role": "destination"} có gì
+      - huế có món gì ngon
+      - hội an về đêm có đẹp không
+      - khu vực [Bùi Viện]{"entity": "location", "role": "destination"} có gì chơi
+      - khu đấy có gần biển không
+      - khí hậu ở đó thế nào
+      - không khí ở [Đà Lạt]{"entity": "location", "role": "destination"} thế nào
+      - mùa này đi biển có bão không
+      - phong cảnh [Hà Giang]{"entity": "location", "role": "destination"} mùa này sao
+      - phú quốc có gì hay
+      - phương tiện di chuyển ở [Phú Quốc]{"entity": "location", "role": "destination"} có thuận tiện không
+      - review [Hà Giang]{"entity": "location", "role": "destination"} có gì chơi
+      - review đi [Mộc Châu](location) mùa hoa cải
+      - thời tiết ở [Sapa]{"entity": "location", "role": "destination"} [tháng 11](month) thế nào
+      - trên đó có lạnh không
+      - tối ở đó có nhộn nhịp không
+      - view ở đó có đẹp không bot
+      - vũng tàu ngoài biển còn gì chơi
+      - vị trí có thuận tiện đi lại không
+      - đi [Côn Đảo]{"entity": "location", "role": "destination"} mùa nào sóng êm
+      - đi [Phú Quốc]{"entity": "location", "role": "destination"} mùa này thời tiết sao
+      - đi nha trang ngoài tắm biển còn gì
+      - đà nẵng chỗ nào chơi được
+      - đường xá ở [Sapa]{"entity": "location", "role": "destination"} có khó đi không
+      - đường đi chỗ đó có dốc không
+      - địa điểm [Sapa]{"entity": "location", "role": "destination"} có gần trung tâm không
+      - ở đó có mát không
+      - ở đó mạng di động có khỏe không
+
+  - intent: ask_policy_booking
+    examples: |
+      - bao lâu thì nhận được tiền hoàn
+      - bé 4 tuổi thì phụ thu thế nào
+      - bên mình hủy tour trước 3 ngày có được hoàn 100% tiền không
+      - bị ốm đột xuất hủy tour thế nào
+      - chính sách cho người cao tuổi
+      - chính sách đổi trả ra sao
+      - có xuất hóa đơn VAT không
+      - hủy vé có mất phí không
+      - mình muốn hủy phòng
+      - nếu có việc bận dời ngày được không
+      - thanh toán như thế nào
+      - thanh toán qua chuyển khoản được không
+      - thủ tục đặt tour ra sao
+      - trẻ dưới 2 tuổi tính vé sao
+      - trẻ em có miễn phí không
+      - đi nước ngoài cần chuẩn bị visa không
+      - điều kiện hoàn tiền là gì
+      - đặt cọc trước bao nhiêu phần trăm
+
+  - intent: ask_tour_info
+    examples: |
+      - báo giá tour [Thái Lan]{"entity": "location", "role": "destination"} khởi hành từ [HCM]{"entity": "location", "role": "departure"} [tháng sau](time_window)
+      - cho xem lịch trình tour [Hà Giang]{"entity": "location", "role": "destination"} [tuần tới](time_window)
+      - có tour ghép đoàn nào đi [Hà Giang]{"entity": "location", "role": "destination"} khởi hành [thứ 6](time_window) không
+      - có tour nào dưới [2 triệu](budget) không
+      - có tour nào từ [Vinh]{"entity": "location", "role": "departure"} đi [Đồi Chè Thanh Chương]{"entity": "location", "role": "destination"} không?
+      - lịch trình ngày 2 của tour sapa này đi những đâu
+      - mình cần tìm tour đi [Hà Nội]{"entity": "location", "role": "destination"} cho [4 người](party_size)
+      - mình muốn đặt tour đi [vịnh Hạ Long]{"entity": "location", "role": "destination"} [2 người lớn 1 trẻ em](party_size)
+      - thông tin chi tiết tour [đà nẵng]{"entity": "location", "role": "destination"}
+      - tour [Đà Lạt]{"entity": "location", "role": "destination"} [tháng 12](month) còn trống chỗ không
+      - tour [đà lạt]{"entity": "location", "role": "destination"} 3 ngày 2 đêm này giá chính xác bao nhiêu
+      - tour khởi hành lúc mấy giờ
+      - tour này có hdv theo suốt tuyến không
+      - tour đà lạt đi bằng xe giường nằm hay xe ngồi
+      - trong tour có bao ăn uống không
+      - tìm cho mình tour đi [Đà Lạt]{"entity": "location", "role": "destination"}
+      - tìm tour đi [Phú Quốc]{"entity": "location", "role": "destination"} [3 ngày 2 đêm](duration)
+      - xin lịch trình và báo giá tour [Sapa]{"entity": "location", "role": "destination"} đi [cuối tuần này](time_window)
+
+  - intent: ask_transportation
+    examples: |
+      - bên bạn có hỗ trợ đặt vé [máy bay](transportation) không
+      - cho tôi hỏi Taxi Hà Giang giá bao nhiêu
+      - cách di chuyển từ sân bay về khách sạn
+      - giá vé [xe khách](transportation) bao nhiêu
+      - mình hỏi Xe giường nằm đi Hà Giang
+      - mình muốn mua vé [xe giường nằm](transportation)
+      - thuê [xe máy](transportation) ở đâu
+      - tư vấn phương tiện di chuyển
+      - tới [Hạ Long]{"entity": "location", "role": "destination"} đi xe gì hợp lý
+      - từ sân bay có xe bus không
+      - từ sân bay về khách sạn có xe đưa đón không
+      - vé máy bay khứ hồi [hà nội]{"entity": "location", "role": "destination"} [phú quốc]{"entity": "location", "role": "destination"}
+      - vé máy bay đi [Hà Nội]{"entity": "location", "role": "destination"}
+      - đi [tàu hỏa](transportation) ra [Đà Nẵng]{"entity": "location", "role": "destination"} mất bao lâu
+      - đi bằng [ô tô](transportation) cá nhân được không
+      - đi từ [hồ chí minh]{"entity": "location", "role": "departure"} ra [nha trang]{"entity": "location", "role": "destination"} thì đi xe gì
+      - đặt xe [limousine](transportation) đi [Sapa]{"entity": "location", "role": "destination"}
+      - đến đó bằng phương tiện gì
+      - ở [Phú Quốc]{"entity": "location", "role": "destination"} có [taxi](transportation) không
+
+  - intent: ask_weather_timing
+    examples: |
+      - [Phú Quốc]{"entity": "location", "role": "destination"} mùa nào ít mưa
+      - [Sapa]{"entity": "location", "role": "destination"} mùa nào ít mưa nhất
+      - [mùa hè](season) năm nay đi [biển](category) chỗ nào vắng
+      - [mùa thu](season) đi [Hà Nội]{"entity": "location", "role": "destination"} chơi gì
+      - [tháng 10](month) có nên đi [Hà Giang](location) không
+      - [tháng 12](month) nên đi du lịch ở đâu
+      - [tháng 2](month) [tháng 3](month) nên đi đâu
+      - [tháng 3](month) đi [Sapa](location) có hoa gì
+      - [tháng 4](month) [tháng 5](month) đi [Nha Trang]{"entity": "location", "role": "destination"} có biển đẹp không
+      - [tháng 4](month) đi [Đà Nẵng]{"entity": "location", "role": "destination"} được chưa
+      - [tháng 6](month) [tháng 7](month) đi [Phú Quốc](location) được không
+      - cho em hỏi Hà Giang mùa thu
+      - cho em hỏi Đi Nha Trang tháng 4 có mưa không
+      - cuối năm nên đi du lịch ở đâu [ấm áp](category)
+      - khi nào [Hà Nội]{"entity": "location", "role": "destination"} đẹp nhất trong năm
+      - khi nào thì đi [Sapa]{"entity": "location", "role": "destination"} đẹp nhất
+      - khi nào đi [Hà Giang](location) ngắm hoa tam giác mạch
+      - khi nào đi du lịch đà nẵng đẹp nhất
+      - làm ơn Dự báo thời tiết Nha Trang
+      - làm ơn Hà Giang mùa xuân
+      - mùa [mùa hè](season) hợp đi du lịch chỗ nào
+      - mùa [mùa xuân](season) đi đâu ở [miền Bắc](category) đẹp
+      - mùa [mưa](category) ở [miền Tây](category) tháng mấy
+      - mùa [xuân](season) [hè](season) [thu](season) [đông](season) đi đâu hợp lý
+      - mùa có bão ở [miền Trung](category) là tháng mấy
+      - mùa hè nên đi biển hay lên núi
+      - mùa khô và mùa mưa ở [Phú Quốc](location)
+      - mùa khô ở [Phú Quốc](location) là tháng mấy
+      - mùa nào leo núi [Fansipan](location) an toàn nhất
+      - mùa nào ít mưa ở [miền Tây](category)
+      - mùa nào đi [Sapa](location) có tuyết rơi
+      - mùa nào ở [Phú Quốc]{"entity": "location", "role": "destination"} đẹp nhất
+      - mùa nước nổi [miền Tây](category) là tháng mấy
+      - mùa thu có nên đi biển không
+      - mùa xuân đi miền bắc ở đâu đẹp
+      - mùa đông đi [Đà Lạt](location) có lạnh lắm không
+      - nên đi [Huế]{"entity": "location", "role": "destination"} vào [tháng mấy](month)
+      - sapa tháng 6 mưa không
+      - tháng 12 đi phú quốc được không
+      - tháng mấy đi [Huế](location) đẹp nhất
+      - tháng tốt nhất để đi [Nha Trang]{"entity": "location", "role": "destination"}
+      - thời gian lý tưởng du lịch [Hội An]{"entity": "location", "role": "destination"}
+      - thời gian lý tưởng du lịch [miền Tây](category)
+      - thời gian lý tưởng để đi [Hội An](location) là khi nào
+      - thời tiết [Côn Đảo]{"entity": "location", "role": "destination"} [tháng 5](month)
+      - thời tiết [Nha Trang](location) sao
+      - thời tiết [miền Trung](category) [tháng 8](month) thế nào
+      - thời tiết [Đà Lạt](location) [tháng 6](month) mưa nhiều không
+      - thời tiết nha trang tháng 9 thế nào
+      - thời điểm nào nên đi du lịch biển
+      - thời điểm nào thích hợp để đi [Vịnh Hạ Long](location)
+      - thời điểm đẹp nhất trong năm để đi [biển](category)
+      - thời điểm đẹp để [săn mây](activity) ở [Tà Xùa]{"entity": "location", "role": "destination"}
+      - Đi Hà Giang tháng 4 có mưa không
+      - đi [Nha Trang](location) [tháng mấy](month) có bão
+      - đi [Đà Lạt]{"entity": "location", "role": "destination"} [tháng 12](month) có hoa gì
+      - đà lạt vào mùa nào có hoa
+
+  - intent: book_tour
+    examples: |
+      - book tour
+      - book tour [Nha Trang]{"entity": "location", "role": "destination"} đi
+      - cho mình book tour [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - cho mình đặt tour [Phú Quốc]{"entity": "location", "role": "destination"} [gia đình 4 người](party_size)
+      - cho tôi hỏi Đặt trước tour Hà Giang
+      - làm ơn Mua tour Nha Trang giảm giá
+      - làm ơn Order tour Hà Giang
+      - muốn đặt tour du lịch
+      - mình cần book tour [Đà Lạt]{"entity": "location", "role": "destination"} [tháng 12](month)
+      - mình hỏi Mua tour Hà Giang giảm giá
+      - mình muốn book tour
+      - mình muốn đặt tour [Sapa]{"entity": "location", "role": "destination"}
+      - đặt chỗ tour [Hà Nội]{"entity": "location", "role": "destination"}
+      - đặt giúp mình tour [Sapa]{"entity": "location", "role": "destination"} [tuần sau](time_window)
+      - đặt tour
+      - đặt tour [Hội An]{"entity": "location", "role": "destination"} cho [2 vợ chồng](party_size)
+      - đặt tour [Vũng Tàu]{"entity": "location", "role": "destination"} [2 người](party_size)
+      - đặt tour [Đà Lạt]{"entity": "location", "role": "destination"}
+
+  - intent: bot_challenge
+    examples: |
+      - ai đang chat vậy
+      - am I talking to a bot?
+      - am I talking to a human?
+      - are you a bot?
+      - are you a human?
+      - bạn là người hay máy
+      - gọi nhân viên thật ra đây
+      - mày là AI hả
+      - shop dùng auto reply à
+      - đang chat với bot à
+
+  - intent: deny
+    examples: |
+      - bỏ đi
+      - dạ không
+      - k
+      - không muốn
+      - không ok lắm
+      - không phải
+      - không thích
+      - không thích cái này
+      - không ạ
+      - ko
+      - nhầm rồi bot ơi
+      - nope
+      - sai rồi
+      - thôi
+      - thôi không đi nữa
+      - đắt quá thôi
+      - đổi cái khác đi
+
+  - intent: goodbye
+    examples: |
+      - bai bai
+      - bye
+      - bye bye
+      - bye shop
+      - cee you later
+      - chào ad nhé
+      - cu
+      - cám ơn bot nhé bye
+      - good by
+      - good night
+      - goodbye
+      - have a nice day
+      - hẹn gặp lại
+      - hẹn gặp lại bạn
+      - lúc khác nhắn tiếp
+      - off đây
+      - out nha
+      - pp
+      - see you around
+      - see you later
+      - thôi nghỉ
+      - thôi out nha
+      - tạm biệt
+      - đi ngủ đây
+      - đi đây
+
+  - intent: greet
+    examples: |
+      - alo
+      - buổi sáng tốt lành
+      - chào ad
+      - chào bạn
+      - chào ngày mới
+      - có ai ở đó không
+      - good afternoon
+      - good evening
+      - good morning
+      - goodevening
+      - goodmorning
+      - hello
+      - hello ad
+      - hello there
+      - hey
+      - hey dude
+      - hey there
+      - hi
+      - hi shop
+      - let's go
+      - moin
+      - súp bro
+      - tư vấn mình với
+      - xin chào
+      - ê bot
+
+  - intent: inform
+    examples: |
+      - Vợ chồng tôi cưới ở Hà Giang
+      - [10 triệu](budget)
+      - [10tr](budget)
+      - [2 củ](budget)
+      - [2 người lớn 1 trẻ em](party_size)
+      - [4 người](party_size)
+      - [5 triệu](budget)
+      - [6tr](budget)
+      - [Huế]{"entity": "location", "role": "destination"}
+      - [Hà Nội]{"entity": "location", "role": "departure"} nha
+      - [Hà Nội]{"entity": "location", "role": "destination"}
+      - [Hội An]{"entity": "location", "role": "destination"}
+      - [Nha Trang]{"entity": "location", "role": "destination"}
+      - [Phú Quốc]{"entity": "location", "role": "destination"}
+      - [Sapa]{"entity": "location", "role": "destination"}
+      - [Vũng Tàu]{"entity": "location", "role": "destination"}
+      - [cuối tuần](time_window)
+      - [mùa thu](season)
+      - [núi](category)
+      - [sapa]{"entity": "location", "role": "destination"}
+      - [tháng 11](month)
+      - [tháng 8](month)
+      - [xe khách](transportation)
+      - [Đà Lạt]{"entity": "location", "role": "destination"}
+      - [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - ad ơi Tôi đã đi Hà Giang năm ngoái rất thích
+      - ad ơi Tôi ở Hà Giang rồi muốn đi tiếp
+      - cho hỏi thêm xíu nha
+      - cho tôi hỏi thêm
+      - còn [Phú Quốc]{"entity": "location", "role": "destination"} thì sao
+      - dự định từ [tháng 8](month_from) đến [tháng 10](month_to)
+      - hỏi thêm xíu
+      - khoảng [3 ngày](duration)
+      - khoảng [6 củ](budget)
+      - khoảng [tháng 11](month_from) đến [tháng 1](month_to) năm sau
+      - khoảng từ [tháng 3](month_from) đến [tháng 5](month_to)
+      - khởi hành từ [Sài Gòn]{"entity": "location", "role": "departure"}
+      - kế hoạch từ [tháng 9](month_from) đến [tháng 11](month_to)
+      - làm ơn Tôi muốn khám phá Hà Giang bằng xe máy
+      - muốn đi [biển](category)
+      - mà cho tôi hỏi thêm
+      - mình hỏi Công ty tôi tổ chức team building ở Hà Giang
+      - mình hỏi Nhóm bạn tôi định đi Vũng Tàu tháng sau
+      - mình xuất phát từ [Đà Nẵng]{"entity": "location", "role": "departure"}
+      - mình đi từ [tháng 2](month_from) tới [tháng 4](month_to)
+      - ngân sách [5tr](budget)
+      - nhóm mình [6 người](party_size)
+      - thế còn [Sapa]{"entity": "location", "role": "destination"}
+      - trong khoảng [tháng 4](month_from) đến [tháng 6](month_to)
+      - tầm [10 củ](budget)
+      - tầm [5 triệu](budget)
+      - tầm từ [tháng 7](month_from) tới [tháng 9](month_to)
+      - từ [tháng 6](month_from) tới [tháng 8](month_to)
+      - đi [biển](category)
+      - đi [máy bay](transportation) nhé
+      - đi [đà lạt]{"entity": "location", "role": "destination"}
+      - ở [Vũng Tàu]{"entity": "location", "role": "destination"} thì sao
+      - ở [Đà Lạt]{"entity": "location", "role": "destination"} thì sao
+
+  - intent: out_of_scope
+    examples: |
+      - 1 cộng 1 bằng mấy
+      - ai là tổng thống mỹ
+      - bao giờ hết mưa
+      - bao giờ thì tới tết
+      - bitcoin đang giá bao nhiêu
+      - bạn ăn cơm chưa
+      - cách chữa đau dạ dày
+      - cách làm bánh mì
+      - cách sửa lỗi code python
+      - cách trồng cây bonsai
+      - còn mấy ngày nữa tới tết
+      - dân số đà lạt là bao nhiêu
+      - dự báo thời tiết ngày mai ở hà nội
+      - giá vàng hôm nay bao nhiêu
+      - giá xăng hôm nay
+      - giải dùm bài toán dợ
+      - gọi taxi cho tôi
+      - hom nay an gi
+      - huỳnh như đá ở đội nào
+      - hà nội rộng bao nhiêu km vuông
+      - hôm nay là thứ mấy
+      - hướng dẫn nấu phở bò
+      - học đàn guitar
+      - kể cho tôi một câu chuyện cười
+      - làm sao để giảm cân
+      - mua iphone 16 giá bao nhiêu
+      - mua sắm online
+      - mưa lúc mấy giờ
+      - mở nhạc cho tôi nghe
+      - mở quạt giúp tôi
+      - nay đề về bao nhiêu
+      - nhiệt độ hôm nay bao nhiêu
+      - nấu cơm thế nào
+      - phim hay chiếu rạp
+      - quảng trường ba đình ở đâu
+      - ronaldo hay messi đá hay hơn
+      - sapa có bao nhiêu dân
+      - ship đồ ăn ra đây
+      - thuê nhà hà nội giá rẻ
+      - thời tiết hà nội hôm nay thế nào
+      - thứ 6 ngày mấy
+      - tiền điện tháng này bao nhiêu
+      - trời đang nắng quá
+      - tắt đèn đi
+      - tết năm nay vào tháng mấy
+      - tỷ giá usd sang vnd hôm nay
+      - viết bài văn tả con mèo
+
+  - intent: search_accommodation
+    examples: |
+      - Homestay Hà Giang cho đôi người
+      - [chỗ nghỉ](category) nào sạch sẽ giá tốt
+      - [khách sạn](category) nào gần trung tâm không
+      - [nhà nghỉ](category) thì sao
+      - [resort](category) thì sao hả bot
+      - ad ơi Resort Hà Giang 5 sao
+      - book [phòng](category) [sài gòn](location)
+      - book [phòng](category) [Đà Lạt](location)
+      - cho mình xem vài [khu nghỉ dưỡng](category)
+      - cho tui xem [homestay](category) thì sao
+      - cho tôi hỏi Khách sạn Hà Giang giá tốt
+      - các [khách sạn](category) ở đó thì sao
+      - có [homestay](category) nào view đồi núi không
+      - có [resort](category) nào tại [Sapa]{"entity": "location", "role": "destination"} không
+      - có gói combo [nhà hàng](category) [khách sạn](category) nào ở [Kim Liên]{"entity": "location", "role": "destination"} rẻ rẻ không
+      - có homestay nào giá rẻ không
+      - gợi ý mình vài [resort](category) view biển
+      - gợi ý vài cái [homestay](category) ở [Đà Lạt]{"entity": "location", "role": "destination"}
+      - làm ơn Camping Hà Giang qua đêm
+      - muốn thuê [villa](category) nguyên căn
+      - mình cần book [phòng](category)
+      - mình hỏi Glamping Hà Giang
+      - mình hỏi Resort Sa Pa gia đình
+      - mình muốn tìm chỗ ăn ngủ
+      - thuê [resort](category) [hà nội](location)
+      - thuê [resort](category) [đà nẵng](location)
+      - thế còn [khách sạn](category) thì sao
+      - tìm [chỗ ở](category) quanh [Đà Lạt]{"entity": "location", "role": "destination"}
+      - tìm [homestay](category)
+      - tìm [homestay](category) view đẹp ở [Phú Quốc](location) vậy
+      - tìm [homestay](category) view đẹp ở [Đà Lạt](location)
+      - tìm [khách sạn 5 sao](category) ở [Nha Trang]{"entity": "location", "role": "destination"}
+      - tìm [khách sạn](category) ở [Vũng Tàu]{"entity": "location", "role": "destination"}
+      - tìm khu [nghỉ dưỡng](category) có spa
+      - đặt [phòng](category) [khách sạn](category) [Nha Trang](location)
+      - đặt [phòng](category) [khách sạn](category) [Đà Lạt](location)
+      - đổi sang [nhà nghỉ](category) nhé
+      - ở đó có [resort](category) nào đẹp không
+
+  - intent: search_activity
+    examples: |
+      - Lặn biển ở Hà Giang
+      - [chụp ảnh](activity) [hoa](category) ở [Đà Lạt]{"entity": "location", "role": "destination"} mùa nào đẹp
+      - [cắm trại](activity) ở [Đà Lạt]{"entity": "location", "role": "destination"}
+      - [leo núi](activity) [Lào Cai]{"entity": "location", "role": "destination"}
+      - [leo núi](activity) [tháng 10](month)
+      - [lặn san hô](activity) [Phú Quốc]{"entity": "location", "role": "destination"} [tháng 10](month)
+      - [lặn san hô](activity) [phú quốc]{"entity": "location", "role": "destination"}
+      - [săn mây](activity) ở [Tà Xùa]{"entity": "location", "role": "destination"}
+      - [trekking](activity) [Sapa]{"entity": "location", "role": "destination"}
+      - [trekking](activity) [tháng 10](month)
+      - [đi trekking](activity)
+      - ad ơi Xem biểu diễn Hà Giang
+      - chi phí đi leo núi [tháng 10](month) là bao nhiêu
+      - cho thuê [xe đạp](activity) dạo phố [Hội An]{"entity": "location", "role": "destination"}
+      - chỗ nào [câu cá](activity) giải trí ở [Vũng Tàu]{"entity": "location", "role": "destination"}
+      - chỗ nào [trekking](activity) đẹp
+      - chỗ nào có bãi biển đẹp
+      - chỗ nào leo núi đẹp vào [tháng 10](month)
+      - có [tour ẩm thực](activity) ở [Sài Gòn]{"entity": "location", "role": "destination"} không
+      - có chỗ nào [bơi](activity) ở [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - có chỗ nào đi thuyền không
+      - có dịch vụ [massage](activity) [spa](activity) ở [Đà Lạt]{"entity": "location", "role": "destination"} không
+      - có tour [săn mây](activity) [Tà Xùa]{"entity": "location", "role": "destination"} không
+      - có tour [đạp xe](activity) quanh làng quê không
+      - có tour nào [đi xe đạp](activity) quanh bản làng không
+      - gợi ý chỗ [leo núi](activity)
+      - gợi ý nơi [đi cáp treo](activity)
+      - gợi ý điểm [cắm trại](activity) qua đêm
+      - làm ơn Khám phá ẩm thực đường phố Hà Giang
+      - muốn [ngắm bình minh](activity) trên [núi](category)
+      - muốn [tham quan](activity) [chùa](category) ở [Hà Nội]{"entity": "location", "role": "destination"}
+      - muốn [trekking](activity) [băng rừng](activity) [Sapa]{"entity": "location", "role": "destination"}
+      - muốn [đi phượt](activity) [Hà Giang]{"entity": "location", "role": "destination"}
+      - muốn trải nghiệm văn hóa bản địa
+      - muốn đi lặn san hô
+      - mình hỏi Lặn biển ở Sa Pa
+      - mình hỏi Đi bộ biển Hà Giang
+      - mình hỏi Đi phượt Hà Giang bằng xe máy
+      - mình muốn leo núi vào [tháng 10](month)
+      - nơi nào có thể [cắm trại](activity)
+      - phú quốc có [lặn ngắm san hô](activity) không
+      - tour [lặn biển](activity) ngắm san hô [Phú Quốc]{"entity": "location", "role": "destination"}
+      - tìm chỗ [tắm biển](activity)
+      - tìm khu [vui chơi](activity) [giải trí](activity) trong nhà
+      - tìm lớp học [nấu ăn](activity) [đặc sản](activity) [Huế]{"entity": "location", "role": "destination"}
+      - tìm tour [chèo kayak](activity) [vịnh Hạ Long]{"entity": "location", "role": "destination"}
+      - tôi muốn [leo núi](activity)
+      - tôi muốn [lên núi](activity) chơi
+      - tôi muốn [săn mây](activity)
+      - tôi muốn [trekking](activity)
+      - tổ chức [picnic](activity) [dã ngoại](activity) ở đâu
+      - đi [Phú Quốc]{"entity": "location", "role": "destination"} [lặn san hô](activity)
+      - đi [Sapa]{"entity": "location", "role": "destination"} [leo núi](activity)
+      - đi [cắm trại](activity) ở đâu
+      - đi [leo núi](activity) ở đâu
+      - đi [lặn san hô](activity) ở đâu
+      - đi [săn mây](activity) ở đâu
+      - đi [trekking](activity) vào [tháng 10](month) thì nên đi đâu
+      - đi [trekking](activity) ở đâu
+      - đi [tắm biển](activity) ở đâu
+      - đi leo núi [tháng 10](month) hết bao nhiêu tiền
+
+  - intent: search_food_dining
+    examples: |
+      - Hải sản Đà Lạt tươi ngon
+      - Vũng Tàu có đặc sản gì?
+      - [Sapa]{"entity": "location", "role": "destination"} có món gì ngon
+      - ad ơi Ăn vặt Hà Giang
+      - cho em hỏi Nhà hàng Hà Nội sang trọng
+      - cho mình xin địa chỉ vài quán hải sản hạt dẻ ở nha trang
+      - chỗ nào bán đặc sản làm quà
+      - có nhà hàng nào lãng mạn không
+      - có quán nào ngon chân ái không
+      - có điểm nào ăn uống ngon không
+      - gợi ý quán ăn trưa
+      - món nào ngon cực dính
+      - món nào ăn nhức nách ở đà lạt
+      - quán nhậu ở [Nha Trang]{"entity": "location", "role": "destination"}
+      - recommend vài quán nhậu ngon nha
+      - xin list đồ ăn vặt
+      - ăn gì ở hội an
+      - ăn sáng ở đâu
+      - ăn tối ở [Đà Lạt]{"entity": "location", "role": "destination"} nên đi đâu
+      - Đặc sản Hà Giang phải thử
+      - đà lạt có đặc sản gì
+      - đến [Phú Quốc]{"entity": "location", "role": "destination"} phải ăn gì
+      - đến huế thì ăn món gì ngon
+      - địa chỉ ăn hải sản ngon bổ rẻ
+
+  - intent: search_price
+    examples: |
+      - [10tr](budget) đi được tour nào
+      - [3tr](budget) đi [Vũng Tàu]{"entity": "location", "role": "destination"} [2 ngày](duration) có thoải mái không
+      - [tháng 5](month) đi [Nha Trang]{"entity": "location", "role": "destination"} khoảng [2tr](budget)
+      - [tháng 7](month) đi [Huế]{"entity": "location", "role": "destination"} budget tầm [5 củ](budget)
+      - [vé máy bay](transportation) đi [Hà Nội]{"entity": "location", "role": "destination"} giá bao nhiêu
+      - budget 2 triệu đi được tour nào
+      - budget [500k](budget) đi chơi gần [Sài Gòn]{"entity": "location", "role": "departure"}
+      - báo giá gói du lịch [Sapa]{"entity": "location", "role": "destination"}
+      - chi phí [vé máy bay](transportation) khứ hồi [Hà Nội]{"entity": "location", "role": "departure"} - [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - chi phí chuyến đi [Hội An]{"entity": "location", "role": "destination"} có đắt lắm không
+      - chi phí thuê [xe máy](transportation) ở [Phú Quốc]{"entity": "location", "role": "destination"}
+      - chi phí tour nha trang giá bao nhiêu
+      - chi phí ăn ở [Đà Lạt]{"entity": "location", "role": "destination"} đắt không
+      - chi phí ăn ở đi lại tốn bao nhiêu
+      - chi phí đi [biển](category) là bao nhiêu
+      - chi phí đi [Đà Lạt]{"entity": "location", "role": "destination"} tự túc
+      - cho hỏi giá phòng 1 đêm
+      - cho mình hỏi giá tour [Sapa]{"entity": "location", "role": "destination"} [4 ngày](duration)
+      - cho mình hỏi giá vé cáp treo vinpearl
+      - cho tôi hỏi Bảng báo giá Hà Giang
+      - cho tôi hỏi Chi phí lưu trú Đà Nẵng
+      - combo [khách sạn](category) [vé máy bay](transportation) [Đà Nẵng]{"entity": "location", "role": "destination"} giá bao nhiêu
+      - du lịch [Sapa]{"entity": "location", "role": "destination"} tiết kiệm nhất cần bao nhiêu
+      - du lịch bụi có tốn kém không
+      - du lịch tiết kiệm
+      - giá [homestay](category) [Đà Lạt]{"entity": "location", "role": "destination"} [1 đêm](duration)
+      - giá có hạt dẻ không
+      - giá tour ghép đoàn [Hà Giang]{"entity": "location", "role": "destination"}
+      - giá vé Safari
+      - gợi ý nơi giá rẻ
+      - học sinh sinh viên đi [Nha Trang]{"entity": "location", "role": "destination"} cần tối thiểu bao nhiêu
+      - kinh phí du lịch sapa khoảng bao nhiêu
+      - làm ơn Tiền ăn ở Hà Giang 1 ngày
+      - muốn tìm tour giá sinh viên
+      - muốn đi [Đà Nẵng]{"entity": "location", "role": "destination"} [3 ngày](duration) hết nhiêu
+      - mình hỏi Tour Hà Giang giá bao nhiêu tiền
+      - mức giá vé như nào
+      - ngân sách [5tr](budget) đi [Phú Quốc]{"entity": "location", "role": "destination"} có ok không
+      - ngân sách eo hẹp [1tr5](budget) đi đâu
+      - nơi nào đi chơi tiết kiệm
+      - rổ giá như nào
+      - tour [Hà Giang]{"entity": "location", "role": "destination"} [4 ngày](duration) giá bao gồm những gì
+      - tour [Nha Trang]{"entity": "location", "role": "destination"} giá mềm có không
+      - tour [Nha Trang]{"entity": "location", "role": "destination"} giá rẻ có không shop
+      - tour giá sinh viên có không
+      - tour này mắc không
+      - trọn gói vậy có phát sinh phụ phí gì không
+      - tính tiền tour [biển](category) [3 ngày](duration)
+      - tính tiền tour đà nẵng 4 ngày
+      - tôi muốn đi du lịch giá rẻ
+      - tổn thất khoảng bao nhiêu
+      - tổng chi phí chuyến đi [Sapa]{"entity": "location", "role": "destination"} là bao nhiêu
+      - tổng kết chi phí ăn chơi ở [Hội An]{"entity": "location", "role": "destination"}
+      - tổng thiệt hại cho chuyến [Phú Quốc]{"entity": "location", "role": "destination"} [5 ngày 4 đêm](duration)
+      - vé [tàu hỏa](transportation) [Sài Gòn]{"entity": "location", "role": "departure"} - [Nha Trang]{"entity": "location", "role": "destination"}
+      - vé máy bay đi phú quốc giá rẻ
+      - vé vào cửa đắt không
+      - ví đang mỏng có đi được không
+      - với [2tr](budget) đi [Đà Lạt]{"entity": "location", "role": "destination"} có đủ không
+      - xin bảng giá chi tiết
+      - đi [Phú Quốc]{"entity": "location", "role": "destination"} hết khoảng [2tr](budget) có đủ không
+      - đi [Phú Quốc]{"entity": "location", "role": "destination"} tự túc hết tầm bao nhiêu
+      - đi [biển](category) [Vũng Tàu]{"entity": "location", "role": "destination"} tốn bao nhiêu
+      - đi [sapa]{"entity": "location", "role": "destination"} chi phí bao nhiêu
+      - đi [Đà Nẵng]{"entity": "location", "role": "destination"} tiết kiệm cần chuẩn bị bao nhiêu
+      - đi [Đà Nẵng]{"entity": "location", "role": "destination"} tầm bao nhiêu tiền
+      - đi du lịch [4 ngày](duration) tốn khoảng bao nhiêu
+      - đi phú quốc 3 ngày hết bao nhiêu
+      - đi vậy thiệt hại cỡ nhiêu
+      - đi đà lạt tự túc tốn bao nhiêu tiền
+      - điểm nào dành cho hệ học sinh sinh viên
+      - ở [Đà Lạt]{"entity": "location", "role": "destination"} [1 ngày](duration) hết nhiêu tiền
+      - ở [Đà Lạt]{"entity": "location", "role": "destination"} [1 tuần](duration) hết nhiêu tiền
+
+  - intent: thanks
+    examples: |
+      - cám ơn bot nhiều nha
+      - cám ơn nhiều
+      - cám ơn shop
+      - cám ơn đã giúp đỡ
+      - cảm ơn
+      - cảm ơn ban
+      - cảm ơn bot
+      - cảm ơn bạn
+      - cảm ơn bạn nhiều lắm
+      - cảm ơn nha
+      - cảm ơn nhiều nha
+      - cảm ơn nhé
+      - cảm ơn đã tư vấn
+      - ok cảm ơn
+      - ok cảm ơn bạn
+      - thank you
+      - thank you so much
+      - thanks
+      - thanks bot
+      - thanks bạn nha
+      - thanks đã hỗ trợ
+      - tốt quá cảm ơn
+
+  - intent: travel_planning
+    examples: |
+      - Có gì đẹp ở Hà Giang
+      - [Quảng Bình](location) có gì chơi không
+      - [năm nay](time_window) chưa đi đâu chơi, gợi ý đi
+      - [sắp tới](time_window) tôi nên đi đâu
+      - [tháng 12](month) đi đâu ở [miền bắc](category) đẹp
+      - ad ơi Check in Hà Giang ở đâu
+      - ad ơi Du lịch Hà Giang tự túc
+      - ad ơi Tour Hà Giang cho cặp đôi
+      - biển nào gần [Sài Gòn]{"entity": "location", "role": "departure"} nhất
+      - cho em hỏi Tour Hà Giang VIP 5 sao
+      - cho em hỏi nên đi chơi ở đâu [tháng này](time_window)
+      - cho em xin ít recommend điểm du lịch
+      - cho mình hỏi nên đi chơi ở đâu
+      - cho mình xin vài gợi ý du lịch [biển đảo](category)
+      - cho tôi hỏi Hà Giang cách Hà Nội bao xa
+      - cho tôi hỏi Kỳ nghỉ Hà Giang
+      - cho xin review đi [Sapa]{"entity": "location", "role": "destination"} [tháng 10](month)
+      - chỗ nào chụp hình sống ảo cháy máy ta
+      - chỗ nào hợp để đi chơi [cuối tuần](time_window)
+      - chỗ nào thích hợp để đi [dã ngoại](category) [cuối tuần](time_window)
+      - chỗ nào vui chơi giải trí
+      - chỗ nào đẹp mà đi chơi được
+      - chỗ nào đẹp để chụp ảnh sống ảo
+      - chỗ nào đẹp để tổ chức [team building](category)
+      - chỗ nào đẹp để đi [2 ngày](duration)
+      - chỗ nào đẹp ở [Sapa](location) ngoài Fansipan
+      - có chỗ nào đi trốn nắng [mùa hè](season) không
+      - có khu du lịch nào mới lạ giới thiệu cho mình với
+      - có nên đi [Hội An]{"entity": "location", "role": "destination"} dịp [tết](time_window) không
+      - có nơi nào chill chill không bot
+      - có nơi nào hay để đi chơi không
+      - có nơi nào đẹp để đi chơi không
+      - có địa điểm nào mới mở không
+      - dạo này stress quá có chỗ nào [yên tĩnh](category) đi [vài ngày](duration) không
+      - dịp lễ [30/4](time_window) nên đi tỉnh nào
+      - dự định đi nghỉ mát [hè này](season)
+      - gợi ý chỗ nào đi chữa lành healing với bot
+      - gợi ý lịch trình [3 ngày](duration) ở [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - gợi ý tour [2 ngày 1 đêm](duration) từ [Sài Gòn]{"entity": "location", "role": "departure"}
+      - gợi ý vài chỗ đi chơi cho 2 đứa
+      - gợi ý vài tour du lịch ngắn ngày
+      - gợi ý vài điểm du lịch [sinh thái](category)
+      - gợi ý điểm du lịch
+      - gợi ý điểm du lịch [đà nẵng]{"entity": "location", "role": "destination"}
+      - gợi ý điểm du lịch cho dân văn phòng
+      - gợi ý điểm đi chơi [tháng 4](month_from) đến [tháng 6](month_to)
+      - gợi ý địa điểm du lịch
+      - khu nào thích hợp cho [gia đình](party_size) đi chơi
+      - khám phá [Hà Nội]{"entity": "location", "role": "destination"} bằng [xe đạp](transportation) có gì vui
+      - làm ơn Du lịch Hà Giang tự túc
+      - làm ơn Tour Hà Giang 5 ngày 4 đêm
+      - lên kèo đi [Nha Trang]{"entity": "location", "role": "destination"} với [bạn bè](party_size)
+      - lên kế hoạch đi [Vũng Tàu]{"entity": "location", "role": "destination"} [1 ngày](duration)
+      - muốn tìm nơi [chữa lành](category)
+      - muốn tìm điểm đến cho kỳ nghỉ [tết](time_window) này
+      - muốn tìm điểm đến mới lạ để khám phá
+      - muốn tìm địa điểm du lịch hot hiện nay
+      - muốn tổ chức trip cho [công ty](party_size)
+      - muốn đi chơi [3 ngày 2 đêm](duration) ở [miền Bắc](category)
+      - muốn đi chơi xa 2 ngày
+      - muốn đi chơi xa [tỉnh](category) nào gần [Sài Gòn]{"entity": "location", "role": "departure"}
+      - muốn đi du lịch [Đà Lạt]{"entity": "location", "role": "destination"} nhưng chưa biết nên đi chỗ nào
+      - muốn đi đâu đó từ tháng 1 tới tháng 3
+      - mình hỏi Combo du lịch Hà Giang
+      - mình muốn tìm một nơi để đi chơi [xả stress](category)
+      - mình thích khám phá vùng đất mới
+      - mình thích đi những nơi hoang sơ
+      - mình tính đi [Hà Giang]{"entity": "location", "role": "destination"} bằng [xe máy](transportation)
+      - mình đang bị suy đi đâu hợp lý
+      - nên đi du lịch [Nha Trang]{"entity": "location", "role": "destination"} hay [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - nên đi du lịch ở đâu trong nước
+      - nên đi đâu vào dịp [30/4](time_window) năm nay
+      - review [Nha Trang](location) mùa này đẹp không
+      - review [Phú Quốc](location) mùa này vậy
+      - review [nha trang](location) mùa này thế nào
+      - review [Đà Lạt](location) mùa này
+      - review [đà lạt](location) [tháng 5](month) đi có đẹp không
+      - review nha trang có gì chơi
+      - rủ [cả nhà](party_size) đi du lịch [Đà Nẵng]{"entity": "location", "role": "destination"}
+      - sắp tới rảnh rỗi muốn đi du lịch
+      - sắp xếp chuyến đi [Phú Quốc]{"entity": "location", "role": "destination"} cho [gia đình](party_size)
+      - sắp xếp lịch đi [Hội An]{"entity": "location", "role": "destination"} cho [2 đứa](party_size)
+      - t muốn đi [Đà Lạt]{"entity": "location", "role": "destination"}
+      - tham khảo điểm du lịch [đảo](category) đẹp ở [Việt Nam](location)
+      - tour du lịch giá rẻ đi biển
+      - tour nào đang hot [tháng này](time_window)
+      - tui muốn đi từ tháng 2 đến tháng 5
+      - tui đang muốn kiếm chỗ đi chơi cuối tuần
+      - tìm điểm du lịch cho [cặp đôi](party_size) lãng mạn
+      - tìm điểm du lịch cho dịp [lễ 2/9](time_window)
+      - tìm điểm đến cho chuyến đi [gia đình](party_size) [5 người](party_size)
+      - tính cuối tuần đi chơi xa xa tí
+      - tính đi du lịch cùng [đồng nghiệp](party_size)
+      - tôi muốn đi du lịch
+      - tôi muốn đi du lịch [mùa hè](season)
+      - tôi muốn đi trong [tháng 5](month)
+      - tôi muốn đi đâu đó
+      - tôi đang lên kế hoạch đi chơi xa
+      - tư vấn chỗ đi chơi [1 ngày](duration) gần [Hà Nội]{"entity": "location", "role": "departure"}
+      - tư vấn chỗ đi chơi [cuối tuần](time_window) cho [2 người](party_size)
+      - tư vấn địa điểm du lịch [tháng 6](month) [tháng 7](month)
+      - từ [Hà Nội]{"entity": "location", "role": "departure"} muốn đi chơi [2 ngày](duration)
+      - từ [Sài Gòn]{"entity": "location", "role": "departure"} muốn đi chơi [3 ngày](duration)
+      - đang có kế hoạch đi [Phú Quốc]{"entity": "location", "role": "destination"} vào [dịp hè](season)
+      - đang phân vân không biết đi đâu
+      - đang planning chuyến đi [Đà Lạt]{"entity": "location", "role": "destination"} [4 ngày](duration)
+      - đang rảnh [3 ngày](duration) không biết đi đâu chơi
+      - đi [Nha Trang]{"entity": "location", "role": "destination"} mùa này chơi gì
+      - đi chơi ở đâu gần [Sài Gòn]{"entity": "location", "role": "departure"}
+      - đi sapa có gì chơi không
+      - đi từ [tháng 9](month_from) sang [tháng 11](month_to) thì có chỗ nào đẹp
+      - đi đâu [mùa đông](season) thì hợp
+      - địa điểm du lịch [biển](category) nào đẹp ở [Việt Nam](location)
+      - địa điểm du lịch gần [Hà Nội]{"entity": "location", "role": "departure"}
+      - đợt này muốn đi trốn deadline quá
+

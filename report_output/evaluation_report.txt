@@ -1,0 +1,62 @@
+================================================================
+  NLU EVALUATION REPORT — 20260615-210212-drab-referee
+================================================================
+  Test set:  297 examples
+  Accuracy:  0.6936
+  Macro F1:  0.6948
+  Weighted:  0.6953
+  Errors:    91/297 (30.6%)
+
+Intent                         Prec    Rec     F1  Support
+--------------------------------------------------------
+affirm                        0.667  0.917  0.772       24
+ask_itinerary                 1.000  0.750  0.857        8
+ask_location_feature          0.467  0.875  0.609        8
+ask_policy_booking            1.000  0.625  0.769        8
+ask_tour_info                 0.733  0.846  0.786       13
+ask_transportation            1.000  0.375  0.545        8
+ask_weather_timing            0.562  0.643  0.600       14
+book_tour                     0.800  0.500  0.615        8
+bot_challenge                 0.889  0.800  0.842       10
+deny                          0.667  0.500  0.571       20
+goodbye                       0.800  0.800  0.800       20
+greet                         0.955  0.808  0.875       26
+inform                        0.684  0.684  0.684       19
+out_of_scope                  0.571  0.500  0.533       16
+search_accommodation          0.875  0.824  0.848       17
+search_activity               0.500  0.714  0.588       14
+search_food_dining            0.714  0.625  0.667        8
+search_price                  0.611  0.524  0.564       21
+thanks                        0.917  0.846  0.880       13
+travel_planning               0.444  0.545  0.490       22
+--------------------------------------------------------
+macro avg                     0.743  0.685  0.695      297
+
+Top 10 confusions (true → predicted):
+  True Intent                  → Predicted                   Count
+  ----------------------------   ----------------------------  -----
+  deny                           affirm                            7
+  search_price                   travel_planning                   4
+  travel_planning                search_activity                   3
+  search_activity                travel_planning                   3
+  search_price                   ask_weather_timing                3
+  inform                         travel_planning                   3
+  deny                           inform                            2
+  out_of_scope                   search_activity                   2
+  out_of_scope                   affirm                            2
+  thanks                         deny                              2
+
+Worst 5 intents by F1:
+  travel_planning                F1=0.490
+  out_of_scope                   F1=0.533
+  ask_transportation             F1=0.545
+  search_price                   F1=0.564
+  deny                           F1=0.571
+
+Best 5 intents by F1:
+  thanks                         F1=0.880
+  greet                          F1=0.875
+  ask_itinerary                  F1=0.857
+  search_accommodation           F1=0.848
+  bot_challenge                  F1=0.842
+================================================================
