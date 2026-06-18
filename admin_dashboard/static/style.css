@@ -842,6 +842,39 @@ body {
   background: rgba(108, 92, 231, 0.05);
 }
 
+/* --- Intent Drift Tab --- */
+.id-sub-scores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.id-sub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.id-sub-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.id-sub-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .id-sub-scores { grid-template-columns: repeat(2, 1fr); }
+}
+
 .dq-feature-row:hover {
   background: rgba(108, 92, 231, 0.08) !important;
 }

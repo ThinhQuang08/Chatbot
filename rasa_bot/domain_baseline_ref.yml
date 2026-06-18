@@ -1,0 +1,26 @@
+version: "3.1"
+
+intents:
+  - ask_itinerary
+  - ask_transportation
+  - ask_weather_timing
+  - book_tour
+  - inform
+  - search_accommodation
+  - search_activity
+  - search_destination
+  - search_food_dining
+  - search_price
+  - search_travel
+
+entities: []
+
+slots: {}
+
+responses:
+  utter_default:
+  - text: "Tôi không hiểu yêu cầu của bạn."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

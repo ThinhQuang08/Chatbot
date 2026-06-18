@@ -18,6 +18,7 @@
       <button class="tab-btn active" data-tab="review">Review Data</button>
       <button class="tab-btn" data-tab="metrics">Model Metrics</button>
       <button class="tab-btn" data-tab="quality">Data Quality</button>
+      <button class="tab-btn" data-tab="intent-drift">Intent Drift</button>
       <button class="tab-btn" data-tab="evidently">Evidently Report</button>
     </div>
 
@@ -272,7 +273,81 @@
         </div>
       </div>
     </div>
-    <!-- Tab 4: Evidently Report -->
+    <!-- Tab 4: Intent Drift -->
+    <div class="tab-content" id="tabIntentDrift">
+      <div class="dq-score-section">
+        <div class="dq-gauge-card">
+          <div class="dq-gauge" id="idGauge">—</div>
+          <div class="dq-label">Composite Score</div>
+          <div class="dq-threshold">Ngưỡng: <span id="idThreshold">0.50</span></div>
+        </div>
+        <div class="dq-summary">
+          <div class="metric-card"><span class="metric-label">Reference</span><span class="metric-value" id="idRefRows">—</span></div>
+          <div class="metric-card"><span class="metric-label">Current</span><span class="metric-value" id="idCurRows">—</span></div>
+          <div class="metric-card"><span class="metric-label">Intent Penalty</span><span class="metric-value" id="idIntentPenalty">—</span></div>
+          <div class="metric-card"><span class="metric-label">Dest Penalty</span><span class="metric-value" id="idDestPenalty">—</span></div>
+        </div>
+      </div>
+
+      <div class="id-sub-scores">
+        <div class="id-sub-card">
+          <div class="id-sub-label">🎯 JS Divergence</div>
+          <div class="id-sub-value" id="idJsDiv">—</div>
+        </div>
+        <div class="id-sub-card">
+          <div class="id-sub-label">🧪 Chi2 p-value</div>
+          <div class="id-sub-value" id="idChi2P">—</div>
+        </div>
+        <div class="id-sub-card">
+          <div class="id-sub-label">📊 Max Delta (pp)</div>
+          <div class="id-sub-value" id="idMaxDelta">—</div>
+        </div>
+        <div class="id-sub-card">
+          <div class="id-sub-label">📍 Dest Entropy</div>
+          <div class="id-sub-value" id="idDestEntropy">—</div>
+        </div>
+        <div class="id-sub-card">
+          <div class="id-sub-label">🏆 Top-1 Share</div>
+          <div class="id-sub-value" id="idTop1Share">—</div>
+        </div>
+        <div class="id-sub-card">
+          <div class="id-sub-label">📍 Hà Giang</div>
+          <div class="id-sub-value" id="idHaGiang">—</div>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Intent Distribution — Reference vs Current</h3>
+          <span class="chart-hint">Tỷ lệ phần trăm mỗi intent, delta = cur - ref (pp)</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 400px;">
+          <canvas id="idIntentChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Destination Distribution</h3>
+          <span class="chart-hint">Số lượng mentions mỗi điểm đến</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 400px;">
+          <canvas id="idDestChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h3>Composite Score Timeline</h3>
+          <span class="chart-hint">Intent drift score theo thời gian</span>
+        </div>
+        <div class="chart-wrap" style="max-height: 300px;">
+          <canvas id="idTimelineChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Evidently Report -->
     <div class="tab-content" id="tabEvidently">
       <div class="er-header">
         <h3>Evidently AI Drift Report</h3>

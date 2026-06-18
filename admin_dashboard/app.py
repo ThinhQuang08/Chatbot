@@ -866,6 +866,40 @@ def get_data_quality():
     })
 
 
+@app.route("/api/intent-drift")
+def get_intent_drift():
+    from database.db_connection import get_connection
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT id, metrics, created_at
+        FROM mlops_reports
+        WHERE report_type = 'intent_drift'
+        ORDER BY created_at DESC
+        LIMIT 50
+    """)
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    history = []
+    latest = None
+    for row in rows:
+        record = {
+            "id": row[0],
+            "created_at": row[2].isoformat() if hasattr(row[2], "isoformat") else str(row[2]),
+            **row[1]
+        }
+        history.append(record)
+        if latest is None:
+            latest = record
+
+    return jsonify({
+        "latest": latest,
+        "history": history
+    })
+
+
 EVIDENTLY_REPORTS_DIR = ROOT_DIR / "results" / "evidently_reports"
 
 

@@ -843,7 +843,7 @@ function initTabs() {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       this.classList.add('active');
-      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality', evidently: 'tabEvidently' };
+      const tabMap = { review: 'tabReview', metrics: 'tabMetrics', quality: 'tabQuality', 'intent-drift': 'tabIntentDrift', evidently: 'tabEvidently' };
       const tabId = tabMap[this.dataset.tab] || 'tabReview';
       const tab = document.getElementById(tabId);
       if (tab) tab.classList.add('active');
@@ -854,6 +854,9 @@ function initTabs() {
       if (this.dataset.tab === 'quality') {
         fetchDataQuality();
         if (dqChart) dqChart.resize();
+      }
+      if (this.dataset.tab === 'intent-drift') {
+        loadIntentDrift();
       }
       if (this.dataset.tab === 'evidently') {
         loadEvidentlyReports();
@@ -1136,6 +1139,218 @@ const dqThresholdPlugin = {
     ctx.restore();
   }
 };
+let idIntentChart = null;
+let idDestChart = null;
+let idTimelineChart = null;
+
+// --- Intent Drift Tab ---
+async function loadIntentDrift() {
+  try {
+    const data = await api('/api/intent-drift');
+    renderIntentDrift(data);
+  } catch (e) {
+    console.error('loadIntentDrift error:', e);
+  }
+}
+
+function renderIntentDrift(data) {
+  const latest = data.latest;
+  const history = data.history || [];
+
+  if (!latest) {
+    $('#idGauge').textContent = '—';
+    return;
+  }
+
+  const score = latest.composite_score || 0;
+  const threshold = latest.threshold || 0.50;
+
+  // Gauge
+  const gauge = $('#idGauge');
+  gauge.textContent = (score * 100).toFixed(0) + '%';
+  gauge.className = 'dq-gauge';
+  if (score >= threshold) gauge.classList.add('gauge-ok');
+  else if (score >= threshold * 0.7) gauge.classList.add('gauge-warn');
+  else gauge.classList.add('gauge-bad');
+
+  $('#idThreshold').textContent = threshold.toFixed(2);
+  $('#idRefRows').textContent = latest.ref_rows || '—';
+  $('#idCurRows').textContent = latest.cur_rows || '—';
+  $('#idIntentPenalty').textContent = latest.intent_penalty != null ? latest.intent_penalty.toFixed(2) : '—';
+  $('#idDestPenalty').textContent = latest.dest_penalty != null ? latest.dest_penalty.toFixed(2) : '—';
+
+  $('#idJsDiv').textContent = latest.intent_js_divergence != null ? latest.intent_js_divergence.toFixed(4) : '—';
+  const chi2El = $('#idChi2P');
+  const chi2p = latest.intent_chi2_pvalue;
+  if (chi2p != null) {
+    chi2El.textContent = chi2p.toFixed(4);
+    chi2El.style.color = chi2p < 0.05 ? 'var(--red)' : 'var(--green)';
+  }
+  $('#idMaxDelta').textContent = latest.intent_max_delta_pp != null ? latest.intent_max_delta_pp.toFixed(1) + 'pp' : '—';
+  const entEl = $('#idDestEntropy');
+  if (latest.dest_entropy_ref != null && latest.dest_entropy_cur != null) {
+    entEl.textContent = latest.dest_entropy_ref.toFixed(1) + ' → ' + latest.dest_entropy_cur.toFixed(1);
+    entEl.style.color = latest.dest_entropy_cur < 2.5 ? 'var(--red)' : 'var(--green)';
+  }
+  const top1El = $('#idTop1Share');
+  if (latest.dest_top1_share_cur != null) {
+    top1El.textContent = (latest.dest_top1_share_cur * 100).toFixed(0) + '%';
+    top1El.style.color = latest.dest_top1_share_cur > 0.30 ? 'var(--red)' : 'var(--green)';
+  }
+  const hgEl = $('#idHaGiang');
+  if (latest.ha_giang_cur != null) {
+    hgEl.textContent = latest.ha_giang_ref + ' → ' + latest.ha_giang_cur;
+    hgEl.style.color = latest.ha_giang_cur > 100 ? 'var(--red)' : 'var(--green)';
+  }
+
+  // Intent distribution chart
+  renderIdIntentChart(latest);
+  // Destination chart
+  renderIdDestChart(latest);
+  // Timeline
+  if (history.length > 1) {
+    renderIdTimeline(history);
+  }
+}
+
+function renderIdIntentChart(latest) {
+  const labels = latest.intent_labels || [];
+  const refPct = latest.intent_ref_pct || [];
+  const curPct = latest.intent_cur_pct || [];
+  const canvas = $('#idIntentChart');
+  if (!canvas || labels.length === 0) return;
+
+  if (idIntentChart) idIntentChart.destroy();
+
+  idIntentChart = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Reference', data: refPct, backgroundColor: 'rgba(108,92,231,0.7)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 2 },
+        { label: 'Current', data: curPct, backgroundColor: 'rgba(225,112,85,0.7)', borderColor: '#e17055', borderWidth: 1, borderRadius: 2 },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#8b90a5', font: { size: 11 }, usePointStyle: true } },
+        tooltip: {
+          callbacks: {
+            afterLabel: function(ctx) {
+              const ref = refPct[ctx.dataIndex];
+              const cur = curPct[ctx.dataIndex];
+              return `Delta: ${(cur - ref).toFixed(1)}pp`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8b90a5', font: { size: 10 }, maxRotation: 60 } },
+        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8b90a5' } }
+      }
+    }
+  });
+}
+
+function renderIdDestChart(latest) {
+  const labels = latest.dest_labels || [];
+  const refCounts = latest.dest_ref_counts || [];
+  const curCounts = latest.dest_cur_counts || [];
+  const canvas = $('#idDestChart');
+  if (!canvas || labels.length === 0) return;
+
+  if (idDestChart) idDestChart.destroy();
+
+  idDestChart = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Reference', data: refCounts, backgroundColor: 'rgba(108,92,231,0.6)', borderColor: '#6c5ce7', borderWidth: 1, borderRadius: 2 },
+        { label: 'Current', data: curCounts, backgroundColor: 'rgba(0,230,118,0.6)', borderColor: '#00e676', borderWidth: 1, borderRadius: 2 },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { labels: { color: '#8b90a5', font: { size: 11 }, usePointStyle: true } },
+      },
+      scales: {
+        x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8b90a5' } },
+        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8b90a5', font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+function renderIdTimeline(history) {
+  const canvas = $('#idTimelineChart');
+  if (!canvas) return;
+
+  if (idTimelineChart) idTimelineChart.destroy();
+
+  const labels = history.map(h => {
+    const d = new Date(h.created_at);
+    return d.toLocaleDateString('vi-VN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  }).reverse();
+
+  const scores = history.map(h => (h.composite_score || 0) * 100).reverse();
+  const threshold = (history[0]?.threshold || 0.50) * 100;
+
+  idTimelineChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Composite Score (%)',
+        data: scores,
+        borderColor: '#6c5ce7',
+        backgroundColor: 'rgba(108,92,231,0.1)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#e0e0e0' } }
+      },
+      scales: {
+        x: { ticks: { color: '#aaa', maxTicksLimit: 10 } },
+        y: { min: 0, max: 100, ticks: { color: '#aaa', callback: v => v + '%' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+      }
+    }
+  });
+
+  // Draw threshold line
+  const origDraw = idTimelineChart.draw;
+  idTimelineChart.draw = function() {
+    origDraw.call(this);
+    const yAxis = this.scales.y;
+    const xAxis = this.scales.x;
+    if (!yAxis || !xAxis) return;
+    const y = yAxis.getPixelForValue(threshold);
+    const ctx = this.ctx;
+    ctx.save();
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = '#ff5252';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xAxis.left, y);
+    ctx.lineTo(xAxis.right, y);
+    ctx.stroke();
+    ctx.restore();
+  };
+  idTimelineChart.draw();
+}
+
 Chart.register(dqThresholdPlugin);
 
 // --- Evidently Report Tab ---
