@@ -864,6 +864,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
+.id-sub-hint {
+  font-size: 10px;
+  color: var(--text-dim);
+  opacity: 0.6;
+  line-height: 1.3;
+}
 .id-sub-value {
   font-size: 22px;
   font-weight: 700;
