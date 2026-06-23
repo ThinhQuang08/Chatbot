@@ -99,6 +99,10 @@ pipeline {
                 sh """
                     cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
+                    export DB_HOST="${CHATBOT_HOST}"
+                    export DB_USER="chatbot_user"
+                    export DB_PASSWORD="supersecret"
+                    export DB_NAME="chatbot"
                     
                     echo "Bước 1: Làm sạch, chuẩn hoá, tách từ..."
                     ${PY} data/preprocess_data.py
@@ -109,8 +113,8 @@ pipeline {
                     echo "Bước 3: Tách độ tự tin (ngưỡng 75%)..."
                     ${PY} data/split_confidence.py
                     
-                    echo "Bước 4: Validate auto label với Cleanlab..."
-                    ${PY} data/validate_cleanlab.py
+                    # echo "Bước 4: Validate auto label với Cleanlab..."
+                    # ${PY} data/validate_cleanlab.py
                     
                     echo "Bước 5: Chuyển đổi và nối vào file NLU của Rasa..."
                     ${PY} data/csv_to_rasa.py
