@@ -48,11 +48,12 @@ pipeline {
                         if [ -f "requirements.txt" ]; then
                             "${PIP}" install -r requirements.txt --quiet
                         fi
-                        # Bổ sung các thư viện cần thiết cho CI
-                        "${PIP}" install flake8 dvc pandas boto3 python-dotenv mlflow pyyaml --quiet
                     else
-                        echo "Môi trường Python đã sẵn sàng."
+                        echo "Môi trường Python đã sẵn sàng. Cập nhật các thư viện CI..."
                     fi
+                    
+                    # Luôn đảm bảo các thư viện cần thiết cho CI được cài đặt
+                    "${PIP}" install flake8 dvc pandas boto3 python-dotenv mlflow pyyaml underthesea snorkel cleanlab --quiet
                 """
             }
         }
