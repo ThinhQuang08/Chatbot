@@ -1,0 +1,380 @@
+﻿id,session_id,raw_text,predicted_intent,text_hash,cleaned_text
+1,trend_user_0,có tour chữa lành nào đi Tà Năng khoảng 5 ngày không,search_travel,abf2253afd3c03bd4db0f633f1322c7f,có tour chữa lành nào đi Tà Năng khoảng 5 ngày không
+2,trend_user_1,mình muốn tìm bãi cắm trại staycation gần Trị An đi 4 ngày,search_price,59ff1fff016ecb035c0145520c98025d,mình muốn tìm bãi cắm trại staycation gần Trị An đi 4 ngày
+3,trend_user_2,ở Trị An có khu glamping nào view đẹp không,ask_tour_info,24b820d31ce077e68ad9e02ab1ba991e,ở Trị An có khu glamping nào view đẹp không
+4,trend_user_3,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Trị An,search_activity,b7864f7e875d293e89539d2d15ab6cbc,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Trị An
+5,trend_user_4,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 7 người,ask_tour_info,d65660bbdb4bcf36866ccca3c69939da,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 7 người
+6,trend_user_5,resort ở Phú Quý có cho mang theo chó mèo thú cưng không,search_travel,1921d873cd6bb1e21a9b2061e15e812e,resort ở Phú Quý có cho mang theo chó mèo thú cưng không
+7,trend_user_6,review đi săn mây ở Hà Giang 3 ngày 2 đêm,search_price,ebd58009f63d00bc7488fdce326abc07,review đi săn mây ở Hà Giang 3 ngày 2 đêm
+8,trend_user_7,tư vấn lịch trình đi Hà Giang tự túc 3 ngày,search_travel,cfae792e4faef669dde45b2a9761850f,tư vấn lịch trình đi Hà Giang tự túc 3 ngày
+9,trend_user_8,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 14 người,search_activity,6750179f8b016a93d9f379783b68c78c,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 14 người
+10,trend_user_9,review đi săn mây ở Phú Quý 2 ngày 1 đêm,ask_tour_info,4207ac63c32087150496381ebfe31821,review đi săn mây ở Phú Quý 2 ngày 1 đêm
+11,trend_user_10,mình muốn tìm bãi cắm trại staycation gần Trị An đi 3 ngày,search_activity,bbf86dff1570a67004ad5b6c19183a06,mình muốn tìm bãi cắm trại staycation gần Trị An đi 3 ngày
+12,trend_user_11,resort ở Hà Giang có cho mang theo chó mèo thú cưng không,search_activity,b17038cf4d4a89a9d83d6a45804fdb8f,resort ở Hà Giang có cho mang theo chó mèo thú cưng không
+13,trend_user_12,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 13 người,search_activity,1da21a7194c9a56a692f87779344f02b,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 13 người
+14,trend_user_13,review đi săn mây ở Trị An 4 ngày 3 đêm,search_travel,105cc889f62b52d38a994ca3019a3fe0,review đi săn mây ở Trị An 4 ngày 3 đêm
+15,trend_user_14,người lớn tuổi ngồi xe lăn có đi tour Trị An 2 ngày được không,search_price,8cfedc9f3650e6270a27e266af8e46f5,người lớn tuổi ngồi xe lăn có đi tour Trị An 2 ngày được không
+16,trend_user_15,resort ở Tà Xùa có cho mang theo chó mèo thú cưng không,search_price,16908b15f2d59ef9c5357d91a2fcfaf9,resort ở Tà Xùa có cho mang theo chó mèo thú cưng không
+18,trend_user_17,tư vấn lịch trình đi Trị An tự túc 3 ngày,search_price,abb2a6e26c8894e703f21ca0c9fd9246,tư vấn lịch trình đi Trị An tự túc 3 ngày
+19,trend_user_18,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 8 người,search_travel,10dbcae9db64a5f589e61a7f54956744,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 8 người
+20,trend_user_19,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 4 ngày,search_price,950f2744d94595bd706205da4487a0b5,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 4 ngày
+21,trend_user_20,nhóm mình 15 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao,search_activity,6af327d8328905ebdae56035401ba934,nhóm mình 15 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao
+23,trend_user_22,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Tà Năng,search_activity,395a75092027dd448a1eb6493fe34541,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Tà Năng
+24,trend_user_23,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Tà Xùa,search_price,8d79478da56b45d0963befa9beea2166,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Tà Xùa
+25,trend_user_24,resort ở Măng Đen có cho mang theo chó mèo thú cưng không,search_activity,67d0e78e1a8eeb382b64838024cef00e,resort ở Măng Đen có cho mang theo chó mèo thú cưng không
+26,trend_user_25,tư vấn lịch trình đi Hà Giang tự túc 5 ngày,ask_tour_info,93f86d45db27898bea58a403bf00a6d2,tư vấn lịch trình đi Hà Giang tự túc 5 ngày
+27,trend_user_26,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Phú Quý,search_travel,9be66669292864f7c8e68fcc6d830782,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Phú Quý
+28,trend_user_27,tour Phú Quý có bao gồm vé xe giường nằm cabin đôi không,search_price,7d51a91bcc08783583754d930a3d6cb1,tour Phú Quý có bao gồm vé xe giường nằm cabin đôi không
+29,trend_user_28,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 4 ngày được không,search_travel,5e44d81cc9c011d51ed07c04aae71316,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 4 ngày được không
+30,trend_user_29,cho mình xin báo giá glamping ở Măng Đen cho 4 người,search_activity,08f19e6bc9ed08a8b0740f2b00ead55e,cho mình xin báo giá glamping ở Măng Đen cho 4 người
+31,trend_user_30,review đi săn mây ở Tà Năng 4 ngày 3 đêm,search_activity,7299fff4a444e22a17bff2eaba8d1782,review đi săn mây ở Tà Năng 4 ngày 3 đêm
+33,trend_user_32,tư vấn lịch trình đi Tà Năng tự túc 5 ngày,ask_tour_info,ce7b18928b4d8249662f5261bddb75db,tư vấn lịch trình đi Tà Năng tự túc 5 ngày
+34,trend_user_33,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 2 người,ask_tour_info,2f72d71124c9e2678e078ad6b4cf20fb,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 2 người
+35,trend_user_34,người lớn tuổi ngồi xe lăn có đi tour Trị An 4 ngày được không,search_price,97750ba6bde338ca224fea77189d2f47,người lớn tuổi ngồi xe lăn có đi tour Trị An 4 ngày được không
+37,trend_user_36,nhóm mình 12 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,search_activity,7cf0648043996afcb2956bffc673624a,nhóm mình 12 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+39,trend_user_38,cho mình xin báo giá glamping ở Trị An cho 14 người,search_activity,d4ae67a98429157c51ea299532963fe0,cho mình xin báo giá glamping ở Trị An cho 14 người
+41,trend_user_40,tư vấn lịch trình đi Tà Năng tự túc 3 ngày,ask_tour_info,a1046d64c3a7ddc4ed13879c300f4d8f,tư vấn lịch trình đi Tà Năng tự túc 3 ngày
+42,trend_user_41,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 5 người,search_travel,efffb0930afc665efa725f09ca489f01,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 5 người
+43,trend_user_42,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 2 ngày được không,search_activity,55ed24e5453a2ea16e4834c1ac644046,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 2 ngày được không
+44,trend_user_43,chi phí đi trekking băng rừng ở Trị An cho nhóm 15 người,ask_tour_info,ba381d28dbfe0be9026f24e21ec9f15f,chi phí đi trekking băng rừng ở Trị An cho nhóm 15 người
+47,trend_user_46,ở Hà Giang có khu glamping nào view đẹp không,search_travel,5c9101c0e02bb45069d31f30ebba8b70,ở Hà Giang có khu glamping nào view đẹp không
+49,trend_user_48,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 3 ngày,ask_tour_info,256992ffabf2b640c95e7711d8a9489d,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 3 ngày
+50,trend_user_49,resort ở Tà Năng có cho mang theo chó mèo thú cưng không,search_activity,34a89185c56cad3f4958925a7bb4d7a9,resort ở Tà Năng có cho mang theo chó mèo thú cưng không
+52,trend_user_51,có tour chữa lành nào đi Tà Xùa khoảng 2 ngày không,search_travel,a4de6e1d747245f74852436834b7f909,có tour chữa lành nào đi Tà Xùa khoảng 2 ngày không
+53,trend_user_52,ở Tà Xùa có khu glamping nào view đẹp không,ask_tour_info,0700c69736fc70b0990c1cd71df1d21d,ở Tà Xùa có khu glamping nào view đẹp không
+54,trend_user_53,cho mình xin báo giá glamping ở Phú Quý cho 10 người,search_travel,b9af675c722a1fe612250fb6e187af01,cho mình xin báo giá glamping ở Phú Quý cho 10 người
+55,trend_user_54,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 3 ngày,search_activity,bb6062105ac0f7a0fd16e1dd98cc66a6,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 3 ngày
+56,trend_user_55,cho mình xin báo giá glamping ở Phú Quý cho 6 người,search_activity,ce573cd9318f3ca5b5280ed192ee71c5,cho mình xin báo giá glamping ở Phú Quý cho 6 người
+57,trend_user_56,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 5 ngày,search_price,e42d6301299d6b8c70f3cfd6bf321737,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 5 ngày
+58,trend_user_57,cho mình xin báo giá glamping ở Hà Giang cho 3 người,ask_tour_info,d135a631852803549eed0d779528fb4b,cho mình xin báo giá glamping ở Hà Giang cho 3 người
+59,trend_user_58,review đi săn mây ở Tà Năng 2 ngày 1 đêm,ask_tour_info,74bcd379e7afb1a44bdaf213cd384722,review đi săn mây ở Tà Năng 2 ngày 1 đêm
+61,trend_user_60,review đi săn mây ở Hà Giang 4 ngày 3 đêm,search_price,dc349656c8358e1ff0520c293c107889,review đi săn mây ở Hà Giang 4 ngày 3 đêm
+63,trend_user_62,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 4 ngày,search_travel,1183012d8195e17e8460f4aa6ea6e922,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 4 ngày
+64,trend_user_63,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 2 ngày,search_price,f2a99dacc9ef9d9fdf079c4b795b46bc,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 2 ngày
+65,trend_user_64,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 2 ngày được không,search_price,70aa508cf17e1bb542d517c0a57daf69,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 2 ngày được không
+66,trend_user_65,ở Phú Quý có khu glamping nào view đẹp không,search_activity,2d3a1782ed3f9908d7ccb8bdb77dbf21,ở Phú Quý có khu glamping nào view đẹp không
+67,trend_user_66,ở Măng Đen có khu glamping nào view đẹp không,search_activity,698fa7e51989c278b2487d1f010ca37b,ở Măng Đen có khu glamping nào view đẹp không
+68,trend_user_67,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Măng Đen,ask_tour_info,64b70886ce199c8c00cb2c0cb4401713,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Măng Đen
+69,trend_user_68,tư vấn lịch trình đi Phú Quý tự túc 2 ngày,search_activity,d137ac69efe30840de5112477a99b947,tư vấn lịch trình đi Phú Quý tự túc 2 ngày
+70,trend_user_69,tư vấn lịch trình đi Phú Quý tự túc 4 ngày,ask_tour_info,fccf476506206b7e1263d99172a9c7d7,tư vấn lịch trình đi Phú Quý tự túc 4 ngày
+71,trend_user_70,tour Hà Giang có bao gồm vé xe giường nằm cabin đôi không,search_activity,31ad3b09c788cb926320238b05fd7ed9,tour Hà Giang có bao gồm vé xe giường nằm cabin đôi không
+73,trend_user_72,cho mình xin báo giá glamping ở Măng Đen cho 6 người,ask_tour_info,63b38b06df34ebfbdb4e2305efeefd49,cho mình xin báo giá glamping ở Măng Đen cho 6 người
+74,trend_user_73,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 5 ngày được không,search_travel,121f0d36319943d32d3161dbdad5f5f6,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 5 ngày được không
+75,trend_user_74,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 5 ngày được không,search_activity,becc5a9ea4b5bc61888094f864bb450e,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 5 ngày được không
+77,trend_user_76,nhóm mình 2 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,search_travel,14b9ce9b0b29378af6a6b576322ce810,nhóm mình 2 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+78,trend_user_77,tư vấn lịch trình đi Măng Đen tự túc 5 ngày,search_activity,2056f800f0a2da745e1a46ddeb2c7e96,tư vấn lịch trình đi Măng Đen tự túc 5 ngày
+79,trend_user_78,tư vấn lịch trình đi Măng Đen tự túc 3 ngày,search_travel,14da4ca20a3d66d3bd9b27936cc10692,tư vấn lịch trình đi Măng Đen tự túc 3 ngày
+80,trend_user_79,nhóm mình 5 người lớn 3 trẻ em đi Trị An thì phụ thu sao,ask_tour_info,8ef6ffbd0c3cd679dbba27a67609dca5,nhóm mình 5 người lớn 3 trẻ em đi Trị An thì phụ thu sao
+81,trend_user_80,chi phí đi trekking băng rừng ở Trị An cho nhóm 11 người,search_travel,eb170205805b39c3a19be7cc37967935,chi phí đi trekking băng rừng ở Trị An cho nhóm 11 người
+82,trend_user_81,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 2 ngày,search_activity,dba73b0ab3c8a9a6d7db84401a23cfae,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 2 ngày
+83,trend_user_82,cho mình xin báo giá glamping ở Tà Xùa cho 3 người,search_activity,2d0aaaa9a3a48e3ce036fa44c354d6cd,cho mình xin báo giá glamping ở Tà Xùa cho 3 người
+84,trend_user_83,tư vấn lịch trình đi Trị An tự túc 4 ngày,search_activity,8a3fa94666748076df2cb4fc0db954e7,tư vấn lịch trình đi Trị An tự túc 4 ngày
+88,trend_user_87,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 5 ngày,search_price,35d6bd540754c253f4084152d48a5056,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 5 ngày
+91,trend_user_90,nhóm mình 2 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao,search_price,27a0ff9a2632eb8745c4c2cde9347863,nhóm mình 2 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao
+92,trend_user_91,review đi săn mây ở Tà Xùa 5 ngày 4 đêm,search_activity,d86a7cf47378c92547af6571cf05b4d2,review đi săn mây ở Tà Xùa 5 ngày 4 đêm
+93,trend_user_92,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 9 người,search_activity,b19e0a01e7bfde084b811952a2889233,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 9 người
+94,trend_user_93,review đi săn mây ở Hà Giang 2 ngày 1 đêm,ask_tour_info,1da81c7bc2da155aa1103ff205496b28,review đi săn mây ở Hà Giang 2 ngày 1 đêm
+96,trend_user_95,cho mình xin báo giá glamping ở Trị An cho 7 người,search_price,e20385b7dd8bffadb2917d7d4e91040e,cho mình xin báo giá glamping ở Trị An cho 7 người
+101,trend_user_100,có tour chữa lành nào đi Tà Xùa khoảng 4 ngày không,search_price,35bc25c310229b206ca9b67b6d77a99e,có tour chữa lành nào đi Tà Xùa khoảng 4 ngày không
+103,trend_user_102,cho mình xin báo giá glamping ở Trị An cho 6 người,search_travel,2daa9fd00ee95c549fdf5fea0c35ae82,cho mình xin báo giá glamping ở Trị An cho 6 người
+104,trend_user_103,review đi săn mây ở Phú Quý 5 ngày 4 đêm,ask_tour_info,d3f017dbcc61a2c5ce318034b3ec36f2,review đi săn mây ở Phú Quý 5 ngày 4 đêm
+106,trend_user_105,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 5 ngày được không,search_price,cb346064e81f08d58fabb60c1c57a7ba,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 5 ngày được không
+109,trend_user_108,có tour chữa lành nào đi Măng Đen khoảng 2 ngày không,ask_tour_info,ea145f5d2a2e013727cf8bffa86c7174,có tour chữa lành nào đi Măng Đen khoảng 2 ngày không
+111,trend_user_110,cho mình xin báo giá glamping ở Măng Đen cho 3 người,search_price,09d2791d732bdc92b176fb51e3d7e1a9,cho mình xin báo giá glamping ở Măng Đen cho 3 người
+112,trend_user_111,nhóm mình 6 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_price,c23c3644009db9579c81a754051d8bdc,nhóm mình 6 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+115,trend_user_114,có tour chữa lành nào đi Hà Giang khoảng 3 ngày không,search_activity,1f0d9c6dcf280b72d0f67e8031965949,có tour chữa lành nào đi Hà Giang khoảng 3 ngày không
+117,trend_user_116,tư vấn lịch trình đi Hà Giang tự túc 2 ngày,search_price,b046822a30b992e06b90eff1d1302416,tư vấn lịch trình đi Hà Giang tự túc 2 ngày
+118,trend_user_117,cho mình xin báo giá glamping ở Trị An cho 5 người,ask_tour_info,3c35123bdc5a1498758cfbb649959404,cho mình xin báo giá glamping ở Trị An cho 5 người
+120,trend_user_119,có tour chữa lành nào đi Tà Xùa khoảng 3 ngày không,search_travel,4b4aee565853dfba83c5c91e70105946,có tour chữa lành nào đi Tà Xùa khoảng 3 ngày không
+121,trend_user_120,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 13 người,ask_tour_info,54350e7a7ba2f4ee4b02625e245a0cde,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 13 người
+122,trend_user_121,cho mình xin báo giá glamping ở Trị An cho 15 người,search_travel,28db63e8d45997efb699f47132bd5420,cho mình xin báo giá glamping ở Trị An cho 15 người
+123,trend_user_122,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 2 ngày,search_travel,6e06e94e7dffbd938e1693529fdb2f88,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 2 ngày
+124,trend_user_123,review đi săn mây ở Tà Xùa 4 ngày 3 đêm,search_price,9c5c73f582ec5d9722ceeac96982350e,review đi săn mây ở Tà Xùa 4 ngày 3 đêm
+125,trend_user_124,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Hà Giang,search_activity,d70bc95a173749f076c7868252318775,mình cần tìm nơi yên tĩnh để nghỉ dưỡng chữa lành tại Hà Giang
+127,trend_user_126,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 4 ngày được không,search_activity,6ccd2b445cd2777f6cc91473dda0c8b3,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 4 ngày được không
+128,trend_user_127,có tour chữa lành nào đi Trị An khoảng 4 ngày không,ask_tour_info,f5685bd6fc61e05de6a2a0b9ccb70d79,có tour chữa lành nào đi Trị An khoảng 4 ngày không
+130,trend_user_129,review đi săn mây ở Trị An 3 ngày 2 đêm,search_travel,98160f975a93714eccb043e2370646e6,review đi săn mây ở Trị An 3 ngày 2 đêm
+133,trend_user_132,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 9 người,search_travel,f4f6671bbb1ca4033108c8ea5c8c555e,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 9 người
+135,trend_user_134,cho mình xin báo giá glamping ở Phú Quý cho 14 người,ask_tour_info,58a930c9035009f2619365a1f64ba611,cho mình xin báo giá glamping ở Phú Quý cho 14 người
+138,trend_user_137,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 5 ngày,search_price,312abb5a8db989f386d28efc00bc28d8,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 5 ngày
+139,trend_user_138,review đi săn mây ở Măng Đen 3 ngày 2 đêm,search_activity,87a8dd6286cf3db543d7aa3f19a99137,review đi săn mây ở Măng Đen 3 ngày 2 đêm
+140,trend_user_139,có tour chữa lành nào đi Tà Năng khoảng 3 ngày không,ask_tour_info,186456885689fda4871845387da23f92,có tour chữa lành nào đi Tà Năng khoảng 3 ngày không
+142,trend_user_141,tour Tà Năng có bao gồm vé xe giường nằm cabin đôi không,search_activity,85e2533c826f940c168e590316ec2675,tour Tà Năng có bao gồm vé xe giường nằm cabin đôi không
+143,trend_user_142,cho mình xin báo giá glamping ở Hà Giang cho 7 người,search_activity,9efcfe4ed1f916e96b43ec7d8fad37ab,cho mình xin báo giá glamping ở Hà Giang cho 7 người
+146,trend_user_145,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 3 ngày được không,search_price,f92803415ade377ee9f92e7461b0e25a,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 3 ngày được không
+147,trend_user_146,nhóm mình 2 người lớn 1 trẻ em đi Trị An thì phụ thu sao,search_price,68ed2c701a4ac20e2c65bd9e3eb01d17,nhóm mình 2 người lớn 1 trẻ em đi Trị An thì phụ thu sao
+150,trend_user_149,mình muốn tìm bãi cắm trại staycation gần Trị An đi 2 ngày,ask_tour_info,ef3522aca374f995904f1d501806b2fc,mình muốn tìm bãi cắm trại staycation gần Trị An đi 2 ngày
+151,trend_user_150,chi phí đi trekking băng rừng ở Trị An cho nhóm 2 người,search_price,f9a0c260c03d3f93ec20239defc53be0,chi phí đi trekking băng rừng ở Trị An cho nhóm 2 người
+154,trend_user_153,resort ở Trị An có cho mang theo chó mèo thú cưng không,search_activity,06157330d9e862cac0c0e4d2a5282ad5,resort ở Trị An có cho mang theo chó mèo thú cưng không
+159,trend_user_158,tư vấn lịch trình đi Tà Xùa tự túc 2 ngày,search_travel,4c129f1cffb11715a0067779c60a0198,tư vấn lịch trình đi Tà Xùa tự túc 2 ngày
+160,trend_user_159,cho mình xin báo giá glamping ở Tà Xùa cho 4 người,search_activity,13d87176d0cf95f868929f28d7a3e4d5,cho mình xin báo giá glamping ở Tà Xùa cho 4 người
+161,trend_user_160,có tour chữa lành nào đi Măng Đen khoảng 3 ngày không,search_travel,5e6281a0e6cf076341cb0cef5a10658e,có tour chữa lành nào đi Măng Đen khoảng 3 ngày không
+162,trend_user_161,tư vấn lịch trình đi Măng Đen tự túc 4 ngày,search_activity,51c831f9e1e2a2fe1cfb2e31c6960a0d,tư vấn lịch trình đi Măng Đen tự túc 4 ngày
+165,trend_user_164,review đi săn mây ở Phú Quý 4 ngày 3 đêm,ask_tour_info,394fa72a93db309734f1daf642ab5275,review đi săn mây ở Phú Quý 4 ngày 3 đêm
+166,trend_user_165,tư vấn lịch trình đi Tà Xùa tự túc 5 ngày,search_travel,ad35129e6e16cfc45be53c63e653d368,tư vấn lịch trình đi Tà Xùa tự túc 5 ngày
+168,trend_user_167,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 9 người,search_activity,6572c28eb077fa1e7c9852c2afbc877d,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 9 người
+171,trend_user_170,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 4 ngày được không,search_activity,13bf4556819baf052fb995613da1ecaa,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 4 ngày được không
+172,trend_user_171,review đi săn mây ở Măng Đen 2 ngày 1 đêm,search_price,0c973187071e9918a07ef105c321132b,review đi săn mây ở Măng Đen 2 ngày 1 đêm
+173,trend_user_172,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 3 người,search_price,71016785d39cf6ad50bb7cffe1d68e87,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 3 người
+174,trend_user_173,có tour chữa lành nào đi Phú Quý khoảng 2 ngày không,search_activity,91520d32940d640a0bfafde98ea63b3a,có tour chữa lành nào đi Phú Quý khoảng 2 ngày không
+177,trend_user_176,cho mình xin báo giá glamping ở Tà Xùa cho 11 người,ask_tour_info,051d9371293c17e45dbc4c0e1b134dcf,cho mình xin báo giá glamping ở Tà Xùa cho 11 người
+179,trend_user_178,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 3 ngày,ask_tour_info,b83f1a7912cee697cecf042cb01c08d5,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 3 ngày
+181,trend_user_180,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 15 người,search_travel,49deccc1e7197412771d5d76ee2789c6,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 15 người
+183,trend_user_182,cho mình xin báo giá glamping ở Hà Giang cho 2 người,search_activity,e897a215ca5967ef2703a67f8e15beb3,cho mình xin báo giá glamping ở Hà Giang cho 2 người
+184,trend_user_183,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 9 người,search_travel,45820568442f3b715821b72adc21e9af,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 9 người
+186,trend_user_185,nhóm mình 2 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao,search_activity,5c8e5cbc57db038b4b1d4c7de0d58349,nhóm mình 2 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao
+187,trend_user_186,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 2 người,search_activity,de58ab407a97e7b266a73d4643aa5b5b,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 2 người
+188,trend_user_187,nhóm mình 12 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_activity,d81137c7c94f1e56c6bc3188da3e4122,nhóm mình 12 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+189,trend_user_188,tour Tà Xùa có bao gồm vé xe giường nằm cabin đôi không,search_price,ed7c557b8de664ebd034c430a98c482c,tour Tà Xùa có bao gồm vé xe giường nằm cabin đôi không
+191,trend_user_190,cho mình xin báo giá glamping ở Hà Giang cho 5 người,search_price,19d17e7f369510800596e67b3be6a1e1,cho mình xin báo giá glamping ở Hà Giang cho 5 người
+193,trend_user_192,tour Trị An có bao gồm vé xe giường nằm cabin đôi không,ask_tour_info,d58842bf8f0f28d7234967a275d277d0,tour Trị An có bao gồm vé xe giường nằm cabin đôi không
+194,trend_user_193,review đi săn mây ở Tà Năng 5 ngày 4 đêm,search_activity,ae7892ca5851f9129477548f963c8c84,review đi săn mây ở Tà Năng 5 ngày 4 đêm
+195,trend_user_194,tour Măng Đen có bao gồm vé xe giường nằm cabin đôi không,search_travel,97dfaf27fb2899bc0275c91ae40c170c,tour Măng Đen có bao gồm vé xe giường nằm cabin đôi không
+196,trend_user_195,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 5 ngày,ask_tour_info,129b8820ce84e360f042529e295d1e6c,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 5 ngày
+198,trend_user_197,tư vấn lịch trình đi Tà Xùa tự túc 4 ngày,search_travel,cc066d9601ab2e1c3d195f82f4e2164c,tư vấn lịch trình đi Tà Xùa tự túc 4 ngày
+199,trend_user_198,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 5 ngày được không,ask_tour_info,11db80be24bedd1a013383777c79ba52,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 5 ngày được không
+201,trend_user_200,nhóm mình 12 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao,search_activity,780301f2e11c19cc16f3135ce7445366,nhóm mình 12 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao
+202,trend_user_201,review đi săn mây ở Trị An 5 ngày 4 đêm,ask_tour_info,62d54bc27f1409a83b67b723773860de,review đi săn mây ở Trị An 5 ngày 4 đêm
+203,trend_user_202,nhóm mình 7 người lớn 2 trẻ em đi Hà Giang thì phụ thu sao,search_travel,c8043b86e7bf553d9d820f8a8a576584,nhóm mình 7 người lớn 2 trẻ em đi Hà Giang thì phụ thu sao
+204,trend_user_203,tư vấn lịch trình đi Măng Đen tự túc 2 ngày,search_travel,5c008ee49a6ff61e36583f98ac3767b7,tư vấn lịch trình đi Măng Đen tự túc 2 ngày
+206,trend_user_205,có tour chữa lành nào đi Phú Quý khoảng 5 ngày không,search_activity,b995f4cfdae601ae62027285c15d77ea,có tour chữa lành nào đi Phú Quý khoảng 5 ngày không
+213,trend_user_212,cho mình xin báo giá glamping ở Phú Quý cho 7 người,search_activity,859e6aa595a3aea8591dd28dad8a4a50,cho mình xin báo giá glamping ở Phú Quý cho 7 người
+215,trend_user_214,tư vấn lịch trình đi Hà Giang tự túc 4 ngày,ask_tour_info,ca1604beb12e09816f94dbc0be47d364,tư vấn lịch trình đi Hà Giang tự túc 4 ngày
+216,trend_user_215,cho mình xin báo giá glamping ở Tà Năng cho 14 người,search_travel,9e950a1647a13e289dfddb9b5d430ce8,cho mình xin báo giá glamping ở Tà Năng cho 14 người
+218,trend_user_217,nhóm mình 10 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao,search_travel,088c7b8ad6674f21c25ff07fc608fe9e,nhóm mình 10 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao
+225,trend_user_224,nhóm mình 13 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao,search_activity,243c1b3a728aa2b25f7a2289c4db26a9,nhóm mình 13 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao
+227,trend_user_226,review đi săn mây ở Hà Giang 5 ngày 4 đêm,ask_tour_info,de3abd84b19a0f41b9a5704ade6cede1,review đi săn mây ở Hà Giang 5 ngày 4 đêm
+228,trend_user_227,tư vấn lịch trình đi Trị An tự túc 2 ngày,search_travel,8d8ac1e7715125e4167237f797ca6624,tư vấn lịch trình đi Trị An tự túc 2 ngày
+229,trend_user_228,cho mình xin báo giá glamping ở Măng Đen cho 10 người,search_travel,4df4968f52cd58bb3619538c10162d92,cho mình xin báo giá glamping ở Măng Đen cho 10 người
+235,trend_user_234,tư vấn lịch trình đi Phú Quý tự túc 3 ngày,search_activity,e4f70e0200d4d0810d61c909a8f3a923,tư vấn lịch trình đi Phú Quý tự túc 3 ngày
+236,trend_user_235,nhóm mình 8 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao,search_price,c47b3ecec1444af2aafef067d46d065e,nhóm mình 8 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao
+237,trend_user_236,nhóm mình 9 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,search_price,11d798de07b2f36b6c213d62eb417847,nhóm mình 9 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+289,trend_user_288,review đi săn mây ở Măng Đen 4 ngày 3 đêm,ask_tour_info,53d77e0083eb9fb8b8cb850010ee1576,review đi săn mây ở Măng Đen 4 ngày 3 đêm
+241,trend_user_240,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 12 người,ask_tour_info,72414c5a361e91f1189aef5cbdb19de6,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 12 người
+247,trend_user_246,tư vấn lịch trình đi Phú Quý tự túc 5 ngày,search_price,846381b87276f040eed9fe37f7315533,tư vấn lịch trình đi Phú Quý tự túc 5 ngày
+252,trend_user_251,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 3 ngày được không,ask_tour_info,5506dbce4abdafade97c64a85de78cf6,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 3 ngày được không
+254,trend_user_253,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 8 người,search_price,749a963ab713f3aa4cfa3b618c99d612,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 8 người
+265,trend_user_264,cho mình xin báo giá glamping ở Phú Quý cho 13 người,search_price,6625245d85460e06da63892ed7f669ff,cho mình xin báo giá glamping ở Phú Quý cho 13 người
+267,trend_user_266,nhóm mình 3 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,search_activity,926df309cd20c0ad4746ac312c727bd8,nhóm mình 3 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+268,trend_user_267,nhóm mình 7 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,641ae3b9fdb8930a6c083ecf4350e8c2,nhóm mình 7 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao
+269,trend_user_268,tư vấn lịch trình đi Tà Xùa tự túc 3 ngày,search_activity,b36a1d12d954897f5cc7c6e0876a14b3,tư vấn lịch trình đi Tà Xùa tự túc 3 ngày
+275,trend_user_274,nhóm mình 14 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao,search_price,9d68ddcd9791b2f07b2c43b610b5bda6,nhóm mình 14 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao
+277,trend_user_276,cho mình xin báo giá glamping ở Tà Xùa cho 9 người,search_travel,8bb9011ae2060298f5698d5e8761299b,cho mình xin báo giá glamping ở Tà Xùa cho 9 người
+278,trend_user_277,nhóm mình 14 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_travel,53d506a54e08667a89412d617cc10cd8,nhóm mình 14 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+280,trend_user_279,ở Tà Năng có khu glamping nào view đẹp không,search_price,d07a7a4e8e4772ff020081a5d9c6f33f,ở Tà Năng có khu glamping nào view đẹp không
+283,trend_user_282,có tour chữa lành nào đi Trị An khoảng 5 ngày không,ask_tour_info,f0ca8ce48c6e30d64aca4be9f09dd8a6,có tour chữa lành nào đi Trị An khoảng 5 ngày không
+284,trend_user_283,cho mình xin báo giá glamping ở Hà Giang cho 8 người,search_price,893bb5281a188c710bdff44527c14f14,cho mình xin báo giá glamping ở Hà Giang cho 8 người
+285,trend_user_284,cho mình xin báo giá glamping ở Tà Năng cho 9 người,search_travel,be3821fb89db8c0c7614a1db15dabe76,cho mình xin báo giá glamping ở Tà Năng cho 9 người
+287,trend_user_286,chi phí đi trekking băng rừng ở Trị An cho nhóm 8 người,ask_tour_info,89752cb577d8e85b8b6812b9bb8fd937,chi phí đi trekking băng rừng ở Trị An cho nhóm 8 người
+288,trend_user_287,nhóm mình 4 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,ask_tour_info,7aef648fac0ffe7b4afa8dc8b2517a6c,nhóm mình 4 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+297,trend_user_296,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 8 người,search_activity,36f9bd3dd35492b5ed520ebcf5ebd6f2,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 8 người
+298,trend_user_297,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 4 ngày,search_activity,12e08097ae3ca4eb05afcab197f2358e,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 4 ngày
+302,trend_user_301,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 2 ngày được không,search_activity,47ba80a9766869aa8d78d95a3c9b9109,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 2 ngày được không
+304,trend_user_303,nhóm mình 4 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao,search_travel,45535cce5e8e33a64123c099ecc22647,nhóm mình 4 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao
+306,trend_user_305,có tour chữa lành nào đi Hà Giang khoảng 5 ngày không,search_travel,063a4b4982f5236363540a7464233eb7,có tour chữa lành nào đi Hà Giang khoảng 5 ngày không
+307,trend_user_306,cho mình xin báo giá glamping ở Trị An cho 10 người,search_price,bb48092f928c8dbc5a2719c8d2bf68b2,cho mình xin báo giá glamping ở Trị An cho 10 người
+310,trend_user_309,cho mình xin báo giá glamping ở Trị An cho 8 người,search_travel,ab8623aaa8109f14c4e43fa9cfc8e8fc,cho mình xin báo giá glamping ở Trị An cho 8 người
+316,trend_user_315,nhóm mình 15 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,search_price,20d2a57b7414997c66ceb35a9d8b303d,nhóm mình 15 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+319,trend_user_318,review đi săn mây ở Măng Đen 5 ngày 4 đêm,search_activity,bb48304684cc2179fc583dc2b7551116,review đi săn mây ở Măng Đen 5 ngày 4 đêm
+320,trend_user_319,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 2 ngày được không,search_price,347d212a44318e380537a294c0d7b48b,người lớn tuổi ngồi xe lăn có đi tour Tà Xùa 2 ngày được không
+321,trend_user_320,cho mình xin báo giá glamping ở Phú Quý cho 4 người,search_price,3d79792b1ea3c2f603cdfce1c1980c39,cho mình xin báo giá glamping ở Phú Quý cho 4 người
+322,trend_user_321,cho mình xin báo giá glamping ở Trị An cho 2 người,search_price,5f4a5a142328fbb571d27420842c3851,cho mình xin báo giá glamping ở Trị An cho 2 người
+326,trend_user_325,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 5 ngày được không,search_price,5eacc46cd5de48b93c5976ffb9118887,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 5 ngày được không
+327,trend_user_326,có tour chữa lành nào đi Hà Giang khoảng 4 ngày không,search_price,4eab9dabb218b06675c0682893f03dfd,có tour chữa lành nào đi Hà Giang khoảng 4 ngày không
+328,trend_user_327,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 5 ngày,search_travel,5cf226bac2bfb5da8ae8f7a8e6fc9b01,mình muốn tìm bãi cắm trại staycation gần Tà Xùa đi 5 ngày
+330,trend_user_329,có tour chữa lành nào đi Tà Năng khoảng 4 ngày không,search_activity,858e83f76cbdd70a6ffe6da5c8cd893e,có tour chữa lành nào đi Tà Năng khoảng 4 ngày không
+331,trend_user_330,nhóm mình 13 người lớn 2 trẻ em đi Hà Giang thì phụ thu sao,search_price,e52bab311c50306f274bd001ea2b0dc9,nhóm mình 13 người lớn 2 trẻ em đi Hà Giang thì phụ thu sao
+336,trend_user_335,review đi săn mây ở Tà Xùa 3 ngày 2 đêm,search_price,b8c1b1e511a87371a9f19d3181b050e7,review đi săn mây ở Tà Xùa 3 ngày 2 đêm
+338,trend_user_337,có tour chữa lành nào đi Tà Xùa khoảng 5 ngày không,search_travel,c1d2133642dd71a49ede47e65204f448,có tour chữa lành nào đi Tà Xùa khoảng 5 ngày không
+340,trend_user_339,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 3 ngày được không,search_price,d5fbffb089bf3daf79f9d5c4587debbe,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 3 ngày được không
+348,trend_user_347,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 3 ngày được không,search_activity,ebd822d1d8e563aa97d325dbda80ff80,người lớn tuổi ngồi xe lăn có đi tour Măng Đen 3 ngày được không
+349,trend_user_348,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 14 người,ask_tour_info,52867fa264d04c8403307652041268cb,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 14 người
+354,trend_user_353,cho mình xin báo giá glamping ở Tà Năng cho 13 người,ask_tour_info,51d718932f87d9cb701c32066f693b1c,cho mình xin báo giá glamping ở Tà Năng cho 13 người
+356,trend_user_355,nhóm mình 3 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,cf246ce98159056ee8334f9eccb47d92,nhóm mình 3 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+358,trend_user_357,có tour chữa lành nào đi Măng Đen khoảng 5 ngày không,search_activity,38aeaf7f4e93364d214c97bffc59fc7a,có tour chữa lành nào đi Măng Đen khoảng 5 ngày không
+369,trend_user_368,nhóm mình 10 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao,ask_tour_info,5b464c72f279ea689628b11891c55745,nhóm mình 10 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao
+371,trend_user_370,nhóm mình 7 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_price,3496a3160542ea9bd48979955ef4efdb,nhóm mình 7 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+374,trend_user_373,nhóm mình 14 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,ask_tour_info,562d3cf6368ca5c01c62af9cae0c09ae,nhóm mình 14 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+375,trend_user_374,cho mình xin báo giá glamping ở Măng Đen cho 8 người,search_activity,61160bbd326f31c78154ca339aeca744,cho mình xin báo giá glamping ở Măng Đen cho 8 người
+377,trend_user_376,cho mình xin báo giá glamping ở Tà Năng cho 2 người,search_activity,6973b654eaa3c9389d9fcb4dcf11d385,cho mình xin báo giá glamping ở Tà Năng cho 2 người
+386,trend_user_385,nhóm mình 10 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,53c1ac3d4e6b4532f5e26ed6135bf194,nhóm mình 10 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao
+389,trend_user_388,review đi săn mây ở Tà Năng 3 ngày 2 đêm,search_travel,a85eb57a5a899a67710b1e9ead3200e4,review đi săn mây ở Tà Năng 3 ngày 2 đêm
+398,trend_user_397,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 4 ngày,search_price,d401cbdec5cd54026346a0d6ab424dbf,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 4 ngày
+405,trend_user_404,review đi săn mây ở Phú Quý 3 ngày 2 đêm,ask_tour_info,6ad20d18d18d0338e15b91ef96310201,review đi săn mây ở Phú Quý 3 ngày 2 đêm
+413,trend_user_412,nhóm mình 7 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_travel,1bd285616a14dbc8e7bee1dc5256a548,nhóm mình 7 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+415,trend_user_414,nhóm mình 4 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_price,3eec8a62550c189be7d014493a2c760a,nhóm mình 4 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+420,trend_user_419,tư vấn lịch trình đi Trị An tự túc 5 ngày,search_travel,58e0f5e138cf96a2cc3fd2ed6c4b71e2,tư vấn lịch trình đi Trị An tự túc 5 ngày
+424,trend_user_423,cho mình xin báo giá glamping ở Măng Đen cho 13 người,search_travel,05b39ad439ec6106af3d4d07ac6f848b,cho mình xin báo giá glamping ở Măng Đen cho 13 người
+429,trend_user_428,nhóm mình 9 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_price,170f9c1cff04dba27040dda1202c593e,nhóm mình 9 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+433,trend_user_432,có tour chữa lành nào đi Trị An khoảng 2 ngày không,ask_tour_info,46cd369862e09daa3ed366e0e13cb8d9,có tour chữa lành nào đi Trị An khoảng 2 ngày không
+435,trend_user_434,cho mình xin báo giá glamping ở Tà Xùa cho 7 người,search_price,7c5e057b3c2c5e63987fef461273ff56,cho mình xin báo giá glamping ở Tà Xùa cho 7 người
+442,trend_user_441,review đi săn mây ở Trị An 2 ngày 1 đêm,ask_tour_info,1f292e238f13d4555cb7b25faeeadd07,review đi săn mây ở Trị An 2 ngày 1 đêm
+445,trend_user_444,cho mình xin báo giá glamping ở Tà Xùa cho 5 người,ask_tour_info,a3648e30d9bc65bfbe3dd2fe85221458,cho mình xin báo giá glamping ở Tà Xùa cho 5 người
+446,trend_user_445,nhóm mình 4 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,b1d3f27ed4cdb149c6dc39b034f694a2,nhóm mình 4 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+448,trend_user_447,nhóm mình 9 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao,search_activity,7c60a2bac91f3c0ccf464d425faf26bc,nhóm mình 9 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao
+449,trend_user_448,nhóm mình 13 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_travel,172e480e0c74a5a460eb39edee6897a8,nhóm mình 13 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+450,trend_user_449,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 14 người,search_activity,075954055c0886b01ab6a16de4ac572a,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 14 người
+452,trend_user_451,cho mình xin báo giá glamping ở Hà Giang cho 10 người,search_activity,021f1cd015d66aabc4957219473f8ed9,cho mình xin báo giá glamping ở Hà Giang cho 10 người
+454,trend_user_453,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 11 người,ask_tour_info,fd70f3c43155eaf2a276561f486d5fb9,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 11 người
+463,trend_user_462,có tour chữa lành nào đi Phú Quý khoảng 3 ngày không,search_price,59f12ac6810bd56840b3751f04427808,có tour chữa lành nào đi Phú Quý khoảng 3 ngày không
+469,trend_user_468,cho mình xin báo giá glamping ở Măng Đen cho 9 người,search_price,fe21a467e8cb1e747f5c67160f23fd89,cho mình xin báo giá glamping ở Măng Đen cho 9 người
+472,trend_user_471,nhóm mình 7 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao,search_activity,ba4be2cf69d2c76e90e7300046c66fb1,nhóm mình 7 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao
+477,trend_user_476,cho mình xin báo giá glamping ở Tà Năng cho 11 người,ask_tour_info,97fee5d76eac0fa594599f3dd1e05771,cho mình xin báo giá glamping ở Tà Năng cho 11 người
+481,trend_user_480,người lớn tuổi ngồi xe lăn có đi tour Trị An 5 ngày được không,ask_tour_info,48f72c8ae6a93b1e607ec48cbdd5a99d,người lớn tuổi ngồi xe lăn có đi tour Trị An 5 ngày được không
+482,trend_user_481,cho mình xin báo giá glamping ở Hà Giang cho 6 người,search_travel,befcc8665c53bbdbe46a08e7f663823c,cho mình xin báo giá glamping ở Hà Giang cho 6 người
+483,trend_user_482,cho mình xin báo giá glamping ở Trị An cho 11 người,ask_tour_info,106e64a2a21e9316d7d0bf1c79bad326,cho mình xin báo giá glamping ở Trị An cho 11 người
+484,trend_user_483,có tour chữa lành nào đi Tà Năng khoảng 2 ngày không,search_price,523ccff9781d2e5a8138e14559a31a02,có tour chữa lành nào đi Tà Năng khoảng 2 ngày không
+486,trend_user_485,chi phí đi trekking băng rừng ở Trị An cho nhóm 4 người,search_activity,6476bb34e1f987b30f334f6ae7b6e284,chi phí đi trekking băng rừng ở Trị An cho nhóm 4 người
+490,trend_user_489,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 2 ngày được không,search_travel,cf4b9622fc146b914b6d81c06b2675df,người lớn tuổi ngồi xe lăn có đi tour Tà Năng 2 ngày được không
+491,trend_user_490,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 4 ngày được không,search_travel,5db758a1656c1fe2fce7f7e8673424bb,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 4 ngày được không
+492,trend_user_491,cho mình xin báo giá glamping ở Hà Giang cho 11 người,search_activity,a4ad7cfa94d7a8370c85e096cd37ad3a,cho mình xin báo giá glamping ở Hà Giang cho 11 người
+494,trend_user_493,nhóm mình 10 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao,search_travel,c116f2116bb2665cfe118d2a85ede557,nhóm mình 10 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao
+499,trend_user_498,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 3 ngày,search_travel,3282bd80375915c037c4439681190b53,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 3 ngày
+504,trend_user_503,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 5 người,search_price,0f23bdbc3acb1a9e53789874fed10f21,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 5 người
+506,trend_user_505,tư vấn lịch trình đi Tà Năng tự túc 2 ngày,search_travel,d1cecb216f65e963b6768c29f9640c7e,tư vấn lịch trình đi Tà Năng tự túc 2 ngày
+508,trend_user_507,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 3 ngày,search_travel,1c425f97074e677526e2e0d3e6647d9e,mình muốn tìm bãi cắm trại staycation gần Măng Đen đi 3 ngày
+513,trend_user_512,chi phí đi trekking băng rừng ở Trị An cho nhóm 3 người,search_activity,2593ebf0bf0deb4cb18e89c51ec40fed,chi phí đi trekking băng rừng ở Trị An cho nhóm 3 người
+520,trend_user_519,mình muốn tìm bãi cắm trại staycation gần Trị An đi 5 ngày,search_price,106ca08658a398dc170132f0f3cbe6fe,mình muốn tìm bãi cắm trại staycation gần Trị An đi 5 ngày
+522,trend_user_521,nhóm mình 2 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,70b0b829e4e6695e280107d3c6e76c0f,nhóm mình 2 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao
+524,trend_user_523,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 7 người,search_price,8c6ab693235b5f3a9e951fff88a66114,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 7 người
+525,trend_user_524,cho mình xin báo giá glamping ở Măng Đen cho 14 người,search_activity,b22b2a9dafb6c8cedb0351a25cb17523,cho mình xin báo giá glamping ở Măng Đen cho 14 người
+527,trend_user_526,nhóm mình 13 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,8f40968d585d361fc865acd971ca1895,nhóm mình 13 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao
+533,trend_user_532,nhóm mình 3 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao,search_activity,de85f430c489becce7186830e85c6f30,nhóm mình 3 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao
+534,trend_user_533,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 6 người,search_travel,430f838e2ee20ae017bbf542883ce2bd,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 6 người
+535,trend_user_534,nhóm mình 2 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,f59467ed7cb07efd2defc2a1c406e6c6,nhóm mình 2 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+545,trend_user_544,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 2 ngày,search_price,cf0710bbe0653fbaad9cbab32b833cc5,mình muốn tìm bãi cắm trại staycation gần Phú Quý đi 2 ngày
+550,trend_user_549,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 15 người,search_travel,4ac4a2099df92e16389591a49ecf2267,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 15 người
+551,trend_user_550,nhóm mình 11 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,search_travel,9a407b49ddf571f124c0dab3ea9dec15,nhóm mình 11 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+552,trend_user_551,review đi săn mây ở Tà Xùa 2 ngày 1 đêm,search_travel,13cb4d1b00b28052f9dd125d53d38ffa,review đi săn mây ở Tà Xùa 2 ngày 1 đêm
+555,trend_user_554,có tour chữa lành nào đi Trị An khoảng 3 ngày không,search_activity,d5e1ef977cc8d496154db2219c5b06d1,có tour chữa lành nào đi Trị An khoảng 3 ngày không
+563,trend_user_562,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 2 ngày,ask_tour_info,1b82012b48d7b970d1150a4c1d144de7,mình muốn tìm bãi cắm trại staycation gần Hà Giang đi 2 ngày
+564,trend_user_563,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 4 người,search_price,45d695466f1d323b58e010d584fd3c52,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 4 người
+565,trend_user_564,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 12 người,search_travel,8d39718edac33f81ed5c5077e7792072,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 12 người
+569,trend_user_568,cho mình xin báo giá glamping ở Phú Quý cho 3 người,search_price,336c478c287d0ec5d44e54b333f0bba8,cho mình xin báo giá glamping ở Phú Quý cho 3 người
+574,trend_user_573,chi phí đi trekking băng rừng ở Trị An cho nhóm 5 người,search_price,f7ad0b542f92100c1cf3550760349226,chi phí đi trekking băng rừng ở Trị An cho nhóm 5 người
+577,trend_user_576,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 11 người,search_activity,d1daf6dbdd8ae1a00fe9161dfe289067,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 11 người
+584,trend_user_583,cho mình xin báo giá glamping ở Măng Đen cho 11 người,search_travel,36bb6aa18b806f776ffd8d96d6443457,cho mình xin báo giá glamping ở Măng Đen cho 11 người
+585,trend_user_584,tư vấn lịch trình đi Tà Năng tự túc 4 ngày,ask_tour_info,fcf74313bdbf97e22facafbeac8c359f,tư vấn lịch trình đi Tà Năng tự túc 4 ngày
+586,trend_user_585,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 4 ngày,search_price,a4eadf067a461a0e7e7d093d1e6395e2,mình muốn tìm bãi cắm trại staycation gần Tà Năng đi 4 ngày
+594,trend_user_593,nhóm mình 5 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao,search_activity,0398e844365ca913dbde6ae72bad736b,nhóm mình 5 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao
+601,trend_user_600,nhóm mình 5 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao,search_travel,f420aadfe6e3d6b3ba259f88dc85568d,nhóm mình 5 người lớn 2 trẻ em đi Măng Đen thì phụ thu sao
+606,trend_user_605,cho mình xin báo giá glamping ở Hà Giang cho 9 người,ask_tour_info,97bd514f8a17787e9b3da628230eb6b2,cho mình xin báo giá glamping ở Hà Giang cho 9 người
+608,trend_user_607,cho mình xin báo giá glamping ở Tà Xùa cho 6 người,search_activity,1ae96f279f5fc52b65763be9127fc0b5,cho mình xin báo giá glamping ở Tà Xùa cho 6 người
+623,trend_user_622,nhóm mình 7 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao,search_activity,5dfbf703a194e0b54355889907e8e31e,nhóm mình 7 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao
+624,trend_user_623,chi phí đi trekking băng rừng ở Trị An cho nhóm 9 người,search_price,18debad44e72bfcf753648e5d93a5c1b,chi phí đi trekking băng rừng ở Trị An cho nhóm 9 người
+625,trend_user_624,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 9 người,search_activity,e0f1a9ffe02b55bbe42c4b7b43b6a273,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 9 người
+632,trend_user_631,cho mình xin báo giá glamping ở Phú Quý cho 11 người,search_activity,81fc0d4588063c002e47e4ee5ffb61e5,cho mình xin báo giá glamping ở Phú Quý cho 11 người
+640,trend_user_639,nhóm mình 10 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao,ask_tour_info,f59dd1c17211db4950247b244135b7a4,nhóm mình 10 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao
+651,trend_user_650,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 14 người,search_price,6a4bea2b18a607e34699d9a5af23a780,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 14 người
+655,trend_user_654,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 6 người,search_travel,8bf967715963f595c1676a29a2886829,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 6 người
+659,trend_user_658,nhóm mình 12 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,232d788296de3856fbda72800744668b,nhóm mình 12 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao
+666,trend_user_665,nhóm mình 12 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,search_price,745a3cea43532515143473e9e0844bc8,nhóm mình 12 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+669,trend_user_668,nhóm mình 14 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,99141bf0f0798ccb71044f4c981b94ab,nhóm mình 14 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+698,trend_user_697,cho mình xin báo giá glamping ở Trị An cho 3 người,ask_tour_info,bb9366ed5daaa4ee0b98dd25b30ed654,cho mình xin báo giá glamping ở Trị An cho 3 người
+702,trend_user_701,nhóm mình 9 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao,search_price,558165f8dff4746b0d26acf78352e4c6,nhóm mình 9 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao
+731,trend_user_730,người lớn tuổi ngồi xe lăn có đi tour Trị An 3 ngày được không,search_activity,3602356c8927280967c6d0bdb163de1c,người lớn tuổi ngồi xe lăn có đi tour Trị An 3 ngày được không
+734,trend_user_733,nhóm mình 13 người lớn 4 trẻ em đi Trị An thì phụ thu sao,search_travel,d68c7ad2c9dd5b934bc2b826e77a3b89,nhóm mình 13 người lớn 4 trẻ em đi Trị An thì phụ thu sao
+739,trend_user_738,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 2 người,search_price,37d463f65ce4266fd2c8f5e0666cde0c,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 2 người
+740,trend_user_739,nhóm mình 13 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao,search_travel,57c8a5dec104a1504bf7d5aee6a4f58b,nhóm mình 13 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao
+743,trend_user_742,nhóm mình 14 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_price,bd984e0328cc72ea1c41378100c2a017,nhóm mình 14 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+745,trend_user_744,nhóm mình 2 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,search_travel,092b16a4d1ba85da5fa65ada6ef997c7,nhóm mình 2 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+749,trend_user_748,nhóm mình 5 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao,search_price,d2fd61c734af2bc56358eba99db9a36e,nhóm mình 5 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao
+761,trend_user_760,cho mình xin báo giá glamping ở Tà Xùa cho 13 người,ask_tour_info,448c56db1451d1037678a676ee63743a,cho mình xin báo giá glamping ở Tà Xùa cho 13 người
+766,trend_user_765,cho mình xin báo giá glamping ở Tà Xùa cho 14 người,search_activity,d4da5278a51f2ad9046214e47355f38e,cho mình xin báo giá glamping ở Tà Xùa cho 14 người
+770,trend_user_769,cho mình xin báo giá glamping ở Phú Quý cho 12 người,search_activity,95fa53402c9ff8d755482caaa10ec66d,cho mình xin báo giá glamping ở Phú Quý cho 12 người
+771,trend_user_770,cho mình xin báo giá glamping ở Tà Năng cho 5 người,search_travel,24d1d13dece7c0319da80ac87d50b358,cho mình xin báo giá glamping ở Tà Năng cho 5 người
+776,trend_user_775,nhóm mình 14 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,ask_tour_info,faaa2bb8293987538e6a65cb3c6dd553,nhóm mình 14 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+783,trend_user_782,có tour chữa lành nào đi Hà Giang khoảng 2 ngày không,search_activity,da42b2db9219bb0e0604d1bf9d32430a,có tour chữa lành nào đi Hà Giang khoảng 2 ngày không
+790,trend_user_789,cho mình xin báo giá glamping ở Trị An cho 12 người,search_activity,331ff958a3ac8b739ecb72b34c64fadb,cho mình xin báo giá glamping ở Trị An cho 12 người
+801,trend_user_800,nhóm mình 10 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_price,a1ee2342bf46d6653e82786df66b5233,nhóm mình 10 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+816,trend_user_815,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 5 người,search_travel,b4128c56dfd1e2c76f1ade6ea8b23971,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 5 người
+818,trend_user_817,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 4 người,search_travel,33d0955ed486bc24488bdca3575bad18,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 4 người
+819,trend_user_818,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 11 người,search_travel,5600fb95469c8d8093ee97941110f733,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 11 người
+821,trend_user_820,nhóm mình 14 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,f539d336f6c04733f409b1b7c8a58c3c,nhóm mình 14 người lớn 4 trẻ em đi Tà Xùa thì phụ thu sao
+842,trend_user_841,nhóm mình 6 người lớn 3 trẻ em đi Trị An thì phụ thu sao,search_travel,d82a5f0ad4f5c2ec2f95580ac71782ba,nhóm mình 6 người lớn 3 trẻ em đi Trị An thì phụ thu sao
+844,trend_user_843,nhóm mình 3 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao,search_price,6c66fec45666cb647cb6f7fb8c19732c,nhóm mình 3 người lớn 3 trẻ em đi Hà Giang thì phụ thu sao
+851,trend_user_850,nhóm mình 7 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao,search_price,155e7bcbe7924251d2deac6ac111cf95,nhóm mình 7 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao
+856,trend_user_855,chi phí đi trekking băng rừng ở Trị An cho nhóm 14 người,search_travel,159f85ef305bdcda56aed7b78dc903ee,chi phí đi trekking băng rừng ở Trị An cho nhóm 14 người
+858,trend_user_857,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 15 người,ask_tour_info,85e9cdca3a4da6587c8752b6817694f5,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 15 người
+864,trend_user_863,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 3 ngày được không,search_price,a4233ce3f295a36c13c6c2e63762cb0e,người lớn tuổi ngồi xe lăn có đi tour Hà Giang 3 ngày được không
+868,trend_user_867,nhóm mình 9 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao,ask_tour_info,ec6ae6cadde72b65d1d9af2552de5823,nhóm mình 9 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao
+883,trend_user_882,chi phí đi trekking băng rừng ở Trị An cho nhóm 13 người,search_activity,11ef9ff4719a55830a2e95d6a004650a,chi phí đi trekking băng rừng ở Trị An cho nhóm 13 người
+893,trend_user_892,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 10 người,ask_tour_info,7e31116b512c625f282a16afa784274a,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 10 người
+901,trend_user_900,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 13 người,search_price,463525380c0c78ec8409b06ff1aa8133,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 13 người
+911,trend_user_910,nhóm mình 15 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,search_travel,f76e7198f87ccff4231b5624f0326974,nhóm mình 15 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+924,trend_user_923,nhóm mình 6 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,search_activity,d215ce0a1875b2e3e08726467d8b50c8,nhóm mình 6 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+939,trend_user_938,nhóm mình 7 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,search_price,48b15360bdfa116300d4e573587ca14e,nhóm mình 7 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+947,trend_user_946,nhóm mình 10 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,82c960f077be49b887d29e12c0d5e440,nhóm mình 10 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao
+962,trend_user_961,có tour chữa lành nào đi Phú Quý khoảng 4 ngày không,search_activity,25d580a2c4cf149a7da66989bb275c8c,có tour chữa lành nào đi Phú Quý khoảng 4 ngày không
+967,trend_user_966,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 10 người,search_activity,b873c92611de501eca2c81581d397200,chi phí đi trekking băng rừng ở Tà Năng cho nhóm 10 người
+980,trend_user_979,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 6 người,ask_tour_info,4974f044a23ed8cf49bc10adb6fb9c2f,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 6 người
+982,trend_user_981,nhóm mình 11 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,f47e9e87bf936721e671986fa6c39c98,nhóm mình 11 người lớn 1 trẻ em đi Tà Xùa thì phụ thu sao
+988,trend_user_987,cho mình xin báo giá glamping ở Phú Quý cho 8 người,search_price,1b81035c9fb4777de8e4ff27b9aed9dd,cho mình xin báo giá glamping ở Phú Quý cho 8 người
+1007,trend_user_1006,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 3 người,search_travel,8da8ed41021b02ec91dfe1beaee2a00b,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 3 người
+1015,trend_user_1014,nhóm mình 9 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,ask_tour_info,0a10529047aa8103ff080a19e305c6b5,nhóm mình 9 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+1020,trend_user_1019,nhóm mình 15 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao,search_activity,336217cffacbe3a0afda490c4ce5afab,nhóm mình 15 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao
+1027,trend_user_1026,cho mình xin báo giá glamping ở Phú Quý cho 9 người,search_activity,70fddb2e79f61f7e7725f1d582337718,cho mình xin báo giá glamping ở Phú Quý cho 9 người
+1049,trend_user_1048,cho mình xin báo giá glamping ở Tà Xùa cho 15 người,ask_tour_info,660c02b7a46e928a764f951721f78519,cho mình xin báo giá glamping ở Tà Xùa cho 15 người
+1057,trend_user_1056,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 4 ngày được không,ask_tour_info,47970eb26b0b30b46ca50b486cf8a0ba,người lớn tuổi ngồi xe lăn có đi tour Phú Quý 4 ngày được không
+1060,trend_user_1059,nhóm mình 3 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao,search_price,5dedf26d40cceba3560f7611710e3aa0,nhóm mình 3 người lớn 4 trẻ em đi Phú Quý thì phụ thu sao
+1062,trend_user_1061,nhóm mình 9 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,search_price,7ee7cc8740238560f0c76a8b2f37277e,nhóm mình 9 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+1072,trend_user_1071,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 12 người,search_price,e010287a37a7ec100e10fa108aeb3732,chi phí đi trekking băng rừng ở Măng Đen cho nhóm 12 người
+1073,trend_user_1072,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 12 người,search_activity,02234c22faecca47bb0fb36f1ec9e119,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 12 người
+1103,trend_user_1102,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 11 người,search_activity,620f039b8f44e6c85f8ebc52119cf098,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 11 người
+1110,trend_user_1109,nhóm mình 7 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao,ask_tour_info,ef6d5b50ddf12242d3177413fb4121a1,nhóm mình 7 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao
+1115,trend_user_1114,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 15 người,ask_tour_info,444958e127b83df2f698859c3ffce96e,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 15 người
+1121,trend_user_1120,cho mình xin báo giá glamping ở Hà Giang cho 13 người,search_price,a4061d788fe8320b132fcce993e8d7ca,cho mình xin báo giá glamping ở Hà Giang cho 13 người
+1137,trend_user_1136,cho mình xin báo giá glamping ở Tà Xùa cho 10 người,search_activity,d76727718d29b878c3dc202775249a92,cho mình xin báo giá glamping ở Tà Xùa cho 10 người
+1138,trend_user_1137,cho mình xin báo giá glamping ở Tà Năng cho 4 người,ask_tour_info,7f460d1b497c525e7e9dd4ca54284aa1,cho mình xin báo giá glamping ở Tà Năng cho 4 người
+1147,trend_user_1146,cho mình xin báo giá glamping ở Hà Giang cho 15 người,search_activity,f5c2d3d7bd7011d409589f52d4207372,cho mình xin báo giá glamping ở Hà Giang cho 15 người
+1155,trend_user_1154,nhóm mình 15 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao,search_price,6d5e037afbd2f8354d913317ff9f4f77,nhóm mình 15 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao
+1157,trend_user_1156,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 3 người,ask_tour_info,987cd0ceb7089ddb412fbc848bd60e45,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 3 người
+1158,trend_user_1157,nhóm mình 9 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao,search_price,5ef3aed674f3499f3509a7f63546d7b8,nhóm mình 9 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao
+1165,trend_user_1164,cho mình xin báo giá glamping ở Phú Quý cho 2 người,search_price,e28c9b48e6c8b777124120020f948fda,cho mình xin báo giá glamping ở Phú Quý cho 2 người
+1172,trend_user_1171,nhóm mình 14 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao,ask_tour_info,37a686071e3cbcd9e9e355503cf91e10,nhóm mình 14 người lớn 1 trẻ em đi Tà Năng thì phụ thu sao
+1173,trend_user_1172,nhóm mình 11 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao,ask_tour_info,dddd0a047223be03d2b14b17f2b0866c,nhóm mình 11 người lớn 2 trẻ em đi Phú Quý thì phụ thu sao
+1177,trend_user_1176,nhóm mình 12 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao,search_price,d81673b23c015484f32844a5017ffca6,nhóm mình 12 người lớn 1 trẻ em đi Măng Đen thì phụ thu sao
+1182,trend_user_1181,nhóm mình 4 người lớn 3 trẻ em đi Trị An thì phụ thu sao,search_travel,3291e1d1180a31225cab67e17cdbd107,nhóm mình 4 người lớn 3 trẻ em đi Trị An thì phụ thu sao
+1196,trend_user_1195,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 4 người,search_activity,6bd3c7d56e31c4f53ffaf91dc878340d,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 4 người
+1201,trend_user_1200,cho mình xin báo giá glamping ở Tà Năng cho 6 người,ask_tour_info,838d295ec04d5fc6f9747bfab174e864,cho mình xin báo giá glamping ở Tà Năng cho 6 người
+1213,trend_user_1212,nhóm mình 4 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_activity,185136373112c1a787711ae4ba949694,nhóm mình 4 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+1220,trend_user_1219,nhóm mình 13 người lớn 2 trẻ em đi Tà Năng thì phụ thu sao,ask_tour_info,b6960ab1d07cdbbcb8fd17ca92ed9a8b,nhóm mình 13 người lớn 2 trẻ em đi Tà Năng thì phụ thu sao
+1221,trend_user_1220,nhóm mình 15 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao,search_travel,89a8b9b22a3b7868fd804a38b06f4599,nhóm mình 15 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao
+1225,trend_user_1224,nhóm mình 6 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao,search_price,53908f6d158d3c1774e2639f480ae274,nhóm mình 6 người lớn 3 trẻ em đi Măng Đen thì phụ thu sao
+1227,trend_user_1226,cho mình xin báo giá glamping ở Tà Xùa cho 12 người,search_activity,2cc8dff57e3fbf72bdf6416fae7fdb26,cho mình xin báo giá glamping ở Tà Xùa cho 12 người
+1229,trend_user_1228,nhóm mình 14 người lớn 2 trẻ em đi Tà Năng thì phụ thu sao,ask_tour_info,82af5f2c3eec8ff2cfdf1c4ed03e9ec7,nhóm mình 14 người lớn 2 trẻ em đi Tà Năng thì phụ thu sao
+1240,trend_user_1239,nhóm mình 14 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao,ask_tour_info,91e40c2aa5eafc6e0ba512ee74ced19f,nhóm mình 14 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao
+1243,trend_user_1242,nhóm mình 3 người lớn 3 trẻ em đi Trị An thì phụ thu sao,ask_tour_info,7c113124c4692d3492f22103a2c52ad6,nhóm mình 3 người lớn 3 trẻ em đi Trị An thì phụ thu sao
+1245,trend_user_1244,nhóm mình 8 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,search_price,e51d8deb31b8b555b627ff905b2a9040,nhóm mình 8 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+1246,trend_user_1245,nhóm mình 7 người lớn 3 trẻ em đi Trị An thì phụ thu sao,search_price,7276b3fabc660ec5637e1032811d5fa3,nhóm mình 7 người lớn 3 trẻ em đi Trị An thì phụ thu sao
+1250,trend_user_1249,nhóm mình 8 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao,search_price,274f4c7b161e548ccafbf13af41fafc6,nhóm mình 8 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao
+1259,trend_user_1258,cho mình xin báo giá glamping ở Măng Đen cho 2 người,search_price,7f9efaee5159d69363a90aacbf8f4c60,cho mình xin báo giá glamping ở Măng Đen cho 2 người
+1260,trend_user_1259,nhóm mình 3 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_travel,ae7f148a1f45a499c7135fb5da6ab29e,nhóm mình 3 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+1265,trend_user_1264,nhóm mình 2 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao,search_activity,033ec3a29ce5d7b4ac1590d34c215236,nhóm mình 2 người lớn 1 trẻ em đi Phú Quý thì phụ thu sao
+1274,trend_user_1273,nhóm mình 13 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,ask_tour_info,a1e10cdd71bd9af9c213a958f995a2e3,nhóm mình 13 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1288,trend_user_1287,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 7 người,search_activity,d20f278b74b299e06103564dfe8c3114,chi phí đi trekking băng rừng ở Phú Quý cho nhóm 7 người
+1289,trend_user_1288,nhóm mình 8 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,ask_tour_info,71837186cdb10c9bfb826a5c97653902,nhóm mình 8 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+1296,trend_user_1295,nhóm mình 14 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,search_activity,bea332c8fed1d98de6a25e941db55d71,nhóm mình 14 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1297,trend_user_1296,cho mình xin báo giá glamping ở Tà Năng cho 3 người,search_travel,706d8d13a91541003cd6abce5c80e6a0,cho mình xin báo giá glamping ở Tà Năng cho 3 người
+1298,trend_user_1297,cho mình xin báo giá glamping ở Tà Năng cho 8 người,search_price,89ff848019104b569741a0c85c43b60f,cho mình xin báo giá glamping ở Tà Năng cho 8 người
+1299,trend_user_1298,nhóm mình 9 người lớn 1 trẻ em đi Trị An thì phụ thu sao,search_price,d85a1da760849ce667ca2f4f6d859184,nhóm mình 9 người lớn 1 trẻ em đi Trị An thì phụ thu sao
+1314,trend_user_1313,nhóm mình 9 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,search_activity,2b3272ddf51160790839d13573e238ba,nhóm mình 9 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1320,trend_user_1319,nhóm mình 2 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao,search_price,43f09b81e09e4e0c66ebdee0d928ef78,nhóm mình 2 người lớn 1 trẻ em đi Hà Giang thì phụ thu sao
+1332,trend_user_1331,nhóm mình 12 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,search_price,f0a5160199b988037b261f0c4487848b,nhóm mình 12 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1333,trend_user_1332,nhóm mình 9 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,989f836769df579f4e531ac366480a57,nhóm mình 9 người lớn 3 trẻ em đi Tà Xùa thì phụ thu sao
+1335,trend_user_1334,nhóm mình 3 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_price,951ba1b778234f8a31fb42f0323fdb9c,nhóm mình 3 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+1346,trend_user_1345,nhóm mình 3 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,search_travel,b08c5d69547433be5cad5f3cde270c79,nhóm mình 3 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1351,trend_user_1350,cho mình xin báo giá glamping ở Trị An cho 13 người,ask_tour_info,4b8902ffd2c89c6278717cea1d251ea6,cho mình xin báo giá glamping ở Trị An cho 13 người
+1367,trend_user_1366,nhóm mình 10 người lớn 2 trẻ em đi Trị An thì phụ thu sao,search_travel,bb94ae50d6c95980ed079f84a90080b4,nhóm mình 10 người lớn 2 trẻ em đi Trị An thì phụ thu sao
+1369,trend_user_1368,nhóm mình 11 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao,ask_tour_info,49486bc3b67ac87dc10ec405d3681673,nhóm mình 11 người lớn 2 trẻ em đi Tà Xùa thì phụ thu sao
+1374,trend_user_1373,nhóm mình 4 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao,ask_tour_info,967ae7ead1ed186a9baa07947198d22c,nhóm mình 4 người lớn 4 trẻ em đi Măng Đen thì phụ thu sao
+1419,trend_user_1418,cho mình xin báo giá glamping ở Măng Đen cho 5 người,search_activity,40f0aa83a1141157cac39b7810a6a584,cho mình xin báo giá glamping ở Măng Đen cho 5 người
+1429,trend_user_1428,nhóm mình 8 người lớn 1 trẻ em đi Trị An thì phụ thu sao,search_price,fafddc8acccb94143ae7fe90da20fabc,nhóm mình 8 người lớn 1 trẻ em đi Trị An thì phụ thu sao
+1434,trend_user_1433,cho mình xin báo giá glamping ở Tà Năng cho 15 người,ask_tour_info,bd98ea99749719c1cc507b4e172f2c81,cho mình xin báo giá glamping ở Tà Năng cho 15 người
+1441,trend_user_1440,nhóm mình 10 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao,search_travel,87426242db0acd2c4398793c502374a3,nhóm mình 10 người lớn 4 trẻ em đi Hà Giang thì phụ thu sao
+1471,trend_user_1470,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 5 người,search_travel,c0e9e9b634899cf1468165dce9cb1171,chi phí đi trekking băng rừng ở Tà Xùa cho nhóm 5 người
+1483,trend_user_1482,có tour chữa lành nào đi Măng Đen khoảng 4 ngày không,ask_tour_info,2e3b12aae3fcf5f6b33b704d4723df22,có tour chữa lành nào đi Măng Đen khoảng 4 ngày không
+1485,trend_user_1484,nhóm mình 11 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao,search_travel,60dcba1f44c0b3aa49bf40db801f5725,nhóm mình 11 người lớn 3 trẻ em đi Tà Năng thì phụ thu sao
+1489,trend_user_1488,nhóm mình 11 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao,search_price,16701efbf6c686a149b31bc12a4ef3c5,nhóm mình 11 người lớn 3 trẻ em đi Phú Quý thì phụ thu sao
+1498,trend_user_1497,nhóm mình 12 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao,search_activity,f2758ef9a49b1fb6efbf908065f18395,nhóm mình 12 người lớn 4 trẻ em đi Tà Năng thì phụ thu sao
+1499,trend_user_1498,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 5 người,search_activity,d47db0aa8dff571833918633aa62c0c1,chi phí đi trekking băng rừng ở Hà Giang cho nhóm 5 người

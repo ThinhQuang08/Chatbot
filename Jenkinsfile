@@ -12,7 +12,7 @@ pipeline {
         MODEL_DIR   = "${WORKSPACE}/rasa_bot/models"
 
         // Private IP của Chatbot EC2 (vì hệ thống đang chạy trên 2 EC2 riêng biệt)
-        CHATBOT_HOST = "10.0.1.5"
+        CHATBOT_HOST = "10.0.1.60"
 
         MLFLOW_TRACKING_URI = "http://${CHATBOT_HOST}:5000"
         MLFLOW_S3_ENDPOINT_URL = "http://${CHATBOT_HOST}:9000"
