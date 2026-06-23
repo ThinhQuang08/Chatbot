@@ -32,7 +32,7 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('0. Setup Python Env') {
             steps {
-                echo "📦 Cài đặt môi trường ảo (virtualenv) và các dependencies..."
+                echo "Cài đặt môi trường ảo (virtualenv) và các dependencies..."
                 sh """
                     set -e
                     cd "${WORKSPACE}"
@@ -42,7 +42,7 @@ pipeline {
                         rm -rf "${VENV_DIR}"
                         python3 -m venv "${VENV_DIR}"
                         
-                        echo "📦 Đang cài đặt thư viện..."
+                        echo "Đang cài đặt thư viện..."
                         "${PIP}" install --upgrade pip --quiet
                         # Cài đặt requirements.txt
                         if [ -f "requirements.txt" ]; then
@@ -51,7 +51,7 @@ pipeline {
                         # Bổ sung các thư viện cần thiết cho CI
                         "${PIP}" install flake8 dvc pandas boto3 python-dotenv mlflow pyyaml --quiet
                     else
-                        echo "✅ Môi trường Python đã sẵn sàng."
+                        echo "Môi trường Python đã sẵn sàng."
                     fi
                 """
             }
@@ -62,29 +62,29 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('0.1. Validation & Scan') {
             steps {
-                echo "🔍 Đang kiểm tra mã nguồn (Linting) và quét lỗ hổng bảo mật..."
+                echo "Đang kiểm tra mã nguồn (Linting) và quét lỗ hổng bảo mật..."
                 sh """
                     set -e
                     cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
                     
-                    echo "1️⃣ Quét lỗ hổng bảo mật (Trivy)..."
+                    echo "Quét lỗ hổng bảo mật (Trivy)..."
                     if ! command -v trivy >/dev/null 2>&1; then
-                        echo "⬇️ Đang tải Trivy scanner..."
+                        echo "Đang tải Trivy scanner..."
                         curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b "${VENV_DIR}/bin"
                     fi
                     
                     # Quét toàn bộ repo (chỉ warning HIGH, CRITICAL, exit-code 0 để không chặn pipeline nếu lỗi nhỏ)
                     trivy fs . --scanners vuln,secret --severity HIGH,CRITICAL
                     
-                    echo "2️⃣ Validate Code (Flake8)..."
+                    echo "Validate Code (Flake8)..."
                     # Kiểm tra lỗi cú pháp (Syntax errors) - block pipeline nếu có
                     flake8 scripts/ data/ --count --select=E9,F63,F7,F82 --show-source --statistics
                     
                     # Cảnh báo format/style code (không block)
                     flake8 scripts/ data/ --count --max-complexity=15 --max-line-length=127 --statistics --exit-zero
                     
-                    echo "✅ Quét hoàn tất!"
+                    echo "Quét hoàn tất!"
                 """
             }
         }
@@ -94,10 +94,24 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('1. Data Pipeline') {
             steps {
-                echo "🧹 Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
+                echo "Đang làm sạch, gán nhãn bằng Snorkel và Validate..."
                 sh """
                     cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
+                    
+                    echo "Bước 1: Làm sạch, chuẩn hoá, tách từ..."
+                    ${PY} data/preprocess_data.py
+                    
+                    echo "Bước 2: Gán nhãn tự động bằng Snorkel..."
+                    ${PY} data/auto_label_snorkel.py
+                    
+                    echo "Bước 3: Tách độ tự tin (ngưỡng 75%)..."
+                    ${PY} data/split_confidence.py
+                    
+                    echo "Bước 4: Validate auto label với Cleanlab..."
+                    ${PY} data/validate_cleanlab.py
+                    
+                    echo "Bước 5: Chuyển đổi và nối vào file NLU của Rasa..."
                     ${PY} data/csv_to_rasa.py
                 """
             }
@@ -108,7 +122,7 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('2. Train Model') {
             steps {
-                echo "🚀 Đang huấn luyện Rasa và lưu metrics lên MLflow..."
+                echo "Đang huấn luyện Rasa và lưu metrics lên MLflow..."
                 sh """
                     cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
@@ -123,7 +137,7 @@ pipeline {
         stage('3. Human Approval (Gửi TN)') {
             steps {
                 script {
-                    echo "🔔 Đang chờ sếp kiểm tra thông số trên MLflow..."
+                    echo "Đang chờ sếp kiểm tra thông số trên MLflow..."
                     def userInput = input(
                         id: 'DeployGate',
                         message: 'Thông số mô hình đã có trên MLflow. Sếp quyết định sao?',
@@ -138,10 +152,10 @@ pipeline {
                     )
 
                     if (userInput == 'abort') {
-                        error("🛑 Mô hình bị reject")
+                        error("Mô hình bị reject")
                     }
 
-                    echo "✅ Model được duyệt"
+                    echo "Model được duyệt"
                 }
             }
         }
@@ -151,7 +165,7 @@ pipeline {
         // ─────────────────────────────────────────────────
         stage('4. Deploy to MinIO & Rasa') {
             steps {
-                echo "☁️ Đang deploy model..."
+                echo "Đang deploy model..."
                 sh """
                     cd "${WORKSPACE}"
                     export PATH="${VENV_DIR}/bin:\$PATH"
@@ -163,14 +177,14 @@ pipeline {
 
     post {
         success {
-            echo "🎉 PIPELINE HOÀN TẤT!"
+            echo "PIPELINE HOÀN TẤT!"
         }
         aborted {
-            echo "⚠️ Pipeline bị hủy"
+            echo "Pipeline bị hủy"
             sh "rm -f \"${WORKSPACE}/rasa_bot/models/*.tar.gz\" || true"
         }
         failure {
-            echo "🔥 Pipeline thất bại"
+            echo "Pipeline thất bại"
             sh "rm -f \"${WORKSPACE}/rasa_bot/models/*.tar.gz\" || true"
             echo "🗑️ Đã cleanup file rác."
         }
