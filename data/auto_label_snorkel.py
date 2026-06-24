@@ -126,6 +126,13 @@ def run_auto_labeling():
         
     df = df.dropna(subset=['cleaned_text'])
 
+    if len(df) == 0:
+        print("[INFO] Không có dữ liệu để huấn luyện LabelModel (0 dòng). Tạo file rỗng.")
+        df['snorkel_intent'] = []
+        df['snorkel_confidence'] = []
+        df.to_csv('data/labeled_chat_logs.csv', index=False)
+        return
+
     print("🧠 Các chuyên gia đang đánh giá theo 7 nhóm Intent...")
     lfs = [
         lf_search_destination, lf_search_activity, lf_search_price, 
